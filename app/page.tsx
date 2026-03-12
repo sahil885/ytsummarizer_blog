@@ -3,6 +3,41 @@ import Link from 'next/link'
 export default function Home() {
   const posts = [
     {
+      slug: 'crypto-explained-video-summaries-made-simple',
+      title: 'Crypto Explained: Video Summaries Made Simple',
+      description: 'Learn how to quickly summarize cryptocurrency videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+      date: '2026-03-12'
+    },
+
+    {
+      slug: 'data-science-video-summary-guide',
+      title: 'Data Science Video Summary Guide',
+      description: 'Learn how to quickly summarize data science videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+      date: '2026-03-12'
+    },
+
+    {
+      slug: 'web-development-video-summaries-skip-to-what-matters',
+      title: 'Web Development Video Summaries: Skip to What Matters',
+      description: 'Learn how to quickly summarize web development videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+      date: '2026-03-12'
+    },
+
+    {
+      slug: 'python-tutorial-video-summary-learn-faster',
+      title: 'Python Tutorial Video Summary: Learn Faster',
+      description: 'Learn how to quickly summarize python programming videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+      date: '2026-03-12'
+    },
+
+    {
+      slug: 'how-to-summarize-machine-learning-videos-with-ai',
+      title: 'How to Summarize Machine Learning Videos with AI',
+      description: 'Learn how to quickly summarize machine learning videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+      date: '2026-03-12'
+    },
+
+    {
       slug: 'how-to-summarize-youtube-videos',
       title: 'How to Summarize YouTube Videos with AI',
       description: 'Save time and extract key insights from any YouTube video in seconds.',
