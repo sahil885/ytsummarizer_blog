@@ -1,13 +1,4 @@
-// Google Search Console verification placeholder
-// After you verify with Google Search Console, add the verification meta tag here
-
+// Google Search Console verification
 export function GoogleSiteVerification() {
-  // Replace with your actual verification code from Google Search Console
-  const verificationCode = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
-
-  if (!verificationCode) {
-    return null
-  }
-
-  return <meta name="google-site-verification" content={verificationCode} />
+  return <meta name="google-site-verification" content="VJ9yzPpHifv5kLVrEqmFXz5wwhPlS4vJFH_iSVt8aSE" />
 }
