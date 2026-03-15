@@ -2,6 +2,126 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 const posts: Record<string, { title: string; content: string; date: string; metaDescription: string }> = {
+  'fitness-video-summaries-get-the-workout-plan-faster': {
+    title: 'Fitness Video Summaries: Get the Workout Plan Faster',
+    metaDescription: 'Learn how to quickly summarize fitness training videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    date: '2026-03-15',
+    content: `
+      <p>Want to save time watching fitness training videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
+
+      <h2>Why Summarize fitness training Videos?</h2>
+      <p>Fitness training content on YouTube is valuable but often lengthy. Whether you're learning, researching, or staying updated, video summarization helps you:</p>
+      <ul>
+        <li>Quickly evaluate if a video has the information you need</li>
+        <li>Extract actionable insights without watching the full video</li>
+        <li>Save hours of watch time every week</li>
+        <li>Create searchable notes from video content</li>
+      </ul>
+
+      <h2>How to Summarize fitness training Videos</h2>
+      <p>Modern AI tools can analyze video transcripts and generate comprehensive summaries. Here's what makes a good fitness training video summary:</p>
+      <ul>
+        <li><strong>Main concepts:</strong> Key fitness training topics covered in the video</li>
+        <li><strong>Important details:</strong> Specific examples, data points, or insights</li>
+        <li><strong>Actionable takeaways:</strong> What you can apply from the content</li>
+        <li><strong>Timestamps:</strong> Links to important moments in the video</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <p>When summarizing fitness training videos, focus on:</p>
+      <ul>
+        <li>Understanding the core concepts before diving into details</li>
+        <li>Identifying practical applications of the information</li>
+        <li>Noting any resources or tools mentioned</li>
+        <li>Capturing specific examples that illustrate key points</li>
+      </ul>
+
+      <h2>Get Started with AI Summarization</h2>
+      <p>Ready to save time on fitness training videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+
+      <p>Simply paste a fitness training video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about fitness training.</p>
+    `
+  },
+  'productivity-hacks-summarize-youtube-videos-fast': {
+    title: 'Productivity Hacks: Summarize YouTube Videos Fast',
+    metaDescription: 'Learn how to quickly summarize productivity tips videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    date: '2026-03-15',
+    content: `
+      <p>Want to save time watching productivity tips videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
+
+      <h2>Why Summarize productivity tips Videos?</h2>
+      <p>Productivity tips content on YouTube is valuable but often lengthy. Whether you're learning, researching, or staying updated, video summarization helps you:</p>
+      <ul>
+        <li>Quickly evaluate if a video has the information you need</li>
+        <li>Extract actionable insights without watching the full video</li>
+        <li>Save hours of watch time every week</li>
+        <li>Create searchable notes from video content</li>
+      </ul>
+
+      <h2>How to Summarize productivity tips Videos</h2>
+      <p>Modern AI tools can analyze video transcripts and generate comprehensive summaries. Here's what makes a good productivity tips video summary:</p>
+      <ul>
+        <li><strong>Main concepts:</strong> Key productivity tips topics covered in the video</li>
+        <li><strong>Important details:</strong> Specific examples, data points, or insights</li>
+        <li><strong>Actionable takeaways:</strong> What you can apply from the content</li>
+        <li><strong>Timestamps:</strong> Links to important moments in the video</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <p>When summarizing productivity tips videos, focus on:</p>
+      <ul>
+        <li>Understanding the core concepts before diving into details</li>
+        <li>Identifying practical applications of the information</li>
+        <li>Noting any resources or tools mentioned</li>
+        <li>Capturing specific examples that illustrate key points</li>
+      </ul>
+
+      <h2>Get Started with AI Summarization</h2>
+      <p>Ready to save time on productivity tips videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+
+      <p>Simply paste a productivity tips video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about productivity tips.</p>
+    `
+  },
+  'digital-marketing-video-summary-tips': {
+    title: 'Digital Marketing Video Summary Tips',
+    metaDescription: 'Learn how to quickly summarize digital marketing videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    date: '2026-03-15',
+    content: `
+      <p>Want to save time watching digital marketing videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
+
+      <h2>Why Summarize digital marketing Videos?</h2>
+      <p>Digital marketing content on YouTube is valuable but often lengthy. Whether you're learning, researching, or staying updated, video summarization helps you:</p>
+      <ul>
+        <li>Quickly evaluate if a video has the information you need</li>
+        <li>Extract actionable insights without watching the full video</li>
+        <li>Save hours of watch time every week</li>
+        <li>Create searchable notes from video content</li>
+      </ul>
+
+      <h2>How to Summarize digital marketing Videos</h2>
+      <p>Modern AI tools can analyze video transcripts and generate comprehensive summaries. Here's what makes a good digital marketing video summary:</p>
+      <ul>
+        <li><strong>Main concepts:</strong> Key digital marketing topics covered in the video</li>
+        <li><strong>Important details:</strong> Specific examples, data points, or insights</li>
+        <li><strong>Actionable takeaways:</strong> What you can apply from the content</li>
+        <li><strong>Timestamps:</strong> Links to important moments in the video</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <p>When summarizing digital marketing videos, focus on:</p>
+      <ul>
+        <li>Understanding the core concepts before diving into details</li>
+        <li>Identifying practical applications of the information</li>
+        <li>Noting any resources or tools mentioned</li>
+        <li>Capturing specific examples that illustrate key points</li>
+      </ul>
+
+      <h2>Get Started with AI Summarization</h2>
+      <p>Ready to save time on digital marketing videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+
+      <p>Simply paste a digital marketing video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about digital marketing.</p>
+    `
+  },
   'crypto-explained-video-summaries-made-simple': {
     title: 'Crypto Explained: Video Summaries Made Simple',
     metaDescription: 'Learn how to quickly summarize cryptocurrency videos using AI-powered tools. Save time and extract key insights from YouTube content.',
