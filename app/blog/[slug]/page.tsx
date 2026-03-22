@@ -2,6 +2,96 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 const posts: Record<string, { title: string; content: string; date: string; metaDescription: string }> = {
+  'ai-video-summary-stay-updated-on-automation': {
+    title: 'AI and Automation Video Summaries: Stay Current Without the Scroll',
+    metaDescription: 'Use AI to summarize YouTube videos about artificial intelligence and automation. Keep up with rapidly evolving AI developments without watching every video.',
+    date: '2026-03-18',
+    content: `
+      <p>The AI and automation landscape moves faster than any individual can watch. New models, new tools, new research, new regulatory developments — all published to YouTube daily. Summarization is the only sustainable way to stay genuinely current.</p>
+      <h2>Why AI Content Requires Summarization More Than Any Other Niche</h2>
+      <p>AI YouTube channels publish prolifically. Channels like Two Minute Papers, Yannic Kilcher, AI Explained, and dozens of others each publish multiple videos weekly. Following 10 channels means 30–50 videos per week. Impossible to watch. Summarization makes it manageable.</p>
+      <h2>Key AI Content Categories to Summarize</h2>
+      <ul>
+        <li>Research paper breakdowns (arxiv papers explained)</li>
+        <li>Model release announcements and capability walkthroughs</li>
+        <li>AI policy and regulatory discussions</li>
+        <li>Tool tutorials (Midjourney, Runway, Claude, GPT-4, etc.)</li>
+        <li>Industry analyst takes on AI market developments</li>
+        <li>Startup founder interviews discussing AI applications</li>
+      </ul>
+      <h2>Staying Current Without Overwhelm</h2>
+      <p>A practical system for AI professionals:</p>
+      <ol>
+        <li>Summarize the top 5–10 new AI videos each morning with <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></li>
+        <li>Spend 10 minutes reading summaries instead of 2 hours watching videos</li>
+        <li>Flag the 1–2 summaries that reveal something genuinely new</li>
+        <li>Watch only those flagged items in full</li>
+        <li>Share the best summaries with your team as a brief</li>
+      </ol>
+      <p>For related technical topics, check out <a href="/blog/how-to-summarize-machine-learning-videos-with-ai" style="color: #ff0055; font-weight: 600;">machine learning video summaries</a> and <a href="/blog/data-science-video-summary-guide" style="color: #ff0055; font-weight: 600;">data science video summaries</a>. Learn the full productivity framework in <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+
+      <p>The AI landscape won't slow down. Your information workflow needs to scale with it. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start with YT Summarizer</a> and stop falling behind.</p>
+    `
+  },
+  'business-video-summaries-for-executives': {
+    title: 'Business Video Summaries for Executives',
+    metaDescription: 'Executives use AI YouTube summarization to stay informed on industry trends, competitor moves, and strategic insights without spending hours watching video content.',
+    date: '2026-03-18',
+    content: `
+      <p>Senior executives need to stay informed across strategy, market trends, competitor activity, and industry developments — but time is the constraint. AI video summarization compresses hours of relevant content into minutes of structured reading.</p>
+      <h2>The Executive Information Problem</h2>
+      <p>Industry conferences publish recordings. Competitor CEOs give keynotes. Analysts present market research. Journalists interview investors. All of it on YouTube. All of it valuable. None of it watchable in full given an executive's calendar.</p>
+      <h2>High-Value Video Categories for Executives</h2>
+      <ul>
+        <li><strong>Competitor CEO interviews:</strong> Strategy, product direction, hiring signals</li>
+        <li><strong>Investor Day presentations:</strong> Financial guidance, market positioning</li>
+        <li><strong>Industry analyst briefings:</strong> Market sizing, trend forecasts</li>
+        <li><strong>Conference keynotes:</strong> Technology direction, regulatory signals</li>
+        <li><strong>Board-level panel discussions:</strong> Governance and strategic perspectives</li>
+      </ul>
+      <h2>Building an Executive Intelligence Workflow</h2>
+      <ol>
+        <li>Identify 5–10 high-value YouTube channels in your industry</li>
+        <li>When new content appears, summarize immediately via <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></li>
+        <li>Route summaries to your chief of staff or EA for triage</li>
+        <li>Flag only the top-priority items for full viewing</li>
+        <li>Maintain a running competitive intelligence log from weekly summaries</li>
+      </ol>
+      <h2>ROI of Executive Video Summarization</h2>
+      <p>If summarization saves an executive 5 hours per week of video consumption, at typical executive rates, that's significant value returned to strategic work, relationship building, and decision-making. The tool cost is trivial by comparison. Founders and operators will find a related workflow in the <a href="/blog/youtube-summarizer-for-entrepreneurs" style="color: #ff0055; font-weight: 600;">YouTube summarizer for entrepreneurs</a> guide, those tracking investor content should see the <a href="/blog/youtube-summarizer-for-investor-videos" style="color: #ff0055; font-weight: 600;">investor video summarization guide</a>, and product leaders can see how <a href="/blog/youtube-summarizer-for-product-managers" style="color: #ff0055; font-weight: 600;">product managers</a> use summarization for competitive product intelligence. For a structured guide to the full productivity workflow, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — executives use it to stay sharp without the time cost.</p>
+    `
+  },
+  'recipe-video-summary-cook-without-watching': {
+    title: 'Recipe Video Summary: Cook Without Watching',
+    metaDescription: 'Get AI summaries of YouTube cooking videos. Extract ingredients, steps, and techniques from recipe videos without watching them start to finish.',
+    date: '2026-03-18',
+    content: `
+      <p>Cooking tutorial videos are among the most-watched content on YouTube — but they're notoriously hard to use in the kitchen. You pause, rewind, lose your place. An AI summary gives you the recipe structure upfront so you can cook with confidence.</p>
+      <h2>The Problem with Cooking Videos</h2>
+      <p>A 20-minute YouTube recipe video contains maybe 5 minutes of actual cooking steps. The rest is intro, backstory, equipment discussion, and plating commentary. A summary extracts exactly what you need: ingredients, method, timing, and key tips.</p>
+      <h2>What a Good Recipe Summary Captures</h2>
+      <ul>
+        <li><strong>Full ingredient list</strong> with quantities</li>
+        <li><strong>Step-by-step method</strong> in order</li>
+        <li><strong>Key timings</strong> — cooking times, resting periods</li>
+        <li><strong>Critical techniques</strong> the chef emphasizes</li>
+        <li><strong>Substitutions</strong> mentioned for dietary needs</li>
+        <li><strong>Common mistakes</strong> the chef warns against</li>
+      </ul>
+      <h2>Cooking Channels Worth Summarizing</h2>
+      <ul>
+        <li>Joshua Weissman — technique-heavy recipes with detailed explanations</li>
+        <li>Binging with Babish — popular dish recreations</li>
+        <li>Ethan Chlebowski — science-backed cooking methods</li>
+        <li>Internet Shaquille — short, high-density technique videos</li>
+        <li>Gordon Ramsay's YouTube channel — professional chef techniques</li>
+      </ul>
+      <h2>Better Workflow: Summary First, Video as Backup</h2>
+      <p>Read the summary before you start cooking. You'll know the full recipe from memory, and only return to the video for techniques that need to be seen (like knife work or texture checks). This is part of a broader strategy for <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>. Content creators who research cooking videos for repurposing will find more workflows in the <a href="/blog/youtube-summarizer-for-content-creators" style="color: #ff0055; font-weight: 600;">YouTube summarizer for content creators</a> guide.</p>
+      <p>Stop pausing and rewinding. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Summarize any recipe video with YT Summarizer</a> and cook with a clear plan.</p>
+    `
+  },
   'fitness-video-summaries-get-the-workout-plan-faster': {
     title: 'Fitness Video Summaries: Get the Workout Plan Faster',
     metaDescription: 'Learn how to quickly summarize fitness training videos using AI-powered tools. Save time and extract key insights from YouTube content.',
@@ -1975,96 +2065,6 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>Prefer a text-based format? Try <a href="/blog/youtube-summarizer-with-bullet-points" style="color: #ff0055; font-weight: 600;">bullet point summaries</a> for fast scanning, or <a href="/blog/youtube-summarizer-with-chapter-breakdown" style="color: #ff0055; font-weight: 600;">chapter breakdowns</a> for longer content. You can also <a href="/blog/youtube-summarizer-with-qa" style="color: #ff0055; font-weight: 600;">ask questions directly</a> about any video.</p>
 
       <p>Start with the summary, visualize the connections: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Get your video summary from YT Summarizer</a> and map it out.</p>
-    `
-  },
-  'recipe-video-summary-cook-without-watching': {
-    title: 'Recipe Video Summary: Cook Without Watching',
-    metaDescription: 'Get AI summaries of YouTube cooking videos. Extract ingredients, steps, and techniques from recipe videos without watching them start to finish.',
-    date: '2026-03-18',
-    content: `
-      <p>Cooking tutorial videos are among the most-watched content on YouTube — but they're notoriously hard to use in the kitchen. You pause, rewind, lose your place. An AI summary gives you the recipe structure upfront so you can cook with confidence.</p>
-      <h2>The Problem with Cooking Videos</h2>
-      <p>A 20-minute YouTube recipe video contains maybe 5 minutes of actual cooking steps. The rest is intro, backstory, equipment discussion, and plating commentary. A summary extracts exactly what you need: ingredients, method, timing, and key tips.</p>
-      <h2>What a Good Recipe Summary Captures</h2>
-      <ul>
-        <li><strong>Full ingredient list</strong> with quantities</li>
-        <li><strong>Step-by-step method</strong> in order</li>
-        <li><strong>Key timings</strong> — cooking times, resting periods</li>
-        <li><strong>Critical techniques</strong> the chef emphasizes</li>
-        <li><strong>Substitutions</strong> mentioned for dietary needs</li>
-        <li><strong>Common mistakes</strong> the chef warns against</li>
-      </ul>
-      <h2>Cooking Channels Worth Summarizing</h2>
-      <ul>
-        <li>Joshua Weissman — technique-heavy recipes with detailed explanations</li>
-        <li>Binging with Babish — popular dish recreations</li>
-        <li>Ethan Chlebowski — science-backed cooking methods</li>
-        <li>Internet Shaquille — short, high-density technique videos</li>
-        <li>Gordon Ramsay's YouTube channel — professional chef techniques</li>
-      </ul>
-      <h2>Better Workflow: Summary First, Video as Backup</h2>
-      <p>Read the summary before you start cooking. You'll know the full recipe from memory, and only return to the video for techniques that need to be seen (like knife work or texture checks). This is part of a broader strategy for <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>. Content creators who research cooking videos for repurposing will find more workflows in the <a href="/blog/youtube-summarizer-for-content-creators" style="color: #ff0055; font-weight: 600;">YouTube summarizer for content creators</a> guide.</p>
-      <p>Stop pausing and rewinding. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Summarize any recipe video with YT Summarizer</a> and cook with a clear plan.</p>
-    `
-  },
-  'business-video-summaries-for-executives': {
-    title: 'Business Video Summaries for Executives',
-    metaDescription: 'Executives use AI YouTube summarization to stay informed on industry trends, competitor moves, and strategic insights without spending hours watching video content.',
-    date: '2026-03-18',
-    content: `
-      <p>Senior executives need to stay informed across strategy, market trends, competitor activity, and industry developments — but time is the constraint. AI video summarization compresses hours of relevant content into minutes of structured reading.</p>
-      <h2>The Executive Information Problem</h2>
-      <p>Industry conferences publish recordings. Competitor CEOs give keynotes. Analysts present market research. Journalists interview investors. All of it on YouTube. All of it valuable. None of it watchable in full given an executive's calendar.</p>
-      <h2>High-Value Video Categories for Executives</h2>
-      <ul>
-        <li><strong>Competitor CEO interviews:</strong> Strategy, product direction, hiring signals</li>
-        <li><strong>Investor Day presentations:</strong> Financial guidance, market positioning</li>
-        <li><strong>Industry analyst briefings:</strong> Market sizing, trend forecasts</li>
-        <li><strong>Conference keynotes:</strong> Technology direction, regulatory signals</li>
-        <li><strong>Board-level panel discussions:</strong> Governance and strategic perspectives</li>
-      </ul>
-      <h2>Building an Executive Intelligence Workflow</h2>
-      <ol>
-        <li>Identify 5–10 high-value YouTube channels in your industry</li>
-        <li>When new content appears, summarize immediately via <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></li>
-        <li>Route summaries to your chief of staff or EA for triage</li>
-        <li>Flag only the top-priority items for full viewing</li>
-        <li>Maintain a running competitive intelligence log from weekly summaries</li>
-      </ol>
-      <h2>ROI of Executive Video Summarization</h2>
-      <p>If summarization saves an executive 5 hours per week of video consumption, at typical executive rates, that's significant value returned to strategic work, relationship building, and decision-making. The tool cost is trivial by comparison. Founders and operators will find a related workflow in the <a href="/blog/youtube-summarizer-for-entrepreneurs" style="color: #ff0055; font-weight: 600;">YouTube summarizer for entrepreneurs</a> guide, those tracking investor content should see the <a href="/blog/youtube-summarizer-for-investor-videos" style="color: #ff0055; font-weight: 600;">investor video summarization guide</a>, and product leaders can see how <a href="/blog/youtube-summarizer-for-product-managers" style="color: #ff0055; font-weight: 600;">product managers</a> use summarization for competitive product intelligence. For a structured guide to the full productivity workflow, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — executives use it to stay sharp without the time cost.</p>
-    `
-  },
-  'ai-video-summary-stay-updated-on-automation': {
-    title: 'AI and Automation Video Summaries: Stay Current Without the Scroll',
-    metaDescription: 'Use AI to summarize YouTube videos about artificial intelligence and automation. Keep up with rapidly evolving AI developments without watching every video.',
-    date: '2026-03-18',
-    content: `
-      <p>The AI and automation landscape moves faster than any individual can watch. New models, new tools, new research, new regulatory developments — all published to YouTube daily. Summarization is the only sustainable way to stay genuinely current.</p>
-      <h2>Why AI Content Requires Summarization More Than Any Other Niche</h2>
-      <p>AI YouTube channels publish prolifically. Channels like Two Minute Papers, Yannic Kilcher, AI Explained, and dozens of others each publish multiple videos weekly. Following 10 channels means 30–50 videos per week. Impossible to watch. Summarization makes it manageable.</p>
-      <h2>Key AI Content Categories to Summarize</h2>
-      <ul>
-        <li>Research paper breakdowns (arxiv papers explained)</li>
-        <li>Model release announcements and capability walkthroughs</li>
-        <li>AI policy and regulatory discussions</li>
-        <li>Tool tutorials (Midjourney, Runway, Claude, GPT-4, etc.)</li>
-        <li>Industry analyst takes on AI market developments</li>
-        <li>Startup founder interviews discussing AI applications</li>
-      </ul>
-      <h2>Staying Current Without Overwhelm</h2>
-      <p>A practical system for AI professionals:</p>
-      <ol>
-        <li>Summarize the top 5–10 new AI videos each morning with <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></li>
-        <li>Spend 10 minutes reading summaries instead of 2 hours watching videos</li>
-        <li>Flag the 1–2 summaries that reveal something genuinely new</li>
-        <li>Watch only those flagged items in full</li>
-        <li>Share the best summaries with your team as a brief</li>
-      </ol>
-      <p>For related technical topics, check out <a href="/blog/how-to-summarize-machine-learning-videos-with-ai" style="color: #ff0055; font-weight: 600;">machine learning video summaries</a> and <a href="/blog/data-science-video-summary-guide" style="color: #ff0055; font-weight: 600;">data science video summaries</a>. Learn the full productivity framework in <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
-
-      <p>The AI landscape won't slow down. Your information workflow needs to scale with it. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start with YT Summarizer</a> and stop falling behind.</p>
     `
   },
   'stock-market-video-summary-for-investors': {
