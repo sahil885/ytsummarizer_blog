@@ -2,6 +2,9 @@ import Link from 'next/link'
 
 export default function Home() {
   const posts = [
+    { slug: 'best-free-youtube-summarizers-no-subscription-2026', title: 'Best Free YouTube Summarizers With No Subscription (2026)', description: 'Compare the best free YouTube summarizers that don\'t require a subscription. Find tools with lifetime deals, no-login access, and genuine free tiers.', date: '2026-03-24' },
+    { slug: 'eightify-vs-ytsummarizer-which-youtube-summarizer-is-worth-it', title: 'Eightify vs YT Summarizer: Which YouTube Summarizer Is Worth It?', description: 'Honest comparison of Eightify vs YT Summarizer. Compare pricing, free tiers, features, and value to find the right YouTube summarizer.', date: '2026-03-24' },
+    { slug: 'how-to-summarize-youtube-watch-later-backlog', title: 'How to Summarize Your Entire YouTube Watch Later Backlog', description: 'Clear your YouTube Watch Later backlog without watching everything. Use AI summarization to triage hundreds of saved videos and reclaim your time.', date: '2026-03-24' },
     { slug: 'recipe-video-summary-cook-without-watching', title: 'Recipe Video Summary: Cook Without Watching', description: 'Get AI summaries of YouTube cooking videos. Extract ingredients, steps, and techniques from recipe videos without watching them start to finish.', date: '2026-03-18' },
     { slug: 'business-video-summaries-for-executives', title: 'Business Video Summaries for Executives', description: 'Executives use AI YouTube summarization to stay informed on industry trends, competitor moves, and strategic insights without spending hours watching video content.', date: '2026-03-18' },
     { slug: 'ai-video-summary-stay-updated-on-automation', title: 'AI and Automation Video Summaries: Stay Current Without the Scroll', description: 'Use AI to summarize YouTube videos about artificial intelligence and automation. Keep up with rapidly evolving AI developments without watching every video.', date: '2026-03-18' },

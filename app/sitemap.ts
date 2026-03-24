@@ -99,6 +99,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'youtube-summarizer-for-phd-students',
     'youtube-summarizer-for-university-students',
     'youtube-summarizer-for-news-consumption',
+    'best-free-youtube-summarizers-no-subscription-2026',
+    'eightify-vs-ytsummarizer-which-youtube-summarizer-is-worth-it',
+    'how-to-summarize-youtube-watch-later-backlog',
   ]
 
   const blogPosts = posts.map((slug) => ({
