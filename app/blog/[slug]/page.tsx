@@ -2097,7 +2097,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>Start building your market intelligence system: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> on your first financial video today.</p>
     `
   },
-  'personal-finance-videos-get-the-tldr': {
+  'personal-finance-videos-get-the-tl-dr': {
     title: 'Personal Finance Videos: Get the TL;DR',
     metaDescription: 'Summarize personal finance YouTube videos with AI. Extract actionable money tips, budgeting advice, and investment guidance without watching hour-long videos.',
     date: '2026-03-18',
@@ -2127,7 +2127,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start extracting value from personal finance content with YT Summarizer</a>.</p>
     `
   },
-  'photography-tutorial-summaries': {
+  'photography-tutorial-summaries-learn-the-techniques': {
     title: 'Photography Tutorial Summaries: Learn Techniques Fast',
     metaDescription: 'Summarize photography tutorial YouTube videos with AI. Extract camera settings, lighting techniques, and composition tips without watching every tutorial in full.',
     date: '2026-03-18',

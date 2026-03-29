@@ -2,6 +2,27 @@ import Link from 'next/link'
 
 export default function Home() {
   const posts = [
+    {
+      slug: 'photography-tutorial-summaries-learn-the-techniques',
+      title: 'Photography Tutorial Summaries: Learn the Techniques',
+      description: 'Learn how to quickly summarize photography tips videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+      date: '2026-03-29'
+    },
+
+    {
+      slug: 'personal-finance-videos-get-the-tl-dr',
+      title: 'Personal Finance Videos: Get the TL;DR',
+      description: 'Learn how to quickly summarize personal finance videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+      date: '2026-03-29'
+    },
+
+    {
+      slug: 'stock-market-video-summary-for-investors',
+      title: 'Stock Market Video Summary for Investors',
+      description: 'Learn how to quickly summarize stock market analysis videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+      date: '2026-03-29'
+    },
+
     { slug: 'best-free-youtube-summarizers-no-subscription-2026', title: 'Best Free YouTube Summarizers With No Subscription (2026)', description: 'Compare the best free YouTube summarizers that don\'t require a subscription. Find tools with lifetime deals, no-login access, and genuine free tiers.', date: '2026-03-24' },
     { slug: 'eightify-vs-ytsummarizer-which-youtube-summarizer-is-worth-it', title: 'Eightify vs YT Summarizer: Which YouTube Summarizer Is Worth It?', description: 'Honest comparison of Eightify vs YT Summarizer. Compare pricing, free tiers, features, and value to find the right YouTube summarizer.', date: '2026-03-24' },
     { slug: 'how-to-summarize-youtube-watch-later-backlog', title: 'How to Summarize Your Entire YouTube Watch Later Backlog', description: 'Clear your YouTube Watch Later backlog without watching everything. Use AI summarization to triage hundreds of saved videos and reclaim your time.', date: '2026-03-24' },
@@ -59,9 +80,6 @@ export default function Home() {
     { slug: 'web-development-video-summaries-skip-to-what-matters', title: 'Web Development Video Summaries: Skip to What Matters', description: 'Learn how to quickly summarize web development videos using AI-powered tools. Save time and extract key insights from YouTube content.', date: '2026-03-12' },
     { slug: 'python-tutorial-video-summary-learn-faster', title: 'Python Tutorial Video Summary: Learn Faster', description: 'Learn how to quickly summarize python programming videos using AI-powered tools. Save time and extract key insights from YouTube content.', date: '2026-03-12' },
     { slug: 'how-to-summarize-machine-learning-videos-with-ai', title: 'How to Summarize Machine Learning Videos with AI', description: 'Learn how to quickly summarize machine learning videos using AI-powered tools. Save time and extract key insights from YouTube content.', date: '2026-03-12' },
-    { slug: 'stock-market-video-summary-for-investors', title: 'Stock Market Video Summaries for Investors', description: 'Summarize stock market analysis and financial commentary YouTube videos with AI. Extract key investment insights efficiently.', date: '2026-03-18' },
-    { slug: 'personal-finance-videos-get-the-tldr', title: 'Personal Finance Videos: Get the TL;DR', description: 'Summarize personal finance YouTube videos with AI. Extract actionable money tips, budgeting advice, and investment guidance without watching hour-long videos.', date: '2026-03-18' },
-    { slug: 'photography-tutorial-summaries', title: 'Photography Tutorial Summaries: Learn Techniques Fast', description: 'Summarize photography tutorial YouTube videos with AI. Extract camera settings, lighting techniques, and composition tips.', date: '2026-03-18' },
     { slug: 'gaming-guide-video-summaries', title: 'Gaming Guide Video Summaries: Level Up Faster', description: 'Summarize gaming guide and tutorial YouTube videos with AI. Get the key strategies, tips, and walkthroughs without watching hours of gaming content.', date: '2026-03-18' },
     { slug: 'youtube-summarizer-for-doctors-and-medical-professionals', title: 'YouTube Summarizer for Doctors and Medical Professionals', description: 'Medical professionals use AI YouTube summarization to stay current on clinical research, conferences, and medical education content.', date: '2026-03-18' },
     { slug: 'youtube-summarizer-for-lawyers', title: 'YouTube Summarizer for Lawyers and Legal Professionals', description: 'Lawyers use AI YouTube summarization to efficiently review legal education content, CLE recordings, and court hearing coverage.', date: '2026-03-18' },
