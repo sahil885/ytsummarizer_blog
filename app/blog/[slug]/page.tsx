@@ -2,6 +2,126 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 const posts: Record<string, { title: string; content: string; date: string; metaDescription: string }> = {
+  'content-marketing-strategy': {
+    title: 'Content Marketing Strategy',
+    metaDescription: 'Learn how to quickly summarize content marketing strategy videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    date: '2026-04-01',
+    content: `
+      <p>Want to save time watching content marketing strategy videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
+
+      <h2>Why Summarize content marketing strategy Videos?</h2>
+      <p>Content marketing strategy content on YouTube is valuable but often lengthy. Whether you're learning, researching, or staying updated, video summarization helps you:</p>
+      <ul>
+        <li>Quickly evaluate if a video has the information you need</li>
+        <li>Extract actionable insights without watching the full video</li>
+        <li>Save hours of watch time every week</li>
+        <li>Create searchable notes from video content</li>
+      </ul>
+
+      <h2>How to Summarize content marketing strategy Videos</h2>
+      <p>Modern AI tools can analyze video transcripts and generate comprehensive summaries. Here's what makes a good content marketing strategy video summary:</p>
+      <ul>
+        <li><strong>Main concepts:</strong> Key content marketing strategy topics covered in the video</li>
+        <li><strong>Important details:</strong> Specific examples, data points, or insights</li>
+        <li><strong>Actionable takeaways:</strong> What you can apply from the content</li>
+        <li><strong>Timestamps:</strong> Links to important moments in the video</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <p>When summarizing content marketing strategy videos, focus on:</p>
+      <ul>
+        <li>Understanding the core concepts before diving into details</li>
+        <li>Identifying practical applications of the information</li>
+        <li>Noting any resources or tools mentioned</li>
+        <li>Capturing specific examples that illustrate key points</li>
+      </ul>
+
+      <h2>Get Started with AI Summarization</h2>
+      <p>Ready to save time on content marketing strategy videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+
+      <p>Simply paste a content marketing strategy video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about content marketing strategy.</p>
+    `
+  },
+  'digital-photography-tips': {
+    title: 'Digital Photography Tips',
+    metaDescription: 'Learn how to quickly summarize digital photography tips videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    date: '2026-04-01',
+    content: `
+      <p>Want to save time watching digital photography tips videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
+
+      <h2>Why Summarize digital photography tips Videos?</h2>
+      <p>Digital photography tips content on YouTube is valuable but often lengthy. Whether you're learning, researching, or staying updated, video summarization helps you:</p>
+      <ul>
+        <li>Quickly evaluate if a video has the information you need</li>
+        <li>Extract actionable insights without watching the full video</li>
+        <li>Save hours of watch time every week</li>
+        <li>Create searchable notes from video content</li>
+      </ul>
+
+      <h2>How to Summarize digital photography tips Videos</h2>
+      <p>Modern AI tools can analyze video transcripts and generate comprehensive summaries. Here's what makes a good digital photography tips video summary:</p>
+      <ul>
+        <li><strong>Main concepts:</strong> Key digital photography tips topics covered in the video</li>
+        <li><strong>Important details:</strong> Specific examples, data points, or insights</li>
+        <li><strong>Actionable takeaways:</strong> What you can apply from the content</li>
+        <li><strong>Timestamps:</strong> Links to important moments in the video</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <p>When summarizing digital photography tips videos, focus on:</p>
+      <ul>
+        <li>Understanding the core concepts before diving into details</li>
+        <li>Identifying practical applications of the information</li>
+        <li>Noting any resources or tools mentioned</li>
+        <li>Capturing specific examples that illustrate key points</li>
+      </ul>
+
+      <h2>Get Started with AI Summarization</h2>
+      <p>Ready to save time on digital photography tips videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+
+      <p>Simply paste a digital photography tips video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about digital photography tips.</p>
+    `
+  },
+  'software-development-best-practices': {
+    title: 'Software Development Best Practices',
+    metaDescription: 'Learn how to quickly summarize software development best practices videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    date: '2026-04-01',
+    content: `
+      <p>Want to save time watching software development best practices videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
+
+      <h2>Why Summarize software development best practices Videos?</h2>
+      <p>Software development best practices content on YouTube is valuable but often lengthy. Whether you're learning, researching, or staying updated, video summarization helps you:</p>
+      <ul>
+        <li>Quickly evaluate if a video has the information you need</li>
+        <li>Extract actionable insights without watching the full video</li>
+        <li>Save hours of watch time every week</li>
+        <li>Create searchable notes from video content</li>
+      </ul>
+
+      <h2>How to Summarize software development best practices Videos</h2>
+      <p>Modern AI tools can analyze video transcripts and generate comprehensive summaries. Here's what makes a good software development best practices video summary:</p>
+      <ul>
+        <li><strong>Main concepts:</strong> Key software development best practices topics covered in the video</li>
+        <li><strong>Important details:</strong> Specific examples, data points, or insights</li>
+        <li><strong>Actionable takeaways:</strong> What you can apply from the content</li>
+        <li><strong>Timestamps:</strong> Links to important moments in the video</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <p>When summarizing software development best practices videos, focus on:</p>
+      <ul>
+        <li>Understanding the core concepts before diving into details</li>
+        <li>Identifying practical applications of the information</li>
+        <li>Noting any resources or tools mentioned</li>
+        <li>Capturing specific examples that illustrate key points</li>
+      </ul>
+
+      <h2>Get Started with AI Summarization</h2>
+      <p>Ready to save time on software development best practices videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+
+      <p>Simply paste a software development best practices video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about software development best practices.</p>
+    `
+  },
   'fitness-workout-video-summaries-get-results-faster': {
     title: 'Fitness Workout Video Summaries: Get Results Faster',
     metaDescription: 'Learn how to quickly summarize fitness workouts videos using AI-powered tools. Save time and extract key insights from YouTube content.',
