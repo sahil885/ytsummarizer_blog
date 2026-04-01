@@ -101,6 +101,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'best-free-youtube-summarizers-no-subscription-2026',
     'eightify-vs-ytsummarizer-which-youtube-summarizer-is-worth-it',
     'how-to-summarize-youtube-watch-later-backlog',
+    'gaming-guide-video-summaries-level-up-faster',
+    'language-learning-video-summaries-master-languages-faster',
+    'fitness-workout-video-summaries-get-results-faster',
   ]
 
   const blogPosts = posts.map((slug) => ({
