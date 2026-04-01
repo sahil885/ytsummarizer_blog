@@ -413,8 +413,8 @@ const posts: Record<string, { title: string; content: string; date: string; meta
     `
   },
   'youtube-summarizer-for-students': {
-    title: 'YouTube Summarizer for Students: Study Smarter, Not Harder',
-    metaDescription: 'Discover how students can use AI YouTube summarizers to study more efficiently, extract key points from lectures, and save hours of study time.',
+    title: 'YouTube Summarizer for Students: Get Lecture Key Points in Seconds',
+    metaDescription: 'Students use AI to summarize YouTube lectures, tutorials, and documentaries — extract key points, build revision notes, and cut study time by hours each week.',
     date: '2026-03-16',
     content: `
       <p>As a student, YouTube is one of your most powerful learning resources — but watching full-length lecture videos, tutorials, and educational content takes serious time. An <a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">AI YouTube summarizer</a> lets you extract the key points in seconds, so you can study smarter.</p>
