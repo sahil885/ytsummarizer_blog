@@ -3,6 +3,27 @@ import Link from 'next/link'
 export default function Home() {
   const posts = [
     {
+      slug: 'best-tools-for-podcast-summaries',
+      title: 'Best Tools for Podcast Summaries',
+      description: 'Learn how to quickly summarize podcast summaries videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+      date: '2026-04-01'
+    },
+
+    {
+      slug: 'convert-video-content-to-blog-posts',
+      title: 'Convert Video Content to Blog Posts',
+      description: 'Learn how to quickly summarize video to blog post videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+      date: '2026-04-01'
+    },
+
+    {
+      slug: 'how-to-summarize-tutorial-videos-quickly',
+      title: 'How to Summarize Tutorial Videos Quickly',
+      description: 'Learn how to quickly summarize tutorial summarization videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+      date: '2026-04-01'
+    },
+
+    {
       slug: 'content-marketing-strategy',
       title: 'Content Marketing Strategy',
       description: 'Learn how to quickly summarize content marketing strategy videos using AI-powered tools. Save time and extract key insights from YouTube content.',
