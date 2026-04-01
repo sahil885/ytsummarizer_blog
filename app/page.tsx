@@ -66,27 +66,6 @@ export default function Home() {
     },
 
     {
-      slug: 'undefined',
-      title: 'undefined',
-      description: 'Learn how to quickly summarize undefined videos using AI-powered tools. Save time and extract key insights from YouTube content.',
-      date: '2026-04-01'
-    },
-
-    {
-      slug: 'undefined',
-      title: 'undefined',
-      description: 'Learn how to quickly summarize undefined videos using AI-powered tools. Save time and extract key insights from YouTube content.',
-      date: '2026-04-01'
-    },
-
-    {
-      slug: 'undefined',
-      title: 'undefined',
-      description: 'Learn how to quickly summarize undefined videos using AI-powered tools. Save time and extract key insights from YouTube content.',
-      date: '2026-04-01'
-    },
-
-    {
       slug: 'fitness-workout-video-summaries-get-results-faster',
       title: 'Fitness Workout Video Summaries: Get Results Faster',
       description: 'Learn how to quickly summarize fitness workouts videos using AI-powered tools. Save time and extract key insights from YouTube content.',
