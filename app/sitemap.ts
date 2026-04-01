@@ -104,6 +104,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'gaming-guide-video-summaries-level-up-faster',
     'language-learning-video-summaries-master-languages-faster',
     'fitness-workout-video-summaries-get-results-faster',
+    'how-to-summarize-youtube-shorts-get-the-key-points-in-seconds',
+    'summarize-instagram-reels-and-tiktok-videos-instantly-with-ai',
+    'summarize-twitch-vods-and-live-streams-never-miss-important-moments',
   ]
 
   const blogPosts = posts.map((slug) => ({
