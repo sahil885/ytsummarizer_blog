@@ -3,6 +3,27 @@ import Link from 'next/link'
 export default function Home() {
   const posts = [
     {
+      slug: 'summarize-twitch-vods-and-live-streams-never-miss-important-moments',
+      title: 'Summarize Twitch VODs and Live Streams: Never Miss Important Moments',
+      description: 'Learn how to quickly summarize Twitch stream VOD summarizer videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+      date: '2026-04-01'
+    },
+
+    {
+      slug: 'summarize-instagram-reels-and-tiktok-videos-instantly-with-ai',
+      title: 'Summarize Instagram Reels and TikTok Videos Instantly with AI',
+      description: 'Learn how to quickly summarize Instagram Reels video summary videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+      date: '2026-04-01'
+    },
+
+    {
+      slug: 'how-to-summarize-youtube-shorts-get-the-key-points-in-seconds',
+      title: 'How to Summarize YouTube Shorts: Get the Key Points in Seconds',
+      description: 'Learn how to quickly summarize YouTube Shorts summarizer videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+      date: '2026-04-01'
+    },
+
+    {
       slug: 'best-tools-for-podcast-summaries',
       title: 'Best Tools for Podcast Summaries',
       description: 'Learn how to quickly summarize podcast summaries videos using AI-powered tools. Save time and extract key insights from YouTube content.',
