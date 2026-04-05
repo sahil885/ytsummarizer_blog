@@ -3,6 +3,27 @@ import Link from 'next/link'
 export default function Home() {
   const posts = [
     {
+      slug: 'youtube-video-summarizer-for-social-media-managers-save-hours-every-week',
+      title: 'YouTube Video Summarizer for Social Media Managers: Save Hours Every Week',
+      description: 'Learn how to quickly summarize YouTube video summarizer for social media managers videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+      date: '2026-04-05'
+    },
+
+    {
+      slug: 'best-content-curation-tools-summarize-videos-for-your-team-instantly',
+      title: 'Best Content Curation Tools: Summarize Videos for Your Team Instantly',
+      description: 'Learn how to quickly summarize Content curation software videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+      date: '2026-04-05'
+    },
+
+    {
+      slug: 'batch-download-and-summarize-multiple-youtube-videos-at-once',
+      title: 'Batch Download and Summarize Multiple YouTube Videos at Once',
+      description: 'Learn how to quickly summarize Video batch download and summarize videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+      date: '2026-04-05'
+    },
+
+    {
       slug: 'summarize-twitch-vods-and-live-streams-never-miss-important-moments',
       title: 'Summarize Twitch VODs and Live Streams: Never Miss Important Moments',
       description: 'Learn how to quickly summarize Twitch stream VOD summarizer videos using AI-powered tools. Save time and extract key insights from YouTube content.',
