@@ -3,6 +3,18 @@ import Link from 'next/link'
 export default function Home() {
   const posts = [
     {
+      slug: 'best-youtube-summarizer-for-gaming-videos',
+      title: 'Best YouTube Summarizer for Gaming Videos (No Subscription)',
+      description: 'Gaming YouTube videos are getting longer. Use AI to summarize game guides, reviews, and walkthroughs in seconds — no subscription, no weekly limits.',
+      date: '2026-04-07'
+    },
+    {
+      slug: 'youtube-transcript-tools-that-still-work-in-2026',
+      title: 'YouTube Transcript Tools That Still Work in 2026 (After the API Changes)',
+      description: 'Many YouTube summarizers broke in 2025-2026 after Google changed how captions are fetched. Here are the tools that still work reliably.',
+      date: '2026-04-07'
+    },
+    {
       slug: 'youtube-video-summarizer-for-social-media-managers-save-hours-every-week',
       title: 'YouTube Video Summarizer for Social Media Managers: Save Hours Every Week',
       description: 'Learn how to quickly summarize YouTube video summarizer for social media managers videos using AI-powered tools. Save time and extract key insights from YouTube content.',

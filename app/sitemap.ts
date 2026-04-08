@@ -110,6 +110,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'how-to-summarize-youtube-shorts-get-the-key-points-in-seconds',
     'summarize-instagram-reels-and-tiktok-videos-instantly-with-ai',
     'summarize-twitch-vods-and-live-streams-never-miss-important-moments',
+    'youtube-transcript-tools-that-still-work-in-2026',
+    'best-youtube-summarizer-for-gaming-videos',
   ]
 
   const blogPosts = posts.map((slug) => ({

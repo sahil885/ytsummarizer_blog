@@ -3945,6 +3945,107 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <p>Start clearing your backlog: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — quick signup, then paste and go.</p>
     `
+  },
+  'youtube-transcript-tools-that-still-work-in-2026': {
+    title: 'YouTube Transcript Tools That Still Work in 2026 (After the API Changes)',
+    metaDescription: 'Many YouTube summarizers broke in 2025-2026 after Google changed how captions are fetched. Here are the tools that still work reliably — and why.',
+    date: '2026-04-07',
+    content: `
+      <p>If your YouTube summarizer stopped working in 2025 or early 2026, you're not alone. Google made changes to how YouTube captions and transcripts are fetched, and a wave of browser extensions, ChatGPT plugins, and third-party tools broke as a result. This guide covers what changed, which tools still work, and what to look for when choosing one.</p>
+
+      <h2>What Changed With YouTube Transcripts in 2025-2026</h2>
+      <p>YouTube has progressively tightened access to its caption and transcript data. Several changes rolled out across 2025 into 2026:</p>
+      <ul>
+        <li><strong>Caption endpoint changes:</strong> YouTube modified the way auto-generated captions are served, breaking tools that relied on scraping the old URL structure</li>
+        <li><strong>Rate limiting:</strong> Aggressive rate limits were applied to transcript fetching, causing intermittent failures for high-volume tools</li>
+        <li><strong>Extension restrictions:</strong> Browser extensions accessing YouTube's internal APIs started hitting permission walls, particularly after Chrome's Manifest V3 transition</li>
+      </ul>
+      <p>The result: many tools that worked in 2023-2024 now fail silently, return empty summaries, or produce errors like "transcript unavailable" even when captions exist.</p>
+
+      <h2>How to Tell If a Tool Is Still Working</h2>
+      <p>Before committing to any summarizer, test it with a recent YouTube video that has auto-generated captions. Signs a tool may be broken:</p>
+      <ul>
+        <li>Returns a summary that is clearly just the video title or description — not actual transcript content</li>
+        <li>Errors out on any video longer than 10 minutes</li>
+        <li>Works on old videos but fails on videos published after mid-2025</li>
+        <li>Requires you to manually copy and paste the transcript yourself</li>
+      </ul>
+
+      <h2>What Makes a Summarizer Resilient to API Changes</h2>
+      <p>Tools that adapt quickly to YouTube's changes tend to share a few characteristics:</p>
+      <ul>
+        <li><strong>Actively maintained:</strong> Regular updates and a developer who monitors for breakage</li>
+        <li><strong>Web-based, not extension-based:</strong> Web apps are less constrained by browser permission changes than extensions</li>
+        <li><strong>Multiple fallback methods:</strong> Tools that can fall back to alternative caption sources when one method fails</li>
+        <li><strong>No reliance on unofficial APIs:</strong> Tools built on top of the official YouTube Data API or robust scraping methods hold up better long-term</li>
+      </ul>
+
+      <h2>YT Summarizer — Still Working in 2026</h2>
+      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> is a web-based tool that has continued to work through the 2025-2026 changes. Because it runs as a web app rather than a browser extension, it isn't affected by the Chrome Manifest V3 restrictions that killed many extension-based summarizers. Paste any YouTube URL with captions enabled and you get a structured summary — no extension, no plugin, no copy-paste required.</p>
+
+      <p>It also doesn't carry hidden prompts or add-ons that some extension-based competitors have been criticised for. What you paste is what gets summarised.</p>
+
+      <h2>What to Do If Your Current Tool Broke</h2>
+      <ol>
+        <li>Test it on a recent video with known captions — if it fails, the tool is likely broken</li>
+        <li>Check the tool's GitHub or changelog for recent updates — if the last commit was 2024 or earlier, it may be abandoned</li>
+        <li>Switch to a web-based tool that doesn't depend on browser extension permissions</li>
+      </ol>
+
+      <p>For a full breakdown of your options, see our <a href="/blog/best-free-youtube-summarizer-tool" style="color: #ff0055; font-weight: 600;">best free YouTube summarizer tools</a> guide, or the <a href="/blog/eightify-vs-ytsummarizer-which-youtube-summarizer-is-worth-it" style="color: #ff0055; font-weight: 600;">Eightify vs YT Summarizer comparison</a> for a head-to-head on the two most popular options right now.</p>
+
+      <p>If you need something that reliably works today: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">try YT Summarizer</a> — quick signup, paste any URL, get your summary.</p>
+    `
+  },
+  'best-youtube-summarizer-for-gaming-videos': {
+    title: 'Best YouTube Summarizer for Gaming Videos (No Subscription)',
+    metaDescription: 'Gaming YouTube videos are getting longer. Use AI to summarize game guides, reviews, and walkthroughs in seconds — no subscription, no weekly limits.',
+    date: '2026-04-07',
+    content: `
+      <p>Gaming YouTube videos have a length problem. A single "complete guide" video can run 2-4 hours. Reviews clock in at 30-60 minutes. Even patch notes breakdowns stretch to 20 minutes. If you're trying to stay across multiple games, that's dozens of hours of content per week — most of it information you already know, padded with commentary and filler.</p>
+
+      <p>AI summarization fixes this. Paste the URL, get the key points in 30 seconds, decide if the full video is worth your time.</p>
+
+      <h2>Why Gaming Videos Are a Good Use Case for AI Summarization</h2>
+      <p>Gaming content maps well to summarization because it's usually structured around specific, extractable information:</p>
+      <ul>
+        <li><strong>Guides and walkthroughs:</strong> You want the steps, not the commentary between them</li>
+        <li><strong>Game reviews:</strong> You want the verdict and key points, not a full 45-minute playthrough</li>
+        <li><strong>Patch notes breakdowns:</strong> You want the actual changes, not a streamer's 20-minute reaction</li>
+        <li><strong>Tier lists and rankings:</strong> You want the final rankings and reasoning, not the deliberation process</li>
+        <li><strong>Lore explanations:</strong> You want the lore summary, not a slow-paced narrative read-through</li>
+      </ul>
+
+      <h2>What to Look for in a Gaming Video Summarizer</h2>
+      <p>Not all summarizers handle gaming content equally well. Look for:</p>
+      <ul>
+        <li><strong>Long video support:</strong> Gaming guides regularly exceed 1-2 hours — the tool needs to handle this without cutting off</li>
+        <li><strong>Structured output:</strong> Bullet points and sections are more useful than a wall of text when you're looking for specific information</li>
+        <li><strong>No weekly caps:</strong> If you're summarising multiple videos per session, a tool that limits you to 3-5 summaries per week will frustrate you fast</li>
+        <li><strong>No subscription:</strong> Most gaming use is casual and bursty — a monthly subscription is poor value if you only need it during a new game launch</li>
+      </ul>
+
+      <h2>YT Summarizer for Gaming Content</h2>
+      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> works well for gaming videos because it handles long-form content and outputs structured bullet points — which is exactly what you need when scanning a guide for a specific mechanic or checking if a review covers the points you care about.</p>
+
+      <p>It offers a free tier with no weekly summary limit, and lifetime access for a one-time $29 payment. No subscription. If you're binging content during a game launch week, you won't hit a wall on day three.</p>
+
+      <h2>Practical Gaming Use Cases</h2>
+      <ul>
+        <li><strong>Before buying:</strong> Summarise 3-4 reviews to get the consensus without watching them all</li>
+        <li><strong>During a playthrough:</strong> Paste a guide URL and get the key steps without sitting through a full walkthrough</li>
+        <li><strong>Patch updates:</strong> Summarise the patch notes breakdown video to get the actual changes in 30 seconds</li>
+        <li><strong>Lore catch-up:</strong> Summarise lore explanation videos before a sequel release</li>
+        <li><strong>Competitive prep:</strong> Summarise strategy videos and tier lists to absorb meta changes quickly</li>
+      </ul>
+
+      <h2>Other Video Summarizers Worth Knowing</h2>
+      <p>The main alternatives are Eightify (browser extension, 3 free summaries per week, then subscription) and NotebookLM (Google, better for research than quick gaming use). For a full comparison see <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: #ff0055; font-weight: 600;">best free YouTube summarizers with no subscription</a>.</p>
+
+      <p>For other long-form content use cases, see how people use summarization for <a href="/blog/fitness-workout-video-summaries-get-results-faster" style="color: #ff0055; font-weight: 600;">fitness videos</a> and <a href="/blog/youtube-video-too-long-how-to-get-key-points" style="color: #ff0055; font-weight: 600;">any video that's too long</a>.</p>
+
+      <p>Ready to stop watching 2-hour guides for 10 minutes of useful information? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — sign up, paste a gaming video URL, and get the key points in seconds.</p>
+    `
   }
 }
 
