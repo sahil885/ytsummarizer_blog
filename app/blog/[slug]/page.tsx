@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 const posts: Record<string, { title: string; content: string; date: string; metaDescription: string }> = {
   'youtube-video-summarizer-for-social-media-managers-save-hours-every-week': {
     title: 'YouTube Video Summarizer for Social Media Managers: Save Hours Every Week',
-    metaDescription: 'Learn how to quickly summarize YouTube video summarizer for social media managers videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    metaDescription: 'Social media managers use AI YouTube summarizers to monitor competitor content, research trends, and create repurposed clips — without watching hours of video every day.',
     date: '2026-04-05',
     content: `
       <p>Want to save time watching YouTube video summarizer for social media managers videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
@@ -44,7 +44,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'best-content-curation-tools-summarize-videos-for-your-team-instantly': {
     title: 'Best Content Curation Tools: Summarize Videos for Your Team Instantly',
-    metaDescription: 'Learn how to quickly summarize Content curation software videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    metaDescription: 'The best content curation tools in 2026 include YouTube summarization. Share key video insights with your team instantly — without sending long video links everyone has to watch.',
     date: '2026-04-05',
     content: `
       <p>Want to save time watching Content curation software videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
@@ -84,7 +84,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'batch-download-and-summarize-multiple-youtube-videos-at-once': {
     title: 'Batch Download and Summarize Multiple YouTube Videos at Once',
-    metaDescription: 'Learn how to quickly summarize Video batch download and summarize videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    metaDescription: 'Want to summarize multiple YouTube videos at once? AI tools can batch process entire playlists and channels, extracting key points from each video in seconds.',
     date: '2026-04-05',
     content: `
       <p>Want to save time watching Video batch download and summarize videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
@@ -124,7 +124,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'summarize-twitch-vods-and-live-streams-never-miss-important-moments': {
     title: 'Summarize Twitch VODs and Live Streams: Never Miss Important Moments',
-    metaDescription: 'Learn how to quickly summarize Twitch stream VOD summarizer videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    metaDescription: 'Missed a live stream? AI summarization tools can process Twitch VODs and stream recordings to extract highlights, key moments, and timestamps — no scrubbing required.',
     date: '2026-04-01',
     content: `
       <p>Want to save time watching Twitch stream VOD summarizer videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
@@ -164,7 +164,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'summarize-instagram-reels-and-tiktok-videos-instantly-with-ai': {
     title: 'Summarize Instagram Reels and TikTok Videos Instantly with AI',
-    metaDescription: 'Learn how to quickly summarize Instagram Reels video summary videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    metaDescription: 'AI tools can now summarize short-form video content from Instagram Reels and TikTok, extracting trends, product mentions, and key talking points in seconds.',
     date: '2026-04-01',
     content: `
       <p>Want to save time watching Instagram Reels video summary videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
@@ -204,7 +204,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'how-to-summarize-youtube-shorts-get-the-key-points-in-seconds': {
     title: 'How to Summarize YouTube Shorts: Get the Key Points in Seconds',
-    metaDescription: 'Learn how to quickly summarize YouTube Shorts summarizer videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    metaDescription: 'YouTube Shorts pack information into seconds of video. AI summarization extracts the key message, tips, or product recommendations from any Short instantly.',
     date: '2026-04-01',
     content: `
       <p>Want to save time watching YouTube Shorts summarizer videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
@@ -244,7 +244,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'best-tools-for-podcast-summaries': {
     title: 'Best Tools for Podcast Summaries',
-    metaDescription: 'Learn how to quickly summarize podcast summaries videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    metaDescription: 'Compare the best AI tools for summarizing podcasts in 2026. Get bullet points, timestamps, and key quotes from any podcast episode without listening to the full recording.',
     date: '2026-04-01',
     content: `
       <p>Want to save time watching podcast summaries videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
@@ -284,7 +284,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'convert-video-content-to-blog-posts': {
     title: 'Convert Video Content to Blog Posts',
-    metaDescription: 'Learn how to quickly summarize video to blog post videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    metaDescription: 'Turn any YouTube video into a blog post using AI. Extract the script, restructure it into sections, and publish SEO content from your existing video library — no writing from scratch.',
     date: '2026-04-01',
     content: `
       <p>Want to save time watching video to blog post videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
@@ -324,7 +324,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'how-to-summarize-tutorial-videos-quickly': {
     title: 'How to Summarize Tutorial Videos Quickly',
-    metaDescription: 'Learn how to quickly summarize tutorial summarization videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    metaDescription: 'Tutorial videos pack hours of instruction into dense content. AI summarization helps you extract the key steps, commands, and techniques from any tutorial in seconds.',
     date: '2026-04-01',
     content: `
       <p>Want to save time watching tutorial summarization videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
@@ -484,7 +484,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'fitness-workout-video-summaries-get-results-faster': {
     title: 'Fitness Workout Video Summaries: Get Results Faster',
-    metaDescription: 'Learn how to quickly summarize fitness workouts videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    metaDescription: 'Get the full workout plan from any YouTube fitness video without watching start to finish. AI extracts exercises, sets, reps, and form cues from training content instantly.',
     date: '2026-04-01',
     content: `
       <p>Want to save time watching fitness workouts videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
@@ -524,7 +524,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'language-learning-video-summaries-master-languages-faster': {
     title: 'Language Learning Video Summaries: Master Languages Faster',
-    metaDescription: 'Learn how to quickly summarize language learning videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    metaDescription: 'Language learners use AI to summarize YouTube lessons, extract vocabulary, and review grammar explanations — cutting hours of rewatch time and speeding up comprehension.',
     date: '2026-04-01',
     content: `
       <p>Want to save time watching language learning videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
@@ -564,7 +564,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'gaming-guide-video-summaries-level-up-faster': {
     title: 'Gaming Guide Video Summaries: Level Up Faster',
-    metaDescription: 'Learn how to quickly summarize gaming guides videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    metaDescription: 'Get key strategies, item builds, and mechanics from gaming guide videos without watching hours of gameplay. AI summarizes walkthroughs, tier lists, and patch notes fast.',
     date: '2026-04-01',
     content: `
       <p>Want to save time watching gaming guides videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
@@ -694,7 +694,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'fitness-video-summaries-get-the-workout-plan-faster': {
     title: 'Fitness Video Summaries: Get the Workout Plan Faster',
-    metaDescription: 'Learn how to quickly summarize fitness training videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    metaDescription: 'AI summarizes fitness YouTube videos to extract the workout plan, rep schemes, and coaching cues — so you can head straight to the gym without rewinding the video.',
     date: '2026-03-15',
     content: `
       <p>Want to save time watching fitness training videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
@@ -734,7 +734,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'productivity-hacks-summarize-youtube-videos-fast': {
     title: 'Productivity Hacks: Summarize YouTube Videos Fast',
-    metaDescription: 'Learn how to quickly summarize productivity tips videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    metaDescription: 'The biggest productivity hack for YouTube in 2026: AI summarization. Get the core insight from any productivity video — frameworks, tools, habits — in under 30 seconds.',
     date: '2026-03-15',
     content: `
       <p>Want to save time watching productivity tips videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
@@ -774,7 +774,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'digital-marketing-video-summary-tips': {
     title: 'Digital Marketing Video Summary Tips',
-    metaDescription: 'Learn how to quickly summarize digital marketing videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    metaDescription: 'Summarize digital marketing YouTube videos with AI. Extract campaign strategies, platform tips, and conversion tactics from marketing tutorials without watching hours of content.',
     date: '2026-03-15',
     content: `
       <p>Want to save time watching digital marketing videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
@@ -814,7 +814,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'crypto-explained-video-summaries-made-simple': {
     title: 'Crypto Explained: Video Summaries Made Simple',
-    metaDescription: 'Learn how to quickly summarize cryptocurrency videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    metaDescription: 'Crypto YouTube is full of complex explainers. AI summarization distills token mechanics, market movements, and protocol updates into plain-English bullet points — fast.',
     date: '2026-03-12',
     content: `
       <p>Want to save time watching cryptocurrency videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
@@ -854,7 +854,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'data-science-video-summary-guide': {
     title: 'Data Science Video Summary Guide',
-    metaDescription: 'Learn how to quickly summarize data science videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    metaDescription: 'Data science tutorial videos are long and dense. AI summarization helps you extract key models, code patterns, and analytical techniques from any DS YouTube video.',
     date: '2026-03-12',
     content: `
       <p>Want to save time watching data science videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
@@ -894,7 +894,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'web-development-video-summaries-skip-to-what-matters': {
     title: 'Web Development Video Summaries: Skip to What Matters',
-    metaDescription: 'Learn how to quickly summarize web development videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    metaDescription: 'Skip the intros and filler in web dev tutorial videos. AI summarization extracts the actual code patterns, library decisions, and architecture insights from development content.',
     date: '2026-03-12',
     content: `
       <p>Want to save time watching web development videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
@@ -934,7 +934,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'python-tutorial-video-summary-learn-faster': {
     title: 'Python Tutorial Video Summary: Learn Faster',
-    metaDescription: 'Learn how to quickly summarize python programming videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    metaDescription: 'Python tutorial videos can run for hours. AI summarization extracts the key code snippets, function patterns, and concepts from any Python tutorial so you can learn faster.',
     date: '2026-03-12',
     content: `
       <p>Want to save time watching python programming videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
@@ -974,7 +974,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'how-to-summarize-machine-learning-videos-with-ai': {
     title: 'How to Summarize Machine Learning Videos with AI',
-    metaDescription: 'Learn how to quickly summarize machine learning videos using AI-powered tools. Save time and extract key insights from YouTube content.',
+    metaDescription: 'Machine learning YouTube content is dense and fast-moving. AI summarization helps you extract model architectures, training approaches, and benchmark results from ML videos efficiently.',
     date: '2026-03-12',
     content: `
       <p>Want to save time watching machine learning videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
@@ -4046,6 +4046,122 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <p>Ready to stop watching 2-hour guides for 10 minutes of useful information? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — sign up, paste a gaming video URL, and get the key points in seconds.</p>
     `
+  },
+  'eightify-alternative-best-youtube-summarizers-without-subscription': {
+    title: 'Best Eightify Alternatives in 2026 (No Subscription Required)',
+    metaDescription: 'Looking for an Eightify alternative? Compare the best YouTube summarizers that offer lifetime deals or generous free tiers — no weekly limits, no recurring subscription fees.',
+    date: '2026-04-13',
+    content: `
+      <p>Eightify is the most well-known YouTube summarizer, but it has a significant limitation: its free plan caps you at 3 summaries per week. After that, you're looking at a monthly subscription. For people who watch a lot of YouTube — students, researchers, professionals — that limit gets hit fast.</p>
+
+      <p>This guide covers the best Eightify alternatives in 2026, with a focus on tools that either offer a <strong>lifetime deal</strong> or a genuinely usable free tier.</p>
+
+      <h2>Why People Look for Eightify Alternatives</h2>
+      <ul>
+        <li><strong>The 3 summaries/week free limit</strong> is too restrictive for regular use</li>
+        <li><strong>Monthly subscription fatigue</strong> — another recurring charge on top of everything else</li>
+        <li><strong>Feature gaps</strong> — Eightify is solid for quick summaries but limited on export, Q&amp;A, and multilingual support</li>
+        <li><strong>Extension-only format</strong> — Eightify requires installing a Chrome extension; some users prefer a web app</li>
+      </ul>
+
+      <h2>YT Summarizer — Best Lifetime Deal Option</h2>
+      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> is a web-based YouTube summarizer with a <strong>one-time $29 USD lifetime deal</strong>. No monthly subscription. Pay once, use it forever.</p>
+
+      <p><strong>What you get:</strong></p>
+      <ul>
+        <li>Unlimited AI summaries after a one-time payment</li>
+        <li>Bullet-point summaries with key takeaways</li>
+        <li>Works on any YouTube video with captions</li>
+        <li>No Chrome extension required — paste any URL in the web app</li>
+        <li>Multilingual support</li>
+      </ul>
+
+      <p><strong>vs Eightify:</strong> Eightify charges a monthly subscription after 3 free summaries. YT Summarizer's $29 lifetime deal pays for itself in 1–2 months compared to a subscription. For heavy users, the math is obvious.</p>
+
+      <h2>NoteGPT — Best for Research and Note-Taking</h2>
+      <p>NoteGPT offers YouTube summarization alongside note-taking features. It has a free tier with reasonable limits and is popular with students. The interface is more complex than Eightify but has more output options including mind maps and flashcards.</p>
+
+      <p><strong>Best for:</strong> Students, researchers, anyone who wants to integrate summaries into a note system.</p>
+      <p><strong>Limitation:</strong> Free tier limits apply; premium is a monthly subscription.</p>
+
+      <h2>Glasp — Best for Social Learning</h2>
+      <p>Glasp is a highlighting and summarization tool that also supports YouTube. Its key differentiator is community — you can see what others have highlighted from the same video. Good for learning from others but less useful if you want clean private summaries.</p>
+
+      <p><strong>Best for:</strong> People who want to learn alongside a community, not solo research.</p>
+
+      <h2>NotebookLM (Google) — Best for Deep Research</h2>
+      <p>Google's NotebookLM can process YouTube videos as sources and answer questions about them. It's more powerful than a simple summarizer — you can ask nuanced questions and it grounds answers in the video content. However, it's slower and designed for deep research, not quick summaries.</p>
+
+      <p><strong>Best for:</strong> Researchers and academics who need to interrogate video content, not people who want a fast TL;DR.</p>
+      <p><strong>Limitation:</strong> Not built for quick, casual summarization. Overkill for most use cases.</p>
+
+      <h2>Summarize.tech — Best Free No-Login Option</h2>
+      <p>Summarize.tech offers free YouTube summaries without requiring an account. Quality is lower than Eightify or YT Summarizer, but it works for quick checks on public videos.</p>
+
+      <p><strong>Best for:</strong> One-off summaries when you don't want to sign up for anything.</p>
+      <p><strong>Limitation:</strong> No account means no history, no export, limited quality.</p>
+
+      <h2>Comparison Table</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f5f5f5;">
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Tool</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Pricing</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Free Limit</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$29 one-time</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free signup, then lifetime access</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Heavy users who hate subscriptions</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Eightify</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription (~$8–10/mo)</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">3 summaries/week</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Casual users, Chrome extension fans</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">NoteGPT</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Freemium + subscription</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Limited free tier</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Students, note-takers</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Glasp</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Generous free tier</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Community learners</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">NotebookLM</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free (Google)</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Generous</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Deep research</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Summarize.tech</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">No account needed</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">One-off no-signup use</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>The Verdict: Best Eightify Alternative for Most People</h2>
+      <p>If you summarize more than 3 YouTube videos a week — and most people who find this article do — Eightify's free tier isn't enough. The options are:</p>
+      <ul>
+        <li><strong>Pay monthly</strong> for Eightify or NoteGPT</li>
+        <li><strong>Pay once</strong> with YT Summarizer's $29 lifetime deal</li>
+        <li><strong>Use a free tool</strong> with lower quality or no history</li>
+      </ul>
+      <p>For anyone planning to use a YouTube summarizer long-term, the lifetime deal is the obvious call. Two months of a subscription costs more than a lifetime of YT Summarizer.</p>
+
+      <p>See also: <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: #ff0055; font-weight: 600;">best free YouTube summarizers with no subscription</a> and <a href="/blog/eightify-vs-ytsummarizer-which-youtube-summarizer-is-worth-it" style="color: #ff0055; font-weight: 600;">Eightify vs YT Summarizer head-to-head comparison</a>.</p>
+    `
   }
 }
 
@@ -4053,15 +4169,20 @@ export async function generateStaticParams() {
   return Object.keys(posts).map((slug) => ({ slug }))
 }
 
+const OFF_TOPIC_SLUGS = ['digital-photography-tips', 'software-development-best-practices', 'content-marketing-strategy']
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const post = posts[slug]
 
   if (!post) return {}
 
+  const isOffTopic = OFF_TOPIC_SLUGS.includes(slug)
+
   return {
     title: `${post.title} | YT Summarizer Blog`,
     description: post.metaDescription,
+    ...(isOffTopic ? { robots: { index: false, follow: false } } : {}),
   }
 }
 
@@ -4073,8 +4194,35 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     notFound()
   }
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.metaDescription,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      '@type': 'Organization',
+      name: 'YT Summarizer Team',
+      url: 'https://ytsummarizer.app',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'YT Summarizer',
+      url: 'https://ytsummarizer.app',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://ytsummarizer-blog.vercel.app/blog/${slug}`,
+    },
+  }
+
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem', fontFamily: 'system-ui, sans-serif' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <Link href="/" style={{ color: '#ff0055', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 600 }}>
         ← Back to Blog
       </Link>
@@ -4084,9 +4232,13 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem', color: '#333', lineHeight: 1.2 }}>
             {post.title}
           </h1>
-          <time style={{ fontSize: '0.875rem', color: '#999' }}>
-            {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-          </time>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+            <time style={{ fontSize: '0.875rem', color: '#999' }}>
+              {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </time>
+            <span style={{ fontSize: '0.875rem', color: '#999' }}>·</span>
+            <span style={{ fontSize: '0.875rem', color: '#666' }}>By YT Summarizer Team</span>
+          </div>
         </header>
 
         <div

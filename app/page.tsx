@@ -3,6 +3,12 @@ import Link from 'next/link'
 export default function Home() {
   const posts = [
     {
+      slug: 'eightify-alternative-best-youtube-summarizers-without-subscription',
+      title: 'Best Eightify Alternatives in 2026 (No Subscription Required)',
+      description: 'Looking for an Eightify alternative? Compare the best YouTube summarizers that offer lifetime deals or generous free tiers — no weekly limits, no recurring subscription fees.',
+      date: '2026-04-13'
+    },
+    {
       slug: 'best-youtube-summarizer-for-gaming-videos',
       title: 'Best YouTube Summarizer for Gaming Videos (No Subscription)',
       description: 'Gaming YouTube videos are getting longer. Use AI to summarize game guides, reviews, and walkthroughs in seconds — no subscription, no weekly limits.',
@@ -238,12 +244,21 @@ export default function Home() {
 
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem', fontFamily: 'system-ui, sans-serif' }}>
-      <header style={{ marginBottom: '3rem' }}>
-        <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem', color: '#ff0055' }}>
-          YT Summarizer Blog
+      <header style={{ marginBottom: '2rem' }}>
+        <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#ff0055' }}>
+          YouTube Summarizer Tips, Guides &amp; Comparisons
         </h1>
-        <p style={{ fontSize: '1.125rem', color: '#666' }}>
-          Tips, guides, and insights on YouTube video summarization
+        <p style={{ fontSize: '1.125rem', color: '#444', lineHeight: 1.7, marginBottom: '1.5rem', maxWidth: '680px' }}>
+          Your guide to AI-powered YouTube video summarization. We cover the best free and paid tools,
+          compare top options like Eightify and NoteGPT, and show you how students, professionals,
+          and content creators use AI to extract key insights from YouTube — without watching every minute.
+          Whether you need a{' '}
+          <a href="/blog/best-free-youtube-summarizer-tool" style={{ color: '#ff0055' }}>free summarizer</a>,
+          a{' '}
+          <a href="/blog/youtube-summarizer-for-students" style={{ color: '#ff0055' }}>tool for studying</a>,
+          or a{' '}
+          <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style={{ color: '#ff0055' }}>no-subscription option</a>,
+          you'll find honest, up-to-date guidance here.
         </p>
       </header>
 

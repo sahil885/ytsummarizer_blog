@@ -2,12 +2,12 @@ import type { Metadata } from 'next'
 import { GoogleSiteVerification } from './google-site-verification'
 
 export const metadata: Metadata = {
-  title: 'YT Summarizer Blog | YouTube Summarization Tips & Guides',
-  description: 'Learn how to get more from YouTube videos with AI-powered summarization. Tips, guides, and insights for students, professionals, and content creators.',
+  title: 'YouTube Summarizer Blog — Tools, Guides & Comparisons 2026',
+  description: 'Compare the best YouTube summarizer tools, get step-by-step guides, and find free AI options with no subscription. Covers Eightify alternatives, student use cases, and more.',
   metadataBase: new URL('https://ytsummarizer-blog.vercel.app'),
   openGraph: {
-    title: 'YT Summarizer Blog | YouTube Summarization Tips & Guides',
-    description: 'Learn how to get more from YouTube videos with AI-powered summarization.',
+    title: 'YouTube Summarizer Blog — Tools, Guides & Comparisons 2026',
+    description: 'Compare the best YouTube summarizer tools, get step-by-step guides, and find free AI options with no subscription.',
     url: 'https://ytsummarizer-blog.vercel.app',
     siteName: 'YT Summarizer Blog',
     locale: 'en_US',
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'YT Summarizer Blog',
-    description: 'Learn how to get more from YouTube videos with AI-powered summarization.',
+    title: 'YouTube Summarizer Blog — Tools, Guides & Comparisons 2026',
+    description: 'Compare the best YouTube summarizer tools, get step-by-step guides, and find free AI options with no subscription.',
   },
   robots: {
     index: true,
@@ -31,6 +31,30 @@ export const metadata: Metadata = {
   },
 }
 
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'YT Summarizer',
+  url: 'https://ytsummarizer.app',
+  sameAs: [
+    'https://www.tiktok.com/@ytsummarizer.app',
+    'https://www.instagram.com/ytsummarizerapp/',
+  ],
+}
+
+const blogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'YT Summarizer Blog',
+  url: 'https://ytsummarizer-blog.vercel.app',
+  description: 'Guides, comparisons, and tips for AI-powered YouTube video summarization.',
+  publisher: {
+    '@type': 'Organization',
+    name: 'YT Summarizer',
+    url: 'https://ytsummarizer.app',
+  },
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -40,6 +64,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <GoogleSiteVerification />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-KJ67B5SBJJ"></script>
         <script
           dangerouslySetInnerHTML={{
