@@ -2,6 +2,33 @@ import { MetadataRoute } from 'next'
 
 export const dynamic = 'force-static'
 
+// Keep in sync with NOINDEX_SLUGS in app/blog/[slug]/page.tsx
+const NOINDEX_SLUGS = new Set([
+  'digital-photography-tips',
+  'software-development-best-practices',
+  'content-marketing-strategy',
+  'youtube-video-summarizer-for-social-media-managers-save-hours-every-week',
+  'best-content-curation-tools-summarize-videos-for-your-team-instantly',
+  'batch-download-and-summarize-multiple-youtube-videos-at-once',
+  'summarize-twitch-vods-and-live-streams-never-miss-important-moments',
+  'summarize-instagram-reels-and-tiktok-videos-instantly-with-ai',
+  'how-to-summarize-youtube-shorts-get-the-key-points-in-seconds',
+  'best-tools-for-podcast-summaries',
+  'convert-video-content-to-blog-posts',
+  'how-to-summarize-tutorial-videos-quickly',
+  'fitness-workout-video-summaries-get-results-faster',
+  'language-learning-video-summaries-master-languages-faster',
+  'gaming-guide-video-summaries-level-up-faster',
+  'fitness-video-summaries-get-the-workout-plan-faster',
+  'productivity-hacks-summarize-youtube-videos-fast',
+  'digital-marketing-video-summary-tips',
+  'crypto-explained-video-summaries-made-simple',
+  'data-science-video-summary-guide',
+  'web-development-video-summaries-skip-to-what-matters',
+  'python-tutorial-video-summary-learn-faster',
+  'how-to-summarize-machine-learning-videos-with-ai',
+])
+
 const postDates: Record<string, string> = {
   'how-to-summarize-youtube-videos': '2026-03-12',
   'how-to-summarize-machine-learning-videos-with-ai': '2026-03-12',
@@ -122,7 +149,7 @@ const postDates: Record<string, string> = {
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://ytsummarizer-blog.vercel.app'
 
-  const posts = Object.keys(postDates)
+  const posts = Object.keys(postDates).filter((slug) => !NOINDEX_SLUGS.has(slug))
 
   const blogPosts = posts.map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,

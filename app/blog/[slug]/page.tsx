@@ -4169,7 +4169,35 @@ export async function generateStaticParams() {
   return Object.keys(posts).map((slug) => ({ slug }))
 }
 
-const OFF_TOPIC_SLUGS = ['digital-photography-tips', 'software-development-best-practices', 'content-marketing-strategy']
+// These posts have thin/template content and should not be indexed by Google
+// until they are rewritten with genuine, original content
+const NOINDEX_SLUGS = new Set([
+  // Off-topic (not YouTube-related)
+  'digital-photography-tips',
+  'software-development-best-practices',
+  'content-marketing-strategy',
+  // Thin template content — "Want to save time watching X videos on YouTube?" pattern
+  'youtube-video-summarizer-for-social-media-managers-save-hours-every-week',
+  'best-content-curation-tools-summarize-videos-for-your-team-instantly',
+  'batch-download-and-summarize-multiple-youtube-videos-at-once',
+  'summarize-twitch-vods-and-live-streams-never-miss-important-moments',
+  'summarize-instagram-reels-and-tiktok-videos-instantly-with-ai',
+  'how-to-summarize-youtube-shorts-get-the-key-points-in-seconds',
+  'best-tools-for-podcast-summaries',
+  'convert-video-content-to-blog-posts',
+  'how-to-summarize-tutorial-videos-quickly',
+  'fitness-workout-video-summaries-get-results-faster',
+  'language-learning-video-summaries-master-languages-faster',
+  'gaming-guide-video-summaries-level-up-faster',
+  'fitness-video-summaries-get-the-workout-plan-faster',
+  'productivity-hacks-summarize-youtube-videos-fast',
+  'digital-marketing-video-summary-tips',
+  'crypto-explained-video-summaries-made-simple',
+  'data-science-video-summary-guide',
+  'web-development-video-summaries-skip-to-what-matters',
+  'python-tutorial-video-summary-learn-faster',
+  'how-to-summarize-machine-learning-videos-with-ai',
+])
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
@@ -4177,12 +4205,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   if (!post) return {}
 
-  const isOffTopic = OFF_TOPIC_SLUGS.includes(slug)
-
   return {
     title: `${post.title} | YT Summarizer Blog`,
     description: post.metaDescription,
-    ...(isOffTopic ? { robots: { index: false, follow: false } } : {}),
+    ...(NOINDEX_SLUGS.has(slug) ? { robots: { index: false, follow: false } } : {}),
   }
 }
 
