@@ -2,6 +2,252 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 const posts: Record<string, { title: string; content: string; date: string; metaDescription: string }> = {
+  'can-chatgpt-summarize-youtube-videos': {
+    title: 'Can ChatGPT Summarize YouTube Videos? Here\'s What Actually Works in 2026',
+    metaDescription: 'Can ChatGPT summarize YouTube videos? Yes — but it\'s not the easiest method. Compare ChatGPT, Gemini, and purpose-built tools like YT Summarizer to find what actually works.',
+    date: '2026-04-15',
+    content: `
+      <p>The short answer: yes, ChatGPT can summarize YouTube videos — but it takes more steps than most people expect. And for most use cases, a dedicated YouTube summarizer is faster and more reliable.</p>
+
+      <p>Here's an honest breakdown of every method, including what works, what breaks, and when to use which tool.</p>
+
+      <h2>Method 1: ChatGPT via the YouTube Transcript (Manual)</h2>
+      <p>ChatGPT doesn't have direct YouTube access in most configurations. The manual approach:</p>
+      <ol>
+        <li>Open the video on YouTube and click the three-dot menu below the title</li>
+        <li>Select <strong>"Show transcript"</strong> — this only appears if captions are enabled</li>
+        <li>Copy the full transcript text</li>
+        <li>Paste it into ChatGPT with a prompt like: <em>"Summarize this transcript in 5 bullet points"</em></li>
+      </ol>
+      <p><strong>Works:</strong> For most popular videos with captions. GPT-4 handles long transcripts well.</p>
+      <p><strong>Breaks:</strong> If the video has no captions, or only auto-generated captions in a language ChatGPT struggles with. Also breaks for long videos where the transcript exceeds ChatGPT's context window.</p>
+
+      <h2>Method 2: ChatGPT with a Browser Extension</h2>
+      <p>Several Chrome extensions (like "YouTube Summary with ChatGPT & Claude") auto-inject a summary button into the YouTube interface. These extensions grab the transcript and send it to the OpenAI API on your behalf.</p>
+      <p><strong>Works:</strong> Reasonably well for short-to-medium videos.</p>
+      <p><strong>Breaks:</strong> Extensions require API keys or subscriptions, they break when YouTube updates its DOM, and they add a meaningful step to your workflow. Many users report they stop working after YouTube changes.</p>
+
+      <h2>Method 3: Gemini (Google's AI — Best Native Option)</h2>
+      <p>Google's Gemini has a meaningful advantage here: it's made by the same company as YouTube. In Gemini Advanced (paid), you can paste a YouTube URL directly and ask for a summary.</p>
+      <p><strong>Works:</strong> Well for most videos — Gemini can often access transcripts natively without you copying anything.</p>
+      <p><strong>Breaks:</strong> Requires a Gemini Advanced subscription ($20/month). Free tier has limits. And it's still an extra step — you're in the Gemini interface, not YouTube.</p>
+
+      <h2>Method 4: Purpose-Built YouTube Summarizers</h2>
+      <p>Tools like <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> are built for exactly this task. Paste the URL, get a summary — no transcript copying, no extension setup, no subscription to ChatGPT Plus.</p>
+      <p><strong>Advantages over ChatGPT for YouTube summarization:</strong></p>
+      <ul>
+        <li><strong>No copy-paste required:</strong> Paste the URL directly — the tool handles transcript extraction automatically</li>
+        <li><strong>Works without captions:</strong> Handles auto-generated captions and whisper transcription for videos without manual captions</li>
+        <li><strong>Built for video structure:</strong> Output is formatted for video content — chapters, key moments, timestamps — not just a text dump</li>
+        <li><strong>No token limits:</strong> Long videos don't get cut off the way they can in ChatGPT free tier</li>
+        <li><strong>One-time pricing:</strong> YT Summarizer offers a $29 USD lifetime deal — no monthly subscription</li>
+      </ul>
+
+      <h2>The Honest Comparison</h2>
+
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Method</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Steps Required</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Works Without Captions</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">ChatGPT (manual)</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">4+ steps</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">No</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free / Plus $20/mo</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">ChatGPT + extension</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">2-3 steps (after setup)</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Sometimes</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Varies by extension</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Gemini Advanced</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">2 steps</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Usually</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$20/month</td>
+          </tr>
+          <tr style="background: #fff8f9;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>YT Summarizer</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>1 step (paste URL)</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Yes</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>$29 lifetime</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>When ChatGPT Is Worth It for YouTube Summarization</h2>
+      <p>ChatGPT (especially GPT-4) has one advantage: flexibility. If you need a very specific output format — say, a structured report, an executive brief, or content formatted for a specific purpose — ChatGPT's prompt flexibility beats a single-purpose tool. You can tell it to summarize as a decision memo, extract only statistical claims, or restructure the content for a specific audience.</p>
+      <p>For that use case, the manual transcript method is worth the extra steps.</p>
+
+      <h2>The Bottom Line</h2>
+      <p>If your goal is simply to understand a YouTube video faster, don't use ChatGPT for it. The friction isn't worth it when purpose-built tools exist. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — paste a URL and get your summary in seconds, no API key or extra steps required.</p>
+
+      <p>If you need custom output formatting or already have a ChatGPT Plus subscription you're maximizing, the manual transcript method works. But for everyday video summarization, a dedicated tool is significantly faster.</p>
+
+      <p>See also: <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: #ff0055;">best free YouTube summarizers without a subscription</a> and <a href="/blog/eightify-alternative-best-youtube-summarizers-without-subscription" style="color: #ff0055;">Eightify alternatives in 2026</a>.</p>
+    `
+  },
+  'turn-youtube-video-into-linkedin-post-with-ai': {
+    title: 'Turn Any YouTube Video into a LinkedIn Post Using AI',
+    metaDescription: 'Learn how to repurpose YouTube videos into LinkedIn posts with AI. A step-by-step workflow for professionals who want to share insights without spending hours writing from scratch.',
+    date: '2026-04-15',
+    content: `
+      <p>You watched a great YouTube video. It had insights worth sharing on LinkedIn — but you don't have time to rewatch it, take notes, and write a post from scratch. Here's how to go from URL to LinkedIn-ready post in under five minutes using AI.</p>
+
+      <h2>Why YouTube-to-LinkedIn Repurposing Works</h2>
+      <p>LinkedIn rewards original perspective and consistent publishing. YouTube is one of the best sources for substantive, expert-level content in almost every professional domain. The gap between "I watched something great" and "I posted about it" is almost always friction, not intent.</p>
+      <p>AI summarization closes that gap. Instead of rewatching 45 minutes of content, you get the key insights in structured form — which you can then frame in your own voice.</p>
+
+      <h2>The Workflow: YouTube URL → LinkedIn Post</h2>
+
+      <h3>Step 1: Get the Video Summary</h3>
+      <p>Paste the YouTube URL into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a>. You'll get a structured summary with the key points, main arguments, and notable quotes or data points from the video. This takes about 30 seconds.</p>
+
+      <h3>Step 2: Pick Your LinkedIn Angle</h3>
+      <p>Don't just restate the summary. LinkedIn posts perform best when they lead with a specific take or surprising insight. From the summary, pick:</p>
+      <ul>
+        <li>A counterintuitive finding that challenges common assumptions</li>
+        <li>A specific stat or claim that will surprise your audience</li>
+        <li>A framework or mental model from the video you can explain quickly</li>
+        <li>A personal reaction: "I watched this and it changed how I think about X"</li>
+      </ul>
+
+      <h3>Step 3: Write the Hook</h3>
+      <p>LinkedIn's algorithm shows only the first 2-3 lines before the "see more" cutoff. Your hook has to earn the click. Examples that work:</p>
+      <ul>
+        <li><em>"Most people get [topic] backwards. Here's what actually works:"</em></li>
+        <li><em>"I just watched [X] explain [concept] in 40 minutes. Here's the 30-second version:"</em></li>
+        <li><em>"One insight from [topic] that changed how I approach [work problem]:"</em></li>
+      </ul>
+
+      <h3>Step 4: Structure the Body</h3>
+      <p>LinkedIn posts that drive engagement typically follow one of these structures:</p>
+      <ul>
+        <li><strong>List format:</strong> 3-5 key takeaways from the video, one per line, with white space between</li>
+        <li><strong>Narrative:</strong> Short setup → insight → personal application → CTA</li>
+        <li><strong>Quote + context:</strong> Pull a strong quote from the summary, add your perspective, link back</li>
+      </ul>
+      <p>Keep it under 1,300 characters (roughly 200-250 words). LinkedIn doesn't reward longer for its own sake.</p>
+
+      <h3>Step 5: Add the Credit and Link</h3>
+      <p>Always credit the original creator. Something like: "Watched this in a video by [Creator Name] — full link in comments." (LinkedIn's algorithm suppresses posts with external links in the body, so move the URL to the first comment.)</p>
+
+      <h2>What Makes a Good YouTube Video for LinkedIn Repurposing?</h2>
+      <p>Not all videos translate well. Best sources:</p>
+      <ul>
+        <li>Industry conference talks and keynotes (high signal density)</li>
+        <li>Expert interviews with specific frameworks or data</li>
+        <li>Founder stories with concrete lessons</li>
+        <li>Research-based explainer videos with stats</li>
+      </ul>
+      <p>Avoid entertainment-heavy content, opinion pieces without evidence, or videos where most value comes from the visual presentation (tutorials, demos). These don't summarize well into text-based LinkedIn posts.</p>
+
+      <h2>Example: Full Post from Video Summary</h2>
+      <p>Here's what a real output might look like, starting from a YT Summarizer output on a video about remote work productivity:</p>
+      <blockquote style="border-left: 3px solid #ff0055; padding-left: 1rem; margin: 1.5rem 0; color: #444; font-style: italic;">
+        <p>Remote workers who set "no meeting" blocks aren't less collaborative — they're more productive on focused work AND more responsive in meetings.</p>
+        <p>Watched a 45-min deep dive on async work culture. The part that stuck:</p>
+        <p>The teams with the strictest calendar hygiene had BETTER stakeholder relationships, not worse. Because their protected time meant better-prepared contributions when they did show up.</p>
+        <p>3 things they did differently:<br/>
+        → Weekly "focus windows" (2-3 hrs, no exceptions)<br/>
+        → Async-first for any non-urgent decision<br/>
+        → Meeting prep as a deliverable, not a suggestion</p>
+        <p>Which one would make the biggest difference in your team?</p>
+        <p>Full video link in comments →</p>
+      </blockquote>
+
+      <h2>Tools That Help</h2>
+      <p>The fastest workflow is:</p>
+      <ol>
+        <li><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> to extract key points (30 seconds)</li>
+        <li>Your own voice to write the angle and hook (2-3 minutes)</li>
+        <li>LinkedIn draft → post (1 minute)</li>
+      </ol>
+      <p>Total time: 5 minutes or less per post. If you watch 3-5 relevant videos a week anyway, this workflow gives you 3-5 LinkedIn posts with minimal extra effort.</p>
+
+      <p>See also: <a href="/blog/generate-blog-posts-from-youtube-summary" style="color: #ff0055;">generate blog posts from YouTube summaries</a> and <a href="/blog/youtube-summarizer-for-newsletter-content" style="color: #ff0055;">YouTube summarizer for newsletter content</a>.</p>
+    `
+  },
+  'how-to-summarize-youtube-playlist-or-course': {
+    title: 'How to Summarize an Entire YouTube Playlist or Online Course with AI',
+    metaDescription: 'Learn how to summarize a full YouTube playlist or online course with AI. Get the key lessons from multi-video series without watching every video from start to finish.',
+    date: '2026-04-15',
+    content: `
+      <p>A YouTube playlist can have 30, 50, or even 100 videos. An online course shared via YouTube might run 20+ hours. You don't have time to watch all of it — but you still need the knowledge. Here's how to use AI summarization to extract what matters from a full playlist or course.</p>
+
+      <h2>The Challenge: Playlists Are Multi-Video, AI Tools Are Single-Video</h2>
+      <p>Most YouTube summarizers, including <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a>, work on individual video URLs. A playlist isn't a single URL — it's a container with many videos inside. So summarizing a whole playlist requires a slightly different approach than summarizing a single video.</p>
+      <p>Here are the most practical methods, from quickest to most thorough.</p>
+
+      <h2>Method 1: Sample the Key Videos First</h2>
+      <p>For most playlists, 20% of the videos contain 80% of the core ideas. Before attempting to summarize everything, skim the playlist structure:</p>
+      <ul>
+        <li>Read every video title in the playlist — this gives you the course map</li>
+        <li>Identify the "foundation" videos (usually the first 3-5) and the "synthesis" videos (usually near the end)</li>
+        <li>Summarize those first with <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></li>
+      </ul>
+      <p>This takes 5-10 minutes and gives you 70-80% of the value without touching every video. For many use cases — research, evaluation, deciding if the full course is worth your time — this is enough.</p>
+
+      <h2>Method 2: Summarize Each Video in Sequence (Batch Approach)</h2>
+      <p>If you need comprehensive coverage of the playlist:</p>
+      <ol>
+        <li>Open the playlist and note the video count</li>
+        <li>Work through each video URL in order, summarizing each one</li>
+        <li>Copy each summary into a running document (Google Docs, Notion, or your note-taking app)</li>
+        <li>Once complete, give the full document to ChatGPT or Claude with a prompt like: <em>"This is a collection of summaries from a 15-video course on [topic]. Synthesize the key lessons and create a master summary."</em></li>
+      </ol>
+      <p>This is more work, but it produces a genuine knowledge base from the full course.</p>
+
+      <h2>Method 3: Use YouTube's Playlist Transcript (For Short Playlists)</h2>
+      <p>For playlists under 5-6 videos, you can manually collect transcripts:</p>
+      <ol>
+        <li>For each video, open it on YouTube and click the three-dot menu to access "Show transcript"</li>
+        <li>Copy each transcript</li>
+        <li>Combine all transcripts into one document</li>
+        <li>Use ChatGPT or a similar tool to summarize the combined document</li>
+      </ol>
+      <p><strong>Limitation:</strong> This only works if all videos have captions enabled. Many user-uploaded course videos don't.</p>
+
+      <h2>What to Do With Your Playlist Summary</h2>
+      <p>Once you have a summary of the full playlist or course, it becomes a reference document. Most useful formats:</p>
+      <ul>
+        <li><strong>Key concepts list:</strong> The 10-15 most important ideas from the entire course</li>
+        <li><strong>Condensed study guide:</strong> Organized by topic rather than video order — reorganize by theme, not by video sequence</li>
+        <li><strong>Decision brief:</strong> 1-page summary of whether the course content is worth implementing, with the most actionable takeaways</li>
+        <li><strong>Teaching notes:</strong> If you're sharing learnings with a team, a summarized version is more useful than sending a 20-video playlist link</li>
+      </ul>
+
+      <h2>Types of Playlists That Summarize Best</h2>
+      <p>Not all playlists have equal summarization value:</p>
+      <ul>
+        <li><strong>Best candidates:</strong> Lecture series, online courses, tutorial sequences, documentary series, conference talk playlists</li>
+        <li><strong>Harder to summarize:</strong> Vlog/entertainment playlists (narrative-driven, low information density), compilation playlists with unrelated videos, music playlists</li>
+      </ul>
+      <p>Educational and instructional playlists — where each video builds on the last — summarize well because the core ideas are explicit and structured.</p>
+
+      <h2>Use Cases: When Playlist Summarization Pays Off</h2>
+      <ul>
+        <li><strong>Course evaluation:</strong> Before buying or committing to a paid course, summarize the free preview playlist to validate the content depth</li>
+        <li><strong>Research onboarding:</strong> New to a topic? A 20-video playlist from an expert channel can be summarized into a readable intro document</li>
+        <li><strong>Team knowledge sharing:</strong> Found a great course? Summarize it for your team instead of sending a multi-hour playlist nobody will watch</li>
+        <li><strong>Exam preparation:</strong> Lecture playlist from a professor? Summarize each lecture, then synthesize across the semester</li>
+        <li><strong>Competitive intelligence:</strong> Found a playlist from a competitor or industry expert? Extract their key frameworks and positioning without watching every video</li>
+      </ul>
+
+      <h2>The Fastest Starting Point</h2>
+      <p>If you're looking at a long playlist right now: start with the first and last video in the playlist. The first usually sets up the core framework; the last usually synthesizes the main conclusions. Together, they give you the shape of the whole course in two summaries.</p>
+      <p>From there, you can fill in specific topics you need more depth on. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to start — paste any video URL from the playlist and get an instant summary.</p>
+
+      <p>See also: <a href="/blog/summarize-youtube-tutorials-for-study" style="color: #ff0055;">summarize YouTube tutorials for study</a> and <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055;">YouTube summarizer for students</a>.</p>
+    `
+  },
   'youtube-video-summarizer-for-social-media-managers-save-hours-every-week': {
     title: 'YouTube Video Summarizer for Social Media Managers: Save Hours Every Week',
     metaDescription: 'Social media managers use AI YouTube summarizers to monitor competitor content, research trends, and create repurposed clips — without watching hours of video every day.',

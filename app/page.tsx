@@ -3,6 +3,24 @@ import Link from 'next/link'
 export default function Home() {
   const posts = [
     {
+      slug: 'can-chatgpt-summarize-youtube-videos',
+      title: 'Can ChatGPT Summarize YouTube Videos? Here\'s What Actually Works in 2026',
+      description: 'Can ChatGPT summarize YouTube videos? Yes — but it\'s not the easiest method. Compare ChatGPT, Gemini, and purpose-built tools like YT Summarizer to find what actually works.',
+      date: '2026-04-15'
+    },
+    {
+      slug: 'turn-youtube-video-into-linkedin-post-with-ai',
+      title: 'Turn Any YouTube Video into a LinkedIn Post Using AI',
+      description: 'Learn how to repurpose YouTube videos into LinkedIn posts with AI. A step-by-step workflow for professionals who want to share insights without spending hours writing from scratch.',
+      date: '2026-04-15'
+    },
+    {
+      slug: 'how-to-summarize-youtube-playlist-or-course',
+      title: 'How to Summarize an Entire YouTube Playlist or Online Course with AI',
+      description: 'Learn how to summarize a full YouTube playlist or online course with AI. Get the key lessons from multi-video series without watching every video from start to finish.',
+      date: '2026-04-15'
+    },
+    {
       slug: 'eightify-alternative-best-youtube-summarizers-without-subscription',
       title: 'Best Eightify Alternatives in 2026 (No Subscription Required)',
       description: 'Looking for an Eightify alternative? Compare the best YouTube summarizers that offer lifetime deals or generous free tiers — no weekly limits, no recurring subscription fees.',
