@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { totalPages } from './lib/posts-list'
 
 export const dynamic = 'force-static'
 
@@ -144,6 +145,15 @@ const postDates: Record<string, string> = {
   'youtube-transcript-tools-that-still-work-in-2026': '2026-04-07',
   'best-youtube-summarizer-for-gaming-videos': '2026-04-07',
   'eightify-alternative-best-youtube-summarizers-without-subscription': '2026-04-13',
+  'can-chatgpt-summarize-youtube-videos': '2026-04-15',
+  'turn-youtube-video-into-linkedin-post-with-ai': '2026-04-15',
+  'how-to-summarize-youtube-playlist-or-course': '2026-04-15',
+  'best-ai-youtube-summarizers-2026-8-tools-compared': '2026-04-18',
+  'notegpt-vs-ytsummarizer-honest-comparison-2026': '2026-04-18',
+  'how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes': '2026-04-18',
+  'youtube-video-to-text-transcription-summarization-2026': '2026-04-20',
+  'youtube-summarizer-for-financial-professionals': '2026-04-20',
+  'youtube-summarizer-for-developers': '2026-04-20',
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -158,6 +168,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
+  const archivePages = Array.from({ length: totalPages - 1 }, (_, i) => ({
+    url: `${baseUrl}/page/${i + 2}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.5,
+  }))
+
   return [
     {
       url: baseUrl,
@@ -165,6 +182,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 1,
     },
+    ...archivePages,
     ...blogPosts,
   ]
 }
