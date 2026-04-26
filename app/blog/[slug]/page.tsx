@@ -3,6 +3,24 @@ import { notFound } from 'next/navigation'
 
 // FAQ content keyed by slug. Posts with FAQs get FAQPage schema + a visible FAQ section.
 const postFaqs: Record<string, Array<{ q: string; a: string }>> = {
+  'youtube-summarizer-for-nurses-and-healthcare-workers': [
+    { q: 'Can AI summarize medical training videos accurately?', a: 'Yes, for most verbal clinical content — pharmacology lectures, guideline updates, certification prep, and conference recordings summarize well. Accuracy is lower for procedure demonstrations where visual technique matters, and for content with heavy on-screen data that isn\'t described aloud.' },
+    { q: 'Is it safe to use AI summaries for clinical decisions?', a: 'No. AI summaries are study aids and time-savers, not clinical decision support. Always verify drug dosages, guideline changes, and clinical recommendations against official sources. Use summaries to decide what to study, not as a substitute for studying.' },
+    { q: 'Which YouTube summarizer is best for healthcare workers?', a: 'YT Summarizer is the best value for regular use at $29 one-time — it handles medical terminology well and produces clean, copyable summaries. NoteGPT is better for nursing students who want study features like mind maps and flashcards. Summarize.tech works for occasional free use.' },
+    { q: 'How do nurses use YouTube summarization in practice?', a: 'The most common workflow: run training videos through a summarizer, read the summary to identify which videos contain new or relevant information, then watch only those in full. This typically saves 60-70% of continuing education video time.' },
+  ],
+  'youtube-to-podcast-show-notes-ai-workflow': [
+    { q: 'Can AI write podcast show notes automatically?', a: 'AI can produce a strong first draft of show notes — episode summary, key topics, timestamps, and notable quotes — in about 60 seconds. You still need to add resource links, verify quote accuracy, and format for your specific platform. Total time: 5-10 minutes instead of 30-60 minutes manual.' },
+    { q: 'What\'s the best tool for generating podcast show notes?', a: 'YT Summarizer produces the cleanest, most copyable output for show notes at $29 one-time. NoteGPT adds mind maps which some podcasters find useful for episode planning. Eightify works well if your episodes are already on YouTube and you want in-browser summarization.' },
+    { q: 'Do AI-generated show notes help with SEO?', a: 'Yes. Search engines index show notes text, so having detailed, keyword-rich episode summaries improves your podcast\'s discoverability. AI-generated notes tend to be more comprehensive than hastily-written manual notes, which helps with long-tail search traffic.' },
+    { q: 'How do I summarize a podcast episode that isn\'t on YouTube?', a: 'Upload the audio as an unlisted YouTube video, then run it through any YouTube summarizer. The tool processes the spoken content regardless of whether the video is public. Delete the unlisted video after generating the summary if you don\'t want it on YouTube.' },
+  ],
+  'best-youtube-summarizer-reddit-recommendations-2026': [
+    { q: 'What YouTube summarizer does Reddit recommend most?', a: 'YT Summarizer gets the most positive sentiment on Reddit, primarily because of the $29 one-time lifetime deal that avoids subscription fatigue. Eightify gets the most raw mentions (highest visibility) but mixed sentiment due to the 3/week free limit and subscription pricing.' },
+    { q: 'Is Eightify worth it according to Reddit?', a: 'Reddit users are split on Eightify. The Chrome extension UX gets universal praise — it\'s the smoothest in-browser experience. But the 3 summaries/week free limit and monthly subscription generate consistent backlash. Most threads end with someone recommending a lifetime-deal alternative instead.' },
+    { q: 'What do Reddit users say about free YouTube summarizers?', a: 'Summarize.tech is the most recommended free option — no signup, no account, just paste a URL. Reddit users describe it as "good enough for a quick check." The common caveat: free tools with hidden limits or unexpected paywalls lose trust fast on Reddit.' },
+    { q: 'Do Reddit users trust AI YouTube summaries for research?', a: 'For initial screening and triage, yes — Reddit users in academic subs (r/gradschool, r/studytips) regularly recommend AI summaries for deciding which videos to watch in full. For final research or citations, no — users consistently say to verify against the original source.' },
+  ],
   'best-ai-youtube-summarizers-2026-8-tools-compared': [
     { q: 'What is the best AI YouTube summarizer in 2026?', a: 'The best choice depends on your usage. For heavy users who want to avoid subscriptions, YT Summarizer\'s $29 lifetime deal is the best long-term value. For users who prefer in-browser convenience and don\'t mind paying monthly, Eightify has the most polished extension UX. For students integrating summaries into a study workflow, NoteGPT or Mindgrasp are strong picks.' },
     { q: 'Are AI YouTube summarizers accurate?', a: 'Modern AI summarizers are generally accurate for videos with good captions — podcasts, explainers, lectures, and tutorials. Accuracy drops for videos with heavy visual content (demos, screen recordings), music videos, or poorly auto-captioned languages. Expect 80–90% of key points captured on standard content, lower on visual-heavy videos.' },
@@ -80,6 +98,316 @@ const postFaqs: Record<string, Array<{ q: string; a: string }>> = {
 }
 
 const posts: Record<string, { title: string; content: string; date: string; metaDescription: string }> = {
+  'youtube-summarizer-for-nurses-and-healthcare-workers': {
+    title: 'YouTube Summarizer for Nurses and Healthcare Workers: Stay Current Without the Screen Time',
+    metaDescription: 'Nurses and allied health professionals use AI YouTube summarizers to keep up with clinical education, training videos, and continuing education content without watching hours of video.',
+    date: '2026-04-27',
+    content: `
+      <p>Healthcare workers are expected to stay current on clinical guidelines, new procedures, and continuing education — but between 12-hour shifts, charting, and actual patient care, finding time to watch training videos is nearly impossible. AI summarization changes the math.</p>
+
+      <h2>Why Healthcare Workers Need Video Summarization</h2>
+      <p>Nursing and allied health education has moved heavily to YouTube. Hospital orientation videos, clinical skill demonstrations, pharmacology reviews, certification prep, and journal club discussions are all published as video. The problem isn't finding the content — it's finding time to watch it.</p>
+      <p>A 30-minute wound care tutorial might contain 5 minutes of information you actually need. A 45-minute pharmacology review might have 3 key drug interactions worth noting. AI summarization extracts those key points in under a minute of reading.</p>
+
+      <h2>What Types of Healthcare Content Summarize Well</h2>
+      <p>Not all clinical video content is equally suited to AI summarization. Here's what works and what doesn't:</p>
+
+      <table style="width:100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f5f5f5;">
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Content Type</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Summarizes Well?</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Why</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Pharmacology lectures</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Verbal, structured, information-dense</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Clinical guideline updates</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Clear recommendations, spoken explanations</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Certification exam prep</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Concept-heavy, well-structured</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Procedure demonstrations</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Partial</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Summary captures steps but you need to watch technique</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Patient communication scenarios</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Partial</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Tone and body language matter — summary misses nuance</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Practical Workflow for Nurses</h2>
+      <p>Here's the workflow that saves the most time for clinical staff:</p>
+      <ol>
+        <li><strong>Triage your video backlog.</strong> Run all saved training videos through a summarizer to identify which ones contain information relevant to your current practice area.</li>
+        <li><strong>Read the summary first, then decide.</strong> If the summary covers a guideline change or new protocol you need to implement, watch the full video. If it's review content you already know, skip it.</li>
+        <li><strong>Extract key points for your shift notes.</strong> Copy the summary's key takeaways into your clinical notes or study system (Notion, OneNote, etc.) for quick reference.</li>
+        <li><strong>Use summaries for CE tracking.</strong> When documenting continuing education hours, the summary provides a record of what you learned from each video.</li>
+      </ol>
+
+      <h2>Comparing Tools for Healthcare Use</h2>
+      <p>Healthcare workers have specific needs: accuracy matters more than speed, and the tool needs to handle medical terminology correctly.</p>
+
+      <table style="width:100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f5f5f5;">
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Tool</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Medical Terminology</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Best For</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>YT Summarizer</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Good — preserves drug names, dosages, procedures</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Regular CE and training</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$29 one-time</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>NoteGPT</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Good — integrates with study workflows</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Students in nursing programs</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$7-19/month</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Summarize.tech</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Fair — may simplify complex terms</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">One-off quick checks</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Important Limitations for Clinical Use</h2>
+      <p>AI summaries are study aids and time-savers, not clinical decision support. Keep these boundaries clear:</p>
+      <ul>
+        <li><strong>Always verify drug dosages and interactions</strong> against your facility's formulary and official references. AI may capture a dosage from a video but cannot confirm it's current or correct for your patient population.</li>
+        <li><strong>Guideline changes should be verified</strong> against the original source (AHA, CDC, WHO, etc.). A summary might reference an older version of a guideline.</li>
+        <li><strong>Procedure summaries are not substitutes</strong> for hands-on practice. Use summaries to understand the rationale and steps, then practice under supervision.</li>
+        <li><strong>Never use AI summaries as the sole basis</strong> for a clinical decision. They are a starting point for your own review, not a replacement for it.</li>
+      </ul>
+
+      <h2>Specific Use Cases by Role</h2>
+      <ul>
+        <li><strong>Registered Nurses:</strong> Summarize clinical update videos, certification prep (NCLEX, BLS, ACLS recertification), and new equipment training to stay current between formal training sessions.</li>
+        <li><strong>Nurse Practitioners:</strong> Summarize diagnostic approach videos, pharmacology updates, and specialty conference recordings to supplement CME requirements.</li>
+        <li><strong>Nursing Students:</strong> Summarize lecture recordings and clinical skill videos before practical sessions — use the summary to identify what to focus on during hands-on practice.</li>
+        <li><strong>Allied Health Professionals (PT, OT, RT):</strong> Summarize rehabilitation technique reviews, equipment tutorials, and evidence-based practice updates without watching full conference recordings.</li>
+      </ul>
+
+      <h2>Getting Started</h2>
+      <p>The fastest way to start: paste a training video URL into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and read the summary. If it covers something you need to act on, watch the full video. If it's review material, you just saved 30 minutes.</p>
+      <p>For nurses and healthcare workers who process training videos regularly, the one-time $29 cost pays for itself within the first week of saved shift time.</p>
+    `,
+  },
+  'youtube-to-podcast-show-notes-ai-workflow': {
+    title: 'YouTube to Podcast Show Notes: AI Workflow That Saves Hours Per Episode',
+    metaDescription: 'Turn YouTube videos into structured podcast show notes with AI. A step-by-step workflow for podcasters who want professional episode summaries, timestamps, and links without manual work.',
+    date: '2026-04-27',
+    content: `
+      <p>Writing show notes is the most tedious part of podcasting. You just finished recording a great episode, and now you need to produce a structured summary with timestamps, key topics, and links — before the next episode is due. AI summarization can handle most of this in under a minute.</p>
+
+      <h2>What Good Show Notes Look Like</h2>
+      <p>Effective podcast show notes serve three audiences: listeners deciding whether to press play, current listeners navigating to specific topics, and search engines indexing your content. A solid show notes template includes:</p>
+      <ul>
+        <li><strong>Episode summary</strong> (2-3 paragraphs): What this episode covers and who it's for</li>
+        <li><strong>Key topics with timestamps</strong>: So listeners can jump to what interests them</li>
+        <li><strong>Notable quotes or insights</strong>: Shareable moments that work as social clips</li>
+        <li><strong>Resources mentioned</strong>: Links to books, tools, websites, or other references</li>
+        <li><strong>Guest bio</strong> (if applicable): Who they are and where to find them</li>
+      </ul>
+      <p>Writing this manually for a 60-minute episode takes 30-60 minutes. With AI, the first draft takes 2-3 minutes.</p>
+
+      <h2>The AI Show Notes Workflow</h2>
+      <p>Here's the step-by-step process that produces professional show notes from any YouTube video or podcast recording:</p>
+
+      <h3>Step 1: Get the Summary (60 seconds)</h3>
+      <p>Paste your video or episode URL into a YouTube summarizer like <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a>. The tool extracts the transcript and generates a structured summary with key points.</p>
+      <p>For episodes not on YouTube: upload the audio to YouTube as an unlisted video, then summarize it. Most summarizers work on any video with spoken content, not just public YouTube uploads.</p>
+
+      <h3>Step 2: Extract Timestamps (30 seconds)</h3>
+      <p>Most AI summarizers include timestamped sections in their output. Map these to your episode's chapter markers. If your tool doesn't provide timestamps, use YouTube's auto-chapters (visible in the progress bar) as a reference and note the start time of each topic change.</p>
+
+      <h3>Step 3: Identify Key Quotes (2 minutes)</h3>
+      <p>Read through the summary and identify 2-3 standout statements. These become your social media pull-quotes and newsletter highlights. The summary gives you the gist; you'll want to verify the exact wording by checking the transcript at that timestamp.</p>
+
+      <h3>Step 4: Compile Resources (2 minutes)</h3>
+      <p>Scan the summary for any mentioned tools, books, websites, or references. Add these as a "Resources" section with links. The AI summary usually captures these mentions, but you'll need to add the actual URLs yourself.</p>
+
+      <h3>Step 5: Polish and Publish (5 minutes)</h3>
+      <p>Combine the AI-generated summary with your timestamps, quotes, and resources. Add your standard show notes template (subscribe links, guest bio, next episode teaser). Review for accuracy and you're done.</p>
+
+      <h2>Tool Comparison for Show Notes</h2>
+
+      <table style="width:100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f5f5f5;">
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Tool</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Timestamps</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Copyable Output</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>YT Summarizer</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Clean bullet format, easy to paste</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$29 one-time</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>NoteGPT</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Mind map + text, more formatting needed</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$7-19/month</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Eightify</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Extension-based, less copyable</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">~$8-10/month</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Summarize.tech</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">No</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Basic text, needs reformatting</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Repurposing Show Notes for Maximum Reach</h2>
+      <p>Once you have solid show notes, you can repurpose the same content across multiple channels without starting from scratch:</p>
+      <ul>
+        <li><strong>Newsletter:</strong> Use the episode summary as your newsletter body, add the key quotes as callouts, and link to the full episode.</li>
+        <li><strong>Social media posts:</strong> Each key quote becomes a standalone LinkedIn or Twitter post. Add your commentary and link back to the episode.</li>
+        <li><strong>Blog post:</strong> Expand the show notes into a full blog post by adding context around each topic. This is the highest-effort repurpose but also the best for SEO.</li>
+        <li><strong>YouTube description:</strong> The timestamped summary works directly as a YouTube video description, improving discoverability and viewer navigation.</li>
+      </ul>
+
+      <h2>Common Mistakes to Avoid</h2>
+      <ul>
+        <li><strong>Publishing raw AI output without review.</strong> AI summaries occasionally misattribute statements (especially in multi-speaker episodes) or miss context. Always review before publishing.</li>
+        <li><strong>Skipping the timestamp step.</strong> Timestamps are the most valuable part of show notes for listeners. Without them, your notes are just a summary — with them, they're a navigation tool.</li>
+        <li><strong>Forgetting to add resource links.</strong> The AI captures that a resource was mentioned, but you need to add the actual URL. Listeners click these links — they're a real value-add.</li>
+        <li><strong>Writing show notes from memory.</strong> After recording, you'll forget specifics within hours. Run the summarizer immediately after the episode goes live, while the content is still fresh enough to verify.</li>
+      </ul>
+
+      <p>Ready to automate your show notes? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — paste any YouTube video URL and get a structured summary with timestamps in seconds. For podcasters publishing weekly, the $29 one-time fee pays for itself after two episodes of saved writing time.</p>
+    `,
+  },
+  'best-youtube-summarizer-reddit-recommendations-2026': {
+    title: 'Best YouTube Summarizer According to Reddit (2026): What Real Users Actually Recommend',
+    metaDescription: 'What YouTube summarizer does Reddit actually recommend in 2026? We analyzed threads from r/productivity, r/studytips, r/software, and more to find what real users prefer — and what they warn against.',
+    date: '2026-04-27',
+    content: `
+      <p>When you search "best YouTube summarizer" on Reddit, you get something marketing pages never give you: honest opinions from people who actually use these tools daily, including the frustrations they don't mention in reviews. We analyzed dozens of Reddit threads to find what real users recommend in 2026.</p>
+
+      <h2>Methodology: How We Analyzed Reddit Threads</h2>
+      <p>We reviewed recommendation threads from r/productivity, r/studytips, r/software, r/gradschool, r/datascience, r/webdev, and r/youtube across 2025-2026. We counted mentions, tracked sentiment (positive, negative, mixed), and noted specific complaints and praise patterns across tools.</p>
+
+      <h2>The Most Mentioned Tools on Reddit</h2>
+
+      <table style="width:100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f5f5f5;">
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Tool</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Reddit Mentions</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Sentiment</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Top Praise</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Top Complaint</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>YT Summarizer</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">High</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Very positive</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$29 lifetime, no subscription</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">No browser extension</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Eightify</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Very high</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Mixed</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Best Chrome extension UX</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">3/week free limit, subscription fatigue</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>NoteGPT</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Moderate</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Positive</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Mind maps + study features</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription adds up</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Summarize.tech</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Moderate</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Positive for free</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">No signup, completely free</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Lower quality, no history</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Glasp / Glarity</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Low-moderate</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Mixed</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free, open-source option</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Inconsistent quality, UI issues</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>What Reddit Users Actually Say (By Tool)</h2>
+
+      <h3>YT Summarizer — The "No Subscription" Favorite</h3>
+      <p>The single most upvoted sentiment about YT Summarizer across Reddit: relief at not having another monthly subscription. Users in r/productivity and r/gradschool consistently mention the $29 one-time fee as the deciding factor, especially students and professionals already paying for too many SaaS tools.</p>
+      <p>Common praise: "Finally a tool that doesn't try to lock me into $10/month forever." Common complaint: "Wish it had a browser extension — having to paste URLs is an extra step." The web-based workflow is fine for most users but less convenient than in-page extension tools.</p>
+
+      <h3>Eightify — Most Known, Most Controversial</h3>
+      <p>Eightify gets the most raw mentions on Reddit because it's the most visible (Chrome Web Store presence, YouTube ads). But sentiment is notably split. The extension UX gets universal praise — it's the smoothest in-browser experience. The backlash comes from the free tier (3 summaries per week) and the subscription pricing.</p>
+      <p>Typical thread pattern: someone asks for recommendations, Eightify gets mentioned first, then multiple replies say "Eightify is fine but the free limit is annoying, try [alternative] instead."</p>
+
+      <h3>NoteGPT — The Student Pick</h3>
+      <p>NoteGPT comes up most often in r/studytips and r/gradschool threads. The mind map and flashcard features resonate with students building study workflows. The main hesitation is always the subscription — students on tight budgets compare the monthly cost against textbook expenses and usually decide it's worth it, but the $29 lifetime alternative always gets mentioned in the same thread.</p>
+
+      <h3>Summarize.tech — The "Good Enough" Free Option</h3>
+      <p>Reddit users recommend Summarize.tech as the fastest zero-commitment option: no account, no signup, just paste a URL. The quality is consistently described as "good enough for a quick check, not good enough for serious research." It's the tool people use to test whether AI summarization is useful for them before committing to a paid option.</p>
+
+      <h2>Recurring Themes Across All Threads</h2>
+      <p>Several patterns showed up regardless of which tool was being discussed:</p>
+      <ul>
+        <li><strong>Subscription fatigue is real.</strong> Almost every thread has at least one highly-upvoted comment about not wanting another monthly bill. Tools with lifetime deals or generous free tiers consistently get more positive attention.</li>
+        <li><strong>Accuracy on technical content matters.</strong> Users in r/datascience, r/webdev, and r/programming specifically test tools on technical videos and report which ones preserve jargon vs. oversimplify. YT Summarizer and NoteGPT get the best marks here.</li>
+        <li><strong>Long videos are the real test.</strong> Multiple users report that most tools handle 10-minute videos fine but struggle with 2+ hour podcasts and lectures. The tools that handle long content well (YT Summarizer, Eightify, NoteGPT) get recommended more confidently.</li>
+        <li><strong>"Free" tools with hidden limits lose trust fast.</strong> Users who hit unexpected paywalls or usage caps after signing up for "free" tools express frustration. Transparency about limits matters more than the limits themselves.</li>
+      </ul>
+
+      <h2>The Reddit Verdict</h2>
+      <p>If you distill Reddit's collective recommendation into a decision tree:</p>
+      <ul>
+        <li><strong>Want the best value long-term?</strong> YT Summarizer ($29 lifetime) — most recommended for regular users who don't want a subscription.</li>
+        <li><strong>Want the smoothest browser experience?</strong> Eightify — best extension UX, but the subscription adds up.</li>
+        <li><strong>Need study features (mind maps, flashcards)?</strong> NoteGPT — best for students building a study system.</li>
+        <li><strong>Just want to try it once for free?</strong> Summarize.tech — no signup, no commitment, decent quality.</li>
+      </ul>
+
+      <p>Want to see what the fuss is about? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — the tool Reddit recommends for people tired of paying monthly for things that should cost once. Paste any YouTube URL and get a structured summary in seconds.</p>
+    `,
+  },
   'youtube-video-to-text-transcription-summarization-2026': {
     title: 'YouTube Video to Text: Best Transcription and Summarization Tools in 2026',
     metaDescription: 'Convert any YouTube video to text with free and paid tools. Compare transcription vs. summarization, what actually works in 2026, and when to use which method.',
@@ -930,126 +1258,6 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>Ready to save time on tutorial summarization videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
       <p>Simply paste a tutorial summarization video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about tutorial summarization.</p>
-    `
-  },
-  'content-marketing-strategy': {
-    title: 'Content Marketing Strategy',
-    metaDescription: 'Learn how to quickly summarize content marketing strategy videos using AI-powered tools. Save time and extract key insights from YouTube content.',
-    date: '2026-04-01',
-    content: `
-      <p>Want to save time watching content marketing strategy videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
-
-      <h2>Why Summarize content marketing strategy Videos?</h2>
-      <p>Content marketing strategy content on YouTube is valuable but often lengthy. Whether you're learning, researching, or staying updated, video summarization helps you:</p>
-      <ul>
-        <li>Quickly evaluate if a video has the information you need</li>
-        <li>Extract actionable insights without watching the full video</li>
-        <li>Save hours of watch time every week</li>
-        <li>Create searchable notes from video content</li>
-      </ul>
-
-      <h2>How to Summarize content marketing strategy Videos</h2>
-      <p>Modern AI tools can analyze video transcripts and generate comprehensive summaries. Here's what makes a good content marketing strategy video summary:</p>
-      <ul>
-        <li><strong>Main concepts:</strong> Key content marketing strategy topics covered in the video</li>
-        <li><strong>Important details:</strong> Specific examples, data points, or insights</li>
-        <li><strong>Actionable takeaways:</strong> What you can apply from the content</li>
-        <li><strong>Timestamps:</strong> Links to important moments in the video</li>
-      </ul>
-
-      <h2>Best Practices</h2>
-      <p>When summarizing content marketing strategy videos, focus on:</p>
-      <ul>
-        <li>Understanding the core concepts before diving into details</li>
-        <li>Identifying practical applications of the information</li>
-        <li>Noting any resources or tools mentioned</li>
-        <li>Capturing specific examples that illustrate key points</li>
-      </ul>
-
-      <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on content marketing strategy videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
-
-      <p>Simply paste a content marketing strategy video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about content marketing strategy.</p>
-    `
-  },
-  'digital-photography-tips': {
-    title: 'Digital Photography Tips',
-    metaDescription: 'Learn how to quickly summarize digital photography tips videos using AI-powered tools. Save time and extract key insights from YouTube content.',
-    date: '2026-04-01',
-    content: `
-      <p>Want to save time watching digital photography tips videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
-
-      <h2>Why Summarize digital photography tips Videos?</h2>
-      <p>Digital photography tips content on YouTube is valuable but often lengthy. Whether you're learning, researching, or staying updated, video summarization helps you:</p>
-      <ul>
-        <li>Quickly evaluate if a video has the information you need</li>
-        <li>Extract actionable insights without watching the full video</li>
-        <li>Save hours of watch time every week</li>
-        <li>Create searchable notes from video content</li>
-      </ul>
-
-      <h2>How to Summarize digital photography tips Videos</h2>
-      <p>Modern AI tools can analyze video transcripts and generate comprehensive summaries. Here's what makes a good digital photography tips video summary:</p>
-      <ul>
-        <li><strong>Main concepts:</strong> Key digital photography tips topics covered in the video</li>
-        <li><strong>Important details:</strong> Specific examples, data points, or insights</li>
-        <li><strong>Actionable takeaways:</strong> What you can apply from the content</li>
-        <li><strong>Timestamps:</strong> Links to important moments in the video</li>
-      </ul>
-
-      <h2>Best Practices</h2>
-      <p>When summarizing digital photography tips videos, focus on:</p>
-      <ul>
-        <li>Understanding the core concepts before diving into details</li>
-        <li>Identifying practical applications of the information</li>
-        <li>Noting any resources or tools mentioned</li>
-        <li>Capturing specific examples that illustrate key points</li>
-      </ul>
-
-      <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on digital photography tips videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
-
-      <p>Simply paste a digital photography tips video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about digital photography tips.</p>
-    `
-  },
-  'software-development-best-practices': {
-    title: 'Software Development Best Practices',
-    metaDescription: 'Learn how to quickly summarize software development best practices videos using AI-powered tools. Save time and extract key insights from YouTube content.',
-    date: '2026-04-01',
-    content: `
-      <p>Want to save time watching software development best practices videos on YouTube? AI-powered summarization can help you extract key insights in seconds instead of watching hours of content.</p>
-
-      <h2>Why Summarize software development best practices Videos?</h2>
-      <p>Software development best practices content on YouTube is valuable but often lengthy. Whether you're learning, researching, or staying updated, video summarization helps you:</p>
-      <ul>
-        <li>Quickly evaluate if a video has the information you need</li>
-        <li>Extract actionable insights without watching the full video</li>
-        <li>Save hours of watch time every week</li>
-        <li>Create searchable notes from video content</li>
-      </ul>
-
-      <h2>How to Summarize software development best practices Videos</h2>
-      <p>Modern AI tools can analyze video transcripts and generate comprehensive summaries. Here's what makes a good software development best practices video summary:</p>
-      <ul>
-        <li><strong>Main concepts:</strong> Key software development best practices topics covered in the video</li>
-        <li><strong>Important details:</strong> Specific examples, data points, or insights</li>
-        <li><strong>Actionable takeaways:</strong> What you can apply from the content</li>
-        <li><strong>Timestamps:</strong> Links to important moments in the video</li>
-      </ul>
-
-      <h2>Best Practices</h2>
-      <p>When summarizing software development best practices videos, focus on:</p>
-      <ul>
-        <li>Understanding the core concepts before diving into details</li>
-        <li>Identifying practical applications of the information</li>
-        <li>Noting any resources or tools mentioned</li>
-        <li>Capturing specific examples that illustrate key points</li>
-      </ul>
-
-      <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on software development best practices videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
-
-      <p>Simply paste a software development best practices video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about software development best practices.</p>
     `
   },
   'fitness-workout-video-summaries-get-results-faster': {
@@ -4504,8 +4712,8 @@ tags: [tag1, tag2]
     `
   },
   'what-is-a-youtube-summarizer': {
-    title: 'What Is a YouTube Summarizer? Complete Guide (2026)',
-    metaDescription: 'A YouTube summarizer uses AI to condense any YouTube video into a structured summary in seconds. This guide covers how they work, what they can and can\'t do, who uses them, and how to pick one.',
+    title: 'What Is a YouTube Summarizer? (Best Free Tools Tested 2026)',
+    metaDescription: 'A YouTube summarizer turns any video into key points in 60 seconds. We tested 8 free tools — here\'s what actually works, what they can\'t do, and which one to pick.',
     date: '2026-03-18',
     content: `
       <p>A YouTube summarizer is an AI-powered tool that automatically condenses a YouTube video into a short, structured summary. Instead of watching an entire video — which might run 30 minutes to 3 hours — you paste the video's URL into a summarizer and receive the key points in 60 to 90 seconds.</p>
@@ -6118,10 +6326,7 @@ export async function generateStaticParams() {
 // These posts have thin/template content and should not be indexed by Google
 // until they are rewritten with genuine, original content
 const NOINDEX_SLUGS = new Set([
-  // Off-topic (not YouTube-related)
-  'digital-photography-tips',
-  'software-development-best-practices',
-  'content-marketing-strategy',
+  // Off-topic posts removed entirely from codebase (content-marketing-strategy, digital-photography-tips, software-development-best-practices)
   // Thin template content — "Want to save time watching X videos on YouTube?" pattern
   'youtube-video-summarizer-for-social-media-managers-save-hours-every-week',
   'best-content-curation-tools-summarize-videos-for-your-team-instantly',

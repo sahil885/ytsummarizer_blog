@@ -5,9 +5,7 @@ export const dynamic = 'force-static'
 
 // Keep in sync with NOINDEX_SLUGS in app/blog/[slug]/page.tsx
 const NOINDEX_SLUGS = new Set([
-  'digital-photography-tips',
-  'software-development-best-practices',
-  'content-marketing-strategy',
+  // Off-topic posts removed entirely from codebase (content-marketing-strategy, digital-photography-tips, software-development-best-practices)
   'youtube-video-summarizer-for-social-media-managers-save-hours-every-week',
   'best-content-curation-tools-summarize-videos-for-your-team-instantly',
   'batch-download-and-summarize-multiple-youtube-videos-at-once',
@@ -139,10 +137,8 @@ const postDates: Record<string, string> = {
   'best-tools-for-podcast-summaries': '2026-04-01',
   'convert-video-content-to-blog-posts': '2026-04-01',
   'how-to-summarize-tutorial-videos-quickly': '2026-04-01',
-  'content-marketing-strategy': '2026-04-01',
-  'digital-photography-tips': '2026-04-01',
-  'software-development-best-practices': '2026-04-01',
   'youtube-transcript-tools-that-still-work-in-2026': '2026-04-07',
+
   'best-youtube-summarizer-for-gaming-videos': '2026-04-07',
   'eightify-alternative-best-youtube-summarizers-without-subscription': '2026-04-13',
   'can-chatgpt-summarize-youtube-videos': '2026-04-15',
@@ -154,6 +150,9 @@ const postDates: Record<string, string> = {
   'youtube-video-to-text-transcription-summarization-2026': '2026-04-20',
   'youtube-summarizer-for-financial-professionals': '2026-04-20',
   'youtube-summarizer-for-developers': '2026-04-20',
+  'youtube-summarizer-for-nurses-and-healthcare-workers': '2026-04-27',
+  'youtube-to-podcast-show-notes-ai-workflow': '2026-04-27',
+  'best-youtube-summarizer-reddit-recommendations-2026': '2026-04-27',
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -168,13 +167,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  const archivePages = Array.from({ length: totalPages - 1 }, (_, i) => ({
-    url: `${baseUrl}/page/${i + 2}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.5,
-  }))
-
+  // Pagination pages excluded from sitemap — they're navigation aids, not indexable content
   return [
     {
       url: baseUrl,
@@ -182,7 +175,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 1,
     },
-    ...archivePages,
     ...blogPosts,
   ]
 }

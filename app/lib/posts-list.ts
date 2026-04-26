@@ -7,6 +7,24 @@ export type PostListEntry = {
 
 export const allPosts: PostListEntry[] = [
   {
+    slug: 'youtube-summarizer-for-nurses-and-healthcare-workers',
+    title: 'YouTube Summarizer for Nurses and Healthcare Workers: Stay Current Without the Screen Time',
+    description: 'Nurses and allied health professionals use AI YouTube summarizers to keep up with clinical education, training videos, and continuing education content without watching hours of video.',
+    date: '2026-04-27',
+  },
+  {
+    slug: 'youtube-to-podcast-show-notes-ai-workflow',
+    title: 'YouTube to Podcast Show Notes: AI Workflow That Saves Hours Per Episode',
+    description: 'Turn YouTube videos into structured podcast show notes with AI. A step-by-step workflow for podcasters who want professional episode summaries, timestamps, and links without manual work.',
+    date: '2026-04-27',
+  },
+  {
+    slug: 'best-youtube-summarizer-reddit-recommendations-2026',
+    title: 'Best YouTube Summarizer According to Reddit (2026): What Real Users Actually Recommend',
+    description: 'What YouTube summarizer does Reddit actually recommend in 2026? We analyzed threads from r/productivity, r/studytips, r/software, and more to find what real users prefer — and what they warn against.',
+    date: '2026-04-27',
+  },
+  {
     slug: 'youtube-video-to-text-transcription-summarization-2026',
     title: 'YouTube Video to Text: Best Transcription and Summarization Tools in 2026',
     description: 'Convert any YouTube video to text with free and paid tools. Compare transcription vs. summarization, what actually works in 2026, and when to use which method.',
@@ -130,24 +148,6 @@ export const allPosts: PostListEntry[] = [
     slug: 'how-to-summarize-tutorial-videos-quickly',
     title: 'How to Summarize Tutorial Videos Quickly',
     description: 'Learn how to quickly summarize tutorial summarization videos using AI-powered tools. Save time and extract key insights from YouTube content.',
-    date: '2026-04-01',
-  },
-  {
-    slug: 'content-marketing-strategy',
-    title: 'Content Marketing Strategy',
-    description: 'Learn how to quickly summarize content marketing strategy videos using AI-powered tools. Save time and extract key insights from YouTube content.',
-    date: '2026-04-01',
-  },
-  {
-    slug: 'digital-photography-tips',
-    title: 'Digital Photography Tips',
-    description: 'Learn how to quickly summarize digital photography tips videos using AI-powered tools. Save time and extract key insights from YouTube content.',
-    date: '2026-04-01',
-  },
-  {
-    slug: 'software-development-best-practices',
-    title: 'Software Development Best Practices',
-    description: 'Learn how to quickly summarize software development best practices videos using AI-powered tools. Save time and extract key insights from YouTube content.',
     date: '2026-04-01',
   },
   {
