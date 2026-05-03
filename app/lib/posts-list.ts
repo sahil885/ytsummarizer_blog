@@ -7,6 +7,102 @@ export type PostListEntry = {
 
 export const allPosts: PostListEntry[] = [
   {
+    slug: 'youtube-summarizer-for-project-managers',
+    title: 'YouTube Summarizer for Project Managers: PMP Prep, Meeting Recaps, and Agile Training in Half the Time',
+    description: 'Project managers use AI YouTube summarization to accelerate PMP exam prep, convert meeting recordings into action item lists, and stay current on agile and leadership frameworks without watching hours of video.',
+    date: '2026-05-04',
+  },
+  {
+    slug: 'youtube-summarizer-vs-2x-speed',
+    title: 'YouTube Summarizer vs. 2x Speed: Which Actually Saves More Time?',
+    description: 'Comparing AI YouTube summarization vs. watching at 2x speed. When to use each method, what the time savings actually look like, and the hybrid workflow that beats both approaches.',
+    date: '2026-05-04',
+  },
+  {
+    slug: 'youtube-summarizer-for-ai-ml-researchers',
+    title: 'YouTube Summarizer for AI/ML Researchers: Keep Up with arxiv Papers Without Drowning in Video',
+    description: 'AI and ML researchers use YouTube summarization to process paper explanation videos, conference talk recordings, and ML tutorial content at scale. A practical guide to the channels and workflows that work.',
+    date: '2026-05-04',
+  },
+  {
+    slug: 'youtube-book-summaries-ai-extract-key-ideas',
+    title: 'YouTube Book Summaries with AI: Extract Key Ideas from 50 Book Videos Per Week',
+    description: 'Use AI to extract key ideas from YouTube book review and book summary videos. Build a prioritized reading list from dozens of book videos without watching hours of content.',
+    date: '2026-05-02',
+  },
+  {
+    slug: 'youtube-summarizer-conference-talks-keynotes',
+    title: 'YouTube Summarizer for Conference Talks: Never Sit Through Another Bad Keynote',
+    description: 'Conference talks on YouTube are packed with insights buried in 45 minutes of preamble. Use AI to extract the 5 minutes that matter from every keynote and tech talk.',
+    date: '2026-05-02',
+  },
+  {
+    slug: 'build-youtube-knowledge-base-video-notes-system',
+    title: 'How to Build a YouTube Knowledge Base That Actually Gets Used',
+    description: 'Turn your YouTube watch history into a searchable knowledge base. A complete system for capturing, organizing, and retrieving insights from video content.',
+    date: '2026-05-02',
+  },
+  {
+    slug: 'youtube-summarizer-not-working-common-problems-fixes',
+    title: 'YouTube Summarizer Not Working? Common Problems and Fixes (2026)',
+    description: 'YouTube summarizer broken? Here are the 9 most common reasons YouTube summarizers stop working and specific fixes for each.',
+    date: '2026-05-02',
+  },
+  {
+    slug: 'best-youtube-summary-generator-tested-6-free-tools',
+    title: 'Best YouTube Summary Generator: We Tested 6 Free Tools on the Same Video',
+    description: 'We tested 6 free YouTube summary generators on the same 22-minute video. Quality, speed, accuracy, and formatting compared side by side.',
+    date: '2026-05-01',
+  },
+  {
+    slug: 'how-does-ai-youtube-summarization-work-technology-explained',
+    title: 'How Does AI YouTube Summarization Work? (The Technology Explained Simply)',
+    description: 'Ever wondered how AI summarizes a 2-hour YouTube video in 60 seconds? The three-step technology pipeline explained in plain language.',
+    date: '2026-05-01',
+  },
+  {
+    slug: 'youtube-summarizer-pricing-free-vs-onetime-vs-subscription',
+    title: 'YouTube Summarizer Pricing Compared: Free, One-Time, and Subscription Tools in 2026',
+    description: 'Compare YouTube summarizer pricing: completely free tools, one-time $29 lifetime deals, and $8-15/month subscriptions. Full cost breakdown and what you get at each price.',
+    date: '2026-05-01',
+  },
+  {
+    slug: 'adhd-youtube-ai-summarizer-focus-long-videos',
+    title: 'ADHD and YouTube: How AI Summarizers Help You Actually Finish Long Videos',
+    description: 'If ADHD makes long YouTube videos impossible to focus on, AI summarizers can help. Here\'s how people with ADHD use video summaries to learn without the overwhelm and guilt.',
+    date: '2026-04-30',
+  },
+  {
+    slug: 'youtube-video-notes-best-apps-methods',
+    title: 'YouTube Video Notes: Best Apps and Methods to Take Notes Without Pausing (2026)',
+    description: 'Stop pausing YouTube videos to take notes. Compare the best apps, AI tools, and methods for capturing video notes without losing your place or your train of thought.',
+    date: '2026-04-30',
+  },
+  {
+    slug: 'how-to-download-youtube-transcript-5-free-methods',
+    title: 'How to Download YouTube Transcript: 5 Free Methods That Still Work in 2026',
+    description: 'Need to download a YouTube transcript? Here are 5 free methods that still work in 2026 — from YouTube\'s built-in viewer to AI tools that extract and format transcripts automatically.',
+    date: '2026-04-30',
+  },
+  {
+    slug: 'export-youtube-summaries-to-notion',
+    title: 'How to Export YouTube Summaries to Notion (Step-by-Step Workflow)',
+    description: 'Learn how to export AI-generated YouTube summaries directly into Notion. A complete workflow for building a searchable video knowledge base.',
+    date: '2026-04-22',
+  },
+  {
+    slug: 'best-youtube-summarizer-for-students-no-subscription',
+    title: 'Best YouTube Summarizer for Students in 2026 (No Subscription Required)',
+    description: 'Compare the best YouTube summarizers for students that don\'t require a monthly subscription. One-time lifetime deals, genuine free tiers, and tools that work for lectures.',
+    date: '2026-04-22',
+  },
+  {
+    slug: 'youtube-summarizer-vs-chatgpt-manual-workflow',
+    title: 'YouTube Summarizer vs. Copy-Paste to ChatGPT: Why Dedicated Tools Save You 5 Extra Steps',
+    description: 'Copying YouTube transcripts to ChatGPT works — but it takes 5 extra steps and breaks on long videos. We compared the manual workflow to dedicated summarizer tools.',
+    date: '2026-04-22',
+  },
+  {
     slug: 'youtube-summarizer-for-nurses-and-healthcare-workers',
     title: 'YouTube Summarizer for Nurses and Healthcare Workers: Stay Current Without the Screen Time',
     description: 'Nurses and allied health professionals use AI YouTube summarizers to keep up with clinical education, training videos, and continuing education content without watching hours of video.',

@@ -29,6 +29,19 @@ const NOINDEX_SLUGS = new Set([
 ])
 
 const postDates: Record<string, string> = {
+  'youtube-book-summaries-ai-extract-key-ideas': '2026-05-02',
+  'youtube-summarizer-conference-talks-keynotes': '2026-05-02',
+  'build-youtube-knowledge-base-video-notes-system': '2026-05-02',
+  'youtube-summarizer-not-working-common-problems-fixes': '2026-05-02',
+  'best-youtube-summary-generator-tested-6-free-tools': '2026-05-01',
+  'how-does-ai-youtube-summarization-work-technology-explained': '2026-05-01',
+  'youtube-summarizer-pricing-free-vs-onetime-vs-subscription': '2026-05-01',
+  'adhd-youtube-ai-summarizer-focus-long-videos': '2026-04-30',
+  'youtube-video-notes-best-apps-methods': '2026-04-30',
+  'how-to-download-youtube-transcript-5-free-methods': '2026-04-30',
+  'export-youtube-summaries-to-notion': '2026-04-22',
+  'best-youtube-summarizer-for-students-no-subscription': '2026-04-22',
+  'youtube-summarizer-vs-chatgpt-manual-workflow': '2026-04-22',
   'how-to-summarize-youtube-videos': '2026-03-12',
   'how-to-summarize-machine-learning-videos-with-ai': '2026-03-12',
   'python-tutorial-video-summary-learn-faster': '2026-03-12',
@@ -153,6 +166,9 @@ const postDates: Record<string, string> = {
   'youtube-summarizer-for-nurses-and-healthcare-workers': '2026-04-27',
   'youtube-to-podcast-show-notes-ai-workflow': '2026-04-27',
   'best-youtube-summarizer-reddit-recommendations-2026': '2026-04-27',
+  'youtube-summarizer-for-project-managers': '2026-05-04',
+  'youtube-summarizer-vs-2x-speed': '2026-05-04',
+  'youtube-summarizer-for-ai-ml-researchers': '2026-05-04',
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
