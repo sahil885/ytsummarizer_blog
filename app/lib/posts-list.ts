@@ -7,6 +7,54 @@ export type PostListEntry = {
 
 export const allPosts: PostListEntry[] = [
   {
+    slug: 'youtube-summarizer-for-law-students',
+    title: 'YouTube Summarizer for Law Students: Bar Prep, Case Briefs, and Doctrine Videos in Less Time',
+    description: 'Law students use AI YouTube summarization to accelerate bar exam prep, extract doctrine from case study videos, and process lecture recordings in a fraction of the watch time.',
+    date: '2026-05-10',
+  },
+  {
+    slug: 'youtube-summarizer-for-language-learners',
+    title: 'YouTube Summarizer for Language Learners: Get More from Immersion Content Without Burning Out',
+    description: 'Language learners use AI YouTube summarization to pre-screen immersion videos, extract vocabulary and grammar patterns, and build comprehensible input habits that actually stick.',
+    date: '2026-05-10',
+  },
+  {
+    slug: 'youtube-summarizer-for-financial-advisors',
+    title: 'YouTube Summarizer for Financial Advisors: Stay Current on Markets Without Losing Client Hours',
+    description: 'Financial advisors use AI YouTube summarization to digest market commentary, earn CE credits faster, and create client-ready talking points from hours of video content — in minutes.',
+    date: '2026-05-10',
+  },
+  {
+    slug: 'best-ai-video-summarization-tools-2026',
+    title: 'Best AI Video Summarization Tools 2026: 10 Tools Ranked by Accuracy',
+    description: 'We ranked 10 AI video summarization tools in 2026 by accuracy, speed, and price. 3 tools got facts wrong. 2 hit limits on long videos. Here\'s what actually holds up.',
+    date: '2026-05-04',
+  },
+  {
+    slug: 'free-youtube-video-summarizer-ai-tools-2026',
+    title: "Free YouTube Video Summarizer AI Tools 2026: What's Actually Free vs. Free Trial",
+    description: "7 free YouTube video summarizer AI tools in 2026 — tested to separate genuinely unlimited free from tools that cut you off after 5 videos. 2 are truly free. The rest aren't.",
+    date: '2026-05-04',
+  },
+  {
+    slug: 'copying-youtube-transcript-to-chatgpt-wastes-time',
+    title: 'Why Copying YouTube Transcripts to ChatGPT Wastes More Time Than You Think',
+    description: 'The "free" ChatGPT transcript method takes 4-6 minutes per video and breaks on long content. We counted the steps and measured the real time cost vs. dedicated YouTube summarizers.',
+    date: '2026-05-04',
+  },
+  {
+    slug: 'best-youtube-summarizers-for-students-2026-free-paid',
+    title: 'Best YouTube Summarizers for Students in 2026 (Free and Paid)',
+    description: 'Compare the best YouTube summarizers for students in 2026 — free tiers, $29 lifetime deals, and subscription tools. Includes options for tight budgets and heavy exam-season use.',
+    date: '2026-05-04',
+  },
+  {
+    slug: 'fastest-way-to-summarize-youtube-video-methods-compared',
+    title: "What's the Fastest Way to Summarize a YouTube Video? (10+ Methods Compared, 2026)",
+    description: 'We timed every method for summarizing YouTube videos in 2026. From dedicated tools (30 sec) to ChatGPT manual workflow (5+ min) — ranked by actual speed with specific step counts.',
+    date: '2026-05-04',
+  },
+  {
     slug: 'youtube-summarizer-for-project-managers',
     title: 'YouTube Summarizer for Project Managers: PMP Prep, Meeting Recaps, and Agile Training in Half the Time',
     description: 'Project managers use AI YouTube summarization to accelerate PMP exam prep, convert meeting recordings into action item lists, and stay current on agile and leadership frameworks without watching hours of video.',

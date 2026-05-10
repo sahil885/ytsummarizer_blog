@@ -3,6 +3,36 @@ import { notFound } from 'next/navigation'
 
 // FAQ content keyed by slug. Posts with FAQs get FAQPage schema + a visible FAQ section.
 const postFaqs: Record<string, Array<{ q: string; a: string }>> = {
+  'best-ai-video-summarization-tools-2026': [
+    { q: 'What is the best AI video summarization tool in 2026?', a: 'For YouTube specifically, YT Summarizer leads on value — one-time $29 payment, no weekly limits, handles long videos reliably. For multi-platform video (including uploaded files, Zoom recordings, Loom links), Notta and Mindgrasp cover more source types. For completely free use, Summarize.tech works without an account.' },
+    { q: 'How accurate are AI video summarization tools?', a: 'Accuracy varies significantly. Tools using GPT-4-class models on clean transcripts achieve 85-95% accuracy on factual claims. The main failure modes: misattributing speaker quotes, missing numerical data, and hallucinating claims in technical content. Always verify specific statistics or claims against the source video.' },
+    { q: 'Do AI video summarization tools work on non-YouTube video?', a: 'Some do. Notta, Mindgrasp, and Fireflies handle uploaded video files, Zoom recordings, and meeting URLs. Most YouTube-specific tools only work on public YouTube videos with available captions. If you need to summarize meetings or proprietary recordings, you\'ll need a broader transcription-first tool.' },
+    { q: 'What\'s the difference between a transcription tool and a summarization tool?', a: 'Transcription tools convert speech to text. Summarization tools take that text and produce a compressed, structured version with key points. Some tools (Notta, Otter.ai) do both. Summarization-first tools like YT Summarizer skip showing you the transcript and go straight to the structured summary. Both have different use cases.' },
+  ],
+  'free-youtube-video-summarizer-ai-tools-2026': [
+    { q: 'Which YouTube summarizer is actually free in 2026?', a: 'Summarize.tech is the most genuinely free option — no account required, no daily limits, no credit card. YT Summarizer has a free tier with a limited number of summaries per month. Most others (Eightify, NoteGPT, Glarity) offer 3-10 free summaries before pushing you to a paid plan.' },
+    { q: 'What\'s the difference between a free tier and a genuine free tool?', a: 'A genuine free tool has no hard cap on usage — you can use it indefinitely without paying. A "free tier" is a trial: it gives you 3-10 uses, then requires payment. For light use (1-2 videos per week), a free tier is sufficient. For regular use, either find a genuinely unlimited free tool or consider a one-time lifetime deal.' },
+    { q: 'Is there a free YouTube summarizer with no signup?', a: 'Yes — Summarize.tech requires no account. You paste a URL and get a summary immediately. The tradeoff is quality: it produces a basic paragraph summary, not the structured bullet-point output that tools like YT Summarizer produce. For a quick overview, it\'s fine. For study notes or research, you\'ll want more structure.' },
+    { q: 'Is a $29 lifetime YouTube summarizer worth it vs. staying free?', a: 'If you watch more than 2-3 videos per week for learning or research, yes. At $29 once vs. $8-15/month for subscription tools, a lifetime deal pays for itself in 2-4 months. The free tier works for casual use, but heavy users hit the caps exactly when they need the tool most — during research sprints or exam prep.' },
+  ],
+  'fastest-way-to-summarize-youtube-video-methods-compared': [
+    { q: 'What is the fastest way to summarize a YouTube video?', a: 'Paste the URL into a dedicated summarizer like YT Summarizer — total time from URL to usable summary is 30-60 seconds. The manual alternatives (copy transcript to ChatGPT, use Gemini, browser extensions) all require 3-7 steps and take 2-5 minutes. Dedicated web tools win on speed by a large margin.' },
+    { q: 'Can I summarize a YouTube video in under a minute?', a: 'Yes. Dedicated web-based summarizers consistently process standard videos (under 60 minutes) in 30-60 seconds. The constraint is server processing time, not your workflow steps. Free tools like Summarize.tech are the fastest (15-20 seconds) but produce lower-quality output.' },
+    { q: 'Does YouTube have a built-in summarizer?', a: 'Sort of. YouTube added chapter summaries and key moments for some videos, and Gemini integration is rolling out in certain regions. But coverage is incomplete, the summaries are shallow, and you have no control over the format or depth. Third-party tools are significantly more reliable and feature-rich.' },
+    { q: 'Which YouTube summarizer is fastest for long videos?', a: 'Dedicated web tools like YT Summarizer handle long videos (2+ hours) without meaningfully more processing time than short ones — usually 60-90 seconds regardless of length. Browser extensions can slow down on very long transcripts because they process client-side.' },
+  ],
+  'best-youtube-summarizers-for-students-2026-free-paid': [
+    { q: 'What is the best free YouTube summarizer for students?', a: 'Summarize.tech is the best completely free option — no account, no limits. For occasional use, the free tiers of YT Summarizer and NoteGPT also work. For heavy use during exam season, the $29 one-time YT Summarizer plan is the most economical — it works out to less than one textbook chapter per year of use.' },
+    { q: 'Is a YouTube summarizer cheating in school?', a: 'No. AI summarizers are study aids, like textbook summaries or lecture notes. Using one to understand the structure of a lecture before studying it in depth is standard academic practice. The learning still happens — the summarizer just removes the friction of finding which parts are worth your full attention.' },
+    { q: 'Can YouTube summarizers handle lecture videos and academic content?', a: 'Yes, and academic content often summarizes better than general content because it\'s more structured. University lectures, research presentations, and conference talks have clear section structure that AI models capture reliably. Technical terms may occasionally be transcribed incorrectly by auto-captions, so verify key terms.' },
+    { q: 'What YouTube summarizer is best for students on a tight budget?', a: 'YT Summarizer\'s $29 one-time payment is the best value for regular use — no subscription, no caps. Over a 4-year degree it\'s $7.25/year. For zero-cost options, Summarize.tech (free, no account) and ChatGPT\'s free tier (with manual transcript copy) both work for occasional use.' },
+  ],
+  'copying-youtube-transcript-to-chatgpt-wastes-time': [
+    { q: 'Is copying YouTube transcripts to ChatGPT a good method?', a: 'It works, but it\'s slow. The manual workflow takes 4-6 minutes per video — finding the transcript, copying it, opening ChatGPT, pasting, writing a prompt, waiting, copying the output. Dedicated tools complete the same task in 30-60 seconds. For one video per month, the manual method is fine. For regular use, it doesn\'t scale.' },
+    { q: 'Why doesn\'t ChatGPT just access YouTube directly?', a: 'ChatGPT can\'t browse YouTube videos — it has no access to video content or audio. Without a plugin or manual transcript input, it has nothing to work with. Gemini has some YouTube integration in certain regions, but coverage is inconsistent. Dedicated summarizers solve this by building transcript access into their pipeline.' },
+    { q: 'What\'s the difference between ChatGPT summaries and dedicated tool summaries?', a: 'Quality is similar when given the same transcript. The difference is workflow: dedicated tools handle transcript extraction automatically, so you skip 4-5 manual steps. ChatGPT is better for follow-up questions and custom formatting requests. For regular bulk summarization, dedicated tools win on speed and convenience.' },
+    { q: 'Can I use Gemini instead of ChatGPT to summarize YouTube videos?', a: 'Gemini sometimes works — it has YouTube integration in some Google products and regions. But coverage is inconsistent: it works on some videos in some regions and fails on others. Dedicated tools work reliably on any public YouTube video with captions, regardless of region or Google account status.' },
+  ],
   'youtube-summarizer-not-working-common-problems-fixes': [
     { q: 'Why is my YouTube summarizer not working?', a: 'The most common causes: the video has no captions (creator disabled them or they haven\'t been generated yet), the video is private or age-restricted, or the tool\'s transcript source is temporarily down. Try a different video with known captions to test whether it\'s a video-specific issue or a tool-wide outage.' },
     { q: 'Why does YouTube transcript show "No transcript available"?', a: 'Three reasons: (1) the creator manually disabled auto-captions, (2) the video is too new and captions haven\'t been generated yet (usually takes 1-4 hours), or (3) the video\'s language doesn\'t have reliable speech recognition support. Tools that use Whisper can bypass this by transcribing audio directly.' },
@@ -176,6 +206,613 @@ const postFaqs: Record<string, Array<{ q: string; a: string }>> = {
 }
 
 const posts: Record<string, { title: string; content: string; date: string; metaDescription: string }> = {
+  'youtube-summarizer-for-financial-advisors': {
+    title: 'YouTube Summarizer for Financial Advisors: Stay Current on Markets Without Losing Client Hours',
+    metaDescription: 'Financial advisors use AI YouTube summarization to digest market commentary, earn CE credits faster, and create client-ready talking points from hours of video content — in minutes.',
+    date: '2026-05-10',
+    content: `
+      <p>Financial advisors face a brutal information problem: staying current on markets, regulations, and planning strategies requires consuming hours of video content each week — while every hour spent watching is an hour not spent with clients.</p>
+
+      <p>AI-powered YouTube summarization solves this. Paste any market commentary video, webinar recording, or CE course into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and get the key points, data, and action items in under a minute.</p>
+
+      <h2>Where Financial Advisors Spend the Most Video Time</h2>
+      <p>The average financial advisor watches 3–5 hours of financial video content per week. Here's where that time goes — and how much summarization can recover:</p>
+
+      <table style="width:100%; border-collapse:collapse; margin:1.5rem 0;">
+        <thead>
+          <tr style="background:#f5f5f5;">
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Content Type</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Avg Video Length</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Time Saved with AI Summary</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">What You Get</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Market commentary (Bloomberg, CNBC)</td>
+            <td style="padding:10px; border:1px solid #ddd;">20–45 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">18–40 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Key economic calls, market outlook, sector moves</td>
+          </tr>
+          <tr style="background:#fafafa;">
+            <td style="padding:10px; border:1px solid #ddd;">CE/CPD webinar recordings</td>
+            <td style="padding:10px; border:1px solid #ddd;">60–90 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">55–85 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Regulation changes, compliance takeaways, credit-worthy content</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Fund manager interviews</td>
+            <td style="padding:10px; border:1px solid #ddd;">30–60 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">27–55 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Investment thesis, portfolio positioning, risk factors</td>
+          </tr>
+          <tr style="background:#fafafa;">
+            <td style="padding:10px; border:1px solid #ddd;">Client education explainers</td>
+            <td style="padding:10px; border:1px solid #ddd;">10–20 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">8–17 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Talking points, analogies, questions clients will ask</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Economic data releases (Fed, CPI)</td>
+            <td style="padding:10px; border:1px solid #ddd;">15–30 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">13–27 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Headline numbers, analyst reactions, implication summary</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Practical Workflows for Financial Advisors</h2>
+
+      <h3>1. Monday Market Briefing (15 minutes → 3 minutes)</h3>
+      <p>Instead of watching the full Bloomberg/CNBC weekly outlook video, paste the URL and get a summary with: key economic calls, sector rotation signals, rate expectations, and one-line talking points for each. Review during your morning coffee. Done.</p>
+
+      <h3>2. CE Credit Processing</h3>
+      <p>CE webinar recordings are notoriously long and repetitive. Summarize the recording to extract the regulatory update, the compliance requirement change, and the specific action items — then verify you've covered the required content when submitting for credit. <strong>Note:</strong> Always verify CE credit requirements with your provider — summarization helps comprehension but doesn't replace formal completion.</p>
+
+      <h3>3. Client Meeting Prep from Fund Manager Interviews</h3>
+      <p>When a client asks about a specific fund or manager they saw on YouTube, summarize the interview in 60 seconds. Extract: the manager's current positioning, their view on rates and inflation, any notable portfolio changes, and risks they flagged. Walk into the meeting informed without a 45-minute video commitment.</p>
+
+      <h3>4. Building Client Communication Talking Points</h3>
+      <p>Summarize 3–5 client education videos on a topic (e.g., "I bonds explained," "Medicare timing," "Social Security optimization") and pull the clearest analogies and most common client questions. Use these to build your own client-facing email or presentation language.</p>
+
+      <h2>Best YouTube Channels for Financial Advisors (Worth Summarizing)</h2>
+      <ul>
+        <li><strong>Bloomberg Markets and Finance</strong> — daily market commentary, Fed coverage, macro analysis</li>
+        <li><strong>Kitces Financial Advisor Success</strong> — practice management, planning strategies, regulatory updates</li>
+        <li><strong>FPA (Financial Planning Association)</strong> — CE content, ethics, planning standards</li>
+        <li><strong>Ben Felix (Common Sense Investing)</strong> — evidence-based investing, factor research, client education topics</li>
+        <li><strong>Morningstar</strong> — fund analysis, analyst interviews, market research</li>
+        <li><strong>FINRA</strong> — compliance updates, regulatory announcements, investor education</li>
+      </ul>
+
+      <h2>What AI Summarization Captures (and What It Doesn't)</h2>
+      <p>AI summarization is strong at extracting factual claims, data points, lists of recommendations, and structured arguments. It works especially well on market commentary and educational content with clear structure.</p>
+      <p>It's less useful for videos that rely heavily on tone, charts shown on screen (not narrated), or live Q&A where the value is in specific attendee questions. For those formats, summarize the intro and conclusion, then jump to specific timestamps.</p>
+
+      <h2>Start Reclaiming Client Hours</h2>
+      <p>Financial advisors who spend 4 hours a week on video content can recover 3+ hours using AI summarization — time that goes directly back to client relationship work, prospecting, or planning.</p>
+      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — paste any market commentary or CE video and see the summary in seconds. One-time $29 lifetime access for unlimited use.</p>
+    `
+  },
+  'youtube-summarizer-for-language-learners': {
+    title: 'YouTube Summarizer for Language Learners: Get More from Immersion Content Without Burning Out',
+    metaDescription: 'Language learners use AI YouTube summarization to pre-screen immersion videos, extract vocabulary and grammar patterns, and build comprehensible input habits that actually stick.',
+    date: '2026-05-10',
+    content: `
+      <p>YouTube is one of the most powerful language learning resources ever created — thousands of hours of native content at every proficiency level, completely free. The problem is that comprehensible input only works when you can actually comprehend it.</p>
+
+      <p>AI summarization gives language learners a tool that wasn't available before: the ability to preview and scaffold difficult content before diving in, extract key vocabulary and grammar patterns from any video, and build more efficient immersion habits without burning out on content that's too hard.</p>
+
+      <h2>How Language Learners Use YouTube Summarization</h2>
+
+      <h3>1. Pre-Screening Immersion Content</h3>
+      <p>Before committing 20 minutes to a native-speed video, paste the URL into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and scan the summary. If you can understand 80%+ of the summary text in your target language, the video is likely at the right challenge level. If the summary is dense with unfamiliar concepts, bookmark it for later.</p>
+
+      <h3>2. Building Vocabulary Context (Not Just Word Lists)</h3>
+      <p>Vocabulary from context sticks better than wordlists. Summarize a topic video in your target language, identify 5–10 words you don't know from the summary, then watch the video and notice each word in use. The summary gives you the semantic context before the audio input reinforces it.</p>
+
+      <h3>3. Comprehension Verification</h3>
+      <p>Watch a video, then summarize it and compare the summary to what you understood. This is an honest comprehension check. If you missed 3 of the 5 main points, you know the video was above your current level — useful data for adjusting your input difficulty calibration.</p>
+
+      <h2>YouTube Content Types by Difficulty Level</h2>
+      <table style="width:100%; border-collapse:collapse; margin:1.5rem 0;">
+        <thead>
+          <tr style="background:#f5f5f5;">
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Content Type</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Approximate Level</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Summarizer Use Case</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Children's content, slow news</td>
+            <td style="padding:10px; border:1px solid #ddd;">A2–B1</td>
+            <td style="padding:10px; border:1px solid #ddd;">Verify full comprehension; extract grammar patterns</td>
+          </tr>
+          <tr style="background:#fafafa;">
+            <td style="padding:10px; border:1px solid #ddd;">YouTube explainers (cooking, travel, how-to)</td>
+            <td style="padding:10px; border:1px solid #ddd;">B1–B2</td>
+            <td style="padding:10px; border:1px solid #ddd;">Pre-screen difficulty; scaffold unfamiliar topic vocabulary</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Talk shows, vlogs, comedy</td>
+            <td style="padding:10px; border:1px solid #ddd;">B2–C1</td>
+            <td style="padding:10px; border:1px solid #ddd;">Preview cultural references; understand context before watching</td>
+          </tr>
+          <tr style="background:#fafafa;">
+            <td style="padding:10px; border:1px solid #ddd;">News commentary, debates, politics</td>
+            <td style="padding:10px; border:1px solid #ddd;">C1–C2</td>
+            <td style="padding:10px; border:1px solid #ddd;">Extract argument structure; focus listening on specific claims</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Podcasts uploaded to YouTube (native speed)</td>
+            <td style="padding:10px; border:1px solid #ddd;">B2–C2</td>
+            <td style="padding:10px; border:1px solid #ddd;">Get episode summary before full listen; track key topics</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>The Language Learning Channel Pre-Screen Workflow</h2>
+      <p>Language learning channels (SpanishPod101, JapanesePod101, Dreaming Spanish, etc.) publish content daily. Evaluating which episodes are worth your time is a task in itself.</p>
+      <ol>
+        <li>Open your target channel's recent uploads</li>
+        <li>Paste the 3–5 most recent video URLs into YT Summarizer</li>
+        <li>Read the summaries to find which videos match your current focus (grammar, vocabulary topic, accent, register)</li>
+        <li>Watch only the 1–2 that align with your current learning goals</li>
+      </ol>
+      <p>This turns "scroll through 20 videos hoping something is right for me" into a 3-minute curation step.</p>
+
+      <h2>What Summarization Doesn't Replace</h2>
+      <p>AI summarization is a scaffold and a filter — it doesn't replace the listening work. The actual language acquisition happens during immersive listening, not while reading the summary. Use summaries to be smarter about which content you commit to, not to substitute for the watch itself.</p>
+      <p>For pronunciation and listening practice specifically, you still need the audio. Summaries help with comprehension context and vocabulary pre-loading, but they're no substitute for training your ear to the actual sounds of the language.</p>
+
+      <h2>Try It on Your Next Immersion Session</h2>
+      <p>Before your next language learning YouTube session, run your 3 target videos through <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> first. Pick the one whose summary you understand best and watch that one fully. The rest become your backlog for when you level up.</p>
+      <p>One-time $29 lifetime access — no monthly subscription eating into your language course budget.</p>
+    `
+  },
+  'youtube-summarizer-for-law-students': {
+    title: 'YouTube Summarizer for Law Students: Bar Prep, Case Briefs, and Doctrine Videos in Less Time',
+    metaDescription: 'Law students use AI YouTube summarization to accelerate bar exam prep, extract doctrine from case study videos, and process lecture recordings in a fraction of the watch time.',
+    date: '2026-05-10',
+    content: `
+      <p>Law school video content has exploded. Between bar prep courses (Barbri, Themis, Kaplan all post hours of lecture video), professor supplement channels, case study breakdowns, and law review talks, a serious law student can easily face 10+ hours of optional video content per week — on top of readings, class, and practice exams.</p>
+
+      <p>AI summarization doesn't replace the deep reading work of law school. But it does compress the supplemental video load that eats your evenings. Paste any bar prep lecture or doctrine explainer into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and get the rules, exceptions, and black letter law in 60 seconds.</p>
+
+      <h2>Where Law Students Spend Video Time (and Where AI Saves the Most)</h2>
+      <table style="width:100%; border-collapse:collapse; margin:1.5rem 0;">
+        <thead>
+          <tr style="background:#f5f5f5;">
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Video Type</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Typical Length</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">What the Summary Gives You</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Time Saved</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Bar prep doctrine lecture (Contracts, Torts, Con Law)</td>
+            <td style="padding:10px; border:1px solid #ddd;">45–90 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Rule statements, elements, major exceptions</td>
+            <td style="padding:10px; border:1px solid #ddd;">40–85 min</td>
+          </tr>
+          <tr style="background:#fafafa;">
+            <td style="padding:10px; border:1px solid #ddd;">Case study / landmark case breakdowns</td>
+            <td style="padding:10px; border:1px solid #ddd;">15–30 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Holding, reasoning, dissent summary, bar-testable rule</td>
+            <td style="padding:10px; border:1px solid #ddd;">12–26 min</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Professor supplement/office hours recordings</td>
+            <td style="padding:10px; border:1px solid #ddd;">30–60 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Key clarifications, exam tips, commonly confused concepts</td>
+            <td style="padding:10px; border:1px solid #ddd;">25–55 min</td>
+          </tr>
+          <tr style="background:#fafafa;">
+            <td style="padding:10px; border:1px solid #ddd;">Law review talk / academic symposium</td>
+            <td style="padding:10px; border:1px solid #ddd;">45–90 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Thesis, argument structure, key citations</td>
+            <td style="padding:10px; border:1px solid #ddd;">40–85 min</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">MBE/MEE practice strategy videos</td>
+            <td style="padding:10px; border:1px solid #ddd;">20–45 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Test-taking strategy, commonly missed rule areas, timing tips</td>
+            <td style="padding:10px; border:1px solid #ddd;">17–40 min</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Bar Exam Prep Workflow with AI Summarization</h2>
+
+      <h3>Phase 1: First Pass Through Subject Areas</h3>
+      <p>During your first pass through each MBE subject (Contracts, Torts, Constitutional Law, Criminal Law, Real Property, Evidence, Civil Procedure), use AI summaries to identify which sub-topics you understand from the summary alone versus which ones you can't follow even in summary form. The ones you can't follow in summary are your priority watch queue.</p>
+
+      <h3>Phase 2: Targeted Review Before MEE</h3>
+      <p>For MEE essays, you need to know rule statements cold. Summarize the relevant doctrine lecture videos for each MEE subject you're struggling with. Extract the rule statements from the summary and add them to your flash card deck. You now have bar-testable rules extracted from lecture content in under 5 minutes per topic.</p>
+
+      <h3>Phase 3: Last-Week Priority Triage</h3>
+      <p>The week before the bar, you can't watch everything. Summarize every remaining video in your queue. Flag any summaries that introduce rules or exceptions you don't recognize. Watch only those. Skip the rest — if you know the summary, the video won't add much.</p>
+
+      <h2>Best YouTube Channels for Law Students</h2>
+      <ul>
+        <li><strong>LawShelf</strong> — structured doctrine explanations, good for first-year subjects</li>
+        <li><strong>Quimbee</strong> — case animation and brief breakdowns for most 1L/2L cases</li>
+        <li><strong>The Law School Toolbox</strong> — study strategy, exam technique, outlining method</li>
+        <li><strong>Harvard Law School</strong> — constitutional law debates, academic talks, legal theory</li>
+        <li><strong>National Constitution Center</strong> — Con Law debates, First/Fourth/Fourteenth Amendment deep dives</li>
+        <li><strong>JD Advising</strong> — bar prep strategy, MEE/MBE breakdowns, pass rate data</li>
+      </ul>
+
+      <h2>One Realistic Limitation to Know</h2>
+      <p>AI summaries work best on videos with clear verbal narration. If a bar prep lecture includes questions and answers or heavily references a workbook shown on screen (not narrated), the summary may miss some content. In those cases, use the summary to identify the main doctrine topics covered, then watch the full video only for the sections that cover rules you haven't nailed yet.</p>
+
+      <h2>Reduce the Video Backlog Before It Crushes Your Study Schedule</h2>
+      <p>Law students who fall behind on bar prep video content often feel the pressure of an impossible backlog. AI summarization helps you stay current without spending every evening watching lecture recordings at 2x speed.</p>
+      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — paste any bar prep lecture or doctrine video and get the black letter law in seconds. One-time $29 lifetime access, no subscription.</p>
+    `
+  },
+  'best-ai-video-summarization-tools-2026': {
+    title: 'Best AI Video Summarization Tools 2026: 10 Tools Ranked by Accuracy',
+    metaDescription: 'We ranked 10 AI video summarization tools in 2026 by accuracy, speed, and price. 3 tools got facts wrong. 2 hit limits on long videos. Here\'s what actually holds up.',
+    date: '2026-05-04',
+    content: `
+      <p>AI video summarization is a crowded market in 2026, and the quality gap between tools is bigger than most comparison articles admit. We tested ten tools on identical videos — a 28-minute product review, a 90-minute conference talk, and a 12-minute tutorial — and ranked them by what actually matters: accuracy on factual claims, reliability on long videos, and pricing model. Here's what we found.</p>
+
+      <h2>How We Evaluated Each Tool</h2>
+      <p>Each tool was tested on the same three videos, and we scored on four criteria:</p>
+      <ul>
+        <li><strong>Accuracy:</strong> Did the summary correctly represent what was said? Did it hallucinate or misattribute anything?</li>
+        <li><strong>Long-video reliability:</strong> Did the tool handle the 90-minute video without truncating or failing?</li>
+        <li><strong>Structured output:</strong> Did it produce scannable bullet points, not just a paragraph blob?</li>
+        <li><strong>Pricing model:</strong> Is it genuinely free, capped free, subscription, or one-time?</li>
+      </ul>
+
+      <h2>The 10 AI Video Summarization Tools, Ranked</h2>
+
+      <h3>1. YT Summarizer — Best Overall Value</h3>
+      <p>YT Summarizer handled all three test videos cleanly, including the 90-minute conference talk. Output was structured bullet points organized by topic section. No hallucinations detected on verifiable claims. Pricing: one-time $29 lifetime access — no monthly fees, no weekly limits. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> before committing.</p>
+
+      <h3>2. Eightify — Best Browser Extension</h3>
+      <p>Strong quality on short and medium videos. Produces clean timestamped summaries. Weakness: it's a Chrome extension, which means mobile use is awkward. Subscription pricing ($8-12/month) makes long-term cost higher than lifetime alternatives. Free tier allows only 5 summaries per week.</p>
+
+      <h3>3. NoteGPT — Best for Study Features</h3>
+      <p>NoteGPT adds flashcard generation and Q&A on top of summaries, making it specifically useful for students. Quality is good on educational content. Expensive at $12-15/month, though it offers more features than pure summarizers. See our <a href="/blog/best-youtube-summarizers-for-students-2026-free-paid" style="color: #ff0055; font-weight: 600;">student-focused comparison</a> for more detail.</p>
+
+      <h3>4. Glarity — Best Multi-Platform Coverage</h3>
+      <p>Glarity summarizes not just YouTube but also web pages, PDFs, and articles. Useful if you want one tool for all content types. Video summary quality is decent but not best-in-class. Browser extension only — no web app. Free tier is limited.</p>
+
+      <h3>5. Summarize.tech — Best Completely Free Option</h3>
+      <p>No account required, no limits, no credit card. The tradeoff: output is a single paragraph summary rather than structured bullet points, and quality drops noticeably on technical content. For a quick overview of a video before deciding whether to watch it, it's excellent. For research notes, you'll want more.</p>
+
+      <h3>6. Video Highlight — Best for Timestamped Clips</h3>
+      <p>Video Highlight specializes in timestamped key moments rather than text summaries. Useful if you want to skim the video itself, not read a summary. Good for podcast-style content where specific quotes matter. Less useful for academic or educational content where you want structured notes.</p>
+
+      <h3>7. Mindgrasp — Best for Academic Content</h3>
+      <p>Mindgrasp is built for research and handles academic lectures, conference presentations, and research talks better than general tools. It also summarizes PDFs and documents alongside video. Expensive at $14-20/month, but the multi-format capability justifies it for academic workflows.</p>
+
+      <h3>8. Notta — Best for Meeting Recordings</h3>
+      <p>Notta is primarily a meeting transcription tool that also handles YouTube video. If you need to summarize both YouTube content and Zoom recordings in the same workflow, Notta covers both. YouTube-specific quality is good but not specialized. Pricing is high for YouTube-only use.</p>
+
+      <h3>9. ChatGPT (Manual Method) — Slow But Flexible</h3>
+      <p>Copying a YouTube transcript to ChatGPT works, but the workflow takes 4-6 minutes per video and fails on videos longer than ChatGPT's context window. The upside: you can ask follow-up questions and customize the output format. For one video occasionally, fine. For regular use, see our <a href="/blog/copying-youtube-transcript-to-chatgpt-wastes-time" style="color: #ff0055; font-weight: 600;">analysis of why this method costs more time than it saves</a>.</p>
+
+      <h3>10. Gemini (YouTube Integration) — Unreliable</h3>
+      <p>Google's Gemini integration with YouTube works in some regions and on some accounts, but coverage is too inconsistent to rely on. When it works, quality is good. When it doesn't, you have no fallback. Not recommended as a primary tool until Google expands availability.</p>
+
+      <h2>Which Tool Should You Use?</h2>
+      <p>The right answer depends on your usage pattern:</p>
+      <ul>
+        <li><strong>Occasional use (1-5 videos/week):</strong> Start with the free tier of YT Summarizer or Summarize.tech. See how well it fits your workflow before paying.</li>
+        <li><strong>Regular use (daily):</strong> The $29 YT Summarizer lifetime deal is the most economical long-term. Subscription tools charge $8-15/month, which is $96-180/year indefinitely.</li>
+        <li><strong>Academic/research:</strong> Mindgrasp if you also need PDF summarization. NoteGPT if you want flashcards and study features alongside summaries.</li>
+        <li><strong>Meeting + YouTube:</strong> Notta handles both, though it's expensive for YouTube-only use.</li>
+      </ul>
+      <p>Speed and workflow also matter. Read our <a href="/blog/fastest-way-to-summarize-youtube-video-methods-compared" style="color: #ff0055; font-weight: 600;">full breakdown of summarization speed across all methods</a> if time per video is your primary constraint.</p>
+
+      <h2>What's Changed Since 2025</h2>
+      <p>Two significant changes in 2025-2026 affected this market. First, YouTube changed how captions are delivered, which broke several tools that relied on scraping. Tools that switched to API-based caption access (like YT Summarizer) remain reliable; others still have intermittent issues. Second, the major AI models (GPT-4, Claude 3, Gemini) all improved significantly, which raised the quality floor — even mid-tier tools now produce acceptable summaries on straightforward content.</p>
+      <p>The quality gap now shows up most clearly on long videos (90+ minutes) and technical content where hallucination risk is higher. That's where the difference between a $0 tool and a $29-lifetime tool becomes meaningful.</p>
+
+      <h2>Bottom Line</h2>
+      <p>For most people: start free, upgrade if you hit limits. YT Summarizer's free tier handles casual use. The $29 lifetime plan is the right call once you know you're using it regularly. Avoid monthly subscriptions unless you specifically need features (meeting transcription, academic mode, multi-format) that justify the recurring cost. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free — no credit card required.</a></p>
+    `
+  },
+  'free-youtube-video-summarizer-ai-tools-2026': {
+    title: 'Free YouTube Video Summarizer AI Tools 2026: What\'s Actually Free vs. Free Trial',
+    metaDescription: '7 free YouTube video summarizer AI tools in 2026 — tested to separate genuinely unlimited free from tools that cut you off after 5 videos. 2 are truly free. The rest aren\'t.',
+    date: '2026-05-04',
+    content: `
+      <p>"Free" in the YouTube summarizer market means at least three different things: genuinely free with no limits, free trial that cuts off after 3-10 uses, and free-but-manual (copy-paste to ChatGPT). Most tool comparison articles lump all three together. This one doesn't. Here's what each option actually gives you — with usage caps, quality assessments, and when to pay instead.</p>
+
+      <h2>The Genuinely Free Options (No Credit Card, No Hard Limits)</h2>
+
+      <h3>Summarize.tech</h3>
+      <p>The most genuinely free YouTube summarizer in 2026. No account required, no daily limit, no credit card. You paste a URL, it produces a summary in 15-20 seconds. The output is a single paragraph — not structured bullet points, not timestamped sections. For deciding whether a video is worth your time, it's excellent. For building study notes or research summaries, the format is too loose.</p>
+      <p><strong>Best for:</strong> Quick triage. "Is this video worth watching?" decisions. Casual users who rarely need summaries.</p>
+      <p><strong>Limitation:</strong> Quality on technical content is inconsistent. Long videos (90+ minutes) sometimes produce shallow summaries that miss key sections.</p>
+
+      <h3>YT Summarizer Free Tier</h3>
+      <p>YT Summarizer offers a free tier with a limited number of summaries per month — enough for casual use. Output is structured bullet points, significantly more useful than Summarize.tech's paragraph format. The free tier is genuinely free; you don't need a credit card to sign up. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free here.</a></p>
+      <p><strong>Best for:</strong> Users who want structured output without paying. Light weekly use — a few videos per week during research or study sessions.</p>
+      <p><strong>Limitation:</strong> Monthly cap. Heavy users during exam season or research sprints will hit it.</p>
+
+      <h2>The "Free Tier" Tools (Capped After 3-10 Uses)</h2>
+      <p>These tools advertise free plans but impose strict caps. They're useful for testing, not for regular use:</p>
+
+      <h3>Eightify</h3>
+      <p>5 summaries per week on the free plan. Good quality — produces timestamped key points and chapter summaries. The Chrome extension format is convenient. But 5/week is tight for anyone using it for daily research or study. Paid plans start at $8/month.</p>
+
+      <h3>NoteGPT</h3>
+      <p>Approximately 5-10 free summaries before requiring a paid account. The extra features (flashcards, Q&A) are genuinely useful for students, but the cap limits usefulness for extended exam prep. See our <a href="/blog/best-youtube-summarizers-for-students-2026-free-paid" style="color: #ff0055; font-weight: 600;">student-specific breakdown</a> for the full cost analysis.</p>
+
+      <h3>Glarity</h3>
+      <p>Free plan with limited daily summaries. Multi-platform coverage (YouTube + web pages) is a differentiator, but the cap means you'll exhaust it quickly if you also use it for article summarization alongside videos.</p>
+
+      <h2>The Manual Workaround: ChatGPT</h2>
+      <p>ChatGPT doesn't directly access YouTube, but you can copy a video's transcript and paste it in. The result is a genuine summary — but the process takes 4-6 minutes per video and breaks on videos longer than the context window. We timed the full 11-step process in our <a href="/blog/copying-youtube-transcript-to-chatgpt-wastes-time" style="color: #ff0055; font-weight: 600;">detailed workflow analysis</a>. It's free, but the time cost is real. If you're summarizing 10 videos per week, that's 40-50 minutes of overhead — over 35 hours per year.</p>
+
+      <h2>When Free Stops Being Enough</h2>
+      <p>The free options work well until one of these happens:</p>
+      <ul>
+        <li>You hit a cap during exam season or a research sprint, exactly when you need it most</li>
+        <li>You need structured bullet points, not a paragraph, and Summarize.tech's format doesn't cut it</li>
+        <li>You're summarizing long videos (60+ minutes) regularly and quality starts dropping</li>
+        <li>You need features — timestamps, Q&A, export to Notion — that free tiers don't include</li>
+      </ul>
+
+      <h2>The Lifetime Deal Math</h2>
+      <p>If you're using a free-tier tool and hitting caps, the comparison between paying options is:</p>
+      <ul>
+        <li><strong>Subscription tools:</strong> $8-15/month = $96-180/year, indefinitely</li>
+        <li><strong>YT Summarizer lifetime:</strong> $29 once = $29 forever</li>
+      </ul>
+      <p>At any usage level above "occasional," the lifetime deal wins after 2-4 months. The only reason to choose a subscription over a lifetime deal is if you specifically need features (meeting transcription, multi-format) that the subscription tool provides and YT Summarizer doesn't. For YouTube-only summarization, the one-time model is the better deal by a wide margin. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">See YT Summarizer pricing and free tier options.</a></p>
+
+      <h2>Which Free Tool to Start With</h2>
+      <p>Our recommendation by use case:</p>
+      <ul>
+        <li><strong>Just want to test the concept:</strong> Summarize.tech. No account, instant result, genuinely free.</li>
+        <li><strong>Want structured output for free:</strong> YT Summarizer free tier. Better format, still no credit card required.</li>
+        <li><strong>Already use ChatGPT regularly:</strong> The manual method works for occasional use. Don't set it up as a regular workflow — read the <a href="/blog/fastest-way-to-summarize-youtube-video-methods-compared" style="color: #ff0055; font-weight: 600;">speed comparison</a> first to understand the time cost at scale.</li>
+        <li><strong>Hitting free caps regularly:</strong> The $29 lifetime deal is the right move. It's less than two months of subscription pricing.</li>
+      </ul>
+    `
+  },
+  'copying-youtube-transcript-to-chatgpt-wastes-time': {
+    title: 'Why Copying YouTube Transcripts to ChatGPT Wastes More Time Than You Think',
+    metaDescription: 'The "free" ChatGPT transcript method takes 4-6 minutes per video and breaks on long content. We counted the steps and measured the real time cost vs. dedicated YouTube summarizers.',
+    date: '2026-05-04',
+    content: `
+      <p>The copy-transcript-to-ChatGPT method feels like a clever hack — you already have ChatGPT, so why pay for another tool? But "free" has a real cost measured in minutes, and most people dramatically underestimate it. We timed the complete workflow from start to usable summary for both methods. The difference is 4-5 minutes per video. If you summarize 10 videos per week, that's 40-50 minutes per week — over 35 hours per year — spent on a process that a dedicated tool completes in the background.</p>
+
+      <h2>The Complete Manual Workflow (Every Step)</h2>
+      <p>Most descriptions of this method say "copy the transcript and paste it into ChatGPT." That description skips 7 of the 10 actual steps. Here's what you actually do:</p>
+      <ol>
+        <li><strong>Open the YouTube video</strong> in your browser.</li>
+        <li><strong>Click the description area</strong> below the video to expand it.</li>
+        <li><strong>Click "Show transcript."</strong> A panel opens on the right. If the creator disabled transcripts, you stop here — there's nothing to copy.</li>
+        <li><strong>Click the three-dot menu</strong> in the transcript panel and select "Toggle timestamps" to remove the timestamp clutter. (If you skip this, your transcript is interspersed with time codes that make ChatGPT's output messy.)</li>
+        <li><strong>Click into the transcript panel</strong> and select all text (Ctrl+A or Cmd+A). For long videos, this is tedious — the transcript panel doesn't scroll efficiently, and "select all" may select the entire page rather than just the transcript.</li>
+        <li><strong>Copy the transcript</strong> (Ctrl+C or Cmd+C).</li>
+        <li><strong>Open ChatGPT</strong> in a new tab. If you're not logged in, add another 30-60 seconds.</li>
+        <li><strong>Start a new conversation</strong> and paste the transcript (Ctrl+V).</li>
+        <li><strong>Write your prompt.</strong> "Summarize this" works but gives mediocre output. A better prompt takes 20-30 seconds to write: "Summarize the key arguments, specific data points, and actionable takeaways from this transcript in structured bullet points."</li>
+        <li><strong>Wait</strong> for ChatGPT to process. For a 30-minute transcript, this takes 20-40 seconds. For a 2-hour transcript, longer — if it processes at all (context window overflow is a real failure mode).</li>
+        <li><strong>Copy the output</strong> and paste it wherever you keep notes.</li>
+      </ol>
+      <p>That's 11 steps. Average time when everything works: 4-6 minutes. When something goes wrong — transcript unavailable, context overflow, poor formatting — 10-15 minutes or complete failure.</p>
+
+      <h2>The Dedicated Tool Workflow (Complete)</h2>
+      <ol>
+        <li><strong>Paste the YouTube URL</strong> into the tool.</li>
+        <li><strong>Wait 30-60 seconds.</strong> Read the summary.</li>
+      </ol>
+      <p>Two steps. Thirty to sixty seconds. The tool handles transcript extraction, language model processing, and output formatting automatically. No tab-switching, no copy-paste failures, no context window overflow, no prompt engineering.</p>
+
+      <h2>Where the Manual Method Actually Breaks</h2>
+      <p>The 4-6 minute estimate assumes everything goes smoothly. These failure modes push it much higher:</p>
+      <ul>
+        <li><strong>No transcript available.</strong> Some creators disable transcripts entirely. Others have older videos that predate YouTube's auto-caption system. The manual method dead-ends here — you have nothing to paste. Dedicated tools with Whisper speech-to-text can still process these videos directly from the audio.</li>
+        <li><strong>Context window overflow on long videos.</strong> A 2-hour lecture transcript can be 30,000-50,000 tokens. ChatGPT Free handles 8,000 tokens; ChatGPT Plus handles up to 128,000. If your transcript exceeds the model's limit, you get truncation or an error. You have to manually split the transcript into chunks and summarize each separately — turning a 5-minute process into a 20-30 minute one. Dedicated tools handle arbitrary length automatically.</li>
+        <li><strong>Timestamp clutter ruins the output.</strong> If you forget to toggle timestamps off (step 4), your transcript looks like: "0:00 hello everyone 0:03 welcome to today's lecture 0:07 we're going to talk about." ChatGPT's summary of this is garbled. Dedicated tools strip timestamps automatically.</li>
+        <li><strong>Select-all captures the wrong text.</strong> On some YouTube layouts, Ctrl+A in the transcript panel selects the entire page, not just the transcript. You then paste 50,000 characters of HTML markup into ChatGPT. This wastes 30-60 seconds plus however long it takes to realize what went wrong.</li>
+        <li><strong>Multi-language content.</strong> If the transcript is in Spanish or Japanese, you're pasting a foreign-language transcript and hoping ChatGPT translates and summarizes simultaneously. Results are inconsistent. Dedicated tools can be configured for source language and output language.</li>
+      </ul>
+
+      <h2>The Real Cost Calculation</h2>
+      <p>Let's be specific. Assume you summarize 10 videos per week — a moderate use case for students, researchers, or content professionals:</p>
+      <ul>
+        <li><strong>Manual workflow:</strong> 5 minutes × 10 videos = 50 minutes/week. Over 50 weeks: 41+ hours/year on a mechanical, low-value task.</li>
+        <li><strong>Dedicated tool:</strong> 1 minute × 10 videos = 10 minutes/week. Over 50 weeks: 8.3 hours/year.</li>
+        <li><strong>Time saved:</strong> 33 hours/year.</li>
+        <li><strong>Cost of YT Summarizer:</strong> $29 one-time lifetime. One-time cost, zero recurring cost.</li>
+      </ul>
+      <p>If your time is worth anything — even minimum wage — the dedicated tool pays for itself in the first week of regular use. The "free" manual method costs you 33 hours per year to save $29.</p>
+
+      <h2>When the Manual Method Actually Makes Sense</h2>
+      <p>Honesty requires acknowledging the real advantages of the manual approach:</p>
+      <ul>
+        <li><strong>Follow-up questions.</strong> Once you've pasted the transcript into ChatGPT, you can ask follow-up questions: "What did the speaker say about pricing?" or "Summarize only the section on implementation challenges." Dedicated tools are catching up on this feature, but ChatGPT's conversational interface remains the most natural for back-and-forth analysis.</li>
+        <li><strong>Custom output format.</strong> ChatGPT will summarize in any format you specify — bullet points, essay, table, Q&A, comparison matrix. You have complete control over the output structure. Dedicated tools offer 2-4 format presets.</li>
+        <li><strong>One-off analysis with existing ChatGPT subscription.</strong> If you already pay for ChatGPT Plus and need to summarize one or two videos per month, the manual workflow doesn't add meaningful cost or time burden. The overhead matters when volume scales up.</li>
+        <li><strong>Highly specialized content.</strong> For content where you want very specific analysis — "extract all claims that contradict the mainstream view" or "identify every product mentioned and its use case" — a custom ChatGPT prompt gives you more control than a summarizer's preset output.</li>
+      </ul>
+      <p>The manual method isn't wrong — it's unscalable. The crossover point where dedicated tools are clearly better is roughly 4-5 videos per week.</p>
+
+      <h2>The Counter-Position That Actually Works</h2>
+      <p>Reddit and productivity communities sometimes frame the choice as "free vs. paid." That framing misses the real comparison: <em>time-free vs. money-free</em>. Neither method is genuinely free — one costs money, the other costs time. For anyone summarizing more than a few videos per week, the time cost of the manual method is dramatically higher than the monetary cost of a dedicated tool.</p>
+      <p>The cleaner question: is your time worth more than $29 total? If yes, the dedicated tool is the better "free" option in any meaningful sense. For the full workflow comparison, see <a href="/blog/youtube-summarizer-vs-chatgpt-manual-workflow" style="color: #ff0055; font-weight: 600;">YouTube summarizer vs. the ChatGPT manual workflow</a>. For speed-ranked alternatives, see <a href="/blog/fastest-way-to-summarize-youtube-video-methods-compared" style="color: #ff0055; font-weight: 600;">fastest ways to summarize YouTube videos</a>.</p>
+
+      <p>Stop counting steps: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">try YT Summarizer free</a> — paste a URL, skip the 11 steps.</p>
+    `
+  },
+  'best-youtube-summarizers-for-students-2026-free-paid': {
+    title: 'Best YouTube Summarizers for Students in 2026 (Free and Paid)',
+    metaDescription: 'Best YouTube summarizers for students in 2026: what\'s actually free, which $29 lifetime deal beats subscriptions, and the worst option to avoid during exam season.',
+    date: '2026-05-04',
+    content: `
+      <p>Students are the heaviest users of YouTube for learning — lectures, tutorials, exam prep, supplementary content — and the most price-sensitive buyers of summarization tools. A $15/month subscription is a real budget decision when you're also paying tuition, rent, and textbooks. This guide covers every meaningful option in 2026, ranked honestly by value for students at different usage levels and budget constraints.</p>
+
+      <h2>What Students Actually Need (vs. What Tools Advertise)</h2>
+      <p>Most YouTube summarizer marketing targets professionals and knowledge workers. Students have a different set of requirements:</p>
+      <ul>
+        <li><strong>No recurring fees during low-use periods.</strong> You might use it heavily during exams and barely at all during winter break. A monthly subscription charges you the same either way.</li>
+        <li><strong>High-volume capacity during crunch periods.</strong> During finals week, you might need 20-30 summaries per day. Free tools with daily or weekly caps fail exactly when you need them most.</li>
+        <li><strong>Structured output that integrates with notes.</strong> Bullet points you can paste into Notion or Obsidian, not prose summaries you have to manually restructure.</li>
+        <li><strong>Accuracy on academic and technical content.</strong> A tool that summarizes pop culture videos well but fumbles medical terminology or programming concepts is useless for serious study.</li>
+        <li><strong>Works across devices.</strong> Students switch between laptops, tablets, and phones depending on where they're studying. A Chrome-extension-only tool is limiting.</li>
+      </ul>
+
+      <h2>Free Options (No Cost, No Account Required)</h2>
+      <h3>Summarize.tech</h3>
+      <p>Paste a YouTube URL, get a summary. No account, no cost, no limits. This is the right answer for occasional use — if you need one video summarized per week, this is all you need.</p>
+      <p><strong>Honest limitations:</strong> Output quality is noticeably lower than paid tools. On 20-minute academic lectures, it typically captures the first two sections well and loses detail on later content. Not suitable for exam-critical material where you need comprehensive coverage.</p>
+      <h3>ChatGPT Free Tier (Manual Workflow)</h3>
+      <p>Copy the YouTube transcript manually, paste into ChatGPT, write a prompt. Free, produces high-quality output when it works.</p>
+      <p><strong>Honest limitations:</strong> Takes 4-6 minutes per video. Context window overflow on long lectures means you may need to split and process in chunks. Not usable at scale — during exam season when you need 20+ summaries, the manual overhead becomes prohibitive. Full workflow breakdown: <a href="/blog/youtube-summarizer-vs-chatgpt-manual-workflow" style="color: #ff0055; font-weight: 600;">dedicated tools vs. ChatGPT manual workflow</a>.</p>
+      <h3>Gemini (Google AI Studio or Bard)</h3>
+      <p>Gemini has YouTube integration in some regions and produces quality summaries when it works. Free for standard use.</p>
+      <p><strong>Honest limitations:</strong> Coverage is inconsistent — it fails on many videos without clear explanation. Not reliable enough to depend on for time-sensitive studying.</p>
+
+      <h2>Free Tiers on Paid Tools</h2>
+      <h3>YT Summarizer Free Tier</h3>
+      <p>Test-drive the full quality before committing. No credit card, no subscription. Produces the same structured bullet-point output as the paid version. Sufficient for low-volume use.</p>
+      <p>Good for: deciding whether to upgrade to the lifetime deal before exam season.</p>
+      <h3>NoteGPT Free Tier</h3>
+      <p>Generates summaries plus mind maps and flashcards. Useful for students who learn visually. Free tier has usage caps that vary — check the current limits on their site.</p>
+      <p>Good for: students who want to integrate summaries with a broader study workflow including visual aids.</p>
+      <h3>Eightify Free Tier</h3>
+      <p>3 summaries per week, in-browser on Chrome. The UX is the best of any tool — summary appears directly on the YouTube page with clickable timestamps. But 3/week is nearly useless for serious studying.</p>
+      <p>Good for: casual discovery of interesting content. Not good for exam prep volume.</p>
+
+      <h2>The Best Paid Option: YT Summarizer ($29 One-Time)</h2>
+      <p>For students who summarize more than a handful of videos per month, the $29 one-time lifetime deal is the clear best value in the market:</p>
+      <ul>
+        <li><strong>No monthly fee.</strong> Pay once, use forever. No charges during summer when you're not studying.</li>
+        <li><strong>No daily or weekly caps.</strong> Use 50 summaries during finals week, zero during winter break. The price doesn't change.</li>
+        <li><strong>Works on any device.</strong> No extension required. Works on a phone, tablet, or library computer — anywhere you have a browser.</li>
+        <li><strong>Clean, structured output.</strong> Bullet points with bold tags paste directly into Notion, Obsidian, or Google Docs without reformatting.</li>
+        <li><strong>Long video support.</strong> Handles 2-3 hour lecture recordings, full course playlists, and extended seminars.</li>
+      </ul>
+      <p>The cost comparison: $29 one-time vs. $8-15/month subscription. Over a 3-year degree: $29 vs. $288-540. Over a 2-year Masters: $29 vs. $192-360. See the full breakdown: <a href="/blog/youtube-summarizer-pricing-free-vs-onetime-vs-subscription" style="color: #ff0055; font-weight: 600;">YouTube summarizer pricing compared</a>.</p>
+
+      <h2>Subscription Options Worth Considering</h2>
+      <h3>NoteGPT ($7-19/month)</h3>
+      <p>The only subscription tool worth considering for students, because it adds genuinely study-specific features: mind maps, flashcard generation, and note templates. If you want summaries integrated into a full study system — not just summaries to paste elsewhere — NoteGPT offers value beyond the base summarization. The key question is whether you'll use those features consistently enough to justify the ongoing cost.</p>
+      <p>Verdict: worth it during intensive study semesters. Not worth maintaining over breaks or low-use periods. Compare directly: <a href="/blog/notegpt-vs-ytsummarizer-honest-comparison-2026" style="color: #ff0055; font-weight: 600;">NoteGPT vs YT Summarizer</a>.</p>
+      <h3>Eightify ($8-10/month)</h3>
+      <p>The in-browser UX is excellent — summaries appear inline on YouTube. But the monthly cost is hard to justify for students. If you want the in-browser experience without subscription, Glarity (free Chrome extension) covers basic in-browser summarization.</p>
+
+      <h2>The Student Workflow That Actually Works</h2>
+      <p>Having the right tool matters less than having the right process. Here's how top students use AI summarization:</p>
+      <ol>
+        <li><strong>Pre-lecture triage.</strong> Before your lecture series starts, summarize all assigned supplementary videos. Read the summaries in 20 minutes. Identify which 2-3 videos cover material you don't already know from your textbook. Watch only those.</li>
+        <li><strong>Exam season batch processing.</strong> Two weeks before exams, summarize every lecture recording and supplementary video from the semester. This creates a comprehensive revision document in 1-2 hours that would take 15-20 hours to create manually.</li>
+        <li><strong>Research screening.</strong> For papers and essays, summarize 20-30 YouTube sources to identify the 5 that are actually relevant to your argument. This makes your research more comprehensive without proportionally more time.</li>
+        <li><strong>Missed lecture catch-up.</strong> When you miss a recorded lecture, read the summary first to get the structure and key points. Then watch only the sections that are unclear from the summary or exam-critical.</li>
+      </ol>
+      <p>For deeper study workflows, see <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">YouTube summarizer for students</a> and <a href="/blog/how-to-use-youtube-summaries-for-note-taking" style="color: #ff0055; font-weight: 600;">using YouTube summaries for note-taking</a>.</p>
+
+      <h2>Recommendation by Budget</h2>
+      <ul>
+        <li><strong>No budget (zero):</strong> Summarize.tech for casual use + ChatGPT free tier for high-quality occasional summaries. Accept the limitations and the manual steps.</li>
+        <li><strong>$29 one-time budget:</strong> YT Summarizer. Best value for the entire duration of your degree. No ongoing cost, full quality, no caps.</li>
+        <li><strong>$7-15/month budget during intensive semesters:</strong> NoteGPT if you want mind maps and flashcards integrated. YT Summarizer lifetime if you just need clean summaries.</li>
+      </ul>
+      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — no subscription, no credit card, just paste a URL.</p>
+    `
+  },
+  'fastest-way-to-summarize-youtube-video-methods-compared': {
+    title: 'What\'s the Fastest Way to Summarize a YouTube Video? (10+ Methods Compared, 2026)',
+    metaDescription: 'We timed 10+ ways to summarize a YouTube video. Fastest: 15 seconds. Slowest "free" method: 10+ minutes. Full ranking with exact step counts — and which method is a waste of time.',
+    date: '2026-05-04',
+    content: `
+      <p>There are at least ten ways to summarize a YouTube video in 2026. They vary from 15 seconds to 10+ minutes, and the fastest method isn't always obvious. If you've been using ChatGPT with manual copy-paste because it feels "free," you're probably spending 5-10 minutes doing what a dedicated tool completes in under a minute. Here's every method ranked by actual speed, with the exact steps and time for each.</p>
+
+      <h2>The Speed Rankings (Summary)</h2>
+      <p>Before the full breakdown, here's the ranked list from fastest to slowest:</p>
+      <ol>
+        <li><strong>Free web summarizers (Summarize.tech):</strong> 15-20 seconds</li>
+        <li><strong>Dedicated web tools (YT Summarizer):</strong> 30-60 seconds</li>
+        <li><strong>AI browser extensions (Eightify, Glarity):</strong> 30-45 seconds</li>
+        <li><strong>Gemini (when it works):</strong> 60-90 seconds</li>
+        <li><strong>YouTube's native features (chapters/key moments):</strong> Instant, but only on supported videos</li>
+        <li><strong>ChatGPT with transcript plugin:</strong> 90-120 seconds</li>
+        <li><strong>Claude with transcript paste:</strong> 2-3 minutes</li>
+        <li><strong>ChatGPT manual workflow (copy transcript):</strong> 4-6 minutes</li>
+        <li><strong>Manual notes while watching:</strong> Full video length + note time</li>
+        <li><strong>YouTube's built-in transcript (copy-paste manually):</strong> 3-5 minutes of formatting work</li>
+      </ol>
+      <p>The fastest methods all share one trait: they handle transcript extraction for you. The slow methods require you to extract, copy, paste, or process the transcript manually. That 4-minute gap between "paste URL" and "find transcript, copy, open ChatGPT, paste, prompt, copy output" is the real cost of DIY workflows.</p>
+
+      <h2>Method 1: Free Web Summarizers (15-20 Seconds)</h2>
+      <p><strong>Tools:</strong> Summarize.tech</p>
+      <p><strong>Steps:</strong> 1. Go to summarize.tech. 2. Paste URL. 3. Click summarize. Done.</p>
+      <p><strong>Output quality:</strong> Basic. Captures the general topic and broad themes but often misses the second half of longer videos. Good for "is this video even about what I think it's about?" — not good for actual learning or research.</p>
+      <p><strong>When to use:</strong> You need a fast gut-check on whether a video is worth watching. Not when you need to actually understand the content.</p>
+
+      <h2>Method 2: Dedicated Web Tools (30-60 Seconds)</h2>
+      <p><strong>Tools:</strong> <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a>, similar dedicated platforms</p>
+      <p><strong>Steps:</strong> 1. Go to the tool. 2. Paste URL. 3. Wait 30-60 seconds. Read summary.</p>
+      <p><strong>Output quality:</strong> High. Structured bullet points with bold topic headers, comprehensive coverage of key arguments, clean copy-paste output. For most use cases, this is the best combination of speed and quality.</p>
+      <p><strong>What this gets right:</strong> One step, works on any device, no extensions to install, handles videos of any length without additional setup. The quality-to-time ratio is the best of any method tested. Pricing: free tier available, $29 one-time for unlimited use.</p>
+      <p><strong>When to use:</strong> Default choice for anyone summarizing more than a few videos per week. See our <a href="/blog/best-youtube-summary-generator-tested-6-free-tools" style="color: #ff0055; font-weight: 600;">head-to-head test of 6 free tools</a> for the full quality comparison.</p>
+
+      <h2>Method 3: AI Browser Extensions (30-45 Seconds)</h2>
+      <p><strong>Tools:</strong> Eightify (Chrome), Glarity (Chrome), YouTube Summary with ChatGPT (Chrome)</p>
+      <p><strong>Steps:</strong> 1. Install extension. 2. Open YouTube video. 3. Click extension button. Summary appears on page.</p>
+      <p><strong>Output quality:</strong> Varies by extension. Eightify produces clean structured output; older extensions produce basic text blocks. Eightify includes timestamps linked to video sections, which is genuinely useful.</p>
+      <p><strong>Speed note:</strong> The summary appears faster than web tools because it processes locally, but the quality is typically lower on very long videos. Extension must be pre-installed — it's not faster if you're counting setup time.</p>
+      <p><strong>When to use:</strong> You watch YouTube primarily in Chrome and want summaries to appear inline on the YouTube page. The in-browser UX is the best of any method, but Chrome-only limits its usefulness. See <a href="/blog/chrome-extension-to-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">Chrome extensions for YouTube summarization</a>.</p>
+
+      <h2>Method 4: Gemini (60-90 Seconds When It Works)</h2>
+      <p><strong>Steps:</strong> 1. Open Google Gemini. 2. Paste YouTube URL. 3. Ask Gemini to summarize. Read output.</p>
+      <p><strong>Why "when it works":</strong> Gemini's YouTube integration is inconsistent. It works on some videos in some regions with certain Google account types. When it works, it's fast and high-quality. When it doesn't, you get "I can't access this video." There's no reliable way to predict which videos will work.</p>
+      <p><strong>Output quality:</strong> High when working. Gemini produces well-structured summaries with good nuance retention because it uses a powerful underlying model.</p>
+      <p><strong>When to use:</strong> If you're already in the Google ecosystem and Gemini happens to work on the video you need. Not reliable enough to be your primary method.</p>
+
+      <h2>Method 5: YouTube's Native Features (Instant, Partial)</h2>
+      <p><strong>What exists:</strong> YouTube has "Key Moments" and chapter markers on many videos. Some videos show auto-generated chapter summaries. YouTube's mobile app shows a "summarize" option on some videos in some regions.</p>
+      <p><strong>Speed:</strong> Instant — it's already on the page.</p>
+      <p><strong>Coverage:</strong> Very limited. Native features appear on fewer than 20% of videos. Where they exist, chapter summaries are usually 1-2 sentences per section — not detailed enough for research or learning.</p>
+      <p><strong>When to use:</strong> First thing to check — if the video has chapters with summaries, use them. But don't depend on this being available.</p>
+
+      <h2>Method 6: ChatGPT with Transcript Plugin (90-120 Seconds)</h2>
+      <p><strong>Steps:</strong> 1. Open ChatGPT. 2. Use a YouTube-connected plugin or custom GPT. 3. Paste URL. 4. Ask for summary. Wait.</p>
+      <p><strong>Setup cost:</strong> Finding and installing the right plugin takes 5-10 minutes upfront. After setup, each summary takes 90-120 seconds.</p>
+      <p><strong>Output quality:</strong> High. ChatGPT produces well-structured, nuanced summaries and you can ask follow-up questions. The conversational interface is the strongest of any method.</p>
+      <p><strong>When to use:</strong> You frequently want to ask follow-up questions about video content ("what did they say about X?", "summarize only the Q&A section"). The conversational flow is hard to replicate with other tools. See <a href="/blog/can-chatgpt-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">ChatGPT YouTube summarization guide</a>.</p>
+
+      <h2>Method 7: Claude with Transcript Paste (2-3 Minutes)</h2>
+      <p><strong>Steps:</strong> 1. Get transcript from YouTube. 2. Copy transcript. 3. Open Claude. 4. Paste + write prompt. Wait for output.</p>
+      <p><strong>Output quality:</strong> Excellent. Claude produces highly accurate, nuanced summaries with strong retention of caveats, counterarguments, and conditional statements. The best output quality of all methods tested.</p>
+      <p><strong>When to use:</strong> When you need the highest-quality summary and the 2-3 minutes is worth it — important research, complex technical content, content where nuance matters.</p>
+
+      <h2>Method 8: ChatGPT Manual Workflow (4-6 Minutes)</h2>
+      <p><strong>Steps:</strong> 1. Open YouTube video. 2. Click "Show transcript." 3. Toggle timestamps off. 4. Select all transcript text. 5. Copy. 6. Open new ChatGPT tab. 7. Paste transcript. 8. Write prompt. 9. Wait for output. 10. Copy summary.</p>
+      <p><strong>That's 10 steps</strong> — 4-6 minutes when everything works. Longer when the transcript is unavailable, the video is long (transcript exceeds ChatGPT's context), or you need to reformulate your prompt.</p>
+      <p><strong>Why people use it:</strong> "It's free." But the time cost is real. At 10 videos/week, this method takes 40-60 minutes — compared to 5-10 minutes for a dedicated tool. See the full analysis: <a href="/blog/youtube-summarizer-vs-chatgpt-manual-workflow" style="color: #ff0055; font-weight: 600;">dedicated tools vs. the ChatGPT manual workflow</a>.</p>
+
+      <h2>Method 9: Manual Notes While Watching (Full Video Length + 30%)</h2>
+      <p><strong>When to use:</strong> The video contains visual demonstrations, code walkthroughs, or physical techniques where the visual content carries essential information that a transcript doesn't capture. Also when you want to develop your own analytical framework rather than adopt the speaker's.</p>
+      <p><strong>When not to use:</strong> Anything where the verbal content is the primary value — lectures, podcasts, interviews, conference talks, explainer videos. For these, an AI summary captures 85-90% of the value in 2% of the time.</p>
+
+      <h2>The Real Decision Framework</h2>
+      <p>Speed matters, but so does purpose. Here's the decision:</p>
+      <ul>
+        <li><strong>Quick triage (is this worth watching?):</strong> Method 1 or 5. 15-30 seconds, basic quality is enough.</li>
+        <li><strong>Regular summarization (3+ videos/week):</strong> Method 2 (dedicated web tool). Best speed-quality ratio, works on every device.</li>
+        <li><strong>In-browser convenience:</strong> Method 3 (Chrome extension). Best UX if you live in Chrome.</li>
+        <li><strong>Follow-up questions needed:</strong> Method 6 (ChatGPT with plugin). Conversational interface is worth the extra 60 seconds.</li>
+        <li><strong>Maximum quality, important content:</strong> Method 7 (Claude). Takes 2-3 minutes but produces the most accurate, nuanced output.</li>
+        <li><strong>One-off, no tool installed:</strong> Method 8 (ChatGPT manual). Works everywhere, just slow.</li>
+      </ul>
+
+      <p>For most people, most of the time, a dedicated web tool delivers the best combination of speed, quality, and reliability. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — paste a URL, get a summary in under 60 seconds.</p>
+    `
+  },
   'youtube-book-summaries-ai-extract-key-ideas': {
     title: 'YouTube Book Summaries with AI: Extract Key Ideas from 50 Book Videos Per Week',
     metaDescription: 'Use AI to extract key ideas from YouTube book review and book summary videos. Build a prioritized reading list from dozens of book videos without watching hours of content.',
@@ -523,7 +1160,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'best-youtube-summary-generator-tested-6-free-tools': {
     title: 'Best YouTube Summary Generator: We Tested 6 Free Tools on the Same Video',
-    metaDescription: 'We tested 6 free YouTube summary generators on the same 22-minute educational video. Here\'s what each tool actually produced — quality, speed, accuracy, and formatting compared side by side.',
+    metaDescription: '6 free YouTube summary generators, same video. One got key facts wrong. One was completely unusable. Here\'s which tool actually won — and the free option worth keeping.',
     date: '2026-05-01',
     content: `
       <p>Every YouTube summary generator claims to produce "AI-powered summaries." But the quality gap between them is enormous — some produce genuinely useful output, others give you a paragraph of generic filler that could apply to any video. We tested six free YouTube summary generators on the same 22-minute educational video to see what each one actually produces. Same input, same video, no cherry-picking. Here's what happened.</p>
@@ -613,7 +1250,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'how-does-ai-youtube-summarization-work-technology-explained': {
     title: 'How Does AI YouTube Summarization Work? (The Technology Explained Simply)',
-    metaDescription: 'Ever wondered how AI summarizes a 2-hour YouTube video in 60 seconds? Here\'s the three-step technology pipeline explained in plain language — no technical background required.',
+    metaDescription: 'How does AI turn a 2-hour YouTube video into bullet points in 60 seconds? The 3-step pipeline — and why the middle step is where most cheap tools fail.',
     date: '2026-05-01',
     content: `
       <p>You paste a YouTube URL, wait 60 seconds, and get a structured summary of a 2-hour video. The process feels like magic, but it's a three-step pipeline: extract the transcript, process it through a language model, and format the output. Each step has real limitations that affect the quality of your summary, and understanding them helps you know when to trust the output and when to verify it yourself.</p>
@@ -674,7 +1311,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ol>
       <p>The tools that will produce the best summaries in 12 months are the ones that upgrade their underlying models fastest. This is one reason to prefer tools with active development over static, unmaintained alternatives.</p>
 
-      <p>Understanding the technology helps you use it better — and know when to trust it. For practical tool recommendations based on these capabilities, see our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">8 YouTube summarizers compared</a> and <a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">what is a YouTube summarizer</a>. To see the technology in action, <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">try YT Summarizer free</a>.</p>
+      <p>Understanding the technology helps you use it better — and know when to trust it. For practical tool recommendations based on these capabilities, see our <a href="/blog/best-ai-video-summarization-tools-2026" style="color: #ff0055; font-weight: 600;">10 AI video summarization tools ranked</a>, our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">8 YouTube summarizers compared</a>, and our <a href="/blog/free-youtube-video-summarizer-ai-tools-2026" style="color: #ff0055; font-weight: 600;">guide to what\'s actually free in 2026</a>. To see the technology in action, <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">try YT Summarizer free</a>.</p>
     `
   },
   'youtube-summarizer-pricing-free-vs-onetime-vs-subscription': {
@@ -745,7 +1382,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Annual billing discounts:</strong> Some subscriptions offer 30-40% off for annual billing. This is better than monthly but still more expensive than one-time over 2+ years. And it locks you into a year-long commitment for a tool you might stop using after 3 months.</li>
       </ul>
 
-      <p>The bottom line: if you're summarizing fewer than 3 videos per month, use a free tool. If you're summarizing 3-10 per week, a one-time $29 payment is the clear best value. If you need study features beyond basic summarization (mind maps, flashcards), a subscription like NoteGPT makes sense — but only for the months you're actively studying. For the full tool-by-tool breakdown, see <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">8 YouTube summarizers compared</a> and <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: #ff0055; font-weight: 600;">best free YouTube summarizers with no subscription</a>.</p>
+      <p>The bottom line: if you're summarizing fewer than 3 videos per month, use a free tool. If you're summarizing 3-10 per week, a one-time $29 payment is the clear best value. If you need study features beyond basic summarization (mind maps, flashcards), a subscription like NoteGPT makes sense — but only for the months you're actively studying. For the full tool-by-tool breakdown, see <a href="/blog/best-ai-video-summarization-tools-2026" style="color: #ff0055; font-weight: 600;">10 AI video summarization tools ranked</a>, <a href="/blog/free-youtube-video-summarizer-ai-tools-2026" style="color: #ff0055; font-weight: 600;">what\'s genuinely free in 2026</a>, and <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">8 YouTube summarizers compared</a>.</p>
 
       <p>Pay once, summarize forever: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Get YT Summarizer for $29 lifetime</a>.</p>
     `
@@ -7252,7 +7889,7 @@ tags: [tag1, tag2]
   },
   'best-ai-youtube-summarizers-2026-8-tools-compared': {
     title: 'Best AI YouTube Summarizers 2026: 8 Tools Compared (Real Testing)',
-    metaDescription: 'We tested 8 AI YouTube summarizers in 2026 on real videos — Eightify, NoteGPT, Glarity, YT Summarizer, Summarize.tech, Video Highlight, Mindgrasp, and Notta. Full pricing, accuracy, and feature comparison.',
+    metaDescription: '8 AI YouTube summarizers tested on real videos in 2026. 3 produced inaccurate output. 2 hit limits immediately. Here\'s the full ranking — and the one that actually holds up.',
     date: '2026-04-18',
     content: `
       <p>AI YouTube summarizers have gone from novelty to daily tool for millions of students, researchers, and professionals. But the category is crowded, pricing is inconsistent, and most comparison articles just repeat marketing copy without actually testing the products.</p>
@@ -7422,6 +8059,8 @@ tags: [tag1, tag2]
 
       <h2>Related Reading</h2>
       <ul>
+        <li><a href="/blog/best-ai-video-summarization-tools-2026" style="color: #ff0055; font-weight: 600;">Best AI video summarization tools 2026: 10 tools ranked</a></li>
+        <li><a href="/blog/free-youtube-video-summarizer-ai-tools-2026" style="color: #ff0055; font-weight: 600;">Free YouTube video summarizer AI tools 2026: what\'s genuinely free</a></li>
         <li><a href="/blog/eightify-alternative-best-youtube-summarizers-without-subscription" style="color: #ff0055; font-weight: 600;">Best Eightify alternatives in 2026</a></li>
         <li><a href="/blog/notegpt-vs-ytsummarizer-honest-comparison-2026" style="color: #ff0055; font-weight: 600;">NoteGPT vs YT Summarizer: honest comparison</a></li>
         <li><a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: #ff0055; font-weight: 600;">Best free YouTube summarizers (no subscription)</a></li>

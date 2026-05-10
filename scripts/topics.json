@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "topic": "law students",
+    "title": "YouTube Summarizer for Law Students"
+  },
+  {
+    "topic": "language learners",
+    "title": "YouTube Summarizer for Language Learners"
+  },
+  {
+    "topic": "financial advisors",
+    "title": "YouTube Summarizer for Financial Advisors"
+  }
+]

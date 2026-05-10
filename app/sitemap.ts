@@ -166,9 +166,17 @@ const postDates: Record<string, string> = {
   'youtube-summarizer-for-nurses-and-healthcare-workers': '2026-04-27',
   'youtube-to-podcast-show-notes-ai-workflow': '2026-04-27',
   'best-youtube-summarizer-reddit-recommendations-2026': '2026-04-27',
+  'best-ai-video-summarization-tools-2026': '2026-05-04',
+  'free-youtube-video-summarizer-ai-tools-2026': '2026-05-04',
+  'copying-youtube-transcript-to-chatgpt-wastes-time': '2026-05-04',
+  'best-youtube-summarizers-for-students-2026-free-paid': '2026-05-04',
+  'fastest-way-to-summarize-youtube-video-methods-compared': '2026-05-04',
   'youtube-summarizer-for-project-managers': '2026-05-04',
   'youtube-summarizer-vs-2x-speed': '2026-05-04',
   'youtube-summarizer-for-ai-ml-researchers': '2026-05-04',
+  'youtube-summarizer-for-law-students': '2026-05-10',
+  'youtube-summarizer-for-language-learners': '2026-05-10',
+  'youtube-summarizer-for-financial-advisors': '2026-05-10',
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
