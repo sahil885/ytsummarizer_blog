@@ -174,9 +174,14 @@ const postDates: Record<string, string> = {
   'youtube-summarizer-for-project-managers': '2026-05-04',
   'youtube-summarizer-vs-2x-speed': '2026-05-04',
   'youtube-summarizer-for-ai-ml-researchers': '2026-05-04',
+  'how-to-take-notes-from-youtube-videos-without-watching': '2026-05-11',
+  'youtube-summarizer-no-subscription-no-weekly-limits': '2026-05-11',
   'youtube-summarizer-for-law-students': '2026-05-10',
   'youtube-summarizer-for-language-learners': '2026-05-10',
   'youtube-summarizer-for-financial-advisors': '2026-05-10',
+  'youtube-summarizer-for-medical-students': '2026-05-17',
+  'youtube-summarizer-for-cybersecurity-professionals': '2026-05-17',
+  'youtube-summarizer-for-parents-and-homeschoolers': '2026-05-17',
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -7,6 +7,36 @@ export type PostListEntry = {
 
 export const allPosts: PostListEntry[] = [
   {
+    slug: 'youtube-summarizer-for-medical-students',
+    title: 'YouTube Summarizer for Medical Students: USMLE Step 1 & 2 Prep Without the Video Marathon',
+    description: 'Medical students use AI YouTube summarization to process USMLE Step 1/2 review videos, clinical case presentations, and lecture recordings — extracting key concepts in seconds instead of hours.',
+    date: '2026-05-17',
+  },
+  {
+    slug: 'youtube-summarizer-for-cybersecurity-professionals',
+    title: 'YouTube Summarizer for Cybersecurity Professionals: Process DEF CON, Black Hat, and Threat Intel Faster',
+    description: 'Cybersecurity professionals use AI YouTube summarization to process conference talks, threat intelligence briefings, and certification prep content — without watching hours of video.',
+    date: '2026-05-17',
+  },
+  {
+    slug: 'youtube-summarizer-for-parents-and-homeschoolers',
+    title: 'YouTube Summarizer for Parents and Homeschoolers: Curate Better Educational Content Faster',
+    description: 'Parents and homeschoolers use AI YouTube summarization to evaluate curriculum videos, research teaching methods, and build lesson libraries — without watching hours of content first.',
+    date: '2026-05-17',
+  },
+  {
+    slug: 'how-to-take-notes-from-youtube-videos-without-watching',
+    title: 'How to Take Notes from Long YouTube Videos (Without Watching the Whole Thing)',
+    description: 'The summarize-first workflow: AI extracts the key points in 60 seconds, you take targeted notes in 10 minutes, then watch only the 20% that matters. Works on lectures, talks, tutorials.',
+    date: '2026-05-11',
+  },
+  {
+    slug: 'youtube-summarizer-no-subscription-no-weekly-limits',
+    title: 'Best YouTube Summarizers in 2026: No Subscription, No Weekly Limits',
+    description: "Eightify caps you at 3 summaries/week. Most 'free' tools hit a paywall on day one. Here are the YouTube summarizers with no subscription and no usage caps — honest comparison.",
+    date: '2026-05-11',
+  },
+  {
     slug: 'youtube-summarizer-for-law-students',
     title: 'YouTube Summarizer for Law Students: Bar Prep, Case Briefs, and Doctrine Videos in Less Time',
     description: 'Law students use AI YouTube summarization to accelerate bar exam prep, extract doctrine from case study videos, and process lecture recordings in a fraction of the watch time.',

@@ -174,6 +174,18 @@ const postFaqs: Record<string, Array<{ q: string; a: string }>> = {
     { q: 'Which YouTube transcript tools still work in 2026?', a: 'YT Summarizer, Eightify, and NoteGPT adapted to the 2025 API changes. Most modern summarizers still function. Smaller extension-based tools that haven\'t been updated in 6+ months are most likely to be broken.' },
     { q: 'How can I test if a transcript tool works?', a: 'Try it on a popular public video with visible auto-captions (any major English podcast or news channel will do). If the tool returns a usable transcript in under 30 seconds, it\'s still working. If it errors or returns nothing, the tool has broken.' },
   ],
+  'how-to-take-notes-from-youtube-videos-without-watching': [
+    { q: 'How do you take notes from YouTube videos without watching the whole thing?', a: 'The most efficient workflow: run the video through an AI summarizer first to get structured bullet points, then watch only the sections that appear most relevant to your notes. You skip 60-80% of the video while getting the same core information. For a 90-minute lecture, this typically means 10-15 minutes of targeted watching plus 2 minutes of summary review, instead of 90 minutes of full playback.' },
+    { q: 'What\'s the best app for taking notes from YouTube videos?', a: 'For extracting key points automatically, YT Summarizer produces structured bullet-point summaries you can paste directly into Notion, Obsidian, or any notes app. For writing notes alongside video playback, Tactiq and Glasp offer browser extensions that let you highlight and clip sections. For a pure summarize-then-note workflow, a dedicated summarizer is faster than any browser extension.' },
+    { q: 'Can I take notes from YouTube lectures without a subscription?', a: 'Yes. YT Summarizer has a free tier. Summarize.tech is completely free with no account. For the actual note-taking, Notion and Obsidian both have free plans. The entire workflow — summarize, paste, organize — can be done at zero cost. The main trade-off at zero cost is lower summary quality and free-tier usage limits.' },
+    { q: 'How long does it take to take notes from a 1-hour YouTube video?', a: 'With an AI summarizer: 2-3 minutes to get the summary, 5-10 minutes to review and organize it into notes, then 15-20 minutes of targeted re-watching on the sections you flagged. Total: 25-35 minutes. Without AI: 60 minutes of full playback plus 20-30 minutes of note-taking = 80-90 minutes. AI summarization cuts total time by roughly 60%.' },
+  ],
+  'youtube-summarizer-no-subscription-no-weekly-limits': [
+    { q: 'Which YouTube summarizers have no subscription and no weekly limits?', a: 'YT Summarizer ($29 one-time) is the main option that combines no subscription, no weekly limits, and high-quality output. Summarize.tech is completely free with no limits, but quality is significantly lower. Most other tools (Eightify, NoteGPT, Glarity) impose weekly caps on free tiers and require subscriptions for unlimited use.' },
+    { q: 'Why does Eightify limit free users to 3 summaries per week?', a: 'Eightify\'s free tier is a trial, not a product. The 3/week limit creates enough friction that regular users upgrade to the subscription ($8-12/month). This is a deliberate business model decision, not a technical limitation. If you consistently need more than 3 summaries per week, the cap means the free tier isn\'t actually usable for your workflow — you\'re either paying or going without.' },
+    { q: 'Is there a YouTube summarizer with a one-time payment and no usage limits?', a: 'Yes — YT Summarizer charges $29 once and imposes no weekly or monthly caps on summaries. Most competitors use subscription pricing ($8-15/month) or freemium caps. The one-time model is uncommon in this market specifically because subscription models generate recurring revenue; one-time tools need to deliver consistent quality without the recurring income cushion.' },
+    { q: 'What happens to Eightify free users who hit the 3/week limit?', a: 'Once you hit the limit, Eightify shows a paywall — you can\'t summarize another video until the week resets or you subscribe. This is particularly painful during research sprints, exam prep, or heavy content weeks when you might need 10-20 summaries in a few days. Tools with no weekly limits (YT Summarizer, Summarize.tech) don\'t gate you at exactly the moment you need them most.' },
+  ],
   'best-free-youtube-summarizers-no-subscription-2026': [
     { q: 'Are there truly free YouTube summarizers?', a: 'Yes. Summarize.tech is completely free with no account required. Most paid tools also have free tiers — YT Summarizer, NoteGPT, and Glasp all offer free summaries, usually capped at a few per week or month.' },
     { q: 'What\'s the best free summarizer for unlimited use?', a: 'Summarize.tech offers unlimited free summaries but with lower quality than paid tools. For unlimited summaries at paid-tool quality, YT Summarizer\'s $29 lifetime deal is the cheapest path — pay once, no subscription, unlimited summaries.' },
@@ -206,6 +218,453 @@ const postFaqs: Record<string, Array<{ q: string; a: string }>> = {
 }
 
 const posts: Record<string, { title: string; content: string; date: string; metaDescription: string }> = {
+  'youtube-summarizer-for-parents-and-homeschoolers': {
+    title: 'YouTube Summarizer for Parents and Homeschoolers: Curate Better Educational Content Faster',
+    metaDescription: 'Parents and homeschoolers use AI YouTube summarization to evaluate curriculum videos, research teaching methods, and build lesson libraries — without watching hours of content first.',
+    date: '2026-05-17',
+    content: `
+      <p>YouTube is one of the richest educational resources available to homeschooling families — but it's also an enormous time sink. Evaluating whether a 45-minute history documentary is age-appropriate, curriculum-aligned, and actually accurate can take as long as watching the video itself.</p>
+
+      <p>AI-powered YouTube summarization changes that. Paste any video URL into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and get a structured summary in under 60 seconds — so you can evaluate, select, and organize educational content in a fraction of the time.</p>
+
+      <h2>Where Parents and Homeschoolers Spend the Most Video Research Time</h2>
+      <p>Homeschooling parents typically watch 5–10 hours of YouTube per week across curriculum research, teaching method exploration, and content vetting. Here's where that time goes — and how much summarization can recover:</p>
+
+      <table style="width:100%; border-collapse:collapse; margin:1.5rem 0;">
+        <thead>
+          <tr style="background:#f5f5f5;">
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Content Type</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Avg Video Length</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Time Saved with AI Summary</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">What You Get</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Curriculum reviews and comparisons</td>
+            <td style="padding:10px; border:1px solid #ddd;">20–60 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">18–55 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Pros/cons, age range, teaching approach, cost</td>
+          </tr>
+          <tr style="background:#fafafa;">
+            <td style="padding:10px; border:1px solid #ddd;">Documentary and educational content</td>
+            <td style="padding:10px; border:1px solid #ddd;">30–90 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">27–85 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Key facts, coverage gaps, accuracy red flags</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Teaching method and pedagogy talks</td>
+            <td style="padding:10px; border:1px solid #ddd;">15–45 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">13–40 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Core principles, implementation steps, research basis</td>
+          </tr>
+          <tr style="background:#fafafa;">
+            <td style="padding:10px; border:1px solid #ddd;">Homeschool conference sessions</td>
+            <td style="padding:10px; border:1px solid #ddd;">45–90 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">40–80 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Key takeaways, recommended resources, actionable steps</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Subject-specific lesson channels</td>
+            <td style="padding:10px; border:1px solid #ddd;">10–30 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">9–27 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Topics covered, grade level fit, teaching style</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>The Curriculum Research Workflow</h2>
+      <p>Before committing to a homeschool curriculum — which can cost $200–$1,500 per year — most families watch dozens of review videos. AI summarization cuts this research phase from days to hours.</p>
+
+      <h3>Step 1: Batch-Summarize Reviews</h3>
+      <p>Search YouTube for "[curriculum name] review homeschool" and open the top 8–10 videos. Paste each URL into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and read the summaries. This takes about 10 minutes and reveals which reviewers cover what you actually need to know.</p>
+
+      <h3>Step 2: Flag Discrepancies</h3>
+      <p>Note where reviewer opinions diverge — if 3 summaries praise the math sequence and 2 flag it as confusing, that's a real signal worth investigating. The summary makes these patterns visible without watching 5 hours of video.</p>
+
+      <h3>Step 3: Watch Only What Requires Judgment</h3>
+      <p>After reading summaries, identify 2–3 videos that seem most relevant to your specific child's learning style and watch those in full. You've compressed 8 hours of research into 45 minutes of targeted viewing.</p>
+
+      <h2>Content Vetting: Is This Video Right for My Child?</h2>
+      <p>Before showing a video to your child, summarize it first. The summary will flag:</p>
+      <ul>
+        <li><strong>Content accuracy:</strong> Factual errors or outdated information often surface in the key points</li>
+        <li><strong>Age appropriateness:</strong> Complexity level and vocabulary are evident from the summary</li>
+        <li><strong>Coverage depth:</strong> Whether it's an overview or a deep dive into the topic</li>
+        <li><strong>Bias or perspective:</strong> Strong editorial stances are usually visible in the summary framing</li>
+        <li><strong>Teaching quality:</strong> Whether the video explains concepts clearly or assumes prior knowledge</li>
+      </ul>
+
+      <h2>Best YouTube Channels for Homeschool Content (by Subject)</h2>
+      <table style="width:100%; border-collapse:collapse; margin:1.5rem 0;">
+        <thead>
+          <tr style="background:#f5f5f5;">
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Subject</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Channel</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Best Age Range</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Why It Summarizes Well</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">History</td>
+            <td style="padding:10px; border:1px solid #ddd;">Crash Course History</td>
+            <td style="padding:10px; border:1px solid #ddd;">12+</td>
+            <td style="padding:10px; border:1px solid #ddd;">Structured episodes with clear argument arc</td>
+          </tr>
+          <tr style="background:#fafafa;">
+            <td style="padding:10px; border:1px solid #ddd;">Science</td>
+            <td style="padding:10px; border:1px solid #ddd;">Kurzgesagt</td>
+            <td style="padding:10px; border:1px solid #ddd;">10+</td>
+            <td style="padding:10px; border:1px solid #ddd;">Dense narration with clear explanation structure</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Math</td>
+            <td style="padding:10px; border:1px solid #ddd;">Khan Academy</td>
+            <td style="padding:10px; border:1px solid #ddd;">All ages</td>
+            <td style="padding:10px; border:1px solid #ddd;">Stepwise verbal explanations capture well in summary</td>
+          </tr>
+          <tr style="background:#fafafa;">
+            <td style="padding:10px; border:1px solid #ddd;">Literature</td>
+            <td style="padding:10px; border:1px solid #ddd;">Thug Notes / CrashCourse Lit</td>
+            <td style="padding:10px; border:1px solid #ddd;">12+</td>
+            <td style="padding:10px; border:1px solid #ddd;">Plot, themes, and analysis all verbalized clearly</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Geography</td>
+            <td style="padding:10px; border:1px solid #ddd;">Geography Now</td>
+            <td style="padding:10px; border:1px solid #ddd;">8+</td>
+            <td style="padding:10px; border:1px solid #ddd;">Consistent structure per episode makes summaries reliable</td>
+          </tr>
+          <tr style="background:#fafafa;">
+            <td style="padding:10px; border:1px solid #ddd;">Homeschool planning</td>
+            <td style="padding:10px; border:1px solid #ddd;">Simply Charlotte Mason, The Homeschool Mom</td>
+            <td style="padding:10px; border:1px solid #ddd;">Parent-facing</td>
+            <td style="padding:10px; border:1px solid #ddd;">Method and schedule explanations summarize well</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Building a Lesson Library with AI Summaries</h2>
+      <p>Instead of bookmarking videos and never returning to them, use AI summaries to build a real lesson library:</p>
+
+      <ol>
+        <li><strong>Summarize and tag:</strong> Paste each video into YT Summarizer, copy the summary into Notion or Google Docs, and tag by subject, grade level, and topic.</li>
+        <li><strong>Add your annotation:</strong> Note whether you'd use this for introduction, reinforcement, or enrichment, and any follow-up questions it raises.</li>
+        <li><strong>Link to your curriculum map:</strong> Connect the video to the relevant unit in your yearly plan so it surfaces when you need it.</li>
+        <li><strong>Rate at time of use:</strong> After your child watches it, note their engagement level and whether it achieved the learning objective.</li>
+      </ol>
+
+      <p>This system turns YouTube's infinite scroll into a curated, searchable resource library that improves over time.</p>
+
+      <h2>Teaching Methods Research: Comparing Approaches Without Weeks of Watching</h2>
+      <p>Charlotte Mason, classical education, unschooling, Montessori, traditional — each approach has dozens of hours of YouTube content. Summarizing conference talks, parent testimonials, and method explainers lets you compare approaches in hours instead of weeks.</p>
+
+      <p>The summary typically surfaces: core principles, daily schedule implications, cost, and what kind of learner the method suits best. This is usually enough to determine fit without watching every video in full.</p>
+
+      <h2>Start Curating Smarter Today</h2>
+      <p>The best homeschool content on YouTube is buried under hours of content you don't need. AI summarization lets you find and keep only what serves your curriculum.</p>
+
+      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — paste any homeschool or educational video URL and get a structured summary in under 60 seconds. One-time $29 for unlimited use, no subscription required.</p>
+    `
+  },
+  'youtube-summarizer-for-cybersecurity-professionals': {
+    title: 'YouTube Summarizer for Cybersecurity Professionals: Process DEF CON, Black Hat, and Threat Intel Faster',
+    metaDescription: 'Cybersecurity professionals use AI YouTube summarization to process conference talks, threat intelligence briefings, and certification prep content — without watching hours of video.',
+    date: '2026-05-17',
+    content: `
+      <p>Cybersecurity is one of the fastest-moving fields in tech. Staying current means processing DEF CON talks, Black Hat presentations, vendor security briefings, threat intelligence updates, and certification prep content — a firehose of video that can easily consume 10+ hours per week.</p>
+
+      <p>AI-powered YouTube summarization cuts through the noise. Paste any security talk, conference keynote, or training video into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and get the attack vector, mitigation steps, and key technical details in under 60 seconds.</p>
+
+      <h2>Where Cybersecurity Professionals Spend the Most Video Time</h2>
+
+      <table style="width:100%; border-collapse:collapse; margin:1.5rem 0;">
+        <thead>
+          <tr style="background:#f5f5f5;">
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Content Type</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Avg Video Length</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Time Saved with AI Summary</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">What You Get</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">DEF CON / Black Hat talks</td>
+            <td style="padding:10px; border:1px solid #ddd;">45–60 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">40–55 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Attack technique, affected systems, detection/mitigation</td>
+          </tr>
+          <tr style="background:#fafafa;">
+            <td style="padding:10px; border:1px solid #ddd;">Threat intelligence briefings</td>
+            <td style="padding:10px; border:1px solid #ddd;">15–30 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">13–27 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">IOCs, threat actor TTPs, affected sectors</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Certification prep (CEH, CISSP, Security+)</td>
+            <td style="padding:10px; border:1px solid #ddd;">20–60 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">18–55 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Domain coverage, exam-relevant concepts, mnemonics</td>
+          </tr>
+          <tr style="background:#fafafa;">
+            <td style="padding:10px; border:1px solid #ddd;">Vendor security announcements</td>
+            <td style="padding:10px; border:1px solid #ddd;">10–30 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">9–27 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">CVE details, patch urgency, affected versions</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Penetration testing walkthroughs</td>
+            <td style="padding:10px; border:1px solid #ddd;">30–120 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">25–100 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Tools used, technique sequence, key findings</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Processing DEF CON and Black Hat Archives</h2>
+      <p>DEF CON and Black Hat each publish hundreds of talks annually on YouTube. Most security professionals can only watch 5–10% of the talks relevant to their specialization. AI summarization lets you process an entire conference track in an afternoon:</p>
+
+      <h3>The Conference Triage Workflow</h3>
+      <ol>
+        <li><strong>Search by track:</strong> Find talks from the track relevant to your focus (web app security, hardware hacking, ICS/SCADA, etc.)</li>
+        <li><strong>Batch-summarize titles:</strong> Paste 15–20 talk URLs into YT Summarizer sequentially. Each summary takes 30–60 seconds.</li>
+        <li><strong>Identify the 5 most relevant:</strong> Read summaries to find talks where the attack technique or target system overlaps with your environment</li>
+        <li><strong>Watch those 5 in full:</strong> For the talks that directly matter, full viewing provides the depth that summaries can't fully capture — especially for demo-heavy content</li>
+        <li><strong>File summaries as reference:</strong> Keep the other summaries in your notes system for future reference</li>
+      </ol>
+
+      <p>This workflow turns a 40-hour conference into 5 hours of targeted viewing and 2 hours of summary reading.</p>
+
+      <h2>Threat Intelligence Processing</h2>
+      <p>Security vendors, research groups, and threat intelligence firms regularly publish YouTube briefings on active campaigns, new malware families, and emerging threat actors. The signal-to-noise ratio is low — most briefings contain one or two actionable data points buried in 20 minutes of context.</p>
+
+      <p>AI summarization surfaces:</p>
+      <ul>
+        <li><strong>Threat actor attribution:</strong> Which group, their known TTPs, geographic focus</li>
+        <li><strong>IOCs mentioned:</strong> Hashes, domains, IPs (though always verify against primary sources)</li>
+        <li><strong>Affected sectors and technologies:</strong> Whether your environment is in scope</li>
+        <li><strong>Mitigation recommendations:</strong> Specific controls or patches mentioned</li>
+        <li><strong>Timeline:</strong> When the campaign started, current activity level</li>
+      </ul>
+
+      <h2>Certification Study: CISSP, CEH, CompTIA Security+ and More</h2>
+      <p>YouTube is one of the best free resources for cybersecurity certification prep — but the best channels produce long-form content (2–4 hour domain reviews) that's hard to process efficiently.</p>
+
+      <table style="width:100%; border-collapse:collapse; margin:1.5rem 0;">
+        <thead>
+          <tr style="background:#f5f5f5;">
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Certification</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Top YouTube Channels</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Summarization Use Case</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">CISSP</td>
+            <td style="padding:10px; border:1px solid #ddd;">Thor Teaches, Pete Zerger</td>
+            <td style="padding:10px; border:1px solid #ddd;">Domain-by-domain concept extraction, pre-reading before full study</td>
+          </tr>
+          <tr style="background:#fafafa;">
+            <td style="padding:10px; border:1px solid #ddd;">CEH</td>
+            <td style="padding:10px; border:1px solid #ddd;">EC-Council, HackerSploit</td>
+            <td style="padding:10px; border:1px solid #ddd;">Attack phase overview, tool list capture, exam keyword extraction</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">CompTIA Security+</td>
+            <td style="padding:10px; border:1px solid #ddd;">Professor Messer</td>
+            <td style="padding:10px; border:1px solid #ddd;">Topic-by-topic review, weak domain identification</td>
+          </tr>
+          <tr style="background:#fafafa;">
+            <td style="padding:10px; border:1px solid #ddd;">eJPT / OSCP prep</td>
+            <td style="padding:10px; border:1px solid #ddd;">TCM Security, IppSec</td>
+            <td style="padding:10px; border:1px solid #ddd;">Technique extraction, tool syntax reminders, methodology checklists</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">AWS Security Specialty</td>
+            <td style="padding:10px; border:1px solid #ddd;">AWS Events, Cloud Security Podcast</td>
+            <td style="padding:10px; border:1px solid #ddd;">Service capability summaries, IAM policy pattern extraction</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>The Penetration Testing Research Workflow</h2>
+      <p>For penetration testers, YouTube provides walkthroughs of HackTheBox and TryHackMe machines, CTF writeups, and technique demonstrations. Summarizing these before or after your own attempt reveals the key decision points without spoiling the full solution:</p>
+
+      <ul>
+        <li><strong>Pre-attempt triage:</strong> Summarize the walkthrough to understand whether a machine's technique overlaps with a skill gap you want to address</li>
+        <li><strong>Post-attempt review:</strong> Compare your approach against the summary to identify where your methodology diverged</li>
+        <li><strong>Tool documentation:</strong> Extract specific command syntax and flags from tool demonstration videos without re-watching</li>
+        <li><strong>Report writing reference:</strong> Summarize explanation videos to find clearer ways to describe findings to non-technical stakeholders</li>
+      </ul>
+
+      <h2>Best Cybersecurity Channels Worth Summarizing Regularly</h2>
+      <ul>
+        <li><strong>DEF CON and Black Hat</strong> — Official conference archives, hundreds of research talks annually</li>
+        <li><strong>John Hammond</strong> — CTF walkthroughs, malware analysis, tool demonstrations</li>
+        <li><strong>IppSec</strong> — HackTheBox machine walkthroughs with detailed methodology explanations</li>
+        <li><strong>TCM Security</strong> — Practical penetration testing tutorials, Active Directory attacks</li>
+        <li><strong>LiveOverflow</strong> — Exploit development, binary exploitation, CTF deep dives</li>
+        <li><strong>SANS Institute</strong> — Blue team content, incident response, threat hunting</li>
+      </ul>
+
+      <h2>Process the Firehose, Not Just the Best Talks</h2>
+      <p>The most valuable security knowledge often isn't in the most-viewed talks — it's in the niche 200-viewer presentation on a specific attack surface that directly applies to your environment. AI summarization makes it possible to screen the full archive, not just the curated highlights.</p>
+
+      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — paste any security conference talk or training video URL and get the attack technique, mitigation steps, and key findings in under 60 seconds. One-time $29 for unlimited use.</p>
+    `
+  },
+  'youtube-summarizer-for-medical-students': {
+    title: 'YouTube Summarizer for Medical Students: USMLE Step 1 & 2 Prep Without the Video Marathon',
+    metaDescription: 'Medical students use AI YouTube summarization to process USMLE Step 1/2 review videos, clinical case presentations, and lecture recordings — extracting key concepts in seconds instead of hours.',
+    date: '2026-05-17',
+    content: `
+      <p>Medical school is an information arms race. Sketchy videos, Pathoma lectures, Boards and Beyond modules, clinical case presentations, and professor lecture recordings — a dedicated M1 or M2 can easily accumulate 6–10 hours of YouTube study content per day.</p>
+
+      <p>AI summarization doesn't replace the learning — it helps you triage, review, and reinforce faster. Paste any USMLE prep video into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and get the pathophysiology, key buzzwords, and high-yield takeaways in under 60 seconds.</p>
+
+      <h2>Where Medical Students Spend the Most Video Study Time</h2>
+
+      <table style="width:100%; border-collapse:collapse; margin:1.5rem 0;">
+        <thead>
+          <tr style="background:#f5f5f5;">
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Content Type</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Avg Video Length</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Time Saved with AI Summary</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">What You Get</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Boards and Beyond / Pathoma lectures</td>
+            <td style="padding:10px; border:1px solid #ddd;">20–40 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">15–35 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Mechanism, key buzzwords, high-yield facts</td>
+          </tr>
+          <tr style="background:#fafafa;">
+            <td style="padding:10px; border:1px solid #ddd;">Clinical case presentations</td>
+            <td style="padding:10px; border:1px solid #ddd;">15–30 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">12–25 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Presentation, DDx approach, diagnosis, management</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Professor lecture recordings</td>
+            <td style="padding:10px; border:1px solid #ddd;">45–90 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">40–80 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Learning objectives, testable concepts, drug mechanisms</td>
+          </tr>
+          <tr style="background:#fafafa;">
+            <td style="padding:10px; border:1px solid #ddd;">USMLE score improvement talks</td>
+            <td style="padding:10px; border:1px solid #ddd;">20–60 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">18–55 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Study schedule, resource stack, score strategy</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Medical student experience / advice</td>
+            <td style="padding:10px; border:1px solid #ddd;">10–30 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">9–27 min</td>
+            <td style="padding:10px; border:1px solid #ddd;">Schedule structure, resource recommendations, mental health strategies</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>USMLE Step 1 Study: A 3-Phase Workflow Using AI Summarization</h2>
+
+      <h3>Phase 1 (Months 1–2): Concept Building</h3>
+      <p>During dedicated organ system blocks, use AI summaries to pre-screen lecture content before your study session:</p>
+      <ol>
+        <li>Summarize the Boards and Beyond or Pathoma video for the system you're covering today</li>
+        <li>Read the summary (2–3 minutes) to identify the 3–5 highest-yield concepts and mechanisms</li>
+        <li>Watch only the segments covering mechanisms you don't already understand from First Aid</li>
+        <li>Add the summary's key buzzwords directly to your Anki deck as prompts</li>
+      </ol>
+
+      <h3>Phase 2 (Months 3–4): Active Recall Integration</h3>
+      <p>Use summaries as active recall prompts. Before watching a review video, write down what you remember about the topic. Then summarize the video and compare — the gaps reveal your actual weak points, not just your perceived ones.</p>
+
+      <h3>Phase 3 (Weeks 1–6 Dedicated): High-Yield Consolidation</h3>
+      <p>During dedicated study, use summaries to process the backlog of "I'll watch that later" videos. Every medical student accumulates 50–100 bookmarked videos they never return to. Summarize them in bulk — 10 videos takes about 10 minutes — and decide which 5 are worth watching in full based on your current UWorld weak areas.</p>
+
+      <h2>Clinical Case Video Summarization</h2>
+      <p>Clinical case presentations are some of the best YouTube content for Step 2 prep — but they're dense. A well-summarized clinical case gives you:</p>
+      <ul>
+        <li><strong>Chief complaint and key history elements</strong> that narrow the differential</li>
+        <li><strong>Physical exam findings</strong> and what they suggest</li>
+        <li><strong>Differential diagnosis approach</strong> — how the presenter narrows from broad to specific</li>
+        <li><strong>Diagnostic workup sequence</strong> — which tests, in what order, and why</li>
+        <li><strong>Management and disposition</strong> — treatment decisions and reasoning</li>
+        <li><strong>Teaching points</strong> — what makes this case instructive for Step 2</li>
+      </ul>
+
+      <h2>Best YouTube Channels for USMLE Prep (by Content Type)</h2>
+      <table style="width:100%; border-collapse:collapse; margin:1.5rem 0;">
+        <thead>
+          <tr style="background:#f5f5f5;">
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Channel</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Content Focus</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Best For</th>
+            <th style="padding:10px; border:1px solid #ddd; text-align:left;">Summarizes Well?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Osmosis</td>
+            <td style="padding:10px; border:1px solid #ddd;">Disease mechanisms, pharmacology</td>
+            <td style="padding:10px; border:1px solid #ddd;">Step 1, Step 2 CK concept review</td>
+            <td style="padding:10px; border:1px solid #ddd;">Yes — verbal explanations are dense and well-structured</td>
+          </tr>
+          <tr style="background:#fafafa;">
+            <td style="padding:10px; border:1px solid #ddd;">Dr. Najeeb Lectures</td>
+            <td style="padding:10px; border:1px solid #ddd;">Anatomy, physiology, biochemistry deep dives</td>
+            <td style="padding:10px; border:1px solid #ddd;">M1/M2 foundational concepts</td>
+            <td style="padding:10px; border:1px solid #ddd;">Yes — thorough verbal explanation structure captures well</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Ninja Nerd Science</td>
+            <td style="padding:10px; border:1px solid #ddd;">Pathophysiology, pharmacology</td>
+            <td style="padding:10px; border:1px solid #ddd;">Step 1 and Step 2 mechanisms</td>
+            <td style="padding:10px; border:1px solid #ddd;">Yes — whiteboard explanations with clear verbal structure</td>
+          </tr>
+          <tr style="background:#fafafa;">
+            <td style="padding:10px; border:1px solid #ddd;">Strong Medicine</td>
+            <td style="padding:10px; border:1px solid #ddd;">Clinical medicine, internal medicine</td>
+            <td style="padding:10px; border:1px solid #ddd;">Step 2, clinical rotations</td>
+            <td style="padding:10px; border:1px solid #ddd;">Yes — case-based explanations with clear clinical reasoning</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd;">Dr. Mike</td>
+            <td style="padding:10px; border:1px solid #ddd;">Clinical cases, medical news</td>
+            <td style="padding:10px; border:1px solid #ddd;">Clinical reasoning, communication style</td>
+            <td style="padding:10px; border:1px solid #ddd;">Partially — entertainment format mixed with clinical content</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Building a Personalized High-Yield Video Library</h2>
+      <p>Instead of watching and re-watching the same videos, build a searchable library of AI summaries organized by organ system and Step 1/Step 2 domain:</p>
+
+      <ol>
+        <li><strong>Summarize and file by system:</strong> Tag each summary with the organ system, disease class, and relevant UWorld category</li>
+        <li><strong>Cross-reference with your weak UWorld areas:</strong> When your UWorld performance tracker shows a gap in renal physiology, search your library for all renal summaries and review those first</li>
+        <li><strong>Add your own mnemonics:</strong> Annotate the AI summary with your memory hooks — these become more reliable than generic mnemonics because they connect to your existing knowledge</li>
+        <li><strong>Review 48 hours later:</strong> Re-read the summary (not re-watch the video) as your spaced repetition trigger</li>
+      </ol>
+
+      <h2>Important: What AI Summaries Miss in Medical Content</h2>
+      <p>Video summarization captures verbal content well but misses:</p>
+      <ul>
+        <li><strong>Visual pathology:</strong> Histology slides, X-ray findings, skin lesion presentations shown on screen</li>
+        <li><strong>Diagram-only explanations:</strong> When the presenter draws a pathway without verbal narration</li>
+        <li><strong>Drug structure visuals:</strong> Chemical structures shown without explanation</li>
+      </ul>
+      <p>For visual-heavy content, use summaries for pre-reading and review, but watch the visual sections in full. The rule of thumb: if you'd lose understanding from closing your eyes, the summary will be incomplete for that section.</p>
+
+      <h2>Work Smarter Through the Firehose</h2>
+      <p>Medical school video content is among the highest-signal YouTube content that exists — but only if you can process it efficiently. AI summarization doesn't replace studying. It removes the time you spend deciding what to study.</p>
+
+      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — paste any USMLE prep or clinical video URL and get the high-yield concepts in under 60 seconds. One-time $29 for unlimited use — less than one Anki deck subscription per year.</p>
+    `
+  },
   'youtube-summarizer-for-financial-advisors': {
     title: 'YouTube Summarizer for Financial Advisors: Stay Current on Markets Without Losing Client Hours',
     metaDescription: 'Financial advisors use AI YouTube summarization to digest market commentary, earn CE credits faster, and create client-ready talking points from hours of video content — in minutes.',
@@ -451,6 +910,136 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Reduce the Video Backlog Before It Crushes Your Study Schedule</h2>
       <p>Law students who fall behind on bar prep video content often feel the pressure of an impossible backlog. AI summarization helps you stay current without spending every evening watching lecture recordings at 2x speed.</p>
       <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — paste any bar prep lecture or doctrine video and get the black letter law in seconds. One-time $29 lifetime access, no subscription.</p>
+    `
+  },
+  'how-to-take-notes-from-youtube-videos-without-watching': {
+    title: 'How to Take Notes from Long YouTube Videos (Without Watching the Whole Thing)',
+    metaDescription: 'The summarize-first workflow: AI extracts the key points in 60 seconds, you take targeted notes in 10 minutes, then watch only the 20% that matters. Works on lectures, talks, tutorials.',
+    date: '2026-05-11',
+    content: `
+      <p>The standard note-taking workflow for YouTube is: open the video, press play, pause every 2 minutes to write something down, rewind when you miss something, repeat for 90 minutes. It works, but it's the slowest possible way to extract knowledge from video. There's a faster system — and it doesn't involve watching the whole thing first.</p>
+
+      <h2>The Core Insight: Summarize First, Watch Second</h2>
+      <p>The key shift is reversing the order. Instead of watching → pausing → noting, the efficient workflow is:</p>
+      <ol>
+        <li><strong>Get the summary first.</strong> Run the video through an AI summarizer. You now have the full structure — key arguments, section headings, main takeaways — in 60-90 seconds.</li>
+        <li><strong>Identify what you actually need.</strong> Read the summary. Which sections are directly relevant to what you're studying or researching? Which can you skip entirely? This triage step takes 2-3 minutes.</li>
+        <li><strong>Watch only the flagged sections.</strong> Use the summary headings to jump to specific timestamps in the video. Watch those sections at 1.5x-2x speed and take notes only on the parts that matter to you.</li>
+        <li><strong>Fill in gaps from the summary.</strong> For sections you didn't need to watch, copy relevant points directly from the summary into your notes.</li>
+      </ol>
+      <p>For a 90-minute lecture: the AI summary review takes 5 minutes, targeted watching takes 15-25 minutes, note organization takes 10 minutes. Total: 30-40 minutes instead of 90+ minutes. And your notes are better — because you understood the full structure before you started writing.</p>
+
+      <h2>What AI Summarizers Actually Give You</h2>
+      <p>Different tools produce different output formats, and the format matters for note-taking:</p>
+      <ul>
+        <li><strong>Structured bullet points</strong> (YT Summarizer, Eightify): Key claims organized by topic. Best for note-taking because you can paste directly into your notes app and reorganize. Internal links and headings tell you which sections of the video each point came from.</li>
+        <li><strong>Chapter summaries</strong> (some Eightify outputs): Each chapter of the video summarized separately. Good for understanding video structure before watching. Timestamps let you jump directly to relevant chapters.</li>
+        <li><strong>Paragraph summary</strong> (Summarize.tech): A single-paragraph overview. Lower quality for note-taking because it lacks structure, but good for a quick triage decision — "do I need to engage with this video at all?"</li>
+      </ul>
+      <p>For note-taking specifically, structured bullet points beat paragraph summaries every time. When you paste bullet points into Notion or Obsidian, you have something that's already organized and scannable. A paragraph requires restructuring before it's useful as a note.</p>
+
+      <h2>The Workflow for Different Video Types</h2>
+
+      <h3>University Lectures (60-90 minutes)</h3>
+      <p>Lectures are the best use case for this workflow — they're dense, structured, and often have a clear thesis that the summary captures well. Run the summary first, use it to identify which examples and explanations you need to see to understand the concepts, then watch those sections. The summary handles the "what" and "when"; you handle the "why" by watching the critical explanations in full.</p>
+      <p>Practical tip: paste the summary into your notes before watching. Then annotate it during targeted watching instead of taking notes from scratch. You're expanding and deepening the summary, not building from zero.</p>
+
+      <h3>Conference Talks and Keynotes (30-60 minutes)</h3>
+      <p>Conference talks usually have a single main argument with supporting evidence and examples. The summary will capture the core argument clearly. Watch the summary first, then watch only the examples or demos that the summary describes as significant. See our <a href="/blog/youtube-summarizer-conference-talks-keynotes" style="color: #ff0055; font-weight: 600;">guide to summarizing conference talks</a> for the full workflow.</p>
+
+      <h3>Tutorials and How-To Videos (15-45 minutes)</h3>
+      <p>Tutorials are trickier because the critical information is often visual — screen recordings, code demos, physical demonstrations. The AI summary will capture the steps in text, but you may still need to watch the execution. Use the summary to build the skeleton of your notes (the step list), then watch the video to fill in the specifics you can't capture in text.</p>
+
+      <h3>Book Summaries and Explainer Videos (10-25 minutes)</h3>
+      <p>These summarize well — they're already designed to distill dense information. The AI summary of a book summary video is a second layer of compression. For building a reading list or research overview, the double-summary format is ideal: you get the key ideas from 10 books in the time it used to take to watch 2 videos. See our <a href="/blog/youtube-book-summaries-ai-extract-key-ideas" style="color: #ff0055; font-weight: 600;">guide to AI book summary extraction</a> for this specific use case.</p>
+
+      <h2>Integrating Summaries Into Your Notes System</h2>
+
+      <h3>Notion</h3>
+      <p>Paste the summary as a page, add a YouTube embed at the top for easy reference, and use Notion's toggle blocks to hide the full summary while keeping key points visible. Tag by topic or course. When reviewing, the toggle structure lets you test your recall — can you remember the point before unhiding the full explanation?</p>
+
+      <h3>Obsidian</h3>
+      <p>Create a new note with the video title, paste the summary as the body, add frontmatter tags for topic and date, and link to related notes. Obsidian's graph view makes the connections between video notes and your existing knowledge visible over time. The summarize-first workflow is particularly powerful here because every video becomes a linked node in your knowledge graph rather than an isolated page of notes.</p>
+
+      <h3>Simple Text or Markdown</h3>
+      <p>If you don't use a dedicated notes app, paste the summary into a timestamped text file and add your own annotations inline. Even without a system, the summary gives you something to annotate — which is better than starting from blank notes.</p>
+
+      <h2>Which Tool to Use</h2>
+      <p>For note-taking specifically, you want structured output and no usage caps (during exam season or a research sprint, you might need 20+ summaries in a week). The options:</p>
+      <ul>
+        <li><strong>YT Summarizer (<a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">try free</a>):</strong> Structured bullet points, no weekly caps, one-time $29 lifetime access. Best output format for notes. Handles long lectures (2+ hours) without truncating.</li>
+        <li><strong>Eightify:</strong> Good structured output. Free tier limited to 3 summaries/week — breaks during heavy study periods. Subscription required for unlimited use.</li>
+        <li><strong>Summarize.tech:</strong> Completely free, no limits. Paragraph output (not bullet points) makes it harder to use directly in notes. Good for quick triage on videos you're not sure are worth your time.</li>
+      </ul>
+      <p>The <a href="/blog/fastest-way-to-summarize-youtube-video-methods-compared" style="color: #ff0055; font-weight: 600;">full speed comparison across all methods</a> is useful if you're evaluating workflow options. For students specifically, see our <a href="/blog/best-youtube-summarizers-for-students-2026-free-paid" style="color: #ff0055; font-weight: 600;">student-focused tool comparison</a> for the cost breakdown at different usage levels.</p>
+
+      <h2>The Real Productivity Gain</h2>
+      <p>The biggest benefit of the summarize-first workflow isn't the time saved per video — it's the decision quality improvement. When you know the structure of a video before you watch it, you watch differently: you're checking your understanding against the summary, filling in gaps, and spotting where the summary oversimplified. That's an active learning mode, not passive consumption. Your notes reflect genuine understanding rather than transcription of whatever the speaker said in the order they said it.</p>
+      <p>The paradox: watching less of a video often produces better notes from it.</p>
+    `
+  },
+  'youtube-summarizer-no-subscription-no-weekly-limits': {
+    title: 'Best YouTube Summarizers in 2026: No Subscription, No Weekly Limits',
+    metaDescription: 'Eightify caps you at 3 summaries/week. Most "free" tools hit a paywall on day one. Here are the YouTube summarizers with no subscription and no usage caps — honest comparison.',
+    date: '2026-05-11',
+    content: `
+      <p>The YouTube summarizer market in 2026 has a dirty trick: almost every tool advertises a "free tier," but the real question is what happens on day four. Eightify's free plan gives you 3 summaries per week — useful for testing, not usable for regular work. NoteGPT's free tier runs out faster. Glarity is similar. The tools that are actually unlimited free are rare, and the tools that are unlimited paid without a subscription are rarer still. This article covers the honest landscape.</p>
+
+      <h2>Why Weekly Limits Are a Bigger Problem Than They Sound</h2>
+      <p>3 summaries per week doesn't sound terrible until you actually use the tool for a week of real work:</p>
+      <ul>
+        <li>Monday: you summarize a 90-minute lecture for class notes (1 of 3)</li>
+        <li>Tuesday: you summarize a conference talk a colleague sent (2 of 3)</li>
+        <li>Wednesday: you summarize a tutorial you need for a project (3 of 3)</li>
+        <li>Thursday: you hit a paywall. The week doesn't reset until Monday.</li>
+      </ul>
+      <p>The problem is that usage isn't evenly distributed. During research sprints, exam prep, or content-heavy weeks, you might need 10-20 summaries in 3 days. A 3/week cap fails exactly when the tool would be most valuable. And because the cap resets weekly rather than daily, there's no way to "save up" usage from quiet weeks for busy ones.</p>
+
+      <h2>The Tools, Honestly</h2>
+
+      <h3>No Subscription + No Weekly Limits</h3>
+
+      <h4>YT Summarizer — $29 One-Time, Unlimited Summaries</h4>
+      <p>The only tool in this market that combines good output quality, no subscription, and no usage caps. Pay $29 once — no weekly reset, no monthly fee, no tiered pricing. Works on any device with a browser (no extension installation required). <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try the free tier to test output quality before buying.</a></p>
+      <p><strong>Output format:</strong> Structured bullet points, organized by topic. Clean enough to paste directly into Notion or Obsidian. Handles long videos (2+ hours) without truncating — important for lectures and conference recordings.</p>
+      <p><strong>The math on subscription alternatives:</strong> Eightify unlimited costs $96-144/year. NoteGPT unlimited costs $84-180/year. YT Summarizer costs $29 forever. The one-time price pays for itself against any subscription in 2-3 months.</p>
+
+      <h4>Summarize.tech — Free, Unlimited, Lower Quality</h4>
+      <p>Completely free, no account, no caps. Paste a URL, get a paragraph summary. The quality gap compared to paid tools is real — summaries are shallower, miss nuance, and don't structure output into bullet points. For quick "should I watch this?" decisions, it's excellent. For actual study notes or research work, the unstructured output requires too much manual reorganization to be efficient.</p>
+      <p><strong>Best for:</strong> Triage. Deciding whether a video is worth your time before committing to watch it. Not good for note-taking workflows.</p>
+
+      <h3>Subscription + Unlimited</h3>
+
+      <h4>Eightify — $8-12/Month for Unlimited</h4>
+      <p>Eightify's unlimited plan removes the 3/week cap. Output quality is good — timestamped chapter summaries are genuinely useful for navigating long videos. The subscription model means you pay every month whether you use it or not. For heavy daily users, the subscription is defensible. For intermittent users (who hit the free cap only during busy periods), a one-time tool is more economical.</p>
+      <p><strong>Who should consider it:</strong> Daily users who want the best Chrome extension UX and don't mind monthly billing.</p>
+
+      <h4>NoteGPT — $7-19/Month, Features Beyond Summaries</h4>
+      <p>NoteGPT goes beyond summarization — mind maps, flashcards, Q&A on video content. If you want an all-in-one study workflow, the extra features justify the monthly cost. For pure summarization, you're paying for features you don't use. See our <a href="/blog/best-youtube-summarizers-for-students-2026-free-paid" style="color: #ff0055; font-weight: 600;">student-focused comparison</a> for the full NoteGPT breakdown.</p>
+
+      <h3>Free With Caps (What Most Tools Actually Offer)</h3>
+      <p>Most "free" YouTube summarizers are free trials, not free products:</p>
+      <ul>
+        <li><strong>Eightify free:</strong> 3 summaries/week. Resets Monday. No carry-over from unused weeks.</li>
+        <li><strong>NoteGPT free:</strong> Approximately 10 free summaries total (not recurring). Once you hit it, it's a paywall.</li>
+        <li><strong>Glarity free:</strong> Limited daily summaries. Multi-platform (YouTube + web pages) shares the same cap.</li>
+        <li><strong>Video Highlight free:</strong> Capped, resets weekly.</li>
+      </ul>
+      <p>These are useful for testing the product. They're not usable as a primary workflow tool for anyone summarizing more than a few videos per week.</p>
+
+      <h2>The Subscription Fatigue Reality</h2>
+      <p>The frustration driving people to search "youtube summarizer no subscription" is real and documented in forums weekly. The pattern: someone discovers Eightify, uses it daily for a week during a research project, hits the 3/week wall, decides they need to summarize more regularly, then faces the subscription decision. At $8-12/month on top of Netflix, Spotify, Adobe, ChatGPT Plus, and cloud storage, another subscription feels disproportionate for a single-function tool.</p>
+      <p>This is the market gap YT Summarizer's one-time model addresses. It's not the most feature-rich tool — it does one thing well, charges once, and gets out of the way. For users who want reliable summaries without recurring costs or usage friction, that's the right trade-off.</p>
+
+      <h2>How to Choose</h2>
+      <ul>
+        <li><strong>You summarize 1-3 videos/week casually:</strong> Eightify or NoteGPT free tier covers you. Test both before the caps matter.</li>
+        <li><strong>You summarize regularly (4+ per week) and hate subscriptions:</strong> YT Summarizer $29 lifetime. Cheapest path to unlimited, quality output with no recurring cost.</li>
+        <li><strong>You need zero cost, no limits, and quality doesn't matter much:</strong> Summarize.tech. Accept the lower output quality in exchange for genuinely unlimited free access.</li>
+        <li><strong>You want the best Chrome extension UX and don't mind monthly billing:</strong> Eightify paid tier. Best in-browser experience in this market.</li>
+        <li><strong>You need summaries + mind maps + flashcards:</strong> NoteGPT. The extra study features justify the subscription if you actively use them.</li>
+      </ul>
+      <p>The full tool comparison — including accuracy testing and pricing over time — is in our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">8 YouTube summarizers compared</a> and <a href="/blog/best-ai-video-summarization-tools-2026" style="color: #ff0055; font-weight: 600;">10 AI video summarization tools ranked</a>.</p>
     `
   },
   'best-ai-video-summarization-tools-2026': {
@@ -7261,7 +7850,7 @@ tags: [tag1, tag2]
   },
   'youtube-summarizer-vs-chatgpt-manual-workflow': {
     title: 'YouTube Summarizer vs. Copy-Paste to ChatGPT: Why Dedicated Tools Save You 5 Extra Steps',
-    metaDescription: 'Copying YouTube transcripts to ChatGPT works — but it takes 5 extra steps and breaks on long videos. We compared the manual workflow to dedicated summarizer tools. Here\'s what actually saves time.',
+    metaDescription: 'The YouTube transcript + ChatGPT method takes 7 steps and breaks on long videos. We timed both workflows. For occasional use, manual is fine. For regular use, here\'s the crossover point.',
     date: '2026-04-22',
     content: `
       <p>The most common "free" YouTube summarizer isn't a tool at all — it's the manual workflow: open YouTube, find the transcript, copy it, paste it into ChatGPT, and write a prompt. It works. Millions of people do it. But if you're summarizing more than one video per week, those 5 extra steps add up to real friction and real time waste. Dedicated summarizers eliminate all of them.</p>
