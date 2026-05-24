@@ -7,6 +7,24 @@ export type PostListEntry = {
 
 export const allPosts: PostListEntry[] = [
   {
+    slug: 'youtube-summarizer-vs-gemini-which-saves-more-time',
+    title: 'YT Summarizer vs. Gemini: Which One Actually Saves More Time?',
+    description: "Gemini can summarize YouTube videos — when it works. It's inconsistent, regional, and requires switching context. Here's the head-to-head on reliability, speed, and output quality.",
+    date: '2026-05-18',
+  },
+  {
+    slug: 'summarize-youtube-video-without-extension',
+    title: 'How to Summarize a YouTube Video Without Installing Any Extension',
+    description: 'No Chrome extension, no admin rights, no browser permissions needed. The best web-based YouTube summarizers in 2026 — paste a URL, get a summary, nothing to install.',
+    date: '2026-05-18',
+  },
+  {
+    slug: 'vidpill-alternative-youtube-summarizer-one-time-payment',
+    title: 'VidPill Alternative: Best YouTube Summarizer With a One-Time Payment (No Subscription)',
+    description: "VidPill charges $9/month with usage limits. If you want reliable YouTube summaries without a recurring subscription, here's the honest comparison — features, pricing, and which one to use.",
+    date: '2026-05-18',
+  },
+  {
     slug: 'youtube-summarizer-for-medical-students',
     title: 'YouTube Summarizer for Medical Students: USMLE Step 1 & 2 Prep Without the Video Marathon',
     description: 'Medical students use AI YouTube summarization to process USMLE Step 1/2 review videos, clinical case presentations, and lecture recordings — extracting key concepts in seconds instead of hours.',

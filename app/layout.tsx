@@ -4,11 +4,11 @@ import { GoogleSiteVerification } from './google-site-verification'
 export const metadata: Metadata = {
   title: 'YouTube Summarizer Blog — Tools, Guides & Comparisons 2026',
   description: 'Compare the best YouTube summarizer tools, get step-by-step guides, and find free AI options with no subscription. Covers Eightify alternatives, student use cases, and more.',
-  metadataBase: new URL('https://ytsummarizer-blog.vercel.app'),
+  metadataBase: new URL('https://blog.ytsummarizer.app'),
   openGraph: {
     title: 'YouTube Summarizer Blog — Tools, Guides & Comparisons 2026',
     description: 'Compare the best YouTube summarizer tools, get step-by-step guides, and find free AI options with no subscription.',
-    url: 'https://ytsummarizer-blog.vercel.app',
+    url: 'https://blog.ytsummarizer.app',
     siteName: 'YT Summarizer Blog',
     locale: 'en_US',
     type: 'website',
@@ -46,7 +46,7 @@ const blogSchema = {
   '@context': 'https://schema.org',
   '@type': 'Blog',
   name: 'YT Summarizer Blog',
-  url: 'https://ytsummarizer-blog.vercel.app',
+  url: 'https://blog.ytsummarizer.app',
   description: 'Guides, comparisons, and tips for AI-powered YouTube video summarization.',
   publisher: {
     '@type': 'Organization',

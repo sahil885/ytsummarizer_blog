@@ -3,6 +3,24 @@ import { notFound } from 'next/navigation'
 
 // FAQ content keyed by slug. Posts with FAQs get FAQPage schema + a visible FAQ section.
 const postFaqs: Record<string, Array<{ q: string; a: string }>> = {
+  'youtube-summarizer-vs-gemini-which-saves-more-time': [
+    { q: 'Can Gemini summarize YouTube videos?', a: 'Yes, but inconsistently. Gemini has YouTube integration in some Google products and regions, but coverage varies — it works reliably on some accounts and videos, fails silently on others. Dedicated tools like YT Summarizer work on any public YouTube video with captions, regardless of your Google account status or region.' },
+    { q: 'Is Gemini better than a dedicated YouTube summarizer?', a: 'For occasional use when it works, Gemini is convenient because you may already have it open. For regular use, dedicated tools win: they\'re more reliable, produce more structured output (bullet points vs. paragraphs), and don\'t require you to be in the right region or have the right Google account. Gemini is a general AI assistant; YouTube summarizers are built for one job.' },
+    { q: 'Does Gemini summarize YouTube videos for free?', a: 'Gemini free tier can sometimes access YouTube content. The limitation is consistency — it doesn\'t work on every video or in every region. Google Workspace users may have better YouTube integration through Gemini Advanced. For guaranteed access on any public video, dedicated summarizers are more reliable.' },
+    { q: 'What\'s the main difference between Gemini and YT Summarizer for YouTube?', a: 'Gemini is a general-purpose AI assistant that sometimes accesses YouTube as a side capability. YT Summarizer is purpose-built for YouTube: it handles transcript extraction, context window management for long videos, and structured output formatting automatically. You don\'t need to write a prompt, manage context limits, or switch between apps. Paste the URL, get the summary.' },
+  ],
+  'summarize-youtube-video-without-extension': [
+    { q: 'Can you summarize YouTube videos without a Chrome extension?', a: 'Yes. Web-based tools like YT Summarizer and Summarize.tech work entirely in the browser — paste a URL, get a summary. No extension installation, no browser permission requests, no admin rights required. This also means they work on any browser (Firefox, Safari, Edge, Arc) and on mobile, unlike Chrome-only extensions.' },
+    { q: 'What\'s the best YouTube summarizer that doesn\'t require an extension?', a: 'YT Summarizer is the best web-based option: structured bullet-point output, handles long videos, one-time $29 no subscription. Summarize.tech is the best completely free option with no extension. Both work by pasting a URL into a web page — no browser modification needed.' },
+    { q: 'Why would I want a YouTube summarizer without an extension?', a: 'Several practical reasons: you\'re on a managed device (work, school) where extensions require admin approval; you use Firefox or Safari where Chrome extensions don\'t work; you prefer not to grant browser permission to a third party; or you want something that works on mobile without a special browser. Web tools have no friction — the URL is the interface.' },
+    { q: 'Do YouTube summarizer extensions have access to my browsing data?', a: 'Chrome extensions that inject into YouTube pages typically request "read all data on youtube.com" or similar broad permissions. Web-based tools only process the specific URL you submit — they have no access to your browsing history, other tabs, or YouTube account. If privacy is a concern, web tools are the lower-risk option.' },
+  ],
+  'vidpill-alternative-youtube-summarizer-one-time-payment': [
+    { q: 'What is VidPill?', a: 'VidPill is a YouTube summarizer offering AI-powered video summaries with a subscription pricing model starting around $9/month. It covers YouTube summaries and some additional AI features. Like most summarizer subscriptions, it imposes usage caps on lower tiers.' },
+    { q: 'Is there a VidPill alternative with a one-time payment?', a: 'Yes — YT Summarizer charges $29 once with no monthly fees and no weekly usage caps. Over a 6-month period, that\'s $29 vs. $54+ for a VidPill subscription. The quality is comparable on standard YouTube content; the pricing model is fundamentally different.' },
+    { q: 'Why would I switch from VidPill to a one-time payment tool?', a: 'The main reason is subscription fatigue. If you\'re already paying for multiple tools monthly, a one-time payment is simpler to budget and eliminates a recurring cost. The secondary reason is usage cap alignment — VidPill\'s lower subscription tiers limit summaries, while a lifetime tool has no caps regardless of your usage pattern.' },
+    { q: 'Does YT Summarizer do everything VidPill does?', a: 'YT Summarizer focuses on YouTube video summarization — it does that one job reliably, with structured bullet-point output, handling long videos without truncation. If VidPill features you rely on include multi-platform video (non-YouTube sources) or specific study tools (mind maps, flashcards), compare both before switching. For pure YouTube summarization, the output quality is comparable.' },
+  ],
   'best-ai-video-summarization-tools-2026': [
     { q: 'What is the best AI video summarization tool in 2026?', a: 'For YouTube specifically, YT Summarizer leads on value — one-time $29 payment, no weekly limits, handles long videos reliably. For multi-platform video (including uploaded files, Zoom recordings, Loom links), Notta and Mindgrasp cover more source types. For completely free use, Summarize.tech works without an account.' },
     { q: 'How accurate are AI video summarization tools?', a: 'Accuracy varies significantly. Tools using GPT-4-class models on clean transcripts achieve 85-95% accuracy on factual claims. The main failure modes: misattributing speaker quotes, missing numerical data, and hallucinating claims in technical content. Always verify specific statistics or claims against the source video.' },
@@ -218,6 +236,243 @@ const postFaqs: Record<string, Array<{ q: string; a: string }>> = {
 }
 
 const posts: Record<string, { title: string; content: string; date: string; metaDescription: string }> = {
+  'youtube-summarizer-vs-gemini-which-saves-more-time': {
+    title: 'YT Summarizer vs. Gemini: Which One Actually Saves More Time?',
+    metaDescription: 'Gemini can summarize YouTube videos — when it works. It\'s inconsistent, regional, and requires switching context. Here\'s the head-to-head on reliability, speed, and output quality.',
+    date: '2026-05-18',
+    content: `
+      <p>Gemini is the default recommendation right now. It's built into Google, it's free, and it can sometimes access YouTube content directly. So why would anyone pay for a dedicated YouTube summarizer? Because "sometimes" is the operative word — and when Gemini doesn't work, there's no fallback. Here's the honest comparison.</p>
+
+      <h2>What Gemini Actually Does With YouTube</h2>
+      <p>Gemini's YouTube integration is more limited than most articles describe. Here's what it can and can't do:</p>
+      <ul>
+        <li><strong>When it works:</strong> You can paste a YouTube URL into Gemini (or access it through Google products like Workspace), and Gemini will access the video's transcript and generate a summary. The output quality is good — comparable to GPT-4-level summarization.</li>
+        <li><strong>When it doesn't:</strong> Gemini's YouTube access is region-restricted and inconsistent. It works on some accounts and videos, fails silently on others. There's no clear documentation on which videos it can access or why some fail. When it fails, you get a refusal or a hallucinated summary based on the video title alone — with no indication which one you received.</li>
+        <li><strong>The account dependency:</strong> Better integration is available through Gemini Advanced ($20/month), Google Workspace accounts, or specific Google products. Free Gemini access to YouTube is the most unreliable tier.</li>
+      </ul>
+      <p>The core problem: Gemini's YouTube capability is a side feature of a general assistant, not a dedicated product. The reliability matches that — it works when Google's integration is functioning, fails when it isn't.</p>
+
+      <h2>What a Dedicated Summarizer Does</h2>
+      <p>Tools like YT Summarizer are built for exactly one job: take a YouTube URL, extract the transcript, process it through a language model, and return structured output. Because this is the entire product, the edge cases get handled:</p>
+      <ul>
+        <li><strong>Long videos:</strong> Dedicated tools split and manage transcripts above the LLM context window. Gemini can struggle with long videos — the transcript exceeds what it can process in one call.</li>
+        <li><strong>Structured output:</strong> YT Summarizer returns bullet points organized by topic section. Gemini returns prose paragraphs that require manual restructuring if you want to use them as notes.</li>
+        <li><strong>No context switching:</strong> You paste the URL in one place and get the summary in the same window. With Gemini, you're in a general chat interface — you write a prompt, manage the conversation, and copy the result out. More steps, more friction.</li>
+        <li><strong>Reliability:</strong> Works on any public YouTube video with captions, regardless of your Google account, region, or Workspace tier.</li>
+      </ul>
+
+      <h2>The Side-by-Side</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f5f5f5;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Factor</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Gemini</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">YT Summarizer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Reliability</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Inconsistent — region/account dependent</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Works on any public video with captions</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Output format</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Prose paragraphs</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Structured bullet points by section</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Long videos (90+ min)</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">May truncate or fail</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Handles reliably</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Workflow steps</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Open Gemini → write prompt → wait → copy result</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Paste URL → wait 60 sec → copy summary</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Price</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free (limited) / $20/month (Advanced)</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free tier / $29 one-time</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Works without Google account</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">No</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Extension required</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">No</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">No</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>When Gemini Makes Sense</h2>
+      <p>Gemini is a reasonable choice if:</p>
+      <ul>
+        <li>You're already in a Google Workspace environment and Gemini is integrated into your workflow</li>
+        <li>You summarize one video occasionally, not regularly</li>
+        <li>You want to ask follow-up questions about the video in a chat interface</li>
+        <li>You're using Gemini Advanced ($20/month) and get the YouTube integration as part of a broader use case</li>
+      </ul>
+      <p>The follow-up question use case is real — Gemini's chat interface lets you interrogate the video content more conversationally. If you want to ask "What did the speaker say about X specifically?" that's easier in a chat interface than a one-shot summarizer.</p>
+
+      <h2>When a Dedicated Tool Makes More Sense</h2>
+      <p>YT Summarizer wins when:</p>
+      <ul>
+        <li>You're summarizing multiple videos per week and need consistency</li>
+        <li>You need structured notes (bullet points) not paragraphs</li>
+        <li>You're outside Gemini's YouTube coverage region or don't have a Google account</li>
+        <li>You're summarizing long videos (lectures, conference recordings, 90+ minute talks)</li>
+        <li>You want to paste one URL and get a summary without managing a chat conversation</li>
+      </ul>
+      <p>The pricing comparison also matters. Gemini free tier is unreliable for YouTube. Gemini Advanced is $20/month — which buys a YT Summarizer lifetime deal ($29) in less than 2 months, with no recurring cost afterward. If YouTube summarization is your primary use case, paying $20/month for a general assistant to do it inconsistently is a worse deal than $29 once for a purpose-built tool that does it reliably.</p>
+
+      <h2>The Bottom Line</h2>
+      <p>Gemini is excellent at many things. Reliable YouTube summarization isn't currently one of them. If you want to occasionally ask Gemini about a video in a conversational way, it works. If you want a consistent, structured summary of any YouTube video in 60 seconds with no context switching, a dedicated tool is the right choice. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free — no extension, no Google account required.</a></p>
+      <p>For the full tool landscape including other alternatives, see our <a href="/blog/best-ai-video-summarization-tools-2026" style="color: #ff0055; font-weight: 600;">10 AI video summarization tools ranked</a> and <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">8 YouTube summarizers compared</a>.</p>
+    `
+  },
+  'summarize-youtube-video-without-extension': {
+    title: 'How to Summarize a YouTube Video Without Installing Any Extension',
+    metaDescription: 'No Chrome extension, no admin rights, no browser permissions needed. The best web-based YouTube summarizers in 2026 — paste a URL, get a summary, nothing to install.',
+    date: '2026-05-18',
+    content: `
+      <p>Most YouTube summarizer articles default to recommending Chrome extensions. But extensions have real friction: they require admin rights on managed devices, they only work in Chrome, they request broad browser permissions, and they don't work on mobile. The better question is: which YouTube summarizers work entirely in a web browser with nothing installed?</p>
+
+      <h2>Why "No Extension" Matters</h2>
+      <p>The "install an extension" barrier is higher than it sounds for several categories of users:</p>
+      <ul>
+        <li><strong>Work/enterprise devices:</strong> Many corporate and school IT policies require admin approval for browser extensions. Getting Eightify approved on a managed device can take days or never happen.</li>
+        <li><strong>Non-Chrome browsers:</strong> Firefox, Safari, Arc, and Brave users can't run Chrome extensions. Summarizers built as Chrome-only extensions simply don't exist for these users.</li>
+        <li><strong>Mobile users:</strong> Chrome mobile doesn't support extensions. An extension-based summarizer is desktop-only by definition.</li>
+        <li><strong>Privacy-conscious users:</strong> Extensions that inject into YouTube pages typically request "read all data on youtube.com" — which means they can see every page you visit on YouTube. A web app that only processes the URL you submit has no such access.</li>
+        <li><strong>Occasional users:</strong> If you summarize one video per month, installing an extension that runs on every YouTube page visit is disproportionate overhead.</li>
+      </ul>
+
+      <h2>The Best Web-Based YouTube Summarizers (No Installation)</h2>
+
+      <h3>YT Summarizer — Best Overall</h3>
+      <p>YT Summarizer is a web app: go to the site, paste a YouTube URL, get a structured bullet-point summary in 60 seconds. Nothing to install, no browser permissions, works on any browser including Safari and Firefox, works on mobile. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try it free — no signup required to test.</a></p>
+      <p><strong>Output:</strong> Structured bullet points organized by topic section. Clean enough to paste directly into Notion, Obsidian, or any notes app.</p>
+      <p><strong>Long video support:</strong> Handles 2+ hour videos without truncating — important for lectures, conference talks, and documentary-length content.</p>
+      <p><strong>Pricing:</strong> Free tier available. One-time $29 for unlimited use — no subscription, no weekly caps.</p>
+
+      <h3>Summarize.tech — Best Free No-Account Option</h3>
+      <p>Completely free, no account required, no extension. Go to the site, paste the URL, get a paragraph summary. The simplest possible workflow. Trade-off: output is a single paragraph rather than structured bullet points, and quality on long or technical content is lower than paid tools.</p>
+      <p><strong>Best for:</strong> Quick "should I watch this?" decisions. Triage before committing watch time to a video.</p>
+
+      <h3>Gemini — Free But Inconsistent</h3>
+      <p>Google's Gemini can sometimes access YouTube URLs directly in the chat interface — no extension required. The problem is reliability: it works on some videos and accounts but fails silently on others, and coverage is region-dependent. Not a reliable primary tool, but useful as a fallback when you're already in the Gemini interface. See our <a href="/blog/youtube-summarizer-vs-gemini-which-saves-more-time" style="color: #ff0055; font-weight: 600;">full Gemini vs. dedicated tool comparison</a>.</p>
+
+      <h3>ChatGPT + Manual Transcript (No Extension, High Manual Work)</h3>
+      <p>You can summarize YouTube videos through ChatGPT without any extension — by manually copying the transcript and pasting it in. No installation required, but the workflow takes 4-6 minutes per video and breaks on long content. This is the "free" option with the highest time cost. Full breakdown in our <a href="/blog/copying-youtube-transcript-to-chatgpt-wastes-time" style="color: #ff0055; font-weight: 600;">analysis of the ChatGPT transcript workflow</a>.</p>
+
+      <h2>Extension Tools You'd Be Missing</h2>
+      <p>To be complete: the best Chrome extension options are Eightify (in-browser chapter summaries, 3 free/week), Glarity (multi-platform, ChatGPT integration), and NoteGPT (study features). If you're on Chrome and don't have device restrictions, they're worth considering. But for everyone else, web-based tools match or exceed their core functionality without the installation friction.</p>
+
+      <h2>The Mobile Use Case</h2>
+      <p>Web-based summarizers work on mobile browsers. The workflow: find a YouTube video on your phone, copy the URL, open the summarizer app in your mobile browser, paste the URL, get the summary. This takes 30-45 seconds extra compared to desktop, but it's the only option that works at all on mobile — no extension can run in Chrome for iOS or Android.</p>
+      <p>YT Summarizer's mobile web experience is clean enough to use regularly on phone. Summarize.tech also works fine on mobile for basic summaries.</p>
+
+      <h2>How to Choose</h2>
+      <ul>
+        <li><strong>Need zero cost:</strong> Summarize.tech for basic summaries, or YT Summarizer's free tier for structured output.</li>
+        <li><strong>Use it regularly (4+ videos/week):</strong> YT Summarizer $29 lifetime. No caps, structured output, any browser, any device.</li>
+        <li><strong>Managed device or non-Chrome browser:</strong> Any web-based tool works. Extensions are off the table entirely.</li>
+        <li><strong>Mobile-first workflow:</strong> Web tools only. Both YT Summarizer and Summarize.tech work in mobile browsers.</li>
+      </ul>
+      <p>See our <a href="/blog/youtube-summarizer-no-subscription-no-weekly-limits" style="color: #ff0055; font-weight: 600;">no-subscription no-weekly-limits comparison</a> for the full pricing landscape, and our <a href="/blog/fastest-way-to-summarize-youtube-video-methods-compared" style="color: #ff0055; font-weight: 600;">speed comparison across all summarization methods</a> for the full workflow breakdown.</p>
+    `
+  },
+  'vidpill-alternative-youtube-summarizer-one-time-payment': {
+    title: 'VidPill Alternative: Best YouTube Summarizer With a One-Time Payment (No Subscription)',
+    metaDescription: 'VidPill charges $9/month with usage limits. If you want reliable YouTube summaries without a recurring subscription, here\'s the honest comparison — features, pricing, and which one to use.',
+    date: '2026-05-18',
+    content: `
+      <p>VidPill is one of several YouTube summarizers that launched in 2025-2026 targeting the subscription model. At $9/month, it's priced below Eightify and NoteGPT — but it's still a monthly charge, and monthly charges add up. If you're looking for a VidPill alternative with a one-time payment, here's the honest comparison.</p>
+
+      <h2>What VidPill Offers</h2>
+      <p>VidPill provides AI-powered YouTube video summaries with a subscription model starting around $9/month. Like most summarizer subscriptions, lower tiers impose usage limits — number of summaries per day or per month — and the full unlimited tier costs more. The tool itself produces solid summaries for standard YouTube content.</p>
+      <p>The question isn't whether VidPill works. It does. The question is whether a monthly subscription for a single-function tool is the right model for your usage pattern.</p>
+
+      <h2>The One-Time Payment Alternative: YT Summarizer</h2>
+      <p>YT Summarizer charges $29 once — no subscription, no monthly fee, no usage caps after purchase. The output quality on YouTube video summarization is comparable to subscription tools because the underlying technology (LLM-based transcript processing) is the same across the market. What differs is the business model, not the core function.</p>
+
+      <h3>Pricing comparison over time</h3>
+      <ul>
+        <li><strong>1 month:</strong> VidPill ~$9 vs. YT Summarizer $29 (one-time)</li>
+        <li><strong>3 months:</strong> VidPill ~$27 vs. YT Summarizer $29</li>
+        <li><strong>4 months:</strong> VidPill ~$36 vs. YT Summarizer $29 ← crossover point</li>
+        <li><strong>12 months:</strong> VidPill ~$108 vs. YT Summarizer $29</li>
+        <li><strong>24 months:</strong> VidPill ~$216 vs. YT Summarizer $29</li>
+      </ul>
+      <p>If you plan to use a YouTube summarizer for more than 3 months — which is likely if you're researching alternatives — the one-time model wins after month 4.</p>
+
+      <h2>Feature Comparison</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f5f5f5;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Feature</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">VidPill</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">YT Summarizer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Pricing model</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">~$9/month subscription</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$29 one-time lifetime</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Usage limits</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Capped on lower tiers</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">No caps after purchase</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Extension required</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Varies</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">No — web-based</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Long video support</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Standard</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Handles 2+ hour videos</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Output format</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Summary text</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Structured bullet points</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Free tier</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Limited trial</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free summaries available</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>When to Stay With VidPill</h2>
+      <p>VidPill makes sense if:</p>
+      <ul>
+        <li>You've been using it and are satisfied with the workflow</li>
+        <li>You need specific features VidPill offers that YT Summarizer doesn't</li>
+        <li>You're on a trial period and haven't hit the monthly cost inflection point</li>
+      </ul>
+
+      <h2>When to Switch</h2>
+      <p>Switching to a one-time tool makes sense when:</p>
+      <ul>
+        <li>You've been paying for 3+ months and the monthly cost has accumulated past the one-time alternative</li>
+        <li>You've hit VidPill's usage caps during a heavy-use week</li>
+        <li>You're doing subscription consolidation and want to eliminate a recurring charge</li>
+        <li>You need a web-based tool (no extension) that works across browsers and on mobile</li>
+      </ul>
+      <p>The broader no-subscription landscape is covered in our <a href="/blog/youtube-summarizer-no-subscription-no-weekly-limits" style="color: #ff0055; font-weight: 600;">no-subscription no-weekly-limits comparison</a>. For the full tool comparison including Eightify, NoteGPT, and other alternatives, see <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">8 YouTube summarizers compared</a>. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free before committing.</a></p>
+    `
+  },
   'youtube-summarizer-for-parents-and-homeschoolers': {
     title: 'YouTube Summarizer for Parents and Homeschoolers: Curate Better Educational Content Faster',
     metaDescription: 'Parents and homeschoolers use AI YouTube summarization to evaluate curriculum videos, research teaching methods, and build lesson libraries — without watching hours of content first.',
@@ -1239,7 +1494,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'best-youtube-summarizers-for-students-2026-free-paid': {
     title: 'Best YouTube Summarizers for Students in 2026 (Free and Paid)',
-    metaDescription: 'Best YouTube summarizers for students in 2026: what\'s actually free, which $29 lifetime deal beats subscriptions, and the worst option to avoid during exam season.',
+    metaDescription: 'Best free and affordable YouTube summarizers for students in 2026. What\'s genuinely free, which $29 one-time deal beats any subscription, and what to avoid during exam crunch.',
     date: '2026-05-04',
     content: `
       <p>Students are the heaviest users of YouTube for learning — lectures, tutorials, exam prep, supplementary content — and the most price-sensitive buyers of summarization tools. A $15/month subscription is a real budget decision when you're also paying tuition, rent, and textbooks. This guide covers every meaningful option in 2026, ranked honestly by value for students at different usage levels and budget constraints.</p>
@@ -1905,7 +2160,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   },
   'youtube-summarizer-pricing-free-vs-onetime-vs-subscription': {
     title: 'YouTube Summarizer Pricing Compared: Free, One-Time, and Subscription Tools in 2026',
-    metaDescription: 'Compare YouTube summarizer pricing across all models: completely free tools, one-time $29 lifetime deals, and $8-15/month subscriptions. Full cost breakdown and what you actually get at each price.',
+    metaDescription: 'YouTube summarizer one-time payment vs. subscription vs. free: full cost breakdown. At month 3, the $29 lifetime deal beats every subscription. Here\'s the math and what you get at each tier.',
     date: '2026-05-01',
     content: `
       <p>YouTube summarizers range from completely free to $15/month subscriptions, and the pricing model you choose determines more than just your cost — it affects your usage patterns, output quality, and whether you'll still have access in six months. This guide breaks down every pricing model in the market, what you actually get at each tier, and the real cost over time. No spin, no upsell language — just the numbers.</p>
@@ -9007,7 +9262,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://ytsummarizer-blog.vercel.app/blog/${slug}`,
+      '@id': `https://blog.ytsummarizer.app/blog/${slug}`,
     },
   }
 
@@ -9039,13 +9294,13 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         '@type': 'ListItem',
         position: 2,
         name: 'Blog',
-        item: 'https://ytsummarizer-blog.vercel.app/',
+        item: 'https://blog.ytsummarizer.app/',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: post.title,
-        item: `https://ytsummarizer-blog.vercel.app/blog/${slug}`,
+        item: `https://blog.ytsummarizer.app/blog/${slug}`,
       },
     ],
   }

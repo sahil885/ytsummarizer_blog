@@ -179,13 +179,16 @@ const postDates: Record<string, string> = {
   'youtube-summarizer-for-law-students': '2026-05-10',
   'youtube-summarizer-for-language-learners': '2026-05-10',
   'youtube-summarizer-for-financial-advisors': '2026-05-10',
+  'youtube-summarizer-vs-gemini-which-saves-more-time': '2026-05-18',
+  'summarize-youtube-video-without-extension': '2026-05-18',
+  'vidpill-alternative-youtube-summarizer-one-time-payment': '2026-05-18',
   'youtube-summarizer-for-medical-students': '2026-05-17',
   'youtube-summarizer-for-cybersecurity-professionals': '2026-05-17',
   'youtube-summarizer-for-parents-and-homeschoolers': '2026-05-17',
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://ytsummarizer-blog.vercel.app'
+  const baseUrl = 'https://blog.ytsummarizer.app'
 
   const posts = Object.keys(postDates).filter((slug) => !NOINDEX_SLUGS.has(slug))
 
