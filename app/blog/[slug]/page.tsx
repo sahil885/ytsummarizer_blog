@@ -233,6 +233,54 @@ const postFaqs: Record<string, Array<{ q: string; a: string }>> = {
     { q: 'Is there a YouTube summarizer built for developers?', a: 'No tool is developer-specific, but general-purpose summarizers like YT Summarizer work well on technical content because they handle jargon without simplifying it. The output reads like developer notes, not a consumer explainer.' },
     { q: 'How much time can developers save by summarizing YouTube videos?', a: 'Most developers report saving 60–70% of video-watching time. The main win is pre-screening: checking a summary before deciding whether to watch a full 45-minute talk. Applied across a full week of research, this saves 2–4 hours for most developers who actively consume tech YouTube content.' },
   ],
+  'glasp-alternative-youtube-summarizer': [
+    { q: 'Does Glasp summarize YouTube videos automatically?', a: 'No. Glasp surfaces the YouTube transcript alongside the video and lets you highlight and annotate passages manually. It does not auto-generate a summary — you still need to read through the transcript yourself and decide what to mark. A dedicated summarizer reads the entire transcript and produces a condensed output without any manual work.' },
+    { q: 'What is the best Glasp alternative for YouTube summarization?', a: 'YT Summarizer is the best alternative if your goal is automatic AI-generated summaries rather than manual highlighting. Paste a YouTube URL, get a structured bullet-point summary in under 60 seconds. No manual reading required. For one-time payment access with no subscription, it\'s $29.' },
+    { q: 'Is Glasp free?', a: 'Glasp has a free plan with usage limits. The highlighting and annotation features are free; some AI-powered features require a paid plan. For YouTube specifically, the value Glasp offers is transcript access and annotation — not automated summarization.' },
+    { q: 'Can I use both Glasp and a YouTube summarizer together?', a: 'Yes, and it can work well. Use a summarizer to get the high-level takeaways quickly, then use Glasp to annotate the specific transcript passages that matter most to you. Summarizers give you the map; Glasp helps you annotate the territory.' },
+  ],
+  'youtube-summarizer-vs-claude-ai': [
+    { q: 'Can Claude AI summarize YouTube videos?', a: 'Not directly. Claude cannot access YouTube URLs or fetch video content. To use Claude for YouTube summarization, you first need to manually copy the video transcript from YouTube\'s transcript panel, then paste it into Claude with a summarization prompt. This adds several minutes of manual work per video and breaks down completely when transcripts are unavailable or very long.' },
+    { q: 'Is Claude or a dedicated YouTube summarizer faster?', a: 'A dedicated summarizer is significantly faster for YouTube specifically. With a tool like YT Summarizer, you paste one URL and get a summary in under 60 seconds — no transcript hunting, no copying, no prompt writing. With Claude, you spend 3–5 minutes per video just getting the transcript into the interface before the AI work even begins.' },
+    { q: 'Does Claude have a YouTube integration?', a: 'Claude does not natively browse YouTube or extract transcripts. Some third-party browser extensions inject YouTube transcripts into Claude\'s interface, but these add another dependency and another thing to break. Native integrations for Claude and YouTube don\'t exist as of 2026.' },
+    { q: 'When would you use Claude instead of a YouTube summarizer?', a: 'Claude makes sense when you\'re already in a Claude conversation and need to summarize one video as part of a broader research task — and the transcript is short enough to paste easily. For any regular workflow involving multiple videos, a dedicated tool eliminates the friction of transcript extraction and prompt management entirely.' },
+  ],
+  'how-to-summarize-youtube-videos-on-iphone': [
+    { q: 'Do YouTube summarizer Chrome extensions work on iPhone?', a: 'No. Chrome extensions do not run on iOS — neither in Chrome for iPhone nor in Safari. Any YouTube summarizer that relies on a browser extension simply won\'t work on your iPhone. Web-based summarizers (where you visit a website and paste a URL) work on any mobile browser without installation.' },
+    { q: 'What is the best YouTube summarizer for iPhone?', a: 'YT Summarizer works on iPhone via mobile Safari or Chrome — paste the YouTube video URL into the tool\'s web interface and get a summary. No app download, no extension, no account required for free summaries. It handles the full workflow from the mobile browser.' },
+    { q: 'Can I summarize YouTube videos on iPhone for free?', a: 'Yes. YT Summarizer offers free summaries on mobile with no account required. Copy a YouTube URL from the YouTube app, open YT Summarizer in Safari, paste the URL, and get your summary. The process takes about 60 seconds end to end.' },
+    { q: 'Is there a dedicated YouTube summarizer app for iPhone?', a: 'A few apps exist on the App Store, but most are thin wrappers around ChatGPT with limited YouTube-specific optimization. The most reliable approach on iPhone remains web-based tools — they\'re updated more frequently, don\'t require App Store approval cycles, and work immediately without installation.' },
+  ],
+  'youtube-summarizer-for-online-courses': [
+    { q: 'Can AI summarize online course videos on YouTube?', a: 'Yes. Lecture-style videos — which make up most online course content on YouTube — summarize extremely well. They\'re verbal, structured, and content-dense. A 45-minute lecture typically compresses to a 300–500 word summary covering the main concepts, examples, and conclusions.' },
+    { q: 'What is the best YouTube summarizer for online courses?', a: 'YT Summarizer handles long lecture videos well and produces structured bullet-point output that reads like study notes. For a full course playlist, you can process each video individually and build a comprehensive note set without watching everything at full speed.' },
+    { q: 'Can I use a YouTube summarizer to study for exams?', a: 'Yes, with an important caveat: summaries are best for initial understanding and review, not as a replacement for working through problems or hands-on practice. Use summaries to quickly grasp a concept, then apply it. For mathematics, coding, or skills-based content, you still need to practice — the summary tells you what the concept is, not how to execute it.' },
+    { q: 'Do YouTube summarizers work on Coursera or edX videos?', a: 'Only if the course content is also publicly available on YouTube. Summarizers work with YouTube URLs specifically — they cannot access paywalled content on Coursera, edX, or other platforms directly. Many courses post free preview lectures or supplementary content on YouTube that can be summarized.' },
+  ],
+  'youtube-summarizer-for-coaches': [
+    { q: 'How do coaches use YouTube summarizers in their practice?', a: 'Coaches use summarizers primarily for content intelligence: scanning industry channels, thought leaders, and client-relevant content without watching every video. A common workflow is to summarize 8–10 videos per week to stay current on methodology trends, extract client-relevant insights, and identify content worth sharing or referencing in sessions.' },
+    { q: 'What types of coaching YouTube content summarize best?', a: 'Interview-style content, keynote talks, panel discussions, and educational videos summarize very well — they\'re verbal and content-dense. Demo sessions, workshop recordings with exercises, and highly interactive content are less useful to summarize because the value is in the participation, not the narration.' },
+    { q: 'Can I use YouTube summaries to create coaching content?', a: 'You can use summaries as research starting points — identifying key frameworks, statistics, and arguments to reference in your own content. Do not republish AI summaries as your own content. The legitimate use is using the summary to decide which videos to watch in full and to take notes more efficiently on the ones that matter.' },
+    { q: 'Is there a YouTube summarizer built specifically for coaches?', a: 'No summarizer is built specifically for coaches, but general-purpose tools like YT Summarizer work well for coaching use cases. The key feature to look for is structured output — bullet points and key takeaways rather than paragraph-form summaries — which is easier to scan when you\'re processing high volumes of content.' },
+  ],
+  'youtube-summarizer-for-documentaries': [
+    { q: 'Can AI accurately summarize a YouTube documentary?', a: 'Yes, for informational documentaries — history, science, business, investigative journalism. These follow clear narrative and argumentative structures that compress well. Artistic or cinematic documentaries (where the visual style and pacing carry meaning) summarize less effectively because the text-based output can\'t capture cinematography or emotional arc.' },
+    { q: 'What is the best way to summarize a YouTube documentary?', a: 'Web-based summarizers like YT Summarizer handle long-form video without transcript length limitations. Paste the YouTube URL and get a structured summary in under 2 minutes. For multi-part documentary series, process each episode separately and combine the summaries into a full series overview.' },
+    { q: 'How long does it take to summarize a 90-minute documentary?', a: 'Processing time for a 90-minute video is typically 60–90 seconds with a dedicated summarizer. The output is usually 400–700 words covering the documentary\'s main argument, key evidence presented, subjects interviewed, and conclusions. That\'s roughly a 97% time saving versus watching in full.' },
+    { q: 'Can I summarize documentaries for research purposes?', a: 'Yes — this is one of the most legitimate use cases. Researchers, journalists, and students use documentary summaries to quickly assess whether a film covers the specific angle they need, identify key claims and sources to verify, and extract factual content for citation. A summary tells you whether the documentary is worth 90 minutes of focused watching.' },
+  ],
+  'youtube-summarizer-accuracy-test-2026': [
+    { q: 'How accurate are AI YouTube video summaries?', a: 'For factual, structured content (tutorials, lectures, talks, explainers), AI summaries are 85–95% accurate on the main claims and conclusions. Accuracy drops for content with heavy context-dependency, irony, nuanced debate, or where key points depend on visual demonstrations rather than spoken words. Errors tend to be omissions rather than fabrications — the AI misses secondary points, not invents new ones.' },
+    { q: 'Do YouTube summarizers ever hallucinate content?', a: 'Hallucination in YouTube summarizers is rare compared to general LLMs because the model is constrained to the transcript — it\'s compressing what was said, not generating from general knowledge. The main failure mode is misattribution: a point made by a guest gets attributed to the host, or a hypothetical example gets described as a real case study. Read summaries critically when the specific source of a claim matters.' },
+    { q: 'What types of videos do AI summarizers get wrong?', a: 'The highest error rates occur on: (1) highly technical content with jargon the model may misinterpret, (2) sarcasm or irony where the literal transcript says the opposite of the intent, (3) videos where key information is shown on screen but not spoken aloud, (4) multi-person debates where the AI may flatten the disagreement, and (5) content in accented English or mixed-language videos where the auto-transcript itself has errors.' },
+    { q: 'Should I verify AI YouTube summaries before acting on them?', a: 'For high-stakes decisions — medical, legal, financial, technical implementations — always verify against the source. For general research, content scouting, or deciding whether a video is worth watching in full, AI summaries are reliable enough to act on without verification. Match your verification standard to the consequence of being wrong.' },
+  ],
+  'youtube-summarizer-for-accountants': [
+    { q: 'How do accountants use YouTube summarizers for CPE and professional development?', a: 'Accountants and CPAs use summarizers to efficiently process CPE-adjacent content: tax law change explainers, FASB/IASB update walkthroughs, IRS guidance videos, and industry commentary. The typical workflow is to summarize 5–10 videos after a major regulatory update, identify which explanations are most accurate or most relevant to their client base, and watch those in full for CPE credit documentation.' },
+    { q: 'Can AI summarize tax law update videos accurately?', a: 'Generally yes, with a caution: tax law videos often reference specific code sections, form numbers, and effective dates. A summary will capture the main concept but may not preserve every numerical detail accurately. For client-facing work or CPE documentation, always verify specific code citations and figures against the original IRS or FASB source, not the summary alone.' },
+    { q: 'What YouTube channels do accountants typically summarize?', a: 'Common sources include AICPA resources, state CPA society channels, Big Four firm thought-leadership content, and independent CPA educators who post tax law and audit updates. Any channel that posts verbal explainers of regulatory changes is an ideal summarization candidate — dense, informational, and time-consuming to watch in full.' },
+    { q: 'Is there a YouTube summarizer built specifically for accountants?', a: 'No accounting-specific summarizer exists, but general tools like YT Summarizer handle structured professional content very well. The key is that accounting content is highly verbal and analytical — exactly the type that AI summarization handles most reliably. For tax-specific content, the main check is verifying numerical details against primary sources after summarizing.' },
+  ],
 }
 
 const posts: Record<string, { title: string; content: string; date: string; metaDescription: string }> = {
@@ -9187,6 +9235,547 @@ tags: [tag1, tag2]
       </ul>
 
       <p>Want to try the workflow above on a video you've been meaning to watch? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Open YT Summarizer</a>, paste a URL, and see how much time you save.</p>
+    `
+  },
+  'glasp-alternative-youtube-summarizer': {
+    title: 'Best Glasp Alternative for YouTube Summarization in 2026',
+    metaDescription: "Glasp highlights YouTube transcripts manually — it doesn't auto-summarize. If you want AI-generated summaries without the reading work, here's what to use instead.",
+    date: '2026-05-27',
+    content: `
+      <p>Glasp is a popular social highlighting tool. It surfaces YouTube transcripts, lets you highlight passages, and syncs your annotations to a personal knowledge base. It's genuinely useful — for a specific workflow. If you came here looking for a Glasp alternative, you may be using it for something it wasn't designed to do.</p>
+
+      <h2>What Glasp Actually Does for YouTube</h2>
+      <p>Glasp's YouTube feature displays the video transcript in a sidebar and lets you highlight and annotate segments. It's a manual curation tool — you read through the transcript, mark the important parts, and build a library of annotated references. This is valuable for researchers, students, and knowledge workers who want to build a personal note system around video content.</p>
+      <p>What Glasp does not do: automatically generate a summary of the video. There is no "summarize this video" button that reads the content and outputs key takeaways. You are still doing the intellectual work of reading and selecting.</p>
+
+      <h2>The Gap: Highlighting vs. Summarizing</h2>
+      <p>If you want to know what a video is about without reading through its transcript, Glasp is not the right tool. The distinction matters:</p>
+      <ul>
+        <li><strong>Highlighting (Glasp):</strong> You read the transcript, identify important passages, mark them. The output is a collection of your selected quotes with your annotations. Time investment: similar to watching the video.</li>
+        <li><strong>Summarizing (dedicated tools):</strong> AI reads the full transcript, identifies the main arguments and conclusions, produces a structured output. Time investment: under 60 seconds per video.</li>
+      </ul>
+      <p>Both have legitimate uses. They solve different problems.</p>
+
+      <h2>Best Glasp Alternative for Auto-Summarization</h2>
+      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> is the strongest alternative when your goal is to skip the reading and get AI-generated output directly. Paste a YouTube URL, get a structured bullet-point summary in under 60 seconds. No transcript hunting, no highlighting, no prompt writing.</p>
+
+      <h3>Comparison: Glasp vs. YT Summarizer</h3>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f5f5f5;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Feature</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Glasp</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">YT Summarizer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Auto-generated summary</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">No</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Manual transcript highlighting</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes — core feature</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Not required</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Time per video</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Similar to watching</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Under 60 seconds</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Personal knowledge base</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes — social + private</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Copy/export summaries</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Pricing</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free tier + paid plans</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free + $29 one-time lifetime</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Works without browser extension</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Requires extension</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Web-based, no extension needed</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>When Glasp Is Still the Right Tool</h2>
+      <p>Glasp is better than a summarizer when:</p>
+      <ul>
+        <li>You want to build a quotable annotation library from specific videos</li>
+        <li>You care about the exact wording of what was said (not just the idea)</li>
+        <li>You're doing close reading of a specific video for academic or research purposes</li>
+        <li>You want to share annotations publicly or see what others have highlighted</li>
+      </ul>
+
+      <h2>When to Switch to a Summarizer</h2>
+      <p>A summarizer is better when:</p>
+      <ul>
+        <li>You need to decide quickly whether a video is worth watching in full</li>
+        <li>You're processing more than 3–4 videos per day and the reading time is adding up</li>
+        <li>You want structured key takeaways without reading anything manually</li>
+        <li>You're on mobile and the Glasp extension isn't available</li>
+      </ul>
+
+      <h2>Using Both Together</h2>
+      <p>The most effective workflow for serious researchers: use a summarizer first to pre-screen content and identify the 1–2 videos per batch that warrant deep reading, then use Glasp on those specific videos to annotate the passages that matter most. You get speed on the front end and depth where it counts.</p>
+
+      <h2>Related Reading</h2>
+      <ul>
+        <li><a href="/blog/summarize-youtube-video-without-extension" style="color: #ff0055; font-weight: 600;">How to summarize YouTube videos without installing any extension</a></li>
+        <li><a href="/blog/best-ai-video-summarization-tools-2026" style="color: #ff0055; font-weight: 600;">Best AI video summarization tools in 2026</a></li>
+        <li><a href="/blog/youtube-summarizer-for-researchers" style="color: #ff0055; font-weight: 600;">YouTube summarizer for researchers</a></li>
+      </ul>
+
+      <p>Ready to skip the manual transcript reading? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — paste any YouTube URL and get your summary in under 60 seconds.</p>
+    `
+  },
+  'youtube-summarizer-vs-claude-ai': {
+    title: 'YouTube Summarizer vs. Claude AI: Which One Saves More Time in 2026?',
+    metaDescription: 'Claude can summarize a YouTube transcript if you copy it manually. A dedicated tool automates the whole pipeline. Here is the honest comparison on speed, reliability, and daily use.',
+    date: '2026-05-27',
+    content: `
+      <p>Claude is a capable AI assistant. YouTube summarizers are purpose-built tools. Both can produce a summary of a YouTube video — but the process and the tradeoffs are meaningfully different. This is the honest comparison.</p>
+
+      <h2>What Claude Can Actually Do with YouTube</h2>
+      <p>Claude cannot access YouTube URLs or retrieve video content directly. When you paste a YouTube link into Claude, it does not watch the video or pull the transcript. To use Claude for YouTube summarization, you need to:</p>
+      <ol>
+        <li>Open the YouTube video</li>
+        <li>Click the three-dot menu below the video → "Open transcript"</li>
+        <li>Select all the transcript text and copy it</li>
+        <li>Paste it into Claude with a summarization prompt</li>
+      </ol>
+      <p>This works — Claude produces good summaries from pasted transcripts. The friction is the manual steps, which take 3–5 minutes per video before the AI work even begins.</p>
+
+      <h2>The Practical Time Comparison</h2>
+      <p>For a single 20-minute video:</p>
+      <ul>
+        <li><strong>YT Summarizer:</strong> Paste URL → summary in ~45 seconds. Total time: under 1 minute.</li>
+        <li><strong>Claude:</strong> Find transcript → copy → paste → prompt → read. Total time: 4–6 minutes.</li>
+      </ul>
+      <p>For five videos per week, that's 20–30 minutes of manual transcript work with Claude vs. under 5 minutes total with a dedicated tool. Over a year, the time difference compounds significantly.</p>
+
+      <h2>Where Claude Breaks Down for YouTube</h2>
+      <p>Beyond the manual transcript step, Claude has additional limitations for YouTube summarization:</p>
+      <ul>
+        <li><strong>Long video transcripts hit context limits.</strong> A 2-hour video transcript can exceed Claude's context window on the free tier, forcing you to split and process it in chunks.</li>
+        <li><strong>No transcript = stuck.</strong> If a video has disabled transcripts or relies on auto-captions that aren't available, you have nothing to paste. Dedicated tools handle transcript extraction and fallback methods automatically.</li>
+        <li><strong>Usage limits.</strong> Claude free tier has message limits. A heavy week of summarization (10+ videos) can exhaust your daily quota. A one-time tool like YT Summarizer has no per-use limits after purchase.</li>
+      </ul>
+
+      <h2>Where Claude Wins</h2>
+      <p>Claude makes sense for YouTube summarization when:</p>
+      <ul>
+        <li>You're already in a Claude conversation for research and need to summarize one video as part of a larger task</li>
+        <li>You want to ask follow-up questions about the content (Claude lets you interrogate the transcript interactively after pasting)</li>
+        <li>You need to combine the video's content with other sources in the same context window</li>
+        <li>The video is short (under 10 minutes) and the transcript is easy to copy</li>
+      </ul>
+
+      <h2>Head-to-Head Comparison</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f5f5f5;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Criterion</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">YT Summarizer</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Claude AI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Accesses YouTube URLs</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes — automatic</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">No — manual transcript required</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Time per video</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">~45 seconds</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">4–6 minutes</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Long video support (2h+)</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Handles automatically</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">May exceed context limits</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Follow-up questions</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Not supported</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes — interactive</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Usage limits</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">No caps (paid tier)</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free tier message limits</td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Cost</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$29 one-time</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free tier / $20/month Pro</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Mobile support</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes — web-based</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes — but transcript copy is harder on mobile</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>The Verdict</h2>
+      <p>For regular YouTube summarization — meaning more than 2–3 videos per week — a dedicated tool wins on speed and reliability. The manual transcript step in Claude costs more time than the tool costs in dollars.</p>
+      <p>For occasional use or when you need to interact deeply with the content (ask questions, combine with other sources), Claude is a reasonable option if you're already paying for it.</p>
+
+      <h2>Related Reading</h2>
+      <ul>
+        <li><a href="/blog/youtube-summarizer-vs-gemini-which-saves-more-time" style="color: #ff0055; font-weight: 600;">YT Summarizer vs. Gemini: which one saves more time?</a></li>
+        <li><a href="/blog/copying-youtube-transcript-to-chatgpt-wastes-time" style="color: #ff0055; font-weight: 600;">Why copying YouTube transcripts to ChatGPT wastes time</a></li>
+        <li><a href="/blog/fastest-way-to-summarize-youtube-video-methods-compared" style="color: #ff0055; font-weight: 600;">Fastest ways to summarize a YouTube video compared</a></li>
+      </ul>
+
+      <p>See the difference for yourself: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">paste a YouTube URL into YT Summarizer</a> and compare the time to your current workflow.</p>
+    `
+  },
+  'how-to-summarize-youtube-videos-on-iphone': {
+    title: 'How to Summarize YouTube Videos on iPhone (Best Methods in 2026)',
+    metaDescription: 'Chrome extensions for YouTube summarization do not work on iPhone. Here are 3 methods that work on iOS — no desktop required, no app download needed.',
+    date: '2026-05-27',
+    content: `
+      <p>Most YouTube summarizer guides assume you're on a desktop with Chrome. On iPhone, the situation is different: browser extensions don't work, and most summarizer tools are built around the Chrome extension model. Here are the methods that actually work on iOS.</p>
+
+      <h2>Why Chrome Extensions Don't Work on iPhone</h2>
+      <p>iOS does not support browser extensions the way desktop Chrome does. Chrome for iPhone is built on WebKit (Apple's browser engine) due to App Store rules, which means Chrome extensions — including YouTube summarizer extensions — are not available. If a summarizer's only interface is a Chrome extension, it simply doesn't work on your iPhone.</p>
+
+      <h2>Method 1: Web-Based Summarizer (Recommended)</h2>
+      <p>Web-based tools work on any mobile browser — Safari, Chrome for iOS, Firefox for iOS — because they don't require an extension. The workflow:</p>
+      <ol>
+        <li>Open YouTube on your iPhone and find the video you want to summarize</li>
+        <li>Tap the Share button → Copy Link</li>
+        <li>Open Safari (or any browser) and go to <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">ytsummarizer.app</a></li>
+        <li>Paste the URL and tap Summarize</li>
+        <li>Read your summary in under 60 seconds</li>
+      </ol>
+      <p>No app download, no account required for free summaries. This works on any iOS device running any major browser.</p>
+
+      <h2>Method 2: Summarize in ChatGPT or Claude (Manual Transcript)</h2>
+      <p>If you already have ChatGPT or Claude on your iPhone and want to use them for summarization:</p>
+      <ol>
+        <li>Open YouTube on iPhone → tap below the video → tap "Show transcript"</li>
+        <li>Scroll through and manually copy the transcript text (tap and hold, select all)</li>
+        <li>Paste into ChatGPT or Claude with the prompt: "Summarize this in bullet points"</li>
+      </ol>
+      <p>This works but is cumbersome on mobile — the transcript copy step on a small screen is frustrating for anything longer than a 10-minute video. Method 1 is faster.</p>
+
+      <h2>Method 3: Safari Extensions (Limited)</h2>
+      <p>Safari on iOS 15+ supports limited extensions through the App Store. A small number of YouTube-related extensions exist for Safari on iPhone, but coverage is sparse — most focus on ad blocking, not summarization. If you specifically want an extension-based experience, check the App Store under Safari extensions, but expect fewer options than desktop Chrome.</p>
+
+      <h2>Tips for Mobile Summarization</h2>
+      <ul>
+        <li><strong>Bookmark the summarizer:</strong> Add <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">ytsummarizer.app</a> to your Home Screen via Safari's Share → Add to Home Screen. It opens like an app but with no installation.</li>
+        <li><strong>Share directly:</strong> Some iOS summarizer web apps support the iOS Share Sheet, letting you share a video URL directly from the YouTube app without copying and pasting.</li>
+        <li><strong>Summarize before watching:</strong> Use the summary to decide whether a video is worth the battery life and data usage of streaming — especially useful when you're on a cellular connection.</li>
+      </ul>
+
+      <h2>What to Look for in a Mobile-Friendly Summarizer</h2>
+      <ul>
+        <li>Works without a browser extension (web-based interface)</li>
+        <li>Mobile-responsive design — readable on a small screen</li>
+        <li>Handles the URL directly without requiring transcript copy</li>
+        <li>Free tier available for casual use</li>
+      </ul>
+
+      <h2>Related Reading</h2>
+      <ul>
+        <li><a href="/blog/summarize-youtube-video-without-extension" style="color: #ff0055; font-weight: 600;">How to summarize YouTube videos without any extension</a></li>
+        <li><a href="/blog/youtube-summarizer-mobile-app" style="color: #ff0055; font-weight: 600;">YouTube summarizer mobile app options</a></li>
+        <li><a href="/blog/free-youtube-video-summarizer-ai-tools-2026" style="color: #ff0055; font-weight: 600;">Free YouTube video summarizer AI tools in 2026</a></li>
+      </ul>
+
+      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> works on iPhone right now — no download, no account for free summaries. Open it in Safari, paste a YouTube link, get your summary.</p>
+    `
+  },
+  'youtube-summarizer-for-online-courses': {
+    title: 'Best YouTube Summarizer for Online Courses and MOOCs in 2026',
+    metaDescription: 'Coursera, edX, and YouTube channels post hours of lecture content. Here is how students and self-learners use AI summarizers to study smarter without watching every minute.',
+    date: '2026-05-26',
+    content: `
+      <p>Online learning on YouTube has exploded. MIT OpenCourseWare, Yale, freeCodeCamp, 3Blue1Brown, and thousands of independent educators post full courses, lecture series, and MOOCs publicly. The problem is familiar: a 12-module course at 45 minutes per lecture is 9 hours of video content before you've done a single assignment.</p>
+      <p>AI summarizers don't replace the learning — but they change how you engage with it.</p>
+
+      <h2>What Summarizers Do Well for Online Courses</h2>
+      <p>Lecture-style video is one of the best content types for AI summarization. Lectures are:</p>
+      <ul>
+        <li><strong>Verbal and structured:</strong> Professors speak in organized sequences — introduction, concept, example, application. This structure compresses well.</li>
+        <li><strong>Dense with information:</strong> A 45-minute lecture covers a lot of ground. The summary captures the main concepts without losing the intellectual substance.</li>
+        <li><strong>Predictable in format:</strong> AI summarizers are trained on patterns. Academic lectures follow patterns that models handle reliably.</li>
+      </ul>
+
+      <h2>How Students Actually Use Course Summarizers</h2>
+      <p><strong>Pre-lecture preview:</strong> Summarize the lecture before watching to build a mental framework. You understand more when you know where the explanation is going.</p>
+      <p><strong>Post-lecture review:</strong> After watching, summarize to test comprehension. If the summary matches what you remember, you followed. If it surfaces concepts you missed, rewatch those sections.</p>
+      <p><strong>Study note generation:</strong> Run each lecture through a summarizer and compile the outputs into a structured study guide. For a 10-lecture course, that's 10 summaries that become your revision notes.</p>
+      <p><strong>Playlist screening:</strong> Some course playlists include foundational material you may already know. Summarize each video to identify which lectures add new information for your knowledge level and skip the ones covering ground you've covered.</p>
+
+      <h2>Recommended Workflow: Study With AI Assistance</h2>
+      <ol>
+        <li>Summarize the full course playlist to get an overview of the curriculum</li>
+        <li>Identify which lectures cover topics you need to learn vs. topics you already know</li>
+        <li>Watch priority lectures in full — take notes manually or verify against the summary</li>
+        <li>For lower-priority lectures, read the summary and mark concepts to investigate further if needed</li>
+        <li>Use the summaries as a revision resource before assessments</li>
+      </ol>
+
+      <h2>Where Summarizers Can't Replace Watching</h2>
+      <p>Important caveat: some course content doesn't compress into summaries effectively.</p>
+      <ul>
+        <li><strong>Mathematical derivations:</strong> The summary tells you what the formula is, not why it's true. You need to follow the derivation to actually understand it.</li>
+        <li><strong>Coding walkthroughs:</strong> Watching someone write code in real time builds intuition that a text summary can't replicate. The value is in the process, not the result.</li>
+        <li><strong>Language courses:</strong> Pronunciation, listening comprehension, and spoken practice require audio — summaries of dialogue exercises miss the point entirely.</li>
+        <li><strong>Lab and practical demonstrations:</strong> Visual technique is not captured in transcript-based summaries.</li>
+      </ul>
+      <p>Use summaries for conceptual content and screening. Watch in full for technique and practice.</p>
+
+      <h2>Best Summarizer for Online Courses</h2>
+      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> handles long lecture videos (including 90-minute lectures) without truncating the output, produces structured bullet-point summaries that read like study notes, and is available for free. The paid tier ($29 one-time) removes usage limits — useful for heavy study periods where you're processing an entire course in a week.</p>
+
+      <h2>Related Reading</h2>
+      <ul>
+        <li><a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">YouTube summarizer for students: full guide</a></li>
+        <li><a href="/blog/best-youtube-summarizers-for-students-2026-free-paid" style="color: #ff0055; font-weight: 600;">Best YouTube summarizers for students in 2026</a></li>
+        <li><a href="/blog/how-to-take-notes-from-youtube-videos-without-watching" style="color: #ff0055; font-weight: 600;">How to take notes from YouTube videos without watching</a></li>
+      </ul>
+
+      <p>Start with one lecture from a course you're working through. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Summarize it with YT Summarizer</a>, then watch the lecture and compare your notes to the summary. Most students find the summary captures 80–90% of what they wrote down manually.</p>
+    `
+  },
+  'youtube-summarizer-for-coaches': {
+    title: 'YouTube Summarizer for Coaches and Consultants: Stay Current Without Watching Everything',
+    metaDescription: 'Coaches and consultants follow dozens of YouTube channels for client insights, methodology updates, and industry trends. Here is how to extract the signal without watching every video.',
+    date: '2026-05-26',
+    content: `
+      <p>Coaches and consultants live or die by their knowledge edge. Your clients pay for your perspective, frameworks, and ability to synthesize what's relevant to their situation. Staying current on industry content is part of the job — but watching 10+ YouTube videos per week at full speed isn't a sustainable use of your time.</p>
+      <p>AI summarization changes the math.</p>
+
+      <h2>The Content Intelligence Problem</h2>
+      <p>A typical coaching or consulting practice involves following:</p>
+      <ul>
+        <li>Industry thought leaders posting weekly content</li>
+        <li>Methodology channels covering new frameworks and research</li>
+        <li>Client-sector channels covering trends in their industry</li>
+        <li>Conference recordings and keynote talks</li>
+        <li>Peer coaches and competitor channels</li>
+      </ul>
+      <p>At 30–60 minutes per video, keeping up with even five channels is a 5–10 hour weekly time investment. Summarization compresses this to 30–60 minutes: you read summaries across your full watchlist, identify the 2–3 videos that are genuinely new information or high signal for your clients, then watch those in full.</p>
+
+      <h2>How Coaches Use YouTube Summarizers</h2>
+      <p><strong>Weekly content intelligence sweep:</strong> Pick a day each week to run the past week's uploads from your key channels through a summarizer. Read the summaries in sequence — you'll identify pattern shifts, new terminology, and emerging frameworks across the industry faster than any newsletter or alert service.</p>
+      <p><strong>Client preparation:</strong> Before a client call, quickly summarize 2–3 recent videos from their industry. Walk into the call with current context without spending an hour on research.</p>
+      <p><strong>Methodology research:</strong> When exploring a new framework or approach for your practice, summarize the top videos on the topic to map the landscape before deciding which sources to read in full.</p>
+      <p><strong>Content creation input:</strong> Summaries help identify the recurring ideas and questions in your domain — the themes your audience is already hearing about. Create content that advances the conversation rather than repeating it.</p>
+
+      <h2>Best Content Types for Summarization in Coaching</h2>
+      <p>These types summarize reliably well:</p>
+      <ul>
+        <li>Keynote talks and conference recordings (high information density, verbal)</li>
+        <li>Interview-format podcasts posted to YouTube</li>
+        <li>Framework explainers and methodology breakdowns</li>
+        <li>Industry trend reports narrated over slides</li>
+        <li>Panel discussions (multiple perspectives compressed into one summary)</li>
+      </ul>
+      <p>These types are less useful to summarize:</p>
+      <ul>
+        <li>Heavily interactive workshop recordings (the value is in the exercises)</li>
+        <li>Role-play or demonstration coaching sessions (the dynamics don't translate to text)</li>
+        <li>Behind-the-scenes or personal vlog content (low information density)</li>
+      </ul>
+
+      <h2>Integrating Summaries Into Client Work</h2>
+      <p>A few practical guardrails:</p>
+      <ul>
+        <li><strong>Cite original sources, not summaries.</strong> When referencing content in client conversations, say "I watched a keynote by X" — not "I read an AI summary of a keynote by X." Verify any specific data points or quotes against the original before using them in client-facing materials.</li>
+        <li><strong>Use summaries for your thinking, not your outputs.</strong> Summaries are research input. Your client deliverables should reflect your own synthesis and judgment, informed by the research.</li>
+        <li><strong>Flag videos worth watching in full.</strong> Some content is high enough value that the summary is only the start. Keep a watch list of full-watch priorities you identify during your summary sweeps.</li>
+      </ul>
+
+      <h2>Recommended Tool</h2>
+      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> produces structured bullet-point summaries — the right format for quick professional reading. The $29 one-time purchase removes usage limits, which matters when you're running 10+ videos per week. No subscription overhead to justify against a quiet week.</p>
+
+      <h2>Related Reading</h2>
+      <ul>
+        <li><a href="/blog/youtube-summarizer-for-entrepreneurs" style="color: #ff0055; font-weight: 600;">YouTube summarizer for entrepreneurs</a></li>
+        <li><a href="/blog/youtube-summarizer-conference-talks-keynotes" style="color: #ff0055; font-weight: 600;">YouTube summarizer for conference talks and keynotes</a></li>
+        <li><a href="/blog/business-video-summaries-for-executives" style="color: #ff0055; font-weight: 600;">Business video summaries for executives</a></li>
+      </ul>
+
+      <p>Your next client call starts with research. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — paste a video from one of your key industry channels and get the takeaways in under a minute.</p>
+    `
+  },
+  'youtube-summarizer-for-documentaries': {
+    title: 'How to Summarize YouTube Documentaries Without Watching the Full Film',
+    metaDescription: 'YouTube has thousands of full-length documentaries. Here is what AI summarizers can and cannot capture from documentary content — and the fastest way to extract what you need.',
+    date: '2026-05-26',
+    content: `
+      <p>YouTube hosts a remarkable library of full-length documentaries — history, science, true crime, business exposés, environmental investigations, and more. Many are feature-length (60–120 minutes). Watching all of them in full isn't realistic. AI summarizers offer a way in — with some honest caveats about what they capture and what they miss.</p>
+
+      <h2>What Types of Documentaries Summarize Well</h2>
+      <p>The best candidates for AI summarization are informational documentaries with clear narrative structure:</p>
+      <ul>
+        <li><strong>Historical documentaries:</strong> Linear narratives with clear chronology and factual content. A 90-minute history documentary compresses into a useful 500-word summary covering key events, figures, and conclusions.</li>
+        <li><strong>Science and nature documentaries:</strong> Structured around explaining phenomena, discoveries, or research findings. Summarizers capture the "what we learned" well.</li>
+        <li><strong>Business and investigative documentaries:</strong> Built around a central argument with evidence. The summary captures the argument and its main supporting evidence clearly.</li>
+        <li><strong>True crime documentaries:</strong> Narrative-forward content that summarizes well — the facts, timeline, and conclusion are all in the transcript.</li>
+      </ul>
+
+      <h2>What Summarizers Miss in Documentaries</h2>
+      <p>Important limitations to understand:</p>
+      <ul>
+        <li><strong>Visual storytelling:</strong> Many documentaries convey meaning through imagery, archival footage, music, and pacing that has no spoken equivalent. A documentary about climate change showing specific visual evidence of glacier retreat — this doesn't appear in the transcript.</li>
+        <li><strong>Emotional impact:</strong> The reason people watch documentaries isn't just information — it's experience. Summaries give you the argument, not the effect.</li>
+        <li><strong>Interview nuance:</strong> A subject's hesitation, tears, or body language during an interview communicates something the transcript doesn't capture.</li>
+        <li><strong>Non-verbal artistry:</strong> Cinematic documentaries where the form is inseparable from the content summarize poorly — the summary is a shadow of the experience.</li>
+      </ul>
+      <p>Bottom line: use summaries to understand what a documentary argues and covers. Watch in full when you want to experience it.</p>
+
+      <h2>Practical Use Cases</h2>
+      <p><strong>Research pre-screening:</strong> Journalists, academics, and researchers use documentary summaries to quickly assess whether a film covers the specific angle, time period, or subject they need. A 90-second summary read replaces 20 minutes of fast-forwarding through a documentary to find the relevant section.</p>
+      <p><strong>Education preparation:</strong> Teachers who plan to use a documentary in class can summarize it first to identify key arguments, factual claims to verify, and discussion questions to prepare.</p>
+      <p><strong>Deciding what to watch:</strong> Documentary overload is real. Summarize 5 films from your watchlist and decide which 1–2 are worth the full viewing investment.</p>
+      <p><strong>Reference after watching:</strong> You've watched a documentary and want to recall specific facts or the argument structure. A summary is faster to reference than scrubbing through the film.</p>
+
+      <h2>How to Summarize a YouTube Documentary</h2>
+      <ol>
+        <li>Find the documentary on YouTube (many are posted by official channels or rights holders)</li>
+        <li>Copy the YouTube URL</li>
+        <li>Paste it into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></li>
+        <li>Wait 60–120 seconds for processing (longer videos take slightly longer)</li>
+        <li>Read the structured summary</li>
+      </ol>
+      <p>For multi-part documentary series, process each episode separately. The summaries can be combined into a series overview.</p>
+
+      <h2>What to Expect From the Output</h2>
+      <p>A typical documentary summary covers:</p>
+      <ul>
+        <li>The central argument or question the documentary investigates</li>
+        <li>Key evidence, events, or subjects presented</li>
+        <li>Main experts or interviewees and their positions</li>
+        <li>Conclusions or implications the film reaches</li>
+        <li>Significant facts, statistics, or revelations mentioned</li>
+      </ul>
+      <p>It does not cover: visual content not described in the narration, emotional tone, musical choices, cinematographic approach, or anything not spoken aloud.</p>
+
+      <h2>Related Reading</h2>
+      <ul>
+        <li><a href="/blog/how-to-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">How to summarize YouTube videos: complete guide</a></li>
+        <li><a href="/blog/youtube-summarizer-accuracy-test-2026" style="color: #ff0055; font-weight: 600;">YouTube summarizer accuracy test 2026</a></li>
+        <li><a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: #ff0055; font-weight: 600;">How to summarize a 2-hour YouTube video in under 5 minutes</a></li>
+      </ul>
+
+      <p>Have a documentary on your watchlist you haven't gotten to? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Summarize it with YT Summarizer</a> and decide if it's worth the full watch.</p>
+    `
+  },
+  'youtube-summarizer-accuracy-test-2026': {
+    title: 'YouTube Summarizer Accuracy: How Reliable Are AI Video Summaries in 2026?',
+    metaDescription: 'AI YouTube summaries are not perfect. Here is what they get right, where errors appear, and how to verify quality before acting on a summary.',
+    date: '2026-05-25',
+    content: `
+      <p>The natural question when you start relying on AI summaries: how accurate are they, actually? The honest answer is: it depends heavily on the type of content. Here's a breakdown of where AI YouTube summarizers perform reliably and where you need to verify.</p>
+
+      <h2>How AI YouTube Summarizers Work</h2>
+      <p>Most summarizers follow the same pipeline: extract the video transcript (from YouTube's auto-generated or creator-uploaded captions), feed it into a large language model, and prompt the model to produce a structured summary. The critical implication: the summary is constrained to what was said in the transcript. The model is compressing, not inventing from general knowledge.</p>
+      <p>This is why hallucination rates for YouTube summarizers are lower than for general AI queries. The model has a source document to work from. Errors tend to be compression errors (missing something important) rather than fabrication errors (inventing something not in the video).</p>
+
+      <h2>Accuracy by Content Type</h2>
+      <p><strong>Tutorials and how-to videos (high accuracy):</strong> Step-by-step content is highly verbal and sequential. The transcript maps well to the logical structure. A 20-minute tutorial typically produces a summary with 90%+ of the main steps captured accurately.</p>
+      <p><strong>Lectures and educational content (high accuracy):</strong> Academic lectures are structured for verbal transmission. Key concepts, definitions, and examples are stated explicitly. Summary accuracy for standard lecture content is typically 85–95%.</p>
+      <p><strong>Interviews and podcasts (good accuracy, attribution risks):</strong> Multi-speaker content summarizes well overall, but there's a real risk of misattribution — assigning a statement to the wrong speaker. In a two-person interview, the AI may confuse which point the host made vs. the guest. Verify specific quotes against the original if attribution matters.</p>
+      <p><strong>Debates and panel discussions (moderate accuracy):</strong> The AI tends to flatten nuanced disagreements. A heated panel debate with three distinct positions may produce a summary that blends the positions or emphasizes one perspective over others. Summaries of adversarial content should be treated as preliminary maps, not definitive accounts.</p>
+      <p><strong>Highly technical content (accuracy varies):</strong> Jargon-heavy content in niche fields (advanced mathematics, specific engineering disciplines, medical subspecialties) can produce errors where terms are misused or relationships between concepts are imprecisely stated. The model may understand the terms individually without capturing the precise technical relationship.</p>
+      <p><strong>Content where key information is visual (low accuracy):</strong> If a video's key points are shown on screen rather than spoken aloud — charts, equations written on a whiteboard, demonstrations — the transcript doesn't capture them and neither will the summary. Videos relying heavily on screen-based content are the highest-risk category.</p>
+
+      <h2>Common Error Patterns</h2>
+      <ul>
+        <li><strong>Omission of secondary points:</strong> The most common error. The summary captures the main argument accurately but drops important caveats, exceptions, or nuances mentioned later in the video.</li>
+        <li><strong>Speaker misattribution:</strong> In multi-speaker content, points get attributed to the wrong person.</li>
+        <li><strong>Numerical imprecision:</strong> Statistics, dates, and specific figures are sometimes approximated or slightly misquoted. If a speaker says "37% of users" the summary might say "about a third of users" — technically close but not exact.</li>
+        <li><strong>Context collapse:</strong> A hypothetical example given to illustrate a concept may be described as if it were a real case study.</li>
+        <li><strong>Irony and sarcasm failures:</strong> If a speaker says something sarcastically, the literal transcript reads sincerely and the summary treats it as a sincere statement.</li>
+      </ul>
+
+      <h2>How to Verify a Summary Before Acting On It</h2>
+      <p>The right verification level depends on the consequence of being wrong:</p>
+      <ul>
+        <li><strong>Low stakes (deciding whether to watch in full, casual research):</strong> No verification needed. Read the summary, make your decision, move on.</li>
+        <li><strong>Medium stakes (citing a video in your own content, using it in a presentation):</strong> Check key claims by skipping to the relevant sections of the video. Most video players show transcript timestamps that let you jump directly to a claimed passage.</li>
+        <li><strong>High stakes (medical, legal, financial, technical implementations):</strong> Always verify against the original source. The summary is a starting point for research, not a substitute for it.</li>
+      </ul>
+
+      <h2>The Bottom Line</h2>
+      <p>AI YouTube summaries are reliable for their primary use case: quickly understanding what a video is about so you can decide what to watch in full. They are less reliable as standalone references for high-stakes decisions. Use them as a time-saving layer in your research workflow, not as the endpoint of it.</p>
+      <p>For the most common use cases — content scouting, lecture preview, interview screening, research triage — accuracy is high enough that the time savings significantly outweigh the verification overhead.</p>
+
+      <h2>Related Reading</h2>
+      <ul>
+        <li><a href="/blog/how-accurate-are-youtube-video-summaries" style="color: #ff0055; font-weight: 600;">How accurate are YouTube video summaries?</a></li>
+        <li><a href="/blog/how-does-ai-youtube-summarization-work-technology-explained" style="color: #ff0055; font-weight: 600;">How does AI YouTube summarization work? Technology explained</a></li>
+        <li><a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">Best AI YouTube summarizers in 2026: 8 tools compared</a></li>
+      </ul>
+
+      <p>The best way to calibrate your trust: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">summarize a video you already know well</a> and compare the output to your own knowledge of the content. Most users find the summaries accurate enough to rely on for daily use.</p>
+    `
+  },
+  'youtube-summarizer-for-accountants': {
+    title: 'YouTube Summarizer for Accountants and CPAs: Track Tax Law and Regulatory Changes',
+    metaDescription: 'Tax law updates, FASB guidance, and CPE content live on YouTube. Accountants and CPAs use AI summarizers to stay current on regulatory changes without watching hours of content.',
+    date: '2026-05-25',
+    content: `
+      <p>Accounting is a profession where staying current isn't optional. Tax law changes, FASB updates, IRS guidance revisions, and state-level regulatory changes create a constant stream of content that CPAs and accounting professionals need to track. Much of this content ends up on YouTube — explainer videos, CPA educator channels, firm thought-leadership, and state society recordings.</p>
+      <p>AI summarizers give accountants a way to process this volume without dedicating hours per week to passive video watching.</p>
+
+      <h2>Common Use Cases for Accountants</h2>
+      <p><strong>Tax law change tracking:</strong> When major legislation passes (tax reform, new IRS guidance, state conformity changes), dozens of explainer videos appear within days. Summarizing the top 5–10 videos gives you a comprehensive picture of the change and competing interpretations faster than reading each analysis in full.</p>
+      <p><strong>FASB/IASB standard updates:</strong> New accounting standards generate extensive commentary content. Summarizers help you quickly assess which channels are providing accurate technical guidance versus surface-level commentary.</p>
+      <p><strong>CPE content pre-screening:</strong> Before committing to a CPE course or webinar, summarize any publicly available preview content to verify the material level and focus matches your needs. Avoid spending CPE hours on content that doesn't match your practice area.</p>
+      <p><strong>Industry update sweeps:</strong> Weekly or monthly, summarize new content from your key channels to stay current without blocking large time windows for video watching.</p>
+      <p><strong>Client sector research:</strong> When a client has questions about their industry or a specific regulatory development, summarize relevant YouTube content from that sector to quickly build context before the meeting.</p>
+
+      <h2>Channels Worth Summarizing Regularly</h2>
+      <p>High-value YouTube sources for accounting professionals include:</p>
+      <ul>
+        <li>AICPA official resources and member content</li>
+        <li>State CPA society educational channels</li>
+        <li>IRS official YouTube channel (guidance updates, taxpayer education)</li>
+        <li>Independent CPA educator channels covering tax law and audit standards</li>
+        <li>Big Four and regional firm thought-leadership channels</li>
+        <li>Bloomberg Tax and Thomson Reuters educational content</li>
+      </ul>
+
+      <h2>Important Accuracy Caveat for Tax and Accounting Content</h2>
+      <p>This matters more for accounting than most other fields: AI summaries handle conceptual content reliably but may imprecisely handle specific numerical details. A summary of a tax law explainer might describe a threshold as "around $600,000" when the actual figure is $610,000. For client-facing work, CPE documentation, or any situation where the exact figure matters, always verify specific code sections, thresholds, effective dates, and form references against the primary source (IRS publications, FASB ASC, state tax authority guidance).</p>
+      <p>Use summaries to understand what changed and why — then go to the primary source for the exact details you'll rely on professionally.</p>
+
+      <h2>Workflow: Weekly Regulatory Update Sweep</h2>
+      <ol>
+        <li>Identify 3–5 channels you trust for your practice area</li>
+        <li>Check for new uploads from the past week (YouTube subscription notifications or manual check)</li>
+        <li>Summarize each new video using <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> — 45–60 seconds per video</li>
+        <li>Read summaries to identify: new developments, changes to positions you follow, content relevant to current client matters</li>
+        <li>Watch the 1–2 highest-relevance videos in full; note specific code sections to verify</li>
+        <li>File summaries in your knowledge management system with date and source</li>
+      </ol>
+      <p>This workflow processes a full week of channel updates in 20–30 minutes of active reading, versus 3–5 hours of passive video watching.</p>
+
+      <h2>CPE and Documentation Note</h2>
+      <p>Reading AI summaries does not count as CPE. CPE credit requires documented engagement with accredited educational programs. Summarizers help you identify which CPE offerings are most relevant to your current needs — they're a research and screening tool, not a substitute for the CPE activity itself.</p>
+
+      <h2>Related Reading</h2>
+      <ul>
+        <li><a href="/blog/youtube-summarizer-for-financial-professionals" style="color: #ff0055; font-weight: 600;">YouTube summarizer for financial professionals</a></li>
+        <li><a href="/blog/youtube-summarizer-for-lawyers" style="color: #ff0055; font-weight: 600;">YouTube summarizer for lawyers</a></li>
+        <li><a href="/blog/youtube-summarizer-for-researchers" style="color: #ff0055; font-weight: 600;">YouTube summarizer for researchers</a></li>
+      </ul>
+
+      <p>Stay current on regulatory changes without the passive video hours. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — paste a tax law explainer from any channel and get the key changes in under a minute.</p>
     `
   }
 }

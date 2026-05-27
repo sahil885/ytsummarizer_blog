@@ -7,6 +7,54 @@ export type PostListEntry = {
 
 export const allPosts: PostListEntry[] = [
   {
+    slug: 'glasp-alternative-youtube-summarizer',
+    title: 'Best Glasp Alternative for YouTube Summarization in 2026',
+    description: "Glasp highlights YouTube transcripts manually — it doesn't auto-summarize. If you want AI-generated summaries without the reading work, here's what to use instead.",
+    date: '2026-05-27',
+  },
+  {
+    slug: 'youtube-summarizer-vs-claude-ai',
+    title: 'YouTube Summarizer vs. Claude AI: Which One Saves More Time in 2026?',
+    description: "Claude can summarize a YouTube transcript if you copy it manually. A dedicated tool automates the whole pipeline. Here's the honest comparison on speed, reliability, and daily use.",
+    date: '2026-05-27',
+  },
+  {
+    slug: 'how-to-summarize-youtube-videos-on-iphone',
+    title: 'How to Summarize YouTube Videos on iPhone (Best Methods in 2026)',
+    description: "Chrome extensions for YouTube summarization don't work on iPhone. Here are 3 methods that actually work on iOS — no desktop required.",
+    date: '2026-05-27',
+  },
+  {
+    slug: 'youtube-summarizer-for-online-courses',
+    title: 'Best YouTube Summarizer for Online Courses and MOOCs in 2026',
+    description: 'Coursera, edX, and YouTube channels post hours of lecture content. Here is how students and self-learners use AI summarizers to study smarter without watching every minute.',
+    date: '2026-05-26',
+  },
+  {
+    slug: 'youtube-summarizer-for-coaches',
+    title: 'YouTube Summarizer for Coaches and Consultants: Stay Current Without Watching Everything',
+    description: "Coaches and consultants follow dozens of YouTube channels for client insights and industry trends. Here's how to extract the signal without watching every video.",
+    date: '2026-05-26',
+  },
+  {
+    slug: 'youtube-summarizer-for-documentaries',
+    title: 'How to Summarize YouTube Documentaries Without Watching the Full Film',
+    description: "YouTube has thousands of full-length documentaries. Here's what AI summarizers can and cannot capture — and the fastest way to extract what you need.",
+    date: '2026-05-26',
+  },
+  {
+    slug: 'youtube-summarizer-accuracy-test-2026',
+    title: 'YouTube Summarizer Accuracy: How Reliable Are AI Video Summaries in 2026?',
+    description: "AI YouTube summaries are not perfect. Here is what they get right, where errors appear, and how to verify quality before acting on a summary.",
+    date: '2026-05-25',
+  },
+  {
+    slug: 'youtube-summarizer-for-accountants',
+    title: 'YouTube Summarizer for Accountants and CPAs: Track Tax Law and Regulatory Changes',
+    description: 'Tax law updates, FASB guidance, and CPE content live on YouTube. Here is how accountants use AI summarizers to stay current on regulatory changes without watching hours of content.',
+    date: '2026-05-25',
+  },
+  {
     slug: 'youtube-summarizer-vs-gemini-which-saves-more-time',
     title: 'YT Summarizer vs. Gemini: Which One Actually Saves More Time?',
     description: "Gemini can summarize YouTube videos — when it works. It's inconsistent, regional, and requires switching context. Here's the head-to-head on reliability, speed, and output quality.",
