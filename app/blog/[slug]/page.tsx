@@ -9817,9 +9817,28 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   if (!post) return {}
 
+  const url = `https://blog.ytsummarizer.app/blog/${slug}`
+
   return {
     title: `${post.title} | YT Summarizer Blog`,
     description: post.metaDescription,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: post.title,
+      description: post.metaDescription,
+      url,
+      siteName: 'YT Summarizer Blog',
+      locale: 'en_US',
+      type: 'article',
+      publishedTime: post.date,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.metaDescription,
+    },
     ...(NOINDEX_SLUGS.has(slug) ? { robots: { index: false, follow: false } } : {}),
   }
 }
