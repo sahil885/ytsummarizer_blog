@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { NOINDEX_SLUGS, getRelatedPosts, productUrl, OG_IMAGE } from '../../lib/posts-list'
+import { postOverrides, faqOverrides } from '../../lib/post-content-overrides'
 
 // FAQ content keyed by slug. Posts with FAQs get FAQPage schema + a visible FAQ section.
 const postFaqs: Record<string, Array<{ q: string; a: string }>> = {
@@ -9784,36 +9786,12 @@ export async function generateStaticParams() {
   return Object.keys(posts).map((slug) => ({ slug }))
 }
 
-// These posts have thin/template content and should not be indexed by Google
-// until they are rewritten with genuine, original content
-const NOINDEX_SLUGS = new Set([
-  // Off-topic posts removed entirely from codebase (content-marketing-strategy, digital-photography-tips, software-development-best-practices)
-  // Thin template content — "Want to save time watching X videos on YouTube?" pattern
-  'youtube-video-summarizer-for-social-media-managers-save-hours-every-week',
-  'best-content-curation-tools-summarize-videos-for-your-team-instantly',
-  'batch-download-and-summarize-multiple-youtube-videos-at-once',
-  'summarize-twitch-vods-and-live-streams-never-miss-important-moments',
-  'summarize-instagram-reels-and-tiktok-videos-instantly-with-ai',
-  'how-to-summarize-youtube-shorts-get-the-key-points-in-seconds',
-  'best-tools-for-podcast-summaries',
-  'convert-video-content-to-blog-posts',
-  'how-to-summarize-tutorial-videos-quickly',
-  'fitness-workout-video-summaries-get-results-faster',
-  'language-learning-video-summaries-master-languages-faster',
-  'gaming-guide-video-summaries-level-up-faster',
-  'fitness-video-summaries-get-the-workout-plan-faster',
-  'productivity-hacks-summarize-youtube-videos-fast',
-  'digital-marketing-video-summary-tips',
-  'crypto-explained-video-summaries-made-simple',
-  'data-science-video-summary-guide',
-  'web-development-video-summaries-skip-to-what-matters',
-  'python-tutorial-video-summary-learn-faster',
-  'how-to-summarize-machine-learning-videos-with-ai',
-])
+// NOINDEX_SLUGS now lives in app/lib/posts-list.ts (single source of truth, shared with
+// sitemap.ts) and is imported at the top of this file.
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const post = posts[slug]
+  const post = posts[slug] ? { ...posts[slug], ...postOverrides[slug] } : undefined
 
   if (!post) return {}
 
@@ -9833,11 +9811,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       locale: 'en_US',
       type: 'article',
       publishedTime: post.date,
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.metaDescription,
+      images: [OG_IMAGE],
     },
     ...(NOINDEX_SLUGS.has(slug) ? { robots: { index: false, follow: false } } : {}),
   }
@@ -9845,7 +9825,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const post = posts[slug]
+  const post = posts[slug] ? { ...posts[slug], ...postOverrides[slug] } : undefined
 
   if (!post) {
     notFound()
@@ -9856,6 +9836,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     '@type': 'Article',
     headline: post.title,
     description: post.metaDescription,
+    image: OG_IMAGE,
     datePublished: post.date,
     dateModified: post.date,
     author: {
@@ -9874,7 +9855,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     },
   }
 
-  const faqs = postFaqs[slug]
+  const faqs = faqOverrides[slug] ?? postFaqs[slug]
   const faqSchema = faqs && faqs.length > 0 ? {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -9913,6 +9894,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     ],
   }
 
+  const related = getRelatedPosts(slug)
+
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem', fontFamily: 'system-ui, sans-serif' }}>
       <script
@@ -9930,7 +9913,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <nav aria-label="Breadcrumb" style={{ fontSize: '0.875rem', color: '#666', marginBottom: '1rem' }}>
-        <a href="https://ytsummarizer.app" style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600 }}>Home</a>
+        <a href={productUrl('post_breadcrumb')} style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600 }}>Home</a>
         <span style={{ margin: '0 0.5rem', color: '#999' }}>/</span>
         <Link href="/" style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600 }}>Blog</Link>
         <span style={{ margin: '0 0.5rem', color: '#999' }}>/</span>
@@ -9971,6 +9954,27 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           </section>
         )}
 
+        {related.length > 0 && (
+          <section style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid #eee' }}>
+            <h2 style={{ fontSize: '1.75rem', marginBottom: '1.5rem', color: '#333' }}>Related Guides</h2>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+              {related.map((r) => (
+                <li key={r.slug} style={{ marginBottom: '1rem' }}>
+                  <Link href={`/blog/${r.slug}`} style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600, fontSize: '1.05rem' }}>
+                    {r.title}
+                  </Link>
+                  <p style={{ fontSize: '0.95rem', color: '#666', margin: '0.25rem 0 0' }}>{r.description}</p>
+                </li>
+              ))}
+            </ul>
+            <p style={{ marginTop: '1.5rem', marginBottom: 0 }}>
+              <Link href="/blog" style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600 }}>
+                Browse all guides &rarr;
+              </Link>
+            </p>
+          </section>
+        )}
+
         <div style={{
           marginTop: '3rem',
           padding: '2rem',
@@ -9985,7 +9989,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             Summarize any YouTube video in seconds with AI
           </p>
           <a
-            href="https://ytsummarizer.app"
+            href={productUrl('post_cta')}
             style={{
               display: 'inline-block',
               padding: '0.75rem 2rem',

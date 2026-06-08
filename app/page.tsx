@@ -1,8 +1,13 @@
 import Link from 'next/link'
-import { allPosts, POSTS_PER_PAGE, totalPages } from './lib/posts-list'
+import type { Metadata } from 'next'
+import { indexablePosts, POSTS_PER_PAGE, totalPages, productUrl } from './lib/posts-list'
+
+export const metadata: Metadata = {
+  alternates: { canonical: 'https://blog.ytsummarizer.app' },
+}
 
 export default function Home() {
-  const posts = allPosts.slice(0, POSTS_PER_PAGE)
+  const posts = indexablePosts.slice(0, POSTS_PER_PAGE)
   const hasNext = totalPages > 1
 
   return (
@@ -22,6 +27,11 @@ export default function Home() {
           or a{' '}
           <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style={{ color: '#ff0055' }}>no-subscription option</a>,
           you'll find honest, up-to-date guidance here.
+        </p>
+        <p style={{ fontSize: '1rem', margin: 0 }}>
+          <Link href="/blog" style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600 }}>
+            Browse all {indexablePosts.length} guides &rarr;
+          </Link>
         </p>
       </header>
 
@@ -60,7 +70,7 @@ export default function Home() {
       <footer style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid #eee', textAlign: 'center' }}>
         <p style={{ fontSize: '0.875rem', color: '#666' }}>
           Want to try YT Summarizer?{' '}
-          <a href="https://ytsummarizer.app" style={{ color: '#ff0055', fontWeight: 600 }}>
+          <a href={productUrl('home_footer')} style={{ color: '#ff0055', fontWeight: 600 }}>
             Start summarizing videos →
           </a>
         </p>

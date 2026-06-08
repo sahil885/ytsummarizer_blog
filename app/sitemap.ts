@@ -1,32 +1,10 @@
 import { MetadataRoute } from 'next'
-import { totalPages } from './lib/posts-list'
+import { NOINDEX_SLUGS } from './lib/posts-list'
 
 export const dynamic = 'force-static'
 
-// Keep in sync with NOINDEX_SLUGS in app/blog/[slug]/page.tsx
-const NOINDEX_SLUGS = new Set([
-  // Off-topic posts removed entirely from codebase (content-marketing-strategy, digital-photography-tips, software-development-best-practices)
-  'youtube-video-summarizer-for-social-media-managers-save-hours-every-week',
-  'best-content-curation-tools-summarize-videos-for-your-team-instantly',
-  'batch-download-and-summarize-multiple-youtube-videos-at-once',
-  'summarize-twitch-vods-and-live-streams-never-miss-important-moments',
-  'summarize-instagram-reels-and-tiktok-videos-instantly-with-ai',
-  'how-to-summarize-youtube-shorts-get-the-key-points-in-seconds',
-  'best-tools-for-podcast-summaries',
-  'convert-video-content-to-blog-posts',
-  'how-to-summarize-tutorial-videos-quickly',
-  'fitness-workout-video-summaries-get-results-faster',
-  'language-learning-video-summaries-master-languages-faster',
-  'gaming-guide-video-summaries-level-up-faster',
-  'fitness-video-summaries-get-the-workout-plan-faster',
-  'productivity-hacks-summarize-youtube-videos-fast',
-  'digital-marketing-video-summary-tips',
-  'crypto-explained-video-summaries-made-simple',
-  'data-science-video-summary-guide',
-  'web-development-video-summaries-skip-to-what-matters',
-  'python-tutorial-video-summary-learn-faster',
-  'how-to-summarize-machine-learning-videos-with-ai',
-])
+// NOINDEX_SLUGS is imported from app/lib/posts-list.ts (single source of truth shared
+// with app/blog/[slug]/page.tsx) so the sitemap and per-page robots can never drift apart.
 
 const postDates: Record<string, string> = {
   'youtube-book-summaries-ai-extract-key-ideas': '2026-05-02',
@@ -74,9 +52,6 @@ const postDates: Record<string, string> = {
   'summarize-youtube-tutorials-for-study': '2026-03-16',
   'youtube-summarizer-with-multi-language-support': '2026-03-16',
   'translate-and-summarize-youtube-videos': '2026-03-16',
-  'summarize-youtube-videos-in-chinese-language': '2026-03-16',
-  'youtube-summarizer-for-spanish-videos': '2026-03-16',
-  'youtube-summarizer-for-french-videos': '2026-03-16',
   'youtube-summarizer-with-qa': '2026-03-16',
   'top-5-free-ai-tools': '2026-03-16',
   'ai-tool-to-summarize-academic-youtube-videos': '2026-03-16',
@@ -88,27 +63,22 @@ const postDates: Record<string, string> = {
   'youtube-video-summarizer-for-training-videos': '2026-03-16',
   'youtube-summarizer-for-investor-videos': '2026-03-16',
   'summarize-corporate-presentations-on-youtube': '2026-03-16',
-  'youtube-summarizer-for-legal-depositions': '2026-03-16',
-  'youtube-summarizer-for-academic-research-papers': '2026-03-16',
   'students-youtube-summaries': '2026-03-16',
   'online-free-youtube-summarizer-with-translation': '2026-03-16',
   'youtube-summarizer-with-mind-map-output': '2026-03-16',
   'recipe-video-summary-cook-without-watching': '2026-03-18',
   'business-video-summaries-for-executives': '2026-03-18',
   'ai-video-summary-stay-updated-on-automation': '2026-03-18',
-  'gaming-guide-video-summaries': '2026-03-18',
   'youtube-summarizer-for-doctors-and-medical-professionals': '2026-03-18',
   'youtube-summarizer-for-lawyers': '2026-03-18',
   'youtube-summarizer-for-teachers': '2026-03-18',
   'youtube-summarizer-for-journalists': '2026-03-18',
   'youtube-summarizer-for-entrepreneurs': '2026-03-18',
   'youtube-summarizer-for-marketers': '2026-03-18',
-  'youtube-summarizer-for-researchers': '2026-03-18',
   'youtube-summarizer-for-hr-professionals': '2026-03-18',
   'how-to-use-youtube-summaries-for-note-taking': '2026-03-18',
   'youtube-summarizer-vs-manual-notes': '2026-03-18',
   'how-accurate-are-youtube-video-summaries': '2026-03-18',
-  'youtube-summarizer-for-language-learning': '2026-03-18',
   'youtube-summarizer-for-remote-workers': '2026-03-18',
   'how-to-summarize-ted-talks': '2026-03-18',
   'youtube-summarizer-for-product-managers': '2026-03-18',
@@ -117,7 +87,6 @@ const postDates: Record<string, string> = {
   'what-is-a-youtube-summarizer': '2026-03-18',
   'youtube-summarizer-for-podcasters': '2026-03-18',
   'youtube-summarizer-for-sales-teams': '2026-03-18',
-  'youtube-summary-for-book-reviews': '2026-03-18',
   'youtube-summarizer-for-nonprofits': '2026-03-18',
   'youtube-summarizer-for-real-estate-professionals': '2026-03-18',
   'youtube-summarizer-for-engineers': '2026-03-18',
@@ -214,6 +183,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
     },
     ...blogPosts,
   ]

@@ -455,9 +455,6 @@ export const allPosts: PostListEntry[] = [
   { slug: 'summarize-youtube-tutorials-for-study', title: 'Summarize YouTube Tutorials for Study', description: 'Learn how to summarize YouTube tutorials for effective studying. Extract key steps, concepts, and actionable lessons from tutorial videos with AI.', date: '2026-03-16' },
   { slug: 'youtube-summarizer-with-multi-language-support', title: 'YouTube Summarizer with Multi-Language Support', description: 'Summarize YouTube videos in multiple languages with AI. Get summaries of foreign-language content in English or your preferred language.', date: '2026-03-16' },
   { slug: 'translate-and-summarize-youtube-videos', title: 'Translate and Summarize YouTube Videos with AI', description: 'Translate and summarize YouTube videos in any language using AI. Understand foreign-language content and extract key insights without being fluent.', date: '2026-03-16' },
-  { slug: 'summarize-youtube-videos-in-chinese-language', title: 'Summarize YouTube Videos in Chinese', description: 'Summarize Chinese YouTube videos with AI. Get English summaries of Mandarin and Cantonese content, or summarize any video in Chinese.', date: '2026-03-16' },
-  { slug: 'youtube-summarizer-for-spanish-videos', title: 'YouTube Summarizer for Spanish Videos', description: 'Summarize Spanish YouTube videos with AI. Get English summaries of Spanish content or summarize any video in Spanish.', date: '2026-03-16' },
-  { slug: 'youtube-summarizer-for-french-videos', title: 'YouTube Summarizer for French Videos', description: 'Summarize French YouTube videos with AI. Access French-language educational, news, and business content through instant AI-powered summaries.', date: '2026-03-16' },
   { slug: 'youtube-summarizer-with-qa', title: 'YouTube Summarizer with Q&A: Ask Questions About Any Video', description: 'Use AI to summarize YouTube videos and ask questions about the content. Get instant answers from any YouTube video with AI-powered Q&A.', date: '2026-03-16' },
   { slug: 'top-5-free-ai-tools', title: 'Top 5 Free AI Tools for YouTube Video Summarization', description: 'Compare the top 5 free AI tools for summarizing YouTube videos. Find the best option for your needs and start saving time on video content today.', date: '2026-03-16' },
   { slug: 'ai-tool-to-summarize-academic-youtube-videos', title: 'AI Tool to Summarize Academic YouTube Videos', description: 'Use AI to summarize academic YouTube videos from universities and research institutions. Extract key findings, methodologies, and insights from scholarly video content.', date: '2026-03-16' },
@@ -469,8 +466,6 @@ export const allPosts: PostListEntry[] = [
   { slug: 'youtube-video-summarizer-for-training-videos', title: 'YouTube Video Summarizer for Training Videos', description: 'Summarize YouTube training videos with AI. Extract key learning points, procedures, and best practices from professional training content efficiently.', date: '2026-03-16' },
   { slug: 'youtube-summarizer-for-investor-videos', title: 'YouTube Summarizer for Investor Videos', description: 'Use AI to summarize investor videos, earnings calls, and financial analysis on YouTube. Extract key investment insights and market intelligence efficiently.', date: '2026-03-16' },
   { slug: 'summarize-corporate-presentations-on-youtube', title: 'Summarize Corporate Presentations on YouTube', description: 'Use AI to summarize corporate presentations, investor days, and company announcements on YouTube. Extract key business insights efficiently.', date: '2026-03-16' },
-  { slug: 'youtube-summarizer-for-legal-depositions', title: 'YouTube Summarizer for Legal and Deposition Videos', description: 'Use AI to summarize legal proceedings, deposition recordings, and court hearing videos on YouTube. Extract key legal arguments and testimony efficiently.', date: '2026-03-16' },
-  { slug: 'youtube-summarizer-for-academic-research-papers', title: 'YouTube Summarizer for Academic Research Paper Presentations', description: 'Summarize YouTube videos of academic research paper presentations. Extract hypotheses, methodologies, findings, and implications from scholarly video content.', date: '2026-03-16' },
   { slug: 'students-youtube-summaries', title: 'How Students Use YouTube Summaries to Get Better Grades', description: 'Discover proven strategies students use with AI YouTube summaries to study more effectively, retain more information, and achieve better academic results.', date: '2026-03-16' },
   { slug: 'online-free-youtube-summarizer-with-translation', title: 'Online Free YouTube Summarizer with Translation', description: 'Use a free online YouTube summarizer with translation to understand videos in any language. Get AI summaries and translations of YouTube content instantly.', date: '2026-03-16' },
   { slug: 'youtube-summarizer-with-mind-map-output', title: 'YouTube Summarizer with Mind Map Output', description: 'Get YouTube video summaries visualized as mind maps. Understand complex video content through structured visual diagrams and AI-powered summarization.', date: '2026-03-16' },
@@ -482,19 +477,16 @@ export const allPosts: PostListEntry[] = [
   { slug: 'web-development-video-summaries-skip-to-what-matters', title: 'Web Development Video Summaries: Skip to What Matters', description: 'Learn how to quickly summarize web development videos using AI-powered tools. Save time and extract key insights from YouTube content.', date: '2026-03-12' },
   { slug: 'python-tutorial-video-summary-learn-faster', title: 'Python Tutorial Video Summary: Learn Faster', description: 'Learn how to quickly summarize python programming videos using AI-powered tools. Save time and extract key insights from YouTube content.', date: '2026-03-12' },
   { slug: 'how-to-summarize-machine-learning-videos-with-ai', title: 'How to Summarize Machine Learning Videos with AI', description: 'Learn how to quickly summarize machine learning videos using AI-powered tools. Save time and extract key insights from YouTube content.', date: '2026-03-12' },
-  { slug: 'gaming-guide-video-summaries', title: 'Gaming Guide Video Summaries: Level Up Faster', description: 'Summarize gaming guide and tutorial YouTube videos with AI. Get the key strategies, tips, and walkthroughs without watching hours of gaming content.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-doctors-and-medical-professionals', title: 'YouTube Summarizer for Doctors and Medical Professionals', description: 'Medical professionals use AI YouTube summarization to stay current on clinical research, conferences, and medical education content.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-lawyers', title: 'YouTube Summarizer for Lawyers and Legal Professionals', description: 'Lawyers use AI YouTube summarization to efficiently review legal education content, CLE recordings, and court hearing coverage.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-teachers', title: 'YouTube Summarizer for Teachers and Educators', description: 'Teachers use AI YouTube summarization to find the best educational videos, prepare lessons, and curate classroom content efficiently.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-journalists', title: 'YouTube Summarizer for Journalists and Researchers', description: 'Journalists use AI YouTube summarization for source research, interview prep, fact verification, and monitoring news coverage on deadline.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-entrepreneurs', title: 'YouTube Summarizer for Entrepreneurs and Startup Founders', description: 'Founders use AI YouTube summarization to learn faster, research competitors, and build knowledge without sacrificing execution time.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-marketers', title: 'YouTube Summarizer for Marketers', description: 'Marketers use AI YouTube summarization to research competitors, stay current on marketing trends, and extract campaign insights from industry video content.', date: '2026-03-18' },
-  { slug: 'youtube-summarizer-for-researchers', title: 'YouTube Summarizer for Academic and Professional Researchers', description: 'Researchers use AI YouTube summarization to efficiently process conference presentations, expert interviews, and educational content.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-hr-professionals', title: 'YouTube Summarizer for HR Professionals', description: 'HR professionals use AI YouTube summarization to stay current on employment law, HR trends, and talent management research.', date: '2026-03-18' },
   { slug: 'how-to-use-youtube-summaries-for-note-taking', title: 'How to Use YouTube Video Summaries for Note-Taking', description: 'Learn how to integrate AI YouTube summaries into your note-taking system and build a searchable knowledge base from video content.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-vs-manual-notes', title: 'YouTube Summarizer vs. Taking Manual Notes: Which Is Better?', description: 'Compare AI YouTube summarization versus taking manual notes from videos. Discover when each approach works best and how to combine them.', date: '2026-03-18' },
   { slug: 'how-accurate-are-youtube-video-summaries', title: 'How Accurate Are AI YouTube Video Summaries?', description: 'Understand the accuracy and limitations of AI YouTube video summaries. Learn when to trust summaries, when to verify, and how to get the best results.', date: '2026-03-18' },
-  { slug: 'youtube-summarizer-for-language-learning', title: 'YouTube Summarizer for Language Learning', description: 'Language learners use AI YouTube summarization to verify comprehension, study vocabulary in context, and efficiently process foreign-language content.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-remote-workers', title: 'YouTube Summarizer for Remote Workers', description: 'Remote workers use AI YouTube summarization to efficiently consume professional development content and stay current on industry trends.', date: '2026-03-18' },
   { slug: 'how-to-summarize-ted-talks', title: 'How to Summarize TED Talks with AI', description: 'Use AI to summarize TED and TEDx talks on YouTube. Extract key ideas, frameworks, and insights from TED talks in seconds.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-product-managers', title: 'YouTube Summarizer for Product Managers', description: 'Product managers use AI YouTube summarization to research user problems, analyze competitors, and stay current on PM methodologies.', date: '2026-03-18' },
@@ -503,7 +495,6 @@ export const allPosts: PostListEntry[] = [
   { slug: 'what-is-a-youtube-summarizer', title: 'What Is a YouTube Summarizer? Complete Guide', description: 'Learn what a YouTube summarizer is, how AI video summarization works, what it can and cannot do, and how to choose the right tool.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-podcasters', title: 'YouTube Summarizer for Podcasters: Research Faster', description: 'Podcasters use AI YouTube summarization to research topics, prep guest interviews, analyze competitor shows, and find content angles faster.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-sales-teams', title: 'YouTube Summarizer for Sales Teams', description: 'Sales teams use AI YouTube summarization to research prospects, understand competitor positioning, and prep for calls with better intelligence.', date: '2026-03-18' },
-  { slug: 'youtube-summary-for-book-reviews', title: 'Summarize YouTube Book Review Videos', description: 'Use AI to summarize YouTube book review and book summary videos. Get the key arguments and insights from books explained on YouTube.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-nonprofits', title: 'YouTube Summarizer for Nonprofits and NGOs', description: 'Nonprofits use AI YouTube summarization to research grant opportunities, stay current on policy developments, and process conference content.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-real-estate-professionals', title: 'YouTube Summarizer for Real Estate Professionals', description: 'Real estate agents and investors use AI YouTube summarization to research market trends, stay current on regulations, and consume property investment content.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-engineers', title: 'YouTube Summarizer for Software Engineers', description: 'Software engineers use AI YouTube summarization to learn new frameworks, follow tech talks, and research architecture decisions efficiently.', date: '2026-03-18' },
@@ -521,5 +512,85 @@ export const allPosts: PostListEntry[] = [
   { slug: 'how-to-summarize-youtube-videos', title: 'How to Summarize YouTube Videos with AI', description: 'Save time and extract key insights from any YouTube video in seconds.', date: '2026-03-12' },
 ]
 
+export const NOINDEX_SLUGS = new Set<string>([
+  'youtube-video-summarizer-for-social-media-managers-save-hours-every-week',
+  'best-content-curation-tools-summarize-videos-for-your-team-instantly',
+  'batch-download-and-summarize-multiple-youtube-videos-at-once',
+  'summarize-twitch-vods-and-live-streams-never-miss-important-moments',
+  'summarize-instagram-reels-and-tiktok-videos-instantly-with-ai',
+  'how-to-summarize-youtube-shorts-get-the-key-points-in-seconds',
+  'best-tools-for-podcast-summaries',
+  'convert-video-content-to-blog-posts',
+  'how-to-summarize-tutorial-videos-quickly',
+  'fitness-workout-video-summaries-get-results-faster',
+  'language-learning-video-summaries-master-languages-faster',
+  'gaming-guide-video-summaries-level-up-faster',
+  'fitness-video-summaries-get-the-workout-plan-faster',
+  'productivity-hacks-summarize-youtube-videos-fast',
+  'digital-marketing-video-summary-tips',
+  'crypto-explained-video-summaries-made-simple',
+  'data-science-video-summary-guide',
+  'web-development-video-summaries-skip-to-what-matters',
+  'python-tutorial-video-summary-learn-faster',
+  'how-to-summarize-machine-learning-videos-with-ai',
+])
+
+export const indexablePosts: PostListEntry[] = allPosts.filter((p) => !NOINDEX_SLUGS.has(p.slug))
+
 export const POSTS_PER_PAGE = 25
-export const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE)
+export const totalPages = Math.ceil(indexablePosts.length / POSTS_PER_PAGE)
+
+export const OG_IMAGE =
+  'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/render/image/public/base44-prod/public/687de408db0bb64b04e9833b/cf316ee8d_logo.png?width=1200&height=630&resize=contain'
+
+export function productUrl(campaign: string, path = ''): string {
+  const base = `https://ytsummarizer.app${path}`
+  const params = `utm_source=blog&utm_medium=referral&utm_campaign=${encodeURIComponent(campaign)}`
+  return base.includes('?') ? `${base}&${params}` : `${base}?${params}`
+}
+
+export type CategoryKey = 'comparisons' | 'roundups' | 'roles' | 'howto' | 'features'
+
+export const CATEGORY_LABELS: Record<CategoryKey, string> = {
+  comparisons: 'Comparisons & Alternatives',
+  roundups: 'Best-of Guides & Tool Roundups',
+  roles: 'By Profession & Use Case',
+  howto: 'How-To Guides & Workflows',
+  features: 'Features & Capabilities',
+}
+
+export const CATEGORY_ORDER: CategoryKey[] = ['comparisons', 'roundups', 'roles', 'howto', 'features']
+
+export function categoryOf(slug: string): CategoryKey {
+  if (/(\bvs\b|-vs-|alternative|eightify|notegpt|glasp|vidpill|gemini|claude|chatgpt|compared|which-)/.test(slug)) return 'comparisons'
+  if (/(^best-|^top-|^free-|-tools-|tools-|generator|reddit|tested|ranked|comparison)/.test(slug)) return 'roundups'
+  if (/-for-/.test(slug)) return 'roles'
+  if (/(^how-to|how-to-|export|download|note|notes|workflow|convert|turn-|build-)/.test(slug)) return 'howto'
+  return 'features'
+}
+
+const STOP = new Set([
+  'youtube', 'summarizer', 'summarizers', 'summarize', 'summary', 'summaries', 'video', 'videos', 'ai',
+  'for', 'the', 'to', 'with', 'a', 'an', 'and', 'of', 'in', 'on', 'how', 'best', 'free', 'your', '2026',
+  'without', 'tool', 'tools', 'vs', 'what', 'is', 'are', 'that', 'it', 'you', 'get', 'use', 'using',
+])
+
+function tokens(slug: string): string[] {
+  return slug.split('-').filter((t) => t && !STOP.has(t))
+}
+
+export function getRelatedPosts(slug: string, limit = 5): PostListEntry[] {
+  const selfTokens = new Set(tokens(slug))
+  const selfCat = categoryOf(slug)
+  return indexablePosts
+    .filter((p) => p.slug !== slug)
+    .map((p) => {
+      const shared = tokens(p.slug).filter((t) => selfTokens.has(t)).length
+      const catBonus = categoryOf(p.slug) === selfCat ? 2 : 0
+      return { p, score: shared * 2 + catBonus }
+    })
+    .filter((x) => x.score > 0)
+    .sort((a, b) => b.score - a.score || (a.p.date < b.p.date ? 1 : -1))
+    .slice(0, limit)
+    .map((x) => x.p)
+}

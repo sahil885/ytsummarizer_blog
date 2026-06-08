@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { GoogleSiteVerification } from './google-site-verification'
+import { OG_IMAGE } from './lib/posts-list'
 
 export const metadata: Metadata = {
   title: 'YouTube Summarizer Blog — Tools, Guides & Comparisons 2026',
@@ -12,11 +13,13 @@ export const metadata: Metadata = {
     siteName: 'YT Summarizer Blog',
     locale: 'en_US',
     type: 'website',
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: 'YT Summarizer' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'YouTube Summarizer Blog — Tools, Guides & Comparisons 2026',
     description: 'Compare the best YouTube summarizer tools, get step-by-step guides, and find free AI options with no subscription.',
+    images: [OG_IMAGE],
   },
   robots: {
     index: true,
@@ -36,10 +39,23 @@ const orgSchema = {
   '@type': 'Organization',
   name: 'YT Summarizer',
   url: 'https://ytsummarizer.app',
+  logo: OG_IMAGE,
   sameAs: [
     'https://www.tiktok.com/@ytsummarizer.app',
     'https://www.instagram.com/ytsummarizerapp/',
   ],
+}
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'YT Summarizer Blog',
+  url: 'https://blog.ytsummarizer.app',
+  publisher: {
+    '@type': 'Organization',
+    name: 'YT Summarizer',
+    url: 'https://ytsummarizer.app',
+  },
 }
 
 const blogSchema = {
@@ -65,6 +81,7 @@ export default function RootLayout({
       <head>
         <GoogleSiteVerification />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-KJ67B5SBJJ"></script>
         <script

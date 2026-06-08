@@ -1,0 +1,49 @@
+{
+  "redirects": [
+    {
+      "source": "/blog/summarize-youtube-videos-in-chinese-language",
+      "destination": "/blog/translate-and-summarize-youtube-videos",
+      "permanent": true
+    },
+    {
+      "source": "/blog/youtube-summarizer-for-spanish-videos",
+      "destination": "/blog/translate-and-summarize-youtube-videos",
+      "permanent": true
+    },
+    {
+      "source": "/blog/youtube-summarizer-for-french-videos",
+      "destination": "/blog/translate-and-summarize-youtube-videos",
+      "permanent": true
+    },
+    {
+      "source": "/blog/youtube-summarizer-for-academic-research-papers",
+      "destination": "/blog/youtube-transcript-summarizer-for-research",
+      "permanent": true
+    },
+    {
+      "source": "/blog/youtube-summarizer-for-researchers",
+      "destination": "/blog/youtube-transcript-summarizer-for-research",
+      "permanent": true
+    },
+    {
+      "source": "/blog/youtube-summary-for-book-reviews",
+      "destination": "/blog/youtube-book-summaries-ai-extract-key-ideas",
+      "permanent": true
+    },
+    {
+      "source": "/blog/gaming-guide-video-summaries",
+      "destination": "/blog/best-youtube-summarizer-for-gaming-videos",
+      "permanent": true
+    },
+    {
+      "source": "/blog/youtube-summarizer-for-language-learning",
+      "destination": "/blog/youtube-summarizer-for-language-learners",
+      "permanent": true
+    },
+    {
+      "source": "/blog/youtube-summarizer-for-legal-depositions",
+      "destination": "/blog/youtube-summarizer-for-lawyers",
+      "permanent": true
+    }
+  ]
+}

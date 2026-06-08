@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { allPosts, POSTS_PER_PAGE, totalPages } from '../../lib/posts-list'
+import { indexablePosts, POSTS_PER_PAGE, totalPages, productUrl } from '../../lib/posts-list'
 
 export function generateStaticParams() {
   // Pages 2..N (page 1 is the home route)
@@ -14,6 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ num: stri
   return {
     title: `Blog · Page ${pageNum} | YT Summarizer`,
     description: `Browse more YouTube summarizer guides, comparisons, and tutorials — page ${pageNum} of ${totalPages}.`,
+    alternates: { canonical: `https://blog.ytsummarizer.app/page/${pageNum}` },
     robots: { index: false, follow: true },
   }
 }
@@ -28,7 +29,7 @@ export default async function ArchivePage({ params }: { params: Promise<{ num: s
 
   const start = (pageNum - 1) * POSTS_PER_PAGE
   const end = start + POSTS_PER_PAGE
-  const posts = allPosts.slice(start, end)
+  const posts = indexablePosts.slice(start, end)
 
   const prevHref = pageNum === 2 ? '/' : `/page/${pageNum - 1}`
   const nextHref = pageNum < totalPages ? `/page/${pageNum + 1}` : null
@@ -36,7 +37,7 @@ export default async function ArchivePage({ params }: { params: Promise<{ num: s
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem', fontFamily: 'system-ui, sans-serif' }}>
       <nav aria-label="Breadcrumb" style={{ fontSize: '0.875rem', color: '#666', marginBottom: '1rem' }}>
-        <a href="https://ytsummarizer.app" style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600 }}>Home</a>
+        <a href={productUrl('pagination_breadcrumb')} style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600 }}>Home</a>
         <span style={{ margin: '0 0.5rem', color: '#999' }}>/</span>
         <Link href="/" style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600 }}>Blog</Link>
         <span style={{ margin: '0 0.5rem', color: '#999' }}>/</span>
@@ -89,7 +90,7 @@ export default async function ArchivePage({ params }: { params: Promise<{ num: s
       <footer style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid #eee', textAlign: 'center' }}>
         <p style={{ fontSize: '0.875rem', color: '#666' }}>
           Want to try YT Summarizer?{' '}
-          <a href="https://ytsummarizer.app" style={{ color: '#ff0055', fontWeight: 600 }}>
+          <a href={productUrl('pagination_footer')} style={{ color: '#ff0055', fontWeight: 600 }}>
             Start summarizing videos →
           </a>
         </p>
