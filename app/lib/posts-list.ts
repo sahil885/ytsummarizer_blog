@@ -6,6 +6,15 @@ export type PostListEntry = {
 }
 
 export const allPosts: PostListEntry[] = [
+  { slug: 'how-to-use-notebooklm-for-youtube-videos', title: "How to Use NotebookLM to Summarize YouTube Videos (2026 Guide)", description: "Step-by-step: add a YouTube link as a source in NotebookLM, generate summaries and study guides, and know its limits — plus when a dedicated tool is faster.", date: '2026-06-07' },
+  { slug: 'youtube-summarizer-vs-notebooklm', title: "YT Summarizer vs NotebookLM: Which Is Better for YouTube Summaries?", description: "NotebookLM is a free research powerhouse; YT Summarizer is a one-paste tool for quick video summaries. Here is the honest head-to-head on speed, output, and price.", date: '2026-06-07' },
+  { slug: 'yt-summarizer-review', title: "YT Summarizer Review (2026): Honest Pros, Cons & Verdict", description: "A hands-on YT Summarizer review — what it does well, where it falls short, who it is for, and the pay-once pricing. Is it worth it? Our honest take.", date: '2026-06-07' },
+  { slug: 'ytsummarizer-pricing-is-it-worth-it', title: "YT Summarizer Pricing: Is It Worth It in 2026?", description: "YT Summarizer uses one-time summary packs, not a subscription. We break down the free tier, the $9/$19/$49 packs, the value math vs monthly tools, and who should buy which.", date: '2026-06-07' },
+  { slug: 'youtube-summarizer-vs-summarize-tech', title: "YT Summarizer vs Summarize.tech: Free vs Pay-Once, Compared (2026)", description: "Summarize.tech is free and bare-bones; YT Summarizer is a pay-once tool with structured output and a library. Here is which to use, and when free is enough.", date: '2026-06-07' },
+  { slug: 'youtube-summarizer-vs-notta', title: "YT Summarizer vs Notta: Which Is Better for YouTube Summaries?", description: "Notta is a meeting-transcription subscription; YT Summarizer is a pay-once YouTube summarizer. We compare them honestly for the YouTube use case.", date: '2026-06-07' },
+  { slug: 'youtube-summarizer-vs-mindgrasp', title: "YT Summarizer vs Mindgrasp: Pay-Once vs Subscription (2026)", description: "Mindgrasp is a broad study subscription ($5.99–$10.99/mo, no free tier); YT Summarizer is YouTube-focused and pay-once. Here is the honest comparison.", date: '2026-06-07' },
+  { slug: 'youtube-summarizer-vs-glarity', title: "YT Summarizer vs Glarity: Web App vs Browser Extension (2026)", description: "Glarity is a free browser extension that summarizes on the YouTube page; YT Summarizer is a web app with structured output. Pros, cons, and which fits you.", date: '2026-06-07' },
+  { slug: 'eightify-vs-summarize-tech', title: "Eightify vs Summarize.tech (2026): Which Free-ish YouTube Summarizer Wins?", description: "Eightify is a polished paid extension; Summarize.tech is free and minimal. We compare both head-to-head — and where a pay-once option beats them both.", date: '2026-06-07' },
   {
     slug: 'glasp-alternative-youtube-summarizer',
     title: 'Best Glasp Alternative for YouTube Summarization in 2026',

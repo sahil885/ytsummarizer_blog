@@ -9783,7 +9783,7 @@ tags: [tag1, tag2]
 }
 
 export async function generateStaticParams() {
-  return Object.keys(posts).map((slug) => ({ slug }))
+  return [...new Set([...Object.keys(posts), ...Object.keys(postOverrides)])].map((slug) => ({ slug }))
 }
 
 // NOINDEX_SLUGS now lives in app/lib/posts-list.ts (single source of truth, shared with
@@ -9791,7 +9791,14 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const post = posts[slug] ? { ...posts[slug], ...postOverrides[slug] } : undefined
+  const base = posts[slug]
+  const ov = postOverrides[slug]
+  const post = (base || ov) ? {
+    title: ov?.title ?? base?.title ?? '',
+    date: ov?.date ?? base?.date ?? '',
+    content: ov?.content ?? base?.content ?? '',
+    metaDescription: ov?.metaDescription ?? base?.metaDescription ?? '',
+  } : undefined
 
   if (!post) return {}
 
@@ -9825,7 +9832,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const post = posts[slug] ? { ...posts[slug], ...postOverrides[slug] } : undefined
+  const base = posts[slug]
+  const ov = postOverrides[slug]
+  const post = (base || ov) ? {
+    title: ov?.title ?? base?.title ?? '',
+    date: ov?.date ?? base?.date ?? '',
+    content: ov?.content ?? base?.content ?? '',
+    metaDescription: ov?.metaDescription ?? base?.metaDescription ?? '',
+  } : undefined
 
   if (!post) {
     notFound()
