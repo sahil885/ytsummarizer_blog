@@ -287,7 +287,7 @@ const postFaqs: Record<string, Array<{ q: string; a: string }>> = {
 
 const posts: Record<string, { title: string; content: string; date: string; metaDescription: string }> = {
   'youtube-summarizer-vs-gemini-which-saves-more-time': {
-    title: 'YT Summarizer vs. Gemini: Which One Actually Saves More Time?',
+    title: 'YT Summarizer vs. Gemini: Which Saves More Time? (2026)',
     metaDescription: 'Gemini can summarize YouTube videos — when it works. It\'s inconsistent, regional, and requires switching context. Here\'s the head-to-head on reliability, speed, and output quality.',
     date: '2026-05-18',
     content: `
@@ -1537,7 +1537,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h2>The Counter-Position That Actually Works</h2>
       <p>Reddit and productivity communities sometimes frame the choice as "free vs. paid." That framing misses the real comparison: <em>time-free vs. money-free</em>. Neither method is genuinely free — one costs money, the other costs time. For anyone summarizing more than a few videos per week, the time cost of the manual method is dramatically higher than the monetary cost of a dedicated tool.</p>
-      <p>The cleaner question: is your time worth more than a one-time pack? If yes, the dedicated tool is the better "free" option in any meaningful sense. For the full workflow comparison, see <a href="/blog/youtube-summarizer-vs-chatgpt-manual-workflow" style="color: #ff0055; font-weight: 600;">YouTube summarizer vs. the ChatGPT manual workflow</a>. For speed-ranked alternatives, see <a href="/blog/fastest-way-to-summarize-youtube-video-methods-compared" style="color: #ff0055; font-weight: 600;">fastest ways to summarize YouTube videos</a>.</p>
+      <p>The cleaner question: is your time worth more than a one-time pack? If yes, the dedicated tool is the better "free" option in any meaningful sense. For the full workflow comparison, see <a href="/blog/youtube-summarizer-vs-chatgpt-manual-workflow" style="color: #ff0055; font-weight: 600;">YouTube summarizer vs. the ChatGPT manual workflow</a>. For speed-ranked alternatives, see <a href="/blog/fastest-way-to-summarize-youtube-video-methods-compared" style="color: #ff0055; font-weight: 600;">fastest ways to summarize YouTube videos</a>. And if you are wondering whether the chatbot can do it at all, see <a href="/blog/can-chatgpt-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">can ChatGPT summarize YouTube videos</a>.</p>
 
       <p>Stop counting steps: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">try YT Summarizer free</a> — paste a URL, skip the 11 steps.</p>
     `
@@ -1946,8 +1946,8 @@ const posts: Record<string, { title: string; content: string; date: string; meta
     `
   },
   'youtube-summarizer-not-working-common-problems-fixes': {
-    title: 'YouTube Summarizer Not Working? Common Problems and Fixes (2026)',
-    metaDescription: 'YouTube summarizer broken? Here are the 9 most common reasons YouTube summarizers stop working and specific fixes for each — from missing captions to API changes to browser issues.',
+    title: 'YouTube Summarizer Not Working? 9 Fixes That Work (2026)',
+    metaDescription: 'YouTube summarizer broken? The 9 most common reasons they stop working — missing captions, API changes, long videos — with a specific fix for each.',
     date: '2026-05-02',
     content: `
       <p>You paste a YouTube URL into your summarizer, hit enter, and... nothing. An error message. An incomplete summary. A loading spinner that never finishes. YouTube summarizers break more often than most people expect, and the causes range from simple (the video has no captions) to complex (YouTube changed its API format again). This guide covers every common failure mode with specific, tested fixes.</p>
@@ -4896,8 +4896,8 @@ const posts: Record<string, { title: string; content: string; date: string; meta
     `
   },
   'youtube-summarizer-for-lectures': {
-    title: 'YouTube Summarizer for Lectures: Extract Knowledge Fast',
-    metaDescription: 'Use AI to summarize YouTube lecture videos. Perfect for students and professionals who want to extract key knowledge from educational content quickly.',
+    title: 'YouTube Summarizer for Lectures: 2-Hour Class to 5-Minute Notes',
+    metaDescription: 'Turn hours of lecture video into structured notes in minutes. How students summarize YouTube lectures, keep the key points, and study only what matters.',
     date: '2026-03-16',
     content: `
       <p>Online lectures on YouTube are one of the richest learning resources ever assembled — MIT OpenCourseWare, Stanford Engineering, Yale Open Courses, 3Blue1Brown, CrashCourse, Numberphile, plus thousands of professional training channels. The catch is that lectures are dense and time-consuming. A single 90-minute MIT lecture contains maybe 10–15 core ideas, but you have to sit through all 90 minutes to find them. An AI YouTube summarizer inverts that ratio: you read the 10–15 ideas in 2 minutes, then watch the parts where you actually need the detail.</p>
@@ -7147,8 +7147,8 @@ tags: [tag1, tag2]
     `
   },
   'youtube-summarizer-vs-manual-notes': {
-    title: 'YouTube Summarizer vs. Taking Manual Notes: Which Is Better?',
-    metaDescription: 'Compare AI YouTube summarization versus taking manual notes from videos. Discover when each approach works best and how to combine them for optimal learning.',
+    title: 'YouTube Summarizer vs. Manual Notes: Speed vs. Retention (2026)',
+    metaDescription: 'AI summaries save time; manual notes aid memory. See when each wins, what research says about retention, and the hybrid workflow that beats both.',
     date: '2026-03-18',
     content: `
       <p>Manual note-taking from videos is deeply ingrained in academic culture, and for good reason — it works. But the question isn't whether manual notes work; it's whether they're still the right tool for every video you watch in 2026. With most knowledge workers now consuming 5–15 hours of video content per week across lectures, conferences, podcasts, and courses, the math on manually noting every video has quietly stopped adding up. The real answer: AI summarization and manual notes solve different problems, and the people getting the most out of both use them deliberately rather than treating them as rivals.</p>
