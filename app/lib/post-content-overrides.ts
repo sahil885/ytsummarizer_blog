@@ -1551,6 +1551,53 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
       <p>Try Summarize.tech for free, weigh Eightify's trial, and <a href="${P}">try YT Summarizer free</a> (five summaries, no subscription) to see if pay-once beats both for how you actually use summaries.</p>
     `,
   },
+  'youtube-summarizer-vs-perplexity': {
+    title: "YT Summarizer vs Perplexity: Which Is Better for YouTube Summaries? (2026)",
+    date: '2026-06-24',
+    metaDescription: "Perplexity is a powerful AI answer engine that can summarize YouTube videos; YT Summarizer is a pay-once tool built only for that job. The honest 2026 comparison.",
+    content: `
+      <p>Perplexity has become one of the most popular AI tools of 2026, and it can absolutely summarize a YouTube video — paste the link, ask for a summary, and it pulls the transcript and writes one up. So is a dedicated tool like YT Summarizer still worth it? The honest answer depends on whether summarizing YouTube is an occasional task inside your broader research, or something you do often enough to want a tool built only for it. Here's the head-to-head.</p>
+
+      <h2>What each one is</h2>
+      <p><strong>Perplexity</strong> is an AI answer engine — a search-and-research tool that cites its sources. Summarizing a YouTube video is one of a thousand things it can do: you give it a URL, it fetches the transcript, and it returns a summary you can then interrogate with follow-up questions. <strong>YT Summarizer</strong> does exactly one thing: paste a YouTube URL and it returns a structured summary with clickable timestamps, saved to a personal library, on a pay-once credit model.</p>
+
+      <h2>Side by side</h2>
+      <table>
+        <tr><th>Factor</th><th>Perplexity</th><th>YT Summarizer</th></tr>
+        <tr><td>What it is</td><td>AI research / answer engine</td><td>Dedicated YouTube summarizer</td></tr>
+        <tr><td>How you summarize</td><td>Paste URL + write a prompt</td><td>Paste URL, nothing else</td></tr>
+        <tr><td>Output</td><td>Prose answer you refine</td><td>Structured key points + timestamps</td></tr>
+        <tr><td>Follow-up Q&amp;A</td><td>Yes, excellent</td><td>Summary-focused</td></tr>
+        <tr><td>Saved library</td><td>Thread history</td><td>Yes, searchable</td></tr>
+        <tr><td>Pricing</td><td>Free (limited), Pro $20/mo</td><td>Free tier (5), then pay-once packs</td></tr>
+      </table>
+
+      <h2>How they actually summarize a video</h2>
+      <p>The difference shows up the moment you try it. In Perplexity you paste the URL and write a prompt — and the quality of your summary depends on that prompt. A bare "summarize this" gives a short paragraph; to get structured key points or timestamps you have to ask for them specifically, and on the free tier you may need to select a stronger model for a thorough job. It works, but it's a few steps and a little prompt craft every time.</p>
+      <p>YT Summarizer removes the prompt entirely. You paste a URL and get the same structured format every time — key points, sections, and timestamps you can click to jump into the video. There's nothing to phrase and no model to choose. If you've ever found the manual approach fiddly, our breakdown of <a href="/blog/can-chatgpt-summarize-youtube-videos">whether ChatGPT can summarize YouTube videos</a> covers the same paste-and-prompt tradeoff.</p>
+
+      <h2>Where Perplexity wins</h2>
+      <p>Perplexity is the better tool when summarizing is only step one. Because it's a research engine, it can fact-check a video's claims against other sources, pull in outside context, and answer follow-up questions in the same thread — "is that statistic current?", "what do critics say?", "how does this compare to the official documentation?". That web-grounded, multi-source synthesis is something a single-purpose summarizer doesn't attempt. If you already pay for Perplexity Pro and only summarize the occasional video, it may be all you need — much as <a href="/blog/youtube-summarizer-vs-claude-ai">Claude</a> and <a href="/blog/youtube-summarizer-vs-gemini-which-saves-more-time">Gemini</a> can double as light summarizers if you already live in them.</p>
+
+      <h2>Where YT Summarizer wins</h2>
+      <p>YT Summarizer wins on consistency, speed, and cost when summarizing is the job rather than a side quest. Three concrete differences:</p>
+      <ul>
+        <li><strong>No prompt, same format every time.</strong> You never think about how to ask; the structured output is identical whether it's video one or video fifty.</li>
+        <li><strong>Reliability on the YouTube-specific task.</strong> Perplexity depends on fetching a transcript, and users have reported stretches where its YouTube summarizing simply failed or returned a "can't access this video" message. A dedicated transcript pipeline is built around that one job.</li>
+        <li><strong>No subscription and no daily caps.</strong> Perplexity's free tier limits your stronger-model queries per day; YT Summarizer's free tier is 5 summaries, then one-time packs with no recurring bill and no daily throttle.</li>
+      </ul>
+      <p>One thing both share: AI summaries can misstate names, numbers, and technical terms when the transcript is messy. Whichever you use, verify the specifics — we measured exactly where that slips in our <a href="/blog/youtube-summarizer-accuracy-test-2026">summarizer accuracy test</a>.</p>
+
+      <h2>On price</h2>
+      <p>This is the starkest contrast. Perplexity Pro is $20 a month — roughly $240 a year — and that buys the whole research engine, not just YouTube summaries. YT Summarizer is pay-once: a free tier (5 summaries), then packs from $9 (50 summaries) to $19 (200, the popular pick) to $49 (1,000). Credits never expire, there's no subscription, and there's a 30-day money-back guarantee. If you want a do-everything AI assistant, $20/mo for Perplexity is reasonable value. If you specifically want YouTube summaries without a recurring bill, a one-time $9 or $19 pack is hard to beat — see our full <a href="/blog/ytsummarizer-pricing-is-it-worth-it">pricing breakdown</a>.</p>
+
+      <h2>The bottom line</h2>
+      <p>Choose by how central summarizing is to what you're doing. <strong>Perplexity</strong> if you want one subscription that researches, fact-checks, and answers across the whole web, with video summaries as a bonus. <strong>YT Summarizer</strong> if you summarize YouTube often and want consistent structured output, clickable timestamps, and a saved library without paying monthly. Plenty of people use both — Perplexity for deep research when a claim really matters, and a dedicated tool for the daily summarizing.</p>
+
+      <h2>Getting started</h2>
+      <p><a href="${P}">Try YT Summarizer free</a> — five summaries, no subscription and no card — and run it on the same video you'd hand to Perplexity. In about a minute you'll feel the difference between a research engine that can summarize and a tool built only to summarize.</p>
+    `,
+  },
 }
 
 export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
@@ -1788,5 +1835,10 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
     { q: `Is Eightify free?`, a: `Eightify offers a limited free allowance, then requires a subscription. The output is polished and lives on the YouTube page via a browser extension.` },
     { q: `Is Summarize.tech better than Eightify?`, a: `Summarize.tech is free but basic; Eightify is polished but paid. For an occasional free gist, Summarize.tech wins; for frequent, polished, in-browser use, Eightify is nicer if you accept the subscription.` },
     { q: `Is there an option that's polished but not a subscription?`, a: `Yes — a pay-once tool like YT Summarizer gives structured summaries with timestamps and a saved library on a one-time model (free tier, then packs from $9 that never expire), with no extension to install.` },
+  ],
+  'youtube-summarizer-vs-perplexity': [
+    { q: `Can Perplexity summarize YouTube videos?`, a: `Yes. Paste the video URL into Perplexity and ask for a summary, and it pulls the transcript and writes one. You may need to ask specifically for key points or timestamps, and pick a stronger model on the free tier. It only works when the video has a transcript available.` },
+    { q: `Is YT Summarizer or Perplexity cheaper for YouTube summaries?`, a: `For YouTube summaries specifically, YT Summarizer is cheaper: a free tier (5 summaries), then one-time packs from $9, with credits that never expire and no subscription. Perplexity Pro is $20 a month, which is good value only if you use its full research engine, not just video summaries.` },
+    { q: `Why use a dedicated summarizer if Perplexity already does it?`, a: `Consistency and reliability. A dedicated tool returns the same structured format with timestamps every time, with no prompt to write and no daily query caps, and it is built around the YouTube transcript pipeline that general engines sometimes fail to fetch.` },
   ],
 }
