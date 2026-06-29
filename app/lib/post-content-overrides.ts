@@ -1598,6 +1598,46 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
       <p><a href="${P}">Try YT Summarizer free</a> — five summaries, no subscription and no card — and run it on the same video you'd hand to Perplexity. In about a minute you'll feel the difference between a research engine that can summarize and a tool built only to summarize.</p>
     `,
   },
+  'youtube-summarizer-vs-sider': {
+    title: "YT Summarizer vs Sider: Which Is Better for YouTube Summaries? (2026)",
+    date: '2026-06-29',
+    metaDescription: "Sider is a popular all-in-one AI sidebar that summarizes YouTube videos via a browser extension; YT Summarizer is a pay-once web app built only for that job. The honest 2026 head-to-head.",
+    content: `
+      <p>Sider is one of the most popular AI assistants of 2026 — a browser sidebar that puts ChatGPT, Claude, Gemini, and Grok one click away on any page, YouTube included. Open a video, click summarize, and it returns a tidy set of key points with timestamps, then keeps a chat window open so you can ask follow-up questions. So if Sider already summarizes YouTube, is a dedicated tool like YT Summarizer still worth it? The honest answer depends on whether summarizing video is one small job inside a much larger AI workflow, or something you do often enough to want a tool built only for it. Here's the head-to-head.</p>
+
+      <h2>What Sider actually is</h2>
+      <p>Sider isn't a YouTube tool — it's an all-in-one AI assistant that happens to summarize YouTube well. It ships as a browser extension for Chrome and Edge, with companion web, iOS, Android, Mac, and Windows apps, and it routes your requests to several underlying models so you can switch between GPT, Claude, Gemini, and Grok. On a YouTube watch page the extension adds a summarize button in the sidebar; it reads the transcript, returns the main points mapped to timestamps, and lets you interrogate the video afterward ("what did they say about pricing?"). Crucially, that YouTube summary is one feature among dozens — web search, writing help, translation, PDF chat, image tools, and general questions on any site.</p>
+      <p>That breadth is the entire point of Sider, and it's genuinely useful. But it also shapes the trade-offs: you install an extension, you grant it access to the pages you browse, and you pay for the whole assistant — not for YouTube summaries specifically.</p>
+
+      <h2>Side-by-side comparison</h2>
+      <table>
+        <tr><th>Factor</th><th>Sider</th><th>YT Summarizer</th></tr>
+        <tr><td>What it is</td><td>All-in-one AI sidebar (many tools)</td><td>Dedicated YouTube summarizer</td></tr>
+        <tr><td>How you use it</td><td>Browser extension on the YouTube page</td><td>Web app — paste a URL in any browser</td></tr>
+        <tr><td>Account to try</td><td>Install / sign-up</td><td>None to try</td></tr>
+        <tr><td>Models</td><td>Multiple (GPT, Claude, Gemini, Grok)</td><td>Built-in, tuned for video summaries</td></tr>
+        <tr><td>Output</td><td>Key points + timestamps + follow-up chat</td><td>Structured key points + timestamps + saved library</td></tr>
+        <tr><td>Pricing model</td><td>Subscription; free tier with daily credit limits</td><td>Pay-once packs; free tier (5), credits never expire</td></tr>
+        <tr><td>Best for</td><td>One AI assistant for everything</td><td>Summarizing YouTube often</td></tr>
+      </table>
+
+      <h2>Where Sider wins</h2>
+      <p>Give Sider real credit. If you want a single AI assistant that follows you across every website — not just YouTube — it's hard to beat. The same sidebar that summarizes a video will also summarize the article you read next, draft a reply, translate a page, or answer a quick question, all without leaving the tab. The multi-model access is a real advantage: you can compare how GPT and Claude summarize the same talk, or switch models when one struggles with a messy transcript. And because it lives on the YouTube page itself, the summarize-then-chat loop is fast and contextual — you never copy a URL anywhere. For heavy AI users who already pay for the sidebar, the YouTube summary is effectively free.</p>
+
+      <h2>Where YT Summarizer wins</h2>
+      <p>YT Summarizer does one thing, and that focus is the advantage. There's nothing to install — paste a YouTube URL into the web app in any browser, including a phone or a locked-down work laptop where extensions are blocked, and you get a structured summary in about a minute, with no account required to try it. If installing an extension is a non-starter for you, see <a href="/blog/summarize-youtube-video-without-extension">summarizing YouTube without an extension</a> and our <a href="/blog/youtube-summarizer-vs-glarity">web app vs browser extension comparison</a>. Every summary lands in the same clean format with clickable <a href="/blog/youtube-summarizer-with-timestamps">timestamps</a>, and everything you run is saved to a searchable library — so the two-hour podcast you summarized last month (a Lex Fridman or Huberman Lab episode, say) is still there when you need it. There are also no daily credit caps to bump into halfway through a research session.</p>
+
+      <h2>On price: subscription vs pay-once</h2>
+      <p>This is the cleanest dividing line between the two. Sider is a subscription: a free tier with a daily credit allowance, then recurring monthly or annual plans for heavier use and the advanced models. That's fair value if you lean on the whole assistant every day. But if you mostly want YouTube summaries, you're renting an entire AI suite to get them, and the meter resets every month whether you used it or not.</p>
+      <p>YT Summarizer is <strong>pay-once</strong>. The free tier gives you 5 summaries; after that you buy a credit pack — 50 for $9, 200 for $19 (the popular pick), or 1,000 for $49 — and the credits never expire. One credit summarizes one video of any length, there's no subscription, and there's a 30-day money-back guarantee. Summarize a few videos a week and a single $19 pack can last most of a year; on a subscription you'd have paid every month in between. If avoiding recurring fees is the whole point for you, here's <a href="/blog/youtube-summarizer-no-subscription-no-weekly-limits">why no-subscription, no-weekly-limit summarizing matters</a>.</p>
+
+      <h2>Which should you choose?</h2>
+      <p>Choose by how central video summarizing is to your day. Pick <strong>Sider</strong> if you want one AI assistant living in your browser for everything — research, writing, translation — with YouTube summaries as a bonus, and you're comfortable on a subscription. Pick <strong>YT Summarizer</strong> if you summarize YouTube often, want consistent structured output and a saved library, can't or won't install an extension, and prefer to pay once rather than monthly. Plenty of people use both: a general sidebar for everyday browsing, and a dedicated tool for the video summarizing they do in volume. For the wider field, our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared">comparison of the best YouTube summarizers in 2026</a> puts both in context.</p>
+
+      <h2>Getting started</h2>
+      <p><a href="${P}">Try YT Summarizer free</a> — five summaries, no card and no extension — and run it on the same video you'd hand to Sider. In about a minute you'll feel the difference between an all-purpose AI sidebar that can summarize and a tool built only to summarize.</p>
+    `,
+  },
 }
 
 export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
@@ -1840,5 +1880,10 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
     { q: `Can Perplexity summarize YouTube videos?`, a: `Yes. Paste the video URL into Perplexity and ask for a summary, and it pulls the transcript and writes one. You may need to ask specifically for key points or timestamps, and pick a stronger model on the free tier. It only works when the video has a transcript available.` },
     { q: `Is YT Summarizer or Perplexity cheaper for YouTube summaries?`, a: `For YouTube summaries specifically, YT Summarizer is cheaper: a free tier (5 summaries), then one-time packs from $9, with credits that never expire and no subscription. Perplexity Pro is $20 a month, which is good value only if you use its full research engine, not just video summaries.` },
     { q: `Why use a dedicated summarizer if Perplexity already does it?`, a: `Consistency and reliability. A dedicated tool returns the same structured format with timestamps every time, with no prompt to write and no daily query caps, and it is built around the YouTube transcript pipeline that general engines sometimes fail to fetch.` },
+  ],
+  'youtube-summarizer-vs-sider': [
+    { q: `Can Sider summarize YouTube videos?`, a: `Yes. With the Sider browser extension installed, open a video and use the summarize button in the sidebar — it reads the transcript and returns key points with timestamps, then lets you ask follow-up questions about the video. It works wherever the extension runs and the video has a transcript available.` },
+    { q: `Is YT Summarizer or Sider cheaper for YouTube summaries?`, a: `For YouTube summaries specifically, YT Summarizer is usually cheaper over time: a free tier (5 summaries), then one-time packs from $9 with credits that never expire and no subscription. Sider is a recurring subscription for the whole AI assistant, which is good value only if you use its full feature set, not just video summaries.` },
+    { q: `Do I need a browser extension to use YT Summarizer?`, a: `No. It's a web app — paste a URL in any browser, including on a phone or a work laptop where extensions are blocked. Sider, by contrast, is built around a browser extension and sidebar, so it lives on the YouTube page itself.` },
   ],
 }

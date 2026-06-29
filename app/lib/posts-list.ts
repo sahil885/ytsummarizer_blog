@@ -6,6 +6,7 @@ export type PostListEntry = {
 }
 
 export const allPosts: PostListEntry[] = [
+  { slug: 'youtube-summarizer-vs-sider', title: "YT Summarizer vs Sider: Which Is Better for YouTube Summaries? (2026)", description: "Sider is a popular all-in-one AI sidebar that summarizes YouTube via a browser extension; YT Summarizer is a pay-once web app built only for that job. The honest 2026 comparison on speed, output, and price.", date: '2026-06-29' },
   { slug: 'youtube-summarizer-vs-perplexity', title: "YT Summarizer vs Perplexity: Which Is Better for YouTube Summaries? (2026)", description: "Perplexity is a powerful AI answer engine that can summarize a YouTube video from its URL; YT Summarizer is a pay-once tool built only for that job. The honest 2026 head-to-head.", date: '2026-06-24' },
   { slug: 'how-to-use-notebooklm-for-youtube-videos', title: "How to Use NotebookLM to Summarize YouTube Videos (2026 Guide)", description: "Step-by-step: add a YouTube link as a source in NotebookLM, generate summaries and study guides, and know its limits — plus when a dedicated tool is faster.", date: '2026-06-07' },
   { slug: 'youtube-summarizer-vs-notebooklm', title: "YT Summarizer vs NotebookLM: Which Is Better for YouTube Summaries?", description: "NotebookLM is a free research powerhouse; YT Summarizer is a one-paste tool for quick video summaries. Here is the honest head-to-head on speed, output, and price.", date: '2026-06-07' },
