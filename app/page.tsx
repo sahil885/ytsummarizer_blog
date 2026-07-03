@@ -26,7 +26,9 @@ export default function Home() {
           <a href="/blog/youtube-summarizer-for-students" style={{ color: '#ff0055' }}>tool for studying</a>,
           or a{' '}
           <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style={{ color: '#ff0055' }}>no-subscription option</a>,
-          you'll find honest, up-to-date guidance here.
+          you'll find honest, up-to-date guidance here. This blog is run by the maker of{' '}
+          <a href="https://ytsummarizer.app" style={{ color: '#ff0055' }}>YT Summarizer</a> — a YouTube
+          summarizer with one-time pricing: credits from $9 that never expire, no subscription.
         </p>
         <p style={{ fontSize: '1rem', margin: 0 }}>
           <Link href="/blog" style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600 }}>

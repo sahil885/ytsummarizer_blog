@@ -6,6 +6,8 @@ export type PostListEntry = {
 }
 
 export const allPosts: PostListEntry[] = [
+  { slug: 'best-notegpt-alternative-2026', title: "Best NoteGPT Alternative in 2026 (No Hidden Quotas, No Subscription)", description: "NoteGPT's 'unlimited' plans have quota limits that frustrate paying users. Here are the best NoteGPT alternatives for YouTube summaries in 2026 — including a pay-once option with credits that never expire.", date: '2026-07-03' },
+  { slug: 'how-much-do-youtube-summarizers-cost-2026', title: "How Much Do YouTube Summarizers Cost in 2026? (8 Tools Compared)", description: "YouTube summarizer pricing compared: Eightify, NoteGPT, Mindgrasp, Notta, Glarity, Summarize.tech and more. Subscription vs one-time pricing, free tiers, and the real yearly cost of each.", date: '2026-07-03' },
   { slug: 'youtube-summarizer-vs-sider', title: "YT Summarizer vs Sider: Which Is Better for YouTube Summaries? (2026)", description: "Sider is a popular all-in-one AI sidebar that summarizes YouTube via a browser extension; YT Summarizer is a pay-once web app built only for that job. The honest 2026 comparison on speed, output, and price.", date: '2026-06-29' },
   { slug: 'youtube-summarizer-vs-perplexity', title: "YT Summarizer vs Perplexity: Which Is Better for YouTube Summaries? (2026)", description: "Perplexity is a powerful AI answer engine that can summarize a YouTube video from its URL; YT Summarizer is a pay-once tool built only for that job. The honest 2026 head-to-head.", date: '2026-06-24' },
   { slug: 'how-to-use-notebooklm-for-youtube-videos', title: "How to Use NotebookLM to Summarize YouTube Videos (2026 Guide)", description: "Step-by-step: add a YouTube link as a source in NotebookLM, generate summaries and study guides, and know its limits — plus when a dedicated tool is faster.", date: '2026-06-07' },
@@ -21,7 +23,7 @@ export const allPosts: PostListEntry[] = [
     slug: 'glasp-alternative-youtube-summarizer',
     title: 'Best Glasp Alternative for YouTube Summarization in 2026',
     description: "Glasp highlights YouTube transcripts manually — it doesn't auto-summarize. If you want AI-generated summaries without the reading work, here's what to use instead.",
-    date: '2026-05-27',
+    date: '2026-07-03',
   },
   {
     slug: 'youtube-summarizer-vs-claude-ai',
@@ -201,7 +203,7 @@ export const allPosts: PostListEntry[] = [
     slug: 'youtube-summarizer-not-working-common-problems-fixes',
     title: 'YouTube Summarizer Not Working? 9 Fixes That Work (2026)',
     description: 'YouTube summarizer broken? Here are the 9 most common reasons YouTube summarizers stop working and specific fixes for each.',
-    date: '2026-05-02',
+    date: '2026-07-03',
   },
   {
     slug: 'best-youtube-summary-generator-tested-6-free-tools',
@@ -313,9 +315,9 @@ export const allPosts: PostListEntry[] = [
   },
   {
     slug: 'can-chatgpt-summarize-youtube-videos',
-    title: "Can ChatGPT Summarize YouTube Videos? Here's What Actually Works in 2026",
-    description: "Can ChatGPT summarize YouTube videos? Yes — but it's not the easiest method. Compare ChatGPT, Gemini, and purpose-built tools like YT Summarizer to find what actually works.",
-    date: '2026-04-15',
+    title: "Can ChatGPT Summarize YouTube Videos? How to Get a YouTube Summary with ChatGPT (2026)",
+    description: "Yes, ChatGPT can summarize YouTube videos — but it can't open YouTube links directly. The step-by-step workflow, a copy-paste prompt, why it fails on long videos, and the faster alternatives.",
+    date: '2026-07-03',
   },
   {
     slug: 'turn-youtube-video-into-linkedin-post-with-ai',
@@ -343,9 +345,9 @@ export const allPosts: PostListEntry[] = [
   },
   {
     slug: 'youtube-transcript-tools-that-still-work-in-2026',
-    title: 'YouTube Transcript Tools That Still Work in 2026 (After the API Changes)',
-    description: 'Many YouTube summarizers broke in 2025-2026 after Google changed how captions are fetched. Here are the tools that still work reliably.',
-    date: '2026-04-07',
+    title: 'YouTube Transcript Tools That Still Work in 2026 (Tested After the API Changes)',
+    description: 'How to get a YouTube transcript in 2026: the built-in method, free transcript tools like YT Transcript, and summarizer tools — tested after the caption API changes that broke most extensions.',
+    date: '2026-07-03',
   },
   {
     slug: 'youtube-video-summarizer-for-social-media-managers-save-hours-every-week',
@@ -496,7 +498,7 @@ export const allPosts: PostListEntry[] = [
   { slug: 'youtube-summarizer-for-marketers', title: 'YouTube Summarizer for Marketers', description: 'Marketers use AI YouTube summarization to research competitors, stay current on marketing trends, and extract campaign insights from industry video content.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-hr-professionals', title: 'YouTube Summarizer for HR Professionals', description: 'HR professionals use AI YouTube summarization to stay current on employment law, HR trends, and talent management research.', date: '2026-03-18' },
   { slug: 'how-to-use-youtube-summaries-for-note-taking', title: 'How to Use YouTube Video Summaries for Note-Taking', description: 'Learn how to integrate AI YouTube summaries into your note-taking system and build a searchable knowledge base from video content.', date: '2026-03-18' },
-  { slug: 'youtube-summarizer-vs-manual-notes', title: 'YouTube Summarizer vs. Manual Notes: Speed vs. Retention (2026)', description: 'Compare AI YouTube summarization versus taking manual notes from videos. Discover when each approach works best and how to combine them.', date: '2026-03-18' },
+  { slug: 'youtube-summarizer-vs-manual-notes', title: 'YouTube Summarizer vs. Manual Notes: Speed vs. Retention (2026)', description: 'Compare AI YouTube summarization versus taking manual notes from videos. Discover when each approach works best and how to combine them.', date: '2026-07-03' },
   { slug: 'how-accurate-are-youtube-video-summaries', title: 'How Accurate Are AI YouTube Video Summaries?', description: 'Understand the accuracy and limitations of AI YouTube video summaries. Learn when to trust summaries, when to verify, and how to get the best results.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-remote-workers', title: 'YouTube Summarizer for Remote Workers', description: 'Remote workers use AI YouTube summarization to efficiently consume professional development content and stay current on industry trends.', date: '2026-03-18' },
   { slug: 'how-to-summarize-ted-talks', title: 'How to Summarize TED Talks with AI', description: 'Use AI to summarize TED and TEDx talks on YouTube. Extract key ideas, frameworks, and insights from TED talks in seconds.', date: '2026-03-18' },

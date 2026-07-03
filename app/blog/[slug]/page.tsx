@@ -1948,7 +1948,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
   'youtube-summarizer-not-working-common-problems-fixes': {
     title: 'YouTube Summarizer Not Working? 9 Fixes That Work (2026)',
     metaDescription: 'YouTube summarizer broken? The 9 most common reasons they stop working — missing captions, API changes, long videos — with a specific fix for each.',
-    date: '2026-05-02',
+    date: '2026-07-03',
     content: `
       <p>You paste a YouTube URL into your summarizer, hit enter, and... nothing. An error message. An incomplete summary. A loading spinner that never finishes. YouTube summarizers break more often than most people expect, and the causes range from simple (the video has no captions) to complex (YouTube changed its API format again). This guide covers every common failure mode with specific, tested fixes.</p>
 
@@ -7149,7 +7149,7 @@ tags: [tag1, tag2]
   'youtube-summarizer-vs-manual-notes': {
     title: 'YouTube Summarizer vs. Manual Notes: Speed vs. Retention (2026)',
     metaDescription: 'AI summaries save time; manual notes aid memory. See when each wins, what research says about retention, and the hybrid workflow that beats both.',
-    date: '2026-03-18',
+    date: '2026-07-03',
     content: `
       <p>Manual note-taking from videos is deeply ingrained in academic culture, and for good reason — it works. But the question isn't whether manual notes work; it's whether they're still the right tool for every video you watch in 2026. With most knowledge workers now consuming 5–15 hours of video content per week across lectures, conferences, podcasts, and courses, the math on manually noting every video has quietly stopped adding up. The real answer: AI summarization and manual notes solve different problems, and the people getting the most out of both use them deliberately rather than treating them as rivals.</p>
 
@@ -9242,7 +9242,7 @@ tags: [tag1, tag2]
   'glasp-alternative-youtube-summarizer': {
     title: 'Best Glasp Alternative for YouTube Summarization in 2026',
     metaDescription: "Glasp highlights YouTube transcripts manually — it doesn't auto-summarize. If you want AI-generated summaries without the reading work, here's what to use instead.",
-    date: '2026-05-27',
+    date: '2026-07-03',
     content: `
       <p>Glasp is a popular social highlighting tool. It surfaces YouTube transcripts, lets you highlight passages, and syncs your annotations to a personal knowledge base. It's genuinely useful — for a specific workflow. If you came here looking for a Glasp alternative, you may be using it for something it wasn't designed to do.</p>
 
