@@ -1962,6 +1962,49 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
       <p>For occasional gists, use a free tool. For a full workspace you'll use daily across meetings and documents, a subscription can earn its fee. For YouTube summarization specifically, one-time credits are the cheapest option over any horizon longer than two months. <a href="${P}">Try YT Summarizer free (5 summaries)</a> and check the output quality before spending anything — and if you're comparing against a specific tool, see our head-to-heads with <a href="/blog/eightify-vs-ytsummarizer-which-youtube-summarizer-is-worth-it">Eightify</a>, <a href="/blog/notegpt-vs-ytsummarizer-honest-comparison-2026">NoteGPT</a>, and <a href="/blog/youtube-summarizer-vs-summarize-tech">Summarize.tech</a>.</p>
     `,
   },
+  'youtube-summarizer-vs-copilot': {
+    metaDescription: "Microsoft Copilot summarizes YouTube videos free inside the Edge sidebar; YT Summarizer is a pay-once web app that works in any browser. The honest 2026 comparison on browser lock-in, captions, output, and price.",
+    content: `
+      <p>Microsoft Copilot can summarize a YouTube video for free, right inside the Edge browser sidebar — no extra tool, no payment, no setup. So why would anyone pay for a dedicated summarizer? Because "free and built in" comes with strings attached: you have to be in Edge, the video needs captions, and the summary vanishes into a chat panel with nothing saved. YT Summarizer takes the opposite approach — a pay-once web app that works in any browser and keeps every summary in a searchable library. Here is the honest 2026 head-to-head.</p>
+
+      <h2>How each one works</h2>
+      <p>Copilot's YouTube summaries live inside Microsoft Edge. Open a video, click the Copilot icon in the sidebar, and type "summarize" — Copilot reads the video's caption track and returns an overview you can ask follow-up questions about. It is genuinely convenient if Edge is already your browser, and it is free with a Microsoft account. The catch, confirmed by Microsoft's own documentation, is that Copilot summarizes the transcript, not the video, so the feature only works when captions exist and only while you are inside Edge — on desktop or the Edge mobile app.</p>
+      <p>YT Summarizer is a standalone web app. You paste a YouTube URL into the site in any browser — Chrome, Safari, Firefox, or Edge — and get a structured summary with key points mapped to timestamps in about a minute. There is no extension to install and no login required to try it, which matters on locked-down work machines. Every summary you run is saved to a library you can search later. If browser lock-in is your main concern, our guide on <a href="/blog/summarize-youtube-video-without-extension">summarizing a YouTube video without any extension</a> covers the wider picture.</p>
+
+      <h2>Side-by-side comparison</h2>
+      <table>
+        <tr><th>Factor</th><th>Microsoft Copilot</th><th>YT Summarizer</th></tr>
+        <tr><td>Where it runs</td><td>Edge browser only (desktop + Edge mobile)</td><td>Any browser, any device</td></tr>
+        <tr><td>Cost to summarize</td><td>Free with a Microsoft account</td><td>Free tier (5), then one-time packs from $9</td></tr>
+        <tr><td>Pricing model</td><td>Free, with a Copilot Pro upsell</td><td>Pay-once credits, no subscription</td></tr>
+        <tr><td>Needs captions</td><td>Yes — fails or degrades without them</td><td>Built around the transcript pipeline</td></tr>
+        <tr><td>Output</td><td>Conversational summary in the sidebar</td><td>Structured key points + timestamps</td></tr>
+        <tr><td>Saved history</td><td>No dedicated library</td><td>Searchable library of every summary</td></tr>
+        <tr><td>Follow-up Q&amp;A</td><td>Yes, in the chat panel</td><td>Focused on the structured summary</td></tr>
+        <tr><td>Login to try</td><td>Microsoft account</td><td>None</td></tr>
+      </table>
+
+      <h2>Where Microsoft Copilot wins</h2>
+      <p>Give Copilot real credit: for a lot of people it is the most frictionless option that exists, because it is already sitting in their browser. If you run Edge on Windows, Copilot costs nothing, needs no install, and handles the common case — an English video with captions — with accuracy reported above 90%. Its conversational follow-ups are a genuine strength: you can ask "what did they say about pricing?" and get an answer grounded in the transcript without re-watching. And because Copilot is part of the wider Microsoft 365 stack, it also summarizes Teams meeting recordings and Office documents, so if your day already runs on Microsoft tools, one assistant covers several jobs. For occasional, in-Edge summarizing, it is hard to beat free. This is the same "assistant already in your browser" appeal that <a href="/blog/youtube-summarizer-vs-sider">Sider</a> and <a href="/blog/youtube-summarizer-vs-gemini-which-saves-more-time">Gemini</a> trade on.</p>
+
+      <h2>Where YT Summarizer wins</h2>
+      <p>Copilot's convenience is also its cage. The moment you step outside Edge — a Chrome-only work laptop, an iPhone on Safari, a shared machine where you can't sign into a Microsoft account — the feature is gone. YT Summarizer runs anywhere there is a browser, with nothing to install and no account needed to try it. Three other differences matter for regular use:</p>
+      <ul>
+        <li><strong>Structured output with timestamps.</strong> Copilot returns a conversational blob in the sidebar; YT Summarizer returns key points each linked to a moment in the video, so you can jump straight to the 90 seconds that matter.</li>
+        <li><strong>A library that persists.</strong> Copilot's summary lives in a chat panel and is gone when you close the tab. YT Summarizer saves every summary so you can search your video notes weeks later — the foundation of an actual knowledge base.</li>
+        <li><strong>Reliability on long and caption-light videos.</strong> Copilot leans entirely on the existing caption track and has documented failures on specific videos; a purpose-built pipeline is designed to handle long transcripts and messy captions.</li>
+      </ul>
+
+      <h2>The captions problem most guides skip</h2>
+      <p>This is the limitation most "Copilot summarizes YouTube" articles gloss over. Because Copilot works off the caption track, its accuracy is tied to caption quality. Independent testing in 2026 put Copilot above 90% on subtitled videos but at just 60–75% on the details for videos without a clean transcript. That is the difference between a summary you can trust and one that quietly invents a statistic. No summarizer is immune to this — we cover it in depth in our <a href="/blog/youtube-summarizer-accuracy-test-2026">YouTube summarizer accuracy test</a> — but a tool built solely around the transcript pipeline has more room to handle auto-generated or missing captions gracefully than a general assistant bolted onto a browser.</p>
+
+      <h2>Pricing, honestly</h2>
+      <p>On raw price, Copilot wins: it is free. But "free" assumes you live in Edge and only summarize occasionally. YT Summarizer is not a subscription either — it uses pay-once credit packs that never expire. The free tier gives you 5 summaries to test output quality. After that, the Starter pack is $9 for 50 summaries, the recommended Pro pack is $19 for 200, and the Power pack is $49 for 1,000. One credit summarizes one video of any length, credits never expire, and there is a 30-day money-back guarantee — so a burst of exam-season or research use doesn't reset every month the way a subscription meter does. For the full landscape, our <a href="/blog/how-much-do-youtube-summarizers-cost-2026">cost comparison of eight tools</a> lays out subscription versus one-time math.</p>
+
+      <h2>Which should you use?</h2>
+      <p>Use Microsoft Copilot if you already work in Edge, summarize videos only now and then, and mostly watch English content with captions — free and built in is the right call there. Choose YT Summarizer if you use any other browser, want timestamped, structured summaries you can save and search, or simply don't want your summarizing habit tied to one browser and one company's account. <a href="${P}">Try YT Summarizer free</a> on your next video — five summaries, no login, no subscription — and compare the output against Copilot's before you decide.</p>
+    `,
+  },
 }
 
 export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
@@ -2244,5 +2287,10 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
     { q: `Can Sider summarize YouTube videos?`, a: `Yes. With the Sider browser extension installed, open a video and use the summarize button in the sidebar — it reads the transcript and returns key points with timestamps, then lets you ask follow-up questions about the video. It works wherever the extension runs and the video has a transcript available.` },
     { q: `Is YT Summarizer or Sider cheaper for YouTube summaries?`, a: `For YouTube summaries specifically, YT Summarizer is usually cheaper over time: a free tier (5 summaries), then one-time packs from $9 with credits that never expire and no subscription. Sider is a recurring subscription for the whole AI assistant, which is good value only if you use its full feature set, not just video summaries.` },
     { q: `Do I need a browser extension to use YT Summarizer?`, a: `No. It's a web app — paste a URL in any browser, including on a phone or a work laptop where extensions are blocked. Sider, by contrast, is built around a browser extension and sidebar, so it lives on the YouTube page itself.` },
+  ],
+  'youtube-summarizer-vs-copilot': [
+    { q: `Can Microsoft Copilot summarize YouTube videos?`, a: `Yes — inside the Microsoft Edge browser. Open a video, click the Copilot icon in the sidebar, and ask it to summarize; it reads the video's captions and returns an overview you can ask follow-up questions about. It is free with a Microsoft account, but it only works in Edge and needs the video to have a caption track.` },
+    { q: `Is YT Summarizer or Copilot better for YouTube summaries?`, a: `Copilot is better if you already use Edge and summarize occasionally, since it is free and built in. YT Summarizer is better if you use any other browser, want structured summaries with timestamps saved to a searchable library, or need reliability on long and caption-light videos. YT Summarizer is a pay-once web app — a free tier, then packs from $9 that never expire, with no subscription.` },
+    { q: `Does Copilot's YouTube summary work without captions?`, a: `Not reliably. Copilot summarizes the transcript, not the video itself, so it depends on the caption track. Testing in 2026 found accuracy above 90% for subtitled videos but only 60–75% on details for videos without a clean transcript, so always verify important facts against the source.` },
   ],
 }
