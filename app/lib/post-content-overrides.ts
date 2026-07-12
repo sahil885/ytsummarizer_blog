@@ -2153,6 +2153,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
   },
   'youtube-summarizer-vs-copilot': {
     title: 'Can Microsoft Copilot Summarize YouTube Videos? Limits & Best Alternative (2026)',
+    date: '2026-07-06',
     metaDescription: "Microsoft Copilot summarizes YouTube videos free inside the Edge sidebar; YT Summarizer is a pay-once web app that works in any browser. The honest 2026 comparison on browser lock-in, captions, output, and price.",
     content: `
       <p>Microsoft Copilot can summarize a YouTube video for free, right inside the Edge browser sidebar — no extra tool, no payment, no setup. So why would anyone pay for a dedicated summarizer? Because "free and built in" comes with strings attached: you have to be in Edge, the video needs captions, and the summary vanishes into a chat panel with nothing saved. YT Summarizer takes the opposite approach — a pay-once web app that works in any browser and keeps every summary in a searchable library. Here is the honest 2026 head-to-head.</p>
