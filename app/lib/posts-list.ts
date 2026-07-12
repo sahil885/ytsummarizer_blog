@@ -6,19 +6,19 @@ export type PostListEntry = {
 }
 
 export const allPosts: PostListEntry[] = [
-  { slug: 'youtube-summarizer-vs-copilot', title: "YT Summarizer vs Microsoft Copilot: Which Is Better for YouTube Summaries? (2026)", description: "Microsoft Copilot summarizes YouTube videos free inside the Edge sidebar, but only in Edge and only with captions. YT Summarizer is a pay-once web app that works in any browser. The honest 2026 head-to-head.", date: '2026-07-06' },
+  { slug: 'youtube-summarizer-vs-copilot', title: "Can Microsoft Copilot Summarize YouTube Videos? Limits & Best Alternative (2026)", description: "Microsoft Copilot summarizes YouTube videos free inside the Edge sidebar, but only in Edge and only with captions. YT Summarizer is a pay-once web app that works in any browser. The honest 2026 head-to-head.", date: '2026-07-06' },
   { slug: 'best-notegpt-alternative-2026', title: "Best NoteGPT Alternative in 2026 (No Hidden Quotas, No Subscription)", description: "NoteGPT's 'unlimited' plans have quota limits that frustrate paying users. Here are the best NoteGPT alternatives for YouTube summaries in 2026 — including a pay-once option with credits that never expire.", date: '2026-07-03' },
   { slug: 'how-much-do-youtube-summarizers-cost-2026', title: "How Much Do YouTube Summarizers Cost in 2026? (8 Tools Compared)", description: "YouTube summarizer pricing compared: Eightify, NoteGPT, Mindgrasp, Notta, Glarity, Summarize.tech and more. Subscription vs one-time pricing, free tiers, and the real yearly cost of each.", date: '2026-07-03' },
-  { slug: 'youtube-summarizer-vs-sider', title: "YT Summarizer vs Sider: Which Is Better for YouTube Summaries? (2026)", description: "Sider is a popular all-in-one AI sidebar that summarizes YouTube via a browser extension; YT Summarizer is a pay-once web app built only for that job. The honest 2026 comparison on speed, output, and price.", date: '2026-06-29' },
-  { slug: 'youtube-summarizer-vs-perplexity', title: "YT Summarizer vs Perplexity: Which Is Better for YouTube Summaries? (2026)", description: "Perplexity is a powerful AI answer engine that can summarize a YouTube video from its URL; YT Summarizer is a pay-once tool built only for that job. The honest 2026 head-to-head.", date: '2026-06-24' },
+  { slug: 'youtube-summarizer-vs-sider', title: "Sider YouTube Summary Review (2026): Extension Limits & the Pay-Once Alternative", description: "Sider is a popular all-in-one AI sidebar that summarizes YouTube via a browser extension; YT Summarizer is a pay-once web app built only for that job. The honest 2026 comparison on speed, output, and price.", date: '2026-06-29' },
+  { slug: 'youtube-summarizer-vs-perplexity', title: "Can Perplexity Summarize YouTube Videos? What Works & What Fails (2026)", description: "Perplexity is a powerful AI answer engine that can summarize a YouTube video from its URL; YT Summarizer is a pay-once tool built only for that job. The honest 2026 head-to-head.", date: '2026-06-24' },
   { slug: 'how-to-use-notebooklm-for-youtube-videos', title: "How to Use NotebookLM to Summarize YouTube Videos (2026 Guide)", description: "Step-by-step: add a YouTube link as a source in NotebookLM, generate summaries and study guides, and know its limits — plus when a dedicated tool is faster.", date: '2026-06-07' },
-  { slug: 'youtube-summarizer-vs-notebooklm', title: "YT Summarizer vs NotebookLM: Which Is Better for YouTube Summaries?", description: "NotebookLM is a free research powerhouse; YT Summarizer is a one-paste tool for quick video summaries. Here is the honest head-to-head on speed, output, and price.", date: '2026-06-07' },
+  { slug: 'youtube-summarizer-vs-notebooklm', title: "NotebookLM for YouTube Summaries: Strengths, Limits & Faster Alternative (2026)", description: "NotebookLM is a free research powerhouse; YT Summarizer is a one-paste tool for quick video summaries. Here is the honest head-to-head on speed, output, and price.", date: '2026-06-07' },
   { slug: 'yt-summarizer-review', title: "YT Summarizer Review (2026): Honest Pros, Cons & Verdict", description: "A hands-on YT Summarizer review — what it does well, where it falls short, who it is for, and the pay-once pricing. Is it worth it? Our honest take.", date: '2026-06-07' },
   { slug: 'ytsummarizer-pricing-is-it-worth-it', title: "YT Summarizer Pricing: Is It Worth It in 2026?", description: "YT Summarizer uses one-time summary packs, not a subscription. We break down the free tier, the $9/$19/$49 packs, the value math vs monthly tools, and who should buy which.", date: '2026-06-07' },
-  { slug: 'youtube-summarizer-vs-summarize-tech', title: "YT Summarizer vs Summarize.tech: Free vs Pay-Once, Compared (2026)", description: "Summarize.tech is free and bare-bones; YT Summarizer is a pay-once tool with structured output and a library. Here is which to use, and when free is enough.", date: '2026-06-07' },
-  { slug: 'youtube-summarizer-vs-notta', title: "YT Summarizer vs Notta: Which Is Better for YouTube Summaries?", description: "Notta is a meeting-transcription subscription; YT Summarizer is a pay-once YouTube summarizer. We compare them honestly for the YouTube use case.", date: '2026-06-07' },
-  { slug: 'youtube-summarizer-vs-mindgrasp', title: "YT Summarizer vs Mindgrasp: Pay-Once vs Subscription (2026)", description: "Mindgrasp is a broad study subscription ($5.99–$10.99/mo, no free tier); YT Summarizer is YouTube-focused and pay-once. Here is the honest comparison.", date: '2026-06-07' },
-  { slug: 'youtube-summarizer-vs-glarity', title: "YT Summarizer vs Glarity: Web App vs Browser Extension (2026)", description: "Glarity is a free browser extension that summarizes on the YouTube page; YT Summarizer is a web app with structured output. Pros, cons, and which fits you.", date: '2026-06-07' },
+  { slug: 'youtube-summarizer-vs-summarize-tech', title: "Summarize.tech Review (2026): Is the Free YouTube Summarizer Good Enough?", description: "Summarize.tech is free and bare-bones; YT Summarizer is a pay-once tool with structured output and a library. Here is which to use, and when free is enough.", date: '2026-06-07' },
+  { slug: 'youtube-summarizer-vs-notta', title: "Notta for YouTube Summaries (2026): Where It Fits & the Pay-Once Alternative", description: "Notta is a meeting-transcription subscription; YT Summarizer is a pay-once YouTube summarizer. We compare them honestly for the YouTube use case.", date: '2026-06-07' },
+  { slug: 'youtube-summarizer-vs-mindgrasp', title: "Mindgrasp Review for YouTube Summaries (2026): Pricing, Limits & Alternative", description: "Mindgrasp is a broad study subscription ($5.99–$10.99/mo, no free tier); YT Summarizer is YouTube-focused and pay-once. Here is the honest comparison.", date: '2026-06-07' },
+  { slug: 'youtube-summarizer-vs-glarity', title: "Glarity Review (2026): Free YouTube Summary Extension — and When to Skip It", description: "Glarity is a free browser extension that summarizes on the YouTube page; YT Summarizer is a web app with structured output. Pros, cons, and which fits you.", date: '2026-06-07' },
   { slug: 'eightify-vs-summarize-tech', title: "Eightify vs Summarize.tech (2026): Which Free-ish YouTube Summarizer Wins?", description: "Eightify is a polished paid extension; Summarize.tech is free and minimal. We compare both head-to-head — and where a pay-once option beats them both.", date: '2026-06-07' },
   {
     slug: 'glasp-alternative-youtube-summarizer',
@@ -28,7 +28,7 @@ export const allPosts: PostListEntry[] = [
   },
   {
     slug: 'youtube-summarizer-vs-claude-ai',
-    title: 'YouTube Summarizer vs. Claude AI: Which One Saves More Time in 2026?',
+    title: 'Claude for YouTube Summaries (2026): Manual Workflow vs One-Click Tools',
     description: "Claude can summarize a YouTube transcript if you copy it manually. A dedicated tool automates the whole pipeline. Here's the honest comparison on speed, reliability, and daily use.",
     date: '2026-05-27',
   },
@@ -70,7 +70,7 @@ export const allPosts: PostListEntry[] = [
   },
   {
     slug: 'youtube-summarizer-vs-gemini-which-saves-more-time',
-    title: 'YT Summarizer vs. Gemini: Which Saves More Time? (2026)',
+    title: 'Can Gemini Summarize YouTube Videos? Where It Works, Fails & What to Use (2026)',
     description: "Gemini can summarize YouTube videos — when it works. It's inconsistent, regional, and requires switching context. Here's the head-to-head on reliability, speed, and output quality.",
     date: '2026-05-18',
   },
@@ -448,7 +448,7 @@ export const allPosts: PostListEntry[] = [
   { slug: 'ai-video-summary-stay-updated-on-automation', title: 'AI and Automation Video Summaries: Stay Current Without the Scroll', description: 'Use AI to summarize YouTube videos about artificial intelligence and automation. Keep up with rapidly evolving AI developments without watching every video.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-students', title: 'YouTube Summarizer for Students: Study Smarter, Not Harder', description: 'Discover how students can use AI YouTube summarizers to study more efficiently, extract key points from lectures, and save hours of study time.', date: '2026-03-16' },
   { slug: 'free-ai-tool-to-summarize-youtube-videos', title: 'Free AI Tool to Summarize YouTube Videos', description: 'Looking for a free AI tool to summarize YouTube videos? Discover the best options available and how to get instant video summaries without paying.', date: '2026-03-16' },
-  { slug: 'best-free-youtube-summarizer-tool', title: 'Best Free YouTube Summarizer Tool in 2026', description: 'Compare the best free YouTube summarizer tools available in 2026. Find the right AI tool to save time and extract key insights from any YouTube video.', date: '2026-03-16' },
+  { slug: 'best-free-youtube-summarizer-tool', title: 'Best Free YouTube Summarizer in 2026: 7 Real Free Options Tested', description: 'The best free YouTube summarizers in 2026, tested: what each free tier really includes, hidden quotas and caps, and which free option fits your use — before you pay anything.', date: '2026-07-12' },
   { slug: 'youtube-summarizer-for-content-creators', title: 'YouTube Summarizer for Content Creators', description: 'How content creators can use AI YouTube summarization to research faster, repurpose videos, analyze competitors, and create more content in less time.', date: '2026-03-16' },
   { slug: 'youtube-summarizer-for-lectures', title: 'YouTube Summarizer for Lectures: 2-Hour Class to 5-Minute Notes', description: 'Use AI to summarize YouTube lecture videos. Perfect for students and professionals who want to extract key knowledge from educational content quickly.', date: '2026-03-16' },
   { slug: 'youtube-summarizer-with-timestamps', title: 'YouTube Summarizer with Timestamps: Jump to What Matters', description: 'Get AI summaries of YouTube videos with timestamps so you can jump directly to the most important parts. Save time and navigate long videos efficiently.', date: '2026-03-16' },
@@ -523,7 +523,7 @@ export const allPosts: PostListEntry[] = [
   { slug: 'youtube-summarizer-for-phd-students', title: 'YouTube Summarizer for PhD Students and Graduate Researchers', description: 'PhD students use AI YouTube summarization to efficiently process conference presentations, expert talks, and research seminar recordings.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-university-students', title: 'YouTube Summarizer for University Students', description: 'University students use AI YouTube summarization to study more efficiently, process lecture recordings, and research assignments.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-news-consumption', title: 'YouTube Summarizer for News: Stay Informed Without the Doom Scroll', description: 'Use AI YouTube summarization to stay informed on current events without the anxiety of extended news watching.', date: '2026-03-18' },
-  { slug: 'how-to-summarize-youtube-videos', title: 'How to Summarize YouTube Videos with AI', description: 'Save time and extract key insights from any YouTube video in seconds.', date: '2026-03-12' },
+  { slug: 'how-to-summarize-youtube-videos', title: 'How to Summarize a YouTube Video: Every Method Tested (2026 Guide)', description: 'How to summarize a YouTube video in 2026: the one-minute URL method, the free ChatGPT workflow, Gemini, NotebookLM, and extensions — tested, timed, and honestly compared.', date: '2026-07-12' },
 ]
 
 export const NOINDEX_SLUGS = new Set<string>([
