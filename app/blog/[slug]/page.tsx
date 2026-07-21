@@ -287,7 +287,7 @@ const postFaqs: Record<string, Array<{ q: string; a: string }>> = {
 
 const posts: Record<string, { title: string; content: string; date: string; metaDescription: string }> = {
   'youtube-summarizer-vs-gemini-which-saves-more-time': {
-    title: 'YT Summarizer vs. Gemini: Which Saves More Time? (2026)',
+    title: 'Can Gemini Summarize YouTube Videos? Where It Works, Fails & What to Use (2026)',
     metaDescription: 'Gemini can summarize YouTube videos — when it works. It\'s inconsistent, regional, and requires switching context. Here\'s the head-to-head on reliability, speed, and output quality.',
     date: '2026-05-18',
     content: `
@@ -9336,7 +9336,7 @@ tags: [tag1, tag2]
     `
   },
   'youtube-summarizer-vs-claude-ai': {
-    title: 'YouTube Summarizer vs. Claude AI: Which One Saves More Time in 2026?',
+    title: 'Claude for YouTube Summaries (2026): Manual Workflow vs One-Click Tools',
     metaDescription: 'Claude can summarize a YouTube transcript if you copy it manually. A dedicated tool automates the whole pipeline. Here is the honest comparison on speed, reliability, and daily use.',
     date: '2026-05-27',
     content: `

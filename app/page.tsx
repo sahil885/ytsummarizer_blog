@@ -20,6 +20,8 @@ export default function Home() {
           Your guide to AI-powered YouTube video summarization. We cover the best free and paid tools,
           compare top options like Eightify and NoteGPT, and show you how students, professionals,
           and content creators use AI to extract key insights from YouTube — without watching every minute.
+          New here? Start with the{' '}
+          <a href="/blog/how-to-summarize-youtube-videos" style={{ color: '#ff0055' }}>complete guide to summarizing YouTube videos</a>.
           Whether you need a{' '}
           <a href="/blog/best-free-youtube-summarizer-tool" style={{ color: '#ff0055' }}>free summarizer</a>,
           a{' '}
