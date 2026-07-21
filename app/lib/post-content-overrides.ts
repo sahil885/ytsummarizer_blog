@@ -2005,6 +2005,86 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
       <p>Use Microsoft Copilot if you already work in Edge, summarize videos only now and then, and mostly watch English content with captions — free and built in is the right call there. Choose YT Summarizer if you use any other browser, want timestamped, structured summaries you can save and search, or simply don't want your summarizing habit tied to one browser and one company's account. <a href="${P}">Try YT Summarizer free</a> on your next video — five summaries, no login, no subscription — and compare the output against Copilot's before you decide.</p>
     `,
   },
+  'youtube-summarizer-vs-youtube-built-in-ai': {
+    title: `YT Summarizer vs YouTube's Built-In AI: Does YouTube Summarize Videos Now? (2026)`,
+    date: '2026-07-21',
+    metaDescription: `YouTube shipped its own AI summaries in 2026, and Ask YouTube expanded to all signed-in US desktop users on July 6. Does that replace a dedicated summarizer? An honest look at coverage, limits, and cost.`,
+    content: `
+      <p>For years the honest answer to "does YouTube summarize videos itself?" was no — you needed a third-party tool. In 2026 that stopped being true. YouTube now ships several AI features that do some version of summarization, and one of them expanded significantly on July 6, 2026. So it is worth asking the question directly: does YouTube's own AI make a dedicated summarizer redundant?</p>
+
+      <p>The short answer is not yet — and the reason is coverage, not quality. Google's models are excellent. The limits are about which videos, which users, and which devices are eligible. Here is the honest breakdown.</p>
+
+      <h2>What YouTube's built-in AI actually does in 2026</h2>
+
+      <p>Three separate features get lumped together as "YouTube's AI summary," and they do genuinely different jobs:</p>
+
+      <ul>
+        <li><strong>Ask (conversational AI on the watch page)</strong> — a button beneath certain videos that lets you ask questions about what you are watching, or pick a suggested prompt, without leaving the page. It has been in early access for YouTube Premium members, is restricted to English, and appears only on what YouTube describes as some academic learning videos. It does not appear on Shorts.</li>
+        <li><strong>Ask YouTube (conversational search)</strong> — announced as a test in April 2026 for U.S. Premium members aged 18 and up, then expanded on July 6, 2026 to all signed-in U.S. desktop users aged 13 and up, dropping the Premium requirement. You type a natural-language question and YouTube returns an AI-written text summary alongside cited videos deep-linked to the relevant timestamp, with follow-ups in a persistent thread. Signed-out and supervised accounts are excluded entirely. YouTube says broader device and language support is planned for later in 2026.</li>
+        <li><strong>AI Overviews in search results</strong> — a carousel of relevant videos with AI summaries at the top of the results page, tested with U.S. Premium members and currently limited to a narrow set of query types such as shopping, travel, and activities in specific locations.</li>
+      </ul>
+
+      <p>Notice what none of these are: a "summarize this video" button on every video. That distinction is the entire comparison.</p>
+
+      <h2>Head-to-head</h2>
+
+      <table>
+        <tr><th>Factor</th><th>YouTube's built-in AI</th><th>YT Summarizer</th></tr>
+        <tr><td>Which videos</td><td>Some English academic/learning videos (Ask); search-driven results (Ask YouTube)</td><td>Any public video with a transcript</td></tr>
+        <tr><td>Where it works</td><td>U.S., English, desktop (rolling out wider)</td><td>Any country, any browser, desktop or phone</td></tr>
+        <tr><td>Account needed</td><td>Signed-in Google account; some features Premium-only</td><td>None to try</td></tr>
+        <tr><td>Shorts</td><td>Not supported</td><td>Supported</td></tr>
+        <tr><td>Output</td><td>Conversational answers in the page</td><td>Structured key points + timestamps</td></tr>
+        <tr><td>Saved library</td><td>No</td><td>Yes, searchable</td></tr>
+        <tr><td>Cost</td><td>Free where eligible; Premium is $15.99/mo in the U.S.</td><td>Free tier (5), then one-time packs from $9</td></tr>
+      </table>
+
+      <h2>Where YouTube's built-in AI genuinely wins</h2>
+
+      <p>Give credit where it is due. When these features are available to you, they are the lowest-friction option that exists, and nothing a third party builds can match that.</p>
+
+      <ul>
+        <li><strong>Zero context switching.</strong> No new tab, no pasting a URL. The answer appears where you already are.</li>
+        <li><strong>Deep-linked timestamps.</strong> Ask YouTube cites videos linked straight to the relevant section — you jump to the moment, not the video.</li>
+        <li><strong>Discovery, not just digestion.</strong> Ask YouTube answers questions across many videos at once, which a single-video summarizer by definition cannot do. If your question is "which video should I even watch," this is the better tool.</li>
+        <li><strong>No extra cost if you already pay for Premium.</strong> If you subscribe for ad-free viewing anyway, the AI features are a free bonus on top.</li>
+      </ul>
+
+      <p>If you are a U.S.-based desktop viewer watching English academic content and you only summarize occasionally, YouTube's own AI may be all you need. That is a real answer, not a hedge.</p>
+
+      <h2>Where it falls short</h2>
+
+      <p>The gaps are structural rather than temporary annoyances:</p>
+
+      <ul>
+        <li><strong>Coverage is the big one.</strong> "Some academic learning videos" excludes most of YouTube — conference talks, podcasts, product reviews, tutorials, interviews, and the long-tail content people most often want condensed.</li>
+        <li><strong>Geography and language.</strong> U.S., English, desktop. If you are outside the U.S., watching in another language, or on a phone, you are largely waiting on a rollout. Our <a href="/blog/youtube-summarizer-vs-gemini-which-saves-more-time">comparison with Gemini</a> runs into the same regional pattern.</li>
+        <li><strong>Sign-in is mandatory.</strong> Signed-out and supervised accounts are excluded from Ask YouTube outright, so shared machines, school accounts, and privacy-minded users are out.</li>
+        <li><strong>No Shorts.</strong> If short-form is where you spend time, see <a href="/blog/how-to-summarize-youtube-shorts-get-the-key-points-in-seconds">summarizing Shorts</a> for what actually works.</li>
+        <li><strong>The output is ephemeral.</strong> This is the most underrated limitation. You get an answer in a panel, not a document. There is no library, no export, nothing to paste into your notes six weeks later when you actually need it.</li>
+      </ul>
+
+      <h2>Where a dedicated summarizer still wins</h2>
+
+      <p>YT Summarizer is deliberately narrower: paste any YouTube URL in any browser and get a structured summary with timestamps. No extension, no sign-in required to try it — the same reasoning behind <a href="/blog/summarize-youtube-video-without-extension">summarizing without an extension</a>, which matters on managed work laptops where extensions are blocked outright.</p>
+
+      <p>The practical difference is that a summary becomes an artifact. It is saved, searchable, and exportable, which is what makes it useful for research, study, or client work rather than a one-off curiosity. If you want a multi-source research workspace instead, <a href="/blog/youtube-summarizer-vs-notebooklm">NotebookLM</a> is a better fit than either option here — it is a different job.</p>
+
+      <h2>The pricing math, honestly</h2>
+
+      <p>YouTube Premium rose to $15.99/month for an individual U.S. plan in 2026, up from $13.99, with Family at $26.99 and Student at $8.99. That is roughly $192 a year — but it would be dishonest to call that the price of summarization. You are buying ad-free viewing, background play, downloads, and YouTube Music. The AI features are a bonus, and as of July 6 the main one no longer requires Premium at all.</p>
+
+      <p>YT Summarizer is priced the other way around: 5 free summaries, then pay-once packs — $9 for 50, $19 for 200, $49 for 1,000. Credits never expire, there is no subscription, and one credit covers a video of any length. There is a 30-day money-back guarantee. We break the models down further in <a href="/blog/youtube-summarizer-pricing-free-vs-onetime-vs-subscription">free vs one-time vs subscription pricing</a>.</p>
+
+      <h2>Which should you use?</h2>
+
+      <p><strong>Use YouTube's built-in AI if</strong> you are on U.S. desktop, signed in, watching English academic content, summarizing occasionally, and you do not need to keep the output.</p>
+
+      <p><strong>Use a dedicated summarizer if</strong> you are outside the U.S. or on mobile, watch content outside the narrow eligible set, need summaries you can save and search, or want it to work the same way every time regardless of which rollout wave you happen to be in.</p>
+
+      <p>The realistic answer for most people is both. Let YouTube answer the quick "what is this about" question when the button happens to be there, and use a dedicated tool when the video matters enough to keep a record of it. <a href="${P}">Try YT Summarizer free</a> — 5 summaries, no card, no sign-up to start.</p>
+`,
+  },
 }
 
 export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
@@ -2292,5 +2372,10 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
     { q: `Can Microsoft Copilot summarize YouTube videos?`, a: `Yes — inside the Microsoft Edge browser. Open a video, click the Copilot icon in the sidebar, and ask it to summarize; it reads the video's captions and returns an overview you can ask follow-up questions about. It is free with a Microsoft account, but it only works in Edge and needs the video to have a caption track.` },
     { q: `Is YT Summarizer or Copilot better for YouTube summaries?`, a: `Copilot is better if you already use Edge and summarize occasionally, since it is free and built in. YT Summarizer is better if you use any other browser, want structured summaries with timestamps saved to a searchable library, or need reliability on long and caption-light videos. YT Summarizer is a pay-once web app — a free tier, then packs from $9 that never expire, with no subscription.` },
     { q: `Does Copilot's YouTube summary work without captions?`, a: `Not reliably. Copilot summarizes the transcript, not the video itself, so it depends on the caption track. Testing in 2026 found accuracy above 90% for subtitled videos but only 60–75% on details for videos without a clean transcript, so always verify important facts against the source.` },
+  ],
+  'youtube-summarizer-vs-youtube-built-in-ai': [
+    { q: `Does YouTube have a built-in AI summary feature?`, a: `Yes, as of 2026 — but in limited form. An Ask button appears under some English-language academic videos for Premium members, and Ask YouTube conversational search expanded on July 6, 2026 to all signed-in U.S. desktop users aged 13 and up. There is still no universal summarize button on every video.` },
+    { q: `Do I need YouTube Premium to use YouTube's AI summaries?`, a: `Not for all of them anymore. Ask YouTube dropped its Premium-only restriction on July 6, 2026 for signed-in U.S. desktop users. The on-video Ask tool and AI Overviews in search have been Premium early-access features. Premium itself is $15.99 a month for an individual U.S. plan.` },
+    { q: `Is a dedicated YouTube summarizer still worth it in 2026?`, a: `For most people, yes — because of coverage rather than quality. YouTube's AI is limited to certain videos, users, regions, and devices, and its answers are not saved anywhere. A dedicated tool works on any public video with a transcript, in any browser or country, and saves a structured summary you can search later. YT Summarizer has a free tier of 5 summaries, then pay-once packs from $9 with credits that never expire.` },
   ],
 }

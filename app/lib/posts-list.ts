@@ -6,6 +6,7 @@ export type PostListEntry = {
 }
 
 export const allPosts: PostListEntry[] = [
+  { slug: 'youtube-summarizer-vs-youtube-built-in-ai', title: "YT Summarizer vs YouTube's Built-In AI: Does YouTube Summarize Videos Now? (2026)", description: "YouTube shipped its own AI summaries in 2026, and Ask YouTube expanded beyond Premium on July 6. Does that make a dedicated summarizer redundant? The honest 2026 comparison on coverage, output, and price.", date: '2026-07-21' },
   { slug: 'youtube-summarizer-vs-copilot', title: "YT Summarizer vs Microsoft Copilot: Which Is Better for YouTube Summaries? (2026)", description: "Microsoft Copilot summarizes YouTube videos free inside the Edge sidebar, but only in Edge and only with captions. YT Summarizer is a pay-once web app that works in any browser. The honest 2026 head-to-head.", date: '2026-07-06' },
   { slug: 'best-notegpt-alternative-2026', title: "Best NoteGPT Alternative in 2026 (No Hidden Quotas, No Subscription)", description: "NoteGPT's 'unlimited' plans have quota limits that frustrate paying users. Here are the best NoteGPT alternatives for YouTube summaries in 2026 — including a pay-once option with credits that never expire.", date: '2026-07-03' },
   { slug: 'how-much-do-youtube-summarizers-cost-2026', title: "How Much Do YouTube Summarizers Cost in 2026? (8 Tools Compared)", description: "YouTube summarizer pricing compared: Eightify, NoteGPT, Mindgrasp, Notta, Glarity, Summarize.tech and more. Subscription vs one-time pricing, free tiers, and the real yearly cost of each.", date: '2026-07-03' },
