@@ -11,7 +11,7 @@ export const allPosts: PostListEntry[] = [
   { slug: 'youtube-summarizer-vs-youtube-built-in-ai', title: "YT Summarizer vs YouTube's Built-In AI: Does YouTube Summarize Videos Now? (2026)", description: "YouTube shipped its own AI summaries in 2026, and Ask YouTube expanded beyond Premium on July 6. Does that make a dedicated summarizer redundant? The honest 2026 comparison on coverage, output, and price.", date: '2026-07-21' },
   { slug: 'youtube-summarizer-vs-copilot', title: "Can Microsoft Copilot Summarize YouTube Videos? Limits & Best Alternative (2026)", description: "Microsoft Copilot summarizes YouTube videos free inside the Edge sidebar, but only in Edge and only with captions. YT Summarizer is a pay-once web app that works in any browser. The honest 2026 head-to-head.", date: '2026-07-06' },
   { slug: 'best-notegpt-alternative-2026', title: "Best NoteGPT Alternative in 2026 (No Hidden Quotas, No Subscription)", description: "NoteGPT's 'unlimited' plans have quota limits that frustrate paying users. Here are the best NoteGPT alternatives for YouTube summaries in 2026 — including a pay-once option with credits that never expire.", date: '2026-07-03' },
-  { slug: 'how-much-do-youtube-summarizers-cost-2026', title: "How Much Do YouTube Summarizers Cost in 2026? (8 Tools Compared)", description: "YouTube summarizer pricing compared: Eightify, NoteGPT, Mindgrasp, Notta, Glarity, Summarize.tech and more. Subscription vs one-time pricing, free tiers, and the real yearly cost of each.", date: '2026-07-03' },
+  { slug: 'how-much-do-youtube-summarizers-cost-2026', title: "How Much Do YouTube Summarizers Cost in 2026? Free to $49, Compared", description: "Real prices for 8 YouTube summarizers: Eightify, NoteGPT, Mindgrasp, Notta, Glarity, Summarize.tech and more. Yearly cost, free tiers, and cost per summary.", date: '2026-07-03' },
   { slug: 'youtube-summarizer-vs-sider', title: "Sider YouTube Summary Review (2026): Extension Limits & the Pay-Once Alternative", description: "Sider is a popular all-in-one AI sidebar that summarizes YouTube via a browser extension; YT Summarizer is a pay-once web app built only for that job. The honest 2026 comparison on speed, output, and price.", date: '2026-06-29' },
   { slug: 'youtube-summarizer-vs-perplexity', title: "Can Perplexity Summarize YouTube Videos? What Works & What Fails (2026)", description: "Perplexity is a powerful AI answer engine that can summarize a YouTube video from its URL; YT Summarizer is a pay-once tool built only for that job. The honest 2026 head-to-head.", date: '2026-06-24' },
   { slug: 'how-to-use-notebooklm-for-youtube-videos', title: "How to Use NotebookLM to Summarize YouTube Videos (2026 Guide)", description: "Step-by-step: add a YouTube link as a source in NotebookLM, generate summaries and study guides, and know its limits — plus when a dedicated tool is faster.", date: '2026-06-07' },
@@ -205,8 +205,8 @@ export const allPosts: PostListEntry[] = [
   },
   {
     slug: 'youtube-summarizer-not-working-common-problems-fixes',
-    title: 'YouTube Summarizer Not Working? 9 Fixes That Work (2026)',
-    description: 'YouTube summarizer broken? Here are the 9 most common reasons YouTube summarizers stop working and specific fixes for each.',
+    title: 'YouTube Summarizer Not Working? 9 Fixes (Most Take 30 Seconds)',
+    description: 'Your YouTube summarizer stopped working? The 9 real causes — missing captions, API changes, long videos, region blocks — each with the exact fix. Tested July 2026.',
     date: '2026-07-03',
   },
   {
@@ -301,9 +301,9 @@ export const allPosts: PostListEntry[] = [
   },
   {
     slug: 'best-ai-youtube-summarizers-2026-8-tools-compared',
-    title: 'Best AI YouTube Summarizers 2026: 8 Tools Compared (Real Testing)',
-    description: 'We tested 8 AI YouTube summarizers in 2026 on real videos — Eightify, NoteGPT, Glarity, YT Summarizer, Summarize.tech, Video Highlight, Mindgrasp, and Notta. Full pricing, accuracy, and feature comparison.',
-    date: '2026-04-18',
+    title: 'Best AI Summarizer Tools 2026: 8 YouTube Summarizers Ranked & Priced',
+    description: 'We tested 8 AI summarizer tools on the same videos in 2026. Accuracy, long-video handling, and real prices — including which are genuinely free and which charge once instead of monthly.',
+    date: '2026-07-22',
   },
   {
     slug: 'notegpt-vs-ytsummarizer-honest-comparison-2026',
@@ -501,7 +501,7 @@ export const allPosts: PostListEntry[] = [
   { slug: 'youtube-summarizer-for-marketers', title: 'YouTube Summarizer for Marketers', description: 'Marketers use AI YouTube summarization to research competitors, stay current on marketing trends, and extract campaign insights from industry video content.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-hr-professionals', title: 'YouTube Summarizer for HR Professionals', description: 'HR professionals use AI YouTube summarization to stay current on employment law, HR trends, and talent management research.', date: '2026-03-18' },
   { slug: 'how-to-use-youtube-summaries-for-note-taking', title: 'How to Use YouTube Video Summaries for Note-Taking', description: 'Learn how to integrate AI YouTube summaries into your note-taking system and build a searchable knowledge base from video content.', date: '2026-03-18' },
-  { slug: 'youtube-summarizer-vs-manual-notes', title: 'YouTube Summarizer vs. Manual Notes: Speed vs. Retention (2026)', description: 'Compare AI YouTube summarization versus taking manual notes from videos. Discover when each approach works best and how to combine them.', date: '2026-07-03' },
+  { slug: 'youtube-summarizer-vs-manual-notes', title: 'AI Summaries vs. Taking Notes by Hand: Which Helps You Remember More?', description: 'AI summaries are 10x faster; handwritten notes win on recall. What the research says, when each one wins, and the hybrid workflow that gets you both.', date: '2026-07-03' },
   { slug: 'how-accurate-are-youtube-video-summaries', title: 'How Accurate Are AI YouTube Video Summaries?', description: 'Understand the accuracy and limitations of AI YouTube video summaries. Learn when to trust summaries, when to verify, and how to get the best results.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-remote-workers', title: 'YouTube Summarizer for Remote Workers', description: 'Remote workers use AI YouTube summarization to efficiently consume professional development content and stay current on industry trends.', date: '2026-03-18' },
   { slug: 'how-to-summarize-ted-talks', title: 'How to Summarize TED Talks with AI', description: 'Use AI to summarize TED and TEDx talks on YouTube. Extract key ideas, frameworks, and insights from TED talks in seconds.', date: '2026-03-18' },
@@ -550,7 +550,77 @@ export const NOINDEX_SLUGS = new Set<string>([
   'how-to-summarize-machine-learning-videos-with-ai',
 ])
 
-export const indexablePosts: PostListEntry[] = allPosts.filter((p) => !NOINDEX_SLUGS.has(p.slug))
+// Pruned 2026-07: 60 posts with ZERO Search Console impressions in 90 days (persona
+// pages and niche video-type pages with no real search demand). Each is 301-redirected
+// to a topical hub in vercel.json so link equity and users consolidate onto pages that
+// can actually rank. These are excluded from the sitemap, blog index, related posts,
+// and static generation — the redirect serves their URLs.
+export const PRUNED_SLUGS = new Set<string>([
+  'batch-download-and-summarize-multiple-youtube-videos-at-once',
+  'best-content-curation-tools-summarize-videos-for-your-team-instantly',
+  'best-tools-for-podcast-summaries',
+  'best-youtube-summarizer-for-gaming-videos',
+  'build-youtube-knowledge-base-video-notes-system',
+  'business-video-summaries-for-executives',
+  'convert-video-content-to-blog-posts',
+  'crypto-explained-video-summaries-made-simple',
+  'data-science-video-summary-guide',
+  'digital-marketing-video-summary-tips',
+  'fitness-video-summaries-get-the-workout-plan-faster',
+  'fitness-workout-video-summaries-get-results-faster',
+  'gaming-guide-video-summaries-level-up-faster',
+  'how-to-summarize-machine-learning-videos-with-ai',
+  'how-to-summarize-tutorial-videos-quickly',
+  'how-to-summarize-youtube-shorts-get-the-key-points-in-seconds',
+  'how-to-use-youtube-summaries-for-note-taking',
+  'language-learning-video-summaries-master-languages-faster',
+  'personal-finance-videos-get-the-tl-dr',
+  'photography-tutorial-summaries-learn-the-techniques',
+  'productivity-hacks-summarize-youtube-videos-fast',
+  'python-tutorial-video-summary-learn-faster',
+  'recipe-video-summary-cook-without-watching',
+  'summarize-corporate-presentations-on-youtube',
+  'summarize-government-hearings-on-youtube',
+  'summarize-instagram-reels-and-tiktok-videos-instantly-with-ai',
+  'summarize-twitch-vods-and-live-streams-never-miss-important-moments',
+  'summarize-youtube-interviews-for-market-research',
+  'summarize-youtube-tutorials-for-study',
+  'web-development-video-summaries-skip-to-what-matters',
+  'youtube-book-summaries-ai-extract-key-ideas',
+  'youtube-summarizer-for-business-webinars',
+  'youtube-summarizer-for-content-creators',
+  'youtube-summarizer-for-designers',
+  'youtube-summarizer-for-developers',
+  'youtube-summarizer-for-engineers',
+  'youtube-summarizer-for-entrepreneurs',
+  'youtube-summarizer-for-financial-advisors',
+  'youtube-summarizer-for-financial-professionals',
+  'youtube-summarizer-for-hr-professionals',
+  'youtube-summarizer-for-investor-videos',
+  'youtube-summarizer-for-journalists',
+  'youtube-summarizer-for-law-students',
+  'youtube-summarizer-for-lawyers',
+  'youtube-summarizer-for-marketers',
+  'youtube-summarizer-for-news-consumption',
+  'youtube-summarizer-for-newsletter-content',
+  'youtube-summarizer-for-nonprofits',
+  'youtube-summarizer-for-nurses-and-healthcare-workers',
+  'youtube-summarizer-for-phd-students',
+  'youtube-summarizer-for-podcast-transcripts',
+  'youtube-summarizer-for-podcasters',
+  'youtube-summarizer-for-product-managers',
+  'youtube-summarizer-for-project-managers',
+  'youtube-summarizer-for-real-estate-professionals',
+  'youtube-summarizer-for-remote-workers',
+  'youtube-summarizer-for-script-writing',
+  'youtube-summarizer-for-teachers',
+  'youtube-video-summarizer-for-social-media-managers-save-hours-every-week',
+  'youtube-video-summarizer-for-training-videos',
+])
+
+export const indexablePosts: PostListEntry[] = allPosts.filter(
+  (p) => !NOINDEX_SLUGS.has(p.slug) && !PRUNED_SLUGS.has(p.slug),
+)
 
 export const POSTS_PER_PAGE = 25
 export const totalPages = Math.ceil(indexablePosts.length / POSTS_PER_PAGE)

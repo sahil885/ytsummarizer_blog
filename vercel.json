@@ -1,49 +1,73 @@
 {
   "redirects": [
-    {
-      "source": "/blog/summarize-youtube-videos-in-chinese-language",
-      "destination": "/blog/translate-and-summarize-youtube-videos",
-      "permanent": true
-    },
-    {
-      "source": "/blog/youtube-summarizer-for-spanish-videos",
-      "destination": "/blog/translate-and-summarize-youtube-videos",
-      "permanent": true
-    },
-    {
-      "source": "/blog/youtube-summarizer-for-french-videos",
-      "destination": "/blog/translate-and-summarize-youtube-videos",
-      "permanent": true
-    },
-    {
-      "source": "/blog/youtube-summarizer-for-academic-research-papers",
-      "destination": "/blog/youtube-transcript-summarizer-for-research",
-      "permanent": true
-    },
-    {
-      "source": "/blog/youtube-summarizer-for-researchers",
-      "destination": "/blog/youtube-transcript-summarizer-for-research",
-      "permanent": true
-    },
-    {
-      "source": "/blog/youtube-summary-for-book-reviews",
-      "destination": "/blog/youtube-book-summaries-ai-extract-key-ideas",
-      "permanent": true
-    },
-    {
-      "source": "/blog/gaming-guide-video-summaries",
-      "destination": "/blog/best-youtube-summarizer-for-gaming-videos",
-      "permanent": true
-    },
-    {
-      "source": "/blog/youtube-summarizer-for-language-learning",
-      "destination": "/blog/youtube-summarizer-for-language-learners",
-      "permanent": true
-    },
-    {
-      "source": "/blog/youtube-summarizer-for-legal-depositions",
-      "destination": "/blog/youtube-summarizer-for-lawyers",
-      "permanent": true
-    }
+    { "source": "/blog/batch-download-and-summarize-multiple-youtube-videos-at-once", "destination": "/blog/youtube-transcript-tools-that-still-work-in-2026", "permanent": true },
+    { "source": "/blog/best-content-curation-tools-summarize-videos-for-your-team-instantly", "destination": "/blog/convert-youtube-video-to-blog-post-summary", "permanent": true },
+    { "source": "/blog/best-tools-for-podcast-summaries", "destination": "/blog/best-ai-youtube-summarizers-2026-8-tools-compared", "permanent": true },
+    { "source": "/blog/best-youtube-summarizer-for-gaming-videos", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/build-youtube-knowledge-base-video-notes-system", "destination": "/blog/youtube-video-notes-best-apps-methods", "permanent": true },
+    { "source": "/blog/business-video-summaries-for-executives", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/convert-video-content-to-blog-posts", "destination": "/blog/convert-youtube-video-to-blog-post-summary", "permanent": true },
+    { "source": "/blog/crypto-explained-video-summaries-made-simple", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/data-science-video-summary-guide", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/digital-marketing-video-summary-tips", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/fitness-video-summaries-get-the-workout-plan-faster", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/fitness-workout-video-summaries-get-results-faster", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/gaming-guide-video-summaries", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/gaming-guide-video-summaries-level-up-faster", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/how-to-summarize-machine-learning-videos-with-ai", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/how-to-summarize-tutorial-videos-quickly", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/how-to-summarize-youtube-shorts-get-the-key-points-in-seconds", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/how-to-use-youtube-summaries-for-note-taking", "destination": "/blog/youtube-video-notes-best-apps-methods", "permanent": true },
+    { "source": "/blog/language-learning-video-summaries-master-languages-faster", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/personal-finance-videos-get-the-tl-dr", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/photography-tutorial-summaries-learn-the-techniques", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/productivity-hacks-summarize-youtube-videos-fast", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/python-tutorial-video-summary-learn-faster", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/recipe-video-summary-cook-without-watching", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/summarize-corporate-presentations-on-youtube", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/summarize-government-hearings-on-youtube", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/summarize-instagram-reels-and-tiktok-videos-instantly-with-ai", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/summarize-twitch-vods-and-live-streams-never-miss-important-moments", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/summarize-youtube-interviews-for-market-research", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/summarize-youtube-tutorials-for-study", "destination": "/blog/youtube-summarizer-for-students", "permanent": true },
+    { "source": "/blog/summarize-youtube-videos-in-chinese-language", "destination": "/blog/translate-and-summarize-youtube-videos", "permanent": true },
+    { "source": "/blog/web-development-video-summaries-skip-to-what-matters", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/youtube-book-summaries-ai-extract-key-ideas", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-academic-research-papers", "destination": "/blog/youtube-transcript-summarizer-for-research", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-business-webinars", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-content-creators", "destination": "/blog/convert-youtube-video-to-blog-post-summary", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-designers", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-developers", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-engineers", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-entrepreneurs", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-financial-advisors", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-financial-professionals", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-french-videos", "destination": "/blog/translate-and-summarize-youtube-videos", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-hr-professionals", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-investor-videos", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-journalists", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-language-learning", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-law-students", "destination": "/blog/youtube-summarizer-for-students", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-lawyers", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-legal-depositions", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-marketers", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-news-consumption", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-newsletter-content", "destination": "/blog/convert-youtube-video-to-blog-post-summary", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-nonprofits", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-nurses-and-healthcare-workers", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-phd-students", "destination": "/blog/youtube-transcript-summarizer-for-research", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-podcast-transcripts", "destination": "/blog/youtube-transcript-tools-that-still-work-in-2026", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-podcasters", "destination": "/blog/convert-youtube-video-to-blog-post-summary", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-product-managers", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-project-managers", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-real-estate-professionals", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-remote-workers", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-researchers", "destination": "/blog/youtube-transcript-summarizer-for-research", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-script-writing", "destination": "/blog/convert-youtube-video-to-blog-post-summary", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-spanish-videos", "destination": "/blog/translate-and-summarize-youtube-videos", "permanent": true },
+    { "source": "/blog/youtube-summarizer-for-teachers", "destination": "/blog/youtube-summarizer-for-lectures", "permanent": true },
+    { "source": "/blog/youtube-summary-for-book-reviews", "destination": "/blog/summarize-youtube-without-watching", "permanent": true },
+    { "source": "/blog/youtube-video-summarizer-for-social-media-managers-save-hours-every-week", "destination": "/blog/convert-youtube-video-to-blog-post-summary", "permanent": true },
+    { "source": "/blog/youtube-video-summarizer-for-training-videos", "destination": "/blog/save-time-on-youtube-with-ai", "permanent": true }
   ]
 }

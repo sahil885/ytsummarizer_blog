@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { NOINDEX_SLUGS, getRelatedPosts, productUrl, OG_IMAGE } from '../../lib/posts-list'
+import { NOINDEX_SLUGS, PRUNED_SLUGS, getRelatedPosts, productUrl, OG_IMAGE } from '../../lib/posts-list'
 import { postOverrides, faqOverrides } from '../../lib/post-content-overrides'
 
 // FAQ content keyed by slug. Posts with FAQs get FAQPage schema + a visible FAQ section.
@@ -1256,7 +1256,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>Tutorials are trickier because the critical information is often visual — screen recordings, code demos, physical demonstrations. The AI summary will capture the steps in text, but you may still need to watch the execution. Use the summary to build the skeleton of your notes (the step list), then watch the video to fill in the specifics you can't capture in text.</p>
 
       <h3>Book Summaries and Explainer Videos (10-25 minutes)</h3>
-      <p>These summarize well — they're already designed to distill dense information. The AI summary of a book summary video is a second layer of compression. For building a reading list or research overview, the double-summary format is ideal: you get the key ideas from 10 books in the time it used to take to watch 2 videos. See our <a href="/blog/youtube-book-summaries-ai-extract-key-ideas" style="color: #ff0055; font-weight: 600;">guide to AI book summary extraction</a> for this specific use case.</p>
+      <p>These summarize well — they're already designed to distill dense information. The AI summary of a book summary video is a second layer of compression. For building a reading list or research overview, the double-summary format is ideal: you get the key ideas from 10 books in the time it used to take to watch 2 videos. See our <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">guide to AI book summary extraction</a> for this specific use case.</p>
 
       <h2>Integrating Summaries Into Your Notes System</h2>
 
@@ -1607,7 +1607,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Research screening.</strong> For papers and essays, summarize 20-30 YouTube sources to identify the 5 that are actually relevant to your argument. This makes your research more comprehensive without proportionally more time.</li>
         <li><strong>Missed lecture catch-up.</strong> When you miss a recorded lecture, read the summary first to get the structure and key points. Then watch only the sections that are unclear from the summary or exam-critical.</li>
       </ol>
-      <p>For deeper study workflows, see <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">YouTube summarizer for students</a> and <a href="/blog/how-to-use-youtube-summaries-for-note-taking" style="color: #ff0055; font-weight: 600;">using YouTube summaries for note-taking</a>.</p>
+      <p>For deeper study workflows, see <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">YouTube summarizer for students</a> and <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">using YouTube summaries for note-taking</a>.</p>
 
       <h2>Recommendation by Budget</h2>
       <ul>
@@ -1771,7 +1771,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Each entry contains</strong> the AI summary plus your personal rating of how interested you are in reading the full book.</li>
         <li><strong>Over time</strong>, this becomes a curated reading list that's far more reliable than bestseller lists or algorithmic recommendations — because each entry is based on actual content analysis, not marketing copy.</li>
       </ol>
-      <p>For the knowledge base setup, see <a href="/blog/build-youtube-knowledge-base-video-notes-system" style="color: #ff0055; font-weight: 600;">how to build a YouTube knowledge base</a>. For handling long book discussion videos, see <a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: #ff0055; font-weight: 600;">summarizing 2-hour YouTube videos</a>.</p>
+      <p>For the knowledge base setup, see <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">how to build a YouTube knowledge base</a>. For handling long book discussion videos, see <a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: #ff0055; font-weight: 600;">summarizing 2-hour YouTube videos</a>.</p>
 
       <p>Stop watching 45-minute book reviews when 2 minutes of AI summary tells you everything you need. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> and build your reading list faster.</p>
     `
@@ -1843,7 +1843,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Track themes across talks.</strong> When you notice that 8 out of 10 talks at a conference mention the same concept, you've identified a trend. AI summaries make this pattern visible because you can scan 10 talks in 20 minutes instead of 10 hours.</li>
         <li><strong>Share summaries with your team.</strong> Conference attendance is expensive. AI summaries let you distribute the key insights to your entire team for free. "Here are the 10 most important takeaways from KubeCon" — backed by actual summaries, not vague notes.</li>
       </ol>
-      <p>For the system setup, see <a href="/blog/build-youtube-knowledge-base-video-notes-system" style="color: #ff0055; font-weight: 600;">how to build a YouTube knowledge base</a>. For handling long talks, see <a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: #ff0055; font-weight: 600;">summarizing 2-hour YouTube videos</a>.</p>
+      <p>For the system setup, see <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">how to build a YouTube knowledge base</a>. For handling long talks, see <a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: #ff0055; font-weight: 600;">summarizing 2-hour YouTube videos</a>.</p>
 
       <h2>When to Watch the Full Talk</h2>
       <p>Not every summary should replace the full viewing. Watch conference talks in full when:</p>
@@ -2427,7 +2427,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Batch processing.</strong> Don't take notes one video at a time. Summarize 5-10 videos in a batch, then review and annotate. This is 2-3x faster than serial processing.</li>
         <li><strong>Weekly review.</strong> Spend 20 minutes each week reviewing your video notes. Move important insights to permanent notes, delete what you won't revisit, flag what needs deeper study.</li>
       </ol>
-      <p>This turns YouTube from a time sink into an actual knowledge system that compounds over time. For the broader productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a> and <a href="/blog/how-to-use-youtube-summaries-for-note-taking" style="color: #ff0055; font-weight: 600;">using YouTube summaries for note-taking</a>.</p>
+      <p>This turns YouTube from a time sink into an actual knowledge system that compounds over time. For the broader productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a> and <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">using YouTube summaries for note-taking</a>.</p>
 
       <p>Start capturing video notes without the pause-rewind cycle: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">try YT Summarizer free</a>.</p>
     `
@@ -3573,7 +3573,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ol>
       <p>Total time: 5 minutes or less per post. If you watch 3-5 relevant videos a week anyway, this workflow gives you 3-5 LinkedIn posts with minimal extra effort.</p>
 
-      <p>See also: <a href="/blog/generate-blog-posts-from-youtube-summary" style="color: #ff0055;">generate blog posts from YouTube summaries</a> and <a href="/blog/youtube-summarizer-for-newsletter-content" style="color: #ff0055;">YouTube summarizer for newsletter content</a>.</p>
+      <p>See also: <a href="/blog/generate-blog-posts-from-youtube-summary" style="color: #ff0055;">generate blog posts from YouTube summaries</a> and <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055;">YouTube summarizer for newsletter content</a>.</p>
     `
   },
   'how-to-summarize-youtube-playlist-or-course': {
@@ -3646,7 +3646,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>If you're looking at a long playlist right now: start with the first and last video in the playlist. The first usually sets up the core framework; the last usually synthesizes the main conclusions. Together, they give you the shape of the whole course in two summaries.</p>
       <p>From there, you can fill in specific topics you need more depth on. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to start — paste any video URL from the playlist and get an instant summary.</p>
 
-      <p>See also: <a href="/blog/summarize-youtube-tutorials-for-study" style="color: #ff0055;">summarize YouTube tutorials for study</a> and <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055;">YouTube summarizer for students</a>.</p>
+      <p>See also: <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055;">summarize YouTube tutorials for study</a> and <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055;">YouTube summarizer for students</a>.</p>
     `
   },
   'youtube-video-summarizer-for-social-media-managers-save-hours-every-week': {
@@ -4155,7 +4155,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Watch only those flagged items in full</li>
         <li>Share the best summaries with your team as a brief</li>
       </ol>
-      <p>For related technical topics, check out <a href="/blog/how-to-summarize-machine-learning-videos-with-ai" style="color: #ff0055; font-weight: 600;">machine learning video summaries</a> and <a href="/blog/data-science-video-summary-guide" style="color: #ff0055; font-weight: 600;">data science video summaries</a>. Learn the full productivity framework in <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p>For related technical topics, check out <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">machine learning video summaries</a> and <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">data science video summaries</a>. Learn the full productivity framework in <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
 
       <p>The AI landscape won't slow down. Your information workflow needs to scale with it. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start with YT Summarizer</a> and stop falling behind.</p>
     `
@@ -4185,7 +4185,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Maintain a running competitive intelligence log from weekly summaries</li>
       </ol>
       <h2>ROI of Executive Video Summarization</h2>
-      <p>If summarization saves an executive 5 hours per week of video consumption, at typical executive rates, that's significant value returned to strategic work, relationship building, and decision-making. The tool cost is trivial by comparison. Founders and operators will find a related workflow in the <a href="/blog/youtube-summarizer-for-entrepreneurs" style="color: #ff0055; font-weight: 600;">YouTube summarizer for entrepreneurs</a> guide, those tracking investor content should see the <a href="/blog/youtube-summarizer-for-investor-videos" style="color: #ff0055; font-weight: 600;">investor video summarization guide</a>, and product leaders can see how <a href="/blog/youtube-summarizer-for-product-managers" style="color: #ff0055; font-weight: 600;">product managers</a> use summarization for competitive product intelligence. For a structured guide to the full productivity workflow, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p>If summarization saves an executive 5 hours per week of video consumption, at typical executive rates, that's significant value returned to strategic work, relationship building, and decision-making. The tool cost is trivial by comparison. Founders and operators will find a related workflow in the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for entrepreneurs</a> guide, those tracking investor content should see the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">investor video summarization guide</a>, and product leaders can see how <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">product managers</a> use summarization for competitive product intelligence. For a structured guide to the full productivity workflow, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
       <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — executives use it to stay sharp without the time cost.</p>
     `
   },
@@ -4245,7 +4245,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Summary-First Meal Planning</h2>
       <p>Recipe summaries also make weekly meal planning dramatically faster. Instead of watching 6 videos to plan a week of dinners, summarize 15 and pick the 6 that fit your time, budget, and skill. The saved hours compound — meal planning goes from a 90-minute Sunday task to a 20-minute one, and the quality of what you cook actually goes up because you're comparing more options before committing.</p>
 
-      <p>This is part of a broader strategy for <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>. Content creators who research cooking videos for repurposing will find more workflows in the <a href="/blog/youtube-summarizer-for-content-creators" style="color: #ff0055; font-weight: 600;">YouTube summarizer for content creators</a> guide. For lifestyle creators turning recipes into short-form content, see <a href="/blog/youtube-summarizer-for-bloggers" style="color: #ff0055; font-weight: 600;">YouTube summarization for bloggers</a>.</p>
+      <p>This is part of a broader strategy for <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>. Content creators who research cooking videos for repurposing will find more workflows in the <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">YouTube summarizer for content creators</a> guide. For lifestyle creators turning recipes into short-form content, see <a href="/blog/youtube-summarizer-for-bloggers" style="color: #ff0055; font-weight: 600;">YouTube summarization for bloggers</a>.</p>
       <p>Stop pausing and rewinding. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Summarize any recipe video with YT Summarizer</a> and cook with a clear plan.</p>
     `
   },
@@ -4366,7 +4366,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Get Started with AI Summarization</h2>
       <p>Ready to save time on digital marketing videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
-      <p>Marketing professionals will also find strategies in the <a href="/blog/youtube-summarizer-for-marketers" style="color: #ff0055; font-weight: 600;">YouTube summarizer for marketers</a> guide. New to summarization? Learn <a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">what a YouTube summarizer is</a> or see the <a href="/blog/best-free-youtube-summarizer-tool" style="color: #ff0055; font-weight: 600;">best free tools</a> available.</p>
+      <p>Marketing professionals will also find strategies in the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for marketers</a> guide. New to summarization? Learn <a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">what a YouTube summarizer is</a> or see the <a href="/blog/best-free-youtube-summarizer-tool" style="color: #ff0055; font-weight: 600;">best free tools</a> available.</p>
     `
   },
   'crypto-explained-video-summaries-made-simple': {
@@ -4446,7 +4446,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Get Started with AI Summarization</h2>
       <p>Ready to save time on data science videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
-      <p>Data analysts will find dedicated strategies in the <a href="/blog/youtube-summarizer-for-data-analysts" style="color: #ff0055; font-weight: 600;">YouTube summarizer for data analysts</a> guide. Also see our guides on <a href="/blog/how-to-summarize-machine-learning-videos-with-ai" style="color: #ff0055; font-weight: 600;">summarizing machine learning videos</a> and <a href="/blog/python-tutorial-video-summary-learn-faster" style="color: #ff0055; font-weight: 600;">Python tutorial summaries</a>.</p>
+      <p>Data analysts will find dedicated strategies in the <a href="/blog/youtube-summarizer-for-data-analysts" style="color: #ff0055; font-weight: 600;">YouTube summarizer for data analysts</a> guide. Also see our guides on <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">summarizing machine learning videos</a> and <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">Python tutorial summaries</a>.</p>
     `
   },
   'web-development-video-summaries-skip-to-what-matters': {
@@ -4486,7 +4486,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Get Started with AI Summarization</h2>
       <p>Ready to save time on web development videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
-      <p>For the engineering perspective, see the <a href="/blog/youtube-summarizer-for-engineers" style="color: #ff0055; font-weight: 600;">YouTube summarizer for software engineers</a> guide. Also check out <a href="/blog/python-tutorial-video-summary-learn-faster" style="color: #ff0055; font-weight: 600;">Python tutorial summaries</a> and the <a href="/blog/best-free-youtube-summarizer-tool" style="color: #ff0055; font-weight: 600;">best free summarizer tools</a>.</p>
+      <p>For the engineering perspective, see the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for software engineers</a> guide. Also check out <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">Python tutorial summaries</a> and the <a href="/blog/best-free-youtube-summarizer-tool" style="color: #ff0055; font-weight: 600;">best free summarizer tools</a>.</p>
     `
   },
   'python-tutorial-video-summary-learn-faster': {
@@ -4526,7 +4526,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Get Started with AI Summarization</h2>
       <p>Ready to save time on python programming videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
-      <p>For related content, check out <a href="/blog/data-science-video-summary-guide" style="color: #ff0055; font-weight: 600;">data science video summaries</a>, <a href="/blog/how-to-summarize-machine-learning-videos-with-ai" style="color: #ff0055; font-weight: 600;">machine learning video summaries</a>, and the <a href="/blog/web-development-video-summaries-skip-to-what-matters" style="color: #ff0055; font-weight: 600;">web development video summary</a> guide.</p>
+      <p>For related content, check out <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">data science video summaries</a>, <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">machine learning video summaries</a>, and the <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">web development video summary</a> guide.</p>
     `
   },
   'how-to-summarize-machine-learning-videos-with-ai': {
@@ -4566,7 +4566,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Get Started with AI Summarization</h2>
       <p>Ready to save time on machine learning videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
-      <p>Related guides: <a href="/blog/ai-video-summary-stay-updated-on-automation" style="color: #ff0055; font-weight: 600;">AI and automation video summaries</a>, <a href="/blog/data-science-video-summary-guide" style="color: #ff0055; font-weight: 600;">data science video summaries</a>, and <a href="/blog/python-tutorial-video-summary-learn-faster" style="color: #ff0055; font-weight: 600;">Python tutorial summaries</a>.</p>
+      <p>Related guides: <a href="/blog/ai-video-summary-stay-updated-on-automation" style="color: #ff0055; font-weight: 600;">AI and automation video summaries</a>, <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">data science video summaries</a>, and <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">Python tutorial summaries</a>.</p>
     `
   },
   'youtube-summarizer-for-students': {
@@ -4626,7 +4626,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h2>Save Hours Every Week</h2>
       <p>Students who build summarization into their study routine typically save 5–10 hours per week on video-based research and study. That's time you can reinvest into practice problems, essay writing, and the part of studying that actually moves your grade — doing the work, not just consuming the material.</p>
-      <p>The approach works at every level — see dedicated guides for <a href="/blog/youtube-summarizer-for-high-school-students" style="color: #ff0055; font-weight: 600;">high school students</a>, <a href="/blog/youtube-summarizer-for-university-students" style="color: #ff0055; font-weight: 600;">university students</a>, and <a href="/blog/youtube-summarizer-for-phd-students" style="color: #ff0055; font-weight: 600;">PhD researchers</a>.</p>
+      <p>The approach works at every level — see dedicated guides for <a href="/blog/youtube-summarizer-for-high-school-students" style="color: #ff0055; font-weight: 600;">high school students</a>, <a href="/blog/youtube-summarizer-for-university-students" style="color: #ff0055; font-weight: 600;">university students</a>, and <a href="/blog/youtube-transcript-summarizer-for-research" style="color: #ff0055; font-weight: 600;">PhD researchers</a>.</p>
 
       <p>Ready to study smarter? Start with <a href="/blog/best-free-youtube-summarizer-tool" style="color: #ff0055; font-weight: 600;">best free YouTube summarizer tools</a> or <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">try YT Summarizer free</a> on a lecture you have queued right now.</p>
     `
@@ -4853,7 +4853,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Publish your YouTube video.</li>
         <li>Run the URL through <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> to get a chaptered summary plus key bullet points.</li>
         <li>Use the summary as the skeleton for a <a href="/blog/generate-blog-posts-from-youtube-summary" style="color: #ff0055; font-weight: 600;">blog post</a>, expanding each bullet into a paragraph.</li>
-        <li>Turn the top 3–5 insights into a <a href="/blog/youtube-summarizer-for-newsletter-content" style="color: #ff0055; font-weight: 600;">newsletter</a> with one insight per section.</li>
+        <li>Turn the top 3–5 insights into a <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">newsletter</a> with one insight per section.</li>
         <li>Pull 6–10 one-liner quotes for X/Twitter and LinkedIn.</li>
         <li>Build a LinkedIn carousel from the structured bullet points.</li>
         <li>Script 3–5 YouTube Shorts or TikToks from the strongest individual moments.</li>
@@ -4888,8 +4888,8 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Related Reading</h2>
       <ul>
         <li><a href="/blog/generate-blog-posts-from-youtube-summary" style="color: #ff0055; font-weight: 600;">Generate blog posts from YouTube summaries</a></li>
-        <li><a href="/blog/youtube-summarizer-for-newsletter-content" style="color: #ff0055; font-weight: 600;">YouTube summarizer for newsletter content</a></li>
-        <li><a href="/blog/youtube-summarizer-for-script-writing" style="color: #ff0055; font-weight: 600;">YouTube summarizer for script writing</a></li>
+        <li><a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">YouTube summarizer for newsletter content</a></li>
+        <li><a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">YouTube summarizer for script writing</a></li>
       </ul>
 
       <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> and build it into your content workflow — paste the URL of your latest video and watch it turn into a week of content in seconds.</p>
@@ -4965,7 +4965,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Time Saved</h2>
       <p>This workflow typically cuts average lecture review time by 60–80% while retaining the core knowledge. Five 60-minute lectures per week go from 5 hours of passive watching to about 1 hour of active study plus 45 minutes of targeted viewing. Over a 12-week semester that's roughly 36 reclaimed hours per course.</p>
 
-      <p>This approach works at every level — see dedicated guides for <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">students at every level</a>, <a href="/blog/youtube-summarizer-for-university-students" style="color: #ff0055; font-weight: 600;">university students specifically</a>, and <a href="/blog/youtube-summarizer-for-phd-students" style="color: #ff0055; font-weight: 600;">PhD researchers</a>. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start summarizing lectures for free</a> at YT Summarizer.</p>
+      <p>This approach works at every level — see dedicated guides for <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">students at every level</a>, <a href="/blog/youtube-summarizer-for-university-students" style="color: #ff0055; font-weight: 600;">university students specifically</a>, and <a href="/blog/youtube-transcript-summarizer-for-research" style="color: #ff0055; font-weight: 600;">PhD researchers</a>. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start summarizing lectures for free</a> at YT Summarizer.</p>
     `
   },
   'youtube-summarizer-with-timestamps': {
@@ -5085,7 +5085,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Summarize Your Next Webinar in Seconds</h2>
       <p>Paste any YouTube webinar URL into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and get a structured breakdown of key points, insights, and highlights immediately.</p>
 
-      <p>For similar workflows, see our guides on <a href="/blog/summarize-corporate-presentations-on-youtube" style="color: #ff0055; font-weight: 600;">summarizing corporate presentations</a>, <a href="/blog/youtube-summarizer-for-meeting-recordings" style="color: #ff0055; font-weight: 600;">meeting recording summaries</a>, and <a href="/blog/youtube-video-summarizer-for-training-videos" style="color: #ff0055; font-weight: 600;">training video summaries</a>.</p>
+      <p>For similar workflows, see our guides on <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">summarizing corporate presentations</a>, <a href="/blog/youtube-summarizer-for-meeting-recordings" style="color: #ff0055; font-weight: 600;">meeting recording summaries</a>, and <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">training video summaries</a>.</p>
 
       <p>Stop watching entire webinars to find the three minutes that matter. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start summarizing with YT Summarizer</a>.</p>
     `
@@ -5127,7 +5127,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Watching only the episodes where the summary reveals high-value content</li>
       </ol>
 
-      <p>Podcasters creating their own show should see the <a href="/blog/youtube-summarizer-for-podcasters" style="color: #ff0055; font-weight: 600;">YouTube summarizer for podcasters</a> guide. For interview-heavy content, check out <a href="/blog/summarize-youtube-interviews-for-market-research" style="color: #ff0055; font-weight: 600;">summarizing interviews for market research</a>.</p>
+      <p>Podcasters creating their own show should see the <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">YouTube summarizer for podcasters</a> guide. For interview-heavy content, check out <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">summarizing interviews for market research</a>.</p>
 
       <p>Ready to stop missing insights because you don't have time to listen to full episodes? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> and build your podcast intelligence system today.</p>
     `
@@ -5169,7 +5169,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>They can be updated more easily than videos when information changes</li>
       </ul>
 
-      <p>You can also use summaries for <a href="/blog/youtube-summarizer-for-newsletter-content" style="color: #ff0055; font-weight: 600;">newsletter content creation</a> or <a href="/blog/youtube-summarizer-for-script-writing" style="color: #ff0055; font-weight: 600;">script writing research</a>. For the full conversion workflow, see our guide on <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">converting YouTube videos to blog posts</a>.</p>
+      <p>You can also use summaries for <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">newsletter content creation</a> or <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">script writing research</a>. For the full conversion workflow, see our guide on <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">converting YouTube videos to blog posts</a>.</p>
 
       <p>Start converting your YouTube content into organic search traffic. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Use YT Summarizer</a> to get your first video summary and blog outline in under a minute.</p>
     `
@@ -5216,7 +5216,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Step 5: Publish and Cross-Promote</h2>
       <p>Add the blog post URL to your YouTube video description with a short note: "Read the full written guide here: [link]". This creates a cross-channel loop that boosts both the video's SEO and the blog post's traffic.</p>
 
-      <p>If you're a content creator, you can also use summaries for <a href="/blog/youtube-summarizer-for-script-writing" style="color: #ff0055; font-weight: 600;">script writing research</a> or <a href="/blog/youtube-summarizer-for-newsletter-content" style="color: #ff0055; font-weight: 600;">newsletter content sourcing</a>. For the broader workflow, see <a href="/blog/generate-blog-posts-from-youtube-summary" style="color: #ff0055; font-weight: 600;">generating blog posts from YouTube summaries</a>.</p>
+      <p>If you're a content creator, you can also use summaries for <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">script writing research</a> or <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">newsletter content sourcing</a>. For the broader workflow, see <a href="/blog/generate-blog-posts-from-youtube-summary" style="color: #ff0055; font-weight: 600;">generating blog posts from YouTube summaries</a>.</p>
 
       <p>Start your first conversion now. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Summarize your video with YT Summarizer</a> and have a blog post outline ready in under two minutes.</p>
     `
@@ -5253,7 +5253,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>From Hours to Minutes</h2>
       <p>Traditional newsletter research — watching videos to find the right clips, taking notes, transcribing quotes — can take 4–6 hours per week. With AI summarization, you get the signal from each video in under 30 seconds. A full research cycle drops to under an hour.</p>
 
-      <p>You can also turn summaries into <a href="/blog/generate-blog-posts-from-youtube-summary" style="color: #ff0055; font-weight: 600;">full blog posts</a> or use them for <a href="/blog/youtube-summarizer-for-script-writing" style="color: #ff0055; font-weight: 600;">script writing research</a>. For the complete content repurposing workflow, see our guide for <a href="/blog/youtube-summarizer-for-content-creators" style="color: #ff0055; font-weight: 600;">content creators</a>.</p>
+      <p>You can also turn summaries into <a href="/blog/generate-blog-posts-from-youtube-summary" style="color: #ff0055; font-weight: 600;">full blog posts</a> or use them for <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">script writing research</a>. For the complete content repurposing workflow, see our guide for <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">content creators</a>.</p>
 
       <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> and transform your newsletter research workflow this week.</p>
     `
@@ -5777,7 +5777,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ol>
       <p>This approach retains learning depth while cutting watch time by 50–70%.</p>
 
-      <p>Students can also check out our <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">YouTube summarizer for students</a> guide and learn <a href="/blog/how-to-use-youtube-summaries-for-note-taking" style="color: #ff0055; font-weight: 600;">how to use summaries for note-taking</a>.</p>
+      <p>Students can also check out our <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">YouTube summarizer for students</a> guide and learn <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">how to use summaries for note-taking</a>.</p>
 
       <p>Summarize your next tutorial: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> — paste the URL and get a structured study guide in seconds.</p>
     `
@@ -6106,7 +6106,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Cross-reference claims with published papers before citing</li>
       </ol>
 
-      <p>See also: <a href="/blog/youtube-transcript-summarizer-for-research" style="color: #ff0055; font-weight: 600;">transcript summarizer for research</a>, <a href="/blog/summarize-youtube-tutorials-for-study" style="color: #ff0055; font-weight: 600;">tutorial summarization for study</a>, and the <a href="/blog/youtube-summarizer-for-researchers" style="color: #ff0055; font-weight: 600;">YouTube summarizer for researchers</a> guide.</p>
+      <p>See also: <a href="/blog/youtube-transcript-summarizer-for-research" style="color: #ff0055; font-weight: 600;">transcript summarizer for research</a>, <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">tutorial summarization for study</a>, and the <a href="/blog/youtube-summarizer-for-researchers" style="color: #ff0055; font-weight: 600;">YouTube summarizer for researchers</a> guide.</p>
 
       <p>Add YouTube to your academic research toolkit: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> and process your first academic video today.</p>
     `
@@ -6146,7 +6146,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Use this analysis to structure a script that covers the essential ground differently</li>
       </ol>
 
-      <p>Once you've written your script, consider <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">converting your video into a blog post</a> for extra SEO reach, or repurposing insights into <a href="/blog/youtube-summarizer-for-newsletter-content" style="color: #ff0055; font-weight: 600;">newsletter content</a>.</p>
+      <p>Once you've written your script, consider <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">converting your video into a blog post</a> for extra SEO reach, or repurposing insights into <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">newsletter content</a>.</p>
 
       <p>Build better scripts with better research: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Use YT Summarizer</a> to analyze your top competitors and find your scripting edge.</p>
     `
@@ -6248,7 +6248,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>European Parliament</li>
       </ul>
 
-      <p>For related legal content, see our <a href="/blog/youtube-summarizer-for-legal-depositions" style="color: #ff0055; font-weight: 600;">legal deposition summarizer</a>. Journalists covering government will find the <a href="/blog/youtube-summarizer-for-journalists" style="color: #ff0055; font-weight: 600;">YouTube summarizer for journalists</a> useful.</p>
+      <p>For related legal content, see our <a href="/blog/youtube-summarizer-for-legal-depositions" style="color: #ff0055; font-weight: 600;">legal deposition summarizer</a>. Journalists covering government will find the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for journalists</a> useful.</p>
 
       <p>Extract the signal from hours of government proceedings: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> on your next government hearing video.</p>
     `
@@ -6285,7 +6285,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Summarize and Share with Your Team</h2>
       <p>One effective workflow: summarize a meeting recording with <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a>, paste the summary into your team's Slack channel or project management tool, and skip the requirement for everyone to watch the full recording.</p>
 
-      <p>For similar business workflows, see <a href="/blog/youtube-summarizer-for-business-webinars" style="color: #ff0055; font-weight: 600;">webinar summarization</a>, <a href="/blog/summarize-corporate-presentations-on-youtube" style="color: #ff0055; font-weight: 600;">corporate presentation summaries</a>, and <a href="/blog/youtube-video-summarizer-for-training-videos" style="color: #ff0055; font-weight: 600;">training video summaries</a>.</p>
+      <p>For similar business workflows, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">webinar summarization</a>, <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">corporate presentation summaries</a>, and <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">training video summaries</a>.</p>
 
       <p>Turn meeting recordings into action: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Summarize your first meeting recording with YT Summarizer</a>.</p>
     `
@@ -6327,7 +6327,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Hiring or investment signals</li>
       </ul>
 
-      <p>Related guides: <a href="/blog/youtube-summarizer-for-podcast-transcripts" style="color: #ff0055; font-weight: 600;">podcast transcript summaries</a>, <a href="/blog/summarize-corporate-presentations-on-youtube" style="color: #ff0055; font-weight: 600;">corporate presentation summaries</a>, and the <a href="/blog/youtube-summarizer-for-marketers" style="color: #ff0055; font-weight: 600;">YouTube summarizer for marketers</a>.</p>
+      <p>Related guides: <a href="/blog/youtube-transcript-tools-that-still-work-in-2026" style="color: #ff0055; font-weight: 600;">podcast transcript summaries</a>, <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">corporate presentation summaries</a>, and the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for marketers</a>.</p>
 
       <p>Build better market intelligence with less watching time: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start with YT Summarizer</a>.</p>
     `
@@ -6369,7 +6369,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Enable employees to review training content quickly before applying it</li>
       </ul>
 
-      <p>See also: <a href="/blog/youtube-summarizer-for-business-webinars" style="color: #ff0055; font-weight: 600;">business webinar summaries</a>, <a href="/blog/youtube-summarizer-for-meeting-recordings" style="color: #ff0055; font-weight: 600;">meeting recording summaries</a>, and the <a href="/blog/youtube-summarizer-for-hr-professionals" style="color: #ff0055; font-weight: 600;">YouTube summarizer for HR professionals</a>.</p>
+      <p>See also: <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">business webinar summaries</a>, <a href="/blog/youtube-summarizer-for-meeting-recordings" style="color: #ff0055; font-weight: 600;">meeting recording summaries</a>, and the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for HR professionals</a>.</p>
 
       <p>Make training more efficient: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Summarize your next training video with YT Summarizer</a> and build a reference library your team will actually use.</p>
     `
@@ -6410,7 +6410,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Watch the full video only for the most consequential updates</li>
       </ol>
 
-      <p>Stay ahead of the market without watching hours of video. For stock-specific analysis and market commentary, see the <a href="/blog/stock-market-video-summary-for-investors" style="color: #ff0055; font-weight: 600;">stock market video summary guide</a>. For processing full-length corporate investor days and strategy presentations, see <a href="/blog/summarize-corporate-presentations-on-youtube" style="color: #ff0055; font-weight: 600;">how to summarize corporate presentations</a>. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> on your first investor video today.</p>
+      <p>Stay ahead of the market without watching hours of video. For stock-specific analysis and market commentary, see the <a href="/blog/stock-market-video-summary-for-investors" style="color: #ff0055; font-weight: 600;">stock market video summary guide</a>. For processing full-length corporate investor days and strategy presentations, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">how to summarize corporate presentations</a>. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> on your first investor video today.</p>
     `
   },
   'summarize-corporate-presentations-on-youtube': {
@@ -6449,7 +6449,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Log insights in your competitive intelligence tracker</li>
       </ol>
 
-      <p>Related: <a href="/blog/youtube-summarizer-for-business-webinars" style="color: #ff0055; font-weight: 600;">business webinar summaries</a>, <a href="/blog/summarize-youtube-interviews-for-market-research" style="color: #ff0055; font-weight: 600;">interview summaries for market research</a>, and the <a href="/blog/business-video-summaries-for-executives" style="color: #ff0055; font-weight: 600;">executive video summary guide</a>.</p>
+      <p>Related: <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">business webinar summaries</a>, <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">interview summaries for market research</a>, and the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">executive video summary guide</a>.</p>
 
       <p>Make corporate presentations a practical research tool: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Summarize your next corporate presentation with YT Summarizer</a>.</p>
     `
@@ -6487,7 +6487,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Legal Education Use Case</h2>
       <p>Law students find AI summarization particularly valuable for reviewing oral arguments and court hearings as study material. Summarize a key Supreme Court case oral argument to understand the core issues before diving into the full recording.</p>
 
-      <p>Legal professionals should also see the <a href="/blog/youtube-summarizer-for-lawyers" style="color: #ff0055; font-weight: 600;">YouTube summarizer for lawyers</a> guide. For government hearings specifically, see <a href="/blog/summarize-government-hearings-on-youtube" style="color: #ff0055; font-weight: 600;">summarizing government hearings</a>.</p>
+      <p>Legal professionals should also see the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for lawyers</a> guide. For government hearings specifically, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">summarizing government hearings</a>.</p>
 
       <p>Start with <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> — paste any public legal proceeding URL and get a structured summary.</p>
     `
@@ -6565,10 +6565,10 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Start each study session with a summary review of relevant YouTube content</li>
         <li>Flag sections you don't fully understand from the summary</li>
         <li>Watch only those flagged sections in full</li>
-        <li>Add key points from summaries to your flashcard or spaced repetition system — especially effective when you <a href="/blog/summarize-youtube-tutorials-for-study" style="color: #ff0055; font-weight: 600;">summarize tutorial videos for study</a></li>
+        <li>Add key points from summaries to your flashcard or spaced repetition system — especially effective when you <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">summarize tutorial videos for study</a></li>
       </ol>
 
-      <p>Ready to study smarter? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — your most efficient study tool for YouTube content. For level-specific strategies, see guides for <a href="/blog/youtube-summarizer-for-high-school-students" style="color: #ff0055; font-weight: 600;">high school</a>, <a href="/blog/youtube-summarizer-for-university-students" style="color: #ff0055; font-weight: 600;">university</a>, and <a href="/blog/youtube-summarizer-for-phd-students" style="color: #ff0055; font-weight: 600;">PhD researchers</a>.</p>
+      <p>Ready to study smarter? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — your most efficient study tool for YouTube content. For level-specific strategies, see guides for <a href="/blog/youtube-summarizer-for-high-school-students" style="color: #ff0055; font-weight: 600;">high school</a>, <a href="/blog/youtube-summarizer-for-university-students" style="color: #ff0055; font-weight: 600;">university</a>, and <a href="/blog/youtube-transcript-summarizer-for-research" style="color: #ff0055; font-weight: 600;">PhD researchers</a>.</p>
     `
   },
   'online-free-youtube-summarizer-with-translation': {
@@ -6686,7 +6686,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Important Caveat</h2>
       <p>AI summaries are research tools, not investment advice. Always verify claims in the original video and cross-reference with official filings, especially for any financial decision. Summaries surface the argument; your judgment evaluates it.</p>
       <h2>Build a Market Intelligence System</h2>
-      <p>Consistent investors summarize the same channels weekly to track how analyst sentiment evolves. A 3-month log of summaries on a company tells you more than any single video. For deeper analysis of earnings calls and investor presentations, see the <a href="/blog/youtube-summarizer-for-investor-videos" style="color: #ff0055; font-weight: 600;">YouTube summarizer for investor videos</a> guide. Those building broader financial literacy will also benefit from the <a href="/blog/personal-finance-videos-get-the-tldr" style="color: #ff0055; font-weight: 600;">personal finance video TL;DR guide</a>.</p>
+      <p>Consistent investors summarize the same channels weekly to track how analyst sentiment evolves. A 3-month log of summaries on a company tells you more than any single video. For deeper analysis of earnings calls and investor presentations, see the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for investor videos</a> guide. Those building broader financial literacy will also benefit from the <a href="/blog/personal-finance-videos-get-the-tldr" style="color: #ff0055; font-weight: 600;">personal finance video TL;DR guide</a>.</p>
       <p>Start building your market intelligence system: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> on your first financial video today.</p>
     `
   },
@@ -6746,7 +6746,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
       <h2>Using Summaries to Build a Technique Library</h2>
       <p>The best photographers build a personal reference library. Summarize every tutorial you find valuable, organize by technique category, and search your summaries when you need a refresher before a shoot.</p>
-      <p>For structured note-taking from tutorials, see <a href="/blog/how-to-use-youtube-summaries-for-note-taking" style="color: #ff0055; font-weight: 600;">how to use YouTube summaries for note-taking</a>. Designers will find related workflows in the <a href="/blog/youtube-summarizer-for-designers" style="color: #ff0055; font-weight: 600;">YouTube summarizer for designers</a> guide.</p>
+      <p>For structured note-taking from tutorials, see <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">how to use YouTube summaries for note-taking</a>. Designers will find related workflows in the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for designers</a> guide.</p>
 
       <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Build your photography technique library with YT Summarizer</a> — start today.</p>
     `
@@ -6798,7 +6798,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Journal club prep:</strong> Summarize video presentations of research papers</li>
       </ul>
       <h2>Important Note on Medical Content</h2>
-      <p>AI summaries of medical content are starting points for review, not clinical guidance. Other professionals with similar verification requirements include <a href="/blog/youtube-summarizer-for-lawyers" style="color: #ff0055; font-weight: 600;">lawyers and legal professionals</a>. Researchers in clinical fields will also find the <a href="/blog/youtube-summarizer-for-researchers" style="color: #ff0055; font-weight: 600;">researcher's summarization guide</a> relevant for conference and academic video. For a broader look at reclaiming time with AI tools, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>. Always verify specific clinical recommendations against current guidelines and primary literature before applying to patient care.</p>
+      <p>AI summaries of medical content are starting points for review, not clinical guidance. Other professionals with similar verification requirements include <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">lawyers and legal professionals</a>. Researchers in clinical fields will also find the <a href="/blog/youtube-summarizer-for-researchers" style="color: #ff0055; font-weight: 600;">researcher's summarization guide</a> relevant for conference and academic video. For a broader look at reclaiming time with AI tools, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>. Always verify specific clinical recommendations against current guidelines and primary literature before applying to patient care.</p>
       <p>Stay current without losing clinical time: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> on your next medical education video.</p>
     `
   },
@@ -6825,7 +6825,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Client context:</strong> Understand what clients are watching about their legal situation</li>
       </ul>
       <h2>Verification Standard for Legal Content</h2>
-      <p>As with all AI-generated summaries, verify key legal claims against primary sources — statutes, case law, official regulatory guidance — before relying on them professionally. Summaries accelerate research; they don't replace primary source verification. Medical professionals face similar verification requirements — see <a href="/blog/youtube-summarizer-for-doctors-and-medical-professionals" style="color: #ff0055; font-weight: 600;">YouTube summarizer for doctors</a> for related guidance. Journalists who cover legal and court proceedings will find complementary research workflows in the <a href="/blog/youtube-summarizer-for-journalists" style="color: #ff0055; font-weight: 600;">journalist's summarization guide</a>. For a productivity overview, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p>As with all AI-generated summaries, verify key legal claims against primary sources — statutes, case law, official regulatory guidance — before relying on them professionally. Summaries accelerate research; they don't replace primary source verification. Medical professionals face similar verification requirements — see <a href="/blog/youtube-summarizer-for-doctors-and-medical-professionals" style="color: #ff0055; font-weight: 600;">YouTube summarizer for doctors</a> for related guidance. Journalists who cover legal and court proceedings will find complementary research workflows in the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">journalist's summarization guide</a>. For a productivity overview, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
       <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> and make legal video research billable-efficient.</p>
     `
   },
@@ -6902,7 +6902,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Be cautious with satire and opinion content</strong> — AI flattens irony and tone, which matters a lot in political reporting</li>
       </ul>
 
-      <p>Journalists covering government and policy should also see the guide to <a href="/blog/summarize-government-hearings-on-youtube" style="color: #ff0055; font-weight: 600;">summarizing government hearings on YouTube</a> for source-rich primary material. For a broader overview of reclaiming time with AI video tools, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p>Journalists covering government and policy should also see the guide to <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">summarizing government hearings on YouTube</a> for source-rich primary material. For a broader overview of reclaiming time with AI video tools, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
 
       <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — research at the speed of reporting.</p>
     `
@@ -6919,7 +6919,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>What Founders Learn from YouTube</h2>
       <ul>
         <li><strong>Fundraising strategies and investor mindset</strong> (YC videos, a16z talks) — what good decks look like, what investors actually care about, how term sheets work</li>
-        <li><strong><a href="/blog/youtube-summarizer-for-marketers" style="color: #ff0055; font-weight: 600;">Growth and marketing tactics</a></strong> from practitioners who've actually scaled channels</li>
+        <li><strong><a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">Growth and marketing tactics</a></strong> from practitioners who've actually scaled channels</li>
         <li><strong>Product and design thinking</strong> from industry leaders and post-mortems on failed features</li>
         <li><strong>Technical knowledge for non-technical founders</strong> — enough architecture and infrastructure literacy to make good hiring and vendor decisions</li>
         <li><strong>Competitor founder interviews</strong> revealing strategy, positioning, and roadmap hints</li>
@@ -6968,7 +6968,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
     metaDescription: 'Marketers use AI YouTube summarization to research competitors, stay current on marketing trends, and extract campaign insights from industry video content.',
     date: '2026-03-18',
     content: `
-      <p>Marketing moves fast. Platform algorithm changes, new ad formats, emerging channels, creative trends, and regulatory shifts are all covered heavily on YouTube — often before they hit trade publications or newsletters. A creator doing a breakdown of a Google Ads UI change two hours after it ships is usually ahead of the official documentation. Whether you're a solo marketer or working at a startup, <a href="/blog/youtube-summarizer-for-entrepreneurs" style="color: #ff0055; font-weight: 600;">founders and entrepreneurs</a> use the same approach to stay ahead. A marketer who can efficiently extract insights from this content stays ahead of practitioners who can't.</p>
+      <p>Marketing moves fast. Platform algorithm changes, new ad formats, emerging channels, creative trends, and regulatory shifts are all covered heavily on YouTube — often before they hit trade publications or newsletters. A creator doing a breakdown of a Google Ads UI change two hours after it ships is usually ahead of the official documentation. Whether you're a solo marketer or working at a startup, <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">founders and entrepreneurs</a> use the same approach to stay ahead. A marketer who can efficiently extract insights from this content stays ahead of practitioners who can't.</p>
 
       <p>This guide covers the most valuable content categories for marketers, how to use summarization for competitive creative intelligence, and a team workflow that compounds knowledge across the marketing org.</p>
 
@@ -7042,7 +7042,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Format the citation with author, channel, title, publication date, URL, and timestamp</li>
         <li>Do not cite from the summary — cite from the primary source</li>
       </ol>
-      <p>For academic contexts specifically, see <a href="/blog/ai-tool-to-summarize-academic-youtube-videos" style="color: #ff0055; font-weight: 600;">AI tools for academic YouTube videos</a>. Journalists face similar video research challenges — see the <a href="/blog/youtube-summarizer-for-journalists" style="color: #ff0055; font-weight: 600;">journalist's summarization guide</a> for complementary research workflows. For a broader productivity view, the guide on <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a> covers the full workflow. Make video research as rigorous as text research: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start with YT Summarizer</a>.</p>
+      <p>For academic contexts specifically, see <a href="/blog/ai-tool-to-summarize-academic-youtube-videos" style="color: #ff0055; font-weight: 600;">AI tools for academic YouTube videos</a>. Journalists face similar video research challenges — see the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">journalist's summarization guide</a> for complementary research workflows. For a broader productivity view, the guide on <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a> covers the full workflow. Make video research as rigorous as text research: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start with YT Summarizer</a>.</p>
     `
   },
   'youtube-summarizer-for-hr-professionals': {
@@ -7069,7 +7069,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Training content triage:</strong> Efficiently identify which YouTube training videos to recommend or assign to employees</li>
       </ul>
       <h2>Staying Current Without Overwhelm</h2>
-      <p>HR functions that process video content through summarization stay better informed on rapid regulatory changes — employment law in particular — while spending a fraction of the time on video consumption. For leadership and executive teams, see how <a href="/blog/youtube-summarizer-for-entrepreneurs" style="color: #ff0055; font-weight: 600;">entrepreneurs use YouTube summarizers</a> to drive growth. HR teams managing employee learning programs will find the <a href="/blog/youtube-video-summarizer-for-training-videos" style="color: #ff0055; font-weight: 600;">YouTube summarizer for training videos</a> guide directly applicable to onboarding and L&D workflows. For a complete guide to reducing video consumption time, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p>HR functions that process video content through summarization stay better informed on rapid regulatory changes — employment law in particular — while spending a fraction of the time on video consumption. For leadership and executive teams, see how <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">entrepreneurs use YouTube summarizers</a> to drive growth. HR teams managing employee learning programs will find the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for training videos</a> guide directly applicable to onboarding and L&D workflows. For a complete guide to reducing video consumption time, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
       <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — HR intelligence at the speed your role demands.</p>
     `
   },
@@ -7206,7 +7206,7 @@ tags: [tag1, tag2]
       </ol>
       <p>This workflow gives you full coverage of 10 videos per week for roughly the same time you'd previously spend deeply processing 2. The total volume goes up, but so does the quality of attention on the videos that actually deserve it.</p>
 
-      <p>New to AI video summarization? Start with <a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">what a YouTube summarizer is</a>. To build a complete note-taking system around video summaries, see <a href="/blog/how-to-use-youtube-summaries-for-note-taking" style="color: #ff0055; font-weight: 600;">how to use YouTube summaries for note-taking</a>. For accuracy considerations that shape when to trust a summary vs. verify it manually, see <a href="/blog/how-accurate-are-youtube-video-summaries" style="color: #ff0055; font-weight: 600;">how accurate YouTube video summaries are</a>.</p>
+      <p>New to AI video summarization? Start with <a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">what a YouTube summarizer is</a>. To build a complete note-taking system around video summaries, see <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">how to use YouTube summaries for note-taking</a>. For accuracy considerations that shape when to trust a summary vs. verify it manually, see <a href="/blog/how-accurate-are-youtube-video-summaries" style="color: #ff0055; font-weight: 600;">how accurate YouTube video summaries are</a>.</p>
       <p>Start your AI-assisted research workflow: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a>.</p>
     `
   },
@@ -7315,7 +7315,7 @@ tags: [tag1, tag2]
       <h2>Async Knowledge Sharing with Summaries</h2>
       <p>Remote teams that build a culture of sharing video summaries multiply the value of individual learning. One person finds a valuable YouTube resource, summarizes it, and shares it in Slack — the whole team benefits without everyone needing to watch the video.</p>
       <h2>Building a Remote Learning Routine</h2>
-      <p>Effective remote workers set aside 30 minutes per day for focused learning. With summarization, this 30 minutes covers 5–10 videos worth of knowledge instead of 1–2. Compound this over a year and the knowledge accumulation is substantial. Remote PMs and engineers will find role-specific learning strategies in the <a href="/blog/youtube-summarizer-for-product-managers" style="color: #ff0055; font-weight: 600;">product manager</a> and <a href="/blog/youtube-summarizer-for-engineers" style="color: #ff0055; font-weight: 600;">software engineer</a> summarization guides. For the complete AI productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p>Effective remote workers set aside 30 minutes per day for focused learning. With summarization, this 30 minutes covers 5–10 videos worth of knowledge instead of 1–2. Compound this over a year and the knowledge accumulation is substantial. Remote PMs and engineers will find role-specific learning strategies in the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">product manager</a> and <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">software engineer</a> summarization guides. For the complete AI productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
       <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> and build a remote learning practice that actually scales.</p>
     `
   },
@@ -7373,7 +7373,7 @@ tags: [tag1, tag2]
       </ol>
       <p>You've processed 150+ minutes of content in ~40 minutes and ended up with higher-quality takeaways than casually watching whichever talk surfaced first.</p>
 
-      <p>Want to know how reliable these summaries are? See <a href="/blog/how-accurate-are-youtube-video-summaries" style="color: #ff0055; font-weight: 600;">how accurate AI YouTube summaries</a> really are. You can also use summaries for <a href="/blog/how-to-use-youtube-summaries-for-note-taking" style="color: #ff0055; font-weight: 600;">structured note-taking</a> from talks you want to remember.</p>
+      <p>Want to know how reliable these summaries are? See <a href="/blog/how-accurate-are-youtube-video-summaries" style="color: #ff0055; font-weight: 600;">how accurate AI YouTube summaries</a> really are. You can also use summaries for <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">structured note-taking</a> from talks you want to remember.</p>
 
       <p>Explore the TED library at scale: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Summarize any TED Talk with YT Summarizer</a> in seconds.</p>
     `
@@ -7404,7 +7404,7 @@ tags: [tag1, tag2]
         <li>Build a searchable PM knowledge base from accumulated summaries</li>
       </ol>
       <h2>User Empathy Research</h2>
-      <p>YouTube contains user-generated content where real customers discuss products, share frustrations, and describe workflows. Summarizing this content gives PMs direct access to unfiltered user voice at scale. For adjacent roles, see how <a href="/blog/youtube-summarizer-for-entrepreneurs" style="color: #ff0055; font-weight: 600;">founders and entrepreneurs</a> use YouTube summarization for strategic learning, and how <a href="/blog/youtube-summarizer-for-researchers" style="color: #ff0055; font-weight: 600;">researchers</a> process academic and expert video content. For the full productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p>YouTube contains user-generated content where real customers discuss products, share frustrations, and describe workflows. Summarizing this content gives PMs direct access to unfiltered user voice at scale. For adjacent roles, see how <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">founders and entrepreneurs</a> use YouTube summarization for strategic learning, and how <a href="/blog/youtube-summarizer-for-researchers" style="color: #ff0055; font-weight: 600;">researchers</a> process academic and expert video content. For the full productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
       <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — build the product intelligence edge your team needs.</p>
     `
   },
@@ -7432,7 +7432,7 @@ tags: [tag1, tag2]
         <li>Store the summary as your quick-reference cheat sheet</li>
       </ol>
       <h2>Conference Talk Intelligence</h2>
-      <p>Analytics conferences publish dozens of session recordings. Data teams that summarize the full conference output within days of release have a significant advantage in adopting new methodologies and tools before the broader community. Engineers who work alongside data teams will find similar workflows in the <a href="/blog/youtube-summarizer-for-engineers" style="color: #ff0055; font-weight: 600;">software engineer's summarization guide</a>. For a complete productivity overview, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p>Analytics conferences publish dozens of session recordings. Data teams that summarize the full conference output within days of release have a significant advantage in adopting new methodologies and tools before the broader community. Engineers who work alongside data teams will find similar workflows in the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">software engineer's summarization guide</a>. For a complete productivity overview, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
       <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> and stay ahead in the evolving analytics landscape.</p>
     `
   },
@@ -7456,7 +7456,7 @@ tags: [tag1, tag2]
       <h2>Client Content Recommendation Workflow</h2>
       <p>Coaches who want to recommend YouTube videos to clients can summarize each candidate video first to verify accuracy and appropriate complexity level. This prevents clients from encountering misinformation while also saving the coach from watching every video in full.</p>
       <h2>Continuing Education Efficiency</h2>
-      <p>Fitness certifications require continuing education hours. YouTube webinars and conference recordings count for many certifications. Summarizing these first lets coaches efficiently identify which recordings are worth the full watch for CE credit purposes. For a client-focused perspective on fitness video summarization, see <a href="/blog/fitness-video-summaries-get-the-workout-plan-faster" style="color: #ff0055; font-weight: 600;">fitness video summaries for workout planning</a> — a complementary guide for extracting workout protocols quickly. For a broader overview of professional time savings with AI tools, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p>Fitness certifications require continuing education hours. YouTube webinars and conference recordings count for many certifications. Summarizing these first lets coaches efficiently identify which recordings are worth the full watch for CE credit purposes. For a client-focused perspective on fitness video summarization, see <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">fitness video summaries for workout planning</a> — a complementary guide for extracting workout protocols quickly. For a broader overview of professional time savings with AI tools, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
       <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — keep your coaching practice evidence-based and current.</p>
     `
   },
@@ -7502,7 +7502,7 @@ tags: [tag1, tag2]
         <li><strong>Students</strong> use them to review recorded lectures, skim supplementary videos, and build study guides. See our <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">YouTube summarizer for students guide</a>.</li>
         <li><strong>Researchers and journalists</strong> summarize interviews, press conferences, and long-form talks to extract claims and quotes.</li>
         <li><strong>Professionals</strong> stay current in their field without watching every podcast or conference talk end-to-end.</li>
-        <li><strong>Content creators</strong> use them for competitor research, repurposing, and keeping up with industry news. See our <a href="/blog/youtube-summarizer-for-content-creators" style="color: #ff0055; font-weight: 600;">content creator guide</a>.</li>
+        <li><strong>Content creators</strong> use them for competitor research, repurposing, and keeping up with industry news. See our <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">content creator guide</a>.</li>
         <li><strong>Language learners</strong> use them to pre-read the content of a foreign-language video before watching, for comprehension.</li>
         <li><strong>Accessibility users</strong> who prefer reading over watching video use summarizers as a primary consumption interface.</li>
       </ul>
@@ -7539,7 +7539,7 @@ tags: [tag1, tag2]
     metaDescription: 'Podcasters use AI YouTube summarization to research topics, prep guest interviews, analyze competitor shows, and find content angles faster.',
     date: '2026-03-18',
     content: `
-      <p>Podcasters are content researchers by necessity — much like <a href="/blog/youtube-summarizer-for-content-creators" style="color: #ff0055; font-weight: 600;">content creators broadly</a> — finding angles, prepping guest backgrounds, fact-checking claims, and staying current in their niche. YouTube is a primary research resource, and AI summarization makes it dramatically more efficient. The podcasters who consistently ship differentiated episodes aren't necessarily the best interviewers — they're the ones who walked into the recording room knowing things the audience (and often the guest) didn't expect them to know.</p>
+      <p>Podcasters are content researchers by necessity — much like <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">content creators broadly</a> — finding angles, prepping guest backgrounds, fact-checking claims, and staying current in their niche. YouTube is a primary research resource, and AI summarization makes it dramatically more efficient. The podcasters who consistently ship differentiated episodes aren't necessarily the best interviewers — they're the ones who walked into the recording room knowing things the audience (and often the guest) didn't expect them to know.</p>
 
       <h2>How Podcasters Use YouTube Summarization</h2>
       <ul>
@@ -7580,9 +7580,9 @@ tags: [tag1, tag2]
       </ol>
 
       <h2>Show Notes and Repurposing</h2>
-      <p>Show notes are the most underrated growth lever in podcasting. Rich, searchable show notes pull in long-tail search traffic for years. Summarize your own episode, add chapter markers, link to every resource mentioned, and pull 3–5 quotable moments into the notes. This turns every episode into a search-indexable asset rather than an audio file that disappears from feeds after two weeks. For the repurposing perspective, see <a href="/blog/youtube-summarizer-for-content-creators" style="color: #ff0055; font-weight: 600;">YouTube summarization for content creators</a>.</p>
+      <p>Show notes are the most underrated growth lever in podcasting. Rich, searchable show notes pull in long-tail search traffic for years. Summarize your own episode, add chapter markers, link to every resource mentioned, and pull 3–5 quotable moments into the notes. This turns every episode into a search-indexable asset rather than an audio file that disappears from feeds after two weeks. For the repurposing perspective, see <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">YouTube summarization for content creators</a>.</p>
 
-      <p>Journalists use similar research workflows — see the <a href="/blog/youtube-summarizer-for-journalists" style="color: #ff0055; font-weight: 600;">journalist's YouTube summarization guide</a> for complementary source research techniques. For the full time-savings playbook, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>. If your podcast covers interviews specifically for market or user research, the <a href="/blog/summarize-youtube-interviews-for-market-research" style="color: #ff0055; font-weight: 600;">market research interview summarization</a> guide is directly relevant.</p>
+      <p>Journalists use similar research workflows — see the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">journalist's YouTube summarization guide</a> for complementary source research techniques. For the full time-savings playbook, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>. If your podcast covers interviews specifically for market or user research, the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">market research interview summarization</a> guide is directly relevant.</p>
       <p>Research smarter, record better: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a>.</p>
     `
   },
@@ -7609,7 +7609,7 @@ tags: [tag1, tag2]
         <li>Webinar content reveals the vendors and approaches they're already exploring</li>
       </ul>
       <h2>Sales Enablement at Scale</h2>
-      <p>Sales enablement teams can use video summarization to efficiently process and distribute competitive intelligence. One person summarizes; the whole team has the insight before their next call cycle. For cross-functional alignment, see how <a href="/blog/youtube-summarizer-for-marketers" style="color: #ff0055; font-weight: 600;">marketers use YouTube summarization</a> for competitive creative intelligence, and how <a href="/blog/youtube-summarizer-for-entrepreneurs" style="color: #ff0055; font-weight: 600;">founders and entrepreneurs</a> use it to stay ahead on market trends. For the full productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p>Sales enablement teams can use video summarization to efficiently process and distribute competitive intelligence. One person summarizes; the whole team has the insight before their next call cycle. For cross-functional alignment, see how <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">marketers use YouTube summarization</a> for competitive creative intelligence, and how <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">founders and entrepreneurs</a> use it to stay ahead on market trends. For the full productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
       <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — walk into every call better informed than your competition.</p>
     `
   },
@@ -7636,7 +7636,7 @@ tags: [tag1, tag2]
       </ul>
       <h2>Building a Reading Intelligence System</h2>
       <p>Summarize book review videos for every title on your reading list before you decide the reading order. The summaries help you prioritize which books to read fully vs. just understand at a conceptual level.</p>
-      <p>Related: <a href="/blog/how-to-summarize-ted-talks" style="color: #ff0055; font-weight: 600;">summarizing TED talks</a> and <a href="/blog/youtube-summarizer-for-newsletter-content" style="color: #ff0055; font-weight: 600;">using summaries for newsletter content</a>.</p>
+      <p>Related: <a href="/blog/how-to-summarize-ted-talks" style="color: #ff0055; font-weight: 600;">summarizing TED talks</a> and <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">using summaries for newsletter content</a>.</p>
 
       <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> on your next YouTube book review.</p>
     `
@@ -7691,7 +7691,7 @@ tags: [tag1, tag2]
         <li>Watch the most relevant 1–2 videos in full for deeper analysis</li>
       </ol>
       <h2>Client Education</h2>
-      <p>Real estate agents who recommend YouTube resources to clients can summarize each video first to verify it's accurate, appropriate for the client's situation, and not contradicting the agent's guidance. Investors looking to go deeper on financial video content should see the <a href="/blog/youtube-summarizer-for-investor-videos" style="color: #ff0055; font-weight: 600;">YouTube summarizer for investor videos</a> guide for earnings calls, analyst commentary, and investment thesis research. For the full professional productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p>Real estate agents who recommend YouTube resources to clients can summarize each video first to verify it's accurate, appropriate for the client's situation, and not contradicting the agent's guidance. Investors looking to go deeper on financial video content should see the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for investor videos</a> guide for earnings calls, analyst commentary, and investment thesis research. For the full professional productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
       <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — stay ahead in the real estate market.</p>
     `
   },
@@ -7754,7 +7754,7 @@ tags: [tag1, tag2]
         <li><strong>Quarterly (half-day):</strong> Full triage of a major conference. Update your "technologies to watch" list.</li>
       </ul>
 
-      <p>Data engineers and analytics-focused developers will find parallel workflows in the <a href="/blog/youtube-summarizer-for-data-analysts" style="color: #ff0055; font-weight: 600;">data analyst's summarization guide</a>. For framework- and language-specific workflows, see <a href="/blog/python-tutorial-video-summary-learn-faster" style="color: #ff0055; font-weight: 600;">Python tutorial summaries</a>, <a href="/blog/javascript-tutorial-video-summary-code-faster" style="color: #ff0055; font-weight: 600;">JavaScript tutorial summaries</a>, and <a href="/blog/react-tutorial-video-summary-build-faster" style="color: #ff0055; font-weight: 600;">React tutorial summaries</a>. For the complete productivity overview, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p>Data engineers and analytics-focused developers will find parallel workflows in the <a href="/blog/youtube-summarizer-for-data-analysts" style="color: #ff0055; font-weight: 600;">data analyst's summarization guide</a>. For framework- and language-specific workflows, see <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">Python tutorial summaries</a>, <a href="/blog/javascript-tutorial-video-summary-code-faster" style="color: #ff0055; font-weight: 600;">JavaScript tutorial summaries</a>, and <a href="/blog/react-tutorial-video-summary-build-faster" style="color: #ff0055; font-weight: 600;">React tutorial summaries</a>. For the complete productivity overview, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
       <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — learn more, scroll less.</p>
     `
   },
@@ -7778,7 +7778,7 @@ tags: [tag1, tag2]
       <h2>Inspiration vs. Methodology</h2>
       <p>Not all design content needs to be watched — methodology and process content (how to run a design sprint, how to present to stakeholders) summarizes well. Visual portfolio reviews and aesthetic demonstrations need to be watched for the visual elements. Know which you need before hitting play.</p>
       <h2>Design Research Intelligence</h2>
-      <p>Summarizing competitor product demo videos gives designers insight into UX patterns, interaction models, and design language that competing products are using. This competitive design research is most efficiently done through summarization. Designers who collaborate with engineers and PMs will find complementary workflows in the <a href="/blog/youtube-summarizer-for-engineers" style="color: #ff0055; font-weight: 600;">software engineer</a> and <a href="/blog/youtube-summarizer-for-product-managers" style="color: #ff0055; font-weight: 600;">product manager</a> summarization guides. For the full AI productivity overview, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p>Summarizing competitor product demo videos gives designers insight into UX patterns, interaction models, and design language that competing products are using. This competitive design research is most efficiently done through summarization. Designers who collaborate with engineers and PMs will find complementary workflows in the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">software engineer</a> and <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">product manager</a> summarization guides. For the full AI productivity overview, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
       <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — design better by learning faster.</p>
     `
   },
@@ -7949,7 +7949,7 @@ tags: [tag1, tag2]
         <li><strong>Monthly:</strong> Audit your saved summaries to confirm the capture system is actually building useful knowledge, not just accumulating notes</li>
       </ol>
 
-      <p>Students see some of the highest returns from this workflow — see the <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">YouTube summarizer for students</a> guide for study-specific strategies. For professionals, the <a href="/blog/business-video-summaries-for-executives" style="color: #ff0055; font-weight: 600;">executive video summaries</a> guide covers high-leverage work use cases.</p>
+      <p>Students see some of the highest returns from this workflow — see the <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">YouTube summarizer for students</a> guide for study-specific strategies. For professionals, the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">executive video summaries</a> guide covers high-leverage work use cases.</p>
 
       <p>Start reclaiming your time: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> and experience the difference immediately.</p>
     `
@@ -8119,7 +8119,7 @@ tags: [tag1, tag2]
         <li>Watch only those in full, using the summary for the rest</li>
       </ol>
       <h2>Group Study Enhancement</h2>
-      <p>Study groups can divide responsibility — each person summarizes different videos on the shared topic, then combines summaries to build a comprehensive shared knowledge base. 5 people processing 5 videos each covers 25 videos in the time it would take one person to watch 5. For maximizing tutorial content specifically, see how to <a href="/blog/summarize-youtube-tutorials-for-study" style="color: #ff0055; font-weight: 600;">summarize YouTube tutorials for study</a>, and visit the <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">main student summarization guide</a> for the full picture.</p>
+      <p>Study groups can divide responsibility — each person summarizes different videos on the shared topic, then combines summaries to build a comprehensive shared knowledge base. 5 people processing 5 videos each covers 25 videos in the time it would take one person to watch 5. For maximizing tutorial content specifically, see how to <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">summarize YouTube tutorials for study</a>, and visit the <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">main student summarization guide</a> for the full picture.</p>
       <p>Ace your studies with smarter video research: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> today.</p>
     `
   },
@@ -8148,7 +8148,7 @@ tags: [tag1, tag2]
       </ul>
       <h2>News That Still Needs to Be Watched</h2>
       <p>Breaking news with live footage, emotional testimony that requires human judgment, and complex visual evidence (satellite imagery, data visualizations) often requires full video watching. Summaries tell you which stories have these elements.</p>
-      <p>Related: <a href="/blog/youtube-summarizer-for-journalists" style="color: #ff0055; font-weight: 600;">YouTube summarizer for journalists</a> and the broader guide on <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p>Related: <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for journalists</a> and the broader guide on <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
 
       <p>Stay informed, stay balanced: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> for smarter news consumption.</p>
     `
@@ -8260,7 +8260,7 @@ tags: [tag1, tag2]
       <h2>The Real Cost of "Free"</h2>
       <p>Free tools have hidden costs: time spent on manual copy-paste workflows, inconsistent output that you need to reformat, usage caps that force you to switch tools mid-study session, and the mental overhead of juggling multiple workarounds. A pay-once purchase eliminates all of these and pays for itself in the first week of exam season. For the broader comparison including subscription tools, see <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">8 YouTube summarizers compared</a>.</p>
 
-      <p>For student-specific study strategies, see our <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">YouTube summarizer for students guide</a> and <a href="/blog/how-to-use-youtube-summaries-for-note-taking" style="color: #ff0055; font-weight: 600;">how to use YouTube summaries for note-taking</a>.</p>
+      <p>For student-specific study strategies, see our <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">YouTube summarizer for students guide</a> and <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">how to use YouTube summaries for note-taking</a>.</p>
       <p>Stop paying monthly for study tools: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer — pay-once, no subscription</a>.</p>
     `
   },
@@ -8320,7 +8320,7 @@ tags: [tag1, tag2]
       </ol>
       <p>This turns your YouTube watch habit from passive consumption into an actual knowledge system that compounds over time.</p>
 
-      <p>For deeper note-taking strategies, see <a href="/blog/how-to-use-youtube-summaries-for-note-taking" style="color: #ff0055; font-weight: 600;">how to use YouTube summaries for note-taking</a>. For the broader productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p>For deeper note-taking strategies, see <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">how to use YouTube summaries for note-taking</a>. For the broader productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
       <p>Start building your video knowledge base: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a>.</p>
     `
   },
@@ -8660,7 +8660,7 @@ tags: [tag1, tag2]
       <h2>Other Video Summarizers Worth Knowing</h2>
       <p>The main alternatives are Eightify (browser extension, 3 free summaries per week, then subscription) and NotebookLM (Google, better for research than quick gaming use). For a full comparison see <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: #ff0055; font-weight: 600;">best free YouTube summarizers with no subscription</a>.</p>
 
-      <p>For other long-form content use cases, see how people use summarization for <a href="/blog/fitness-workout-video-summaries-get-results-faster" style="color: #ff0055; font-weight: 600;">fitness videos</a> and <a href="/blog/youtube-video-too-long-how-to-get-key-points" style="color: #ff0055; font-weight: 600;">any video that's too long</a>.</p>
+      <p>For other long-form content use cases, see how people use summarization for <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">fitness videos</a> and <a href="/blog/youtube-video-too-long-how-to-get-key-points" style="color: #ff0055; font-weight: 600;">any video that's too long</a>.</p>
 
       <p>Ready to stop watching 2-hour guides for 10 minutes of useful information? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — sign up, paste a gaming video URL, and get the key points in seconds.</p>
     `
@@ -9605,9 +9605,9 @@ tags: [tag1, tag2]
 
       <h2>Related Reading</h2>
       <ul>
-        <li><a href="/blog/youtube-summarizer-for-entrepreneurs" style="color: #ff0055; font-weight: 600;">YouTube summarizer for entrepreneurs</a></li>
+        <li><a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for entrepreneurs</a></li>
         <li><a href="/blog/youtube-summarizer-conference-talks-keynotes" style="color: #ff0055; font-weight: 600;">YouTube summarizer for conference talks and keynotes</a></li>
-        <li><a href="/blog/business-video-summaries-for-executives" style="color: #ff0055; font-weight: 600;">Business video summaries for executives</a></li>
+        <li><a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">Business video summaries for executives</a></li>
       </ul>
 
       <p>Your next client call starts with research. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — paste a video from one of your key industry channels and get the takeaways in under a minute.</p>
@@ -9772,8 +9772,8 @@ tags: [tag1, tag2]
 
       <h2>Related Reading</h2>
       <ul>
-        <li><a href="/blog/youtube-summarizer-for-financial-professionals" style="color: #ff0055; font-weight: 600;">YouTube summarizer for financial professionals</a></li>
-        <li><a href="/blog/youtube-summarizer-for-lawyers" style="color: #ff0055; font-weight: 600;">YouTube summarizer for lawyers</a></li>
+        <li><a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for financial professionals</a></li>
+        <li><a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for lawyers</a></li>
         <li><a href="/blog/youtube-summarizer-for-researchers" style="color: #ff0055; font-weight: 600;">YouTube summarizer for researchers</a></li>
       </ul>
 
@@ -9783,7 +9783,11 @@ tags: [tag1, tag2]
 }
 
 export async function generateStaticParams() {
-  return [...new Set([...Object.keys(posts), ...Object.keys(postOverrides)])].map((slug) => ({ slug }))
+  // Pruned slugs are excluded from the build — their URLs are 301-redirected in vercel.json
+  // to topical hubs, so no page needs to exist for them.
+  return [...new Set([...Object.keys(posts), ...Object.keys(postOverrides)])]
+    .filter((slug) => !PRUNED_SLUGS.has(slug))
+    .map((slug) => ({ slug }))
 }
 
 // NOINDEX_SLUGS now lives in app/lib/posts-list.ts (single source of truth, shared with

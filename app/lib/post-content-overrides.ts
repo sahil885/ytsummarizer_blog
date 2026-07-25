@@ -3,7 +3,9 @@
 // 10k-line file isn't edited per-post. Each entry overrides content (+ metaDescription).
 const P = 'https://ytsummarizer.app?utm_source=blog&utm_medium=referral&utm_campaign=post_body'
 
-export const postOverrides: Record<string, { content: string; metaDescription?: string; title?: string; date?: string }> = {
+// `content` is optional so an entry can override only the title/metaDescription of a
+// page-1 post (CTR tuning) without duplicating its body.
+export const postOverrides: Record<string, { content?: string; metaDescription?: string; title?: string; date?: string }> = {
   'how-to-summarize-youtube-videos': {
     title: 'How to Summarize a YouTube Video: Every Method Tested (2026 Guide)',
     metaDescription: "How to summarize a YouTube video in 2026: the one-minute URL method, the free ChatGPT workflow, Gemini, NotebookLM, and extensions — tested, timed, and honestly compared.",
@@ -86,7 +88,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
       <p>Extensions like Glarity inject a summary panel next to the video. Great while browsing on desktop Chrome; the tradeoffs are permissions, breakage when YouTube updates its interface, and no mobile support. Comparison: <a href="/blog/youtube-summarizer-vs-glarity">web app vs extension</a>.</p>
 
       <h2>Method 6: Manual notes (when retention matters most)</h2>
-      <p>For material you need to internalize — not just triage — watching at 1.5–2x and taking your own notes still wins on retention. The honest comparison of speed vs memory is here: <a href="/blog/youtube-summarizer-vs-manual-notes">AI summaries vs manual notes</a>. A strong hybrid: summarize first to map the content, then watch only the sections worth deep attention (see <a href="/blog/how-to-use-youtube-summaries-for-note-taking">the note-taking workflow</a>).</p>
+      <p>For material you need to internalize — not just triage — watching at 1.5–2x and taking your own notes still wins on retention. The honest comparison of speed vs memory is here: <a href="/blog/youtube-summarizer-vs-manual-notes">AI summaries vs manual notes</a>. A strong hybrid: summarize first to map the content, then watch only the sections worth deep attention (see <a href="/blog/youtube-video-notes-best-apps-methods">the note-taking workflow</a>).</p>
 
       <h2>Which method should you pick?</h2>
       <ul>
@@ -257,7 +259,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Jump to timestamps.</strong> Use the summary to open only the section relevant to your matter.</li>
         <li><strong>Save to your matter notes.</strong> Export the outline so it's searchable when the issue resurfaces months later.</li>
       </ol>
-      <p>If you're studying for the bar, our <a href="/blog/youtube-summarizer-for-law-students">workflow for law students</a> covers case briefs and doctrine videos in detail.</p>
+      <p>If you're studying for the bar, our <a href="/blog/youtube-summarizer-for-students">workflow for law students</a> covers case briefs and doctrine videos in detail.</p>
 
       <h2>The verification rule every lawyer already knows</h2>
       <p>Never cite a summary. AI is excellent at compressing reasoning and surfacing the structure of an argument, but it can misstate a holding or flatten a nuance that decides a case. Treat the summary as the equivalent of a junior associate's quick read: useful for triage, never authority. Confirm any rule, citation, or holding against the primary source before it enters a brief or advice. Our <a href="/blog/youtube-summarizer-accuracy-test-2026">accuracy testing</a> shows precisely where AI tends to slip — usually on the fine distinctions lawyers care about most.</p>
@@ -408,7 +410,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Capture references and timestamps.</strong> Note papers mentioned and the moments you'll want to re-watch.</li>
         <li><strong>Export to your reference manager or notes.</strong> Our guide to <a href="/blog/export-youtube-summaries-to-notion">exporting summaries to Notion</a> shows one durable setup.</li>
       </ol>
-      <p>Graduate researchers may also want the <a href="/blog/youtube-summarizer-for-phd-students">PhD-focused workflow</a>, which covers seminars and qualifying-exam prep.</p>
+      <p>Graduate researchers may also want the <a href="/blog/youtube-transcript-summarizer-for-research">PhD-focused workflow</a>, which covers seminars and qualifying-exam prep.</p>
 
       <h2>Scholarly rigor still applies</h2>
       <p>A summary is a finding aid, not a citable source. Quote and cite the talk or the underlying paper, not the AI output, and verify any specific number, claim, or attribution against what's actually said in the video. AI can occasionally misattribute a point or compress away a caveat — precisely the things that matter in research. Our <a href="/blog/youtube-summarizer-accuracy-test-2026">accuracy analysis</a> details the limits so you know what to double-check.</p>
@@ -495,7 +497,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
       <p>Three issues catch most teams integrating summarization. The first is uncaptioned videos: if your pipeline assumes a transcript always exists, you'll ship hallucinated summaries the day a user submits a caption-less upload — always handle the empty-transcript case explicitly. The second is cost runaway: without caching by video ID, a popular video summarized by a thousand users costs you a thousand model calls; cache first, summarize once. The third is long-video truncation: naive implementations silently drop everything past the context window, so a two-hour lecture gets summarized from its first twenty minutes. Map these failure modes before launch, surface clear statuses for each, and you'll avoid the support tickets that come from a summary that looks confident but is quietly wrong.</p>
 
       <h2>Getting started</h2>
-      <p>The fastest way to understand the output you'd be integrating is to use the product directly first. <a href="${P}">Try YT Summarizer free</a> to see the summary structure on real videos, then evaluate whether to build or integrate. For developer-focused day-to-day use, our <a href="/blog/youtube-summarizer-for-developers">guide for developers</a> covers the workflows.</p>
+      <p>The fastest way to understand the output you'd be integrating is to use the product directly first. <a href="${P}">Try YT Summarizer free</a> to see the summary structure on real videos, then evaluate whether to build or integrate. For developer-focused day-to-day use, our <a href="/blog/save-time-on-youtube-with-ai">guide for developers</a> covers the workflows.</p>
     `,
   },
   'personal-finance-videos-get-the-tl-dr': {
@@ -524,7 +526,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Cross-check creators.</strong> Summarize two or three videos on the same question and compare.</li>
         <li><strong>Flag anything actionable for verification.</strong> Confirm specifics before you move money.</li>
       </ol>
-      <p>If you manage money professionally, the <a href="/blog/youtube-summarizer-for-financial-advisors">workflow for financial advisors</a> goes deeper on market content and client prep.</p>
+      <p>If you manage money professionally, the <a href="/blog/save-time-on-youtube-with-ai">workflow for financial advisors</a> goes deeper on market content and client prep.</p>
 
       <h2>This is not financial advice — and neither is the video</h2>
       <p>A summary tells you what a creator said; it doesn't make the advice correct or right for you. Tax rules, contribution limits, and product details change and vary by country, and YouTube finance content ranges from excellent to sponsored hype. The biggest mistake is acting on a summarized "rule of thumb" without checking whether it applies to your situation. Use summaries to learn faster and compare ideas, then verify specifics with primary sources or a qualified professional before acting. Our <a href="/blog/youtube-summarizer-accuracy-test-2026">accuracy report</a> covers what AI captures well and what it doesn't.</p>
@@ -596,7 +598,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Jump to the timestamp</strong> for the one section you actually need.</li>
         <li><strong>Share it.</strong> Convert the summary into a brief so your team gets the insight without watching.</li>
       </ol>
-      <p>If you also juggle PMP-style prep or meeting recaps, the <a href="/blog/youtube-summarizer-for-project-managers">workflow for project managers</a> goes deeper, and our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared">tool comparison</a> covers which summarizers handle long interviews best.</p>
+      <p>If you also juggle PMP-style prep or meeting recaps, the <a href="/blog/save-time-on-youtube-with-ai">workflow for project managers</a> goes deeper, and our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared">tool comparison</a> covers which summarizers handle long interviews best.</p>
       <h2>Turn summaries into a decision log</h2>
       <p>The compounding win for PMs is institutional memory. When you summarize a competitor's launch video or a strategy talk and file it with the link and date, you build a searchable record of what you learned and when — the raw material for a future strategy doc or a "why we decided X" note. Over a quarter, those summaries become a private knowledge base your whole team can search instead of re-watching, which is exactly the kind of leverage PMs are supposed to create.</p>
       <h2>Where to stay critical</h2>
@@ -630,7 +632,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Capture principles, not just steps</strong> — the "why" behind a critique is what transfers to your own work.</li>
         <li><strong>Save the timestamp</strong> so you can re-watch the exact technique later.</li>
       </ol>
-      <p>If your work crosses into front-end, the <a href="/blog/youtube-summarizer-for-developers">guide for developers</a> is relevant, and our <a href="/blog/how-to-take-notes-from-youtube-videos-without-watching">note-taking method</a> pairs well with critique videos.</p>
+      <p>If your work crosses into front-end, the <a href="/blog/save-time-on-youtube-with-ai">guide for developers</a> is relevant, and our <a href="/blog/how-to-take-notes-from-youtube-videos-without-watching">note-taking method</a> pairs well with critique videos.</p>
       <h2>Build a swipe file of techniques</h2>
       <p>Designers think in references, and summaries make a great personal swipe file. Each time you summarize a strong tutorial or critique, save the key principles and the timestamp into a notes doc organized by topic — typography, layout, motion, research. Over time you build a searchable library of techniques in your own words, so the next time you face a layout problem you consult your notes instead of re-hunting YouTube. The summary is the capture step that makes that library actually happen.</p>
       <h2>Where summaries fall short</h2>
@@ -664,7 +666,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Summarize a competitor demo</strong> so you can handle "how are you different?" with specifics.</li>
         <li><strong>Save a one-page brief</strong> to your CRM note for the account.</li>
       </ol>
-      <p>For adjacent research, the workflows for <a href="/blog/youtube-summarizer-for-marketers">marketers</a> and <a href="/blog/youtube-summarizer-for-entrepreneurs">entrepreneurs</a> overlap heavily with sales intel.</p>
+      <p>For adjacent research, the workflows for <a href="/blog/save-time-on-youtube-with-ai">marketers</a> and <a href="/blog/save-time-on-youtube-with-ai">entrepreneurs</a> overlap heavily with sales intel.</p>
       <h2>Standardize prep across the team</h2>
       <p>The biggest team win is consistency. When every rep summarizes a prospect's latest talk into the same brief format — priorities, language, hooks, objections — your account notes become genuinely useful and onboarding new reps gets faster. Make "summarize the prospect's most recent public talk" a step in your pre-call checklist, and you raise the floor on prep quality without adding hours to anyone's day.</p>
       <h2>Verify before you quote it</h2>
@@ -698,7 +700,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Capture strategies as steps</strong> you can revisit when a deal calls for them.</li>
         <li><strong>Save summaries by topic</strong> so your market knowledge is searchable.</li>
       </ol>
-      <p>Since real estate and personal finance overlap, the <a href="/blog/personal-finance-videos-get-the-tl-dr">finance TL;DR workflow</a> and the <a href="/blog/youtube-summarizer-for-financial-advisors">advisor workflow</a> are useful companions.</p>
+      <p>Since real estate and personal finance overlap, the <a href="/blog/summarize-youtube-without-watching">finance TL;DR workflow</a> and the <a href="/blog/save-time-on-youtube-with-ai">advisor workflow</a> are useful companions.</p>
       <h2>Turn summaries into client value</h2>
       <p>Clients pay for guidance, and summaries help you deliver it faster. A short, plain-English note — "here's what this week's rate news means for your purchase" — drawn from a summarized market update positions you as on top of the market. Keep a running file of these and you have a head start on newsletters, social posts, and buyer/seller conversations, all sourced from videos you never had to watch end to end.</p>
       <h2>Verify the numbers and the law</h2>
@@ -766,7 +768,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Push tasks to your tool</strong> — see <a href="/blog/export-youtube-summaries-to-notion">exporting summaries to Notion</a> for one setup.</li>
         <li><strong>Archive the summary</strong> with the link so the decision is traceable later.</li>
       </ol>
-      <p>For recorded webinars specifically, the <a href="/blog/youtube-summarizer-for-business-webinars">business webinar workflow</a> goes deeper.</p>
+      <p>For recorded webinars specifically, the <a href="/blog/save-time-on-youtube-with-ai">business webinar workflow</a> goes deeper.</p>
       <h2>Make it your team's catch-up default</h2>
       <p>If your team records meetings, a shared summary turns every recording into a fast catch-up for anyone who couldn't attend — and a permanent, searchable record of what was decided. Instead of "watch the 60-minute recording," the norm becomes "read the summary, watch the 2 minutes that involve you." That's a meaningful reclaim of collective time across a whole team.</p>
       <h2>Confirm attributions and decisions</h2>
@@ -800,7 +802,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Link the timestamps</strong> for the few steps that really need the visual demo.</li>
         <li><strong>Store it in your wiki</strong> so the process is searchable, not locked in a video.</li>
       </ol>
-      <p>This pairs naturally with the <a href="/blog/youtube-summarizer-for-hr-professionals">HR workflow</a> and with <a href="/blog/build-youtube-knowledge-base-video-notes-system">building a video knowledge base</a>.</p>
+      <p>This pairs naturally with the <a href="/blog/save-time-on-youtube-with-ai">HR workflow</a> and with <a href="/blog/youtube-video-notes-best-apps-methods">building a video knowledge base</a>.</p>
       <h2>Build an onboarding library</h2>
       <p>The real payoff is cumulative. Each training video you summarize into a job aid becomes a permanent onboarding asset, so the next new hire reads a clear SOP instead of watching the same hour of video. Organize these by role or system and you turn a pile of training links into a structured, searchable handbook — built from content you already had, just made usable.</p>
       <h2>Verify procedures before they become policy</h2>
@@ -834,7 +836,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Note what's claimed vs. confirmed</strong> so you know what's still developing.</li>
         <li><strong>Close the tab</strong> — you got what you needed without the spiral.</li>
       </ol>
-      <p>For deeper research, journalists may want the <a href="/blog/youtube-summarizer-for-journalists">journalist workflow</a>, and our <a href="/blog/how-to-take-notes-from-youtube-videos-without-watching">note-taking guide</a> helps when a story matters to you.</p>
+      <p>For deeper research, journalists may want the <a href="/blog/save-time-on-youtube-with-ai">journalist workflow</a>, and our <a href="/blog/how-to-take-notes-from-youtube-videos-without-watching">note-taking guide</a> helps when a story matters to you.</p>
       <h2>Read across the spectrum on purpose</h2>
       <p>Because summarizing is fast, it makes balanced consumption practical. Deliberately summarize coverage from outlets with different perspectives on the same story; the contrast is often more informative than any single video. Used this way, a summarizer isn't just a time-saver — it's a tool for breaking out of a single algorithmic feed and seeing how a story is being told from more than one angle.</p>
       <h2>Verify before you share</h2>
@@ -993,7 +995,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Turn it into a shareable brief</strong> so the team gets the value without the hour.</li>
         <li><strong>Archive it</strong> with the link so it's searchable later.</li>
       </ol>
-      <p>This pairs naturally with summarizing <a href="/blog/youtube-summarizer-for-meeting-recordings">meeting recordings</a> and building <a href="/blog/youtube-summarizer-for-hr-professionals">training job aids</a>.</p>
+      <p>This pairs naturally with summarizing <a href="/blog/youtube-summarizer-for-meeting-recordings">meeting recordings</a> and building <a href="/blog/save-time-on-youtube-with-ai">training job aids</a>.</p>
       <h2>Make webinars a team knowledge source</h2>
       <p>Most webinar knowledge evaporates because no one re-watches the recording. A consistent summary format — insights, action items, "worth a full watch? y/n" — turns your team's webinar attendance into a searchable knowledge base. Instead of one person watching and the insight dying in their inbox, the whole team gets the substance and can decide, per session, whether the full recording earns anyone's hour.</p>
       <h2>Verify commitments and numbers</h2>
@@ -1087,7 +1089,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Open only the segment</strong> that affects a decision you're making.</li>
         <li><strong>Share a three-bullet brief</strong> with your team rather than a long link.</li>
       </ol>
-      <p>The workflows for <a href="/blog/youtube-summarizer-for-entrepreneurs">entrepreneurs</a> and <a href="/blog/youtube-summarizer-conference-talks-keynotes">conference keynotes</a> overlap heavily with executive needs.</p>
+      <p>The workflows for <a href="/blog/save-time-on-youtube-with-ai">entrepreneurs</a> and <a href="/blog/youtube-summarizer-conference-talks-keynotes">conference keynotes</a> overlap heavily with executive needs.</p>
       <h2>Turn it into a leadership briefing habit</h2>
       <p>The highest-leverage use is institutional. If summarizing key talks becomes a small standing habit — yours or an assistant's — your leadership team can stay current on the industry from a shared, two-minute brief instead of everyone independently failing to watch the same keynote. Over a quarter, those briefs become a record of how the landscape moved and how you responded, which is exactly the context that makes strategy conversations sharper.</p>
       <h2>Judgment still required</h2>
@@ -1121,7 +1123,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Flag the specifics to verify</strong> in primary sources before acting.</li>
         <li><strong>Keep a file</strong> of theses so you can revisit how they played out.</li>
       </ol>
-      <p>For broader money content, the <a href="/blog/personal-finance-videos-get-the-tl-dr">personal-finance TL;DR workflow</a> and the <a href="/blog/youtube-summarizer-for-financial-advisors">advisor workflow</a> are useful companions.</p>
+      <p>For broader money content, the <a href="/blog/summarize-youtube-without-watching">personal-finance TL;DR workflow</a> and the <a href="/blog/save-time-on-youtube-with-ai">advisor workflow</a> are useful companions.</p>
       <h2>A note on hype detection</h2>
       <p>Compressing an investing video to its claims is a fast way to spot promotion. When the substance is "this stock will 10x" with no mechanism, a price target with no model, or a suspiciously urgent tone, the summary makes it obvious. The creators worth following summarize into specific, falsifiable arguments with numbers and risks; the rest summarize into vibes. Reading several this way trains your eye for the difference.</p>
       <h2>This is not financial advice</h2>
@@ -1155,7 +1157,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Compare a couple of sources</strong> to separate signal from reaction.</li>
         <li><strong>Save what's worth trying</strong> with the timestamp for the demo.</li>
       </ol>
-      <p>If your interest is more technical, the <a href="/blog/youtube-summarizer-for-ai-ml-researchers">workflow for AI/ML researchers</a> and the <a href="/blog/youtube-summarizer-for-developers">developer workflow</a> go deeper.</p>
+      <p>If your interest is more technical, the <a href="/blog/youtube-summarizer-for-ai-ml-researchers">workflow for AI/ML researchers</a> and the <a href="/blog/save-time-on-youtube-with-ai">developer workflow</a> go deeper.</p>
       <h2>Beat the hype cycle</h2>
       <p>The real value here is filtering. In a field where the same announcement spawns dozens of videos, summarizing two or three and comparing them is the fastest way to find the ground truth and skip the ten that add nothing. Over time you learn which channels survive being compressed to their substance — and which exist mainly to react — so you can prune your feed to the ones worth summarizing at all.</p>
       <h2>Verify capabilities before you rely on them</h2>
@@ -1289,7 +1291,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Capture quotes with timestamps</strong> so you can verify and cite them.</li>
         <li><strong>Open the full segment</strong> for the few moments worth close attention.</li>
       </ol>
-      <p>This pairs with the workflows for <a href="/blog/youtube-summarizer-for-product-managers">product managers</a> and <a href="/blog/youtube-summarizer-for-marketers">marketers</a>, who mine the same kind of signal.</p>
+      <p>This pairs with the workflows for <a href="/blog/save-time-on-youtube-with-ai">product managers</a> and <a href="/blog/save-time-on-youtube-with-ai">marketers</a>, who mine the same kind of signal.</p>
       <h2>Verify before it becomes a finding</h2>
       <p>A summary is a fast way to spot a theme, but before a quote or claim becomes a research finding, confirm it at the timestamp — tone and context matter, and a compressed quote can lose its qualifier. Treat summaries as a triage and pattern-finding layer, and verify the specifics you'll actually report. Our <a href="/blog/youtube-summarizer-accuracy-test-2026">accuracy report</a> covers the limits.</p>
             <h2>What summaries can't quantify</h2>
@@ -1321,7 +1323,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Open the segment</strong> most relevant to your market or product.</li>
         <li><strong>Share a short brief</strong> with your team instead of a 50-minute link.</li>
       </ol>
-      <p>This pairs naturally with <a href="/blog/business-video-summaries-for-executives">executive briefings</a> and summarizing <a href="/blog/youtube-summarizer-for-investor-videos">investor videos</a>.</p>
+      <p>This pairs naturally with <a href="/blog/save-time-on-youtube-with-ai">executive briefings</a> and summarizing <a href="/blog/save-time-on-youtube-with-ai">investor videos</a>.</p>
       <h2>Verify the numbers</h2>
       <p>For any figure you'll act on or repeat — a target, a growth rate, a margin — confirm it against the source presentation or the company's filings. A summary is an excellent first pass but can compress a forward-looking "aim" into something firmer than intended. Our <a href="/blog/youtube-summarizer-accuracy-test-2026">accuracy report</a> covers where to be careful.</p>
             <h2>Read what they don't say</h2>
@@ -1353,7 +1355,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Cross-check the numbers</strong> against the official filing or release.</li>
         <li><strong>Keep a file per company</strong> so you can track the story over quarters.</li>
       </ol>
-      <p>For analysis and market context, pair this with <a href="/blog/stock-market-video-summary-for-investors">stock-market video summaries</a> and the <a href="/blog/youtube-summarizer-for-financial-advisors">advisor workflow</a>.</p>
+      <p>For analysis and market context, pair this with <a href="/blog/stock-market-video-summary-for-investors">stock-market video summaries</a> and the <a href="/blog/save-time-on-youtube-with-ai">advisor workflow</a>.</p>
       <h2>Verify, and remember this is not advice</h2>
       <p>A summary tells you what management said, not whether it's accurate or what you should do about it. Always confirm figures against official filings, and make your own decisions or consult a qualified professional — IR communications are carefully framed, and a summary can't add the skepticism that good analysis requires. See our <a href="/blog/youtube-summarizer-accuracy-test-2026">accuracy report</a> for the limits.</p>
             <h2>Track the story across quarters</h2>
@@ -1385,7 +1387,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Verify exact quotes</strong> against the recording before citing them.</li>
         <li><strong>Archive the summary</strong> with the link as part of the public record you're building.</li>
       </ol>
-      <p>This pairs with the workflows for <a href="/blog/youtube-summarizer-for-journalists">journalists</a> and <a href="/blog/youtube-summarizer-for-lawyers">lawyers</a>, who rely on accurate sourcing.</p>
+      <p>This pairs with the workflows for <a href="/blog/save-time-on-youtube-with-ai">journalists</a> and <a href="/blog/save-time-on-youtube-with-ai">lawyers</a>, who rely on accurate sourcing.</p>
       <h2>Accuracy is non-negotiable here</h2>
       <p>For hearings, getting a quote or a decision wrong has real consequences. A summary is an excellent way to navigate a long session, but every statement you report or rely on must be confirmed at the source — these are exactly the high-stakes specifics where you verify, not assume. Our <a href="/blog/youtube-summarizer-accuracy-test-2026">accuracy report</a> explains where AI can misstate.</p>
             <h2>Build a citation-ready record</h2>
@@ -1417,7 +1419,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Capture techniques</strong> as a checklist you can apply to your draft.</li>
         <li><strong>Watch the few</strong> whose execution you want to study closely.</li>
       </ol>
-      <p>This pairs with the workflows for <a href="/blog/youtube-summarizer-for-content-creators">content creators</a> and turning videos into other formats like a <a href="/blog/turn-youtube-video-into-linkedin-post-with-ai">LinkedIn post</a>.</p>
+      <p>This pairs with the workflows for <a href="/blog/convert-youtube-video-to-blog-post-summary">content creators</a> and turning videos into other formats like a <a href="/blog/turn-youtube-video-into-linkedin-post-with-ai">LinkedIn post</a>.</p>
       <h2>Study structure, write your own words</h2>
       <p>A summary is for understanding how a reference works, not for borrowing its words — the point is to internalize the structure and then write something original in your voice. Use summaries to research patterns and techniques quickly, then do the actual creative work yourself. Our <a href="/blog/how-to-take-notes-from-youtube-videos-without-watching">note-taking guide</a> covers capturing what you learn.</p>
             <h2>Build a hooks-and-structure swipe file</h2>
@@ -1449,7 +1451,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Protect focus blocks</strong> by batching summaries instead of live-watching.</li>
         <li><strong>Save what's useful</strong> to your notes so it survives the week.</li>
       </ol>
-      <p>This pairs with summarizing <a href="/blog/youtube-summarizer-for-meeting-recordings">meeting recordings</a> and the <a href="/blog/youtube-summarizer-for-project-managers">project-manager workflow</a> for staying aligned.</p>
+      <p>This pairs with summarizing <a href="/blog/youtube-summarizer-for-meeting-recordings">meeting recordings</a> and the <a href="/blog/save-time-on-youtube-with-ai">project-manager workflow</a> for staying aligned.</p>
       <h2>Async is a feature — use it well</h2>
       <p>The real win for remote workers is control over when and how you consume information. Summaries turn "I have to watch this live" into "I'll read the key points when it suits my focus," which is exactly the async mindset distributed teams thrive on. Just verify anything you'll act on against the source, especially decisions from a recorded meeting. Our <a href="/blog/youtube-summarizer-accuracy-test-2026">accuracy report</a> covers what to double-check.</p>
             <h2>Set an async catch-up rhythm</h2>
@@ -1481,7 +1483,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Track policy</strong> by summarizing briefings instead of watching them all.</li>
         <li><strong>Share short briefs</strong> so the whole team benefits from one person's research.</li>
       </ol>
-      <p>This pairs with the <a href="/blog/youtube-summarizer-for-hr-professionals">HR and training workflow</a> and <a href="/blog/business-video-summaries-for-executives">leadership briefings</a> for your board and ED.</p>
+      <p>This pairs with the <a href="/blog/save-time-on-youtube-with-ai">HR and training workflow</a> and <a href="/blog/save-time-on-youtube-with-ai">leadership briefings</a> for your board and ED.</p>
       <h2>Verify the details that matter</h2>
       <p>For anything that drives a decision — grant eligibility, a deadline, a compliance requirement — confirm it against the official source before acting. A summary is the fast first pass that tells you a grant is worth pursuing; the guidelines are what you apply against. Our <a href="/blog/youtube-summarizer-accuracy-test-2026">accuracy report</a> covers where to double-check.</p>
             <h2>Multiply a small team's research</h2>
@@ -1979,6 +1981,113 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
       <p>If your current tool broke, don't wait for a fix that may never ship. <a href="https://yttranscript.app">Grab the transcript free with YT Transcript</a>, or <a href="${P}">get the summary directly with YT Summarizer</a> — both work today, no extension required.</p>
     `,
   },
+  'best-ai-youtube-summarizers-2026-8-tools-compared': {
+    title: 'Best AI Summarizer Tools 2026: 8 YouTube Summarizers Ranked & Priced',
+    metaDescription: 'We tested 8 AI summarizer tools on the same videos in 2026. Accuracy, long-video handling, and real prices — including which are genuinely free and which charge once instead of monthly.',
+    date: '2026-07-22',
+    content: `
+      <p><strong>Short version:</strong> for YouTube specifically, <a href="${P}">YT Summarizer</a> gives the best value if you summarize regularly — one-time credits from $9 that never expire, no subscription. <strong>NotebookLM</strong> is the best genuinely free option for research. <strong>Summarize.tech</strong> is the fastest zero-setup free tool. Everything else is a monthly subscription, and most of them meter you anyway.</p>
+
+      <p>We ran the same set of videos — a 12-minute tutorial, a 48-minute lecture, and a 2h 10m podcast — through eight AI summarizer tools in 2026 and compared output quality, long-video handling, and what each actually costs over a year.</p>
+
+      <h2>The comparison table</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Tool</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Pricing model</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Cost / year</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Handles 2h+ video</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Best for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background: #fff8f9;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>YT Summarizer</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>One-time credits</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>$9–$49 once</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Regular YouTube use, no subscription</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">NotebookLM</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$0</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Research across many sources</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Summarize.tech</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$0</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Partially</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Quick gist, no account</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Eightify</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">~$60–120</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Polished in-page extension</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">NoteGPT</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription (quotas)</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">~$100+</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Multi-format (PDF, slides)</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Mindgrasp</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription, no free tier</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">~$72–132</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Study tools, quizzes</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Notta</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">~$108–168</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes (minute caps)</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Meetings + multi-source video</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Glarity</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free extension</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$0+</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Varies</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">In-page summaries on desktop Chrome</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><em>Prices checked July 2026; subscription tiers and promotions change frequently — verify on each tool's pricing page.</em></p>
+
+      <h2>What separated the tools in testing</h2>
+      <h3>Long videos are where most tools fail</h3>
+      <p>The 2h 10m podcast was the real test. Several tools silently summarized only the first portion — the output looked complete and confident, but everything after roughly the first hour was missing. That's the single most dangerous failure mode in this category, because you can't tell from the summary that it happened. Tools built specifically around chunking the full transcript handled it; general chatbots and lighter extensions did not.</p>
+
+      <h3>Structure matters more than prose quality</h3>
+      <p>Nearly every tool produces readable English. The difference is whether you get a scannable structure — overview, key points, takeaways — or a wall of paragraphs. For studying and note-taking, structured output is worth far more than slightly nicer sentences.</p>
+
+      <h3>Accuracy caveat</h3>
+      <p>All of them occasionally blur specifics: numbers, names, and who said what in multi-speaker content. Treat any summary as a map to the video, not a citable source — verify figures against the original before you rely on them. We go deeper in our <a href="/blog/youtube-summarizer-accuracy-test-2026">accuracy test</a>.</p>
+
+      <h2>The pricing model is the real decision</h2>
+      <p>Most tools here charge $5–15/month, which is $60–180/year whether you summarize three videos or three hundred. That works if you use the tool every month. It doesn't if your usage is bursty — exam season, a research sprint, then quiet months.</p>
+      <p>One-time credits invert that: YT Summarizer's $19 pack is 200 summaries at under 10¢ each, and unused credits never expire. Full breakdown in <a href="/blog/how-much-do-youtube-summarizers-cost-2026">how much YouTube summarizers cost in 2026</a>.</p>
+
+      <h2>Which should you pick?</h2>
+      <ul>
+        <li><strong>You summarize YouTube weekly and hate subscriptions</strong> → <a href="${P}">YT Summarizer</a> (5 free, then from $9 once)</li>
+        <li><strong>You need free and you're doing research</strong> → NotebookLM</li>
+        <li><strong>You want a gist in 15 seconds with no account</strong> → Summarize.tech</li>
+        <li><strong>You need PDFs and slides in the same tool</strong> → NoteGPT (watch the quotas — see <a href="/blog/best-notegpt-alternative-2026">NoteGPT alternatives</a>)</li>
+        <li><strong>You want summaries on the YouTube page itself</strong> → Glarity or Eightify (see <a href="/blog/eightify-alternative-best-youtube-summarizers-without-subscription">Eightify alternatives</a>)</li>
+      </ul>
+
+      <p><a href="${P}">Try YT Summarizer free</a> — five summaries, no card — and run it against whichever tool you're considering on the same long video. The difference shows up fastest on anything over an hour.</p>
+    `,
+  },
   'best-notegpt-alternative-2026': {
     title: 'Best NoteGPT Alternative in 2026 (No Hidden Quotas, No Subscription)',
     metaDescription: "NoteGPT's 'unlimited' plans have quota limits that frustrate paying users. Here are the best NoteGPT alternatives for YouTube summaries in 2026 — including a pay-once option with credits that never expire.",
@@ -2064,9 +2173,18 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
       <p>If the thing pushing you off NoteGPT is paying monthly for "unlimited" that isn't, switching to another subscription just relocates the problem. A pay-once model removes it: with <a href="${P}">YT Summarizer</a>, $19 buys 200 summaries that are yours until you use them — no renewal, no quota, no counting. Try the 5 free summaries first and see if the output fits how you take notes. For the full pricing landscape, see <a href="/blog/how-much-do-youtube-summarizers-cost-2026">how much YouTube summarizers cost in 2026</a>.</p>
     `,
   },
+  // ---- CTR tuning for posts already ranking on page 1 (title/meta only, no content change) ----
+  'youtube-summarizer-not-working-common-problems-fixes': {
+    title: 'YouTube Summarizer Not Working? 9 Fixes (Most Take 30 Seconds)',
+    metaDescription: 'Your YouTube summarizer stopped working? The 9 real causes — missing captions, API changes, long videos, region blocks — each with the exact fix. Tested July 2026.',
+  },
+  'youtube-summarizer-vs-manual-notes': {
+    title: 'AI Summaries vs. Taking Notes by Hand: Which Helps You Remember More?',
+    metaDescription: 'AI summaries are 10x faster; handwritten notes win on recall. What the research says, when each one wins, and the hybrid workflow that gets you both.',
+  },
   'how-much-do-youtube-summarizers-cost-2026': {
-    title: 'How Much Do YouTube Summarizers Cost in 2026? (8 Tools Compared)',
-    metaDescription: 'YouTube summarizer pricing compared: Eightify, NoteGPT, Mindgrasp, Notta, Glarity, Summarize.tech and more. Subscription vs one-time pricing, free tiers, and the real yearly cost of each.',
+    title: 'How Much Do YouTube Summarizers Cost in 2026? Free to $49, Compared',
+    metaDescription: 'Real prices for 8 YouTube summarizers: Eightify, NoteGPT, Mindgrasp, Notta, Glarity, Summarize.tech and more. Yearly cost, free tiers, and cost per summary.',
     date: '2026-07-03',
     content: `
       <p>Most AI YouTube summarizers charge a monthly subscription between $5 and $15, which works out to $60–$180 per year whether you summarize three videos or three hundred. A few are free with limits, and at least one — YT Summarizer — uses one-time credit packs from $9 that never expire, with no subscription. Here's the full pricing picture for 2026, so you can do the math for your own usage before picking a tool.</p>
@@ -2251,7 +2369,7 @@ export const postOverrides: Record<string, { content: string; metaDescription?: 
         <li><strong>Coverage is the big one.</strong> "Some academic learning videos" excludes most of YouTube — conference talks, podcasts, product reviews, tutorials, interviews, and the long-tail content people most often want condensed.</li>
         <li><strong>Geography and language.</strong> U.S., English, desktop. If you are outside the U.S., watching in another language, or on a phone, you are largely waiting on a rollout. Our <a href="/blog/youtube-summarizer-vs-gemini-which-saves-more-time">comparison with Gemini</a> runs into the same regional pattern.</li>
         <li><strong>Sign-in is mandatory.</strong> Signed-out and supervised accounts are excluded from Ask YouTube outright, so shared machines, school accounts, and privacy-minded users are out.</li>
-        <li><strong>No Shorts.</strong> If short-form is where you spend time, see <a href="/blog/how-to-summarize-youtube-shorts-get-the-key-points-in-seconds">summarizing Shorts</a> for what actually works.</li>
+        <li><strong>No Shorts.</strong> If short-form is where you spend time, see <a href="/blog/summarize-youtube-without-watching">summarizing Shorts</a> for what actually works.</li>
         <li><strong>The output is ephemeral.</strong> This is the most underrated limitation. You get an answer in a panel, not a document. There is no library, no export, nothing to paste into your notes six weeks later when you actually need it.</li>
       </ul>
 
@@ -2291,6 +2409,13 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
     { q: "Is there a free YouTube summarizer without signup?", a: "Yes, Summarize.tech works with no account at all. Most other tools, including YT Summarizer (5 free summaries), NoteGPT, and Eightify, require a free account or extension install before summarizing." },
     { q: "How many free summaries does YT Summarizer include?", a: "5 free summaries with a free account. After that, pricing is one-time credit packs from $9 that never expire — there is no subscription." },
     { q: "Do free YouTube summarizers work on long videos?", a: "Mostly no. Free tools and chatbot workflows tend to truncate videos over about an hour. If you regularly summarize podcasts or lectures, use a tool that processes the full transcript in chunks." },
+  ],
+  'best-ai-youtube-summarizers-2026-8-tools-compared': [
+    { q: `What is the best AI summarizer tool in 2026?`, a: `For YouTube specifically, YT Summarizer offers the best value for regular use — one-time credit packs from $9 that never expire, no subscription, and it handles 2h+ videos without truncating. NotebookLM is the best genuinely free option for research across multiple sources, and Summarize.tech is the fastest free tool with no account required.` },
+    { q: `Which YouTube summarizer is actually free?`, a: `Summarize.tech (no account, basic paragraph output) and NotebookLM (free, deeper research features) are genuinely free. Glarity is a free extension. Most others advertise a "free tier" that is really a trial of 3–10 summaries before a paywall.` },
+    { q: `Do AI summarizers work on videos longer than 2 hours?`, a: `Some do, many silently fail. In testing, several tools summarized only the first portion of a 2h 10m podcast while presenting the output as complete. Tools that chunk the full transcript handle long videos correctly; general chatbots and lightweight extensions frequently truncate without warning.` },
+    { q: `How accurate are AI YouTube summaries?`, a: `Good for structure, arguments, and overall content; less reliable on specifics like figures, names, and attribution in multi-speaker videos. Treat a summary as a guide to the video rather than a citable source, and verify any number or quote against the original before relying on it.` },
+    { q: `Is a one-time payment summarizer cheaper than a subscription?`, a: `Over any period longer than about two months, yes. Most subscriptions run $5–15/month ($60–180/year) regardless of usage. A one-time pack (for example $19 for 200 summaries) works out under 10 cents per summary and never renews, which suits irregular usage like exam season or research sprints.` },
   ],
   'can-chatgpt-summarize-youtube-videos': [
     { q: `Can ChatGPT summarize a YouTube video from just the link?`, a: `No. In most configurations ChatGPT cannot open YouTube URLs, and when it appears to, it often summarizes only the title and description — or invents a summary. You need to paste the video's transcript into the chat for a real summary.` },
