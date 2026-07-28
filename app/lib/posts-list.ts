@@ -6,6 +6,7 @@ export type PostListEntry = {
 }
 
 export const allPosts: PostListEntry[] = [
+  { slug: 'how-to-remove-timestamps-from-youtube-transcript', title: 'How to Remove Timestamps From a YouTube Transcript (4 Fast Methods)', description: "Four ways to remove timestamps from a YouTube transcript — including the toggle hidden inside YouTube's own menu. Copy clean text in seconds instead of deleting lines by hand.", date: '2026-07-28' },
   { slug: 'how-to-summarize-youtube-videos', title: 'How to Summarize a YouTube Video: Every Method Tested (2026 Guide)', description: 'How to summarize a YouTube video in 2026: the one-minute URL method, the free ChatGPT workflow, Gemini, NotebookLM, and extensions — tested, timed, and honestly compared.', date: '2026-07-12' },
   { slug: 'best-free-youtube-summarizer-tool', title: 'Best Free YouTube Summarizer in 2026: 7 Real Free Options Tested', description: 'The best free YouTube summarizers in 2026, tested: what each free tier really includes, hidden quotas and caps, and which free option fits your use — before you pay anything.', date: '2026-07-12' },
   { slug: 'youtube-summarizer-vs-youtube-built-in-ai', title: "YT Summarizer vs YouTube's Built-In AI: Does YouTube Summarize Videos Now? (2026)", description: "YouTube shipped its own AI summaries in 2026, and Ask YouTube expanded beyond Premium on July 6. Does that make a dedicated summarizer redundant? The honest 2026 comparison on coverage, output, and price.", date: '2026-07-21' },
