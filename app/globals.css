@@ -1,17 +1,19 @@
 /* ==========================================================================
    YT Summarizer Blog — design system
    Layout, spacing and typography mirror blog.yttranscript.app;
-   accent colour is the YT Summarizer crimson (#ff0055).
+   accent colour is green (#16a34a); every accent shade derives from
+   the --accent-* custom properties below, so the ramp can be changed in one place.
    ========================================================================== */
 
 :root {
-  --accent: #ff0055;
-  --accent-dark: #d90048;
-  --accent-tint: #fff1f5;
-  --accent-tint-40: #fff7f9;
-  --accent-border: #ffd6e2;
-  --accent-border-hover: #ffa3c0;
-  --accent-text: #b8003d;
+  --accent: #15803d;        /* green-700 — AA-safe as text on white and behind white */
+  --accent-vivid: #16a34a;  /* green-600 — large brand wordmark only */
+  --accent-dark: #166534;   /* green-800 — hover */
+  --accent-tint: #f0fdf4;
+  --accent-tint-40: #f7fdf9;
+  --accent-border: #bbf7d0;
+  --accent-border-hover: #86efac;
+  --accent-text: #15803d;
 
   --ink: #0f172a;
   --body: #374151;
@@ -81,7 +83,7 @@ a { color: var(--accent); }
   font-weight: 700;
   font-size: 1.125rem;
   letter-spacing: -0.02em;
-  color: var(--accent);
+  color: var(--accent-vivid);
   text-decoration: none;
   white-space: nowrap;
 }

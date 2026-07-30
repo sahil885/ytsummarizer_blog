@@ -1847,7 +1847,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
         <li><strong>Get the transcript.</strong> On the video page, click <strong>"...more"</strong> in the description, then <strong>"Show transcript"</strong>. This only exists if the video has captions. Select all the text and copy it. (Faster: paste the video URL into a free transcript tool like <a href="https://yttranscript.app">YT Transcript</a> and copy the clean text without timestamps.)</li>
         <li><strong>Open ChatGPT</strong> and paste this prompt, then the transcript below it:</li>
       </ol>
-      <p style="background: #f9f9f9; padding: 1rem; border-left: 4px solid #ff0055;"><em>"Summarize this YouTube video transcript. Give me: (1) a one-paragraph overview, (2) 5–8 key points as bullets, (3) any specific numbers, tools, or resources mentioned, and (4) the main takeaway. Transcript: [paste]"</em></p>
+      <p style="background: #f9f9f9; padding: 1rem; border-left: 4px solid var(--accent);"><em>"Summarize this YouTube video transcript. Give me: (1) a one-paragraph overview, (2) 5–8 key points as bullets, (3) any specific numbers, tools, or resources mentioned, and (4) the main takeaway. Transcript: [paste]"</em></p>
       <ol start="3">
         <li><strong>Check the output against the video</strong> for anything you plan to rely on — models occasionally misattribute quotes or blur numbers.</li>
       </ol>
