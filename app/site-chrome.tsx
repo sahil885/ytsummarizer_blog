@@ -19,8 +19,8 @@ export function SiteHeader() {
         </Link>
         <nav className="site-nav">
           <Link href="/blog">Articles</Link>
-          <a className="nav-hide-sm" href={productUrl('nav_transcript', '')} data-nav="tool">
-            Summarizer
+          <a className="nav-hide-sm" href="https://yttranscript.app">
+            Transcripts
           </a>
           <a className="btn-pill" href={productUrl('nav_cta')}>
             Try Free &rarr;

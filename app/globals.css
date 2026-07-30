@@ -92,14 +92,18 @@ a { color: var(--accent); }
 
 .site-nav { display: flex; align-items: center; gap: 1.5rem; }
 
-.site-nav a {
+.site-nav a:not(.btn-pill) {
   color: var(--muted);
   text-decoration: none;
   font-size: 0.9375rem;
   transition: color 0.15s;
 }
 
-.site-nav a:hover { color: var(--ink); }
+.site-nav a:not(.btn-pill):hover { color: var(--ink); }
+
+/* belt-and-braces: keep the pill label white wherever it appears */
+.site-nav a.btn-pill,
+.site-nav a.btn-pill:hover { color: #fff; }
 
 .btn-pill {
   display: inline-flex;
