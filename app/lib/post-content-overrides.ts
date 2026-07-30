@@ -6,6 +6,58 @@ const P = 'https://ytsummarizer.app?utm_source=blog&utm_medium=referral&utm_camp
 // `content` is optional so an entry can override only the title/metaDescription of a
 // page-1 post (CTR tuning) without duplicating its body.
 export const postOverrides: Record<string, { content?: string; metaDescription?: string; title?: string; date?: string }> = {
+  'how-to-remove-timestamps-from-youtube-transcript': {
+    title: 'How to Remove Timestamps From a YouTube Transcript (4 Fast Methods)',
+    metaDescription: "Four ways to remove timestamps from a YouTube transcript — including the toggle hidden inside YouTube's own menu. Copy clean text in seconds instead of deleting lines by hand.",
+    date: '2026-07-28',
+    content: `
+      <p><strong>Quick answer:</strong> YouTube has a built-in toggle that strips timestamps before you copy. Open the transcript panel, click the three-dot menu at its top right, and choose <strong>"Toggle timestamps"</strong>. The times disappear and you can select clean paragraph text. Most people never find this menu and end up deleting hundreds of lines by hand.</p>
+
+      <p>Below are four methods, from the fastest to the most flexible, plus why timestamps quietly ruin AI summaries of long videos.</p>
+
+      <h2>Method 1: Toggle timestamps off inside YouTube</h2>
+      <p>This is the fastest route and it needs no other tools:</p>
+      <ol>
+        <li>Open the video and click <strong>"…more"</strong> in the description box.</li>
+        <li>Click <strong>"Show transcript"</strong>. A panel opens on the right.</li>
+        <li>At the top right of that panel, click the <strong>three-dot menu (⋮)</strong>.</li>
+        <li>Select <strong>"Toggle timestamps"</strong>.</li>
+        <li>Select the transcript text and copy it — it now comes across as continuous text with no times.</li>
+      </ol>
+      <p>Two caveats worth knowing. The toggle is per-session, so it resets when you open a new video. And on mobile the transcript panel has no three-dot menu at all, which is why the next method exists.</p>
+
+      <h2>Method 2: Use a transcript tool that strips timestamps automatically</h2>
+      <p>If you do this more than occasionally, or you are on a phone, skip YouTube's interface. Paste the video URL into a transcript tool and copy the cleaned result. <a href="https://yttranscript.app">YT Transcript</a> is free, needs no signup, and returns plain text with the timestamps already removed — which also solves the mobile gap, since it works in any browser.</p>
+      <p>This is the method to use when you are collecting transcripts in bulk: playlists, lecture series, or a batch of podcasts. Toggling a menu 30 times is its own kind of tedious.</p>
+
+      <h2>Method 3: Find-and-replace with a regular expression</h2>
+      <p>If you have already pasted a messy transcript somewhere and don't want to start over, one find-and-replace fixes it. In VS Code, Sublime, Notepad++, or Google Docs, enable regex search and replace this pattern with nothing:</p>
+      <p style="background: #f9f9f9; padding: 1rem; border-left: 4px solid #ff0055;"><code>^\\s*\\d{1,2}:\\d{2}(:\\d{2})?\\s*</code></p>
+      <p>That matches <code>0:15</code>, <code>12:04</code>, and <code>1:02:33</code> at the start of a line and deletes them. To also collapse the blank lines left behind, run a second replace of <code>\\n{2,}</code> with a single newline. This is the right tool when the transcript is already inside a document you have edited.</p>
+
+      <h2>Method 4: Let the AI strip them as part of the prompt</h2>
+      <p>If the transcript is headed into ChatGPT or Claude anyway, you don't strictly need clean text — you can fold the cleanup into your prompt:</p>
+      <p style="background: #f9f9f9; padding: 1rem; border-left: 4px solid #ff0055;"><em>"Ignore all timestamps in the following transcript. Summarize it into an overview, 5–8 key points, and the main takeaway. Transcript: [paste]"</em></p>
+      <p>It works, but it is the weakest option on long videos, and the reason is worth understanding.</p>
+
+      <h2>Why timestamps matter more than they look</h2>
+      <p>Timestamps are not just visual clutter. In a two-hour podcast transcript they can account for a meaningful slice of the total text, and every one of them consumes part of the model's context window — the fixed budget of text an AI can hold at once. On a long video that is already near the limit, the timestamps are what push the transcript over, and free-tier ChatGPT will quietly summarize only the first portion without telling you.</p>
+      <p>They also fragment sentences. YouTube breaks the transcript into caption-length chunks, so a single spoken sentence arrives split across three timestamped lines. Models handle this reasonably well, but it measurably degrades summary quality on technical content where a definition or figure gets cut in half.</p>
+      <p>The practical rule: strip timestamps before summarizing anything over about 30 minutes. Under that, it rarely matters.</p>
+
+      <h2>How to copy a YouTube transcript without timestamps on mobile</h2>
+      <p>The YouTube mobile app shows transcripts but gives you no timestamp toggle and no easy select-all. The reliable path on a phone is Method 2: tap <strong>Share</strong> under the video, copy the link, and paste it into a web-based transcript tool in your mobile browser. You get clean, selectable text you can copy in one action. There is no in-app workaround worth the effort.</p>
+
+      <h2>Which method to use</h2>
+      <ul>
+        <li><strong>One video, on desktop</strong> → Method 1, the built-in toggle.</li>
+        <li><strong>On a phone, or several videos in a row</strong> → Method 2, a transcript tool.</li>
+        <li><strong>Transcript already pasted and messy</strong> → Method 3, regex replace.</li>
+        <li><strong>Heading into a chatbot anyway, short video</strong> → Method 4, handle it in the prompt.</li>
+      </ul>
+      <p>And if the reason you wanted a clean transcript was to summarize the video, you can skip the whole detour: paste the URL into <a href="${P}">YT Summarizer</a> and get structured key points in about a minute — no transcript handling at all. The full comparison of approaches is in our <a href="/blog/how-to-summarize-youtube-videos">complete guide to summarizing YouTube videos</a>, and if you plan to use the chatbot route, the <a href="/blog/can-chatgpt-summarize-youtube-videos">ChatGPT workflow guide</a> covers the prompt and its failure modes in detail.</p>
+    `,
+  },
   'how-to-summarize-youtube-videos': {
     title: 'How to Summarize a YouTube Video: Every Method Tested (2026 Guide)',
     metaDescription: "How to summarize a YouTube video in 2026: the one-minute URL method, the free ChatGPT workflow, Gemini, NotebookLM, and extensions — tested, timed, and honestly compared.",
@@ -1853,6 +1905,12 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       </ol>
       <p>Total time in practice: 4–6 minutes for a normal video, assuming captions exist and the transcript fits.</p>
 
+      <h2>Can ChatGPT watch YouTube videos?</h2>
+      <p>No. ChatGPT has no ability to process video or audio from YouTube — it cannot see footage, hear speech, or read on-screen text. What it can process is the written transcript of what was said. That distinction matters in practice: anything conveyed visually (a diagram, a code demo, a chart on screen) is invisible to a transcript-based summary, no matter which tool you use. For tutorials and demos, treat the summary as an index to the video rather than a replacement for watching the parts that are genuinely visual.</p>
+
+      <h2>Can ChatGPT read YouTube videos or links directly?</h2>
+      <p>It can read a YouTube <em>page</em> in some configurations, but that is not the same as reading the video. With browsing enabled it may fetch the title, description, and visible metadata — enough to produce a confident-sounding summary that was never based on the actual content. This is the most dangerous failure mode in this workflow, because nothing in the output signals that it only saw the title. If you did not paste a transcript, assume the summary is unverified.</p>
+
       <h2>Where the ChatGPT method breaks</h2>
       <ul>
         <li><strong>No captions, no summary.</strong> If the creator disabled captions or they haven't generated yet, there is no transcript to copy. ChatGPT has nothing to work with.</li>
@@ -2075,6 +2133,9 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <h2>The pricing model is the real decision</h2>
       <p>Most tools here charge $5–15/month, which is $60–180/year whether you summarize three videos or three hundred. That works if you use the tool every month. It doesn't if your usage is bursty — exam season, a research sprint, then quiet months.</p>
       <p>One-time credits invert that: YT Summarizer's $19 pack is 200 summaries at under 10¢ each, and unused credits never expire. Full breakdown in <a href="/blog/how-much-do-youtube-summarizers-cost-2026">how much YouTube summarizers cost in 2026</a>.</p>
+
+      <h2>Best AI summariser tools 2026: the short answer</h2>
+      <p>Whether you spell it summariser or summarizer, the shortlist is the same. For YouTube specifically, the decision comes down to three tools: a pay-once option if you summarise regularly and dislike subscriptions, a genuinely free option if you only need the occasional rough overview, and a general AI assistant if you want full control over the output format and don't mind the manual transcript step. Everything else in the table below is a variation on those three shapes.</p>
 
       <h2>Which should you pick?</h2>
       <ul>
@@ -2397,6 +2458,13 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 }
 
 export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
+  'how-to-remove-timestamps-from-youtube-transcript': [
+    { q: "How do I remove timestamps from a YouTube transcript?", a: "Open the transcript panel, click the three-dot menu at its top right, and select 'Toggle timestamps'. The times disappear and you can copy clean text. If you are on mobile or handling several videos, paste the URL into a transcript tool that strips timestamps automatically instead." },
+    { q: "How do I copy and paste a YouTube transcript without the timestamps?", a: "Turn timestamps off first using YouTube's 'Toggle timestamps' option in the transcript panel's three-dot menu, then select and copy. If you have already copied the messy version, run a regex find-and-replace on ^\\s*\\d{1,2}:\\d{2}(:\\d{2})?\\s* and replace it with nothing." },
+    { q: "Is there a YouTube transcript timestamp remover?", a: "Yes — most free transcript tools return text with timestamps already stripped, so pasting the video URL into one is effectively a timestamp remover. YouTube's own 'Toggle timestamps' menu option does the same thing without any third-party tool, on desktop only." },
+    { q: "How do I remove timestamps from a YouTube transcript on a phone?", a: "The YouTube mobile app has no timestamp toggle. Copy the video link with the Share button and paste it into a web-based transcript tool in your mobile browser, which returns clean selectable text. There is no reliable in-app method." },
+    { q: "Do timestamps affect AI summaries of YouTube videos?", a: "Yes, on long videos. Timestamps consume part of the model's context window and split sentences across lines, so a two-hour transcript with timestamps is more likely to be silently truncated by free-tier ChatGPT. Strip them before summarizing anything over roughly 30 minutes." },
+  ],
   'how-to-summarize-youtube-videos': [
     { q: "What is the fastest way to summarize a YouTube video?", a: "Paste the URL into a dedicated summarizer like YT Summarizer — about a minute from link to structured key points. Manual methods (copying the transcript into ChatGPT) take 4–6 minutes per video and struggle with long content." },
     { q: "How do I summarize a YouTube video for free?", a: "Three free routes: Summarize.tech (no account, basic output), copying the transcript into free-tier ChatGPT (flexible but 4–6 minutes per video), or a free tier like YT Summarizer, which includes 5 structured summaries with a free account." },
@@ -2411,6 +2479,7 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
     { q: "Do free YouTube summarizers work on long videos?", a: "Mostly no. Free tools and chatbot workflows tend to truncate videos over about an hour. If you regularly summarize podcasts or lectures, use a tool that processes the full transcript in chunks." },
   ],
   'best-ai-youtube-summarizers-2026-8-tools-compared': [
+    { q: `What is the best AI summariser tool in 2026?`, a: `For YouTube video summaries, the best AI summariser depends on how often you use it: a pay-once tool like YT Summarizer works out cheapest for regular use with no subscription, Summarize.tech is the best genuinely free option for occasional rough overviews, and ChatGPT gives the most control over output format if you don't mind pasting the transcript yourself.` },
     { q: `What is the best AI summarizer tool in 2026?`, a: `For YouTube specifically, YT Summarizer offers the best value for regular use — one-time credit packs from $9 that never expire, no subscription, and it handles 2h+ videos without truncating. NotebookLM is the best genuinely free option for research across multiple sources, and Summarize.tech is the fastest free tool with no account required.` },
     { q: `Which YouTube summarizer is actually free?`, a: `Summarize.tech (no account, basic paragraph output) and NotebookLM (free, deeper research features) are genuinely free. Glarity is a free extension. Most others advertise a "free tier" that is really a trial of 3–10 summaries before a paywall.` },
     { q: `Do AI summarizers work on videos longer than 2 hours?`, a: `Some do, many silently fail. In testing, several tools summarized only the first portion of a 2h 10m podcast while presenting the output as complete. Tools that chunk the full transcript handle long videos correctly; general chatbots and lightweight extensions frequently truncate without warning.` },
@@ -2418,6 +2487,9 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
     { q: `Is a one-time payment summarizer cheaper than a subscription?`, a: `Over any period longer than about two months, yes. Most subscriptions run $5–15/month ($60–180/year) regardless of usage. A one-time pack (for example $19 for 200 summaries) works out under 10 cents per summary and never renews, which suits irregular usage like exam season or research sprints.` },
   ],
   'can-chatgpt-summarize-youtube-videos': [
+    { q: `Can ChatGPT watch YouTube videos?`, a: `No. ChatGPT cannot process video or audio — it can only read transcript text you provide. Anything shown visually rather than spoken (diagrams, code on screen, charts) will be missing from any transcript-based summary.` },
+    { q: `Is there a way to get a YouTube summary with ChatGPT for free?`, a: `Yes. Copy the transcript using YouTube's "Show transcript" button or a free transcript tool, then paste it into free-tier ChatGPT with a summarization prompt. The cost is time — around 4-6 minutes per video — and long transcripts may be silently truncated on the free tier.` },
+    { q: `How do I get a YouTube summary with ChatGPT on Android or iPhone?`, a: `The transcript panel in the YouTube mobile app is difficult to select and copy from. The reliable mobile route is to copy the video link with the Share button, paste it into a web-based transcript tool in your browser for clean text, then paste that into the ChatGPT app. A dedicated web summarizer skips both steps.` },
     { q: `Can ChatGPT summarize a YouTube video from just the link?`, a: `No. In most configurations ChatGPT cannot open YouTube URLs, and when it appears to, it often summarizes only the title and description — or invents a summary. You need to paste the video's transcript into the chat for a real summary.` },
     { q: `How do I get a YouTube summary with ChatGPT?`, a: `Copy the video's transcript (via YouTube's "Show transcript" button or a free tool like YT Transcript), paste it into ChatGPT with a prompt asking for an overview, key points, and takeaways, then verify anything important against the video. It takes about 4–6 minutes per video.` },
     { q: `Why does ChatGPT cut off summaries of long YouTube videos?`, a: `Long transcripts exceed ChatGPT's context window, especially on the free tier. A 2-hour podcast can run 25,000+ words, and ChatGPT may silently summarize only the first portion. Dedicated summarizers chunk the full transcript so nothing is dropped.` },
