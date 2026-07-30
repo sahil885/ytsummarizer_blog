@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import './globals.css'
+import { SiteHeader, SiteFooter } from './site-chrome'
 import { GoogleSiteVerification } from './google-site-verification'
 import { OG_IMAGE } from './lib/posts-list'
 
@@ -95,7 +97,11 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+      </body>
     </html>
   )
 }

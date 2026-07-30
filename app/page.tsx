@@ -1,84 +1,102 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { indexablePosts, POSTS_PER_PAGE, totalPages, productUrl } from './lib/posts-list'
+import {
+  indexablePosts,
+  POSTS_PER_PAGE,
+  totalPages,
+  productUrl,
+  FEATURED_SLUGS,
+  categoryBadge,
+  formatDate,
+} from './lib/posts-list'
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://blog.ytsummarizer.app' },
 }
 
 export default function Home() {
-  const posts = indexablePosts.slice(0, POSTS_PER_PAGE)
+  const featured = FEATURED_SLUGS.map((s) => indexablePosts.find((p) => p.slug === s)).filter(
+    (p): p is NonNullable<typeof p> => Boolean(p),
+  )
+  const featuredSet = new Set(featured.map((p) => p.slug))
+  const latest = indexablePosts.filter((p) => !featuredSet.has(p.slug)).slice(0, POSTS_PER_PAGE)
   const hasNext = totalPages > 1
 
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem', fontFamily: 'system-ui, sans-serif' }}>
-      <header style={{ marginBottom: '2rem' }}>
-        <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#ff0055' }}>
-          YouTube Summarizer Tips, Guides &amp; Comparisons
-        </h1>
-        <p style={{ fontSize: '1.125rem', color: '#444', lineHeight: 1.7, marginBottom: '1.5rem', maxWidth: '680px' }}>
-          Your guide to AI-powered YouTube video summarization. We cover the best free and paid tools,
-          compare top options like Eightify and NoteGPT, and show you how students, professionals,
-          and content creators use AI to extract key insights from YouTube — without watching every minute.
-          New here? Start with the{' '}
-          <a href="/blog/how-to-summarize-youtube-videos" style={{ color: '#ff0055' }}>complete guide to summarizing YouTube videos</a>.
-          Whether you need a{' '}
-          <a href="/blog/best-free-youtube-summarizer-tool" style={{ color: '#ff0055' }}>free summarizer</a>,
-          a{' '}
-          <a href="/blog/youtube-summarizer-for-students" style={{ color: '#ff0055' }}>tool for studying</a>,
-          or a{' '}
-          <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style={{ color: '#ff0055' }}>no-subscription option</a>,
-          you'll find honest, up-to-date guidance here. This blog is run by the maker of{' '}
-          <a href="https://ytsummarizer.app" style={{ color: '#ff0055' }}>YT Summarizer</a> — a YouTube
-          summarizer with one-time pricing: credits from $9 that never expire, no subscription.
-        </p>
-        <p style={{ fontSize: '1rem', margin: 0 }}>
-          <Link href="/blog" style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600 }}>
-            Browse all {indexablePosts.length} guides &rarr;
-          </Link>
-        </p>
-      </header>
-
-      <main>
-        {posts.map((post) => (
-          <article key={post.slug} style={{ marginBottom: '2rem', padding: '1.5rem', border: '1px solid #eee', borderRadius: '8px' }}>
-            <Link href={`/blog/${post.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-              <h2 style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: '#333' }}>
-                {post.title}
-              </h2>
-              <p style={{ fontSize: '1rem', color: '#666', marginBottom: '0.75rem' }}>
-                {post.description}
-              </p>
-              <time style={{ fontSize: '0.875rem', color: '#999' }}>
-                {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-              </time>
-            </Link>
-          </article>
-        ))}
-      </main>
-
-      {hasNext && (
-        <nav aria-label="Pagination" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '2rem', paddingTop: '1.5rem', borderTop: '1px solid #eee' }}>
-          <span style={{ fontSize: '0.875rem', color: '#999' }}>
-            Page 1 of {totalPages}
-          </span>
-          <Link
-            href="/page/2"
-            style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600 }}
-          >
-            Older posts →
-          </Link>
-        </nav>
-      )}
-
-      <footer style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid #eee', textAlign: 'center' }}>
-        <p style={{ fontSize: '0.875rem', color: '#666' }}>
-          Want to try YT Summarizer?{' '}
-          <a href={productUrl('home_footer')} style={{ color: '#ff0055', fontWeight: 600 }}>
-            Start summarizing videos →
+    <>
+      <div className="wrap">
+        <section className="hero">
+          <h1>YouTube Summarizer Guides</h1>
+          <p>
+            Honest guides on summarizing YouTube videos with AI &mdash; tool comparisons, free
+            options, and the workflows that actually save time.
+          </p>
+          <a className="btn-pill" href={productUrl('home_hero')}>
+            Try YT Summarizer Free &rarr;
           </a>
-        </p>
-      </footer>
-    </div>
+          <p className="hero-note">5 free summaries &middot; One-time pricing from $9 &middot; No subscription</p>
+        </section>
+
+        {featured.length > 0 && (
+          <section className="section">
+            <div className="section-head">
+              <h2>Start Here</h2>
+              <p>The complete guides to AI YouTube summarization &mdash; begin with these.</p>
+            </div>
+            <div className="card-grid">
+              {featured.map((p) => (
+                <Link key={p.slug} href={`/blog/${p.slug}`} className="card card-featured">
+                  <span className="badge">Complete Guide</span>
+                  <h3>{p.title}</h3>
+                  <p>{p.description}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <section className="section">
+          <div className="section-head">
+            <h2>Latest Guides</h2>
+            <p>
+              Newest comparisons, how-tos and tool reviews.{' '}
+              <Link href="/blog">Browse all {indexablePosts.length} guides &rarr;</Link>
+            </p>
+          </div>
+          <div className="card-grid">
+            {latest.map((p) => (
+              <Link key={p.slug} href={`/blog/${p.slug}`} className="card">
+                <div className="card-meta">
+                  <span className="badge">{categoryBadge(p.slug)}</span>
+                  <span className="read">{formatDate(p.date)}</span>
+                </div>
+                <h3>{p.title}</h3>
+                <p>{p.description}</p>
+              </Link>
+            ))}
+          </div>
+
+          {hasNext && (
+            <nav aria-label="Pagination" className="pager">
+              <span>Page 1 of {totalPages}</span>
+              <Link href="/page/2">Older guides &rarr;</Link>
+            </nav>
+          )}
+        </section>
+
+        <section className="crosspromo">
+          <div>
+            <h2>Need the transcript, not the summary?</h2>
+            <p>
+              YT Transcript pulls the full text of any YouTube video free &mdash; copy it, download
+              it as TXT or PDF, or feed it to your own prompt. No signup.
+            </p>
+          </div>
+          <a className="btn-pill" href="https://yttranscript.app">
+            Get a Transcript &rarr;
+          </a>
+        </section>
+      </div>
+    </>
   )
 }

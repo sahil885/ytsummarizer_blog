@@ -1,6 +1,15 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { NOINDEX_SLUGS, PRUNED_SLUGS, getRelatedPosts, productUrl, OG_IMAGE } from '../../lib/posts-list'
+import {
+  NOINDEX_SLUGS,
+  PRUNED_SLUGS,
+  getRelatedPosts,
+  productUrl,
+  OG_IMAGE,
+  categoryBadge,
+  formatDate,
+  readingTime,
+} from '../../lib/posts-list'
 import { postOverrides, faqOverrides } from '../../lib/post-content-overrides'
 
 // FAQ content keyed by slug. Posts with FAQs get FAQPage schema + a visible FAQ section.
@@ -381,8 +390,8 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>The pricing comparison also matters. Gemini free tier is unreliable for YouTube. Gemini Advanced is $20/month — which buys a YT Summarizer pay-once pricing, cheaper than two months of a subscription with no recurring cost afterward. If YouTube summarization is your primary use case, paying $20/month for a general assistant to do it inconsistently is a worse deal than a one-time payment for a purpose-built tool that does it reliably.</p>
 
       <h2>The Bottom Line</h2>
-      <p>Gemini is excellent at many things. Reliable YouTube summarization isn't currently one of them. If you want to occasionally ask Gemini about a video in a conversational way, it works. If you want a consistent, structured summary of any YouTube video in 60 seconds with no context switching, a dedicated tool is the right choice. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free — no extension, no Google account required.</a></p>
-      <p>For the full tool landscape including other alternatives, see our <a href="/blog/best-ai-video-summarization-tools-2026" style="color: #ff0055; font-weight: 600;">10 AI video summarization tools ranked</a> and <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">8 YouTube summarizers compared</a>.</p>
+      <p>Gemini is excellent at many things. Reliable YouTube summarization isn't currently one of them. If you want to occasionally ask Gemini about a video in a conversational way, it works. If you want a consistent, structured summary of any YouTube video in 60 seconds with no context switching, a dedicated tool is the right choice. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free — no extension, no Google account required.</a></p>
+      <p>For the full tool landscape including other alternatives, see our <a href="/blog/best-ai-video-summarization-tools-2026" style="color: var(--accent); font-weight: 600;">10 AI video summarization tools ranked</a> and <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">8 YouTube summarizers compared</a>.</p>
     `
   },
   'summarize-youtube-video-without-extension': {
@@ -405,7 +414,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>The Best Web-Based YouTube Summarizers (No Installation)</h2>
 
       <h3>YT Summarizer — Best Overall</h3>
-      <p>YT Summarizer is a web app: go to the site, paste a YouTube URL, get a structured bullet-point summary in 60 seconds. Nothing to install, no browser permissions, works on any browser including Safari and Firefox, works on mobile. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try it free — no signup required to test.</a></p>
+      <p>YT Summarizer is a web app: go to the site, paste a YouTube URL, get a structured bullet-point summary in 60 seconds. Nothing to install, no browser permissions, works on any browser including Safari and Firefox, works on mobile. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try it free — no signup required to test.</a></p>
       <p><strong>Output:</strong> Structured bullet points organized by topic section. Clean enough to paste directly into Notion, Obsidian, or any notes app.</p>
       <p><strong>Long video support:</strong> Handles 2+ hour videos without truncating — important for lectures, conference talks, and documentary-length content.</p>
       <p><strong>Pricing:</strong> Free tier available. Pay-once packs from $9 — no subscription — no subscription, no weekly caps.</p>
@@ -415,10 +424,10 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p><strong>Best for:</strong> Quick "should I watch this?" decisions. Triage before committing watch time to a video.</p>
 
       <h3>Gemini — Free But Inconsistent</h3>
-      <p>Google's Gemini can sometimes access YouTube URLs directly in the chat interface — no extension required. The problem is reliability: it works on some videos and accounts but fails silently on others, and coverage is region-dependent. Not a reliable primary tool, but useful as a fallback when you're already in the Gemini interface. See our <a href="/blog/youtube-summarizer-vs-gemini-which-saves-more-time" style="color: #ff0055; font-weight: 600;">full Gemini vs. dedicated tool comparison</a>.</p>
+      <p>Google's Gemini can sometimes access YouTube URLs directly in the chat interface — no extension required. The problem is reliability: it works on some videos and accounts but fails silently on others, and coverage is region-dependent. Not a reliable primary tool, but useful as a fallback when you're already in the Gemini interface. See our <a href="/blog/youtube-summarizer-vs-gemini-which-saves-more-time" style="color: var(--accent); font-weight: 600;">full Gemini vs. dedicated tool comparison</a>.</p>
 
       <h3>ChatGPT + Manual Transcript (No Extension, High Manual Work)</h3>
-      <p>You can summarize YouTube videos through ChatGPT without any extension — by manually copying the transcript and pasting it in. No installation required, but the workflow takes 4-6 minutes per video and breaks on long content. This is the "free" option with the highest time cost. Full breakdown in our <a href="/blog/copying-youtube-transcript-to-chatgpt-wastes-time" style="color: #ff0055; font-weight: 600;">analysis of the ChatGPT transcript workflow</a>.</p>
+      <p>You can summarize YouTube videos through ChatGPT without any extension — by manually copying the transcript and pasting it in. No installation required, but the workflow takes 4-6 minutes per video and breaks on long content. This is the "free" option with the highest time cost. Full breakdown in our <a href="/blog/copying-youtube-transcript-to-chatgpt-wastes-time" style="color: var(--accent); font-weight: 600;">analysis of the ChatGPT transcript workflow</a>.</p>
 
       <h2>Extension Tools You'd Be Missing</h2>
       <p>To be complete: the best Chrome extension options are Eightify (in-browser chapter summaries, 3 free/week), Glarity (multi-platform, ChatGPT integration), and NoteGPT (study features). If you're on Chrome and don't have device restrictions, they're worth considering. But for everyone else, web-based tools match or exceed their core functionality without the installation friction.</p>
@@ -434,7 +443,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Managed device or non-Chrome browser:</strong> Any web-based tool works. Extensions are off the table entirely.</li>
         <li><strong>Mobile-first workflow:</strong> Web tools only. Both YT Summarizer and Summarize.tech work in mobile browsers.</li>
       </ul>
-      <p>See our <a href="/blog/youtube-summarizer-no-subscription-no-weekly-limits" style="color: #ff0055; font-weight: 600;">no-subscription no-weekly-limits comparison</a> for the full pricing landscape, and our <a href="/blog/fastest-way-to-summarize-youtube-video-methods-compared" style="color: #ff0055; font-weight: 600;">speed comparison across all summarization methods</a> for the full workflow breakdown.</p>
+      <p>See our <a href="/blog/youtube-summarizer-no-subscription-no-weekly-limits" style="color: var(--accent); font-weight: 600;">no-subscription no-weekly-limits comparison</a> for the full pricing landscape, and our <a href="/blog/fastest-way-to-summarize-youtube-video-methods-compared" style="color: var(--accent); font-weight: 600;">speed comparison across all summarization methods</a> for the full workflow breakdown.</p>
     `
   },
   'vidpill-alternative-youtube-summarizer-one-time-payment': {
@@ -520,7 +529,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>You're doing subscription consolidation and want to eliminate a recurring charge</li>
         <li>You need a web-based tool (no extension) that works across browsers and on mobile</li>
       </ul>
-      <p>The broader no-subscription landscape is covered in our <a href="/blog/youtube-summarizer-no-subscription-no-weekly-limits" style="color: #ff0055; font-weight: 600;">no-subscription no-weekly-limits comparison</a>. For the full tool comparison including Eightify, NoteGPT, and other alternatives, see <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">8 YouTube summarizers compared</a>. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free before committing.</a></p>
+      <p>The broader no-subscription landscape is covered in our <a href="/blog/youtube-summarizer-no-subscription-no-weekly-limits" style="color: var(--accent); font-weight: 600;">no-subscription no-weekly-limits comparison</a>. For the full tool comparison including Eightify, NoteGPT, and other alternatives, see <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">8 YouTube summarizers compared</a>. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free before committing.</a></p>
     `
   },
   'youtube-summarizer-for-parents-and-homeschoolers': {
@@ -530,7 +539,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
     content: `
       <p>YouTube is one of the richest educational resources available to homeschooling families — but it's also an enormous time sink. Evaluating whether a 45-minute history documentary is age-appropriate, curriculum-aligned, and actually accurate can take as long as watching the video itself.</p>
 
-      <p>AI-powered YouTube summarization changes that. Paste any video URL into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and get a structured summary in under 60 seconds — so you can evaluate, select, and organize educational content in a fraction of the time.</p>
+      <p>AI-powered YouTube summarization changes that. Paste any video URL into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> and get a structured summary in under 60 seconds — so you can evaluate, select, and organize educational content in a fraction of the time.</p>
 
       <h2>Where Parents and Homeschoolers Spend the Most Video Research Time</h2>
       <p>Homeschooling parents typically watch 5–10 hours of YouTube per week across curriculum research, teaching method exploration, and content vetting. Here's where that time goes — and how much summarization can recover:</p>
@@ -582,7 +591,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>Before committing to a homeschool curriculum — which can cost $200–$1,500 per year — most families watch dozens of review videos. AI summarization cuts this research phase from days to hours.</p>
 
       <h3>Step 1: Batch-Summarize Reviews</h3>
-      <p>Search YouTube for "[curriculum name] review homeschool" and open the top 8–10 videos. Paste each URL into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and read the summaries. This takes about 10 minutes and reveals which reviewers cover what you actually need to know.</p>
+      <p>Search YouTube for "[curriculum name] review homeschool" and open the top 8–10 videos. Paste each URL into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> and read the summaries. This takes about 10 minutes and reveals which reviewers cover what you actually need to know.</p>
 
       <h3>Step 2: Flag Discrepancies</h3>
       <p>Note where reviewer opinions diverge — if 3 summaries praise the math sequence and 2 flag it as confusing, that's a real signal worth investigating. The summary makes these patterns visible without watching 5 hours of video.</p>
@@ -670,7 +679,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Start Curating Smarter Today</h2>
       <p>The best homeschool content on YouTube is buried under hours of content you don't need. AI summarization lets you find and keep only what serves your curriculum.</p>
 
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — paste any homeschool or educational video URL and get a structured summary in under 60 seconds. Pay-once packs from $9 — no subscription, no subscription required.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> — paste any homeschool or educational video URL and get a structured summary in under 60 seconds. Pay-once packs from $9 — no subscription, no subscription required.</p>
     `
   },
   'youtube-summarizer-for-cybersecurity-professionals': {
@@ -680,7 +689,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
     content: `
       <p>Cybersecurity is one of the fastest-moving fields in tech. Staying current means processing DEF CON talks, Black Hat presentations, vendor security briefings, threat intelligence updates, and certification prep content — a firehose of video that can easily consume 10+ hours per week.</p>
 
-      <p>AI-powered YouTube summarization cuts through the noise. Paste any security talk, conference keynote, or training video into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and get the attack vector, mitigation steps, and key technical details in under 60 seconds.</p>
+      <p>AI-powered YouTube summarization cuts through the noise. Paste any security talk, conference keynote, or training video into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> and get the attack vector, mitigation steps, and key technical details in under 60 seconds.</p>
 
       <h2>Where Cybersecurity Professionals Spend the Most Video Time</h2>
 
@@ -816,7 +825,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Process the Firehose, Not Just the Best Talks</h2>
       <p>The most valuable security knowledge often isn't in the most-viewed talks — it's in the niche 200-viewer presentation on a specific attack surface that directly applies to your environment. AI summarization makes it possible to screen the full archive, not just the curated highlights.</p>
 
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — paste any security conference talk or training video URL and get the attack technique, mitigation steps, and key findings in under 60 seconds. Pay-once packs from $9 — no subscription.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> — paste any security conference talk or training video URL and get the attack technique, mitigation steps, and key findings in under 60 seconds. Pay-once packs from $9 — no subscription.</p>
     `
   },
   'youtube-summarizer-for-medical-students': {
@@ -826,7 +835,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
     content: `
       <p>Medical school is an information arms race. Sketchy videos, Pathoma lectures, Boards and Beyond modules, clinical case presentations, and professor lecture recordings — a dedicated M1 or M2 can easily accumulate 6–10 hours of YouTube study content per day.</p>
 
-      <p>AI summarization doesn't replace the learning — it helps you triage, review, and reinforce faster. Paste any USMLE prep video into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and get the pathophysiology, key buzzwords, and high-yield takeaways in under 60 seconds.</p>
+      <p>AI summarization doesn't replace the learning — it helps you triage, review, and reinforce faster. Paste any USMLE prep video into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> and get the pathophysiology, key buzzwords, and high-yield takeaways in under 60 seconds.</p>
 
       <h2>Where Medical Students Spend the Most Video Study Time</h2>
 
@@ -967,7 +976,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Work Smarter Through the Firehose</h2>
       <p>Medical school video content is among the highest-signal YouTube content that exists — but only if you can process it efficiently. AI summarization doesn't replace studying. It removes the time you spend deciding what to study.</p>
 
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — paste any USMLE prep or clinical video URL and get the high-yield concepts in under 60 seconds. Pay-once packs from $9 — no subscription — less than one Anki deck subscription per year.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> — paste any USMLE prep or clinical video URL and get the high-yield concepts in under 60 seconds. Pay-once packs from $9 — no subscription — less than one Anki deck subscription per year.</p>
     `
   },
   'youtube-summarizer-for-financial-advisors': {
@@ -977,7 +986,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
     content: `
       <p>Financial advisors face a brutal information problem: staying current on markets, regulations, and planning strategies requires consuming hours of video content each week — while every hour spent watching is an hour not spent with clients.</p>
 
-      <p>AI-powered YouTube summarization solves this. Paste any market commentary video, webinar recording, or CE course into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and get the key points, data, and action items in under a minute.</p>
+      <p>AI-powered YouTube summarization solves this. Paste any market commentary video, webinar recording, or CE course into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> and get the key points, data, and action items in under a minute.</p>
 
       <h2>Where Financial Advisors Spend the Most Video Time</h2>
       <p>The average financial advisor watches 3–5 hours of financial video content per week. Here's where that time goes — and how much summarization can recover:</p>
@@ -1055,7 +1064,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h2>Start Reclaiming Client Hours</h2>
       <p>Financial advisors who spend 4 hours a week on video content can recover 3+ hours using AI summarization — time that goes directly back to client relationship work, prospecting, or planning.</p>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — paste any market commentary or CE video and see the summary in seconds. One-time pay-once pricing for unlimited use.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> — paste any market commentary or CE video and see the summary in seconds. One-time pay-once pricing for unlimited use.</p>
     `
   },
   'youtube-summarizer-for-language-learners': {
@@ -1070,7 +1079,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>How Language Learners Use YouTube Summarization</h2>
 
       <h3>1. Pre-Screening Immersion Content</h3>
-      <p>Before committing 20 minutes to a native-speed video, paste the URL into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and scan the summary. If you can understand 80%+ of the summary text in your target language, the video is likely at the right challenge level. If the summary is dense with unfamiliar concepts, bookmark it for later.</p>
+      <p>Before committing 20 minutes to a native-speed video, paste the URL into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> and scan the summary. If you can understand 80%+ of the summary text in your target language, the video is likely at the right challenge level. If the summary is dense with unfamiliar concepts, bookmark it for later.</p>
 
       <h3>2. Building Vocabulary Context (Not Just Word Lists)</h3>
       <p>Vocabulary from context sticks better than wordlists. Summarize a topic video in your target language, identify 5–10 words you don't know from the summary, then watch the video and notice each word in use. The summary gives you the semantic context before the audio input reinforces it.</p>
@@ -1131,7 +1140,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>For pronunciation and listening practice specifically, you still need the audio. Summaries help with comprehension context and vocabulary pre-loading, but they're no substitute for training your ear to the actual sounds of the language.</p>
 
       <h2>Try It on Your Next Immersion Session</h2>
-      <p>Before your next language learning YouTube session, run your 3 target videos through <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> first. Pick the one whose summary you understand best and watch that one fully. The rest become your backlog for when you level up.</p>
+      <p>Before your next language learning YouTube session, run your 3 target videos through <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> first. Pick the one whose summary you understand best and watch that one fully. The rest become your backlog for when you level up.</p>
       <p>One-time pay-once pricing — no monthly subscription eating into your language course budget.</p>
     `
   },
@@ -1142,7 +1151,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
     content: `
       <p>Law school video content has exploded. Between bar prep courses (Barbri, Themis, Kaplan all post hours of lecture video), professor supplement channels, case study breakdowns, and law review talks, a serious law student can easily face 10+ hours of optional video content per week — on top of readings, class, and practice exams.</p>
 
-      <p>AI summarization doesn't replace the deep reading work of law school. But it does compress the supplemental video load that eats your evenings. Paste any bar prep lecture or doctrine explainer into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and get the rules, exceptions, and black letter law in 60 seconds.</p>
+      <p>AI summarization doesn't replace the deep reading work of law school. But it does compress the supplemental video load that eats your evenings. Paste any bar prep lecture or doctrine explainer into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> and get the rules, exceptions, and black letter law in 60 seconds.</p>
 
       <h2>Where Law Students Spend Video Time (and Where AI Saves the Most)</h2>
       <table style="width:100%; border-collapse:collapse; margin:1.5rem 0;">
@@ -1214,7 +1223,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h2>Reduce the Video Backlog Before It Crushes Your Study Schedule</h2>
       <p>Law students who fall behind on bar prep video content often feel the pressure of an impossible backlog. AI summarization helps you stay current without spending every evening watching lecture recordings at 2x speed.</p>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — paste any bar prep lecture or doctrine video and get the black letter law in seconds. One-time pay-once pricing, no subscription.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> — paste any bar prep lecture or doctrine video and get the black letter law in seconds. One-time pay-once pricing, no subscription.</p>
     `
   },
   'how-to-take-notes-from-youtube-videos-without-watching': {
@@ -1250,13 +1259,13 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>Practical tip: paste the summary into your notes before watching. Then annotate it during targeted watching instead of taking notes from scratch. You're expanding and deepening the summary, not building from zero.</p>
 
       <h3>Conference Talks and Keynotes (30-60 minutes)</h3>
-      <p>Conference talks usually have a single main argument with supporting evidence and examples. The summary will capture the core argument clearly. Watch the summary first, then watch only the examples or demos that the summary describes as significant. See our <a href="/blog/youtube-summarizer-conference-talks-keynotes" style="color: #ff0055; font-weight: 600;">guide to summarizing conference talks</a> for the full workflow.</p>
+      <p>Conference talks usually have a single main argument with supporting evidence and examples. The summary will capture the core argument clearly. Watch the summary first, then watch only the examples or demos that the summary describes as significant. See our <a href="/blog/youtube-summarizer-conference-talks-keynotes" style="color: var(--accent); font-weight: 600;">guide to summarizing conference talks</a> for the full workflow.</p>
 
       <h3>Tutorials and How-To Videos (15-45 minutes)</h3>
       <p>Tutorials are trickier because the critical information is often visual — screen recordings, code demos, physical demonstrations. The AI summary will capture the steps in text, but you may still need to watch the execution. Use the summary to build the skeleton of your notes (the step list), then watch the video to fill in the specifics you can't capture in text.</p>
 
       <h3>Book Summaries and Explainer Videos (10-25 minutes)</h3>
-      <p>These summarize well — they're already designed to distill dense information. The AI summary of a book summary video is a second layer of compression. For building a reading list or research overview, the double-summary format is ideal: you get the key ideas from 10 books in the time it used to take to watch 2 videos. See our <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">guide to AI book summary extraction</a> for this specific use case.</p>
+      <p>These summarize well — they're already designed to distill dense information. The AI summary of a book summary video is a second layer of compression. For building a reading list or research overview, the double-summary format is ideal: you get the key ideas from 10 books in the time it used to take to watch 2 videos. See our <a href="/blog/summarize-youtube-without-watching" style="color: var(--accent); font-weight: 600;">guide to AI book summary extraction</a> for this specific use case.</p>
 
       <h2>Integrating Summaries Into Your Notes System</h2>
 
@@ -1272,11 +1281,11 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Which Tool to Use</h2>
       <p>For note-taking specifically, you want structured output and no usage caps (during exam season or a research sprint, you might need 20+ summaries in a week). The options:</p>
       <ul>
-        <li><strong>YT Summarizer (<a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">try free</a>):</strong> Structured bullet points, no weekly caps, one-time pay-once pricing. Best output format for notes. Handles long lectures (2+ hours) without truncating.</li>
+        <li><strong>YT Summarizer (<a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">try free</a>):</strong> Structured bullet points, no weekly caps, one-time pay-once pricing. Best output format for notes. Handles long lectures (2+ hours) without truncating.</li>
         <li><strong>Eightify:</strong> Good structured output. Free tier limited to 3 summaries/week — breaks during heavy study periods. Subscription required for unlimited use.</li>
         <li><strong>Summarize.tech:</strong> Completely free, no limits. Paragraph output (not bullet points) makes it harder to use directly in notes. Good for quick triage on videos you're not sure are worth your time.</li>
       </ul>
-      <p>The <a href="/blog/fastest-way-to-summarize-youtube-video-methods-compared" style="color: #ff0055; font-weight: 600;">full speed comparison across all methods</a> is useful if you're evaluating workflow options. For students specifically, see our <a href="/blog/best-youtube-summarizers-for-students-2026-free-paid" style="color: #ff0055; font-weight: 600;">student-focused tool comparison</a> for the cost breakdown at different usage levels.</p>
+      <p>The <a href="/blog/fastest-way-to-summarize-youtube-video-methods-compared" style="color: var(--accent); font-weight: 600;">full speed comparison across all methods</a> is useful if you're evaluating workflow options. For students specifically, see our <a href="/blog/best-youtube-summarizers-for-students-2026-free-paid" style="color: var(--accent); font-weight: 600;">student-focused tool comparison</a> for the cost breakdown at different usage levels.</p>
 
       <h2>The Real Productivity Gain</h2>
       <p>The biggest benefit of the summarize-first workflow isn't the time saved per video — it's the decision quality improvement. When you know the structure of a video before you watch it, you watch differently: you're checking your understanding against the summary, filling in gaps, and spotting where the summary oversimplified. That's an active learning mode, not passive consumption. Your notes reflect genuine understanding rather than transcription of whatever the speaker said in the order they said it.</p>
@@ -1305,7 +1314,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h3>No Subscription + No Weekly Limits</h3>
 
       <h4>YT Summarizer — Pay-Once, No Subscription</h4>
-      <p>The only tool in this market that combines good output quality, no subscription, and no usage caps. Pay once — no weekly reset, no monthly fee, no tiered pricing. Works on any device with a browser (no extension installation required). <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try the free tier to test output quality before buying.</a></p>
+      <p>The only tool in this market that combines good output quality, no subscription, and no usage caps. Pay once — no weekly reset, no monthly fee, no tiered pricing. Works on any device with a browser (no extension installation required). <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try the free tier to test output quality before buying.</a></p>
       <p><strong>Output format:</strong> Structured bullet points, organized by topic. Clean enough to paste directly into Notion or Obsidian. Handles long videos (2+ hours) without truncating — important for lectures and conference recordings.</p>
       <p><strong>The math on subscription alternatives:</strong> Eightify unlimited costs $96-144/year. NoteGPT unlimited costs $84-180/year. YT Summarizer's Pro pack is $19 once (200 summaries). The one-time price pays for itself against any subscription in 2-3 months.</p>
 
@@ -1320,7 +1329,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p><strong>Who should consider it:</strong> Daily users who want the best Chrome extension UX and don't mind monthly billing.</p>
 
       <h4>NoteGPT — $7-19/Month, Features Beyond Summaries</h4>
-      <p>NoteGPT goes beyond summarization — mind maps, flashcards, Q&A on video content. If you want an all-in-one study workflow, the extra features justify the monthly cost. For pure summarization, you're paying for features you don't use. See our <a href="/blog/best-youtube-summarizers-for-students-2026-free-paid" style="color: #ff0055; font-weight: 600;">student-focused comparison</a> for the full NoteGPT breakdown.</p>
+      <p>NoteGPT goes beyond summarization — mind maps, flashcards, Q&A on video content. If you want an all-in-one study workflow, the extra features justify the monthly cost. For pure summarization, you're paying for features you don't use. See our <a href="/blog/best-youtube-summarizers-for-students-2026-free-paid" style="color: var(--accent); font-weight: 600;">student-focused comparison</a> for the full NoteGPT breakdown.</p>
 
       <h3>Free With Caps (What Most Tools Actually Offer)</h3>
       <p>Most "free" YouTube summarizers are free trials, not free products:</p>
@@ -1344,7 +1353,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>You want the best Chrome extension UX and don't mind monthly billing:</strong> Eightify paid tier. Best in-browser experience in this market.</li>
         <li><strong>You need summaries + mind maps + flashcards:</strong> NoteGPT. The extra study features justify the subscription if you actively use them.</li>
       </ul>
-      <p>The full tool comparison — including accuracy testing and pricing over time — is in our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">8 YouTube summarizers compared</a> and <a href="/blog/best-ai-video-summarization-tools-2026" style="color: #ff0055; font-weight: 600;">10 AI video summarization tools ranked</a>.</p>
+      <p>The full tool comparison — including accuracy testing and pricing over time — is in our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">8 YouTube summarizers compared</a> and <a href="/blog/best-ai-video-summarization-tools-2026" style="color: var(--accent); font-weight: 600;">10 AI video summarization tools ranked</a>.</p>
     `
   },
   'best-ai-video-summarization-tools-2026': {
@@ -1366,13 +1375,13 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>The 10 AI Video Summarization Tools, Ranked</h2>
 
       <h3>1. YT Summarizer — Best Overall Value</h3>
-      <p>YT Summarizer handled all three test videos cleanly, including the 90-minute conference talk. Output was structured bullet points organized by topic section. No hallucinations detected on verifiable claims. Pricing: one-time pay-once pricing — no monthly fees, no weekly limits. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> before committing.</p>
+      <p>YT Summarizer handled all three test videos cleanly, including the 90-minute conference talk. Output was structured bullet points organized by topic section. No hallucinations detected on verifiable claims. Pricing: one-time pay-once pricing — no monthly fees, no weekly limits. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> before committing.</p>
 
       <h3>2. Eightify — Best Browser Extension</h3>
       <p>Strong quality on short and medium videos. Produces clean timestamped summaries. Weakness: it's a Chrome extension, which means mobile use is awkward. Subscription pricing ($8-12/month) makes long-term cost higher than pay-once alternatives. Free tier allows only 5 summaries per week.</p>
 
       <h3>3. NoteGPT — Best for Study Features</h3>
-      <p>NoteGPT adds flashcard generation and Q&A on top of summaries, making it specifically useful for students. Quality is good on educational content. Expensive at $12-15/month, though it offers more features than pure summarizers. See our <a href="/blog/best-youtube-summarizers-for-students-2026-free-paid" style="color: #ff0055; font-weight: 600;">student-focused comparison</a> for more detail.</p>
+      <p>NoteGPT adds flashcard generation and Q&A on top of summaries, making it specifically useful for students. Quality is good on educational content. Expensive at $12-15/month, though it offers more features than pure summarizers. See our <a href="/blog/best-youtube-summarizers-for-students-2026-free-paid" style="color: var(--accent); font-weight: 600;">student-focused comparison</a> for more detail.</p>
 
       <h3>4. Glarity — Best Multi-Platform Coverage</h3>
       <p>Glarity summarizes not just YouTube but also web pages, PDFs, and articles. Useful if you want one tool for all content types. Video summary quality is decent but not best-in-class. Browser extension only — no web app. Free tier is limited.</p>
@@ -1390,7 +1399,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>Notta is primarily a meeting transcription tool that also handles YouTube video. If you need to summarize both YouTube content and Zoom recordings in the same workflow, Notta covers both. YouTube-specific quality is good but not specialized. Pricing is high for YouTube-only use.</p>
 
       <h3>9. ChatGPT (Manual Method) — Slow But Flexible</h3>
-      <p>Copying a YouTube transcript to ChatGPT works, but the workflow takes 4-6 minutes per video and fails on videos longer than ChatGPT's context window. The upside: you can ask follow-up questions and customize the output format. For one video occasionally, fine. For regular use, see our <a href="/blog/copying-youtube-transcript-to-chatgpt-wastes-time" style="color: #ff0055; font-weight: 600;">analysis of why this method costs more time than it saves</a>.</p>
+      <p>Copying a YouTube transcript to ChatGPT works, but the workflow takes 4-6 minutes per video and fails on videos longer than ChatGPT's context window. The upside: you can ask follow-up questions and customize the output format. For one video occasionally, fine. For regular use, see our <a href="/blog/copying-youtube-transcript-to-chatgpt-wastes-time" style="color: var(--accent); font-weight: 600;">analysis of why this method costs more time than it saves</a>.</p>
 
       <h3>10. Gemini (YouTube Integration) — Unreliable</h3>
       <p>Google's Gemini integration with YouTube works in some regions and on some accounts, but coverage is too inconsistent to rely on. When it works, quality is good. When it doesn't, you have no fallback. Not recommended as a primary tool until Google expands availability.</p>
@@ -1403,14 +1412,14 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Academic/research:</strong> Mindgrasp if you also need PDF summarization. NoteGPT if you want flashcards and study features alongside summaries.</li>
         <li><strong>Meeting + YouTube:</strong> Notta handles both, though it's expensive for YouTube-only use.</li>
       </ul>
-      <p>Speed and workflow also matter. Read our <a href="/blog/fastest-way-to-summarize-youtube-video-methods-compared" style="color: #ff0055; font-weight: 600;">full breakdown of summarization speed across all methods</a> if time per video is your primary constraint.</p>
+      <p>Speed and workflow also matter. Read our <a href="/blog/fastest-way-to-summarize-youtube-video-methods-compared" style="color: var(--accent); font-weight: 600;">full breakdown of summarization speed across all methods</a> if time per video is your primary constraint.</p>
 
       <h2>What's Changed Since 2025</h2>
       <p>Two significant changes in 2025-2026 affected this market. First, YouTube changed how captions are delivered, which broke several tools that relied on scraping. Tools that switched to API-based caption access (like YT Summarizer) remain reliable; others still have intermittent issues. Second, the major AI models (GPT-4, Claude 3, Gemini) all improved significantly, which raised the quality floor — even mid-tier tools now produce acceptable summaries on straightforward content.</p>
       <p>The quality gap now shows up most clearly on long videos (90+ minutes) and technical content where hallucination risk is higher. That's where the difference between a $0 tool and a pay-once tool becomes meaningful.</p>
 
       <h2>Bottom Line</h2>
-      <p>For most people: start free, upgrade if you hit limits. YT Summarizer's free tier handles casual use. The pay-once pricing is the right call once you know you're using it regularly. Avoid monthly subscriptions unless you specifically need features (meeting transcription, academic mode, multi-format) that justify the recurring cost. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free — no credit card required.</a></p>
+      <p>For most people: start free, upgrade if you hit limits. YT Summarizer's free tier handles casual use. The pay-once pricing is the right call once you know you're using it regularly. Avoid monthly subscriptions unless you specifically need features (meeting transcription, academic mode, multi-format) that justify the recurring cost. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free — no credit card required.</a></p>
     `
   },
   'free-youtube-video-summarizer-ai-tools-2026': {
@@ -1428,7 +1437,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p><strong>Limitation:</strong> Quality on technical content is inconsistent. Long videos (90+ minutes) sometimes produce shallow summaries that miss key sections.</p>
 
       <h3>YT Summarizer Free Tier</h3>
-      <p>YT Summarizer offers a free tier with a limited number of summaries per month — enough for casual use. Output is structured bullet points, significantly more useful than Summarize.tech's paragraph format. The free tier is genuinely free; you don't need a credit card to sign up. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free here.</a></p>
+      <p>YT Summarizer offers a free tier with a limited number of summaries per month — enough for casual use. Output is structured bullet points, significantly more useful than Summarize.tech's paragraph format. The free tier is genuinely free; you don't need a credit card to sign up. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free here.</a></p>
       <p><strong>Best for:</strong> Users who want structured output without paying. Light weekly use — a few videos per week during research or study sessions.</p>
       <p><strong>Limitation:</strong> Monthly cap. Heavy users during exam season or research sprints will hit it.</p>
 
@@ -1439,13 +1448,13 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>5 summaries per week on the free plan. Good quality — produces timestamped key points and chapter summaries. The Chrome extension format is convenient. But 5/week is tight for anyone using it for daily research or study. Paid plans start at $8/month.</p>
 
       <h3>NoteGPT</h3>
-      <p>Approximately 5-10 free summaries before requiring a paid account. The extra features (flashcards, Q&A) are genuinely useful for students, but the cap limits usefulness for extended exam prep. See our <a href="/blog/best-youtube-summarizers-for-students-2026-free-paid" style="color: #ff0055; font-weight: 600;">student-specific breakdown</a> for the full cost analysis.</p>
+      <p>Approximately 5-10 free summaries before requiring a paid account. The extra features (flashcards, Q&A) are genuinely useful for students, but the cap limits usefulness for extended exam prep. See our <a href="/blog/best-youtube-summarizers-for-students-2026-free-paid" style="color: var(--accent); font-weight: 600;">student-specific breakdown</a> for the full cost analysis.</p>
 
       <h3>Glarity</h3>
       <p>Free plan with limited daily summaries. Multi-platform coverage (YouTube + web pages) is a differentiator, but the cap means you'll exhaust it quickly if you also use it for article summarization alongside videos.</p>
 
       <h2>The Manual Workaround: ChatGPT</h2>
-      <p>ChatGPT doesn't directly access YouTube, but you can copy a video's transcript and paste it in. The result is a genuine summary — but the process takes 4-6 minutes per video and breaks on videos longer than the context window. We timed the full 11-step process in our <a href="/blog/copying-youtube-transcript-to-chatgpt-wastes-time" style="color: #ff0055; font-weight: 600;">detailed workflow analysis</a>. It's free, but the time cost is real. If you're summarizing 10 videos per week, that's 40-50 minutes of overhead — over 35 hours per year.</p>
+      <p>ChatGPT doesn't directly access YouTube, but you can copy a video's transcript and paste it in. The result is a genuine summary — but the process takes 4-6 minutes per video and breaks on videos longer than the context window. We timed the full 11-step process in our <a href="/blog/copying-youtube-transcript-to-chatgpt-wastes-time" style="color: var(--accent); font-weight: 600;">detailed workflow analysis</a>. It's free, but the time cost is real. If you're summarizing 10 videos per week, that's 40-50 minutes of overhead — over 35 hours per year.</p>
 
       <h2>When Free Stops Being Enough</h2>
       <p>The free options work well until one of these happens:</p>
@@ -1462,14 +1471,14 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Subscription tools:</strong> $8-15/month = $96-180/year, indefinitely</li>
         <li><strong>YT Summarizer:</strong> $19 once (200 summaries), no recurring cost</li>
       </ul>
-      <p>At any usage level above "occasional," pay-once pricing wins after a couple of months. The only reason to choose a subscription over a pay-once tool is if you specifically need features (meeting transcription, multi-format) that the subscription tool provides and YT Summarizer doesn't. For YouTube-only summarization, the one-time model is the better deal by a wide margin. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">See YT Summarizer pricing and free tier options.</a></p>
+      <p>At any usage level above "occasional," pay-once pricing wins after a couple of months. The only reason to choose a subscription over a pay-once tool is if you specifically need features (meeting transcription, multi-format) that the subscription tool provides and YT Summarizer doesn't. For YouTube-only summarization, the one-time model is the better deal by a wide margin. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">See YT Summarizer pricing and free tier options.</a></p>
 
       <h2>Which Free Tool to Start With</h2>
       <p>Our recommendation by use case:</p>
       <ul>
         <li><strong>Just want to test the concept:</strong> Summarize.tech. No account, instant result, genuinely free.</li>
         <li><strong>Want structured output for free:</strong> YT Summarizer free tier. Better format, still no credit card required.</li>
-        <li><strong>Already use ChatGPT regularly:</strong> The manual method works for occasional use. Don't set it up as a regular workflow — read the <a href="/blog/fastest-way-to-summarize-youtube-video-methods-compared" style="color: #ff0055; font-weight: 600;">speed comparison</a> first to understand the time cost at scale.</li>
+        <li><strong>Already use ChatGPT regularly:</strong> The manual method works for occasional use. Don't set it up as a regular workflow — read the <a href="/blog/fastest-way-to-summarize-youtube-video-methods-compared" style="color: var(--accent); font-weight: 600;">speed comparison</a> first to understand the time cost at scale.</li>
         <li><strong>Hitting free caps regularly:</strong> The pay-once pricing is the right move. It's less than two months of subscription pricing.</li>
       </ul>
     `
@@ -1537,9 +1546,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h2>The Counter-Position That Actually Works</h2>
       <p>Reddit and productivity communities sometimes frame the choice as "free vs. paid." That framing misses the real comparison: <em>time-free vs. money-free</em>. Neither method is genuinely free — one costs money, the other costs time. For anyone summarizing more than a few videos per week, the time cost of the manual method is dramatically higher than the monetary cost of a dedicated tool.</p>
-      <p>The cleaner question: is your time worth more than a one-time pack? If yes, the dedicated tool is the better "free" option in any meaningful sense. For the full workflow comparison, see <a href="/blog/youtube-summarizer-vs-chatgpt-manual-workflow" style="color: #ff0055; font-weight: 600;">YouTube summarizer vs. the ChatGPT manual workflow</a>. For speed-ranked alternatives, see <a href="/blog/fastest-way-to-summarize-youtube-video-methods-compared" style="color: #ff0055; font-weight: 600;">fastest ways to summarize YouTube videos</a>. And if you are wondering whether the chatbot can do it at all, see <a href="/blog/can-chatgpt-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">can ChatGPT summarize YouTube videos</a>.</p>
+      <p>The cleaner question: is your time worth more than a one-time pack? If yes, the dedicated tool is the better "free" option in any meaningful sense. For the full workflow comparison, see <a href="/blog/youtube-summarizer-vs-chatgpt-manual-workflow" style="color: var(--accent); font-weight: 600;">YouTube summarizer vs. the ChatGPT manual workflow</a>. For speed-ranked alternatives, see <a href="/blog/fastest-way-to-summarize-youtube-video-methods-compared" style="color: var(--accent); font-weight: 600;">fastest ways to summarize YouTube videos</a>. And if you are wondering whether the chatbot can do it at all, see <a href="/blog/can-chatgpt-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">can ChatGPT summarize YouTube videos</a>.</p>
 
-      <p>Stop counting steps: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">try YT Summarizer free</a> — paste a URL, skip the 11 steps.</p>
+      <p>Stop counting steps: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">try YT Summarizer free</a> — paste a URL, skip the 11 steps.</p>
     `
   },
   'best-youtube-summarizers-for-students-2026-free-paid': {
@@ -1565,7 +1574,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p><strong>Honest limitations:</strong> Output quality is noticeably lower than paid tools. On 20-minute academic lectures, it typically captures the first two sections well and loses detail on later content. Not suitable for exam-critical material where you need comprehensive coverage.</p>
       <h3>ChatGPT Free Tier (Manual Workflow)</h3>
       <p>Copy the YouTube transcript manually, paste into ChatGPT, write a prompt. Free, produces high-quality output when it works.</p>
-      <p><strong>Honest limitations:</strong> Takes 4-6 minutes per video. Context window overflow on long lectures means you may need to split and process in chunks. Not usable at scale — during exam season when you need 20+ summaries, the manual overhead becomes prohibitive. Full workflow breakdown: <a href="/blog/youtube-summarizer-vs-chatgpt-manual-workflow" style="color: #ff0055; font-weight: 600;">dedicated tools vs. ChatGPT manual workflow</a>.</p>
+      <p><strong>Honest limitations:</strong> Takes 4-6 minutes per video. Context window overflow on long lectures means you may need to split and process in chunks. Not usable at scale — during exam season when you need 20+ summaries, the manual overhead becomes prohibitive. Full workflow breakdown: <a href="/blog/youtube-summarizer-vs-chatgpt-manual-workflow" style="color: var(--accent); font-weight: 600;">dedicated tools vs. ChatGPT manual workflow</a>.</p>
       <h3>Gemini (Google AI Studio or Bard)</h3>
       <p>Gemini has YouTube integration in some regions and produces quality summaries when it works. Free for standard use.</p>
       <p><strong>Honest limitations:</strong> Coverage is inconsistent — it fails on many videos without clear explanation. Not reliable enough to depend on for time-sensitive studying.</p>
@@ -1590,12 +1599,12 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Clean, structured output.</strong> Bullet points with bold tags paste directly into Notion, Obsidian, or Google Docs without reformatting.</li>
         <li><strong>Long video support.</strong> Handles 2-3 hour lecture recordings, full course playlists, and extended seminars.</li>
       </ul>
-      <p>The cost comparison: pay-once (from $9) vs. $8-15/month subscription. Over a 3-year degree: a $49 one-time Power pack (1,000 summaries) vs. $288–540 in subscriptions. Over a 2-year Masters: a $19 Pro pack (200) vs. $192–360. See the full breakdown: <a href="/blog/youtube-summarizer-pricing-free-vs-onetime-vs-subscription" style="color: #ff0055; font-weight: 600;">YouTube summarizer pricing compared</a>.</p>
+      <p>The cost comparison: pay-once (from $9) vs. $8-15/month subscription. Over a 3-year degree: a $49 one-time Power pack (1,000 summaries) vs. $288–540 in subscriptions. Over a 2-year Masters: a $19 Pro pack (200) vs. $192–360. See the full breakdown: <a href="/blog/youtube-summarizer-pricing-free-vs-onetime-vs-subscription" style="color: var(--accent); font-weight: 600;">YouTube summarizer pricing compared</a>.</p>
 
       <h2>Subscription Options Worth Considering</h2>
       <h3>NoteGPT ($7-19/month)</h3>
       <p>The only subscription tool worth considering for students, because it adds genuinely study-specific features: mind maps, flashcard generation, and note templates. If you want summaries integrated into a full study system — not just summaries to paste elsewhere — NoteGPT offers value beyond the base summarization. The key question is whether you'll use those features consistently enough to justify the ongoing cost.</p>
-      <p>Verdict: worth it during intensive study semesters. Not worth maintaining over breaks or low-use periods. Compare directly: <a href="/blog/notegpt-vs-ytsummarizer-honest-comparison-2026" style="color: #ff0055; font-weight: 600;">NoteGPT vs YT Summarizer</a>.</p>
+      <p>Verdict: worth it during intensive study semesters. Not worth maintaining over breaks or low-use periods. Compare directly: <a href="/blog/notegpt-vs-ytsummarizer-honest-comparison-2026" style="color: var(--accent); font-weight: 600;">NoteGPT vs YT Summarizer</a>.</p>
       <h3>Eightify ($8-10/month)</h3>
       <p>The in-browser UX is excellent — summaries appear inline on YouTube. But the monthly cost is hard to justify for students. If you want the in-browser experience without subscription, Glarity (free Chrome extension) covers basic in-browser summarization.</p>
 
@@ -1607,7 +1616,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Research screening.</strong> For papers and essays, summarize 20-30 YouTube sources to identify the 5 that are actually relevant to your argument. This makes your research more comprehensive without proportionally more time.</li>
         <li><strong>Missed lecture catch-up.</strong> When you miss a recorded lecture, read the summary first to get the structure and key points. Then watch only the sections that are unclear from the summary or exam-critical.</li>
       </ol>
-      <p>For deeper study workflows, see <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">YouTube summarizer for students</a> and <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">using YouTube summaries for note-taking</a>.</p>
+      <p>For deeper study workflows, see <a href="/blog/youtube-summarizer-for-students" style="color: var(--accent); font-weight: 600;">YouTube summarizer for students</a> and <a href="/blog/youtube-video-notes-best-apps-methods" style="color: var(--accent); font-weight: 600;">using YouTube summaries for note-taking</a>.</p>
 
       <h2>Recommendation by Budget</h2>
       <ul>
@@ -1615,7 +1624,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>pay-once budget:</strong> YT Summarizer. Best value for the entire duration of your degree. No ongoing cost, full quality, no caps.</li>
         <li><strong>$7-15/month budget during intensive semesters:</strong> NoteGPT if you want mind maps and flashcards integrated. YT Summarizer's pay-once pricing if you just need clean summaries.</li>
       </ul>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — no subscription, no credit card, just paste a URL.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> — no subscription, no credit card, just paste a URL.</p>
     `
   },
   'fastest-way-to-summarize-youtube-video-methods-compared': {
@@ -1648,18 +1657,18 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p><strong>When to use:</strong> You need a fast gut-check on whether a video is worth watching. Not when you need to actually understand the content.</p>
 
       <h2>Method 2: Dedicated Web Tools (30-60 Seconds)</h2>
-      <p><strong>Tools:</strong> <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a>, similar dedicated platforms</p>
+      <p><strong>Tools:</strong> <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a>, similar dedicated platforms</p>
       <p><strong>Steps:</strong> 1. Go to the tool. 2. Paste URL. 3. Wait 30-60 seconds. Read summary.</p>
       <p><strong>Output quality:</strong> High. Structured bullet points with bold topic headers, comprehensive coverage of key arguments, clean copy-paste output. For most use cases, this is the best combination of speed and quality.</p>
       <p><strong>What this gets right:</strong> One step, works on any device, no extensions to install, handles videos of any length without additional setup. The quality-to-time ratio is the best of any method tested. Pricing: free tier available, pay-once packs from $9.</p>
-      <p><strong>When to use:</strong> Default choice for anyone summarizing more than a few videos per week. See our <a href="/blog/best-youtube-summary-generator-tested-6-free-tools" style="color: #ff0055; font-weight: 600;">head-to-head test of 6 free tools</a> for the full quality comparison.</p>
+      <p><strong>When to use:</strong> Default choice for anyone summarizing more than a few videos per week. See our <a href="/blog/best-youtube-summary-generator-tested-6-free-tools" style="color: var(--accent); font-weight: 600;">head-to-head test of 6 free tools</a> for the full quality comparison.</p>
 
       <h2>Method 3: AI Browser Extensions (30-45 Seconds)</h2>
       <p><strong>Tools:</strong> Eightify (Chrome), Glarity (Chrome), YouTube Summary with ChatGPT (Chrome)</p>
       <p><strong>Steps:</strong> 1. Install extension. 2. Open YouTube video. 3. Click extension button. Summary appears on page.</p>
       <p><strong>Output quality:</strong> Varies by extension. Eightify produces clean structured output; older extensions produce basic text blocks. Eightify includes timestamps linked to video sections, which is genuinely useful.</p>
       <p><strong>Speed note:</strong> The summary appears faster than web tools because it processes locally, but the quality is typically lower on very long videos. Extension must be pre-installed — it's not faster if you're counting setup time.</p>
-      <p><strong>When to use:</strong> You watch YouTube primarily in Chrome and want summaries to appear inline on the YouTube page. The in-browser UX is the best of any method, but Chrome-only limits its usefulness. See <a href="/blog/chrome-extension-to-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">Chrome extensions for YouTube summarization</a>.</p>
+      <p><strong>When to use:</strong> You watch YouTube primarily in Chrome and want summaries to appear inline on the YouTube page. The in-browser UX is the best of any method, but Chrome-only limits its usefulness. See <a href="/blog/chrome-extension-to-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">Chrome extensions for YouTube summarization</a>.</p>
 
       <h2>Method 4: Gemini (60-90 Seconds When It Works)</h2>
       <p><strong>Steps:</strong> 1. Open Google Gemini. 2. Paste YouTube URL. 3. Ask Gemini to summarize. Read output.</p>
@@ -1677,7 +1686,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p><strong>Steps:</strong> 1. Open ChatGPT. 2. Use a YouTube-connected plugin or custom GPT. 3. Paste URL. 4. Ask for summary. Wait.</p>
       <p><strong>Setup cost:</strong> Finding and installing the right plugin takes 5-10 minutes upfront. After setup, each summary takes 90-120 seconds.</p>
       <p><strong>Output quality:</strong> High. ChatGPT produces well-structured, nuanced summaries and you can ask follow-up questions. The conversational interface is the strongest of any method.</p>
-      <p><strong>When to use:</strong> You frequently want to ask follow-up questions about video content ("what did they say about X?", "summarize only the Q&A section"). The conversational flow is hard to replicate with other tools. See <a href="/blog/can-chatgpt-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">ChatGPT YouTube summarization guide</a>.</p>
+      <p><strong>When to use:</strong> You frequently want to ask follow-up questions about video content ("what did they say about X?", "summarize only the Q&A section"). The conversational flow is hard to replicate with other tools. See <a href="/blog/can-chatgpt-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">ChatGPT YouTube summarization guide</a>.</p>
 
       <h2>Method 7: Claude with Transcript Paste (2-3 Minutes)</h2>
       <p><strong>Steps:</strong> 1. Get transcript from YouTube. 2. Copy transcript. 3. Open Claude. 4. Paste + write prompt. Wait for output.</p>
@@ -1687,7 +1696,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Method 8: ChatGPT Manual Workflow (4-6 Minutes)</h2>
       <p><strong>Steps:</strong> 1. Open YouTube video. 2. Click "Show transcript." 3. Toggle timestamps off. 4. Select all transcript text. 5. Copy. 6. Open new ChatGPT tab. 7. Paste transcript. 8. Write prompt. 9. Wait for output. 10. Copy summary.</p>
       <p><strong>That's 10 steps</strong> — 4-6 minutes when everything works. Longer when the transcript is unavailable, the video is long (transcript exceeds ChatGPT's context), or you need to reformulate your prompt.</p>
-      <p><strong>Why people use it:</strong> "It's free." But the time cost is real. At 10 videos/week, this method takes 40-60 minutes — compared to 5-10 minutes for a dedicated tool. See the full analysis: <a href="/blog/youtube-summarizer-vs-chatgpt-manual-workflow" style="color: #ff0055; font-weight: 600;">dedicated tools vs. the ChatGPT manual workflow</a>.</p>
+      <p><strong>Why people use it:</strong> "It's free." But the time cost is real. At 10 videos/week, this method takes 40-60 minutes — compared to 5-10 minutes for a dedicated tool. See the full analysis: <a href="/blog/youtube-summarizer-vs-chatgpt-manual-workflow" style="color: var(--accent); font-weight: 600;">dedicated tools vs. the ChatGPT manual workflow</a>.</p>
 
       <h2>Method 9: Manual Notes While Watching (Full Video Length + 30%)</h2>
       <p><strong>When to use:</strong> The video contains visual demonstrations, code walkthroughs, or physical techniques where the visual content carries essential information that a transcript doesn't capture. Also when you want to develop your own analytical framework rather than adopt the speaker's.</p>
@@ -1704,7 +1713,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>One-off, no tool installed:</strong> Method 8 (ChatGPT manual). Works everywhere, just slow.</li>
       </ul>
 
-      <p>For most people, most of the time, a dedicated web tool delivers the best combination of speed, quality, and reliability. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — paste a URL, get a summary in under 60 seconds.</p>
+      <p>For most people, most of the time, a dedicated web tool delivers the best combination of speed, quality, and reliability. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> — paste a URL, get a summary in under 60 seconds.</p>
     `
   },
   'youtube-book-summaries-ai-extract-key-ideas': {
@@ -1733,7 +1742,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h3>Step 1: Collect Book Videos (5 Minutes)</h3>
       <p>Search YouTube for "[topic] book summary" or "[topic] book review." For example: "productivity book summary 2026" or "behavioral economics book review." Collect 10-15 video URLs from different creators. Mix channels — different reviewers highlight different aspects of the same book.</p>
       <h3>Step 2: Batch Summarize (15-20 Minutes)</h3>
-      <p>Paste all URLs into your summarizer (<a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> or equivalent). Process 10-15 videos in about 15 minutes. Read each summary as it completes — they're short enough to read in under a minute.</p>
+      <p>Paste all URLs into your summarizer (<a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> or equivalent). Process 10-15 videos in about 15 minutes. Read each summary as it completes — they're short enough to read in under a minute.</p>
       <h3>Step 3: Sort and Prioritize (10 Minutes)</h3>
       <p>Based on the summaries, sort into:</p>
       <ul>
@@ -1771,9 +1780,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Each entry contains</strong> the AI summary plus your personal rating of how interested you are in reading the full book.</li>
         <li><strong>Over time</strong>, this becomes a curated reading list that's far more reliable than bestseller lists or algorithmic recommendations — because each entry is based on actual content analysis, not marketing copy.</li>
       </ol>
-      <p>For the knowledge base setup, see <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">how to build a YouTube knowledge base</a>. For handling long book discussion videos, see <a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: #ff0055; font-weight: 600;">summarizing 2-hour YouTube videos</a>.</p>
+      <p>For the knowledge base setup, see <a href="/blog/youtube-video-notes-best-apps-methods" style="color: var(--accent); font-weight: 600;">how to build a YouTube knowledge base</a>. For handling long book discussion videos, see <a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: var(--accent); font-weight: 600;">summarizing 2-hour YouTube videos</a>.</p>
 
-      <p>Stop watching 45-minute book reviews when 2 minutes of AI summary tells you everything you need. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> and build your reading list faster.</p>
+      <p>Stop watching 45-minute book reviews when 2 minutes of AI summary tells you everything you need. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> and build your reading list faster.</p>
     `
   },
   'youtube-summarizer-conference-talks-keynotes': {
@@ -1803,7 +1812,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ol>
       <h3>Batch Processing: The 30-Minute Conference Scan</h3>
       <ol>
-        <li><strong>Paste all flagged talk URLs</strong> into your summarizer (like <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a>). Process 10-15 talks in about 20 minutes of summarization time.</li>
+        <li><strong>Paste all flagged talk URLs</strong> into your summarizer (like <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a>). Process 10-15 talks in about 20 minutes of summarization time.</li>
         <li><strong>Read all summaries in one pass.</strong> This takes about 10 minutes for 15 summaries.</li>
         <li><strong>Sort into three buckets:</strong> "Watch this talk in full" (2-3 talks where the summary revealed depth worth exploring), "Summary is enough" (10+ talks where the summary captured the full argument), "Skip entirely" (talks that didn't deliver what the title promised).</li>
       </ol>
@@ -1843,7 +1852,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Track themes across talks.</strong> When you notice that 8 out of 10 talks at a conference mention the same concept, you've identified a trend. AI summaries make this pattern visible because you can scan 10 talks in 20 minutes instead of 10 hours.</li>
         <li><strong>Share summaries with your team.</strong> Conference attendance is expensive. AI summaries let you distribute the key insights to your entire team for free. "Here are the 10 most important takeaways from KubeCon" — backed by actual summaries, not vague notes.</li>
       </ol>
-      <p>For the system setup, see <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">how to build a YouTube knowledge base</a>. For handling long talks, see <a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: #ff0055; font-weight: 600;">summarizing 2-hour YouTube videos</a>.</p>
+      <p>For the system setup, see <a href="/blog/youtube-video-notes-best-apps-methods" style="color: var(--accent); font-weight: 600;">how to build a YouTube knowledge base</a>. For handling long talks, see <a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: var(--accent); font-weight: 600;">summarizing 2-hour YouTube videos</a>.</p>
 
       <h2>When to Watch the Full Talk</h2>
       <p>Not every summary should replace the full viewing. Watch conference talks in full when:</p>
@@ -1853,7 +1862,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>You're evaluating whether to adopt a technology, framework, or approach — the demo and Q&A sections often reveal implementation gotchas that the summary misses.</li>
         <li>The talk is directly relevant to an active project or decision.</li>
       </ul>
-      <p>For everything else, the summary gives you 85% of the value in 2% of the time. Start processing your conference backlog: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">try YT Summarizer free</a>.</p>
+      <p>For everything else, the summary gives you 85% of the value in 2% of the time. Start processing your conference backlog: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">try YT Summarizer free</a>.</p>
     `
   },
   'build-youtube-knowledge-base-video-notes-system': {
@@ -1872,7 +1881,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h3>Layer 1: Capture (Automated)</h3>
       <p>This is where AI summarization does the heavy lifting. When you encounter a video worth saving:</p>
       <ol>
-        <li><strong>Paste the URL into your summarizer</strong> (<a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> or equivalent).</li>
+        <li><strong>Paste the URL into your summarizer</strong> (<a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> or equivalent).</li>
         <li><strong>Get the structured summary</strong> — key points, takeaways, section breakdown.</li>
         <li><strong>Copy into your note system.</strong> One summary, one entry.</li>
       </ol>
@@ -1903,7 +1912,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Each page in the database</strong> contains: the AI-generated summary at the top, your personal notes in a "My Take" callout below, and an "Actions" toggle at the bottom.</li>
         <li><strong>Create filtered views:</strong> "High Priority" shows only videos you want to watch fully. "Needs Annotation" shows entries without personal notes. "By Topic" groups entries by tag.</li>
       </ol>
-      <p>For a detailed walkthrough of the Notion setup, see <a href="/blog/export-youtube-summaries-to-notion" style="color: #ff0055; font-weight: 600;">how to export YouTube summaries to Notion</a>.</p>
+      <p>For a detailed walkthrough of the Notion setup, see <a href="/blog/export-youtube-summaries-to-notion" style="color: var(--accent); font-weight: 600;">how to export YouTube summaries to Notion</a>.</p>
 
       <h2>Setting Up Your System in Obsidian</h2>
       <p>If you prefer local-first, markdown-based notes, Obsidian works well:</p>
@@ -1940,9 +1949,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Are you adding annotations?</strong> If all entries are just AI summaries with no personal notes, you've built a mirror of the internet — not personal knowledge.</li>
         <li><strong>Is your Watch Later under control?</strong> If it's still growing, your capture workflow isn't keeping up. Batch more aggressively on Mondays.</li>
       </ul>
-      <p>A working knowledge base should save you at least 2-3 hours per month by letting you reference past video content without re-watching. For the broader productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a> and <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">YouTube video notes methods</a>.</p>
+      <p>A working knowledge base should save you at least 2-3 hours per month by letting you reference past video content without re-watching. For the broader productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a> and <a href="/blog/youtube-video-notes-best-apps-methods" style="color: var(--accent); font-weight: 600;">YouTube video notes methods</a>.</p>
 
-      <p>Start building your knowledge base: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a>.</p>
+      <p>Start building your knowledge base: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a>.</p>
     `
   },
   'youtube-summarizer-not-working-common-problems-fixes': {
@@ -1968,7 +1977,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p><strong>Why:</strong> The AI model processing the transcript has a maximum context window — the total amount of text it can handle at once. If the video's transcript exceeds this limit, the tool either truncates the transcript or processes it in chunks. Truncation means the second half is ignored. Chunked processing means the summary of the last chunk doesn't know what the first chunk said.</p>
       <p><strong>How to fix:</strong></p>
       <ul>
-        <li>Use a tool that handles long-form content. YT Summarizer processes full-length videos including 3+ hour podcasts. See <a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: #ff0055; font-weight: 600;">how to summarize 2-hour YouTube videos</a>.</li>
+        <li>Use a tool that handles long-form content. YT Summarizer processes full-length videos including 3+ hour podcasts. See <a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: var(--accent); font-weight: 600;">how to summarize 2-hour YouTube videos</a>.</li>
         <li>If your current tool truncates, try splitting the video: summarize the first half and second half separately by noting the timestamp midpoint.</li>
         <li>Free tools are more likely to truncate than paid tools because they use smaller or older models with shorter context windows.</li>
       </ul>
@@ -1978,7 +1987,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p><strong>Why:</strong> This is usually a transcript accuracy problem, not an AI problem. YouTube's auto-generated captions mishear technical terms, proper names, accented speech, and numbers. The AI summarizes the transcript faithfully — but the transcript itself contains errors. Less commonly, the AI model "hallucinates" — generates plausible-sounding information that wasn't in the source text.</p>
       <p><strong>How to fix:</strong></p>
       <ul>
-        <li>Verify key facts against the original video, especially names, numbers, and technical claims. See <a href="/blog/how-accurate-are-youtube-video-summaries" style="color: #ff0055; font-weight: 600;">how accurate AI summaries really are</a>.</li>
+        <li>Verify key facts against the original video, especially names, numbers, and technical claims. See <a href="/blog/how-accurate-are-youtube-video-summaries" style="color: var(--accent); font-weight: 600;">how accurate AI summaries really are</a>.</li>
         <li>If the video has manual captions (uploaded by the creator), use those instead of auto-generated captions. Manual captions are significantly more accurate.</li>
         <li>Tools that use Whisper for transcription generally produce more accurate transcripts than YouTube's auto-captions.</li>
       </ul>
@@ -1990,7 +1999,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <ul>
         <li><strong>Check for extension updates.</strong> Open chrome://extensions, enable developer mode, and click "Update." Most extension developers push fixes within 24-48 hours of a YouTube change.</li>
         <li><strong>Clear the extension cache.</strong> Some extensions cache old page structures. Removing and reinstalling the extension forces a fresh start.</li>
-        <li><strong>Try a web-based tool instead.</strong> Web-based summarizers (paste a URL on a website) are less affected by YouTube page changes because they access transcripts through APIs, not by reading the page HTML. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> works this way.</li>
+        <li><strong>Try a web-based tool instead.</strong> Web-based summarizers (paste a URL on a website) are less affected by YouTube page changes because they access transcripts through APIs, not by reading the page HTML. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> works this way.</li>
         <li><strong>Check the extension's support page.</strong> If it's been more than a week with no fix, the extension may be abandoned. Switch to an actively maintained alternative.</li>
       </ul>
 
@@ -2030,7 +2039,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <ul>
         <li>Check each video's caption availability individually (click "Show transcript").</li>
         <li>For live streams, wait until the stream ends and captions are fully generated.</li>
-        <li>For multi-language content, try a tool with language detection and translation support. See <a href="/blog/translate-and-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">translating YouTube videos with AI</a>.</li>
+        <li>For multi-language content, try a tool with language detection and translation support. See <a href="/blog/translate-and-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">translating YouTube videos with AI</a>.</li>
       </ul>
 
       <h2>Problem 9: Free Tier Usage Limit Reached</h2>
@@ -2040,14 +2049,14 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <ul>
         <li>Wait for the limit to reset (usually daily or weekly).</li>
         <li>Use a different tool's free tier as a backup.</li>
-        <li>For unlimited use, switch to a one-time payment tool. YT Summarizer's pay-once pricing has no caps — see the <a href="/blog/youtube-summarizer-pricing-free-vs-onetime-vs-subscription" style="color: #ff0055; font-weight: 600;">pricing comparison</a>.</li>
+        <li>For unlimited use, switch to a one-time payment tool. YT Summarizer's pay-once pricing has no caps — see the <a href="/blog/youtube-summarizer-pricing-free-vs-onetime-vs-subscription" style="color: var(--accent); font-weight: 600;">pricing comparison</a>.</li>
       </ul>
 
       <h2>When Nothing Works</h2>
       <p>If you've tried all the fixes above and your summarizer still doesn't work, it may be a fundamental compatibility issue with that specific video. In that case:</p>
       <ol>
-        <li><strong>Try YT Summarizer</strong> — it uses Whisper as a fallback when YouTube captions aren't available, handles long videos, and produces structured output. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try it free</a>.</li>
-        <li><strong>Use the manual ChatGPT workflow</strong> as a backup — copy the transcript (if available) and paste it into ChatGPT. See <a href="/blog/can-chatgpt-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">ChatGPT YouTube summarization guide</a>.</li>
+        <li><strong>Try YT Summarizer</strong> — it uses Whisper as a fallback when YouTube captions aren't available, handles long videos, and produces structured output. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try it free</a>.</li>
+        <li><strong>Use the manual ChatGPT workflow</strong> as a backup — copy the transcript (if available) and paste it into ChatGPT. See <a href="/blog/can-chatgpt-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">ChatGPT YouTube summarization guide</a>.</li>
         <li><strong>Report the issue</strong> to the tool's support — most active tools fix issues within days when reported.</li>
       </ol>
     `
@@ -2079,12 +2088,12 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p><strong>Verdict:</strong> Useful for a quick "is this video about what I think it's about?" check. Not useful for actually understanding the video's content. The speed is great, but the coverage is too thin for anything beyond initial screening.</p>
 
       <h2>Tool 2: YT Summarizer (Free Tier)</h2>
-      <p><strong>Setup:</strong> Paste URL on <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">ytsummarizer.app</a>. Free tier available, no account needed for initial use.</p>
+      <p><strong>Setup:</strong> Paste URL on <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">ytsummarizer.app</a>. Free tier available, no account needed for initial use.</p>
       <p><strong>Speed:</strong> 45 seconds. Slightly slower than Summarize.tech but still fast.</p>
       <p><strong>Output:</strong> Structured bullet-point summary with bold topic tags. All 5 main sections were captured with their key arguments, plus the conclusion. Each section had 2-3 bullets covering the main claim, supporting evidence, and any caveats the speaker mentioned. The format was clean and copy-paste ready.</p>
       <p><strong>Accuracy:</strong> High. All captured points matched the actual video content. No hallucinated claims. One minor point was simplified in a way that lost nuance (the speaker's "under certain conditions" caveat was dropped), but the core argument was preserved.</p>
       <p><strong>Coverage:</strong> Approximately 85% of key points captured. The only misses were tangential examples the speaker used for illustration.</p>
-      <p><strong>Verdict:</strong> The most complete and accurate summary of the six tools tested. The bullet-point format with bold tags makes it scannable in under 30 seconds. This is the only free-tier output that you could genuinely use as a substitute for watching the video in many cases. For more on this tool, see <a href="/blog/best-free-youtube-summarizer-tool" style="color: #ff0055; font-weight: 600;">best free YouTube summarizer tool</a>.</p>
+      <p><strong>Verdict:</strong> The most complete and accurate summary of the six tools tested. The bullet-point format with bold tags makes it scannable in under 30 seconds. This is the only free-tier output that you could genuinely use as a substitute for watching the video in many cases. For more on this tool, see <a href="/blog/best-free-youtube-summarizer-tool" style="color: var(--accent); font-weight: 600;">best free YouTube summarizer tool</a>.</p>
 
       <h2>Tool 3: ChatGPT Manual Workflow</h2>
       <p><strong>Setup:</strong> Open YouTube, show transcript, copy all, paste into ChatGPT free tier, write prompt: "Summarize this video transcript with key points."</p>
@@ -2092,7 +2101,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p><strong>Output:</strong> ChatGPT produced a well-structured summary with 5 numbered sections matching the video's structure, plus a conclusion paragraph. The writing quality was high — more polished than any other tool. It captured all 5 sections and the conclusion accurately.</p>
       <p><strong>Accuracy:</strong> High. ChatGPT's summary was accurate and nuanced — it preserved the speaker's caveats and conditional statements better than the other tools. The main limitation was that the output was prose-heavy, making it slower to scan than bullet-point formats.</p>
       <p><strong>Coverage:</strong> Approximately 80% of key points. Missed some specific examples but captured all major arguments.</p>
-      <p><strong>Verdict:</strong> High quality but high friction. The 4.5-minute process and manual steps make this impractical for more than a few videos. For a single important video where you want maximum quality and nuance, ChatGPT is hard to beat. For regular use, it's too slow. See our <a href="/blog/can-chatgpt-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">ChatGPT YouTube summarization guide</a> for the full workflow.</p>
+      <p><strong>Verdict:</strong> High quality but high friction. The 4.5-minute process and manual steps make this impractical for more than a few videos. For a single important video where you want maximum quality and nuance, ChatGPT is hard to beat. For regular use, it's too slow. See our <a href="/blog/can-chatgpt-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">ChatGPT YouTube summarization guide</a> for the full workflow.</p>
 
       <h2>Tool 4: NoteGPT (Free Tier)</h2>
       <p><strong>Setup:</strong> Requires free account creation. Paste URL into the NoteGPT interface.</p>
@@ -2100,7 +2109,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p><strong>Output:</strong> Summary with a mind map visualization and text breakdown. The text summary captured 4 of 5 main sections with decent accuracy. The mind map showed the conceptual relationships between sections, which was useful for understanding the video's overall structure. Missing: one entire section and the conclusion.</p>
       <p><strong>Accuracy:</strong> Good on what it captured. The mind map feature is genuinely useful for visual learners and adds value beyond plain text summaries. However, the incomplete coverage means you can't rely on it alone.</p>
       <p><strong>Coverage:</strong> Approximately 70% of key points.</p>
-      <p><strong>Verdict:</strong> The mind map feature is the differentiator — if you learn better visually, NoteGPT provides something the other tools don't. The free tier has usage limits that may not cover heavy use. Premium is subscription-based at $7-19/month. See our <a href="/blog/notegpt-vs-ytsummarizer-honest-comparison-2026" style="color: #ff0055; font-weight: 600;">NoteGPT vs YT Summarizer comparison</a> for details.</p>
+      <p><strong>Verdict:</strong> The mind map feature is the differentiator — if you learn better visually, NoteGPT provides something the other tools don't. The free tier has usage limits that may not cover heavy use. Premium is subscription-based at $7-19/month. See our <a href="/blog/notegpt-vs-ytsummarizer-honest-comparison-2026" style="color: var(--accent); font-weight: 600;">NoteGPT vs YT Summarizer comparison</a> for details.</p>
 
       <h2>Tool 5: Eightify (Free Tier)</h2>
       <p><strong>Setup:</strong> Chrome extension install required. Free tier limited to 3 summaries per week.</p>
@@ -2108,7 +2117,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p><strong>Output:</strong> Clean summary with section headers and bullet points underneath. Captured all 5 main sections but the bullets were shorter and less detailed than YT Summarizer or ChatGPT. The in-browser presentation is excellent — it shows alongside the video with timestamps you can click to jump to specific sections.</p>
       <p><strong>Accuracy:</strong> Good. Points were accurate but compressed — some nuance was lost in the shorter bullets. Good enough to decide if you want to watch, not detailed enough to replace watching.</p>
       <p><strong>Coverage:</strong> Approximately 75% of key points.</p>
-      <p><strong>Verdict:</strong> The best UX of any tool — having the summary appear on the YouTube page itself is a genuine quality-of-life improvement. But the 3-per-week free limit is a dealbreaker for regular use. The $8-10/month subscription makes it the most expensive option over time. For the full analysis, see <a href="/blog/eightify-alternative-best-youtube-summarizers-without-subscription" style="color: #ff0055; font-weight: 600;">Eightify alternatives without subscription</a>.</p>
+      <p><strong>Verdict:</strong> The best UX of any tool — having the summary appear on the YouTube page itself is a genuine quality-of-life improvement. But the 3-per-week free limit is a dealbreaker for regular use. The $8-10/month subscription makes it the most expensive option over time. For the full analysis, see <a href="/blog/eightify-alternative-best-youtube-summarizers-without-subscription" style="color: var(--accent); font-weight: 600;">Eightify alternatives without subscription</a>.</p>
 
       <h2>Tool 6: Glarity (Browser Extension)</h2>
       <p><strong>Setup:</strong> Chrome extension install. Free, open-source.</p>
@@ -2132,14 +2141,14 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>What This Test Doesn't Cover</h2>
       <p>This was a best-case scenario — single speaker, good captions, educational content, 22 minutes. Results would differ for:</p>
       <ul>
-        <li><strong>Long videos (2+ hours):</strong> Tools that chunk transcripts would perform worse on cumulative arguments. See <a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: #ff0055; font-weight: 600;">how to summarize a 2-hour YouTube video</a>.</li>
+        <li><strong>Long videos (2+ hours):</strong> Tools that chunk transcripts would perform worse on cumulative arguments. See <a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: var(--accent); font-weight: 600;">how to summarize a 2-hour YouTube video</a>.</li>
         <li><strong>Multi-speaker content:</strong> Podcasts and interviews where multiple voices overlap. Transcript quality drops significantly.</li>
         <li><strong>Visual-heavy content:</strong> Tutorials, demos, and presentations where the most important information is on screen, not in the transcript.</li>
         <li><strong>Non-English content:</strong> Auto-caption quality varies dramatically by language.</li>
       </ul>
-      <p>For a broader comparison including paid features and pricing, see our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">8 YouTube summarizers compared</a> and <a href="/blog/youtube-summarizer-pricing-free-vs-onetime-vs-subscription" style="color: #ff0055; font-weight: 600;">YouTube summarizer pricing comparison</a>.</p>
+      <p>For a broader comparison including paid features and pricing, see our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">8 YouTube summarizers compared</a> and <a href="/blog/youtube-summarizer-pricing-free-vs-onetime-vs-subscription" style="color: var(--accent); font-weight: 600;">YouTube summarizer pricing comparison</a>.</p>
 
-      <p>See the best-performing tool for yourself: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a>.</p>
+      <p>See the best-performing tool for yourself: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a>.</p>
     `
   },
   'how-does-ai-youtube-summarization-work-technology-explained': {
@@ -2190,7 +2199,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Why Summaries Sometimes Miss the Point</h2>
       <p>Understanding the pipeline reveals why summaries fail in specific situations:</p>
       <ul>
-        <li><strong>Transcript errors cascade.</strong> If YouTube's auto-captions mishear a key technical term, the AI summarizes the wrong word. This is especially common in medical, legal, and technical content. The model can't know the caption was wrong — it summarizes what it receives. See <a href="/blog/how-accurate-are-youtube-video-summaries" style="color: #ff0055; font-weight: 600;">how accurate AI summaries really are</a> for real accuracy data.</li>
+        <li><strong>Transcript errors cascade.</strong> If YouTube's auto-captions mishear a key technical term, the AI summarizes the wrong word. This is especially common in medical, legal, and technical content. The model can't know the caption was wrong — it summarizes what it receives. See <a href="/blog/how-accurate-are-youtube-video-summaries" style="color: var(--accent); font-weight: 600;">how accurate AI summaries really are</a> for real accuracy data.</li>
         <li><strong>Visual content is invisible.</strong> If the speaker shows a chart, diagram, or code demo without verbally describing it, the transcript has no record of it. The AI can't summarize what it can't see. This is why coding tutorials and data visualization talks summarize poorly — the most important content is visual, not verbal.</li>
         <li><strong>Long videos get chunked.</strong> If the transcript exceeds the model's context window, it gets processed in pieces. The summary of the second hour doesn't know what the first hour said. Cumulative arguments, callback references, and structural patterns that span the full video get lost.</li>
         <li><strong>Tone and emphasis don't translate.</strong> A speaker's passionate delivery, careful hedging, or sarcastic tone carries meaning that a text transcript strips away. The AI sees words without the performance context, which can misrepresent the speaker's intent.</li>
@@ -2205,7 +2214,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ol>
       <p>The tools that will produce the best summaries in 12 months are the ones that upgrade their underlying models fastest. This is one reason to prefer tools with active development over static, unmaintained alternatives.</p>
 
-      <p>Understanding the technology helps you use it better — and know when to trust it. For practical tool recommendations based on these capabilities, see our <a href="/blog/best-ai-video-summarization-tools-2026" style="color: #ff0055; font-weight: 600;">10 AI video summarization tools ranked</a>, our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">8 YouTube summarizers compared</a>, and our <a href="/blog/free-youtube-video-summarizer-ai-tools-2026" style="color: #ff0055; font-weight: 600;">guide to what\'s actually free in 2026</a>. To see the technology in action, <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">try YT Summarizer free</a>.</p>
+      <p>Understanding the technology helps you use it better — and know when to trust it. For practical tool recommendations based on these capabilities, see our <a href="/blog/best-ai-video-summarization-tools-2026" style="color: var(--accent); font-weight: 600;">10 AI video summarization tools ranked</a>, our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">8 YouTube summarizers compared</a>, and our <a href="/blog/free-youtube-video-summarizer-ai-tools-2026" style="color: var(--accent); font-weight: 600;">guide to what\'s actually free in 2026</a>. To see the technology in action, <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">try YT Summarizer free</a>.</p>
     `
   },
   'youtube-summarizer-pricing-free-vs-onetime-vs-subscription': {
@@ -2228,7 +2237,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>These tools require no account and no payment:</p>
       <ul>
         <li><strong>Summarize.tech:</strong> Paste a YouTube URL, get a summary. No signup, no account, no daily limits. Output quality is basic — good for a quick check of whether a video is worth watching, not good enough for study or research. The summaries tend to capture the first half of videos better than the second half.</li>
-        <li><strong>ChatGPT manual workflow:</strong> Copy the YouTube transcript, paste it into ChatGPT, write a prompt. Free if you already have ChatGPT access. Time cost: 4-6 minutes per video. Doesn't scale beyond a few videos per week. See our <a href="/blog/youtube-summarizer-vs-chatgpt-manual-workflow" style="color: #ff0055; font-weight: 600;">dedicated tools vs ChatGPT comparison</a> for the full breakdown.</li>
+        <li><strong>ChatGPT manual workflow:</strong> Copy the YouTube transcript, paste it into ChatGPT, write a prompt. Free if you already have ChatGPT access. Time cost: 4-6 minutes per video. Doesn't scale beyond a few videos per week. See our <a href="/blog/youtube-summarizer-vs-chatgpt-manual-workflow" style="color: var(--accent); font-weight: 600;">dedicated tools vs ChatGPT comparison</a> for the full breakdown.</li>
         <li><strong>Gemini free tier:</strong> Google's AI can sometimes access YouTube URLs directly. Less manual than ChatGPT but inconsistent — sometimes it reads the transcript, sometimes it hallucinates based on the video title.</li>
       </ul>
       <p><strong>What free actually costs:</strong> Free tools trade money for time. The average manual workflow takes 5 minutes per video. If you summarize 10 videos per week, that's 50 minutes — nearly an hour — spent on a process that a paid tool completes in 10 minutes total. At even minimum wage rates, free tools cost more in time than a pay-once tool costs in money after the first month.</p>
@@ -2245,7 +2254,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>One-Time Payment YouTube Summarizers</h2>
       <p>Only a few tools offer genuine pay-once access:</p>
       <ul>
-        <li><strong>YT Summarizer (pay-once):</strong> Pay once, use forever. No monthly fees, no usage limits, no free-tier caps. Over 12 months, this works out to $2.42/month. Over 24 months, $1.21/month. The output quality matches or exceeds subscription tools because the summarization pipeline is the same technology — the pricing difference is a business model choice, not a quality difference. See the full feature set at <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">8 YouTube summarizers compared</a>.</li>
+        <li><strong>YT Summarizer (pay-once):</strong> Pay once, use forever. No monthly fees, no usage limits, no free-tier caps. Over 12 months, this works out to $2.42/month. Over 24 months, $1.21/month. The output quality matches or exceeds subscription tools because the summarization pipeline is the same technology — the pricing difference is a business model choice, not a quality difference. See the full feature set at <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">8 YouTube summarizers compared</a>.</li>
       </ul>
       <p><strong>Why one-time works economically:</strong> The marginal cost of processing one more summary is near zero — it's a few seconds of server time and an API call to a language model. Subscription pricing reflects customer acquisition costs and investor growth expectations, not the actual cost of serving you. One-time pricing more honestly reflects the underlying economics.</p>
 
@@ -2276,9 +2285,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Annual billing discounts:</strong> Some subscriptions offer 30-40% off for annual billing. This is better than monthly but still more expensive than one-time over 2+ years. And it locks you into a year-long commitment for a tool you might stop using after 3 months.</li>
       </ul>
 
-      <p>The bottom line: if you're summarizing fewer than 3 videos per month, use a free tool. If you're summarizing 3-10 per week, a pay-once payment (from $9) is the clear best value. If you need study features beyond basic summarization (mind maps, flashcards), a subscription like NoteGPT makes sense — but only for the months you're actively studying. For the full tool-by-tool breakdown, see <a href="/blog/best-ai-video-summarization-tools-2026" style="color: #ff0055; font-weight: 600;">10 AI video summarization tools ranked</a>, <a href="/blog/free-youtube-video-summarizer-ai-tools-2026" style="color: #ff0055; font-weight: 600;">what\'s genuinely free in 2026</a>, and <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">8 YouTube summarizers compared</a>.</p>
+      <p>The bottom line: if you're summarizing fewer than 3 videos per month, use a free tool. If you're summarizing 3-10 per week, a pay-once payment (from $9) is the clear best value. If you need study features beyond basic summarization (mind maps, flashcards), a subscription like NoteGPT makes sense — but only for the months you're actively studying. For the full tool-by-tool breakdown, see <a href="/blog/best-ai-video-summarization-tools-2026" style="color: var(--accent); font-weight: 600;">10 AI video summarization tools ranked</a>, <a href="/blog/free-youtube-video-summarizer-ai-tools-2026" style="color: var(--accent); font-weight: 600;">what\'s genuinely free in 2026</a>, and <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">8 YouTube summarizers compared</a>.</p>
 
-      <p>Pay once, summarize forever: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer — pay-once, no subscription</a>.</p>
+      <p>Pay once, summarize forever: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer — pay-once, no subscription</a>.</p>
     `
   },
   'adhd-youtube-ai-summarizer-focus-long-videos': {
@@ -2346,9 +2355,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Mobile-friendly.</strong> Many ADHD users reach for their phone first. A tool that works cleanly on mobile removes a barrier to actually using it.</li>
         <li><strong>No usage caps.</strong> ADHD usage patterns are bursty — zero summaries for a week, then 20 in a single day. Per-day or per-week limits don't accommodate this pattern and create frustration during high-demand periods.</li>
       </ul>
-      <p>YT Summarizer fits these criteria: one URL paste, 30-60 second processing, structured bullet output, works on any device, no daily caps with the <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">pay-once pricing</a>. For a detailed comparison of other options, see <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">8 YouTube summarizers compared</a> and <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: #ff0055; font-weight: 600;">best free YouTube summarizers with no subscription</a>.</p>
+      <p>YT Summarizer fits these criteria: one URL paste, 30-60 second processing, structured bullet output, works on any device, no daily caps with the <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">pay-once pricing</a>. For a detailed comparison of other options, see <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">8 YouTube summarizers compared</a> and <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: var(--accent); font-weight: 600;">best free YouTube summarizers with no subscription</a>.</p>
 
-      <p>ADHD doesn't mean you can't learn from video content — it means the delivery format needs to work <em>with</em> your brain instead of against it. AI summarizers are the bridge. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try it free</a> and see if the workflow clicks.</p>
+      <p>ADHD doesn't mean you can't learn from video content — it means the delivery format needs to work <em>with</em> your brain instead of against it. AI summarizers are the bridge. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try it free</a> and see if the workflow clicks.</p>
     `
   },
   'youtube-video-notes-best-apps-methods': {
@@ -2369,12 +2378,12 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Method 1: AI Summarizer + Your Existing Note App</h2>
       <p>This is the method that works for most people because it fits into tools you already use:</p>
       <ol>
-        <li><strong>Summarize the video first.</strong> Paste the YouTube URL into a summarizer like <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a>. Get a structured summary with key points in 60 seconds.</li>
+        <li><strong>Summarize the video first.</strong> Paste the YouTube URL into a summarizer like <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a>. Get a structured summary with key points in 60 seconds.</li>
         <li><strong>Read the summary.</strong> This gives you the full structure and main arguments before you've watched a second of video.</li>
         <li><strong>Watch selectively.</strong> Based on the summary, identify the 2-3 sections most relevant to your needs. Jump to those using timestamps.</li>
         <li><strong>Add your notes.</strong> Copy the summary into Notion, Obsidian, or Google Docs. Add your own annotations to the sections you watched in full.</li>
       </ol>
-      <p><strong>Why this works:</strong> You never pause to write a note during the video because the summary already captured everything. Your "notes" become personal annotations on top of a complete, structured base — not disconnected fragments you hope will make sense later. For a complete workflow, see our guide to <a href="/blog/export-youtube-summaries-to-notion" style="color: #ff0055; font-weight: 600;">exporting YouTube summaries to Notion</a>.</p>
+      <p><strong>Why this works:</strong> You never pause to write a note during the video because the summary already captured everything. Your "notes" become personal annotations on top of a complete, structured base — not disconnected fragments you hope will make sense later. For a complete workflow, see our guide to <a href="/blog/export-youtube-summaries-to-notion" style="color: var(--accent); font-weight: 600;">exporting YouTube summaries to Notion</a>.</p>
 
       <h2>Method 2: Dedicated Video Note-Taking Apps</h2>
       <p>Several apps are built specifically for taking notes alongside video content:</p>
@@ -2412,10 +2421,10 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h2>What Actually Works for Different Use Cases</h2>
       <ul>
-        <li><strong>Students watching lectures:</strong> Method 1 (AI summary + existing notes). You need speed and coverage across many videos. Summarize first, annotate second. See <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">YouTube summarizer for students</a> for the full study workflow.</li>
+        <li><strong>Students watching lectures:</strong> Method 1 (AI summary + existing notes). You need speed and coverage across many videos. Summarize first, annotate second. See <a href="/blog/youtube-summarizer-for-students" style="color: var(--accent); font-weight: 600;">YouTube summarizer for students</a> for the full study workflow.</li>
         <li><strong>Researchers doing deep analysis:</strong> Method 2 (dedicated video note app). You need timestamp-accurate notes linked to specific moments. The overhead is worth it for deep analysis of source material.</li>
         <li><strong>Professionals in meetings and training:</strong> Method 3 (side-by-side). You probably don't need detailed notes — just action items and key decisions. Simple is best.</li>
-        <li><strong>Anyone with a Watch Later backlog:</strong> Method 1. Summarize 10-15 videos in batch, read the summaries, keep the 10% worth watching. See <a href="/blog/how-to-summarize-youtube-watch-later-backlog" style="color: #ff0055; font-weight: 600;">how to summarize your Watch Later backlog</a>.</li>
+        <li><strong>Anyone with a Watch Later backlog:</strong> Method 1. Summarize 10-15 videos in batch, read the summaries, keep the 10% worth watching. See <a href="/blog/how-to-summarize-youtube-watch-later-backlog" style="color: var(--accent); font-weight: 600;">how to summarize your Watch Later backlog</a>.</li>
         <li><strong>ADHD or attention challenges:</strong> Method 1 with a specific workflow — read the summary first to prime your brain, then watch only what's relevant. The structured output eliminates the need for sustained passive attention.</li>
       </ul>
 
@@ -2427,9 +2436,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Batch processing.</strong> Don't take notes one video at a time. Summarize 5-10 videos in a batch, then review and annotate. This is 2-3x faster than serial processing.</li>
         <li><strong>Weekly review.</strong> Spend 20 minutes each week reviewing your video notes. Move important insights to permanent notes, delete what you won't revisit, flag what needs deeper study.</li>
       </ol>
-      <p>This turns YouTube from a time sink into an actual knowledge system that compounds over time. For the broader productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a> and <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">using YouTube summaries for note-taking</a>.</p>
+      <p>This turns YouTube from a time sink into an actual knowledge system that compounds over time. For the broader productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a> and <a href="/blog/youtube-video-notes-best-apps-methods" style="color: var(--accent); font-weight: 600;">using YouTube summaries for note-taking</a>.</p>
 
-      <p>Start capturing video notes without the pause-rewind cycle: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">try YT Summarizer free</a>.</p>
+      <p>Start capturing video notes without the pause-rewind cycle: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">try YT Summarizer free</a>.</p>
     `
   },
   'how-to-download-youtube-transcript-5-free-methods': {
@@ -2468,13 +2477,13 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p><strong>Limitations:</strong> Most extensions are Chrome-only. Extension reliability varies — YouTube updates its interface frequently, and unmaintained extensions break. If you need to process many videos, clicking through each one individually is still slow.</p>
 
       <h2>Method 3: AI Summarizer Tools (Best for Most People)</h2>
-      <p>AI summarizers like <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a>, Eightify, and NoteGPT extract transcripts as part of their summarization pipeline. This means you get the transcript <em>plus</em> a structured summary in a single step.</p>
+      <p>AI summarizers like <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a>, Eightify, and NoteGPT extract transcripts as part of their summarization pipeline. This means you get the transcript <em>plus</em> a structured summary in a single step.</p>
       <ul>
-        <li><strong>YT Summarizer:</strong> Paste a YouTube URL, get a structured summary and access to the underlying transcript. Pay-once packs from $9 — no subscription — works on any device with a browser. The fastest path from "I need that video's text" to "I have a clean, formatted summary I can use." For more on this workflow, see our <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: #ff0055; font-weight: 600;">best free YouTube summarizers guide</a>.</li>
+        <li><strong>YT Summarizer:</strong> Paste a YouTube URL, get a structured summary and access to the underlying transcript. Pay-once packs from $9 — no subscription — works on any device with a browser. The fastest path from "I need that video's text" to "I have a clean, formatted summary I can use." For more on this workflow, see our <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: var(--accent); font-weight: 600;">best free YouTube summarizers guide</a>.</li>
         <li><strong>Summarize.tech:</strong> Free, no account needed. Paste a URL and get a summary. Doesn't expose raw transcript directly but gives you the processed content.</li>
         <li><strong>NoteGPT:</strong> Provides transcript access alongside mind maps and study features. Free tier with usage limits.</li>
       </ul>
-      <p><strong>Why this beats manual extraction:</strong> You get the transcript <em>and</em> a summary in one step. For most use cases, the summary is more useful than raw text — it's 200 words instead of 5,000. But when you need the raw transcript, these tools provide that too. See our detailed <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">8-tool comparison</a> for the full breakdown.</p>
+      <p><strong>Why this beats manual extraction:</strong> You get the transcript <em>and</em> a summary in one step. For most use cases, the summary is more useful than raw text — it's 200 words instead of 5,000. But when you need the raw transcript, these tools provide that too. See our detailed <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">8-tool comparison</a> for the full breakdown.</p>
 
       <h2>Method 4: YouTube Data API (For Developers)</h2>
       <p>If you're comfortable with code, the YouTube Data API v3 provides programmatic access to captions:</p>
@@ -2487,7 +2496,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ol>
       <p><strong>Limitations:</strong> Requires a Google Cloud account. The API has daily quotas (10,000 units/day by default). Auto-generated captions may not be available for all videos. The API returns captions in a proprietary XML format that needs parsing. And some caption tracks are restricted by the uploader.</p>
       <p><strong>When to use this:</strong> You're building an application that processes hundreds or thousands of videos programmatically. For extracting a single transcript, this is significant overkill.</p>
-      <p>For a non-developer guide to working with YouTube content programmatically, see <a href="/blog/youtube-summarizer-api" style="color: #ff0055; font-weight: 600;">YouTube Summarizer API guide</a>.</p>
+      <p>For a non-developer guide to working with YouTube content programmatically, see <a href="/blog/youtube-summarizer-api" style="color: var(--accent); font-weight: 600;">YouTube Summarizer API guide</a>.</p>
 
       <h2>Method 5: Third-Party Transcript Sites</h2>
       <p>Several websites offer YouTube transcript extraction as a free service:</p>
@@ -2511,11 +2520,11 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <ul>
         <li><strong>"No transcript available":</strong> The creator disabled captions, or the video is too new for auto-captions. AI summarizers with speech-to-text capabilities (those using Whisper) can still process the audio directly — they don't need YouTube's captions to exist.</li>
         <li><strong>Timestamps won't disappear:</strong> Make sure you toggled timestamps off in the transcript panel (three-dot menu → "Toggle timestamps"). If using an extension, check its settings for timestamp formatting options.</li>
-        <li><strong>Transcript is in the wrong language:</strong> YouTube auto-generates captions in the video's spoken language. For translation, you need a tool that handles multi-language processing. See <a href="/blog/translate-and-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">translating YouTube videos with AI</a>.</li>
+        <li><strong>Transcript is in the wrong language:</strong> YouTube auto-generates captions in the video's spoken language. For translation, you need a tool that handles multi-language processing. See <a href="/blog/translate-and-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">translating YouTube videos with AI</a>.</li>
         <li><strong>Long video transcript gets cut off:</strong> Some tools truncate transcripts for videos over 2 hours. Modern AI summarizers like YT Summarizer handle arbitrary length, but free tools and some extensions may have limits.</li>
       </ul>
 
-      <p>For a deeper look at tools that handle transcripts reliably after the 2025 API changes, see <a href="/blog/youtube-transcript-tools-that-still-work-in-2026" style="color: #ff0055; font-weight: 600;">YouTube transcript tools that still work in 2026</a>. To go straight from transcript to usable notes, <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">try YT Summarizer free</a> — paste a URL and get the text you need.</p>
+      <p>For a deeper look at tools that handle transcripts reliably after the 2025 API changes, see <a href="/blog/youtube-transcript-tools-that-still-work-in-2026" style="color: var(--accent); font-weight: 600;">YouTube transcript tools that still work in 2026</a>. To go straight from transcript to usable notes, <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">try YT Summarizer free</a> — paste a URL and get the text you need.</p>
     `
   },
   'youtube-summarizer-for-project-managers': {
@@ -2585,7 +2594,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h3>Meeting summary workflow:</h3>
       <ol>
         <li>Export or upload the meeting recording to YouTube (unlisted is fine — the tool processes unlisted videos).</li>
-        <li>Paste the URL into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and generate the summary.</li>
+        <li>Paste the URL into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> and generate the summary.</li>
         <li>Copy the structured output — it will capture decisions made, issues raised, and items discussed.</li>
         <li>Edit to add assignees and deadlines where the summary captures decisions without the accountability.</li>
         <li>Distribute to stakeholders instead of sharing the raw recording link nobody will watch.</li>
@@ -2643,7 +2652,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>For most project managers, the right stack is YT Summarizer for YouTube content (PMP prep, training videos) plus your company's existing meeting recording tool for live meetings. The overlap is small enough that you don't need a single unified tool.</p>
 
       <h2>Getting Started</h2>
-      <p>Start with your PMP prep if you're studying, or with your last three project retrospective recordings if you want to see the meeting recap use case in action. Paste any of those URLs into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and you'll see immediately whether this workflow fits your practice.</p>
+      <p>Start with your PMP prep if you're studying, or with your last three project retrospective recordings if you want to see the meeting recap use case in action. Paste any of those URLs into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> and you'll see immediately whether this workflow fits your practice.</p>
       <p>The pay-once cost is less than an hour of PM consulting rates — and realistically saves 5-10 hours of video time in the first week of PMP prep alone.</p>
     `,
   },
@@ -2740,7 +2749,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Practical Setup</h2>
-      <p>The workflow requires a reliable summarization tool. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> handles this with pay-once pricing — no subscription, no per-summary limit. Paste the URL, get the summary, decide how to proceed.</p>
+      <p>The workflow requires a reliable summarization tool. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> handles this with pay-once pricing — no subscription, no per-summary limit. Paste the URL, get the summary, decide how to proceed.</p>
       <p>For 2x speed, YouTube's native player covers most content. For content requiring 2.5x or faster, the Video Speed Controller extension (free, Chrome/Firefox) extends the range. But realistically, most people max out at 2x with full comprehension — beyond that, you're catching fragments rather than understanding content.</p>
     `,
   },
@@ -2816,7 +2825,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <ol>
         <li><strong>Use arxiv Sanity Preserver, Papers With Code, or Twitter/X feeds</strong> to identify papers worth tracking — roughly 20-50 per week for an active researcher.</li>
         <li><strong>Search YouTube for each paper title.</strong> For prominent papers (e.g., anything from major labs or that got attention on Twitter), there are usually 2-5 explanation videos within a week of the paper dropping.</li>
-        <li><strong>Summarize the top 1-2 explanation videos per paper</strong> using <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a>. This takes 30-60 seconds per video.</li>
+        <li><strong>Summarize the top 1-2 explanation videos per paper</strong> using <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a>. This takes 30-60 seconds per video.</li>
         <li><strong>Read the summaries to prioritize.</strong> For papers directly relevant to your work: read the paper + watch the full explanation. For papers adjacent to your work: summary + paper abstract is enough. For papers tangentially related: summary only.</li>
         <li><strong>Extract key results and quotes</strong> from summaries into your reading notes system (Obsidian, Notion, Zotero).</li>
       </ol>
@@ -2844,7 +2853,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h2>Getting Started</h2>
       <p>Try it on a paper you already know well: find a YouTube explanation of a paper in your area and summarize it. Compare the summary to your existing understanding of the paper. This calibrates your expectations for how much the summary captures versus what you'd miss.</p>
-      <p>For researchers who track a high volume of papers, <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer's</a> pay-once price is the most economical option for heavy use — no per-summary limits, no subscription fatigue. At 20 papers per week with 2 videos each, you'd exhaust a limited free tier in a day.</p>
+      <p>For researchers who track a high volume of papers, <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer's</a> pay-once price is the most economical option for heavy use — no per-summary limits, no subscription fatigue. At 20 papers per week with 2 videos each, you'd exhaust a limited free tier in a day.</p>
     `,
   },
   'youtube-summarizer-for-nurses-and-healthcare-workers': {
@@ -2959,7 +2968,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Getting Started</h2>
-      <p>The fastest way to start: paste a training video URL into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and read the summary. If it covers something you need to act on, watch the full video. If it's review material, you just saved 30 minutes.</p>
+      <p>The fastest way to start: paste a training video URL into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> and read the summary. If it covers something you need to act on, watch the full video. If it's review material, you just saved 30 minutes.</p>
       <p>For nurses and healthcare workers who process training videos regularly, the pay-once cost pays for itself within the first week of saved shift time.</p>
     `,
   },
@@ -2985,7 +2994,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>Here's the step-by-step process that produces professional show notes from any YouTube video or podcast recording:</p>
 
       <h3>Step 1: Get the Summary (60 seconds)</h3>
-      <p>Paste your video or episode URL into a YouTube summarizer like <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a>. The tool extracts the transcript and generates a structured summary with key points.</p>
+      <p>Paste your video or episode URL into a YouTube summarizer like <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a>. The tool extracts the transcript and generates a structured summary with key points.</p>
       <p>For episodes not on YouTube: upload the audio to YouTube as an unlisted video, then summarize it. Most summarizers work on any video with spoken content, not just public YouTube uploads.</p>
 
       <h3>Step 2: Extract Timestamps (30 seconds)</h3>
@@ -3056,7 +3065,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Writing show notes from memory.</strong> After recording, you'll forget specifics within hours. Run the summarizer immediately after the episode goes live, while the content is still fresh enough to verify.</li>
       </ul>
 
-      <p>Ready to automate your show notes? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — paste any YouTube video URL and get a structured summary with timestamps in seconds. For podcasters publishing weekly, the pay-once cost pays for itself after two episodes of saved writing time.</p>
+      <p>Ready to automate your show notes? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> — paste any YouTube video URL and get a structured summary with timestamps in seconds. For podcasters publishing weekly, the pay-once cost pays for itself after two episodes of saved writing time.</p>
     `,
   },
   'best-youtube-summarizer-reddit-recommendations-2026': {
@@ -3154,7 +3163,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Just want to try it once for free?</strong> Summarize.tech — no signup, no commitment, decent quality.</li>
       </ul>
 
-      <p>Want to see what the fuss is about? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — the tool Reddit recommends for people tired of paying monthly for things that should cost once. Paste any YouTube URL and get a structured summary in seconds.</p>
+      <p>Want to see what the fuss is about? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> — the tool Reddit recommends for people tired of paying monthly for things that should cost once. Paste any YouTube URL and get a structured summary in seconds.</p>
     `,
   },
   'youtube-video-to-text-transcription-summarization-2026': {
@@ -3246,7 +3255,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ol>
       <p>This two-step workflow handles 95% of scenarios without ever needing to pay for a transcription service.</p>
 
-      <p>Ready to try it? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> converts any YouTube video to a structured summary in seconds — paste the URL and see for yourself.</p>
+      <p>Ready to try it? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> converts any YouTube video to a structured summary in seconds — paste the URL and see for yourself.</p>
     `,
   },
   'youtube-summarizer-for-financial-professionals': {
@@ -3307,7 +3316,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>The highest-leverage use pattern among financial professionals:</p>
       <ol>
         <li><strong>Build a topic watchlist:</strong> Identify 10–15 relevant YouTube videos on a sector, company, or macro theme you're researching</li>
-        <li><strong>Run them through a summarizer in batch:</strong> Paste each URL into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> — each takes about 60 seconds</li>
+        <li><strong>Run them through a summarizer in batch:</strong> Paste each URL into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> — each takes about 60 seconds</li>
         <li><strong>Read the summaries:</strong> 10–15 summaries takes 15–20 minutes vs. 5–8 hours of video</li>
         <li><strong>Flag the 2–3 videos that add new, specific claims:</strong> Watch those in full</li>
         <li><strong>Archive the summaries:</strong> Copy into your research notes (Notion, Obsidian, a deal memo, wherever you work)</li>
@@ -3322,7 +3331,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>Many financial professionals subscribe to 20–30 YouTube channels and feel guilty about the growing unwatched backlog. The right solution isn't to watch everything — it's to screen everything and watch what matters.</p>
       <p>Run a weekly batch of your pending videos through a summarizer. Spend 20 minutes reading summaries. Watch 2–3 that surface something worth your full attention. That's a sustainable information diet that keeps you current without burning your week on video consumption.</p>
 
-      <p>Start with <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> — one-time fee, unlimited summaries, no subscription to manage alongside your financial subscriptions.</p>
+      <p>Start with <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> — one-time fee, unlimited summaries, no subscription to manage alongside your financial subscriptions.</p>
     `,
   },
   'youtube-summarizer-for-developers': {
@@ -3376,7 +3385,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>The most valuable use case: before watching any tech video over 20 minutes, run a quick summary check.</p>
       <ol>
         <li>Copy the YouTube URL</li>
-        <li>Paste into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> — takes about 60 seconds</li>
+        <li>Paste into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> — takes about 60 seconds</li>
         <li>Read the summary (2–3 minutes)</li>
         <li>Decision: watch in full, watch at 2x, or skip entirely</li>
       </ol>
@@ -3400,7 +3409,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Using Summaries for Team Knowledge Sharing</h2>
       <p>If you find a useful talk that's relevant to your team, sharing a 300-word AI summary alongside the link dramatically increases the chance someone actually engages with it. "Watch this 50-minute talk" gets ignored. "Here's the summary — the architecture section at 32:00 is directly relevant to our current problem" gets read.</p>
 
-      <p>Ready to try the workflow? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> handles any YouTube URL — paste, summarize, decide. Pay-once (from $9), no subscription.</p>
+      <p>Ready to try the workflow? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> handles any YouTube URL — paste, summarize, decide. Pay-once (from $9), no subscription.</p>
     `,
   },
   'can-chatgpt-summarize-youtube-videos': {
@@ -3434,7 +3443,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p><strong>Breaks:</strong> Requires a Gemini Advanced subscription ($20/month). Free tier has limits. And it's still an extra step — you're in the Gemini interface, not YouTube.</p>
 
       <h2>Method 4: Purpose-Built YouTube Summarizers</h2>
-      <p>Tools like <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> are built for exactly this task. Paste the URL, get a summary — no transcript copying, no extension setup, no subscription to ChatGPT Plus.</p>
+      <p>Tools like <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> are built for exactly this task. Paste the URL, get a summary — no transcript copying, no extension setup, no subscription to ChatGPT Plus.</p>
       <p><strong>Advantages over ChatGPT for YouTube summarization:</strong></p>
       <ul>
         <li><strong>No copy-paste required:</strong> Paste the URL directly — the tool handles transcript extraction automatically</li>
@@ -3488,11 +3497,11 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>For that use case, the manual transcript method is worth the extra steps.</p>
 
       <h2>The Bottom Line</h2>
-      <p>If your goal is simply to understand a YouTube video faster, don't use ChatGPT for it. The friction isn't worth it when purpose-built tools exist. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — paste a URL and get your summary in seconds, no API key or extra steps required.</p>
+      <p>If your goal is simply to understand a YouTube video faster, don't use ChatGPT for it. The friction isn't worth it when purpose-built tools exist. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> — paste a URL and get your summary in seconds, no API key or extra steps required.</p>
 
       <p>If you need custom output formatting or already have a ChatGPT Plus subscription you're maximizing, the manual transcript method works. But for everyday video summarization, a dedicated tool is significantly faster.</p>
 
-      <p>See also: <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: #ff0055;">best free YouTube summarizers without a subscription</a> and <a href="/blog/eightify-alternative-best-youtube-summarizers-without-subscription" style="color: #ff0055;">Eightify alternatives in 2026</a>.</p>
+      <p>See also: <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: var(--accent);">best free YouTube summarizers without a subscription</a> and <a href="/blog/eightify-alternative-best-youtube-summarizers-without-subscription" style="color: var(--accent);">Eightify alternatives in 2026</a>.</p>
     `
   },
   'turn-youtube-video-into-linkedin-post-with-ai': {
@@ -3509,7 +3518,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>The Workflow: YouTube URL → LinkedIn Post</h2>
 
       <h3>Step 1: Get the Video Summary</h3>
-      <p>Paste the YouTube URL into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a>. You'll get a structured summary with the key points, main arguments, and notable quotes or data points from the video. This takes about 30 seconds.</p>
+      <p>Paste the YouTube URL into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a>. You'll get a structured summary with the key points, main arguments, and notable quotes or data points from the video. This takes about 30 seconds.</p>
 
       <h3>Step 2: Pick Your LinkedIn Angle</h3>
       <p>Don't just restate the summary. LinkedIn posts perform best when they lead with a specific take or surprising insight. From the summary, pick:</p>
@@ -3552,7 +3561,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h2>Example: Full Post from Video Summary</h2>
       <p>Here's what a real output might look like, starting from a YT Summarizer output on a video about remote work productivity:</p>
-      <blockquote style="border-left: 3px solid #ff0055; padding-left: 1rem; margin: 1.5rem 0; color: #444; font-style: italic;">
+      <blockquote style="border-left: 3px solid var(--accent); padding-left: 1rem; margin: 1.5rem 0; color: #444; font-style: italic;">
         <p>Remote workers who set "no meeting" blocks aren't less collaborative — they're more productive on focused work AND more responsive in meetings.</p>
         <p>Watched a 45-min deep dive on async work culture. The part that stuck:</p>
         <p>The teams with the strictest calendar hygiene had BETTER stakeholder relationships, not worse. Because their protected time meant better-prepared contributions when they did show up.</p>
@@ -3567,13 +3576,13 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Tools That Help</h2>
       <p>The fastest workflow is:</p>
       <ol>
-        <li><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> to extract key points (30 seconds)</li>
+        <li><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> to extract key points (30 seconds)</li>
         <li>Your own voice to write the angle and hook (2-3 minutes)</li>
         <li>LinkedIn draft → post (1 minute)</li>
       </ol>
       <p>Total time: 5 minutes or less per post. If you watch 3-5 relevant videos a week anyway, this workflow gives you 3-5 LinkedIn posts with minimal extra effort.</p>
 
-      <p>See also: <a href="/blog/generate-blog-posts-from-youtube-summary" style="color: #ff0055;">generate blog posts from YouTube summaries</a> and <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055;">YouTube summarizer for newsletter content</a>.</p>
+      <p>See also: <a href="/blog/generate-blog-posts-from-youtube-summary" style="color: var(--accent);">generate blog posts from YouTube summaries</a> and <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: var(--accent);">YouTube summarizer for newsletter content</a>.</p>
     `
   },
   'how-to-summarize-youtube-playlist-or-course': {
@@ -3584,7 +3593,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>A YouTube playlist can have 30, 50, or even 100 videos. An online course shared via YouTube might run 20+ hours. You don't have time to watch all of it — but you still need the knowledge. Here's how to use AI summarization to extract what matters from a full playlist or course.</p>
 
       <h2>The Challenge: Playlists Are Multi-Video, AI Tools Are Single-Video</h2>
-      <p>Most YouTube summarizers, including <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a>, work on individual video URLs. A playlist isn't a single URL — it's a container with many videos inside. So summarizing a whole playlist requires a slightly different approach than summarizing a single video.</p>
+      <p>Most YouTube summarizers, including <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a>, work on individual video URLs. A playlist isn't a single URL — it's a container with many videos inside. So summarizing a whole playlist requires a slightly different approach than summarizing a single video.</p>
       <p>Here are the most practical methods, from quickest to most thorough.</p>
 
       <h2>Method 1: Sample the Key Videos First</h2>
@@ -3592,7 +3601,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <ul>
         <li>Read every video title in the playlist — this gives you the course map</li>
         <li>Identify the "foundation" videos (usually the first 3-5) and the "synthesis" videos (usually near the end)</li>
-        <li>Summarize those first with <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></li>
+        <li>Summarize those first with <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a></li>
       </ul>
       <p>This takes 5-10 minutes and gives you 70-80% of the value without touching every video. For many use cases — research, evaluation, deciding if the full course is worth your time — this is enough.</p>
 
@@ -3644,9 +3653,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h2>The Fastest Starting Point</h2>
       <p>If you're looking at a long playlist right now: start with the first and last video in the playlist. The first usually sets up the core framework; the last usually synthesizes the main conclusions. Together, they give you the shape of the whole course in two summaries.</p>
-      <p>From there, you can fill in specific topics you need more depth on. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to start — paste any video URL from the playlist and get an instant summary.</p>
+      <p>From there, you can fill in specific topics you need more depth on. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to start — paste any video URL from the playlist and get an instant summary.</p>
 
-      <p>See also: <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055;">summarize YouTube tutorials for study</a> and <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055;">YouTube summarizer for students</a>.</p>
+      <p>See also: <a href="/blog/youtube-summarizer-for-students" style="color: var(--accent);">summarize YouTube tutorials for study</a> and <a href="/blog/youtube-summarizer-for-students" style="color: var(--accent);">YouTube summarizer for students</a>.</p>
     `
   },
   'youtube-video-summarizer-for-social-media-managers-save-hours-every-week': {
@@ -3684,7 +3693,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on YouTube video summarizer for social media managers videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+      <p>Ready to save time on YouTube video summarizer for social media managers videos? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
       <p>Simply paste a YouTube video summarizer for social media managers video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about YouTube video summarizer for social media managers.</p>
     `
@@ -3724,7 +3733,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on Content curation software videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+      <p>Ready to save time on Content curation software videos? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
       <p>Simply paste a Content curation software video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about Content curation software.</p>
     `
@@ -3764,7 +3773,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on Video batch download and summarize videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+      <p>Ready to save time on Video batch download and summarize videos? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
       <p>Simply paste a Video batch download and summarize video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about Video batch download and summarize.</p>
     `
@@ -3804,7 +3813,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on Twitch stream VOD summarizer videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+      <p>Ready to save time on Twitch stream VOD summarizer videos? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
       <p>Simply paste a Twitch stream VOD summarizer video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about Twitch stream VOD summarizer.</p>
     `
@@ -3844,7 +3853,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on Instagram Reels video summary videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+      <p>Ready to save time on Instagram Reels video summary videos? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
       <p>Simply paste a Instagram Reels video summary video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about Instagram Reels video summary.</p>
     `
@@ -3884,7 +3893,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on YouTube Shorts summarizer videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+      <p>Ready to save time on YouTube Shorts summarizer videos? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
       <p>Simply paste a YouTube Shorts summarizer video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about YouTube Shorts summarizer.</p>
     `
@@ -3924,7 +3933,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on podcast summaries videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+      <p>Ready to save time on podcast summaries videos? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
       <p>Simply paste a podcast summaries video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about podcast summaries.</p>
     `
@@ -3964,7 +3973,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on video to blog post videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+      <p>Ready to save time on video to blog post videos? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
       <p>Simply paste a video to blog post video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about video to blog post.</p>
     `
@@ -4004,7 +4013,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on tutorial summarization videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+      <p>Ready to save time on tutorial summarization videos? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
       <p>Simply paste a tutorial summarization video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about tutorial summarization.</p>
     `
@@ -4044,7 +4053,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on fitness workouts videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+      <p>Ready to save time on fitness workouts videos? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
       <p>Simply paste a fitness workouts video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about fitness workouts.</p>
     `
@@ -4084,7 +4093,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on language learning videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+      <p>Ready to save time on language learning videos? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
       <p>Simply paste a language learning video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about language learning.</p>
     `
@@ -4124,7 +4133,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on gaming guides videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+      <p>Ready to save time on gaming guides videos? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
       <p>Simply paste a gaming guides video URL and get a comprehensive summary in seconds. Perfect for students, professionals, and anyone learning about gaming guides.</p>
     `
@@ -4149,15 +4158,15 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Staying Current Without Overwhelm</h2>
       <p>A practical system for AI professionals:</p>
       <ol>
-        <li>Summarize the top 5–10 new AI videos each morning with <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></li>
+        <li>Summarize the top 5–10 new AI videos each morning with <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a></li>
         <li>Spend 10 minutes reading summaries instead of 2 hours watching videos</li>
         <li>Flag the 1–2 summaries that reveal something genuinely new</li>
         <li>Watch only those flagged items in full</li>
         <li>Share the best summaries with your team as a brief</li>
       </ol>
-      <p>For related technical topics, check out <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">machine learning video summaries</a> and <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">data science video summaries</a>. Learn the full productivity framework in <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p>For related technical topics, check out <a href="/blog/summarize-youtube-without-watching" style="color: var(--accent); font-weight: 600;">machine learning video summaries</a> and <a href="/blog/summarize-youtube-without-watching" style="color: var(--accent); font-weight: 600;">data science video summaries</a>. Learn the full productivity framework in <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>.</p>
 
-      <p>The AI landscape won't slow down. Your information workflow needs to scale with it. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start with YT Summarizer</a> and stop falling behind.</p>
+      <p>The AI landscape won't slow down. Your information workflow needs to scale with it. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Start with YT Summarizer</a> and stop falling behind.</p>
     `
   },
   'business-video-summaries-for-executives': {
@@ -4179,14 +4188,14 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Building an Executive Intelligence Workflow</h2>
       <ol>
         <li>Identify 5–10 high-value YouTube channels in your industry</li>
-        <li>When new content appears, summarize immediately via <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></li>
+        <li>When new content appears, summarize immediately via <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a></li>
         <li>Route summaries to your chief of staff or EA for triage</li>
         <li>Flag only the top-priority items for full viewing</li>
         <li>Maintain a running competitive intelligence log from weekly summaries</li>
       </ol>
       <h2>ROI of Executive Video Summarization</h2>
-      <p>If summarization saves an executive 5 hours per week of video consumption, at typical executive rates, that's significant value returned to strategic work, relationship building, and decision-making. The tool cost is trivial by comparison. Founders and operators will find a related workflow in the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for entrepreneurs</a> guide, those tracking investor content should see the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">investor video summarization guide</a>, and product leaders can see how <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">product managers</a> use summarization for competitive product intelligence. For a structured guide to the full productivity workflow, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — executives use it to stay sharp without the time cost.</p>
+      <p>If summarization saves an executive 5 hours per week of video consumption, at typical executive rates, that's significant value returned to strategic work, relationship building, and decision-making. The tool cost is trivial by comparison. Founders and operators will find a related workflow in the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">YouTube summarizer for entrepreneurs</a> guide, those tracking investor content should see the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">investor video summarization guide</a>, and product leaders can see how <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">product managers</a> use summarization for competitive product intelligence. For a structured guide to the full productivity workflow, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> — executives use it to stay sharp without the time cost.</p>
     `
   },
   'recipe-video-summary-cook-without-watching': {
@@ -4245,8 +4254,8 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Summary-First Meal Planning</h2>
       <p>Recipe summaries also make weekly meal planning dramatically faster. Instead of watching 6 videos to plan a week of dinners, summarize 15 and pick the 6 that fit your time, budget, and skill. The saved hours compound — meal planning goes from a 90-minute Sunday task to a 20-minute one, and the quality of what you cook actually goes up because you're comparing more options before committing.</p>
 
-      <p>This is part of a broader strategy for <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>. Content creators who research cooking videos for repurposing will find more workflows in the <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">YouTube summarizer for content creators</a> guide. For lifestyle creators turning recipes into short-form content, see <a href="/blog/youtube-summarizer-for-bloggers" style="color: #ff0055; font-weight: 600;">YouTube summarization for bloggers</a>.</p>
-      <p>Stop pausing and rewinding. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Summarize any recipe video with YT Summarizer</a> and cook with a clear plan.</p>
+      <p>This is part of a broader strategy for <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>. Content creators who research cooking videos for repurposing will find more workflows in the <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: var(--accent); font-weight: 600;">YouTube summarizer for content creators</a> guide. For lifestyle creators turning recipes into short-form content, see <a href="/blog/youtube-summarizer-for-bloggers" style="color: var(--accent); font-weight: 600;">YouTube summarization for bloggers</a>.</p>
+      <p>Stop pausing and rewinding. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Summarize any recipe video with YT Summarizer</a> and cook with a clear plan.</p>
     `
   },
   'fitness-video-summaries-get-the-workout-plan-faster': {
@@ -4284,9 +4293,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on fitness training videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+      <p>Ready to save time on fitness training videos? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
-      <p>For a dedicated tool guide, see the <a href="/blog/youtube-summarizer-for-fitness-coaches" style="color: #ff0055; font-weight: 600;">YouTube summarizer for fitness coaches</a>. Learn more about <a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">what a YouTube summarizer is</a> or how to <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">save time on YouTube with AI</a>.</p>
+      <p>For a dedicated tool guide, see the <a href="/blog/youtube-summarizer-for-fitness-coaches" style="color: var(--accent); font-weight: 600;">YouTube summarizer for fitness coaches</a>. Learn more about <a href="/blog/what-is-a-youtube-summarizer" style="color: var(--accent); font-weight: 600;">what a YouTube summarizer is</a> or how to <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">save time on YouTube with AI</a>.</p>
     `
   },
   'productivity-hacks-summarize-youtube-videos-fast': {
@@ -4324,9 +4333,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on productivity tips videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+      <p>Ready to save time on productivity tips videos? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
-      <p>See the full guide on <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>, or learn <a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">what a YouTube summarizer is</a> and how it works.</p>
+      <p>See the full guide on <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>, or learn <a href="/blog/what-is-a-youtube-summarizer" style="color: var(--accent); font-weight: 600;">what a YouTube summarizer is</a> and how it works.</p>
     `
   },
   'digital-marketing-video-summary-tips': {
@@ -4364,9 +4373,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on digital marketing videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+      <p>Ready to save time on digital marketing videos? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
-      <p>Marketing professionals will also find strategies in the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for marketers</a> guide. New to summarization? Learn <a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">what a YouTube summarizer is</a> or see the <a href="/blog/best-free-youtube-summarizer-tool" style="color: #ff0055; font-weight: 600;">best free tools</a> available.</p>
+      <p>Marketing professionals will also find strategies in the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">YouTube summarizer for marketers</a> guide. New to summarization? Learn <a href="/blog/what-is-a-youtube-summarizer" style="color: var(--accent); font-weight: 600;">what a YouTube summarizer is</a> or see the <a href="/blog/best-free-youtube-summarizer-tool" style="color: var(--accent); font-weight: 600;">best free tools</a> available.</p>
     `
   },
   'crypto-explained-video-summaries-made-simple': {
@@ -4404,9 +4413,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on cryptocurrency videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+      <p>Ready to save time on cryptocurrency videos? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
-      <p>Investors tracking crypto alongside stocks will find workflows in the <a href="/blog/stock-market-video-summary-for-investors" style="color: #ff0055; font-weight: 600;">stock market video summary</a> guide. For personal finance content, see the <a href="/blog/personal-finance-videos-get-the-tldr" style="color: #ff0055; font-weight: 600;">personal finance video TLDR</a> guide.</p>
+      <p>Investors tracking crypto alongside stocks will find workflows in the <a href="/blog/stock-market-video-summary-for-investors" style="color: var(--accent); font-weight: 600;">stock market video summary</a> guide. For personal finance content, see the <a href="/blog/personal-finance-videos-get-the-tldr" style="color: var(--accent); font-weight: 600;">personal finance video TLDR</a> guide.</p>
     `
   },
   'data-science-video-summary-guide': {
@@ -4444,9 +4453,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on data science videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+      <p>Ready to save time on data science videos? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
-      <p>Data analysts will find dedicated strategies in the <a href="/blog/youtube-summarizer-for-data-analysts" style="color: #ff0055; font-weight: 600;">YouTube summarizer for data analysts</a> guide. Also see our guides on <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">summarizing machine learning videos</a> and <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">Python tutorial summaries</a>.</p>
+      <p>Data analysts will find dedicated strategies in the <a href="/blog/youtube-summarizer-for-data-analysts" style="color: var(--accent); font-weight: 600;">YouTube summarizer for data analysts</a> guide. Also see our guides on <a href="/blog/summarize-youtube-without-watching" style="color: var(--accent); font-weight: 600;">summarizing machine learning videos</a> and <a href="/blog/summarize-youtube-without-watching" style="color: var(--accent); font-weight: 600;">Python tutorial summaries</a>.</p>
     `
   },
   'web-development-video-summaries-skip-to-what-matters': {
@@ -4484,9 +4493,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on web development videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+      <p>Ready to save time on web development videos? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
-      <p>For the engineering perspective, see the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for software engineers</a> guide. Also check out <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">Python tutorial summaries</a> and the <a href="/blog/best-free-youtube-summarizer-tool" style="color: #ff0055; font-weight: 600;">best free summarizer tools</a>.</p>
+      <p>For the engineering perspective, see the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">YouTube summarizer for software engineers</a> guide. Also check out <a href="/blog/summarize-youtube-without-watching" style="color: var(--accent); font-weight: 600;">Python tutorial summaries</a> and the <a href="/blog/best-free-youtube-summarizer-tool" style="color: var(--accent); font-weight: 600;">best free summarizer tools</a>.</p>
     `
   },
   'python-tutorial-video-summary-learn-faster': {
@@ -4524,9 +4533,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on python programming videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+      <p>Ready to save time on python programming videos? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
-      <p>For related content, check out <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">data science video summaries</a>, <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">machine learning video summaries</a>, and the <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">web development video summary</a> guide.</p>
+      <p>For related content, check out <a href="/blog/summarize-youtube-without-watching" style="color: var(--accent); font-weight: 600;">data science video summaries</a>, <a href="/blog/summarize-youtube-without-watching" style="color: var(--accent); font-weight: 600;">machine learning video summaries</a>, and the <a href="/blog/summarize-youtube-without-watching" style="color: var(--accent); font-weight: 600;">web development video summary</a> guide.</p>
     `
   },
   'how-to-summarize-machine-learning-videos-with-ai': {
@@ -4564,9 +4573,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Started with AI Summarization</h2>
-      <p>Ready to save time on machine learning videos? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
+      <p>Ready to save time on machine learning videos? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> to instantly summarize any YouTube video with AI.</p>
 
-      <p>Related guides: <a href="/blog/ai-video-summary-stay-updated-on-automation" style="color: #ff0055; font-weight: 600;">AI and automation video summaries</a>, <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">data science video summaries</a>, and <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">Python tutorial summaries</a>.</p>
+      <p>Related guides: <a href="/blog/ai-video-summary-stay-updated-on-automation" style="color: var(--accent); font-weight: 600;">AI and automation video summaries</a>, <a href="/blog/summarize-youtube-without-watching" style="color: var(--accent); font-weight: 600;">data science video summaries</a>, and <a href="/blog/summarize-youtube-without-watching" style="color: var(--accent); font-weight: 600;">Python tutorial summaries</a>.</p>
     `
   },
   'youtube-summarizer-for-students': {
@@ -4574,7 +4583,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
     metaDescription: 'Students use AI to summarize YouTube lectures, tutorials, and documentaries — extract key points, build revision notes, and cut study time by hours each week.',
     date: '2026-03-16',
     content: `
-      <p>YouTube is one of the most powerful free learning resources students have — MIT OpenCourseWare lectures, Khan Academy explainers, documentary research, tutorial channels for every subject. The problem isn't access to content. It's time. A typical study week generates 10–20 hours of video you <em>could</em> watch. Most students only have time for 3–5. An <a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">AI YouTube summarizer</a> closes that gap by turning video into skim-able text in seconds.</p>
+      <p>YouTube is one of the most powerful free learning resources students have — MIT OpenCourseWare lectures, Khan Academy explainers, documentary research, tutorial channels for every subject. The problem isn't access to content. It's time. A typical study week generates 10–20 hours of video you <em>could</em> watch. Most students only have time for 3–5. An <a href="/blog/what-is-a-youtube-summarizer" style="color: var(--accent); font-weight: 600;">AI YouTube summarizer</a> closes that gap by turning video into skim-able text in seconds.</p>
 
       <p>This guide covers the concrete ways students use summarization across subjects, the study workflows that actually work, and the failure modes to watch out for.</p>
 
@@ -4592,7 +4601,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Best Use Cases for Student Summarization</h2>
       <p>Here's where AI summarization delivers the biggest study wins:</p>
       <ul>
-        <li><strong>Lecture recordings:</strong> Catch up on missed classes or <a href="/blog/youtube-summarizer-for-lectures" style="color: #ff0055; font-weight: 600;">review lecture recordings</a> of complex topics by scanning the summary first, then watching only the sections where your understanding is shaky.</li>
+        <li><strong>Lecture recordings:</strong> Catch up on missed classes or <a href="/blog/youtube-summarizer-for-lectures" style="color: var(--accent); font-weight: 600;">review lecture recordings</a> of complex topics by scanning the summary first, then watching only the sections where your understanding is shaky.</li>
         <li><strong>Khan Academy, 3Blue1Brown, MIT OCW:</strong> Extract the core formula or proof without watching the full worked example — then work the example yourself using the formula as a guide.</li>
         <li><strong>Documentary research for essays:</strong> Pull citations, key arguments, and speaker names for literature reviews and evidence-based writing.</li>
         <li><strong>Conference talks and research presentations:</strong> Summarize research talks during literature review to decide which papers to actually read.</li>
@@ -4601,7 +4610,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>How to Use YT Summarizer for Studying</h2>
-      <p>Using <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> as a student:</p>
+      <p>Using <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> as a student:</p>
       <ol>
         <li>Find a YouTube video relevant to your subject.</li>
         <li>Copy the video URL.</li>
@@ -4626,9 +4635,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h2>Save Hours Every Week</h2>
       <p>Students who build summarization into their study routine typically save 5–10 hours per week on video-based research and study. That's time you can reinvest into practice problems, essay writing, and the part of studying that actually moves your grade — doing the work, not just consuming the material.</p>
-      <p>The approach works at every level — see dedicated guides for <a href="/blog/youtube-summarizer-for-high-school-students" style="color: #ff0055; font-weight: 600;">high school students</a>, <a href="/blog/youtube-summarizer-for-university-students" style="color: #ff0055; font-weight: 600;">university students</a>, and <a href="/blog/youtube-transcript-summarizer-for-research" style="color: #ff0055; font-weight: 600;">PhD researchers</a>.</p>
+      <p>The approach works at every level — see dedicated guides for <a href="/blog/youtube-summarizer-for-high-school-students" style="color: var(--accent); font-weight: 600;">high school students</a>, <a href="/blog/youtube-summarizer-for-university-students" style="color: var(--accent); font-weight: 600;">university students</a>, and <a href="/blog/youtube-transcript-summarizer-for-research" style="color: var(--accent); font-weight: 600;">PhD researchers</a>.</p>
 
-      <p>Ready to study smarter? Start with <a href="/blog/best-free-youtube-summarizer-tool" style="color: #ff0055; font-weight: 600;">best free YouTube summarizer tools</a> or <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">try YT Summarizer free</a> on a lecture you have queued right now.</p>
+      <p>Ready to study smarter? Start with <a href="/blog/best-free-youtube-summarizer-tool" style="color: var(--accent); font-weight: 600;">best free YouTube summarizer tools</a> or <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">try YT Summarizer free</a> on a lecture you have queued right now.</p>
     `
   },
   'free-ai-tool-to-summarize-youtube-videos': {
@@ -4648,7 +4657,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>Anything that demands a credit card upfront is a "free trial," not a free tool. Skip those unless you're specifically evaluating a paid product.</p>
 
       <h2>YT Summarizer — Free to Start, No Credit Card</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> is one of the cleanest free-to-start options in the category. You sign up for free (no card), paste any YouTube URL, and get a summary in under a minute. Key features on the free tier:</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> is one of the cleanest free-to-start options in the category. You sign up for free (no card), paste any YouTube URL, and get a summary in under a minute. Key features on the free tier:</p>
       <ul>
         <li>AI-generated summaries with structured bullet points</li>
         <li>Support for long-form video content — podcasts, lectures, webinars</li>
@@ -4699,7 +4708,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h2>How to Get Started</h2>
       <ol>
-        <li>Go to <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">ytsummarizer.app</a> or any tool on this list.</li>
+        <li>Go to <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">ytsummarizer.app</a> or any tool on this list.</li>
         <li>Paste a YouTube URL (any format works).</li>
         <li>Click summarize. Results appear in 30–90 seconds.</li>
         <li>Judge the output against your own needs — don't take marketing copy at face value.</li>
@@ -4707,12 +4716,12 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h2>Related Reading</h2>
       <ul>
-        <li><a href="/blog/best-free-youtube-summarizer-tool" style="color: #ff0055; font-weight: 600;">Best free YouTube summarizer tool in 2026</a></li>
-        <li><a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: #ff0055; font-weight: 600;">Best free YouTube summarizers with no subscription</a></li>
-        <li><a href="/blog/how-to-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">How to summarize YouTube videos with AI</a></li>
+        <li><a href="/blog/best-free-youtube-summarizer-tool" style="color: var(--accent); font-weight: 600;">Best free YouTube summarizer tool in 2026</a></li>
+        <li><a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: var(--accent); font-weight: 600;">Best free YouTube summarizers with no subscription</a></li>
+        <li><a href="/blog/how-to-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">How to summarize YouTube videos with AI</a></li>
       </ul>
 
-      <p>No installation, no browser extension, no credit card. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> on your next video.</p>
+      <p>No installation, no browser extension, no credit card. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> on your next video.</p>
     `
   },
   'best-free-youtube-summarizer-tool': {
@@ -4728,13 +4737,13 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>When evaluating a free YouTube summarizer, there are four distinct meanings of "free":</p>
       <ol>
         <li><strong>Fully free with no account.</strong> Paste a URL, get a summary, no signup required. Summarize.tech is the main example.</li>
-        <li><strong>Free account with unlimited summaries.</strong> Requires signup but no payment, no usage cap. The cleanest kind of free — <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a>'s free tier works like this for a generous number of summaries.</li>
+        <li><strong>Free account with unlimited summaries.</strong> Requires signup but no payment, no usage cap. The cleanest kind of free — <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a>'s free tier works like this for a generous number of summaries.</li>
         <li><strong>Free tier with a low cap.</strong> Works free up to a limit (for example 3 summaries/week), then requires payment. Eightify uses this model.</li>
         <li><strong>Free trial.</strong> Technically free for a period, but you need to cancel before it bills you. Avoid these for casual use — they're designed to flip into subscriptions.</li>
       </ol>
 
       <h2>YT Summarizer — Best Free Starting Point</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> lets you sign up for free and summarize videos without a payment commitment. The summary quality is on par with paid competitors — bullet-formatted, well-structured, handles long videos. If you outgrow the free tier, the upgrade is a one-time pay-once pricing rather than a monthly subscription, which is unusual in this category and matters a lot if you use the tool regularly.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> lets you sign up for free and summarize videos without a payment commitment. The summary quality is on par with paid competitors — bullet-formatted, well-structured, handles long videos. If you outgrow the free tier, the upgrade is a one-time pay-once pricing rather than a monthly subscription, which is unusual in this category and matters a lot if you use the tool regularly.</p>
       <p><strong>Free experience:</strong> Clean interface, generous summary output, no ads, no extension required. Works on any YouTube video with captions.</p>
       <p><strong>Why it stands out:</strong> Free-to-try with quality output, and the paid upgrade path doesn't lock you into recurring payments.</p>
 
@@ -4806,7 +4815,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Subscription tools</strong> (Eightify, NoteGPT): ~$8–12/month, $96–144/year.</li>
         <li><strong>Pay-once</strong> (YT Summarizer): from $9, no subscription. Breaks even with a subscription after 2–3 months, then costs nothing.</li>
       </ul>
-      <p>For heavy users, the one-time payment model makes clear sense. See our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">full comparison of 8 paid and free tools</a> for the complete breakdown.</p>
+      <p>For heavy users, the one-time payment model makes clear sense. See our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">full comparison of 8 paid and free tools</a> for the complete breakdown.</p>
 
       <h2>Tips for Better Summaries (Any Tool)</h2>
       <ul>
@@ -4818,12 +4827,12 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h2>Related Reading</h2>
       <ul>
-        <li><a href="/blog/free-ai-tool-to-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">Free AI tool to summarize YouTube videos</a></li>
-        <li><a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">Best AI YouTube summarizers 2026: 8 tools compared</a></li>
-        <li><a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: #ff0055; font-weight: 600;">Best free YouTube summarizers with no subscription</a></li>
+        <li><a href="/blog/free-ai-tool-to-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">Free AI tool to summarize YouTube videos</a></li>
+        <li><a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">Best AI YouTube summarizers 2026: 8 tools compared</a></li>
+        <li><a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: var(--accent); font-weight: 600;">Best free YouTube summarizers with no subscription</a></li>
       </ul>
 
-      <p>Ready to try? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start with YT Summarizer free</a> — no credit card, no extension, see the output quality before you commit to anything.</p>
+      <p>Ready to try? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Start with YT Summarizer free</a> — no credit card, no extension, see the output quality before you commit to anything.</p>
     `
   },
   'youtube-summarizer-for-content-creators': {
@@ -4851,9 +4860,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>This is the highest-ROI use case for most creators. Every long-form video you publish is already 80% of a blog post, a newsletter issue, and a week of social posts — you just have to extract it. A repeatable workflow:</p>
       <ol>
         <li>Publish your YouTube video.</li>
-        <li>Run the URL through <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> to get a chaptered summary plus key bullet points.</li>
-        <li>Use the summary as the skeleton for a <a href="/blog/generate-blog-posts-from-youtube-summary" style="color: #ff0055; font-weight: 600;">blog post</a>, expanding each bullet into a paragraph.</li>
-        <li>Turn the top 3–5 insights into a <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">newsletter</a> with one insight per section.</li>
+        <li>Run the URL through <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> to get a chaptered summary plus key bullet points.</li>
+        <li>Use the summary as the skeleton for a <a href="/blog/generate-blog-posts-from-youtube-summary" style="color: var(--accent); font-weight: 600;">blog post</a>, expanding each bullet into a paragraph.</li>
+        <li>Turn the top 3–5 insights into a <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: var(--accent); font-weight: 600;">newsletter</a> with one insight per section.</li>
         <li>Pull 6–10 one-liner quotes for X/Twitter and LinkedIn.</li>
         <li>Build a LinkedIn carousel from the structured bullet points.</li>
         <li>Script 3–5 YouTube Shorts or TikToks from the strongest individual moments.</li>
@@ -4887,12 +4896,12 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h2>Related Reading</h2>
       <ul>
-        <li><a href="/blog/generate-blog-posts-from-youtube-summary" style="color: #ff0055; font-weight: 600;">Generate blog posts from YouTube summaries</a></li>
-        <li><a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">YouTube summarizer for newsletter content</a></li>
-        <li><a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">YouTube summarizer for script writing</a></li>
+        <li><a href="/blog/generate-blog-posts-from-youtube-summary" style="color: var(--accent); font-weight: 600;">Generate blog posts from YouTube summaries</a></li>
+        <li><a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: var(--accent); font-weight: 600;">YouTube summarizer for newsletter content</a></li>
+        <li><a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: var(--accent); font-weight: 600;">YouTube summarizer for script writing</a></li>
       </ul>
 
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> and build it into your content workflow — paste the URL of your latest video and watch it turn into a week of content in seconds.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> and build it into your content workflow — paste the URL of your latest video and watch it turn into a week of content in seconds.</p>
     `
   },
   'youtube-summarizer-for-lectures': {
@@ -4905,7 +4914,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>This guide covers what a good lecture summary should include, which channels work best with summarization, and how to build a repeatable lecture note system that saves hours each week.</p>
 
       <h2>The Challenge with YouTube Lectures</h2>
-      <p>Lectures are designed for live delivery. They include context-setting ("last week we talked about..."), repetition for emphasis, student Q&A, pacing that serves an in-room audience, and administrative overhead. When you watch a recorded lecture, you're getting all of that even if you only need the core concepts. If you're new to AI video summarization, start with <a href="/blog/how-to-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">how to summarize YouTube videos with AI</a>.</p>
+      <p>Lectures are designed for live delivery. They include context-setting ("last week we talked about..."), repetition for emphasis, student Q&A, pacing that serves an in-room audience, and administrative overhead. When you watch a recorded lecture, you're getting all of that even if you only need the core concepts. If you're new to AI video summarization, start with <a href="/blog/how-to-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">how to summarize YouTube videos with AI</a>.</p>
       <p>A well-structured summary strips the live-delivery scaffolding and leaves the concepts — which is closer to how you want to study anyway.</p>
 
       <h2>What a Good Lecture Summary Includes</h2>
@@ -4945,7 +4954,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>How to Build a Lecture Note System</h2>
       <ol>
         <li>Find your lecture video on YouTube.</li>
-        <li>Paste the URL into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a>.</li>
+        <li>Paste the URL into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a>.</li>
         <li>Get your structured summary with chapter breakdown.</li>
         <li>Copy the key points into your note-taking app (Notion, Obsidian, Apple Notes, Roam).</li>
         <li>Add the source URL and timestamp for each concept that you'll want to revisit.</li>
@@ -4965,7 +4974,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Time Saved</h2>
       <p>This workflow typically cuts average lecture review time by 60–80% while retaining the core knowledge. Five 60-minute lectures per week go from 5 hours of passive watching to about 1 hour of active study plus 45 minutes of targeted viewing. Over a 12-week semester that's roughly 36 reclaimed hours per course.</p>
 
-      <p>This approach works at every level — see dedicated guides for <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">students at every level</a>, <a href="/blog/youtube-summarizer-for-university-students" style="color: #ff0055; font-weight: 600;">university students specifically</a>, and <a href="/blog/youtube-transcript-summarizer-for-research" style="color: #ff0055; font-weight: 600;">PhD researchers</a>. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start summarizing lectures for free</a> at YT Summarizer.</p>
+      <p>This approach works at every level — see dedicated guides for <a href="/blog/youtube-summarizer-for-students" style="color: var(--accent); font-weight: 600;">students at every level</a>, <a href="/blog/youtube-summarizer-for-university-students" style="color: var(--accent); font-weight: 600;">university students specifically</a>, and <a href="/blog/youtube-transcript-summarizer-for-research" style="color: var(--accent); font-weight: 600;">PhD researchers</a>. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Start summarizing lectures for free</a> at YT Summarizer.</p>
     `
   },
   'youtube-summarizer-with-timestamps': {
@@ -5017,7 +5026,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h2>Tools That Produce Timestamped Summaries</h2>
       <ul>
-        <li><strong><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></strong> — Structured summaries with time-aware sections. Paste URL, get navigable output.</li>
+        <li><strong><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a></strong> — Structured summaries with time-aware sections. Paste URL, get navigable output.</li>
         <li><strong>Video Highlight</strong> — Makes timestamps the core feature. Every bullet is clickable and jumps to the exact moment.</li>
         <li><strong>Eightify</strong> — Chrome extension that overlays on YouTube, so timestamps link inside YouTube itself.</li>
         <li><strong>NoteGPT</strong> — Includes timestamps in summary output along with other study-oriented features.</li>
@@ -5045,12 +5054,12 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h2>Related Reading</h2>
       <ul>
-        <li><a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: #ff0055; font-weight: 600;">How to summarize a 2-hour YouTube video in under 5 minutes</a></li>
-        <li><a href="/blog/youtube-summarizer-with-chapter-breakdown" style="color: #ff0055; font-weight: 600;">YouTube summarizer with chapter breakdown</a></li>
-        <li><a href="/blog/youtube-summarizer-with-bullet-points" style="color: #ff0055; font-weight: 600;">YouTube summarizer with bullet points</a></li>
+        <li><a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: var(--accent); font-weight: 600;">How to summarize a 2-hour YouTube video in under 5 minutes</a></li>
+        <li><a href="/blog/youtube-summarizer-with-chapter-breakdown" style="color: var(--accent); font-weight: 600;">YouTube summarizer with chapter breakdown</a></li>
+        <li><a href="/blog/youtube-summarizer-with-bullet-points" style="color: var(--accent); font-weight: 600;">YouTube summarizer with bullet points</a></li>
       </ul>
 
-      <p>Stop scrubbing through timelines. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> and jump straight to what matters.</p>
+      <p>Stop scrubbing through timelines. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> and jump straight to what matters.</p>
     `
   },
   'youtube-summarizer-for-business-webinars': {
@@ -5083,11 +5092,11 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Summarize Your Next Webinar in Seconds</h2>
-      <p>Paste any YouTube webinar URL into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and get a structured breakdown of key points, insights, and highlights immediately.</p>
+      <p>Paste any YouTube webinar URL into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> and get a structured breakdown of key points, insights, and highlights immediately.</p>
 
-      <p>For similar workflows, see our guides on <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">summarizing corporate presentations</a>, <a href="/blog/youtube-summarizer-for-meeting-recordings" style="color: #ff0055; font-weight: 600;">meeting recording summaries</a>, and <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">training video summaries</a>.</p>
+      <p>For similar workflows, see our guides on <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">summarizing corporate presentations</a>, <a href="/blog/youtube-summarizer-for-meeting-recordings" style="color: var(--accent); font-weight: 600;">meeting recording summaries</a>, and <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">training video summaries</a>.</p>
 
-      <p>Stop watching entire webinars to find the three minutes that matter. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start summarizing with YT Summarizer</a>.</p>
+      <p>Stop watching entire webinars to find the three minutes that matter. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Start summarizing with YT Summarizer</a>.</p>
     `
   },
   'youtube-summarizer-for-podcast-transcripts': {
@@ -5127,9 +5136,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Watching only the episodes where the summary reveals high-value content</li>
       </ol>
 
-      <p>Podcasters creating their own show should see the <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">YouTube summarizer for podcasters</a> guide. For interview-heavy content, check out <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">summarizing interviews for market research</a>.</p>
+      <p>Podcasters creating their own show should see the <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: var(--accent); font-weight: 600;">YouTube summarizer for podcasters</a> guide. For interview-heavy content, check out <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">summarizing interviews for market research</a>.</p>
 
-      <p>Ready to stop missing insights because you don't have time to listen to full episodes? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> and build your podcast intelligence system today.</p>
+      <p>Ready to stop missing insights because you don't have time to listen to full episodes? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> and build your podcast intelligence system today.</p>
     `
   },
   'generate-blog-posts-from-youtube-summary': {
@@ -5144,7 +5153,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h2>The Video-to-Blog Workflow</h2>
       <ol>
-        <li><strong>Summarize the video:</strong> Paste the YouTube URL into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> to get a structured breakdown</li>
+        <li><strong>Summarize the video:</strong> Paste the YouTube URL into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> to get a structured breakdown</li>
         <li><strong>Use the summary as your outline:</strong> The key points become H2 headings</li>
         <li><strong>Expand each section:</strong> Write 2–4 paragraphs per heading using the summary as a starting point</li>
         <li><strong>Add SEO optimization:</strong> Include target keywords in the title, H1, and first paragraph</li>
@@ -5169,9 +5178,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>They can be updated more easily than videos when information changes</li>
       </ul>
 
-      <p>You can also use summaries for <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">newsletter content creation</a> or <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">script writing research</a>. For the full conversion workflow, see our guide on <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">converting YouTube videos to blog posts</a>.</p>
+      <p>You can also use summaries for <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: var(--accent); font-weight: 600;">newsletter content creation</a> or <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: var(--accent); font-weight: 600;">script writing research</a>. For the full conversion workflow, see our guide on <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: var(--accent); font-weight: 600;">converting YouTube videos to blog posts</a>.</p>
 
-      <p>Start converting your YouTube content into organic search traffic. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Use YT Summarizer</a> to get your first video summary and blog outline in under a minute.</p>
+      <p>Start converting your YouTube content into organic search traffic. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Use YT Summarizer</a> to get your first video summary and blog outline in under a minute.</p>
     `
   },
   'convert-youtube-video-to-blog-post-summary': {
@@ -5185,7 +5194,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>YouTube and Google serve different user intents. Someone searching "how to X" on Google wants written instructions they can follow step-by-step, reference back to, and copy-paste commands from. Converting your video captures that audience without creating entirely new content.</p>
 
       <h2>Step 1: Summarize the Video</h2>
-      <p>Paste your YouTube video URL into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a>. You'll get a structured summary with the main topics, key points, and flow of the video. This becomes your blog post skeleton.</p>
+      <p>Paste your YouTube video URL into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a>. You'll get a structured summary with the main topics, key points, and flow of the video. This becomes your blog post skeleton.</p>
 
       <h2>Step 2: Build Your Outline</h2>
       <p>Take the key points from the summary and arrange them as H2 headings. A typical video converts to:</p>
@@ -5216,9 +5225,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Step 5: Publish and Cross-Promote</h2>
       <p>Add the blog post URL to your YouTube video description with a short note: "Read the full written guide here: [link]". This creates a cross-channel loop that boosts both the video's SEO and the blog post's traffic.</p>
 
-      <p>If you're a content creator, you can also use summaries for <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">script writing research</a> or <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">newsletter content sourcing</a>. For the broader workflow, see <a href="/blog/generate-blog-posts-from-youtube-summary" style="color: #ff0055; font-weight: 600;">generating blog posts from YouTube summaries</a>.</p>
+      <p>If you're a content creator, you can also use summaries for <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: var(--accent); font-weight: 600;">script writing research</a> or <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: var(--accent); font-weight: 600;">newsletter content sourcing</a>. For the broader workflow, see <a href="/blog/generate-blog-posts-from-youtube-summary" style="color: var(--accent); font-weight: 600;">generating blog posts from YouTube summaries</a>.</p>
 
-      <p>Start your first conversion now. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Summarize your video with YT Summarizer</a> and have a blog post outline ready in under two minutes.</p>
+      <p>Start your first conversion now. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Summarize your video with YT Summarizer</a> and have a blog post outline ready in under two minutes.</p>
     `
   },
   'youtube-summarizer-for-newsletter-content': {
@@ -5243,7 +5252,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>A Weekly Newsletter Workflow</h2>
       <ol>
         <li>Identify 5–10 YouTube videos relevant to your newsletter's topic</li>
-        <li>Run each through <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></li>
+        <li>Run each through <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a></li>
         <li>Select the 3–5 most insightful summaries</li>
         <li>Write 2–3 sentences of your own commentary per item</li>
         <li>Link to the original video for readers who want the full version</li>
@@ -5253,9 +5262,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>From Hours to Minutes</h2>
       <p>Traditional newsletter research — watching videos to find the right clips, taking notes, transcribing quotes — can take 4–6 hours per week. With AI summarization, you get the signal from each video in under 30 seconds. A full research cycle drops to under an hour.</p>
 
-      <p>You can also turn summaries into <a href="/blog/generate-blog-posts-from-youtube-summary" style="color: #ff0055; font-weight: 600;">full blog posts</a> or use them for <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">script writing research</a>. For the complete content repurposing workflow, see our guide for <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">content creators</a>.</p>
+      <p>You can also turn summaries into <a href="/blog/generate-blog-posts-from-youtube-summary" style="color: var(--accent); font-weight: 600;">full blog posts</a> or use them for <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: var(--accent); font-weight: 600;">script writing research</a>. For the complete content repurposing workflow, see our guide for <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: var(--accent); font-weight: 600;">content creators</a>.</p>
 
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> and transform your newsletter research workflow this week.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> and transform your newsletter research workflow this week.</p>
     `
   },
   'chrome-extension-to-summarize-youtube-videos': {
@@ -5293,7 +5302,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>Extensions feel faster because they're one click away, but they come with real costs. Every extension you install increases your Chrome attack surface, adds a small amount of memory overhead, and introduces a vendor who can see every YouTube page you visit (even if you never ask for a summary). For casual users who summarize a handful of videos per week, a web app is often the cleaner choice.</p>
 
       <h2>Web App Alternative: YT Summarizer</h2>
-      <p>If you prefer not to install a browser extension, <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> works as a standalone web app. Copy the YouTube URL, paste it in, and get your summary. No installation, no extension permissions, no data-access surface on the rest of your browsing.</p>
+      <p>If you prefer not to install a browser extension, <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> works as a standalone web app. Copy the YouTube URL, paste it in, and get your summary. No installation, no extension permissions, no data-access surface on the rest of your browsing.</p>
 
       <p>Benefits of the web app approach:</p>
       <ul>
@@ -5319,7 +5328,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <p>If you're not sure which camp you're in, start with the web app. It's zero-friction to try, and you can always add an extension later if you discover you're summarizing more than you expected.</p>
 
-      <p>Try <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> — paste a URL, get the summary. It also works as a <a href="/blog/youtube-summarizer-mobile-app" style="color: #ff0055; font-weight: 600;">mobile summarizer</a> on <a href="/blog/ios-app-to-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">iOS</a> and <a href="/blog/android-app-to-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">Android</a>.</p>
+      <p>Try <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> — paste a URL, get the summary. It also works as a <a href="/blog/youtube-summarizer-mobile-app" style="color: var(--accent); font-weight: 600;">mobile summarizer</a> on <a href="/blog/ios-app-to-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">iOS</a> and <a href="/blog/android-app-to-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">Android</a>.</p>
     `
   },
   'ios-app-to-summarize-youtube-videos': {
@@ -5338,11 +5347,11 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>YT Summarizer on Mobile</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> works on iOS through the mobile browser. The workflow is simple:</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> works on iOS through the mobile browser. The workflow is simple:</p>
       <ol>
         <li>Find a video in the YouTube app</li>
         <li>Tap Share → Copy Link</li>
-        <li>Open Safari and go to <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">ytsummarizer.app</a></li>
+        <li>Open Safari and go to <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">ytsummarizer.app</a></li>
         <li>Paste the URL and get your summary</li>
       </ol>
 
@@ -5354,7 +5363,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Select "Add to Home Screen"</li>
         <li>It will appear as an app icon on your home screen</li>
       </ol>
-      <p>This gives you one-tap access to summarization from your iPhone home screen, making it as fast as any native app. Android users have a similar workflow — see the <a href="/blog/android-app-to-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">Android summarization guide</a>. If you prefer a browser extension for desktop, see the <a href="/blog/chrome-extension-to-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">Chrome extension options</a>.</p>
+      <p>This gives you one-tap access to summarization from your iPhone home screen, making it as fast as any native app. Android users have a similar workflow — see the <a href="/blog/android-app-to-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">Android summarization guide</a>. If you prefer a browser extension for desktop, see the <a href="/blog/chrome-extension-to-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">Chrome extension options</a>.</p>
 
       <h2>Use Cases for Mobile Summarization</h2>
       <ul>
@@ -5363,7 +5372,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Evening consumption — get the highlights without extended screen time</li>
       </ul>
 
-      <p>Try it now from your iPhone: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">ytsummarizer.app</a> — free to start, no app download required.</p>
+      <p>Try it now from your iPhone: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">ytsummarizer.app</a> — free to start, no app download required.</p>
     `
   },
   'android-app-to-summarize-youtube-videos': {
@@ -5381,7 +5390,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>The Fastest Mobile Workflow with YT Summarizer</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> works seamlessly in Chrome on Android. Here's the fastest workflow:</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> works seamlessly in Chrome on Android. Here's the fastest workflow:</p>
       <ol>
         <li>Open a YouTube video in the YouTube app</li>
         <li>Tap Share → Copy link</li>
@@ -5397,12 +5406,12 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Tap the three-dot menu → "Add to Home screen"</li>
         <li>Confirm to create a home screen shortcut</li>
       </ol>
-      <p>Now you have one-tap access to summarization from your Android home screen. iPhone users can follow the same approach — see the <a href="/blog/ios-app-to-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">iOS summarization guide</a>. Prefer a browser extension on desktop? Check out the <a href="/blog/chrome-extension-to-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">Chrome extension options</a>.</p>
+      <p>Now you have one-tap access to summarization from your Android home screen. iPhone users can follow the same approach — see the <a href="/blog/ios-app-to-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">iOS summarization guide</a>. Prefer a browser extension on desktop? Check out the <a href="/blog/chrome-extension-to-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">Chrome extension options</a>.</p>
 
       <h2>Why Mobile Summarization Matters</h2>
       <p>Over 70% of YouTube viewing happens on mobile. If you consume educational or work-relevant content on your phone, a mobile summarization workflow means you can stay informed without sacrificing hours of your day to video consumption.</p>
 
-      <p>Start summarizing from your Android device: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">ytsummarizer.app</a> — free to start, no app download needed.</p>
+      <p>Start summarizing from your Android device: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">ytsummarizer.app</a> — free to start, no app download needed.</p>
     `
   },
   'youtube-summarizer-mobile-app': {
@@ -5425,7 +5434,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>YT Summarizer Mobile Experience</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> is optimized for mobile use. The web app works in any mobile browser and can be added to your home screen on both iOS and Android for a native app-like experience — launcher icon, full-screen chrome, no browser URL bar in the way.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> is optimized for mobile use. The web app works in any mobile browser and can be added to your home screen on both iOS and Android for a native app-like experience — launcher icon, full-screen chrome, no browser URL bar in the way.</p>
 
       <p>The mobile workflow:</p>
       <ol>
@@ -5443,7 +5452,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <p><strong>Browser extensions:</strong> Not a mobile option on iOS or Android — extensions are a desktop-only pattern because mobile browsers don't expose page-injection APIs. If you want summaries on mobile, you need a web app or native app.</p>
 
-      <p>For most users, a high-quality mobile web app like <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> is the practical choice — works immediately without App Store or Play Store download. For platform-specific setup guides, see the <a href="/blog/ios-app-to-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">iOS app guide</a> or <a href="/blog/android-app-to-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">Android app guide</a>. Prefer desktop? A <a href="/blog/chrome-extension-to-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">Chrome extension</a> keeps summaries inline on the YouTube page.</p>
+      <p>For most users, a high-quality mobile web app like <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> is the practical choice — works immediately without App Store or Play Store download. For platform-specific setup guides, see the <a href="/blog/ios-app-to-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">iOS app guide</a> or <a href="/blog/android-app-to-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">Android app guide</a>. Prefer desktop? A <a href="/blog/chrome-extension-to-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">Chrome extension</a> keeps summaries inline on the YouTube page.</p>
 
       <h2>When Mobile Summarization Actually Pays Off</h2>
       <p>The biggest wins for mobile summarization aren't "save 20 minutes" moments — they're the 5-minute micro-decisions that compound:</p>
@@ -5454,7 +5463,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Context before meetings:</strong> You've got 5 minutes before a call — pull the gist of a reference video on your phone instead of laptop fumbling</li>
       </ul>
 
-      <p>Try it on your phone right now: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">ytsummarizer.app</a> — free to start, no download, just open the site and paste a URL.</p>
+      <p>Try it on your phone right now: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">ytsummarizer.app</a> — free to start, no download, just open the site and paste a URL.</p>
     `
   },
   'youtube-summarizer-with-bullet-points': {
@@ -5507,11 +5516,11 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Get Structured Summaries with YT Summarizer</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> outputs clean, structured summaries with key points and supporting details. Paste any YouTube URL and get scannable, organized content in seconds.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> outputs clean, structured summaries with key points and supporting details. Paste any YouTube URL and get scannable, organized content in seconds.</p>
 
-      <p>If you need time-based navigation, try <a href="/blog/youtube-summarizer-with-timestamps" style="color: #ff0055; font-weight: 600;">summaries with timestamps</a>. For visual learners, consider a <a href="/blog/youtube-summarizer-with-mind-map-output" style="color: #ff0055; font-weight: 600;">mind map output</a>. You can also <a href="/blog/youtube-summarizer-with-qa" style="color: #ff0055; font-weight: 600;">ask questions about any video</a> with AI-powered Q&A for when bullets alone aren't enough.</p>
+      <p>If you need time-based navigation, try <a href="/blog/youtube-summarizer-with-timestamps" style="color: var(--accent); font-weight: 600;">summaries with timestamps</a>. For visual learners, consider a <a href="/blog/youtube-summarizer-with-mind-map-output" style="color: var(--accent); font-weight: 600;">mind map output</a>. You can also <a href="/blog/youtube-summarizer-with-qa" style="color: var(--accent); font-weight: 600;">ask questions about any video</a> with AI-powered Q&A for when bullets alone aren't enough.</p>
 
-      <p>Stop reading walls of text. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Get bullet-point summaries from any YouTube video</a> at YT Summarizer.</p>
+      <p>Stop reading walls of text. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Get bullet-point summaries from any YouTube video</a> at YT Summarizer.</p>
     `
   },
   'online-youtube-video-summary-generator': {
@@ -5545,7 +5554,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>YT Summarizer: The Online Summary Generator for YouTube</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> is built specifically for YouTube video summarization. It works entirely in your browser — create a free account, paste any YouTube URL, and get a summary in seconds. One-time pay-once pricing instead of recurring subscriptions, which matters if you use summarization as an ongoing habit.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> is built specifically for YouTube video summarization. It works entirely in your browser — create a free account, paste any YouTube URL, and get a summary in seconds. One-time pay-once pricing instead of recurring subscriptions, which matters if you use summarization as an ongoing habit.</p>
 
       <h2>Supported Video Types</h2>
       <p>Online generators like YT Summarizer work with any YouTube video that has captions enabled (the vast majority of public videos since YouTube auto-generates captions by default):</p>
@@ -5570,9 +5579,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <p>For those cases, you either need the original video or a manual transcript.</p>
 
-      <p>Compare all options in our <a href="/blog/best-free-youtube-summarizer-tool" style="color: #ff0055; font-weight: 600;">best free YouTube summarizer tools</a> roundup. New to summarization? Learn <a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">what a YouTube summarizer is</a> and how to <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">save time on YouTube with AI</a>.</p>
+      <p>Compare all options in our <a href="/blog/best-free-youtube-summarizer-tool" style="color: var(--accent); font-weight: 600;">best free YouTube summarizer tools</a> roundup. New to summarization? Learn <a href="/blog/what-is-a-youtube-summarizer" style="color: var(--accent); font-weight: 600;">what a YouTube summarizer is</a> and how to <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">save time on YouTube with AI</a>.</p>
 
-      <p>Try the online generator now: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">ytsummarizer.app</a> — paste any YouTube URL and get your summary in seconds.</p>
+      <p>Try the online generator now: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">ytsummarizer.app</a> — paste any YouTube URL and get your summary in seconds.</p>
     `
   },
   'free-youtube-video-summary-generator': {
@@ -5597,7 +5606,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>The honest way to evaluate "free" is to ask: <em>Can I get a real, complete summary from a real video before I decide whether to pay?</em> If the answer is no, the free tier is marketing, not evaluation.</p>
 
       <h2>YT Summarizer Free Tier</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> offers a free tier that lets you start summarizing immediately. No credit card, no long sign-up form — just create a free account and start.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> offers a free tier that lets you start summarizing immediately. No credit card, no long sign-up form — just create a free account and start.</p>
 
       <p>What you get on the free tier:</p>
       <ul>
@@ -5626,9 +5635,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>If the tool handles 4 of those 5 well, it's ready for daily use. If it falls over on long-form, that's a dealbreaker for most people.</p>
 
       <h2>Try It Now</h2>
-      <p>Create a free account and test it out. Go to <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">ytsummarizer.app</a>, sign up in seconds, paste any YouTube URL, and see the summary quality for yourself.</p>
+      <p>Create a free account and test it out. Go to <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">ytsummarizer.app</a>, sign up in seconds, paste any YouTube URL, and see the summary quality for yourself.</p>
 
-      <p>See our full comparison in the <a href="/blog/top-5-free-ai-tools" style="color: #ff0055; font-weight: 600;">top 5 free AI tools for YouTube summarization</a>, or check out the <a href="/blog/free-youtube-transcript-summary-tool" style="color: #ff0055; font-weight: 600;">free transcript summary tool</a> guide. For a broader market view, read our <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: #ff0055; font-weight: 600;">best free YouTube summarizers without subscription</a> roundup.</p>
+      <p>See our full comparison in the <a href="/blog/top-5-free-ai-tools" style="color: var(--accent); font-weight: 600;">top 5 free AI tools for YouTube summarization</a>, or check out the <a href="/blog/free-youtube-transcript-summary-tool" style="color: var(--accent); font-weight: 600;">free transcript summary tool</a> guide. For a broader market view, read our <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: var(--accent); font-weight: 600;">best free YouTube summarizers without subscription</a> roundup.</p>
 
       <p>If it saves you even 30 minutes this week, it's already worth your time.</p>
     `
@@ -5654,7 +5663,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>The summary is what you want for most use cases. The transcript is just the raw material.</p>
 
       <h2>How to Use YT Summarizer as a Transcript Tool</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> operates on the video transcript under the hood — but you don't have to touch the transcript yourself. Paste the YouTube URL and it handles everything: fetching the transcript, cleaning it, and running it through the AI model to produce a structured summary in seconds.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> operates on the video transcript under the hood — but you don't have to touch the transcript yourself. Paste the YouTube URL and it handles everything: fetching the transcript, cleaning it, and running it through the AI model to produce a structured summary in seconds.</p>
       <p>There's no need to:</p>
       <ul>
         <li>Find the transcript in YouTube's UI (which is buried three clicks deep).</li>
@@ -5688,12 +5697,12 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h2>Related Tools and Reading</h2>
       <ul>
-        <li><a href="/blog/best-free-youtube-summarizer-tool" style="color: #ff0055; font-weight: 600;">Best free YouTube summarizer tools</a></li>
-        <li><a href="/blog/youtube-transcript-summarizer-for-research" style="color: #ff0055; font-weight: 600;">YouTube transcript summarizer for research</a></li>
-        <li><a href="/blog/youtube-summarizer-with-timestamps" style="color: #ff0055; font-weight: 600;">YouTube summarizer with timestamps</a></li>
+        <li><a href="/blog/best-free-youtube-summarizer-tool" style="color: var(--accent); font-weight: 600;">Best free YouTube summarizer tools</a></li>
+        <li><a href="/blog/youtube-transcript-summarizer-for-research" style="color: var(--accent); font-weight: 600;">YouTube transcript summarizer for research</a></li>
+        <li><a href="/blog/youtube-summarizer-with-timestamps" style="color: var(--accent); font-weight: 600;">YouTube summarizer with timestamps</a></li>
       </ul>
 
-      <p>Start extracting insights from YouTube transcripts for free at <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">ytsummarizer.app</a> — paste a URL, read the summary, move on with your day.</p>
+      <p>Start extracting insights from YouTube transcripts for free at <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">ytsummarizer.app</a> — paste a URL, read the summary, move on with your day.</p>
     `
   },
   'youtube-transcript-summarizer-for-research': {
@@ -5718,7 +5727,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Building a Research Workflow with YT Summarizer</h2>
       <ol>
         <li>Identify relevant YouTube videos for your research topic</li>
-        <li>Run each through <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></li>
+        <li>Run each through <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a></li>
         <li>Copy key claims and insights into your research notes</li>
         <li>Include the video URL as your citation source</li>
         <li>Watch only the sections the summary flags as critical</li>
@@ -5733,9 +5742,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Cross-reference video claims with published sources when possible</li>
       </ul>
 
-      <p>Researchers should also see the <a href="/blog/youtube-summarizer-for-academic-research-papers" style="color: #ff0055; font-weight: 600;">academic research paper summarizer</a> and <a href="/blog/youtube-summarizer-for-researchers" style="color: #ff0055; font-weight: 600;">YouTube summarizer for researchers</a> guides.</p>
+      <p>Researchers should also see the <a href="/blog/youtube-summarizer-for-academic-research-papers" style="color: var(--accent); font-weight: 600;">academic research paper summarizer</a> and <a href="/blog/youtube-summarizer-for-researchers" style="color: var(--accent); font-weight: 600;">YouTube summarizer for researchers</a> guides.</p>
 
-      <p>Make video research as efficient as document research: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> today.</p>
+      <p>Make video research as efficient as document research: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> today.</p>
     `
   },
   'summarize-youtube-tutorials-for-study': {
@@ -5777,9 +5786,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ol>
       <p>This approach retains learning depth while cutting watch time by 50–70%.</p>
 
-      <p>Students can also check out our <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">YouTube summarizer for students</a> guide and learn <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">how to use summaries for note-taking</a>.</p>
+      <p>Students can also check out our <a href="/blog/youtube-summarizer-for-students" style="color: var(--accent); font-weight: 600;">YouTube summarizer for students</a> guide and learn <a href="/blog/youtube-video-notes-best-apps-methods" style="color: var(--accent); font-weight: 600;">how to use summaries for note-taking</a>.</p>
 
-      <p>Summarize your next tutorial: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> — paste the URL and get a structured study guide in seconds.</p>
+      <p>Summarize your next tutorial: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> — paste the URL and get a structured study guide in seconds.</p>
     `
   },
   'youtube-summarizer-with-multi-language-support': {
@@ -5833,11 +5842,11 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>A practical tip: if a video doesn't have human-edited captions, auto-generated captions in non-English languages can introduce transcription errors that the summarizer will propagate. For mission-critical work, prefer videos where the creator uploaded their own captions.</p>
 
       <h2>YT Summarizer Language Support</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> supports summarization of videos in multiple languages. Paste any YouTube URL with captions enabled and get AI-powered summary output.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> supports summarization of videos in multiple languages. Paste any YouTube URL with captions enabled and get AI-powered summary output.</p>
 
-      <p>You can also <a href="/blog/translate-and-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">translate and summarize YouTube videos</a> in a single step, or try language-specific guides for <a href="/blog/youtube-summarizer-for-spanish-videos" style="color: #ff0055; font-weight: 600;">Spanish</a>, <a href="/blog/youtube-summarizer-for-french-videos" style="color: #ff0055; font-weight: 600;">French</a>, and <a href="/blog/summarize-youtube-videos-in-chinese-language" style="color: #ff0055; font-weight: 600;">Chinese</a> videos.</p>
+      <p>You can also <a href="/blog/translate-and-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">translate and summarize YouTube videos</a> in a single step, or try language-specific guides for <a href="/blog/youtube-summarizer-for-spanish-videos" style="color: var(--accent); font-weight: 600;">Spanish</a>, <a href="/blog/youtube-summarizer-for-french-videos" style="color: var(--accent); font-weight: 600;">French</a>, and <a href="/blog/summarize-youtube-videos-in-chinese-language" style="color: var(--accent); font-weight: 600;">Chinese</a> videos.</p>
 
-      <p>Break the language barrier on YouTube content: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> and access knowledge from around the world.</p>
+      <p>Break the language barrier on YouTube content: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> and access knowledge from around the world.</p>
     `
   },
   'translate-and-summarize-youtube-videos': {
@@ -5869,7 +5878,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Using YT Summarizer for Foreign Language Videos</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> can process YouTube videos in multiple languages. If a video has captions in its original language, the AI can summarize it and provide the output in English or your preferred language — you don't need to run translation and summarization as two separate steps.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> can process YouTube videos in multiple languages. If a video has captions in its original language, the AI can summarize it and provide the output in English or your preferred language — you don't need to run translation and summarization as two separate steps.</p>
 
       <h2>Getting the Best Results</h2>
       <p>For optimal translation and summarization quality:</p>
@@ -5889,9 +5898,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Humor and wordplay</strong> often don't survive translation, and summaries compress this further</li>
       </ul>
 
-      <p>For a broader overview of language capabilities, see our guide on <a href="/blog/youtube-summarizer-with-multi-language-support" style="color: #ff0055; font-weight: 600;">multi-language YouTube summarization</a>. You can also try it on <a href="/blog/youtube-summarizer-for-spanish-videos" style="color: #ff0055; font-weight: 600;">Spanish videos</a> or <a href="/blog/summarize-youtube-videos-in-chinese-language" style="color: #ff0055; font-weight: 600;">Chinese videos</a>.</p>
+      <p>For a broader overview of language capabilities, see our guide on <a href="/blog/youtube-summarizer-with-multi-language-support" style="color: var(--accent); font-weight: 600;">multi-language YouTube summarization</a>. You can also try it on <a href="/blog/youtube-summarizer-for-spanish-videos" style="color: var(--accent); font-weight: 600;">Spanish videos</a> or <a href="/blog/summarize-youtube-videos-in-chinese-language" style="color: var(--accent); font-weight: 600;">Chinese videos</a>.</p>
 
-      <p>Unlock global YouTube content today: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> on any video in any language.</p>
+      <p>Unlock global YouTube content today: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> on any video in any language.</p>
     `
   },
   'summarize-youtube-videos-in-chinese-language': {
@@ -5924,7 +5933,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Try Summarizing Chinese YouTube Content</h2>
-      <p>Paste any Chinese-language YouTube video URL into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and get an AI-generated summary. You can also <a href="/blog/translate-and-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">translate and summarize videos</a> in other languages like <a href="/blog/youtube-summarizer-for-french-videos" style="color: #ff0055; font-weight: 600;">French</a> and <a href="/blog/youtube-summarizer-for-spanish-videos" style="color: #ff0055; font-weight: 600;">Spanish</a>.</p>
+      <p>Paste any Chinese-language YouTube video URL into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> and get an AI-generated summary. You can also <a href="/blog/translate-and-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">translate and summarize videos</a> in other languages like <a href="/blog/youtube-summarizer-for-french-videos" style="color: var(--accent); font-weight: 600;">French</a> and <a href="/blog/youtube-summarizer-for-spanish-videos" style="color: var(--accent); font-weight: 600;">Spanish</a>.</p>
     `
   },
   'youtube-summarizer-for-spanish-videos': {
@@ -5954,13 +5963,13 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <ol>
         <li>Find a Spanish-language YouTube video</li>
         <li>Copy the video URL</li>
-        <li>Paste it into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></li>
+        <li>Paste it into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a></li>
         <li>Get your AI-generated summary</li>
       </ol>
 
-      <p>For other languages, check out our guides on <a href="/blog/youtube-summarizer-for-french-videos" style="color: #ff0055; font-weight: 600;">French video summarization</a> and <a href="/blog/summarize-youtube-videos-in-chinese-language" style="color: #ff0055; font-weight: 600;">Chinese video summarization</a>, or see the full <a href="/blog/youtube-summarizer-with-multi-language-support" style="color: #ff0055; font-weight: 600;">multi-language support overview</a>.</p>
+      <p>For other languages, check out our guides on <a href="/blog/youtube-summarizer-for-french-videos" style="color: var(--accent); font-weight: 600;">French video summarization</a> and <a href="/blog/summarize-youtube-videos-in-chinese-language" style="color: var(--accent); font-weight: 600;">Chinese video summarization</a>, or see the full <a href="/blog/youtube-summarizer-with-multi-language-support" style="color: var(--accent); font-weight: 600;">multi-language support overview</a>.</p>
 
-      <p>Spanish content is a massive and underutilized knowledge resource for English speakers. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start accessing it with YT Summarizer</a>.</p>
+      <p>Spanish content is a massive and underutilized knowledge resource for English speakers. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Start accessing it with YT Summarizer</a>.</p>
     `
   },
   'youtube-summarizer-for-french-videos': {
@@ -5989,9 +5998,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Getting Accurate French Video Summaries</h2>
       <p>Modern AI handles French extremely well, as it's one of the most well-represented languages in AI training data. Summarization quality for French content is generally very high, especially for content with clear speech and professional captions.</p>
 
-      <p>We also support <a href="/blog/youtube-summarizer-for-spanish-videos" style="color: #ff0055; font-weight: 600;">Spanish video summarization</a> and <a href="/blog/summarize-youtube-videos-in-chinese-language" style="color: #ff0055; font-weight: 600;">Chinese video summarization</a>. For a complete overview, see our <a href="/blog/youtube-summarizer-with-multi-language-support" style="color: #ff0055; font-weight: 600;">multi-language support guide</a>.</p>
+      <p>We also support <a href="/blog/youtube-summarizer-for-spanish-videos" style="color: var(--accent); font-weight: 600;">Spanish video summarization</a> and <a href="/blog/summarize-youtube-videos-in-chinese-language" style="color: var(--accent); font-weight: 600;">Chinese video summarization</a>. For a complete overview, see our <a href="/blog/youtube-summarizer-with-multi-language-support" style="color: var(--accent); font-weight: 600;">multi-language support guide</a>.</p>
 
-      <p>Paste any French YouTube URL into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> and get your AI summary instantly. Try it on a French video today.</p>
+      <p>Paste any French YouTube URL into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> and get your AI summary instantly. Try it on a French video today.</p>
     `
   },
   'youtube-summarizer-with-qa': {
@@ -6023,11 +6032,11 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Start with Summarization</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> provides AI-powered summaries that give you a comprehensive overview of any YouTube video. Use it to understand the full content, then dive deeper into the sections that matter most.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> provides AI-powered summaries that give you a comprehensive overview of any YouTube video. Use it to understand the full content, then dive deeper into the sections that matter most.</p>
 
-      <p>For a structured overview first, try <a href="/blog/youtube-summarizer-with-bullet-points" style="color: #ff0055; font-weight: 600;">bullet point summaries</a> or <a href="/blog/youtube-summarizer-with-chapter-breakdown" style="color: #ff0055; font-weight: 600;">chapter-by-chapter breakdowns</a>. Not sure where to start? Learn <a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">what a YouTube summarizer is</a>.</p>
+      <p>For a structured overview first, try <a href="/blog/youtube-summarizer-with-bullet-points" style="color: var(--accent); font-weight: 600;">bullet point summaries</a> or <a href="/blog/youtube-summarizer-with-chapter-breakdown" style="color: var(--accent); font-weight: 600;">chapter-by-chapter breakdowns</a>. Not sure where to start? Learn <a href="/blog/what-is-a-youtube-summarizer" style="color: var(--accent); font-weight: 600;">what a YouTube summarizer is</a>.</p>
 
-      <p>Stop watching videos to find specific answers. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> and get instant insight from any video.</p>
+      <p>Stop watching videos to find specific answers. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> and get instant insight from any video.</p>
     `
   },
   'top-5-free-ai-tools': {
@@ -6048,7 +6057,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>1. YT Summarizer</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> is purpose-built for YouTube. Clean interface, fast results, and structured output. Free tier available, with pay-once packs for heavy users. Best for: all-purpose video summarization.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> is purpose-built for YouTube. Clean interface, fast results, and structured output. Free tier available, with pay-once packs for heavy users. Best for: all-purpose video summarization.</p>
 
       <h2>2. Browser Extensions</h2>
       <p>Several Chrome extensions overlay summaries directly on the YouTube page. Convenient for frequent use, but require browser permissions and may have privacy tradeoffs.</p>
@@ -6063,9 +6072,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>Google's NotebookLM can ingest YouTube video links and answer questions about the content. Requires a Google account. Best for research and cross-referencing multiple sources.</p>
 
       <h2>Bottom Line</h2>
-      <p>Want to know how reliable these tools are? Read about <a href="/blog/how-accurate-are-youtube-video-summaries" style="color: #ff0055; font-weight: 600;">how accurate AI YouTube summaries</a> are. For a deeper look at features, see <a href="/blog/youtube-summarizer-with-bullet-points" style="color: #ff0055; font-weight: 600;">bullet point summaries</a> and <a href="/blog/youtube-summarizer-with-timestamps" style="color: #ff0055; font-weight: 600;">timestamped summaries</a>.</p>
+      <p>Want to know how reliable these tools are? Read about <a href="/blog/how-accurate-are-youtube-video-summaries" style="color: var(--accent); font-weight: 600;">how accurate AI YouTube summaries</a> are. For a deeper look at features, see <a href="/blog/youtube-summarizer-with-bullet-points" style="color: var(--accent); font-weight: 600;">bullet point summaries</a> and <a href="/blog/youtube-summarizer-with-timestamps" style="color: var(--accent); font-weight: 600;">timestamped summaries</a>.</p>
 
-      <p>For the fastest, most purpose-built experience with a genuine free tier, <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> is the best starting point. Try it on your next YouTube video and see the difference.</p>
+      <p>For the fastest, most purpose-built experience with a genuine free tier, <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> is the best starting point. Try it on your next YouTube video and see the difference.</p>
     `
   },
   'ai-tool-to-summarize-academic-youtube-videos': {
@@ -6100,15 +6109,15 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Building an Academic Research Workflow</h2>
       <ol>
         <li>Search YouTube for your research topic on major university channels</li>
-        <li>Summarize each relevant video using <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></li>
+        <li>Summarize each relevant video using <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a></li>
         <li>Store summaries in your research notes with the video URL as citation</li>
         <li>Watch the full video only for content the summary marks as essential</li>
         <li>Cross-reference claims with published papers before citing</li>
       </ol>
 
-      <p>See also: <a href="/blog/youtube-transcript-summarizer-for-research" style="color: #ff0055; font-weight: 600;">transcript summarizer for research</a>, <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">tutorial summarization for study</a>, and the <a href="/blog/youtube-summarizer-for-researchers" style="color: #ff0055; font-weight: 600;">YouTube summarizer for researchers</a> guide.</p>
+      <p>See also: <a href="/blog/youtube-transcript-summarizer-for-research" style="color: var(--accent); font-weight: 600;">transcript summarizer for research</a>, <a href="/blog/youtube-summarizer-for-students" style="color: var(--accent); font-weight: 600;">tutorial summarization for study</a>, and the <a href="/blog/youtube-summarizer-for-researchers" style="color: var(--accent); font-weight: 600;">YouTube summarizer for researchers</a> guide.</p>
 
-      <p>Add YouTube to your academic research toolkit: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> and process your first academic video today.</p>
+      <p>Add YouTube to your academic research toolkit: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> and process your first academic video today.</p>
     `
   },
   'youtube-summarizer-for-script-writing': {
@@ -6146,9 +6155,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Use this analysis to structure a script that covers the essential ground differently</li>
       </ol>
 
-      <p>Once you've written your script, consider <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">converting your video into a blog post</a> for extra SEO reach, or repurposing insights into <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">newsletter content</a>.</p>
+      <p>Once you've written your script, consider <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: var(--accent); font-weight: 600;">converting your video into a blog post</a> for extra SEO reach, or repurposing insights into <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: var(--accent); font-weight: 600;">newsletter content</a>.</p>
 
-      <p>Build better scripts with better research: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Use YT Summarizer</a> to analyze your top competitors and find your scripting edge.</p>
+      <p>Build better scripts with better research: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Use YT Summarizer</a> to analyze your top competitors and find your scripting edge.</p>
     `
   },
   'youtube-summarizer-with-chapter-breakdown': {
@@ -6204,9 +6213,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Use both</strong> for reference material — the single summary gives you the headline, chapters give you the map</li>
       </ul>
 
-      <p>Combine chapter navigation with <a href="/blog/youtube-summarizer-with-timestamps" style="color: #ff0055; font-weight: 600;">timestamped summaries</a> for maximum efficiency. For quick scanning, try <a href="/blog/youtube-summarizer-with-bullet-points" style="color: #ff0055; font-weight: 600;">bullet point format</a>. Visual learners may prefer <a href="/blog/youtube-summarizer-with-mind-map-output" style="color: #ff0055; font-weight: 600;">mind map output</a>. For really long videos, see our guide on <a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: #ff0055; font-weight: 600;">summarizing 2-hour videos in under 5 minutes</a>.</p>
+      <p>Combine chapter navigation with <a href="/blog/youtube-summarizer-with-timestamps" style="color: var(--accent); font-weight: 600;">timestamped summaries</a> for maximum efficiency. For quick scanning, try <a href="/blog/youtube-summarizer-with-bullet-points" style="color: var(--accent); font-weight: 600;">bullet point format</a>. Visual learners may prefer <a href="/blog/youtube-summarizer-with-mind-map-output" style="color: var(--accent); font-weight: 600;">mind map output</a>. For really long videos, see our guide on <a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: var(--accent); font-weight: 600;">summarizing 2-hour videos in under 5 minutes</a>.</p>
 
-      <p>Get structured chapter-level insights from any long YouTube video: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> today.</p>
+      <p>Get structured chapter-level insights from any long YouTube video: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> today.</p>
     `
   },
   'summarize-government-hearings-on-youtube': {
@@ -6248,9 +6257,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>European Parliament</li>
       </ul>
 
-      <p>For related legal content, see our <a href="/blog/youtube-summarizer-for-legal-depositions" style="color: #ff0055; font-weight: 600;">legal deposition summarizer</a>. Journalists covering government will find the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for journalists</a> useful.</p>
+      <p>For related legal content, see our <a href="/blog/youtube-summarizer-for-legal-depositions" style="color: var(--accent); font-weight: 600;">legal deposition summarizer</a>. Journalists covering government will find the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">YouTube summarizer for journalists</a> useful.</p>
 
-      <p>Extract the signal from hours of government proceedings: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> on your next government hearing video.</p>
+      <p>Extract the signal from hours of government proceedings: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> on your next government hearing video.</p>
     `
   },
   'youtube-summarizer-for-meeting-recordings': {
@@ -6283,11 +6292,11 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Summarize and Share with Your Team</h2>
-      <p>One effective workflow: summarize a meeting recording with <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a>, paste the summary into your team's Slack channel or project management tool, and skip the requirement for everyone to watch the full recording.</p>
+      <p>One effective workflow: summarize a meeting recording with <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a>, paste the summary into your team's Slack channel or project management tool, and skip the requirement for everyone to watch the full recording.</p>
 
-      <p>For similar business workflows, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">webinar summarization</a>, <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">corporate presentation summaries</a>, and <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">training video summaries</a>.</p>
+      <p>For similar business workflows, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">webinar summarization</a>, <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">corporate presentation summaries</a>, and <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">training video summaries</a>.</p>
 
-      <p>Turn meeting recordings into action: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Summarize your first meeting recording with YT Summarizer</a>.</p>
+      <p>Turn meeting recordings into action: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Summarize your first meeting recording with YT Summarizer</a>.</p>
     `
   },
   'summarize-youtube-interviews-for-market-research': {
@@ -6310,7 +6319,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Research Extraction Workflow</h2>
       <ol>
         <li>Search YouTube for interviews with key figures in your market</li>
-        <li>Summarize each interview using <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></li>
+        <li>Summarize each interview using <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a></li>
         <li>Tag summaries by: interviewee, date, topics covered, key claims</li>
         <li>Build a market intelligence document from aggregated summaries</li>
         <li>Identify patterns across multiple interviews</li>
@@ -6327,9 +6336,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Hiring or investment signals</li>
       </ul>
 
-      <p>Related guides: <a href="/blog/youtube-transcript-tools-that-still-work-in-2026" style="color: #ff0055; font-weight: 600;">podcast transcript summaries</a>, <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">corporate presentation summaries</a>, and the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for marketers</a>.</p>
+      <p>Related guides: <a href="/blog/youtube-transcript-tools-that-still-work-in-2026" style="color: var(--accent); font-weight: 600;">podcast transcript summaries</a>, <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">corporate presentation summaries</a>, and the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">YouTube summarizer for marketers</a>.</p>
 
-      <p>Build better market intelligence with less watching time: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start with YT Summarizer</a>.</p>
+      <p>Build better market intelligence with less watching time: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Start with YT Summarizer</a>.</p>
     `
   },
   'youtube-video-summarizer-for-training-videos': {
@@ -6369,9 +6378,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Enable employees to review training content quickly before applying it</li>
       </ul>
 
-      <p>See also: <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">business webinar summaries</a>, <a href="/blog/youtube-summarizer-for-meeting-recordings" style="color: #ff0055; font-weight: 600;">meeting recording summaries</a>, and the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for HR professionals</a>.</p>
+      <p>See also: <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">business webinar summaries</a>, <a href="/blog/youtube-summarizer-for-meeting-recordings" style="color: var(--accent); font-weight: 600;">meeting recording summaries</a>, and the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">YouTube summarizer for HR professionals</a>.</p>
 
-      <p>Make training more efficient: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Summarize your next training video with YT Summarizer</a> and build a reference library your team will actually use.</p>
+      <p>Make training more efficient: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Summarize your next training video with YT Summarizer</a> and build a reference library your team will actually use.</p>
     `
   },
   'youtube-summarizer-for-investor-videos': {
@@ -6404,13 +6413,13 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Building an Investment Research Workflow</h2>
       <ol>
         <li>Subscribe or bookmark key investor channels for your portfolio companies</li>
-        <li>When new content drops, summarize immediately with <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></li>
+        <li>When new content drops, summarize immediately with <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a></li>
         <li>Log key data points and insights with the date</li>
         <li>Compare against your investment thesis and flag anything that changes the picture</li>
         <li>Watch the full video only for the most consequential updates</li>
       </ol>
 
-      <p>Stay ahead of the market without watching hours of video. For stock-specific analysis and market commentary, see the <a href="/blog/stock-market-video-summary-for-investors" style="color: #ff0055; font-weight: 600;">stock market video summary guide</a>. For processing full-length corporate investor days and strategy presentations, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">how to summarize corporate presentations</a>. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> on your first investor video today.</p>
+      <p>Stay ahead of the market without watching hours of video. For stock-specific analysis and market commentary, see the <a href="/blog/stock-market-video-summary-for-investors" style="color: var(--accent); font-weight: 600;">stock market video summary guide</a>. For processing full-length corporate investor days and strategy presentations, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">how to summarize corporate presentations</a>. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> on your first investor video today.</p>
     `
   },
   'summarize-corporate-presentations-on-youtube': {
@@ -6449,9 +6458,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Log insights in your competitive intelligence tracker</li>
       </ol>
 
-      <p>Related: <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">business webinar summaries</a>, <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">interview summaries for market research</a>, and the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">executive video summary guide</a>.</p>
+      <p>Related: <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">business webinar summaries</a>, <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">interview summaries for market research</a>, and the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">executive video summary guide</a>.</p>
 
-      <p>Make corporate presentations a practical research tool: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Summarize your next corporate presentation with YT Summarizer</a>.</p>
+      <p>Make corporate presentations a practical research tool: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Summarize your next corporate presentation with YT Summarizer</a>.</p>
     `
   },
   'youtube-summarizer-for-legal-depositions': {
@@ -6487,9 +6496,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Legal Education Use Case</h2>
       <p>Law students find AI summarization particularly valuable for reviewing oral arguments and court hearings as study material. Summarize a key Supreme Court case oral argument to understand the core issues before diving into the full recording.</p>
 
-      <p>Legal professionals should also see the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for lawyers</a> guide. For government hearings specifically, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">summarizing government hearings</a>.</p>
+      <p>Legal professionals should also see the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">YouTube summarizer for lawyers</a> guide. For government hearings specifically, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">summarizing government hearings</a>.</p>
 
-      <p>Start with <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> — paste any public legal proceeding URL and get a structured summary.</p>
+      <p>Start with <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> — paste any public legal proceeding URL and get a structured summary.</p>
     `
   },
   'youtube-summarizer-for-academic-research-papers': {
@@ -6529,11 +6538,11 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Build a Research Video Database</h2>
-      <p>Systematic researchers use <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> to process conference talks in their field, building a personal database of structured summaries that's searchable and reference-able across projects.</p>
+      <p>Systematic researchers use <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> to process conference talks in their field, building a personal database of structured summaries that's searchable and reference-able across projects.</p>
 
-      <p>See also: <a href="/blog/youtube-transcript-summarizer-for-research" style="color: #ff0055; font-weight: 600;">transcript summarizer for research</a>, <a href="/blog/ai-tool-to-summarize-academic-youtube-videos" style="color: #ff0055; font-weight: 600;">AI tools for academic videos</a>, and the <a href="/blog/youtube-summarizer-for-researchers" style="color: #ff0055; font-weight: 600;">YouTube summarizer for researchers</a>.</p>
+      <p>See also: <a href="/blog/youtube-transcript-summarizer-for-research" style="color: var(--accent); font-weight: 600;">transcript summarizer for research</a>, <a href="/blog/ai-tool-to-summarize-academic-youtube-videos" style="color: var(--accent); font-weight: 600;">AI tools for academic videos</a>, and the <a href="/blog/youtube-summarizer-for-researchers" style="color: var(--accent); font-weight: 600;">YouTube summarizer for researchers</a>.</p>
 
-      <p>Make video research as efficient as text research: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> on your next conference paper presentation.</p>
+      <p>Make video research as efficient as text research: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> on your next conference paper presentation.</p>
     `
   },
   'students-youtube-summaries': {
@@ -6544,7 +6553,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>High-achieving students have discovered that AI YouTube summarization isn't just about watching fewer videos — it's a fundamentally different approach to study that improves retention and academic performance.</p>
 
       <h2>The Science Behind Summarization and Learning</h2>
-      <p>Active processing is more effective than passive consumption. That's why <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">AI YouTube summarizers for students</a> have become essential study tools. When you read a summary and identify what you understand vs. what you need to study more, you're engaging with material in a way that watching a video passively does not achieve. Summaries force active engagement.</p>
+      <p>Active processing is more effective than passive consumption. That's why <a href="/blog/youtube-summarizer-for-students" style="color: var(--accent); font-weight: 600;">AI YouTube summarizers for students</a> have become essential study tools. When you read a summary and identify what you understand vs. what you need to study more, you're engaging with material in a way that watching a video passively does not achieve. Summaries force active engagement.</p>
 
       <h2>High-Impact Student Use Cases</h2>
 
@@ -6565,10 +6574,10 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Start each study session with a summary review of relevant YouTube content</li>
         <li>Flag sections you don't fully understand from the summary</li>
         <li>Watch only those flagged sections in full</li>
-        <li>Add key points from summaries to your flashcard or spaced repetition system — especially effective when you <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">summarize tutorial videos for study</a></li>
+        <li>Add key points from summaries to your flashcard or spaced repetition system — especially effective when you <a href="/blog/youtube-summarizer-for-students" style="color: var(--accent); font-weight: 600;">summarize tutorial videos for study</a></li>
       </ol>
 
-      <p>Ready to study smarter? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — your most efficient study tool for YouTube content. For level-specific strategies, see guides for <a href="/blog/youtube-summarizer-for-high-school-students" style="color: #ff0055; font-weight: 600;">high school</a>, <a href="/blog/youtube-summarizer-for-university-students" style="color: #ff0055; font-weight: 600;">university</a>, and <a href="/blog/youtube-transcript-summarizer-for-research" style="color: #ff0055; font-weight: 600;">PhD researchers</a>.</p>
+      <p>Ready to study smarter? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> — your most efficient study tool for YouTube content. For level-specific strategies, see guides for <a href="/blog/youtube-summarizer-for-high-school-students" style="color: var(--accent); font-weight: 600;">high school</a>, <a href="/blog/youtube-summarizer-for-university-students" style="color: var(--accent); font-weight: 600;">university</a>, and <a href="/blog/youtube-transcript-summarizer-for-research" style="color: var(--accent); font-weight: 600;">PhD researchers</a>.</p>
     `
   },
   'online-free-youtube-summarizer-with-translation': {
@@ -6606,9 +6615,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
 
       <h2>Try YT Summarizer on Foreign Language Content</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> supports multiple languages and can help you extract key insights from non-English YouTube content. Paste any YouTube URL and get your summary.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> supports multiple languages and can help you extract key insights from non-English YouTube content. Paste any YouTube URL and get your summary.</p>
 
-      <p>The world's YouTube content is larger than what exists in any single language. For a full list of supported languages, see <a href="/blog/youtube-summarizer-with-multi-language-support" style="color: #ff0055; font-weight: 600;">YouTube summarizer with multi-language support</a>. Try it on <a href="/blog/youtube-summarizer-for-spanish-videos" style="color: #ff0055; font-weight: 600;">Spanish videos</a> or learn how to <a href="/blog/translate-and-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">translate and summarize any video</a>. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start accessing it with YT Summarizer</a>.</p>
+      <p>The world's YouTube content is larger than what exists in any single language. For a full list of supported languages, see <a href="/blog/youtube-summarizer-with-multi-language-support" style="color: var(--accent); font-weight: 600;">YouTube summarizer with multi-language support</a>. Try it on <a href="/blog/youtube-summarizer-for-spanish-videos" style="color: var(--accent); font-weight: 600;">Spanish videos</a> or learn how to <a href="/blog/translate-and-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">translate and summarize any video</a>. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Start accessing it with YT Summarizer</a>.</p>
     `
   },
   'youtube-summarizer-with-mind-map-output': {
@@ -6639,7 +6648,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Creating Mind Maps from Video Summaries</h2>
       <p>A practical workflow for visual learners:</p>
       <ol>
-        <li>Summarize the video with <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></li>
+        <li>Summarize the video with <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a></li>
         <li>Identify the central topic and main branch topics from the summary</li>
         <li>Import the summary into a mind mapping tool (Miro, MindMeister, Coggle, or even pen and paper)</li>
         <li>Arrange the key points as branches and sub-branches</li>
@@ -6655,9 +6664,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>XMind — offline and online options</li>
       </ul>
 
-      <p>Prefer a text-based format? Try <a href="/blog/youtube-summarizer-with-bullet-points" style="color: #ff0055; font-weight: 600;">bullet point summaries</a> for fast scanning, or <a href="/blog/youtube-summarizer-with-chapter-breakdown" style="color: #ff0055; font-weight: 600;">chapter breakdowns</a> for longer content. You can also <a href="/blog/youtube-summarizer-with-qa" style="color: #ff0055; font-weight: 600;">ask questions directly</a> about any video.</p>
+      <p>Prefer a text-based format? Try <a href="/blog/youtube-summarizer-with-bullet-points" style="color: var(--accent); font-weight: 600;">bullet point summaries</a> for fast scanning, or <a href="/blog/youtube-summarizer-with-chapter-breakdown" style="color: var(--accent); font-weight: 600;">chapter breakdowns</a> for longer content. You can also <a href="/blog/youtube-summarizer-with-qa" style="color: var(--accent); font-weight: 600;">ask questions directly</a> about any video.</p>
 
-      <p>Start with the summary, visualize the connections: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Get your video summary from YT Summarizer</a> and map it out.</p>
+      <p>Start with the summary, visualize the connections: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Get your video summary from YT Summarizer</a> and map it out.</p>
     `
   },
   'stock-market-video-summary-for-investors': {
@@ -6686,8 +6695,8 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Important Caveat</h2>
       <p>AI summaries are research tools, not investment advice. Always verify claims in the original video and cross-reference with official filings, especially for any financial decision. Summaries surface the argument; your judgment evaluates it.</p>
       <h2>Build a Market Intelligence System</h2>
-      <p>Consistent investors summarize the same channels weekly to track how analyst sentiment evolves. A 3-month log of summaries on a company tells you more than any single video. For deeper analysis of earnings calls and investor presentations, see the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for investor videos</a> guide. Those building broader financial literacy will also benefit from the <a href="/blog/personal-finance-videos-get-the-tldr" style="color: #ff0055; font-weight: 600;">personal finance video TL;DR guide</a>.</p>
-      <p>Start building your market intelligence system: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> on your first financial video today.</p>
+      <p>Consistent investors summarize the same channels weekly to track how analyst sentiment evolves. A 3-month log of summaries on a company tells you more than any single video. For deeper analysis of earnings calls and investor presentations, see the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">YouTube summarizer for investor videos</a> guide. Those building broader financial literacy will also benefit from the <a href="/blog/personal-finance-videos-get-the-tldr" style="color: var(--accent); font-weight: 600;">personal finance video TL;DR guide</a>.</p>
+      <p>Start building your market intelligence system: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> on your first financial video today.</p>
     `
   },
   'personal-finance-videos-get-the-tl-dr': {
@@ -6716,8 +6725,8 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Common mistakes warned against</li>
       </ul>
       <h2>Build Your Financial Knowledge Base</h2>
-      <p>Summarize 2–3 personal finance videos per week and store them in notes. In 6 months you'll have a comprehensive personal finance reference built from the best content available — without spending 100 hours watching YouTube. Investors ready to go deeper into market analysis will find the <a href="/blog/stock-market-video-summary-for-investors" style="color: #ff0055; font-weight: 600;">stock market video summary guide</a> the natural next step. For a complete overview of reclaiming time across all video types, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start extracting value from personal finance content with YT Summarizer</a>.</p>
+      <p>Summarize 2–3 personal finance videos per week and store them in notes. In 6 months you'll have a comprehensive personal finance reference built from the best content available — without spending 100 hours watching YouTube. Investors ready to go deeper into market analysis will find the <a href="/blog/stock-market-video-summary-for-investors" style="color: var(--accent); font-weight: 600;">stock market video summary guide</a> the natural next step. For a complete overview of reclaiming time across all video types, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Start extracting value from personal finance content with YT Summarizer</a>.</p>
     `
   },
   'photography-tutorial-summaries-learn-the-techniques': {
@@ -6746,9 +6755,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       </ul>
       <h2>Using Summaries to Build a Technique Library</h2>
       <p>The best photographers build a personal reference library. Summarize every tutorial you find valuable, organize by technique category, and search your summaries when you need a refresher before a shoot.</p>
-      <p>For structured note-taking from tutorials, see <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">how to use YouTube summaries for note-taking</a>. Designers will find related workflows in the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for designers</a> guide.</p>
+      <p>For structured note-taking from tutorials, see <a href="/blog/youtube-video-notes-best-apps-methods" style="color: var(--accent); font-weight: 600;">how to use YouTube summaries for note-taking</a>. Designers will find related workflows in the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">YouTube summarizer for designers</a> guide.</p>
 
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Build your photography technique library with YT Summarizer</a> — start today.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Build your photography technique library with YT Summarizer</a> — start today.</p>
     `
   },
   'gaming-guide-video-summaries': {
@@ -6771,8 +6780,8 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Best Use: Guides + Targeted Watching</h2>
       <p>Summarize the strategic guide to understand what you need to do. Then return to the video only for the specific visual demonstration of the hardest technique. This cuts your research time by 70% while preserving the learning from the visual elements.</p>
       <h2>Tournament and Meta Analysis</h2>
-      <p>Competitive players use summaries for tournament VOD reviews and professional player analysis videos — extracting the strategic insights and decision frameworks without watching 6-hour tournament streams. If you're new to video summarization, read <a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">what a YouTube summarizer is</a> — and see the full guide on <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a> for a broader productivity workflow.</p>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Summarize your next gaming guide with YT Summarizer</a> and get the strategy in seconds.</p>
+      <p>Competitive players use summaries for tournament VOD reviews and professional player analysis videos — extracting the strategic insights and decision frameworks without watching 6-hour tournament streams. If you're new to video summarization, read <a href="/blog/what-is-a-youtube-summarizer" style="color: var(--accent); font-weight: 600;">what a YouTube summarizer is</a> — and see the full guide on <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a> for a broader productivity workflow.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Summarize your next gaming guide with YT Summarizer</a> and get the strategy in seconds.</p>
     `
   },
   'youtube-summarizer-for-doctors-and-medical-professionals': {
@@ -6798,8 +6807,8 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Journal club prep:</strong> Summarize video presentations of research papers</li>
       </ul>
       <h2>Important Note on Medical Content</h2>
-      <p>AI summaries of medical content are starting points for review, not clinical guidance. Other professionals with similar verification requirements include <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">lawyers and legal professionals</a>. Researchers in clinical fields will also find the <a href="/blog/youtube-summarizer-for-researchers" style="color: #ff0055; font-weight: 600;">researcher's summarization guide</a> relevant for conference and academic video. For a broader look at reclaiming time with AI tools, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>. Always verify specific clinical recommendations against current guidelines and primary literature before applying to patient care.</p>
-      <p>Stay current without losing clinical time: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> on your next medical education video.</p>
+      <p>AI summaries of medical content are starting points for review, not clinical guidance. Other professionals with similar verification requirements include <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">lawyers and legal professionals</a>. Researchers in clinical fields will also find the <a href="/blog/youtube-summarizer-for-researchers" style="color: var(--accent); font-weight: 600;">researcher's summarization guide</a> relevant for conference and academic video. For a broader look at reclaiming time with AI tools, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>. Always verify specific clinical recommendations against current guidelines and primary literature before applying to patient care.</p>
+      <p>Stay current without losing clinical time: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> on your next medical education video.</p>
     `
   },
   'youtube-summarizer-for-lawyers': {
@@ -6825,8 +6834,8 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Client context:</strong> Understand what clients are watching about their legal situation</li>
       </ul>
       <h2>Verification Standard for Legal Content</h2>
-      <p>As with all AI-generated summaries, verify key legal claims against primary sources — statutes, case law, official regulatory guidance — before relying on them professionally. Summaries accelerate research; they don't replace primary source verification. Medical professionals face similar verification requirements — see <a href="/blog/youtube-summarizer-for-doctors-and-medical-professionals" style="color: #ff0055; font-weight: 600;">YouTube summarizer for doctors</a> for related guidance. Journalists who cover legal and court proceedings will find complementary research workflows in the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">journalist's summarization guide</a>. For a productivity overview, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> and make legal video research billable-efficient.</p>
+      <p>As with all AI-generated summaries, verify key legal claims against primary sources — statutes, case law, official regulatory guidance — before relying on them professionally. Summaries accelerate research; they don't replace primary source verification. Medical professionals face similar verification requirements — see <a href="/blog/youtube-summarizer-for-doctors-and-medical-professionals" style="color: var(--accent); font-weight: 600;">YouTube summarizer for doctors</a> for related guidance. Journalists who cover legal and court proceedings will find complementary research workflows in the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">journalist's summarization guide</a>. For a productivity overview, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> and make legal video research billable-efficient.</p>
     `
   },
   'youtube-summarizer-for-teachers': {
@@ -6834,7 +6843,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
     metaDescription: 'Teachers use AI YouTube summarization to find the best educational videos, prepare lessons, curate classroom content, and stay current on pedagogy trends.',
     date: '2026-03-18',
     content: `
-      <p>Teachers increasingly incorporate YouTube into their classrooms, and <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">students benefit</a> from summarization too — but vetting, previewing, and curating video content takes significant preparation time. AI summarization lets educators efficiently assess and use video content without watching every minute. Teachers who record or share lecture content will also find the <a href="/blog/youtube-summarizer-for-lectures" style="color: #ff0055; font-weight: 600;">lecture summarization guide</a> useful for helping students engage with recordings.</p>
+      <p>Teachers increasingly incorporate YouTube into their classrooms, and <a href="/blog/youtube-summarizer-for-students" style="color: var(--accent); font-weight: 600;">students benefit</a> from summarization too — but vetting, previewing, and curating video content takes significant preparation time. AI summarization lets educators efficiently assess and use video content without watching every minute. Teachers who record or share lecture content will also find the <a href="/blog/youtube-summarizer-for-lectures" style="color: var(--accent); font-weight: 600;">lecture summarization guide</a> useful for helping students engage with recordings.</p>
       <h2>How Teachers Use YouTube Summarization</h2>
       <ul>
         <li><strong>Content vetting:</strong> Quickly assess whether a video is age-appropriate, accurate, and relevant to the lesson objective</li>
@@ -6853,8 +6862,8 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Oversimplified — historical events with humor</li>
       </ul>
       <h2>Save Prep Time Without Sacrificing Quality</h2>
-      <p>Teachers who use video summarization report saving 3–5 hours per week in content vetting and lesson prep — time that goes back into actual student support and teaching. For a full guide to professional time savings with AI video tools, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> and streamline your lesson preparation workflow.</p>
+      <p>Teachers who use video summarization report saving 3–5 hours per week in content vetting and lesson prep — time that goes back into actual student support and teaching. For a full guide to professional time savings with AI video tools, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> and streamline your lesson preparation workflow.</p>
     `
   },
   'youtube-summarizer-for-journalists': {
@@ -6862,7 +6871,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
     metaDescription: 'Journalists use AI YouTube summarization for source research, interview prep, fact verification, and monitoring news coverage efficiently on deadline.',
     date: '2026-03-18',
     content: `
-      <p>Journalists operate under deadline pressure that makes efficient research non-negotiable. A story might drop at 2pm with a 5pm deadline, and the background you need is buried in a 90-minute press conference, three competing outlets' video coverage, and two archival interviews from last year. You don't have 4 hours to watch; you have 40 minutes to file. <a href="/blog/youtube-summarizer-for-researchers" style="color: #ff0055; font-weight: 600;">Academic and professional researchers</a> face similar challenges with video-heavy source material. AI summarization makes YouTube's library searchable and accessible at reporting speed — not as a substitute for primary-source verification, but as a triage layer that tells you which videos deserve a full watch.</p>
+      <p>Journalists operate under deadline pressure that makes efficient research non-negotiable. A story might drop at 2pm with a 5pm deadline, and the background you need is buried in a 90-minute press conference, three competing outlets' video coverage, and two archival interviews from last year. You don't have 4 hours to watch; you have 40 minutes to file. <a href="/blog/youtube-summarizer-for-researchers" style="color: var(--accent); font-weight: 600;">Academic and professional researchers</a> face similar challenges with video-heavy source material. AI summarization makes YouTube's library searchable and accessible at reporting speed — not as a substitute for primary-source verification, but as a triage layer that tells you which videos deserve a full watch.</p>
 
       <p>This guide covers how journalists can use video summarization responsibly on deadline, the workflows that hold up under editorial scrutiny, and the ethical boundaries that matter most.</p>
 
@@ -6902,9 +6911,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Be cautious with satire and opinion content</strong> — AI flattens irony and tone, which matters a lot in political reporting</li>
       </ul>
 
-      <p>Journalists covering government and policy should also see the guide to <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">summarizing government hearings on YouTube</a> for source-rich primary material. For a broader overview of reclaiming time with AI video tools, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p>Journalists covering government and policy should also see the guide to <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">summarizing government hearings on YouTube</a> for source-rich primary material. For a broader overview of reclaiming time with AI video tools, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>.</p>
 
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — research at the speed of reporting.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> — research at the speed of reporting.</p>
     `
   },
   'youtube-summarizer-for-entrepreneurs': {
@@ -6919,7 +6928,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>What Founders Learn from YouTube</h2>
       <ul>
         <li><strong>Fundraising strategies and investor mindset</strong> (YC videos, a16z talks) — what good decks look like, what investors actually care about, how term sheets work</li>
-        <li><strong><a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">Growth and marketing tactics</a></strong> from practitioners who've actually scaled channels</li>
+        <li><strong><a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">Growth and marketing tactics</a></strong> from practitioners who've actually scaled channels</li>
         <li><strong>Product and design thinking</strong> from industry leaders and post-mortems on failed features</li>
         <li><strong>Technical knowledge for non-technical founders</strong> — enough architecture and infrastructure literacy to make good hiring and vendor decisions</li>
         <li><strong>Competitor founder interviews</strong> revealing strategy, positioning, and roadmap hints</li>
@@ -6960,7 +6969,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Competitive Intelligence via YouTube</h2>
       <p>One underrated use: systematically summarize competitor founder interviews, product demo videos, and investor calls (for public companies). You get structured insight into positioning, roadmap signals, and strategic priorities for free — without any "spy tools." A 30-minute founder interview on a podcast often reveals more about a competitor's actual strategy than six months of their Twitter posts.</p>
 
-      <p>For a complete guide to reclaiming your time, read <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">how to save time on YouTube with AI</a>. Build your founder knowledge base faster: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start with YT Summarizer free</a> today.</p>
+      <p>For a complete guide to reclaiming your time, read <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">how to save time on YouTube with AI</a>. Build your founder knowledge base faster: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Start with YT Summarizer free</a> today.</p>
     `
   },
   'youtube-summarizer-for-marketers': {
@@ -6968,7 +6977,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
     metaDescription: 'Marketers use AI YouTube summarization to research competitors, stay current on marketing trends, and extract campaign insights from industry video content.',
     date: '2026-03-18',
     content: `
-      <p>Marketing moves fast. Platform algorithm changes, new ad formats, emerging channels, creative trends, and regulatory shifts are all covered heavily on YouTube — often before they hit trade publications or newsletters. A creator doing a breakdown of a Google Ads UI change two hours after it ships is usually ahead of the official documentation. Whether you're a solo marketer or working at a startup, <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">founders and entrepreneurs</a> use the same approach to stay ahead. A marketer who can efficiently extract insights from this content stays ahead of practitioners who can't.</p>
+      <p>Marketing moves fast. Platform algorithm changes, new ad formats, emerging channels, creative trends, and regulatory shifts are all covered heavily on YouTube — often before they hit trade publications or newsletters. A creator doing a breakdown of a Google Ads UI change two hours after it ships is usually ahead of the official documentation. Whether you're a solo marketer or working at a startup, <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">founders and entrepreneurs</a> use the same approach to stay ahead. A marketer who can efficiently extract insights from this content stays ahead of practitioners who can't.</p>
 
       <p>This guide covers the most valuable content categories for marketers, how to use summarization for competitive creative intelligence, and a team workflow that compounds knowledge across the marketing org.</p>
 
@@ -7012,9 +7021,9 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Friday async:</strong> Quick retro on which summary led to an actual tactical decision</li>
       </ul>
 
-      <p>You can also <a href="/blog/generate-blog-posts-from-youtube-summary" style="color: #ff0055; font-weight: 600;">generate blog posts from YouTube summaries</a> to repurpose video content for SEO. Sales teams have equally high stakes for competitive intelligence — see how <a href="/blog/youtube-summarizer-for-sales-teams" style="color: #ff0055; font-weight: 600;">sales teams use YouTube summarization</a> for pre-call research. For the complete productivity playbook, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p>You can also <a href="/blog/generate-blog-posts-from-youtube-summary" style="color: var(--accent); font-weight: 600;">generate blog posts from YouTube summaries</a> to repurpose video content for SEO. Sales teams have equally high stakes for competitive intelligence — see how <a href="/blog/youtube-summarizer-for-sales-teams" style="color: var(--accent); font-weight: 600;">sales teams use YouTube summarization</a> for pre-call research. For the complete productivity playbook, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>.</p>
 
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> and make video content a competitive advantage.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> and make video content a competitive advantage.</p>
     `
   },
   'youtube-summarizer-for-researchers': {
@@ -7022,7 +7031,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
     metaDescription: 'Researchers use AI YouTube summarization to efficiently process conference presentations, expert interviews, and educational content as part of their research workflow.',
     date: '2026-03-18',
     content: `
-      <p>Research increasingly spans media types. Conferences publish video. Experts give interviews. Documentaries cover historical events. For any researcher who needs to be comprehensive, video content is now part of the literature — and AI summarization makes it tractable. See also: <a href="/blog/youtube-transcript-summarizer-for-research" style="color: #ff0055; font-weight: 600;">YouTube transcript summarizer for research</a>.</p>
+      <p>Research increasingly spans media types. Conferences publish video. Experts give interviews. Documentaries cover historical events. For any researcher who needs to be comprehensive, video content is now part of the literature — and AI summarization makes it tractable. See also: <a href="/blog/youtube-transcript-summarizer-for-research" style="color: var(--accent); font-weight: 600;">YouTube transcript summarizer for research</a>.</p>
       <h2>Building Video into Your Research Workflow</h2>
       <p>The challenge with video research is methodology: it's hard to cite, hard to search, and time-consuming to process. Summarization addresses the time issue and creates text that can be searched, stored, and referenced.</p>
       <h2>Video Source Types for Research</h2>
@@ -7042,7 +7051,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>Format the citation with author, channel, title, publication date, URL, and timestamp</li>
         <li>Do not cite from the summary — cite from the primary source</li>
       </ol>
-      <p>For academic contexts specifically, see <a href="/blog/ai-tool-to-summarize-academic-youtube-videos" style="color: #ff0055; font-weight: 600;">AI tools for academic YouTube videos</a>. Journalists face similar video research challenges — see the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">journalist's summarization guide</a> for complementary research workflows. For a broader productivity view, the guide on <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a> covers the full workflow. Make video research as rigorous as text research: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start with YT Summarizer</a>.</p>
+      <p>For academic contexts specifically, see <a href="/blog/ai-tool-to-summarize-academic-youtube-videos" style="color: var(--accent); font-weight: 600;">AI tools for academic YouTube videos</a>. Journalists face similar video research challenges — see the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">journalist's summarization guide</a> for complementary research workflows. For a broader productivity view, the guide on <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a> covers the full workflow. Make video research as rigorous as text research: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Start with YT Summarizer</a>.</p>
     `
   },
   'youtube-summarizer-for-hr-professionals': {
@@ -7069,8 +7078,8 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Training content triage:</strong> Efficiently identify which YouTube training videos to recommend or assign to employees</li>
       </ul>
       <h2>Staying Current Without Overwhelm</h2>
-      <p>HR functions that process video content through summarization stay better informed on rapid regulatory changes — employment law in particular — while spending a fraction of the time on video consumption. For leadership and executive teams, see how <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">entrepreneurs use YouTube summarizers</a> to drive growth. HR teams managing employee learning programs will find the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for training videos</a> guide directly applicable to onboarding and L&D workflows. For a complete guide to reducing video consumption time, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — HR intelligence at the speed your role demands.</p>
+      <p>HR functions that process video content through summarization stay better informed on rapid regulatory changes — employment law in particular — while spending a fraction of the time on video consumption. For leadership and executive teams, see how <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">entrepreneurs use YouTube summarizers</a> to drive growth. HR teams managing employee learning programs will find the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">YouTube summarizer for training videos</a> guide directly applicable to onboarding and L&D workflows. For a complete guide to reducing video consumption time, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> — HR intelligence at the speed your role demands.</p>
     `
   },
   'how-to-use-youtube-summaries-for-note-taking': {
@@ -7126,7 +7135,7 @@ tags: [tag1, tag2]
       <h2>The Capture Workflow</h2>
       <ol>
         <li><strong>Find a relevant YouTube video</strong> — either proactively or from your Watch Later queue</li>
-        <li><strong>Summarize with <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></strong> — paste URL, get structured output in seconds</li>
+        <li><strong>Summarize with <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a></strong> — paste URL, get structured output in seconds</li>
         <li><strong>Paste summary into your notes app</strong> with the video URL, date, and channel as metadata</li>
         <li><strong>Add 2–3 sentences of your own synthesis</strong> — "what does this mean for my work?" The synthesis is what makes the note findable from memory later</li>
         <li><strong>Tag with relevant topics</strong> for future retrieval — tag inconsistency kills knowledge bases, so pick a small controlled vocabulary and stick to it</li>
@@ -7141,9 +7150,9 @@ tags: [tag1, tag2]
         <li><strong>Capturing everything.</strong> Triage first. Not every video deserves a note. Summarize, skim, and only deep-capture videos that clear a relevance bar.</li>
       </ul>
 
-      <p>Wondering how AI compares to traditional methods? See our comparison of <a href="/blog/youtube-summarizer-vs-manual-notes" style="color: #ff0055; font-weight: 600;">AI summarization vs. manual notes</a>. Concerned about reliability? Read about <a href="/blog/how-accurate-are-youtube-video-summaries" style="color: #ff0055; font-weight: 600;">how accurate YouTube video summaries</a> actually are.</p>
+      <p>Wondering how AI compares to traditional methods? See our comparison of <a href="/blog/youtube-summarizer-vs-manual-notes" style="color: var(--accent); font-weight: 600;">AI summarization vs. manual notes</a>. Concerned about reliability? Read about <a href="/blog/how-accurate-are-youtube-video-summaries" style="color: var(--accent); font-weight: 600;">how accurate YouTube video summaries</a> actually are.</p>
 
-      <p>Start building a YouTube knowledge base that doesn't evaporate: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> today.</p>
+      <p>Start building a YouTube knowledge base that doesn't evaporate: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> today.</p>
     `
   },
   'youtube-summarizer-vs-manual-notes': {
@@ -7206,8 +7215,8 @@ tags: [tag1, tag2]
       </ol>
       <p>This workflow gives you full coverage of 10 videos per week for roughly the same time you'd previously spend deeply processing 2. The total volume goes up, but so does the quality of attention on the videos that actually deserve it.</p>
 
-      <p>New to AI video summarization? Start with <a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">what a YouTube summarizer is</a>. To build a complete note-taking system around video summaries, see <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">how to use YouTube summaries for note-taking</a>. For accuracy considerations that shape when to trust a summary vs. verify it manually, see <a href="/blog/how-accurate-are-youtube-video-summaries" style="color: #ff0055; font-weight: 600;">how accurate YouTube video summaries are</a>.</p>
-      <p>Start your AI-assisted research workflow: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a>.</p>
+      <p>New to AI video summarization? Start with <a href="/blog/what-is-a-youtube-summarizer" style="color: var(--accent); font-weight: 600;">what a YouTube summarizer is</a>. To build a complete note-taking system around video summaries, see <a href="/blog/youtube-video-notes-best-apps-methods" style="color: var(--accent); font-weight: 600;">how to use YouTube summaries for note-taking</a>. For accuracy considerations that shape when to trust a summary vs. verify it manually, see <a href="/blog/how-accurate-are-youtube-video-summaries" style="color: var(--accent); font-weight: 600;">how accurate YouTube video summaries are</a>.</p>
+      <p>Start your AI-assisted research workflow: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a>.</p>
     `
   },
   'how-accurate-are-youtube-video-summaries': {
@@ -7263,8 +7272,8 @@ tags: [tag1, tag2]
 
       <h2>Overall Assessment</h2>
       <p>For most everyday use — research, study, professional monitoring, clearing a backlog — AI YouTube summaries are accurate enough to be genuinely useful. Treat them as reliable first drafts and skim-layer tools, not as authoritative transcripts. The cost of a bad summary isn't usually wrong information — it's missed nuance and flattened tone, which you can correct by spot-checking any claim that matters.</p>
-      <p>If you're new to the space, start with <a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">what a YouTube summarizer is</a>, then compare tools in <a href="/blog/best-free-youtube-summarizer-tool" style="color: #ff0055; font-weight: 600;">the best free YouTube summarizer tools</a> round-up.</p>
-      <p>Experience the accuracy yourself: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> on a video you already know well — it's the fastest way to calibrate how much to trust any summarizer.</p>
+      <p>If you're new to the space, start with <a href="/blog/what-is-a-youtube-summarizer" style="color: var(--accent); font-weight: 600;">what a YouTube summarizer is</a>, then compare tools in <a href="/blog/best-free-youtube-summarizer-tool" style="color: var(--accent); font-weight: 600;">the best free YouTube summarizer tools</a> round-up.</p>
+      <p>Experience the accuracy yourself: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> on a video you already know well — it's the fastest way to calibrate how much to trust any summarizer.</p>
     `
   },
   'youtube-summarizer-for-language-learning': {
@@ -7290,9 +7299,9 @@ tags: [tag1, tag2]
       </ul>
       <h2>The Comprehension Gap Method</h2>
       <p>A powerful technique: watch a 5-minute video, summarize it, then compare what you understood to what the summary reveals. The gap is your study target. This method makes your learning precisely calibrated to your current level.</p>
-      <p>For language-specific guides, check out <a href="/blog/youtube-summarizer-for-spanish-videos" style="color: #ff0055; font-weight: 600;">Spanish video summarization</a>, <a href="/blog/youtube-summarizer-for-french-videos" style="color: #ff0055; font-weight: 600;">French video summarization</a>, or our full <a href="/blog/youtube-summarizer-with-multi-language-support" style="color: #ff0055; font-weight: 600;">multi-language support overview</a>.</p>
+      <p>For language-specific guides, check out <a href="/blog/youtube-summarizer-for-spanish-videos" style="color: var(--accent); font-weight: 600;">Spanish video summarization</a>, <a href="/blog/youtube-summarizer-for-french-videos" style="color: var(--accent); font-weight: 600;">French video summarization</a>, or our full <a href="/blog/youtube-summarizer-with-multi-language-support" style="color: var(--accent); font-weight: 600;">multi-language support overview</a>.</p>
 
-      <p>Add AI summarization to your language learning toolkit: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a>.</p>
+      <p>Add AI summarization to your language learning toolkit: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a>.</p>
     `
   },
   'youtube-summarizer-for-remote-workers': {
@@ -7315,8 +7324,8 @@ tags: [tag1, tag2]
       <h2>Async Knowledge Sharing with Summaries</h2>
       <p>Remote teams that build a culture of sharing video summaries multiply the value of individual learning. One person finds a valuable YouTube resource, summarizes it, and shares it in Slack — the whole team benefits without everyone needing to watch the video.</p>
       <h2>Building a Remote Learning Routine</h2>
-      <p>Effective remote workers set aside 30 minutes per day for focused learning. With summarization, this 30 minutes covers 5–10 videos worth of knowledge instead of 1–2. Compound this over a year and the knowledge accumulation is substantial. Remote PMs and engineers will find role-specific learning strategies in the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">product manager</a> and <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">software engineer</a> summarization guides. For the complete AI productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> and build a remote learning practice that actually scales.</p>
+      <p>Effective remote workers set aside 30 minutes per day for focused learning. With summarization, this 30 minutes covers 5–10 videos worth of knowledge instead of 1–2. Compound this over a year and the knowledge accumulation is substantial. Remote PMs and engineers will find role-specific learning strategies in the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">product manager</a> and <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">software engineer</a> summarization guides. For the complete AI productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> and build a remote learning practice that actually scales.</p>
     `
   },
   'how-to-summarize-ted-talks': {
@@ -7373,9 +7382,9 @@ tags: [tag1, tag2]
       </ol>
       <p>You've processed 150+ minutes of content in ~40 minutes and ended up with higher-quality takeaways than casually watching whichever talk surfaced first.</p>
 
-      <p>Want to know how reliable these summaries are? See <a href="/blog/how-accurate-are-youtube-video-summaries" style="color: #ff0055; font-weight: 600;">how accurate AI YouTube summaries</a> really are. You can also use summaries for <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">structured note-taking</a> from talks you want to remember.</p>
+      <p>Want to know how reliable these summaries are? See <a href="/blog/how-accurate-are-youtube-video-summaries" style="color: var(--accent); font-weight: 600;">how accurate AI YouTube summaries</a> really are. You can also use summaries for <a href="/blog/youtube-video-notes-best-apps-methods" style="color: var(--accent); font-weight: 600;">structured note-taking</a> from talks you want to remember.</p>
 
-      <p>Explore the TED library at scale: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Summarize any TED Talk with YT Summarizer</a> in seconds.</p>
+      <p>Explore the TED library at scale: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Summarize any TED Talk with YT Summarizer</a> in seconds.</p>
     `
   },
   'youtube-summarizer-for-product-managers': {
@@ -7404,8 +7413,8 @@ tags: [tag1, tag2]
         <li>Build a searchable PM knowledge base from accumulated summaries</li>
       </ol>
       <h2>User Empathy Research</h2>
-      <p>YouTube contains user-generated content where real customers discuss products, share frustrations, and describe workflows. Summarizing this content gives PMs direct access to unfiltered user voice at scale. For adjacent roles, see how <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">founders and entrepreneurs</a> use YouTube summarization for strategic learning, and how <a href="/blog/youtube-summarizer-for-researchers" style="color: #ff0055; font-weight: 600;">researchers</a> process academic and expert video content. For the full productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — build the product intelligence edge your team needs.</p>
+      <p>YouTube contains user-generated content where real customers discuss products, share frustrations, and describe workflows. Summarizing this content gives PMs direct access to unfiltered user voice at scale. For adjacent roles, see how <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">founders and entrepreneurs</a> use YouTube summarization for strategic learning, and how <a href="/blog/youtube-summarizer-for-researchers" style="color: var(--accent); font-weight: 600;">researchers</a> process academic and expert video content. For the full productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> — build the product intelligence edge your team needs.</p>
     `
   },
   'youtube-summarizer-for-data-analysts': {
@@ -7432,8 +7441,8 @@ tags: [tag1, tag2]
         <li>Store the summary as your quick-reference cheat sheet</li>
       </ol>
       <h2>Conference Talk Intelligence</h2>
-      <p>Analytics conferences publish dozens of session recordings. Data teams that summarize the full conference output within days of release have a significant advantage in adopting new methodologies and tools before the broader community. Engineers who work alongside data teams will find similar workflows in the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">software engineer's summarization guide</a>. For a complete productivity overview, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> and stay ahead in the evolving analytics landscape.</p>
+      <p>Analytics conferences publish dozens of session recordings. Data teams that summarize the full conference output within days of release have a significant advantage in adopting new methodologies and tools before the broader community. Engineers who work alongside data teams will find similar workflows in the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">software engineer's summarization guide</a>. For a complete productivity overview, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> and stay ahead in the evolving analytics landscape.</p>
     `
   },
   'youtube-summarizer-for-fitness-coaches': {
@@ -7456,8 +7465,8 @@ tags: [tag1, tag2]
       <h2>Client Content Recommendation Workflow</h2>
       <p>Coaches who want to recommend YouTube videos to clients can summarize each candidate video first to verify accuracy and appropriate complexity level. This prevents clients from encountering misinformation while also saving the coach from watching every video in full.</p>
       <h2>Continuing Education Efficiency</h2>
-      <p>Fitness certifications require continuing education hours. YouTube webinars and conference recordings count for many certifications. Summarizing these first lets coaches efficiently identify which recordings are worth the full watch for CE credit purposes. For a client-focused perspective on fitness video summarization, see <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">fitness video summaries for workout planning</a> — a complementary guide for extracting workout protocols quickly. For a broader overview of professional time savings with AI tools, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — keep your coaching practice evidence-based and current.</p>
+      <p>Fitness certifications require continuing education hours. YouTube webinars and conference recordings count for many certifications. Summarizing these first lets coaches efficiently identify which recordings are worth the full watch for CE credit purposes. For a client-focused perspective on fitness video summarization, see <a href="/blog/summarize-youtube-without-watching" style="color: var(--accent); font-weight: 600;">fitness video summaries for workout planning</a> — a complementary guide for extracting workout protocols quickly. For a broader overview of professional time savings with AI tools, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> — keep your coaching practice evidence-based and current.</p>
     `
   },
   'what-is-a-youtube-summarizer': {
@@ -7499,10 +7508,10 @@ tags: [tag1, tag2]
       <h2>Who Uses YouTube Summarizers?</h2>
       <p>The user base has broadened significantly since 2023:</p>
       <ul>
-        <li><strong>Students</strong> use them to review recorded lectures, skim supplementary videos, and build study guides. See our <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">YouTube summarizer for students guide</a>.</li>
+        <li><strong>Students</strong> use them to review recorded lectures, skim supplementary videos, and build study guides. See our <a href="/blog/youtube-summarizer-for-students" style="color: var(--accent); font-weight: 600;">YouTube summarizer for students guide</a>.</li>
         <li><strong>Researchers and journalists</strong> summarize interviews, press conferences, and long-form talks to extract claims and quotes.</li>
         <li><strong>Professionals</strong> stay current in their field without watching every podcast or conference talk end-to-end.</li>
-        <li><strong>Content creators</strong> use them for competitor research, repurposing, and keeping up with industry news. See our <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">content creator guide</a>.</li>
+        <li><strong>Content creators</strong> use them for competitor research, repurposing, and keeping up with industry news. See our <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: var(--accent); font-weight: 600;">content creator guide</a>.</li>
         <li><strong>Language learners</strong> use them to pre-read the content of a foreign-language video before watching, for comprehension.</li>
         <li><strong>Accessibility users</strong> who prefer reading over watching video use summarizers as a primary consumption interface.</li>
       </ul>
@@ -7513,9 +7522,9 @@ tags: [tag1, tag2]
         <li><strong>Fully free:</strong> Summarize.tech, some open-source tools. Lower quality, limited features, but unlimited use.</li>
         <li><strong>Freemium with usage caps:</strong> Eightify (3 summaries/week free, then subscription), NoteGPT (limited free tier).</li>
         <li><strong>Subscription:</strong> Most paid tools charge $8–20/month for unlimited use.</li>
-        <li><strong>One-time pay-once option:</strong> <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> with pay-once pricing. Rare in the category but cheapest over a multi-year horizon.</li>
+        <li><strong>One-time pay-once option:</strong> <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> with pay-once pricing. Rare in the category but cheapest over a multi-year horizon.</li>
       </ul>
-      <p>For a side-by-side breakdown of the main options, see our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">best AI YouTube summarizers 2026 comparison</a>.</p>
+      <p>For a side-by-side breakdown of the main options, see our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">best AI YouTube summarizers 2026 comparison</a>.</p>
 
       <h2>How to Choose the Right One</h2>
       <p>Three questions to answer before picking a tool:</p>
@@ -7526,12 +7535,12 @@ tags: [tag1, tag2]
       </ol>
 
       <h2>How YouTube Summarizers Compare to Other AI Tools</h2>
-      <p>You can also use ChatGPT or Claude to summarize YouTube videos by manually copying the transcript — but the workflow is slower (3–4 steps vs 1) and the tools aren't optimized for video content. Dedicated YouTube summarizers are typically faster and produce cleaner output. For a detailed breakdown, see <a href="/blog/can-chatgpt-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">can ChatGPT summarize YouTube videos</a>.</p>
+      <p>You can also use ChatGPT or Claude to summarize YouTube videos by manually copying the transcript — but the workflow is slower (3–4 steps vs 1) and the tools aren't optimized for video content. Dedicated YouTube summarizers are typically faster and produce cleaner output. For a detailed breakdown, see <a href="/blog/can-chatgpt-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">can ChatGPT summarize YouTube videos</a>.</p>
 
       <h2>Getting Started</h2>
-      <p>The fastest way to understand a YouTube summarizer is to try one. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> is free to start — paste any YouTube URL and see the output before deciding whether to upgrade.</p>
+      <p>The fastest way to understand a YouTube summarizer is to try one. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> is free to start — paste any YouTube URL and see the output before deciding whether to upgrade.</p>
 
-      <p>Once you're familiar, see <a href="/blog/how-to-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">how to summarize YouTube videos with AI</a> for detailed workflows, or <a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: #ff0055; font-weight: 600;">how to summarize a 2-hour YouTube video in under 5 minutes</a> for the fastest approach on long videos.</p>
+      <p>Once you're familiar, see <a href="/blog/how-to-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">how to summarize YouTube videos with AI</a> for detailed workflows, or <a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: var(--accent); font-weight: 600;">how to summarize a 2-hour YouTube video in under 5 minutes</a> for the fastest approach on long videos.</p>
     `
   },
   'youtube-summarizer-for-podcasters': {
@@ -7539,7 +7548,7 @@ tags: [tag1, tag2]
     metaDescription: 'Podcasters use AI YouTube summarization to research topics, prep guest interviews, analyze competitor shows, and find content angles faster.',
     date: '2026-03-18',
     content: `
-      <p>Podcasters are content researchers by necessity — much like <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">content creators broadly</a> — finding angles, prepping guest backgrounds, fact-checking claims, and staying current in their niche. YouTube is a primary research resource, and AI summarization makes it dramatically more efficient. The podcasters who consistently ship differentiated episodes aren't necessarily the best interviewers — they're the ones who walked into the recording room knowing things the audience (and often the guest) didn't expect them to know.</p>
+      <p>Podcasters are content researchers by necessity — much like <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: var(--accent); font-weight: 600;">content creators broadly</a> — finding angles, prepping guest backgrounds, fact-checking claims, and staying current in their niche. YouTube is a primary research resource, and AI summarization makes it dramatically more efficient. The podcasters who consistently ship differentiated episodes aren't necessarily the best interviewers — they're the ones who walked into the recording room knowing things the audience (and often the guest) didn't expect them to know.</p>
 
       <h2>How Podcasters Use YouTube Summarization</h2>
       <ul>
@@ -7580,10 +7589,10 @@ tags: [tag1, tag2]
       </ol>
 
       <h2>Show Notes and Repurposing</h2>
-      <p>Show notes are the most underrated growth lever in podcasting. Rich, searchable show notes pull in long-tail search traffic for years. Summarize your own episode, add chapter markers, link to every resource mentioned, and pull 3–5 quotable moments into the notes. This turns every episode into a search-indexable asset rather than an audio file that disappears from feeds after two weeks. For the repurposing perspective, see <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">YouTube summarization for content creators</a>.</p>
+      <p>Show notes are the most underrated growth lever in podcasting. Rich, searchable show notes pull in long-tail search traffic for years. Summarize your own episode, add chapter markers, link to every resource mentioned, and pull 3–5 quotable moments into the notes. This turns every episode into a search-indexable asset rather than an audio file that disappears from feeds after two weeks. For the repurposing perspective, see <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: var(--accent); font-weight: 600;">YouTube summarization for content creators</a>.</p>
 
-      <p>Journalists use similar research workflows — see the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">journalist's YouTube summarization guide</a> for complementary source research techniques. For the full time-savings playbook, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>. If your podcast covers interviews specifically for market or user research, the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">market research interview summarization</a> guide is directly relevant.</p>
-      <p>Research smarter, record better: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a>.</p>
+      <p>Journalists use similar research workflows — see the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">journalist's YouTube summarization guide</a> for complementary source research techniques. For the full time-savings playbook, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>. If your podcast covers interviews specifically for market or user research, the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">market research interview summarization</a> guide is directly relevant.</p>
+      <p>Research smarter, record better: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a>.</p>
     `
   },
   'youtube-summarizer-for-sales-teams': {
@@ -7609,8 +7618,8 @@ tags: [tag1, tag2]
         <li>Webinar content reveals the vendors and approaches they're already exploring</li>
       </ul>
       <h2>Sales Enablement at Scale</h2>
-      <p>Sales enablement teams can use video summarization to efficiently process and distribute competitive intelligence. One person summarizes; the whole team has the insight before their next call cycle. For cross-functional alignment, see how <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">marketers use YouTube summarization</a> for competitive creative intelligence, and how <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">founders and entrepreneurs</a> use it to stay ahead on market trends. For the full productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — walk into every call better informed than your competition.</p>
+      <p>Sales enablement teams can use video summarization to efficiently process and distribute competitive intelligence. One person summarizes; the whole team has the insight before their next call cycle. For cross-functional alignment, see how <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">marketers use YouTube summarization</a> for competitive creative intelligence, and how <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">founders and entrepreneurs</a> use it to stay ahead on market trends. For the full productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> — walk into every call better informed than your competition.</p>
     `
   },
   'youtube-summary-for-book-reviews': {
@@ -7636,9 +7645,9 @@ tags: [tag1, tag2]
       </ul>
       <h2>Building a Reading Intelligence System</h2>
       <p>Summarize book review videos for every title on your reading list before you decide the reading order. The summaries help you prioritize which books to read fully vs. just understand at a conceptual level.</p>
-      <p>Related: <a href="/blog/how-to-summarize-ted-talks" style="color: #ff0055; font-weight: 600;">summarizing TED talks</a> and <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: #ff0055; font-weight: 600;">using summaries for newsletter content</a>.</p>
+      <p>Related: <a href="/blog/how-to-summarize-ted-talks" style="color: var(--accent); font-weight: 600;">summarizing TED talks</a> and <a href="/blog/convert-youtube-video-to-blog-post-summary" style="color: var(--accent); font-weight: 600;">using summaries for newsletter content</a>.</p>
 
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> on your next YouTube book review.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> on your next YouTube book review.</p>
     `
   },
   'youtube-summarizer-for-nonprofits': {
@@ -7661,8 +7670,8 @@ tags: [tag1, tag2]
       <h2>Staff Capacity Multiplier</h2>
       <p>Small nonprofit teams often have one person responsible for sector knowledge who would otherwise need to watch dozens of webinars and conference recordings. Summarization lets one person process 5x more content and share structured summaries with the broader team.</p>
       <h2>Board Education</h2>
-      <p>Nonprofit boards benefit from staying informed on sector developments. Sharing curated video summaries — rather than full videos — respects board members' volunteer time while keeping them genuinely current. Nonprofits doing evidence-based program work can also draw on the <a href="/blog/youtube-summarizer-for-researchers" style="color: #ff0055; font-weight: 600;">researcher's summarization guide</a> for handling academic conference video and policy research workflows. For a complete overview of professional time savings with AI video tools, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — make your nonprofit team punch above its weight on intelligence.</p>
+      <p>Nonprofit boards benefit from staying informed on sector developments. Sharing curated video summaries — rather than full videos — respects board members' volunteer time while keeping them genuinely current. Nonprofits doing evidence-based program work can also draw on the <a href="/blog/youtube-summarizer-for-researchers" style="color: var(--accent); font-weight: 600;">researcher's summarization guide</a> for handling academic conference video and policy research workflows. For a complete overview of professional time savings with AI video tools, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> — make your nonprofit team punch above its weight on intelligence.</p>
     `
   },
   'youtube-summarizer-for-real-estate-professionals': {
@@ -7691,8 +7700,8 @@ tags: [tag1, tag2]
         <li>Watch the most relevant 1–2 videos in full for deeper analysis</li>
       </ol>
       <h2>Client Education</h2>
-      <p>Real estate agents who recommend YouTube resources to clients can summarize each video first to verify it's accurate, appropriate for the client's situation, and not contradicting the agent's guidance. Investors looking to go deeper on financial video content should see the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for investor videos</a> guide for earnings calls, analyst commentary, and investment thesis research. For the full professional productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — stay ahead in the real estate market.</p>
+      <p>Real estate agents who recommend YouTube resources to clients can summarize each video first to verify it's accurate, appropriate for the client's situation, and not contradicting the agent's guidance. Investors looking to go deeper on financial video content should see the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">YouTube summarizer for investor videos</a> guide for earnings calls, analyst commentary, and investment thesis research. For the full professional productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> — stay ahead in the real estate market.</p>
     `
   },
   'youtube-summarizer-for-engineers': {
@@ -7754,8 +7763,8 @@ tags: [tag1, tag2]
         <li><strong>Quarterly (half-day):</strong> Full triage of a major conference. Update your "technologies to watch" list.</li>
       </ul>
 
-      <p>Data engineers and analytics-focused developers will find parallel workflows in the <a href="/blog/youtube-summarizer-for-data-analysts" style="color: #ff0055; font-weight: 600;">data analyst's summarization guide</a>. For framework- and language-specific workflows, see <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">Python tutorial summaries</a>, <a href="/blog/javascript-tutorial-video-summary-code-faster" style="color: #ff0055; font-weight: 600;">JavaScript tutorial summaries</a>, and <a href="/blog/react-tutorial-video-summary-build-faster" style="color: #ff0055; font-weight: 600;">React tutorial summaries</a>. For the complete productivity overview, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — learn more, scroll less.</p>
+      <p>Data engineers and analytics-focused developers will find parallel workflows in the <a href="/blog/youtube-summarizer-for-data-analysts" style="color: var(--accent); font-weight: 600;">data analyst's summarization guide</a>. For framework- and language-specific workflows, see <a href="/blog/summarize-youtube-without-watching" style="color: var(--accent); font-weight: 600;">Python tutorial summaries</a>, <a href="/blog/javascript-tutorial-video-summary-code-faster" style="color: var(--accent); font-weight: 600;">JavaScript tutorial summaries</a>, and <a href="/blog/react-tutorial-video-summary-build-faster" style="color: var(--accent); font-weight: 600;">React tutorial summaries</a>. For the complete productivity overview, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> — learn more, scroll less.</p>
     `
   },
   'youtube-summarizer-for-designers': {
@@ -7778,8 +7787,8 @@ tags: [tag1, tag2]
       <h2>Inspiration vs. Methodology</h2>
       <p>Not all design content needs to be watched — methodology and process content (how to run a design sprint, how to present to stakeholders) summarizes well. Visual portfolio reviews and aesthetic demonstrations need to be watched for the visual elements. Know which you need before hitting play.</p>
       <h2>Design Research Intelligence</h2>
-      <p>Summarizing competitor product demo videos gives designers insight into UX patterns, interaction models, and design language that competing products are using. This competitive design research is most efficiently done through summarization. Designers who collaborate with engineers and PMs will find complementary workflows in the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">software engineer</a> and <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">product manager</a> summarization guides. For the full AI productivity overview, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — design better by learning faster.</p>
+      <p>Summarizing competitor product demo videos gives designers insight into UX patterns, interaction models, and design language that competing products are using. This competitive design research is most efficiently done through summarization. Designers who collaborate with engineers and PMs will find complementary workflows in the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">software engineer</a> and <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">product manager</a> summarization guides. For the full AI productivity overview, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> — design better by learning faster.</p>
     `
   },
   'youtube-video-too-long-how-to-get-key-points': {
@@ -7830,9 +7839,9 @@ tags: [tag1, tag2]
       </ul>
 
       <h2>Get Key Points from Any Video</h2>
-      <p>No matter how long the video, <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> extracts the key points in seconds. Paste the URL, get your summary, decide if it's worth watching in full. For a step-by-step look at how to <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">summarize a YouTube video without watching it</a>, or the complete guide on <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>, see those pages. If you've got a specific Watch Later backlog to clear, our guide on <a href="/blog/how-to-summarize-youtube-watch-later-backlog" style="color: #ff0055; font-weight: 600;">summarizing your Watch Later backlog</a> walks through the full process.</p>
+      <p>No matter how long the video, <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> extracts the key points in seconds. Paste the URL, get your summary, decide if it's worth watching in full. For a step-by-step look at how to <a href="/blog/summarize-youtube-without-watching" style="color: var(--accent); font-weight: 600;">summarize a YouTube video without watching it</a>, or the complete guide on <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>, see those pages. If you've got a specific Watch Later backlog to clear, our guide on <a href="/blog/how-to-summarize-youtube-watch-later-backlog" style="color: var(--accent); font-weight: 600;">summarizing your Watch Later backlog</a> walks through the full process.</p>
 
-      <p>Stop letting long videos sit unwatched. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start summarizing today</a>.</p>
+      <p>Stop letting long videos sit unwatched. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Start summarizing today</a>.</p>
     `
   },
   'summarize-youtube-without-watching': {
@@ -7848,7 +7857,7 @@ tags: [tag1, tag2]
       <ol>
         <li><strong>Find the YouTube video.</strong> Search YouTube for the topic, find a relevant video, confirm it has captions (look for the [CC] icon).</li>
         <li><strong>Copy the URL.</strong> From the address bar, or via the Share button on mobile. Any YouTube URL format works — watch?v=, youtu.be/, m.youtube.com/.</li>
-        <li><strong>Open a summarizer.</strong> Go to <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">ytsummarizer.app</a> or any tool of your choice.</li>
+        <li><strong>Open a summarizer.</strong> Go to <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">ytsummarizer.app</a> or any tool of your choice.</li>
         <li><strong>Paste and summarize.</strong> Paste the URL, click summarize, wait 30–90 seconds.</li>
         <li><strong>Read the structured summary.</strong> Look for bullet points covering main arguments, supporting examples, and key conclusions.</li>
         <li><strong>Decide what to do next.</strong> Close the tab if you got what you needed. Jump to a specific timestamp if one section caught your attention. Watch the full video only if the summary revealed it's genuinely worth your time.</li>
@@ -7894,20 +7903,20 @@ tags: [tag1, tag2]
 
       <h2>The Tools That Make It Work</h2>
       <ul>
-        <li><strong>Paste-and-go web apps:</strong> <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a>, Summarize.tech, NoteGPT. Best for one-off summaries or cross-device use.</li>
+        <li><strong>Paste-and-go web apps:</strong> <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a>, Summarize.tech, NoteGPT. Best for one-off summaries or cross-device use.</li>
         <li><strong>Chrome extensions:</strong> Eightify, Glarity. Best if you want summaries inside the YouTube interface itself.</li>
         <li><strong>ChatGPT + manual transcript paste:</strong> Works if you already subscribe and don't want another tool, but the workflow is slower.</li>
       </ul>
-      <p>For a detailed comparison, see our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">best AI YouTube summarizers 2026 roundup</a>.</p>
+      <p>For a detailed comparison, see our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">best AI YouTube summarizers 2026 roundup</a>.</p>
 
       <h2>Related Reading</h2>
       <ul>
-        <li><a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: #ff0055; font-weight: 600;">How to summarize a 2-hour YouTube video in under 5 minutes</a></li>
-        <li><a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">What is a YouTube summarizer? Complete guide</a></li>
-        <li><a href="/blog/youtube-video-too-long-how-to-get-key-points" style="color: #ff0055; font-weight: 600;">YouTube video too long? How to get the key points</a></li>
+        <li><a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: var(--accent); font-weight: 600;">How to summarize a 2-hour YouTube video in under 5 minutes</a></li>
+        <li><a href="/blog/what-is-a-youtube-summarizer" style="color: var(--accent); font-weight: 600;">What is a YouTube summarizer? Complete guide</a></li>
+        <li><a href="/blog/youtube-video-too-long-how-to-get-key-points" style="color: var(--accent); font-weight: 600;">YouTube video too long? How to get the key points</a></li>
       </ul>
 
-      <p>Skip the watching, keep the knowledge: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a>.</p>
+      <p>Skip the watching, keep the knowledge: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a>.</p>
     `
   },
   'save-time-on-youtube-with-ai': {
@@ -7924,9 +7933,9 @@ tags: [tag1, tag2]
 
       <h2>The AI Time-Saving Toolkit</h2>
       <h3>1. AI Video Summarization</h3>
-      <p>The highest-leverage tool. Not sure what this is? Read <a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">what is a YouTube summarizer</a>. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> turns a 30-minute video into a 2-minute read, preserving the key information. Use it before watching any video longer than 10 minutes.</p>
+      <p>The highest-leverage tool. Not sure what this is? Read <a href="/blog/what-is-a-youtube-summarizer" style="color: var(--accent); font-weight: 600;">what is a YouTube summarizer</a>. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> turns a 30-minute video into a 2-minute read, preserving the key information. Use it before watching any video longer than 10 minutes.</p>
       <h3>2. Triage Before Watching</h3>
-      <p>Never watch a video before summarizing it. Summarize first, decide if it's worth watching in full. For zero-cost options, see the <a href="/blog/best-free-youtube-summarizer-tool" style="color: #ff0055; font-weight: 600;">best free YouTube summarizer tools</a>. Most videos aren't worth a full watch — and the summary was enough.</p>
+      <p>Never watch a video before summarizing it. Summarize first, decide if it's worth watching in full. For zero-cost options, see the <a href="/blog/best-free-youtube-summarizer-tool" style="color: var(--accent); font-weight: 600;">best free YouTube summarizer tools</a>. Most videos aren't worth a full watch — and the summary was enough.</p>
       <h3>3. Playback Speed</h3>
       <p>For videos you decide are worth watching, 1.5–2x speed is often appropriate for talking-head content. Combined with summarization, you're spending 15 minutes on what previously took 30. Most people adjust to 1.5x within a week and find 1x unbearable afterwards.</p>
       <h3>4. Watch Later Audits</h3>
@@ -7949,9 +7958,9 @@ tags: [tag1, tag2]
         <li><strong>Monthly:</strong> Audit your saved summaries to confirm the capture system is actually building useful knowledge, not just accumulating notes</li>
       </ol>
 
-      <p>Students see some of the highest returns from this workflow — see the <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">YouTube summarizer for students</a> guide for study-specific strategies. For professionals, the <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">executive video summaries</a> guide covers high-leverage work use cases.</p>
+      <p>Students see some of the highest returns from this workflow — see the <a href="/blog/youtube-summarizer-for-students" style="color: var(--accent); font-weight: 600;">YouTube summarizer for students</a> guide for study-specific strategies. For professionals, the <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">executive video summaries</a> guide covers high-leverage work use cases.</p>
 
-      <p>Start reclaiming your time: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> and experience the difference immediately.</p>
+      <p>Start reclaiming your time: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> and experience the difference immediately.</p>
     `
   },
   'youtube-summarizer-for-youtube-shorts': {
@@ -7972,9 +7981,9 @@ tags: [tag1, tag2]
       <p>The biggest time savings from AI summarization come from long-form content — videos 10 minutes and longer. A 2-hour interview summarized in 90 seconds saves you 118 minutes. A 45-second Short summarized saves you perhaps 30 seconds.</p>
       <h2>The Right Tool for the Right Content</h2>
       <p>Use AI summarization primarily for long-form YouTube content — lectures, webinars, documentaries, interviews, podcasts, and tutorials. For Shorts, watch them. They're designed for instant consumption.</p>
-      <p>For long-form content, check out <a href="/blog/youtube-video-too-long-how-to-get-key-points" style="color: #ff0055; font-weight: 600;">how to get key points from long videos</a> or <a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">what a YouTube summarizer is</a>.</p>
+      <p>For long-form content, check out <a href="/blog/youtube-video-too-long-how-to-get-key-points" style="color: var(--accent); font-weight: 600;">how to get key points from long videos</a> or <a href="/blog/what-is-a-youtube-summarizer" style="color: var(--accent); font-weight: 600;">what a YouTube summarizer is</a>.</p>
 
-      <p>For everything longer: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> delivers the key points in seconds. Try it free.</p>
+      <p>For everything longer: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> delivers the key points in seconds. Try it free.</p>
     `
   },
   'youtube-summarizer-api': {
@@ -8000,7 +8009,7 @@ tags: [tag1, tag2]
         <li><strong>Prompt engineering:</strong> To control summary format, length, and structure</li>
       </ul>
       <h2>Using Existing Tools vs. Building Custom</h2>
-      <p>For most use cases, using an existing tool like <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> is faster than building a custom solution from scratch. Building custom makes sense only when you need:</p>
+      <p>For most use cases, using an existing tool like <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> is faster than building a custom solution from scratch. Building custom makes sense only when you need:</p>
       <ul>
         <li>Specific output formats not available in existing tools</li>
         <li>Deep integration with proprietary internal systems</li>
@@ -8008,9 +8017,9 @@ tags: [tag1, tag2]
         <li>Custom AI model fine-tuning for your specific domain</li>
       </ul>
       <h2>For Non-Developers</h2>
-      <p>Concerned about data handling? Read about <a href="/blog/youtube-summarizer-privacy-and-security" style="color: #ff0055; font-weight: 600;">YouTube summarizer privacy and security</a>. For the end-user experience, see <a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">what a YouTube summarizer is</a>.</p>
+      <p>Concerned about data handling? Read about <a href="/blog/youtube-summarizer-privacy-and-security" style="color: var(--accent); font-weight: 600;">YouTube summarizer privacy and security</a>. For the end-user experience, see <a href="/blog/what-is-a-youtube-summarizer" style="color: var(--accent); font-weight: 600;">what a YouTube summarizer is</a>.</p>
 
-      <p>If you don't need API integration, <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> provides the same capability through a simple web interface — no code required.</p>
+      <p>If you don't need API integration, <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> provides the same capability through a simple web interface — no code required.</p>
     `
   },
   'youtube-summarizer-privacy-and-security': {
@@ -8043,9 +8052,9 @@ tags: [tag1, tag2]
         <li>For enterprise use, look for tools with enterprise data agreements</li>
       </ul>
       <h2>Choosing a Trustworthy Tool</h2>
-      <p>For a comparison of trustworthy tools, see the <a href="/blog/best-free-youtube-summarizer-tool" style="color: #ff0055; font-weight: 600;">best free YouTube summarizer tools</a> and the <a href="/blog/top-5-free-ai-tools" style="color: #ff0055; font-weight: 600;">top 5 free AI tools</a> comparison.</p>
+      <p>For a comparison of trustworthy tools, see the <a href="/blog/best-free-youtube-summarizer-tool" style="color: var(--accent); font-weight: 600;">best free YouTube summarizer tools</a> and the <a href="/blog/top-5-free-ai-tools" style="color: var(--accent); font-weight: 600;">top 5 free AI tools</a> comparison.</p>
 
-      <p>Look for tools with: clear privacy policies, no data selling commitments, and a track record. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> is designed for everyday use with standard privacy practices appropriate for public content summarization.</p>
+      <p>Look for tools with: clear privacy policies, no data selling commitments, and a track record. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> is designed for everyday use with standard privacy practices appropriate for public content summarization.</p>
     `
   },
   'youtube-summarizer-for-high-school-students': {
@@ -8070,8 +8079,8 @@ tags: [tag1, tag2]
         <li>Documentaries published by reputable broadcasters (BBC, PBS, National Geographic)</li>
       </ul>
       <h2>Avoiding the Distraction Trap</h2>
-      <p>Summarization has an unexpected benefit for high school students: you extract the knowledge without opening YouTube, which means you avoid the recommendations, autoplay, and algorithm rabbit holes that turn a 10-minute study session into 90 minutes of unrelated videos. For broader strategies on studying with video content, see the <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">YouTube summarizer for students</a> guide, or explore how to <a href="/blog/youtube-summarizer-for-lectures" style="color: #ff0055; font-weight: 600;">summarize lecture recordings</a> specifically.</p>
-      <p>Study smarter, scroll less: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> for your next study session.</p>
+      <p>Summarization has an unexpected benefit for high school students: you extract the knowledge without opening YouTube, which means you avoid the recommendations, autoplay, and algorithm rabbit holes that turn a 10-minute study session into 90 minutes of unrelated videos. For broader strategies on studying with video content, see the <a href="/blog/youtube-summarizer-for-students" style="color: var(--accent); font-weight: 600;">YouTube summarizer for students</a> guide, or explore how to <a href="/blog/youtube-summarizer-for-lectures" style="color: var(--accent); font-weight: 600;">summarize lecture recordings</a> specifically.</p>
+      <p>Study smarter, scroll less: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> for your next study session.</p>
     `
   },
   'youtube-summarizer-for-phd-students': {
@@ -8093,8 +8102,8 @@ tags: [tag1, tag2]
       <h2>Advisor and Seminar Preparation</h2>
       <p>Summarizing talks by potential committee members, collaborators, or field leaders before meetings gives you a prepared, informed presence that advisors and colleagues notice and respect.</p>
       <h2>Research Rigor Note</h2>
-      <p>Always cite primary sources — conference papers, proceedings, publications — not video summaries. Use summaries to navigate toward the relevant primary material, then cite the primary material. For a broader look at <a href="/blog/ai-tool-to-summarize-academic-youtube-videos" style="color: #ff0055; font-weight: 600;">AI tools for academic YouTube content</a>, or the general <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">student summarization guide</a>, see those dedicated pages.</p>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — serious research tool for serious researchers.</p>
+      <p>Always cite primary sources — conference papers, proceedings, publications — not video summaries. Use summaries to navigate toward the relevant primary material, then cite the primary material. For a broader look at <a href="/blog/ai-tool-to-summarize-academic-youtube-videos" style="color: var(--accent); font-weight: 600;">AI tools for academic YouTube content</a>, or the general <a href="/blog/youtube-summarizer-for-students" style="color: var(--accent); font-weight: 600;">student summarization guide</a>, see those dedicated pages.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> — serious research tool for serious researchers.</p>
     `
   },
   'youtube-summarizer-for-university-students': {
@@ -8119,8 +8128,8 @@ tags: [tag1, tag2]
         <li>Watch only those in full, using the summary for the rest</li>
       </ol>
       <h2>Group Study Enhancement</h2>
-      <p>Study groups can divide responsibility — each person summarizes different videos on the shared topic, then combines summaries to build a comprehensive shared knowledge base. 5 people processing 5 videos each covers 25 videos in the time it would take one person to watch 5. For maximizing tutorial content specifically, see how to <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">summarize YouTube tutorials for study</a>, and visit the <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">main student summarization guide</a> for the full picture.</p>
-      <p>Ace your studies with smarter video research: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> today.</p>
+      <p>Study groups can divide responsibility — each person summarizes different videos on the shared topic, then combines summaries to build a comprehensive shared knowledge base. 5 people processing 5 videos each covers 25 videos in the time it would take one person to watch 5. For maximizing tutorial content specifically, see how to <a href="/blog/youtube-summarizer-for-students" style="color: var(--accent); font-weight: 600;">summarize YouTube tutorials for study</a>, and visit the <a href="/blog/youtube-summarizer-for-students" style="color: var(--accent); font-weight: 600;">main student summarization guide</a> for the full picture.</p>
+      <p>Ace your studies with smarter video research: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> today.</p>
     `
   },
   'youtube-summarizer-for-news-consumption': {
@@ -8148,9 +8157,9 @@ tags: [tag1, tag2]
       </ul>
       <h2>News That Still Needs to Be Watched</h2>
       <p>Breaking news with live footage, emotional testimony that requires human judgment, and complex visual evidence (satellite imagery, data visualizations) often requires full video watching. Summaries tell you which stories have these elements.</p>
-      <p>Related: <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for journalists</a> and the broader guide on <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p>Related: <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">YouTube summarizer for journalists</a> and the broader guide on <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>.</p>
 
-      <p>Stay informed, stay balanced: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> for smarter news consumption.</p>
+      <p>Stay informed, stay balanced: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> for smarter news consumption.</p>
     `
   },
   'youtube-summarizer-vs-chatgpt-manual-workflow': {
@@ -8215,7 +8224,7 @@ tags: [tag1, tag2]
         <li>If you summarize 20+ videos/month (students, researchers, content creators): a dedicated tool is not optional — the manual workflow doesn't scale.</li>
       </ul>
 
-      <p>The manual ChatGPT workflow isn't wrong — it's just unscalable. For a deeper comparison of dedicated tools, see our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">8-tool comparison</a> and our breakdown of <a href="/blog/can-chatgpt-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">what ChatGPT can and can't do with YouTube videos</a>. For the fastest path from URL to summary, <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">try YT Summarizer free</a> — paste a URL and skip the 5 steps.</p>
+      <p>The manual ChatGPT workflow isn't wrong — it's just unscalable. For a deeper comparison of dedicated tools, see our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">8-tool comparison</a> and our breakdown of <a href="/blog/can-chatgpt-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">what ChatGPT can and can't do with YouTube videos</a>. For the fastest path from URL to summary, <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">try YT Summarizer free</a> — paste a URL and skip the 5 steps.</p>
     `
   },
   'best-youtube-summarizer-for-students-no-subscription': {
@@ -8231,8 +8240,8 @@ tags: [tag1, tag2]
 
       <h2>The Options: No-Subscription YouTube Summarizers</h2>
       <ul>
-        <li><strong>YT Summarizer (pay-once, no subscription):</strong> One-time payment, no recurring fees, no usage limits. Built for the "paste URL, get summary" workflow. Clean bullet-point output that pastes directly into study notes. Over a 4-year degree, this works out to $7.25/year — less than one month of most competitors. See the full feature breakdown at <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: #ff0055; font-weight: 600;">best free YouTube summarizers with no subscription</a>.</li>
-        <li><strong>ChatGPT (free tier):</strong> Manual copy-paste workflow — copy the YouTube transcript, paste it into ChatGPT, write a prompt. Free but time-consuming. Works for occasional use, doesn't scale for heavy study loads. For the full comparison, see <a href="/blog/youtube-summarizer-vs-chatgpt-manual-workflow" style="color: #ff0055; font-weight: 600;">dedicated tools vs. the ChatGPT manual workflow</a>.</li>
+        <li><strong>YT Summarizer (pay-once, no subscription):</strong> One-time payment, no recurring fees, no usage limits. Built for the "paste URL, get summary" workflow. Clean bullet-point output that pastes directly into study notes. Over a 4-year degree, this works out to $7.25/year — less than one month of most competitors. See the full feature breakdown at <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: var(--accent); font-weight: 600;">best free YouTube summarizers with no subscription</a>.</li>
+        <li><strong>ChatGPT (free tier):</strong> Manual copy-paste workflow — copy the YouTube transcript, paste it into ChatGPT, write a prompt. Free but time-consuming. Works for occasional use, doesn't scale for heavy study loads. For the full comparison, see <a href="/blog/youtube-summarizer-vs-chatgpt-manual-workflow" style="color: var(--accent); font-weight: 600;">dedicated tools vs. the ChatGPT manual workflow</a>.</li>
         <li><strong>NoteGPT (free tier with limits):</strong> Offers mind maps and flashcard generation alongside summaries. Free tier has usage caps that may not cover exam-period volume. Premium is subscription-based, which defeats the purpose.</li>
         <li><strong>Gemini (free):</strong> Google's AI can summarize YouTube content if you paste the transcript. Similar friction to the ChatGPT workflow. Advantage: it's integrated into Google's ecosystem (YouTube, Docs), so the copy-paste is slightly less painful.</li>
         <li><strong>Summarize.tech (free, basic):</strong> Paste a YouTube URL and get a summary. No frills, no formatting options, no export. Works but output quality is inconsistent on dense academic content.</li>
@@ -8258,10 +8267,10 @@ tags: [tag1, tag2]
       </ol>
 
       <h2>The Real Cost of "Free"</h2>
-      <p>Free tools have hidden costs: time spent on manual copy-paste workflows, inconsistent output that you need to reformat, usage caps that force you to switch tools mid-study session, and the mental overhead of juggling multiple workarounds. A pay-once purchase eliminates all of these and pays for itself in the first week of exam season. For the broader comparison including subscription tools, see <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">8 YouTube summarizers compared</a>.</p>
+      <p>Free tools have hidden costs: time spent on manual copy-paste workflows, inconsistent output that you need to reformat, usage caps that force you to switch tools mid-study session, and the mental overhead of juggling multiple workarounds. A pay-once purchase eliminates all of these and pays for itself in the first week of exam season. For the broader comparison including subscription tools, see <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">8 YouTube summarizers compared</a>.</p>
 
-      <p>For student-specific study strategies, see our <a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">YouTube summarizer for students guide</a> and <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">how to use YouTube summaries for note-taking</a>.</p>
-      <p>Stop paying monthly for study tools: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer — pay-once, no subscription</a>.</p>
+      <p>For student-specific study strategies, see our <a href="/blog/youtube-summarizer-for-students" style="color: var(--accent); font-weight: 600;">YouTube summarizer for students guide</a> and <a href="/blog/youtube-video-notes-best-apps-methods" style="color: var(--accent); font-weight: 600;">how to use YouTube summaries for note-taking</a>.</p>
+      <p>Stop paying monthly for study tools: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer — pay-once, no subscription</a>.</p>
     `
   },
   'export-youtube-summaries-to-notion': {
@@ -8273,7 +8282,7 @@ tags: [tag1, tag2]
 
       <h2>The Complete Workflow (5 Minutes per Video)</h2>
       <ol>
-        <li><strong>Summarize the video.</strong> Paste the YouTube URL into your summarizer (like <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a>). Get a structured summary with key points, timestamps, and takeaways.</li>
+        <li><strong>Summarize the video.</strong> Paste the YouTube URL into your summarizer (like <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a>). Get a structured summary with key points, timestamps, and takeaways.</li>
         <li><strong>Copy the summary.</strong> Select all and copy.</li>
         <li><strong>Create a Notion page.</strong> In your Notion database, create a new entry. Title it with the video title.</li>
         <li><strong>Paste into Notion.</strong> The summary pastes cleanly into Notion's editor — headings, bullets, and bold text all carry over.</li>
@@ -8320,8 +8329,8 @@ tags: [tag1, tag2]
       </ol>
       <p>This turns your YouTube watch habit from passive consumption into an actual knowledge system that compounds over time.</p>
 
-      <p>For deeper note-taking strategies, see <a href="/blog/youtube-video-notes-best-apps-methods" style="color: #ff0055; font-weight: 600;">how to use YouTube summaries for note-taking</a>. For the broader productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a>.</p>
-      <p>Start building your video knowledge base: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a>.</p>
+      <p>For deeper note-taking strategies, see <a href="/blog/youtube-video-notes-best-apps-methods" style="color: var(--accent); font-weight: 600;">how to use YouTube summaries for note-taking</a>. For the broader productivity framework, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a>.</p>
+      <p>Start building your video knowledge base: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a>.</p>
     `
   },
   'how-to-summarize-youtube-videos': {
@@ -8337,7 +8346,7 @@ tags: [tag1, tag2]
       <p>For 95% of cases, this is the right approach. It takes under a minute from start to finish.</p>
       <ol>
         <li><strong>Copy the YouTube URL.</strong> Click Share under the video and copy the link, or just copy the URL from the address bar. Any YouTube URL format works — watch?v=, youtu.be/, m.youtube.com/.</li>
-        <li><strong>Open a summarizer.</strong> <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> is the simplest — no extension, no signup required to try it. Summarize.tech is free with no account. Eightify requires a Chrome extension but sits inside YouTube directly.</li>
+        <li><strong>Open a summarizer.</strong> <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> is the simplest — no extension, no signup required to try it. Summarize.tech is free with no account. Eightify requires a Chrome extension but sits inside YouTube directly.</li>
         <li><strong>Paste the URL and hit summarize.</strong> The tool fetches the video's transcript, feeds it to a language model, and returns a structured summary. Typical generation time is 30–90 seconds.</li>
         <li><strong>Read, export, or jump back to the video.</strong> Good summaries give you bullet points covering the video's main arguments, examples, and conclusions. If something in the summary catches your eye, you can jump to that section of the video instead of watching the whole thing.</li>
       </ol>
@@ -8349,7 +8358,7 @@ tags: [tag1, tag2]
         <li>Select all the transcript text and copy it.</li>
         <li>Paste into ChatGPT with a prompt like: <em>"Summarize this YouTube transcript in 8 bullet points covering the main arguments and key examples."</em></li>
       </ol>
-      <p>Limitation: the transcript includes timestamps that clutter the output, and you'll want to clean those up with a preprocessing prompt. For details, see <a href="/blog/can-chatgpt-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">can ChatGPT summarize YouTube videos</a>.</p>
+      <p>Limitation: the transcript includes timestamps that clutter the output, and you'll want to clean those up with a preprocessing prompt. For details, see <a href="/blog/can-chatgpt-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">can ChatGPT summarize YouTube videos</a>.</p>
 
       <h2>The Manual Method: Read the Transcript Directly</h2>
       <p>Sometimes AI summarization fails — usually on videos without captions, visual-heavy content, or non-English videos with poor auto-captions. The backup is to read the transcript directly:</p>
@@ -8373,11 +8382,11 @@ tags: [tag1, tag2]
       <p>The summarizer market has a lot of options. Here's how to pick:</p>
       <ul>
         <li><strong>One-off summary, no signup:</strong> Summarize.tech. Free, unlimited, lower quality.</li>
-        <li><strong>Weekly or more, long-term:</strong> <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> (pay-once pricing (no subscription)). Pays off against any subscription within ~2 months.</li>
+        <li><strong>Weekly or more, long-term:</strong> <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> (pay-once pricing (no subscription)). Pays off against any subscription within ~2 months.</li>
         <li><strong>In-browser convenience:</strong> Eightify (Chrome extension, ~$8/month after 3 free summaries/week).</li>
         <li><strong>Study workflow with flashcards and mind maps:</strong> NoteGPT or Mindgrasp.</li>
       </ul>
-      <p>See the full side-by-side comparison in our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">best AI YouTube summarizers 2026 roundup</a>.</p>
+      <p>See the full side-by-side comparison in our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">best AI YouTube summarizers 2026 roundup</a>.</p>
 
       <h2>Common Mistakes That Waste Time</h2>
       <ul>
@@ -8398,12 +8407,12 @@ tags: [tag1, tag2]
 
       <h2>Related Reading</h2>
       <ul>
-        <li><a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: #ff0055; font-weight: 600;">How to summarize a 2-hour YouTube video in under 5 minutes</a></li>
-        <li><a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">What is a YouTube summarizer? Complete guide</a></li>
-        <li><a href="/blog/best-free-youtube-summarizer-tool" style="color: #ff0055; font-weight: 600;">Best free YouTube summarizer tool in 2026</a></li>
+        <li><a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: var(--accent); font-weight: 600;">How to summarize a 2-hour YouTube video in under 5 minutes</a></li>
+        <li><a href="/blog/what-is-a-youtube-summarizer" style="color: var(--accent); font-weight: 600;">What is a YouTube summarizer? Complete guide</a></li>
+        <li><a href="/blog/best-free-youtube-summarizer-tool" style="color: var(--accent); font-weight: 600;">Best free YouTube summarizer tool in 2026</a></li>
       </ul>
 
-      <p>Ready to try it yourself? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Open YT Summarizer</a>, paste any YouTube URL, and see how much time you save.</p>
+      <p>Ready to try it yourself? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Open YT Summarizer</a>, paste any YouTube URL, and see how much time you save.</p>
     `
   },
   'best-free-youtube-summarizers-no-subscription-2026': {
@@ -8417,7 +8426,7 @@ tags: [tag1, tag2]
       <p>YouTube summarization is something you use irregularly — maybe 5 times one week, zero the next. Paying $20/month for a tool you use sporadically doesn't make sense. The best options either offer genuine free tiers or one-time payment models.</p>
 
       <h2>1. YT Summarizer — Best Overall (Pay-Once)</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> stands out because of its pricing model: one-time packs (no subscription, credits never expire). No subscription, no recurring charges, no "your trial has expired" pop-ups. Quick signup, then paste any URL and get your summary.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> stands out because of its pricing model: one-time packs (no subscription, credits never expire). No subscription, no recurring charges, no "your trial has expired" pop-ups. Quick signup, then paste any URL and get your summary.</p>
       <ul>
         <li><strong>Pricing:</strong> Free tier available, one-time packs from $9 (no subscription)</li>
         <li><strong>Quick signup:</strong> Simple account creation, then start summarizing immediately</li>
@@ -8458,9 +8467,9 @@ tags: [tag1, tag2]
       </ul>
 
       <h2>The Bottom Line</h2>
-      <p>If you summarize YouTube videos regularly, the <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer's pay-once pricing</a> pays for itself within a month compared to any subscription tool. If you only need it occasionally, the free tier or general AI tools work fine.</p>
+      <p>If you summarize YouTube videos regularly, the <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer's pay-once pricing</a> pays for itself within a month compared to any subscription tool. If you only need it occasionally, the free tier or general AI tools work fine.</p>
 
-      <p>For a broader comparison, see our <a href="/blog/top-5-free-ai-tools" style="color: #ff0055; font-weight: 600;">top 5 free AI tools for YouTube summarization</a>. New to this? Learn <a href="/blog/what-is-a-youtube-summarizer" style="color: #ff0055; font-weight: 600;">what a YouTube summarizer is</a> and how it works.</p>
+      <p>For a broader comparison, see our <a href="/blog/top-5-free-ai-tools" style="color: var(--accent); font-weight: 600;">top 5 free AI tools for YouTube summarization</a>. New to this? Learn <a href="/blog/what-is-a-youtube-summarizer" style="color: var(--accent); font-weight: 600;">what a YouTube summarizer is</a> and how it works.</p>
     `
   },
   'eightify-vs-ytsummarizer-which-youtube-summarizer-is-worth-it': {
@@ -8491,12 +8500,12 @@ tags: [tag1, tag2]
       <h2>Platform and Access</h2>
       <ul>
         <li><strong>Eightify:</strong> Chrome extension (requires installation), web app</li>
-        <li><strong>YT Summarizer:</strong> Web-based (<a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">ytsummarizer.app</a>) — works on any browser, any device, no installation</li>
+        <li><strong>YT Summarizer:</strong> Web-based (<a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">ytsummarizer.app</a>) — works on any browser, any device, no installation</li>
       </ul>
       <p>Eightify's Chrome extension integrates directly into the YouTube page, which some users prefer. YT Summarizer's web-based approach means it works on phones, tablets, and any browser without installing anything.</p>
 
       <h2>Language Support</h2>
-      <p>Eightify advertises support for 40+ languages, which is a strength for multilingual users. YT Summarizer supports <a href="/blog/youtube-summarizer-with-multi-language-support" style="color: #ff0055; font-weight: 600;">multiple languages</a> including <a href="/blog/youtube-summarizer-for-spanish-videos" style="color: #ff0055; font-weight: 600;">Spanish</a>, <a href="/blog/youtube-summarizer-for-french-videos" style="color: #ff0055; font-weight: 600;">French</a>, and <a href="/blog/summarize-youtube-videos-in-chinese-language" style="color: #ff0055; font-weight: 600;">Chinese</a> through AI-powered transcript processing.</p>
+      <p>Eightify advertises support for 40+ languages, which is a strength for multilingual users. YT Summarizer supports <a href="/blog/youtube-summarizer-with-multi-language-support" style="color: var(--accent); font-weight: 600;">multiple languages</a> including <a href="/blog/youtube-summarizer-for-spanish-videos" style="color: var(--accent); font-weight: 600;">Spanish</a>, <a href="/blog/youtube-summarizer-for-french-videos" style="color: var(--accent); font-weight: 600;">French</a>, and <a href="/blog/summarize-youtube-videos-in-chinese-language" style="color: var(--accent); font-weight: 600;">Chinese</a> through AI-powered transcript processing.</p>
 
       <h2>Who Should Choose What</h2>
       <ul>
@@ -8505,9 +8514,9 @@ tags: [tag1, tag2]
       </ul>
 
       <h2>The Verdict</h2>
-      <p>Eightify is a capable tool with a pricing model that punishes regular use. YT Summarizer offers comparable quality with a pricing model that rewards it. For anyone who summarizes more than 3 videos per week — students, researchers, professionals — the <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">pay-once pricing</a> is hard to beat.</p>
+      <p>Eightify is a capable tool with a pricing model that punishes regular use. YT Summarizer offers comparable quality with a pricing model that rewards it. For anyone who summarizes more than 3 videos per week — students, researchers, professionals — the <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">pay-once pricing</a> is hard to beat.</p>
 
-      <p>See also: <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: #ff0055; font-weight: 600;">best free YouTube summarizers with no subscription</a> and the <a href="/blog/best-free-youtube-summarizer-tool" style="color: #ff0055; font-weight: 600;">best free YouTube summarizer tools</a> comparison.</p>
+      <p>See also: <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: var(--accent); font-weight: 600;">best free YouTube summarizers with no subscription</a> and the <a href="/blog/best-free-youtube-summarizer-tool" style="color: var(--accent); font-weight: 600;">best free YouTube summarizer tools</a> comparison.</p>
     `
   },
   'how-to-summarize-youtube-watch-later-backlog': {
@@ -8525,7 +8534,7 @@ tags: [tag1, tag2]
       <p>Instead of watching everything or declaring bankruptcy on your list, use AI summarization to triage:</p>
       <ol>
         <li><strong>Open your Watch Later list</strong> and start from the oldest videos</li>
-        <li><strong>Copy each video URL</strong> and paste it into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></li>
+        <li><strong>Copy each video URL</strong> and paste it into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a></li>
         <li><strong>Read the summary</strong> (30 seconds per video)</li>
         <li><strong>Decide:</strong> Remove from list (summary was enough), Watch in full (high value), or Save key points to notes</li>
         <li><strong>Repeat</strong> until you've triaged the entire list</li>
@@ -8559,9 +8568,9 @@ tags: [tag1, tag2]
       <h2>The Time Math</h2>
       <p>If your Watch Later list has 200 videos averaging 20 minutes each, that's 66 hours of content. Summarizing all 200 takes about 2 hours. You'll watch maybe 15 in full (5 hours). Total time: 7 hours instead of 66. That's <strong>59 hours saved</strong>.</p>
 
-      <p>For more ways to reclaim time from YouTube, see <a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">saving time on YouTube with AI</a> and <a href="/blog/youtube-video-too-long-how-to-get-key-points" style="color: #ff0055; font-weight: 600;">how to get key points from long videos</a>.</p>
+      <p>For more ways to reclaim time from YouTube, see <a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">saving time on YouTube with AI</a> and <a href="/blog/youtube-video-too-long-how-to-get-key-points" style="color: var(--accent); font-weight: 600;">how to get key points from long videos</a>.</p>
 
-      <p>Start clearing your backlog: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — quick signup, then paste and go.</p>
+      <p>Start clearing your backlog: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> — quick signup, then paste and go.</p>
     `
   },
   'youtube-transcript-tools-that-still-work-in-2026': {
@@ -8599,7 +8608,7 @@ tags: [tag1, tag2]
       </ul>
 
       <h2>YT Summarizer — Still Working in 2026</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> is a web-based tool that has continued to work through the 2025-2026 changes. Because it runs as a web app rather than a browser extension, it isn't affected by the Chrome Manifest V3 restrictions that killed many extension-based summarizers. Paste any YouTube URL with captions enabled and you get a structured summary — no extension, no plugin, no copy-paste required.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> is a web-based tool that has continued to work through the 2025-2026 changes. Because it runs as a web app rather than a browser extension, it isn't affected by the Chrome Manifest V3 restrictions that killed many extension-based summarizers. Paste any YouTube URL with captions enabled and you get a structured summary — no extension, no plugin, no copy-paste required.</p>
 
       <p>It also doesn't carry hidden prompts or add-ons that some extension-based competitors have been criticised for. What you paste is what gets summarised.</p>
 
@@ -8610,9 +8619,9 @@ tags: [tag1, tag2]
         <li>Switch to a web-based tool that doesn't depend on browser extension permissions</li>
       </ol>
 
-      <p>For a full breakdown of your options, see our <a href="/blog/best-free-youtube-summarizer-tool" style="color: #ff0055; font-weight: 600;">best free YouTube summarizer tools</a> guide, or the <a href="/blog/eightify-vs-ytsummarizer-which-youtube-summarizer-is-worth-it" style="color: #ff0055; font-weight: 600;">Eightify vs YT Summarizer comparison</a> for a head-to-head on the two most popular options right now.</p>
+      <p>For a full breakdown of your options, see our <a href="/blog/best-free-youtube-summarizer-tool" style="color: var(--accent); font-weight: 600;">best free YouTube summarizer tools</a> guide, or the <a href="/blog/eightify-vs-ytsummarizer-which-youtube-summarizer-is-worth-it" style="color: var(--accent); font-weight: 600;">Eightify vs YT Summarizer comparison</a> for a head-to-head on the two most popular options right now.</p>
 
-      <p>If you need something that reliably works today: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">try YT Summarizer</a> — quick signup, paste any URL, get your summary.</p>
+      <p>If you need something that reliably works today: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">try YT Summarizer</a> — quick signup, paste any URL, get your summary.</p>
     `
   },
   'best-youtube-summarizer-for-gaming-videos': {
@@ -8644,7 +8653,7 @@ tags: [tag1, tag2]
       </ul>
 
       <h2>YT Summarizer for Gaming Content</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> works well for gaming videos because it handles long-form content and outputs structured bullet points — which is exactly what you need when scanning a guide for a specific mechanic or checking if a review covers the points you care about.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> works well for gaming videos because it handles long-form content and outputs structured bullet points — which is exactly what you need when scanning a guide for a specific mechanic or checking if a review covers the points you care about.</p>
 
       <p>It offers a free tier (5 summaries), then one-time packs from $9 (no subscription). No subscription. If you're binging content during a game launch week, you won't hit a wall on day three.</p>
 
@@ -8658,11 +8667,11 @@ tags: [tag1, tag2]
       </ul>
 
       <h2>Other Video Summarizers Worth Knowing</h2>
-      <p>The main alternatives are Eightify (browser extension, 3 free summaries per week, then subscription) and NotebookLM (Google, better for research than quick gaming use). For a full comparison see <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: #ff0055; font-weight: 600;">best free YouTube summarizers with no subscription</a>.</p>
+      <p>The main alternatives are Eightify (browser extension, 3 free summaries per week, then subscription) and NotebookLM (Google, better for research than quick gaming use). For a full comparison see <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: var(--accent); font-weight: 600;">best free YouTube summarizers with no subscription</a>.</p>
 
-      <p>For other long-form content use cases, see how people use summarization for <a href="/blog/summarize-youtube-without-watching" style="color: #ff0055; font-weight: 600;">fitness videos</a> and <a href="/blog/youtube-video-too-long-how-to-get-key-points" style="color: #ff0055; font-weight: 600;">any video that's too long</a>.</p>
+      <p>For other long-form content use cases, see how people use summarization for <a href="/blog/summarize-youtube-without-watching" style="color: var(--accent); font-weight: 600;">fitness videos</a> and <a href="/blog/youtube-video-too-long-how-to-get-key-points" style="color: var(--accent); font-weight: 600;">any video that's too long</a>.</p>
 
-      <p>Ready to stop watching 2-hour guides for 10 minutes of useful information? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — sign up, paste a gaming video URL, and get the key points in seconds.</p>
+      <p>Ready to stop watching 2-hour guides for 10 minutes of useful information? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> — sign up, paste a gaming video URL, and get the key points in seconds.</p>
     `
   },
   'eightify-alternative-best-youtube-summarizers-without-subscription': {
@@ -8683,7 +8692,7 @@ tags: [tag1, tag2]
       </ul>
 
       <h2>YT Summarizer — Best Pay-Once Option</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> is a web-based YouTube summarizer with a <strong>pay-once pricing (no subscription)</strong>. No monthly subscription. Pay once, use it forever.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> is a web-based YouTube summarizer with a <strong>pay-once pricing (no subscription)</strong>. No monthly subscription. Pay once, use it forever.</p>
 
       <p><strong>What you get:</strong></p>
       <ul>
@@ -8731,7 +8740,7 @@ tags: [tag1, tag2]
         </thead>
         <tbody>
           <tr>
-            <td style="padding: 0.75rem; border: 1px solid #ddd;"><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a></td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">pay-once (from $9)</td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">Free signup, then pay-once</td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">Heavy users who hate subscriptions</td>
@@ -8778,7 +8787,7 @@ tags: [tag1, tag2]
       </ul>
       <p>For anyone planning to use a YouTube summarizer long-term, pay-once pricing is the obvious call. Two months of a subscription costs more than YT Summarizer's pay-once pricing.</p>
 
-      <p>See also: <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: #ff0055; font-weight: 600;">best free YouTube summarizers with no subscription</a> and <a href="/blog/eightify-vs-ytsummarizer-which-youtube-summarizers-worth-it" style="color: #ff0055; font-weight: 600;">Eightify vs YT Summarizer head-to-head comparison</a>.</p>
+      <p>See also: <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: var(--accent); font-weight: 600;">best free YouTube summarizers with no subscription</a> and <a href="/blog/eightify-vs-ytsummarizer-which-youtube-summarizers-worth-it" style="color: var(--accent); font-weight: 600;">Eightify vs YT Summarizer head-to-head comparison</a>.</p>
     `
   },
   'best-ai-youtube-summarizers-2026-8-tools-compared': {
@@ -8792,7 +8801,7 @@ tags: [tag1, tag2]
 
       <h2>The 8 Tools We Tested</h2>
       <ol>
-        <li><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> — pay-once pricing, web app</li>
+        <li><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> — pay-once pricing, web app</li>
         <li>Eightify — subscription, Chrome extension</li>
         <li>NoteGPT — freemium, web + extension</li>
         <li>Glarity — freemium, Chrome extension</li>
@@ -8889,7 +8898,7 @@ tags: [tag1, tag2]
         </thead>
         <tbody>
           <tr>
-            <td style="padding: 0.75rem; border: 1px solid #ddd;"><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a></td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">One-time</td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">pay-once</td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">Heavy users avoiding subscriptions</td>
@@ -8953,14 +8962,14 @@ tags: [tag1, tag2]
 
       <h2>Related Reading</h2>
       <ul>
-        <li><a href="/blog/best-ai-video-summarization-tools-2026" style="color: #ff0055; font-weight: 600;">Best AI video summarization tools 2026: 10 tools ranked</a></li>
-        <li><a href="/blog/free-youtube-video-summarizer-ai-tools-2026" style="color: #ff0055; font-weight: 600;">Free YouTube video summarizer AI tools 2026: what\'s genuinely free</a></li>
-        <li><a href="/blog/eightify-alternative-best-youtube-summarizers-without-subscription" style="color: #ff0055; font-weight: 600;">Best Eightify alternatives in 2026</a></li>
-        <li><a href="/blog/notegpt-vs-ytsummarizer-honest-comparison-2026" style="color: #ff0055; font-weight: 600;">NoteGPT vs YT Summarizer: honest comparison</a></li>
-        <li><a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: #ff0055; font-weight: 600;">Best free YouTube summarizers (no subscription)</a></li>
+        <li><a href="/blog/best-ai-video-summarization-tools-2026" style="color: var(--accent); font-weight: 600;">Best AI video summarization tools 2026: 10 tools ranked</a></li>
+        <li><a href="/blog/free-youtube-video-summarizer-ai-tools-2026" style="color: var(--accent); font-weight: 600;">Free YouTube video summarizer AI tools 2026: what\'s genuinely free</a></li>
+        <li><a href="/blog/eightify-alternative-best-youtube-summarizers-without-subscription" style="color: var(--accent); font-weight: 600;">Best Eightify alternatives in 2026</a></li>
+        <li><a href="/blog/notegpt-vs-ytsummarizer-honest-comparison-2026" style="color: var(--accent); font-weight: 600;">NoteGPT vs YT Summarizer: honest comparison</a></li>
+        <li><a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: var(--accent); font-weight: 600;">Best free YouTube summarizers (no subscription)</a></li>
       </ul>
 
-      <p>Ready to try the pay-once option? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Start with YT Summarizer free</a> — no credit card, no extension, paste a URL and see the output before deciding.</p>
+      <p>Ready to try the pay-once option? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Start with YT Summarizer free</a> — no credit card, no extension, paste a URL and see the output before deciding.</p>
     `
   },
   'notegpt-vs-ytsummarizer-honest-comparison-2026': {
@@ -9120,12 +9129,12 @@ tags: [tag1, tag2]
 
       <h2>Related Reading</h2>
       <ul>
-        <li><a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">Best AI YouTube summarizers 2026: 8 tools compared</a></li>
-        <li><a href="/blog/eightify-alternative-best-youtube-summarizers-without-subscription" style="color: #ff0055; font-weight: 600;">Best Eightify alternatives in 2026</a></li>
-        <li><a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: #ff0055; font-weight: 600;">How to summarize a 2-hour YouTube video in under 5 minutes</a></li>
+        <li><a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">Best AI YouTube summarizers 2026: 8 tools compared</a></li>
+        <li><a href="/blog/eightify-alternative-best-youtube-summarizers-without-subscription" style="color: var(--accent); font-weight: 600;">Best Eightify alternatives in 2026</a></li>
+        <li><a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: var(--accent); font-weight: 600;">How to summarize a 2-hour YouTube video in under 5 minutes</a></li>
       </ul>
 
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer free</a> — see the output on your own video before deciding.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> — see the output on your own video before deciding.</p>
     `
   },
   'how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes': {
@@ -9144,7 +9153,7 @@ tags: [tag1, tag2]
       <p>Open the video on YouTube, click the <strong>Share</strong> button under the video, then <strong>Copy</strong>. You can also just copy the URL from the address bar — both work. Note: the summary tool extracts the video ID from the URL, so any YouTube link format (watch?v=, youtu.be/, m.youtube.com/) will work.</p>
 
       <h3>Step 2: Paste Into a YouTube Summarizer</h3>
-      <p>Open <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> (or any AI summarizer). Paste the URL into the input field. Click summarize.</p>
+      <p>Open <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> (or any AI summarizer). Paste the URL into the input field. Click summarize.</p>
 
       <h3>Step 3: Read the Summary (60–120 Seconds)</h3>
       <p>For a 2-hour video, expect a summary of 8–15 bullet points covering the main arguments, key examples, and important conclusions. The best summaries don't just list what was said — they synthesize the video's structure so you understand the <em>flow</em> of the conversation or presentation.</p>
@@ -9202,7 +9211,7 @@ tags: [tag1, tag2]
       <h2>Common Mistakes That Waste Time</h2>
       <ul>
         <li><strong>Trying to summarize videos that should be watched.</strong> A 7-minute tutorial with demo footage will summarize poorly. Just watch it at 1.5x speed — you'll finish in 5 minutes.</li>
-        <li><strong>Paying monthly for a tool you use occasionally.</strong> If you summarize 5–10 videos a month, the subscription tools cost roughly $1–2 per summary. A one-time tool like <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a>'s pay-once pricing pays off within a few months.</li>
+        <li><strong>Paying monthly for a tool you use occasionally.</strong> If you summarize 5–10 videos a month, the subscription tools cost roughly $1–2 per summary. A one-time tool like <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a>'s pay-once pricing pays off within a few months.</li>
         <li><strong>Reading the summary and then watching anyway.</strong> If you've already read the summary, you know the content. Watching the full video afterwards is mostly confirmation bias. Only rewatch if the summary flagged something you need deeper context on.</li>
         <li><strong>Relying on auto-generated titles or descriptions as summaries.</strong> YouTube titles are designed to drive clicks. They are rarely accurate summaries of the video's content.</li>
       </ul>
@@ -9231,12 +9240,12 @@ tags: [tag1, tag2]
 
       <h2>Related Reading</h2>
       <ul>
-        <li><a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">Best AI YouTube summarizers 2026: 8 tools compared</a></li>
-        <li><a href="/blog/notegpt-vs-ytsummarizer-honest-comparison-2026" style="color: #ff0055; font-weight: 600;">NoteGPT vs YT Summarizer: honest comparison</a></li>
-        <li><a href="/blog/youtube-video-too-long-how-to-get-key-points" style="color: #ff0055; font-weight: 600;">Your YouTube video is too long: how to get the key points</a></li>
+        <li><a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">Best AI YouTube summarizers 2026: 8 tools compared</a></li>
+        <li><a href="/blog/notegpt-vs-ytsummarizer-honest-comparison-2026" style="color: var(--accent); font-weight: 600;">NoteGPT vs YT Summarizer: honest comparison</a></li>
+        <li><a href="/blog/youtube-video-too-long-how-to-get-key-points" style="color: var(--accent); font-weight: 600;">Your YouTube video is too long: how to get the key points</a></li>
       </ul>
 
-      <p>Want to try the workflow above on a video you've been meaning to watch? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Open YT Summarizer</a>, paste a URL, and see how much time you save.</p>
+      <p>Want to try the workflow above on a video you've been meaning to watch? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Open YT Summarizer</a>, paste a URL, and see how much time you save.</p>
     `
   },
   'glasp-alternative-youtube-summarizer': {
@@ -9259,7 +9268,7 @@ tags: [tag1, tag2]
       <p>Both have legitimate uses. They solve different problems.</p>
 
       <h2>Best Glasp Alternative for Auto-Summarization</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> is the strongest alternative when your goal is to skip the reading and get AI-generated output directly. Paste a YouTube URL, get a structured bullet-point summary in under 60 seconds. No transcript hunting, no highlighting, no prompt writing.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> is the strongest alternative when your goal is to skip the reading and get AI-generated output directly. Paste a YouTube URL, get a structured bullet-point summary in under 60 seconds. No transcript hunting, no highlighting, no prompt writing.</p>
 
       <h3>Comparison: Glasp vs. YT Summarizer</h3>
       <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
@@ -9327,12 +9336,12 @@ tags: [tag1, tag2]
 
       <h2>Related Reading</h2>
       <ul>
-        <li><a href="/blog/summarize-youtube-video-without-extension" style="color: #ff0055; font-weight: 600;">How to summarize YouTube videos without installing any extension</a></li>
-        <li><a href="/blog/best-ai-video-summarization-tools-2026" style="color: #ff0055; font-weight: 600;">Best AI video summarization tools in 2026</a></li>
-        <li><a href="/blog/youtube-summarizer-for-researchers" style="color: #ff0055; font-weight: 600;">YouTube summarizer for researchers</a></li>
+        <li><a href="/blog/summarize-youtube-video-without-extension" style="color: var(--accent); font-weight: 600;">How to summarize YouTube videos without installing any extension</a></li>
+        <li><a href="/blog/best-ai-video-summarization-tools-2026" style="color: var(--accent); font-weight: 600;">Best AI video summarization tools in 2026</a></li>
+        <li><a href="/blog/youtube-summarizer-for-researchers" style="color: var(--accent); font-weight: 600;">YouTube summarizer for researchers</a></li>
       </ul>
 
-      <p>Ready to skip the manual transcript reading? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — paste any YouTube URL and get your summary in under 60 seconds.</p>
+      <p>Ready to skip the manual transcript reading? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> — paste any YouTube URL and get your summary in under 60 seconds.</p>
     `
   },
   'youtube-summarizer-vs-claude-ai': {
@@ -9431,12 +9440,12 @@ tags: [tag1, tag2]
 
       <h2>Related Reading</h2>
       <ul>
-        <li><a href="/blog/youtube-summarizer-vs-gemini-which-saves-more-time" style="color: #ff0055; font-weight: 600;">YT Summarizer vs. Gemini: which one saves more time?</a></li>
-        <li><a href="/blog/copying-youtube-transcript-to-chatgpt-wastes-time" style="color: #ff0055; font-weight: 600;">Why copying YouTube transcripts to ChatGPT wastes time</a></li>
-        <li><a href="/blog/fastest-way-to-summarize-youtube-video-methods-compared" style="color: #ff0055; font-weight: 600;">Fastest ways to summarize a YouTube video compared</a></li>
+        <li><a href="/blog/youtube-summarizer-vs-gemini-which-saves-more-time" style="color: var(--accent); font-weight: 600;">YT Summarizer vs. Gemini: which one saves more time?</a></li>
+        <li><a href="/blog/copying-youtube-transcript-to-chatgpt-wastes-time" style="color: var(--accent); font-weight: 600;">Why copying YouTube transcripts to ChatGPT wastes time</a></li>
+        <li><a href="/blog/fastest-way-to-summarize-youtube-video-methods-compared" style="color: var(--accent); font-weight: 600;">Fastest ways to summarize a YouTube video compared</a></li>
       </ul>
 
-      <p>See the difference for yourself: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">paste a YouTube URL into YT Summarizer</a> and compare the time to your current workflow.</p>
+      <p>See the difference for yourself: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">paste a YouTube URL into YT Summarizer</a> and compare the time to your current workflow.</p>
     `
   },
   'how-to-summarize-youtube-videos-on-iphone': {
@@ -9454,7 +9463,7 @@ tags: [tag1, tag2]
       <ol>
         <li>Open YouTube on your iPhone and find the video you want to summarize</li>
         <li>Tap the Share button → Copy Link</li>
-        <li>Open Safari (or any browser) and go to <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">ytsummarizer.app</a></li>
+        <li>Open Safari (or any browser) and go to <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">ytsummarizer.app</a></li>
         <li>Paste the URL and tap Summarize</li>
         <li>Read your summary in under 60 seconds</li>
       </ol>
@@ -9474,7 +9483,7 @@ tags: [tag1, tag2]
 
       <h2>Tips for Mobile Summarization</h2>
       <ul>
-        <li><strong>Bookmark the summarizer:</strong> Add <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">ytsummarizer.app</a> to your Home Screen via Safari's Share → Add to Home Screen. It opens like an app but with no installation.</li>
+        <li><strong>Bookmark the summarizer:</strong> Add <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">ytsummarizer.app</a> to your Home Screen via Safari's Share → Add to Home Screen. It opens like an app but with no installation.</li>
         <li><strong>Share directly:</strong> Some iOS summarizer web apps support the iOS Share Sheet, letting you share a video URL directly from the YouTube app without copying and pasting.</li>
         <li><strong>Summarize before watching:</strong> Use the summary to decide whether a video is worth the battery life and data usage of streaming — especially useful when you're on a cellular connection.</li>
       </ul>
@@ -9489,12 +9498,12 @@ tags: [tag1, tag2]
 
       <h2>Related Reading</h2>
       <ul>
-        <li><a href="/blog/summarize-youtube-video-without-extension" style="color: #ff0055; font-weight: 600;">How to summarize YouTube videos without any extension</a></li>
-        <li><a href="/blog/youtube-summarizer-mobile-app" style="color: #ff0055; font-weight: 600;">YouTube summarizer mobile app options</a></li>
-        <li><a href="/blog/free-youtube-video-summarizer-ai-tools-2026" style="color: #ff0055; font-weight: 600;">Free YouTube video summarizer AI tools in 2026</a></li>
+        <li><a href="/blog/summarize-youtube-video-without-extension" style="color: var(--accent); font-weight: 600;">How to summarize YouTube videos without any extension</a></li>
+        <li><a href="/blog/youtube-summarizer-mobile-app" style="color: var(--accent); font-weight: 600;">YouTube summarizer mobile app options</a></li>
+        <li><a href="/blog/free-youtube-video-summarizer-ai-tools-2026" style="color: var(--accent); font-weight: 600;">Free YouTube video summarizer AI tools in 2026</a></li>
       </ul>
 
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> works on iPhone right now — no download, no account for free summaries. Open it in Safari, paste a YouTube link, get your summary.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> works on iPhone right now — no download, no account for free summaries. Open it in Safari, paste a YouTube link, get your summary.</p>
     `
   },
   'youtube-summarizer-for-online-courses': {
@@ -9539,16 +9548,16 @@ tags: [tag1, tag2]
       <p>Use summaries for conceptual content and screening. Watch in full for technique and practice.</p>
 
       <h2>Best Summarizer for Online Courses</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> handles long lecture videos (including 90-minute lectures) without truncating the output, produces structured bullet-point summaries that read like study notes, and is available for free. The paid tier (pay-once (from $9)) removes usage limits — useful for heavy study periods where you're processing an entire course in a week.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> handles long lecture videos (including 90-minute lectures) without truncating the output, produces structured bullet-point summaries that read like study notes, and is available for free. The paid tier (pay-once (from $9)) removes usage limits — useful for heavy study periods where you're processing an entire course in a week.</p>
 
       <h2>Related Reading</h2>
       <ul>
-        <li><a href="/blog/youtube-summarizer-for-students" style="color: #ff0055; font-weight: 600;">YouTube summarizer for students: full guide</a></li>
-        <li><a href="/blog/best-youtube-summarizers-for-students-2026-free-paid" style="color: #ff0055; font-weight: 600;">Best YouTube summarizers for students in 2026</a></li>
-        <li><a href="/blog/how-to-take-notes-from-youtube-videos-without-watching" style="color: #ff0055; font-weight: 600;">How to take notes from YouTube videos without watching</a></li>
+        <li><a href="/blog/youtube-summarizer-for-students" style="color: var(--accent); font-weight: 600;">YouTube summarizer for students: full guide</a></li>
+        <li><a href="/blog/best-youtube-summarizers-for-students-2026-free-paid" style="color: var(--accent); font-weight: 600;">Best YouTube summarizers for students in 2026</a></li>
+        <li><a href="/blog/how-to-take-notes-from-youtube-videos-without-watching" style="color: var(--accent); font-weight: 600;">How to take notes from YouTube videos without watching</a></li>
       </ul>
 
-      <p>Start with one lecture from a course you're working through. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Summarize it with YT Summarizer</a>, then watch the lecture and compare your notes to the summary. Most students find the summary captures 80–90% of what they wrote down manually.</p>
+      <p>Start with one lecture from a course you're working through. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Summarize it with YT Summarizer</a>, then watch the lecture and compare your notes to the summary. Most students find the summary captures 80–90% of what they wrote down manually.</p>
     `
   },
   'youtube-summarizer-for-coaches': {
@@ -9601,16 +9610,16 @@ tags: [tag1, tag2]
       </ul>
 
       <h2>Recommended Tool</h2>
-      <p><a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> produces structured bullet-point summaries — the right format for quick professional reading. The pay-once purchase removes usage limits, which matters when you're running 10+ videos per week. No subscription overhead to justify against a quiet week.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> produces structured bullet-point summaries — the right format for quick professional reading. The pay-once purchase removes usage limits, which matters when you're running 10+ videos per week. No subscription overhead to justify against a quiet week.</p>
 
       <h2>Related Reading</h2>
       <ul>
-        <li><a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for entrepreneurs</a></li>
-        <li><a href="/blog/youtube-summarizer-conference-talks-keynotes" style="color: #ff0055; font-weight: 600;">YouTube summarizer for conference talks and keynotes</a></li>
-        <li><a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">Business video summaries for executives</a></li>
+        <li><a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">YouTube summarizer for entrepreneurs</a></li>
+        <li><a href="/blog/youtube-summarizer-conference-talks-keynotes" style="color: var(--accent); font-weight: 600;">YouTube summarizer for conference talks and keynotes</a></li>
+        <li><a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">Business video summaries for executives</a></li>
       </ul>
 
-      <p>Your next client call starts with research. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — paste a video from one of your key industry channels and get the takeaways in under a minute.</p>
+      <p>Your next client call starts with research. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> — paste a video from one of your key industry channels and get the takeaways in under a minute.</p>
     `
   },
   'youtube-summarizer-for-documentaries': {
@@ -9649,7 +9658,7 @@ tags: [tag1, tag2]
       <ol>
         <li>Find the documentary on YouTube (many are posted by official channels or rights holders)</li>
         <li>Copy the YouTube URL</li>
-        <li>Paste it into <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a></li>
+        <li>Paste it into <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a></li>
         <li>Wait 60–120 seconds for processing (longer videos take slightly longer)</li>
         <li>Read the structured summary</li>
       </ol>
@@ -9668,12 +9677,12 @@ tags: [tag1, tag2]
 
       <h2>Related Reading</h2>
       <ul>
-        <li><a href="/blog/how-to-summarize-youtube-videos" style="color: #ff0055; font-weight: 600;">How to summarize YouTube videos: complete guide</a></li>
-        <li><a href="/blog/youtube-summarizer-accuracy-test-2026" style="color: #ff0055; font-weight: 600;">YouTube summarizer accuracy test 2026</a></li>
-        <li><a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: #ff0055; font-weight: 600;">How to summarize a 2-hour YouTube video in under 5 minutes</a></li>
+        <li><a href="/blog/how-to-summarize-youtube-videos" style="color: var(--accent); font-weight: 600;">How to summarize YouTube videos: complete guide</a></li>
+        <li><a href="/blog/youtube-summarizer-accuracy-test-2026" style="color: var(--accent); font-weight: 600;">YouTube summarizer accuracy test 2026</a></li>
+        <li><a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes" style="color: var(--accent); font-weight: 600;">How to summarize a 2-hour YouTube video in under 5 minutes</a></li>
       </ul>
 
-      <p>Have a documentary on your watchlist you haven't gotten to? <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Summarize it with YT Summarizer</a> and decide if it's worth the full watch.</p>
+      <p>Have a documentary on your watchlist you haven't gotten to? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Summarize it with YT Summarizer</a> and decide if it's worth the full watch.</p>
     `
   },
   'youtube-summarizer-accuracy-test-2026': {
@@ -9718,12 +9727,12 @@ tags: [tag1, tag2]
 
       <h2>Related Reading</h2>
       <ul>
-        <li><a href="/blog/how-accurate-are-youtube-video-summaries" style="color: #ff0055; font-weight: 600;">How accurate are YouTube video summaries?</a></li>
-        <li><a href="/blog/how-does-ai-youtube-summarization-work-technology-explained" style="color: #ff0055; font-weight: 600;">How does AI YouTube summarization work? Technology explained</a></li>
-        <li><a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: #ff0055; font-weight: 600;">Best AI YouTube summarizers in 2026: 8 tools compared</a></li>
+        <li><a href="/blog/how-accurate-are-youtube-video-summaries" style="color: var(--accent); font-weight: 600;">How accurate are YouTube video summaries?</a></li>
+        <li><a href="/blog/how-does-ai-youtube-summarization-work-technology-explained" style="color: var(--accent); font-weight: 600;">How does AI YouTube summarization work? Technology explained</a></li>
+        <li><a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">Best AI YouTube summarizers in 2026: 8 tools compared</a></li>
       </ul>
 
-      <p>The best way to calibrate your trust: <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">summarize a video you already know well</a> and compare the output to your own knowledge of the content. Most users find the summaries accurate enough to rely on for daily use.</p>
+      <p>The best way to calibrate your trust: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">summarize a video you already know well</a> and compare the output to your own knowledge of the content. Most users find the summaries accurate enough to rely on for daily use.</p>
     `
   },
   'youtube-summarizer-for-accountants': {
@@ -9760,7 +9769,7 @@ tags: [tag1, tag2]
       <ol>
         <li>Identify 3–5 channels you trust for your practice area</li>
         <li>Check for new uploads from the past week (YouTube subscription notifications or manual check)</li>
-        <li>Summarize each new video using <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">YT Summarizer</a> — 45–60 seconds per video</li>
+        <li>Summarize each new video using <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> — 45–60 seconds per video</li>
         <li>Read summaries to identify: new developments, changes to positions you follow, content relevant to current client matters</li>
         <li>Watch the 1–2 highest-relevance videos in full; note specific code sections to verify</li>
         <li>File summaries in your knowledge management system with date and source</li>
@@ -9772,12 +9781,12 @@ tags: [tag1, tag2]
 
       <h2>Related Reading</h2>
       <ul>
-        <li><a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for financial professionals</a></li>
-        <li><a href="/blog/save-time-on-youtube-with-ai" style="color: #ff0055; font-weight: 600;">YouTube summarizer for lawyers</a></li>
-        <li><a href="/blog/youtube-summarizer-for-researchers" style="color: #ff0055; font-weight: 600;">YouTube summarizer for researchers</a></li>
+        <li><a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">YouTube summarizer for financial professionals</a></li>
+        <li><a href="/blog/save-time-on-youtube-with-ai" style="color: var(--accent); font-weight: 600;">YouTube summarizer for lawyers</a></li>
+        <li><a href="/blog/youtube-summarizer-for-researchers" style="color: var(--accent); font-weight: 600;">YouTube summarizer for researchers</a></li>
       </ul>
 
-      <p>Stay current on regulatory changes without the passive video hours. <a href="https://ytsummarizer.app" style="color: #ff0055; font-weight: 600;">Try YT Summarizer</a> — paste a tax law explainer from any channel and get the key changes in under a minute.</p>
+      <p>Stay current on regulatory changes without the passive video hours. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> — paste a tax law explainer from any channel and get the key changes in under a minute.</p>
     `
   }
 }
@@ -9913,9 +9922,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   }
 
   const related = getRelatedPosts(slug)
+  const mins = readingTime(post.content)
 
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem', fontFamily: 'system-ui, sans-serif' }}>
+    <div className="wrap-article">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -9930,98 +9940,83 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <nav aria-label="Breadcrumb" style={{ fontSize: '0.875rem', color: '#666', marginBottom: '1rem' }}>
-        <a href={productUrl('post_breadcrumb')} style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600 }}>Home</a>
-        <span style={{ margin: '0 0.5rem', color: '#999' }}>/</span>
-        <Link href="/" style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600 }}>Blog</Link>
-        <span style={{ margin: '0 0.5rem', color: '#999' }}>/</span>
-        <span style={{ color: '#333' }}>{post.title}</span>
-      </nav>
-      <Link href="/" style={{ color: '#ff0055', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 600 }}>
-        ← Back to Blog
-      </Link>
 
-      <article style={{ marginTop: '2rem' }}>
-        <header style={{ marginBottom: '2rem' }}>
-          <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem', color: '#333', lineHeight: 1.2 }}>
-            {post.title}
-          </h1>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-            <time style={{ fontSize: '0.875rem', color: '#999' }}>
-              {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-            </time>
-            <span style={{ fontSize: '0.875rem', color: '#999' }}>·</span>
-            <span style={{ fontSize: '0.875rem', color: '#666' }}>By YT Summarizer Team</span>
+      <article className="article">
+        <Link href="/" className="backlink">
+          &larr; All articles
+        </Link>
+
+        <nav aria-label="Breadcrumb" className="crumbs">
+          <a href={productUrl('post_breadcrumb')}>Home</a>
+          <span>&rsaquo;</span>
+          <Link href="/">Blog</Link>
+        </nav>
+
+        <div className="post-meta">
+          <span className="badge">{categoryBadge(slug)}</span>
+          <span>&middot;</span>
+          <time dateTime={post.date}>
+            {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </time>
+          <span>&middot;</span>
+          <span>{mins} min read</span>
+        </div>
+
+        <h1>{post.title}</h1>
+        <p className="dek">{post.metaDescription}</p>
+
+        <div className="cta-strip">
+          <div>
+            <strong>Summarize any YouTube video in about a minute</strong>
+            <span>5 free summaries &middot; One-time pricing from $9 &middot; No subscription</span>
           </div>
-        </header>
+          <a className="btn-pill" href={productUrl('post_top_cta')}>
+            Try Free &rarr;
+          </a>
+        </div>
 
-        <div
-          style={{ fontSize: '1.125rem', lineHeight: 1.7, color: '#333' }}
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
+        <div className="prose" dangerouslySetInnerHTML={{ __html: post.content }} />
 
         {faqs && faqs.length > 0 && (
-          <section style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid #eee' }}>
-            <h2 style={{ fontSize: '1.75rem', marginBottom: '1.5rem', color: '#333' }}>Frequently Asked Questions</h2>
+          <section className="faq">
+            <h2>Frequently Asked Questions</h2>
             {faqs.map((faq, i) => (
-              <div key={i} style={{ marginBottom: '1.5rem' }}>
-                <h3 style={{ fontSize: '1.125rem', color: '#333', marginBottom: '0.5rem' }}>{faq.q}</h3>
-                <p style={{ fontSize: '1rem', lineHeight: 1.7, color: '#444', margin: 0 }}>{faq.a}</p>
+              <div key={i} className="faq-item">
+                <h3>{faq.q}</h3>
+                <p>{faq.a}</p>
               </div>
             ))}
           </section>
         )}
 
         {related.length > 0 && (
-          <section style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid #eee' }}>
-            <h2 style={{ fontSize: '1.75rem', marginBottom: '1.5rem', color: '#333' }}>Related Guides</h2>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-              {related.map((r) => (
-                <li key={r.slug} style={{ marginBottom: '1rem' }}>
-                  <Link href={`/blog/${r.slug}`} style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600, fontSize: '1.05rem' }}>
-                    {r.title}
-                  </Link>
-                  <p style={{ fontSize: '0.95rem', color: '#666', margin: '0.25rem 0 0' }}>{r.description}</p>
-                </li>
+          <section className="related">
+            <h2>Related Guides</h2>
+            <div className="card-grid">
+              {related.slice(0, 4).map((r) => (
+                <Link key={r.slug} href={`/blog/${r.slug}`} className="card">
+                  <div className="card-meta">
+                    <span className="badge">{categoryBadge(r.slug)}</span>
+                    <span className="read">{formatDate(r.date)}</span>
+                  </div>
+                  <h3>{r.title}</h3>
+                  <p>{r.description}</p>
+                </Link>
               ))}
-            </ul>
-            <p style={{ marginTop: '1.5rem', marginBottom: 0 }}>
-              <Link href="/blog" style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600 }}>
-                Browse all guides &rarr;
-              </Link>
+            </div>
+            <p style={{ marginTop: '1.25rem', marginBottom: 0, fontSize: '0.9375rem' }}>
+              <Link href="/blog">Browse all guides &rarr;</Link>
             </p>
           </section>
         )}
 
-        <div style={{
-          marginTop: '3rem',
-          padding: '2rem',
-          background: 'linear-gradient(135deg, #ff0055 0%, #ff6b35 100%)',
-          borderRadius: '12px',
-          textAlign: 'center'
-        }}>
-          <h3 style={{ color: '#fff', fontSize: '1.5rem', marginBottom: '1rem' }}>
-            Ready to Try YT Summarizer?
-          </h3>
-          <p style={{ color: '#fff', marginBottom: '1.5rem', opacity: 0.95 }}>
-            Summarize any YouTube video in seconds with AI
-          </p>
-          <a
-            href={productUrl('post_cta')}
-            style={{
-              display: 'inline-block',
-              padding: '0.75rem 2rem',
-              background: '#fff',
-              color: '#ff0055',
-              textDecoration: 'none',
-              borderRadius: '8px',
-              fontWeight: 700,
-              fontSize: '1rem'
-            }}
-          >
-            Start Summarizing →
+        <section className="cta-block">
+          <h2>Ready to try YT Summarizer?</h2>
+          <p>Paste a YouTube URL and get structured key points in about a minute.</p>
+          <a className="btn-pill" href={productUrl('post_cta')}>
+            Start Summarizing &rarr;
           </a>
-        </div>
+        </section>
       </article>
     </div>
   )
