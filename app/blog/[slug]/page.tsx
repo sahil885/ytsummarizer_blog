@@ -1,6 +1,15 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { NOINDEX_SLUGS, PRUNED_SLUGS, getRelatedPosts, productUrl, OG_IMAGE } from '../../lib/posts-list'
+import {
+  NOINDEX_SLUGS,
+  PRUNED_SLUGS,
+  getRelatedPosts,
+  productUrl,
+  OG_IMAGE,
+  categoryBadge,
+  formatDate,
+  readingTime,
+} from '../../lib/posts-list'
 import { postOverrides, faqOverrides } from '../../lib/post-content-overrides'
 
 // FAQ content keyed by slug. Posts with FAQs get FAQPage schema + a visible FAQ section.
@@ -9913,9 +9922,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   }
 
   const related = getRelatedPosts(slug)
+  const mins = readingTime(post.content)
 
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem', fontFamily: 'system-ui, sans-serif' }}>
+    <div className="wrap-article">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -9930,98 +9940,83 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <nav aria-label="Breadcrumb" style={{ fontSize: '0.875rem', color: '#666', marginBottom: '1rem' }}>
-        <a href={productUrl('post_breadcrumb')} style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600 }}>Home</a>
-        <span style={{ margin: '0 0.5rem', color: '#999' }}>/</span>
-        <Link href="/" style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600 }}>Blog</Link>
-        <span style={{ margin: '0 0.5rem', color: '#999' }}>/</span>
-        <span style={{ color: '#333' }}>{post.title}</span>
-      </nav>
-      <Link href="/" style={{ color: '#ff0055', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 600 }}>
-        ← Back to Blog
-      </Link>
 
-      <article style={{ marginTop: '2rem' }}>
-        <header style={{ marginBottom: '2rem' }}>
-          <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem', color: '#333', lineHeight: 1.2 }}>
-            {post.title}
-          </h1>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-            <time style={{ fontSize: '0.875rem', color: '#999' }}>
-              {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-            </time>
-            <span style={{ fontSize: '0.875rem', color: '#999' }}>·</span>
-            <span style={{ fontSize: '0.875rem', color: '#666' }}>By YT Summarizer Team</span>
+      <article className="article">
+        <Link href="/" className="backlink">
+          &larr; All articles
+        </Link>
+
+        <nav aria-label="Breadcrumb" className="crumbs">
+          <a href={productUrl('post_breadcrumb')}>Home</a>
+          <span>&rsaquo;</span>
+          <Link href="/">Blog</Link>
+        </nav>
+
+        <div className="post-meta">
+          <span className="badge">{categoryBadge(slug)}</span>
+          <span>&middot;</span>
+          <time dateTime={post.date}>
+            {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </time>
+          <span>&middot;</span>
+          <span>{mins} min read</span>
+        </div>
+
+        <h1>{post.title}</h1>
+        <p className="dek">{post.metaDescription}</p>
+
+        <div className="cta-strip">
+          <div>
+            <strong>Summarize any YouTube video in about a minute</strong>
+            <span>5 free summaries &middot; One-time pricing from $9 &middot; No subscription</span>
           </div>
-        </header>
+          <a className="btn-pill" href={productUrl('post_top_cta')}>
+            Try Free &rarr;
+          </a>
+        </div>
 
-        <div
-          style={{ fontSize: '1.125rem', lineHeight: 1.7, color: '#333' }}
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
+        <div className="prose" dangerouslySetInnerHTML={{ __html: post.content }} />
 
         {faqs && faqs.length > 0 && (
-          <section style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid #eee' }}>
-            <h2 style={{ fontSize: '1.75rem', marginBottom: '1.5rem', color: '#333' }}>Frequently Asked Questions</h2>
+          <section className="faq">
+            <h2>Frequently Asked Questions</h2>
             {faqs.map((faq, i) => (
-              <div key={i} style={{ marginBottom: '1.5rem' }}>
-                <h3 style={{ fontSize: '1.125rem', color: '#333', marginBottom: '0.5rem' }}>{faq.q}</h3>
-                <p style={{ fontSize: '1rem', lineHeight: 1.7, color: '#444', margin: 0 }}>{faq.a}</p>
+              <div key={i} className="faq-item">
+                <h3>{faq.q}</h3>
+                <p>{faq.a}</p>
               </div>
             ))}
           </section>
         )}
 
         {related.length > 0 && (
-          <section style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid #eee' }}>
-            <h2 style={{ fontSize: '1.75rem', marginBottom: '1.5rem', color: '#333' }}>Related Guides</h2>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-              {related.map((r) => (
-                <li key={r.slug} style={{ marginBottom: '1rem' }}>
-                  <Link href={`/blog/${r.slug}`} style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600, fontSize: '1.05rem' }}>
-                    {r.title}
-                  </Link>
-                  <p style={{ fontSize: '0.95rem', color: '#666', margin: '0.25rem 0 0' }}>{r.description}</p>
-                </li>
+          <section className="related">
+            <h2>Related Guides</h2>
+            <div className="card-grid">
+              {related.slice(0, 4).map((r) => (
+                <Link key={r.slug} href={`/blog/${r.slug}`} className="card">
+                  <div className="card-meta">
+                    <span className="badge">{categoryBadge(r.slug)}</span>
+                    <span className="read">{formatDate(r.date)}</span>
+                  </div>
+                  <h3>{r.title}</h3>
+                  <p>{r.description}</p>
+                </Link>
               ))}
-            </ul>
-            <p style={{ marginTop: '1.5rem', marginBottom: 0 }}>
-              <Link href="/blog" style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600 }}>
-                Browse all guides &rarr;
-              </Link>
+            </div>
+            <p style={{ marginTop: '1.25rem', marginBottom: 0, fontSize: '0.9375rem' }}>
+              <Link href="/blog">Browse all guides &rarr;</Link>
             </p>
           </section>
         )}
 
-        <div style={{
-          marginTop: '3rem',
-          padding: '2rem',
-          background: 'linear-gradient(135deg, #ff0055 0%, #ff6b35 100%)',
-          borderRadius: '12px',
-          textAlign: 'center'
-        }}>
-          <h3 style={{ color: '#fff', fontSize: '1.5rem', marginBottom: '1rem' }}>
-            Ready to Try YT Summarizer?
-          </h3>
-          <p style={{ color: '#fff', marginBottom: '1.5rem', opacity: 0.95 }}>
-            Summarize any YouTube video in seconds with AI
-          </p>
-          <a
-            href={productUrl('post_cta')}
-            style={{
-              display: 'inline-block',
-              padding: '0.75rem 2rem',
-              background: '#fff',
-              color: '#ff0055',
-              textDecoration: 'none',
-              borderRadius: '8px',
-              fontWeight: 700,
-              fontSize: '1rem'
-            }}
-          >
-            Start Summarizing →
+        <section className="cta-block">
+          <h2>Ready to try YT Summarizer?</h2>
+          <p>Paste a YouTube URL and get structured key points in about a minute.</p>
+          <a className="btn-pill" href={productUrl('post_cta')}>
+            Start Summarizing &rarr;
           </a>
-        </div>
+        </section>
       </article>
     </div>
   )

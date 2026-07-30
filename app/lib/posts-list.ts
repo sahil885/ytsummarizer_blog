@@ -679,3 +679,39 @@ export function getRelatedPosts(slug: string, limit = 5): PostListEntry[] {
     .slice(0, limit)
     .map((x) => x.p)
 }
+
+/* --------------------------- presentation helpers -------------------------- */
+
+// Pillar/hub guides surfaced in the homepage "Start Here" grid.
+export const FEATURED_SLUGS: string[] = [
+  'how-to-summarize-youtube-videos',
+  'best-free-youtube-summarizer-tool',
+  'best-ai-youtube-summarizers-2026-8-tools-compared',
+  'can-chatgpt-summarize-youtube-videos',
+]
+
+const BADGE_LABELS: Record<CategoryKey, string> = {
+  comparisons: 'Comparison',
+  roundups: 'Best Of',
+  roles: 'Use Case',
+  howto: 'How-To',
+  features: 'Guide',
+}
+
+export function categoryBadge(slug: string): string {
+  return BADGE_LABELS[categoryOf(slug)]
+}
+
+export function formatDate(date: string): string {
+  return new Date(date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  })
+}
+
+// ~225 wpm over the visible text of an HTML string.
+export function readingTime(html: string): number {
+  const words = html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length
+  return Math.max(1, Math.round(words / 225))
+}
