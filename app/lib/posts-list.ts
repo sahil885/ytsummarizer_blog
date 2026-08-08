@@ -302,8 +302,8 @@ export const allPosts: PostListEntry[] = [
   },
   {
     slug: 'best-ai-youtube-summarizers-2026-8-tools-compared',
-    title: 'Best AI Summarizer Tools 2026: 8 YouTube Summarizers Ranked & Priced',
-    description: 'We tested 8 AI summarizer tools on the same videos in 2026. Accuracy, long-video handling, and real prices — including which are genuinely free and which charge once instead of monthly.',
+    title: 'Best AI YouTube Video Summarizer Tools 2026: 8 Tested & Priced',
+    description: 'We tested 8 AI YouTube summarizers on the same videos in 2026 — Eightify, NoteGPT, Glarity, NotebookLM and more. Accuracy, long-video handling, and what each really costs per year.',
     date: '2026-07-22',
   },
   {

@@ -2040,13 +2040,13 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
     `,
   },
   'best-ai-youtube-summarizers-2026-8-tools-compared': {
-    title: 'Best AI Summarizer Tools 2026: 8 YouTube Summarizers Ranked & Priced',
-    metaDescription: 'We tested 8 AI summarizer tools on the same videos in 2026. Accuracy, long-video handling, and real prices — including which are genuinely free and which charge once instead of monthly.',
+    title: 'Best AI YouTube Video Summarizer Tools 2026: 8 Tested & Priced',
+    metaDescription: 'We tested 8 AI YouTube summarizers on the same videos in 2026 — Eightify, NoteGPT, Glarity, NotebookLM and more. Accuracy, long-video handling, and what each really costs per year.',
     date: '2026-07-22',
     content: `
-      <p><strong>Short version:</strong> for YouTube specifically, <a href="${P}">YT Summarizer</a> gives the best value if you summarize regularly — one-time credits from $9 that never expire, no subscription. <strong>NotebookLM</strong> is the best genuinely free option for research. <strong>Summarize.tech</strong> is the fastest zero-setup free tool. Everything else is a monthly subscription, and most of them meter you anyway.</p>
+      <p><strong>Short version:</strong> <a href="${P}">YT Summarizer</a> gives the best value if you summarize YouTube regularly — one-time credits from $9 that never expire, no subscription. <strong>NotebookLM</strong> is the best genuinely free option for research. <strong>Summarize.tech</strong> is the fastest zero-setup free tool. Everything else is a monthly subscription, and most of them meter you anyway.</p>
 
-      <p>We ran the same set of videos — a 12-minute tutorial, a 48-minute lecture, and a 2h 10m podcast — through eight AI summarizer tools in 2026 and compared output quality, long-video handling, and what each actually costs over a year.</p>
+      <p>We ran the same set of YouTube videos — a 12-minute tutorial, a 48-minute lecture, and a 2h 10m podcast — through eight AI YouTube summarizers in 2026 and compared output quality, long-video handling, and what each actually costs over a year.</p>
 
       <h2>The comparison table</h2>
       <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
@@ -2479,8 +2479,8 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
     { q: "Do free YouTube summarizers work on long videos?", a: "Mostly no. Free tools and chatbot workflows tend to truncate videos over about an hour. If you regularly summarize podcasts or lectures, use a tool that processes the full transcript in chunks." },
   ],
   'best-ai-youtube-summarizers-2026-8-tools-compared': [
-    { q: `What is the best AI summariser tool in 2026?`, a: `For YouTube video summaries, the best AI summariser depends on how often you use it: a pay-once tool like YT Summarizer works out cheapest for regular use with no subscription, Summarize.tech is the best genuinely free option for occasional rough overviews, and ChatGPT gives the most control over output format if you don't mind pasting the transcript yourself.` },
-    { q: `What is the best AI summarizer tool in 2026?`, a: `For YouTube specifically, YT Summarizer offers the best value for regular use — one-time credit packs from $9 that never expire, no subscription, and it handles 2h+ videos without truncating. NotebookLM is the best genuinely free option for research across multiple sources, and Summarize.tech is the fastest free tool with no account required.` },
+    { q: `What is the best AI YouTube video summarizer in 2026?`, a: `YT Summarizer offers the best value for regular YouTube use — one-time credit packs from $9 that never expire, no subscription, and it handles 2h+ videos without truncating. NotebookLM is the best genuinely free option for research across multiple sources, and Summarize.tech is the fastest free tool with no account required.` },
+    { q: `What is the best AI YouTube summariser for UK users?`, a: `The same tools serve both spellings — there is no separate UK version. For YouTube video summaries, the best AI summariser depends on how often you use it: a pay-once tool like YT Summarizer works out cheapest for regular use with no subscription, Summarize.tech is the best genuinely free option for occasional rough overviews, and ChatGPT gives the most control over output format if you don't mind pasting the transcript yourself.` },
     { q: `Which YouTube summarizer is actually free?`, a: `Summarize.tech (no account, basic paragraph output) and NotebookLM (free, deeper research features) are genuinely free. Glarity is a free extension. Most others advertise a "free tier" that is really a trial of 3–10 summaries before a paywall.` },
     { q: `Do AI summarizers work on videos longer than 2 hours?`, a: `Some do, many silently fail. In testing, several tools summarized only the first portion of a 2h 10m podcast while presenting the output as complete. Tools that chunk the full transcript handle long videos correctly; general chatbots and lightweight extensions frequently truncate without warning.` },
     { q: `How accurate are AI YouTube summaries?`, a: `Good for structure, arguments, and overall content; less reliable on specifics like figures, names, and attribution in multi-speaker videos. Treat a summary as a guide to the video rather than a citable source, and verify any number or quote against the original before relying on it.` },
