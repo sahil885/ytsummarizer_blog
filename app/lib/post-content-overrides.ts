@@ -2455,6 +2455,53 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>The realistic answer for most people is both. Let YouTube answer the quick "what is this about" question when the button happens to be there, and use a dedicated tool when the video matters enough to keep a record of it. <a href="${P}">Try YT Summarizer free</a> — 5 summaries, no card, no sign-up to start.</p>
 `,
   },
+  'youtube-summarizer-vs-recall': {
+    title: "YT Summarizer vs Recall: Fast Video Summaries or a Lifelong Knowledge Base? (2026)",
+    date: '2026-08-10',
+    metaDescription: "Recall turns YouTube videos into a connected, quiz-able knowledge base for $10 a month. YT Summarizer gets you the key points in one paste for a one-time $9. An honest 2026 comparison.",
+    content: `
+      <p>Recall and YT Summarizer both take a YouTube video and give you back text you can actually use. But they answer different questions. Recall answers <em>"how do I remember everything I watch?"</em> YT Summarizer answers <em>"what does this video say, right now?"</em> Picking the wrong one wastes either money or time, so here is the honest breakdown after using both.</p>
+
+      <h2>What each tool actually is</h2>
+      <p><strong>Recall</strong> (recall.it, formerly getrecall.ai) is a personal AI knowledge base. You save YouTube videos, podcasts, articles, and PDFs into it; Recall summarizes each one, tags it automatically, and links it into a knowledge graph alongside everything else you have saved. It then layers on AI chat across your whole library, text-to-speech playback, and spaced-repetition quizzes generated from your own saved content. It ships as a web app, Chrome and Firefox extensions, and iOS and Android apps, and the company says it has passed 500,000 users.</p>
+      <p><strong>YT Summarizer</strong> does one job. You paste a YouTube URL into a web page and get a structured summary — key points, sections, timestamps — in seconds. No extension, no account required to try it, no library to design first. Everything you summarize is saved and searchable, but the product does not try to be your second brain.</p>
+
+      <h2>Side by side</h2>
+      <table>
+        <tr><th>Factor</th><th>Recall</th><th>YT Summarizer</th></tr>
+        <tr><td>Core idea</td><td>Save everything, connect it, review it forever</td><td>Paste a link, get the key points now</td></tr>
+        <tr><td>Setup before first summary</td><td>Sign up, install extension or app</td><td>Paste a URL in a browser</td></tr>
+        <tr><td>Sources handled</td><td>Videos, podcasts, articles, PDFs, notes</td><td>YouTube videos</td></tr>
+        <tr><td>Knowledge graph and auto-tagging</td><td>Yes (paid plan)</td><td>No</td></tr>
+        <tr><td>Spaced repetition quizzes</td><td>Yes (paid plan)</td><td>No</td></tr>
+        <tr><td>Chat across your library</td><td>Yes (paid plan)</td><td>No</td></tr>
+        <tr><td>Free tier</td><td>10 AI summaries per month, unlimited saves and notes</td><td>5 summaries</td></tr>
+        <tr><td>Paid pricing</td><td>Plus $10/month billed yearly; Max $38/month billed yearly</td><td>One-time packs: $9 / $19 / $49, credits never expire</td></tr>
+        <tr><td>What happens if you stop paying</td><td>Content stays, back to 10 summaries a month</td><td>Nothing — you already own your credits</td></tr>
+      </table>
+      <p>Both offer a 30-day money-back guarantee, and Recall also offers a 20 percent student discount if you email from a student address. Prices verified from Recall's pricing page in August 2026 — check it before you buy, since this category moves fast.</p>
+
+      <h2>Where Recall genuinely wins</h2>
+      <p>Recall is the better tool if the videos you watch are part of a long-running learning project rather than one-off curiosity. Three things it does that a single-purpose summarizer simply cannot:</p>
+      <ul>
+        <li><strong>Cross-source connections.</strong> If you watch a Huberman Lab episode on sleep, then save a PubMed PDF and a Wikipedia article on the same topic, Recall notices and links them. Six months later, when you save something adjacent, those old cards resurface. That is a real cognitive benefit and it compounds.</li>
+        <li><strong>Spaced repetition.</strong> Recall generates quiz questions from what you saved and schedules reviews. If you are studying for an exam, a certification, or a language, retention is the whole point — a summary you read once and forget has near-zero value.</li>
+        <li><strong>Everything in one library.</strong> Podcasts, PDFs, articles, and your own notes live next to your video summaries, and you can chat across all of it. If you already keep a read-later pile in five places, consolidating is worth real money.</li>
+      </ul>
+      <p>If that description fits you, stop reading and go try Recall. It is a well-built product and the free tier is generous enough to evaluate properly. Note that the graph, quizzes, and chat all sit behind the $10/month Plus plan — the free tier is a preview, not the product.</p>
+
+      <h2>Where YT Summarizer wins</h2>
+      <p>The case for YT Summarizer is friction and pricing model, not features.</p>
+      <p><strong>Time-to-answer.</strong> Most YouTube watching is not a learning project. It is a 90-minute podcast a friend sent, a conference talk you half-need, a review of a product you are about to buy. For those, the correct workflow is paste, skim, close tab — not save, tag, connect, review. Building a knowledge graph out of content you will never revisit is overhead disguised as productivity. We wrote about that trap in <a href="/blog/build-youtube-knowledge-base-video-notes-system">building a YouTube knowledge base</a>: a system you have to feed is only worth it if you actually query it.</p>
+      <p><strong>No install, no account to try.</strong> Recall's best experience runs through its browser extension or mobile app. If you are on a work laptop with managed extensions, a Chromebook you do not control, or you just do not want another login, that is a hard stop. YT Summarizer runs in any browser — see <a href="/blog/summarize-youtube-video-without-extension">summarizing without an extension</a> for why this matters more than it sounds.</p>
+      <p><strong>Pay-once instead of another subscription.</strong> Recall Plus is $120 a year, billed yearly. YT Summarizer is a one-time purchase: 50 summaries for $9, 200 for $19 (the popular pick), or 1,000 for $49. Credits never expire, there is no subscription, and one credit summarizes a video of any length — a 12-minute explainer and a 3-hour Lex Fridman interview cost the same. If you summarize a few videos a week, the $19 pack is roughly two years of use for less than two months of Plus. We compare the models properly in <a href="/blog/youtube-summarizer-pricing-free-vs-onetime-vs-subscription">free vs one-time vs subscription pricing</a>.</p>
+
+      <h2>The honest recommendation</h2>
+      <p>Match the tool to the shape of your watching. If you are a student, researcher, or serious self-learner accumulating a body of knowledge across formats, Recall's $10/month buys something a summarizer cannot: retention and connection. If you are a professional who needs to extract signal from videos quickly and move on, a subscription for that is overkill — you want the lowest-friction path from URL to key points.</p>
+      <p>Plenty of people run both: Recall as the long-term library, a fast summarizer for daily triage, with the keepers exported into whatever system they already use. If that system is Notion, see <a href="/blog/export-youtube-summaries-to-notion">exporting summaries to Notion</a>. And if you want the wider field before committing, our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared">comparison of eight tools</a> covers NotebookLM, Eightify, Glarity, and the rest.</p>
+      <p>Recall's free tier gives you 10 summaries a month to judge it. <a href="${P}">Try YT Summarizer free</a> for five summaries with no subscription, and keep whichever one you keep reaching for.</p>
+    `,
+  },
 }
 
 export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
@@ -2779,4 +2826,8 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
     { q: `Do I need YouTube Premium to use YouTube's AI summaries?`, a: `Not for all of them anymore. Ask YouTube dropped its Premium-only restriction on July 6, 2026 for signed-in U.S. desktop users. The on-video Ask tool and AI Overviews in search have been Premium early-access features. Premium itself is $15.99 a month for an individual U.S. plan.` },
     { q: `Is a dedicated YouTube summarizer still worth it in 2026?`, a: `For most people, yes — because of coverage rather than quality. YouTube's AI is limited to certain videos, users, regions, and devices, and its answers are not saved anywhere. A dedicated tool works on any public video with a transcript, in any browser or country, and saves a structured summary you can search later. YT Summarizer has a free tier of 5 summaries, then pay-once packs from $9 with credits that never expire.` },
   ],
-}
+  'youtube-summarizer-vs-recall': [
+    { q: "Is Recall better than YT Summarizer?", a: "It depends on what you need. Recall is better if you want a permanent, connected knowledge base with spaced-repetition quizzes and AI chat across everything you save. YT Summarizer is better if you want the key points of a specific video in seconds with no extension, no account to try, and no subscription. They solve different problems." },
+    { q: "How much does Recall cost in 2026?", a: "Recall has a free tier with 10 AI summaries per month plus unlimited saves and notes. Plus is $10 per month billed yearly and unlocks unlimited summaries, the knowledge graph, AI chat, and spaced repetition. Max is $38 per month billed yearly for bulk actions and model choice. There is a 30-day refund window and a 20 percent student discount." },
+    { q: "Is there a YouTube summarizer without a monthly subscription?", a: "Yes. YT Summarizer uses one-time credit packs instead of a subscription: 5 summaries free, then 50 for $9, 200 for $19, or 1,000 for $49. Credits never expire and one credit covers a video of any length, so a 3-hour podcast costs the same as a 10-minute clip." },
+  ],}
