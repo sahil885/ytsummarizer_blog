@@ -6,6 +6,7 @@ export type PostListEntry = {
 }
 
 export const allPosts: PostListEntry[] = [
+  { slug: 'ai-browsers-vs-youtube-summarizers-atlas-comet', title: "Do AI Browsers Replace YouTube Summarizers? Atlas vs Comet vs Dedicated Tools (2026)", description: "ChatGPT Atlas and Perplexity Comet both summarize YouTube in-page. Here is what they cost, where they fall short, and when a dedicated summarizer still wins in 2026.", date: '2026-08-10' },
   { slug: 'youtube-summarizer-vs-recall', title: "YT Summarizer vs Recall: Fast Video Summaries or a Lifelong Knowledge Base? (2026)", description: "Recall turns YouTube videos into a connected, quiz-able knowledge base for $10 a month. YT Summarizer gets you the key points in one paste for a one-time $9. An honest 2026 comparison.", date: '2026-08-10' },
   { slug: 'how-to-remove-timestamps-from-youtube-transcript', title: 'How to Remove Timestamps From a YouTube Transcript (4 Fast Methods)', description: "Four ways to remove timestamps from a YouTube transcript — including the toggle hidden inside YouTube's own menu. Copy clean text in seconds instead of deleting lines by hand.", date: '2026-07-28' },
   { slug: 'how-to-summarize-youtube-videos', title: 'How to Summarize a YouTube Video: Every Method Tested (2026 Guide)', description: 'How to summarize a YouTube video in 2026: the one-minute URL method, the free ChatGPT workflow, Gemini, NotebookLM, and extensions — tested, timed, and honestly compared.', date: '2026-07-12' },

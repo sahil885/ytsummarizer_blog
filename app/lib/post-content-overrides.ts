@@ -2502,6 +2502,59 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>Recall's free tier gives you 10 summaries a month to judge it. <a href="${P}">Try YT Summarizer free</a> for five summaries with no subscription, and keep whichever one you keep reaching for.</p>
     `,
   },
+  'ai-browsers-vs-youtube-summarizers-atlas-comet': {
+    title: "Do AI Browsers Replace YouTube Summarizers? Atlas vs Comet vs Dedicated Tools (2026)",
+    date: '2026-08-10',
+    metaDescription: "ChatGPT Atlas and Perplexity Comet both summarize YouTube in-page. Here is what they cost, where they fall short, and when a dedicated summarizer still wins in 2026.",
+    content: `
+      <p><strong>Short answer:</strong> AI browsers like ChatGPT Atlas and Perplexity Comet can summarize a YouTube video in the page you are already on, and for casual use that is often enough. They do not replace a dedicated summarizer for three specific reasons: Atlas is still macOS-only, both require you to change your default browser, and neither saves summaries into a searchable library you can return to. If you will switch browsers and only need the occasional gist, use Comet — it is free. If you need summaries on any machine and want to keep them, a dedicated tool is still the better fit.</p>
+
+      <h2>What the AI browsers actually do</h2>
+      <p><strong>ChatGPT Atlas</strong> is OpenAI's Chromium-based browser, launched October 21, 2025. It puts a ChatGPT sidebar next to whatever page you are viewing, so on a YouTube page you can ask it to summarize the video, pull the key arguments, or answer a question about it. It runs on a freemium model, with agent mode reserved for Plus and Pro subscribers. Two caveats matter: as of January 2026 it was still macOS-only, with no Windows, iOS, or Android version, and in March 2026 OpenAI announced it would fold Atlas, the ChatGPT desktop app, and Codex into a single desktop application — so the standalone product you install today is going to change shape.</p>
+      <p><strong>Perplexity Comet</strong> launched in July 2025 as a $200-per-month Max perk, then went free worldwide on October 2, 2025. It runs on Windows, Mac, iOS, and Android. Its one-click page summarization is the feature reviewers consistently single out, and it works on YouTube pages as well as articles and PDFs. There is an optional Comet Plus add-on at $5 a month for premium publisher content; Perplexity Pro is $20 a month and Max is $200 a month.</p>
+      <p><strong>Gemini in Chrome</strong> is the third contender and the least available. A summarize-this-video chip has been rolling out inside Chrome, but it is tied to paid Google Workspace accounts rather than being on by default for everyone.</p>
+
+      <h2>Side by side</h2>
+      <table>
+        <tr><th>Factor</th><th>ChatGPT Atlas</th><th>Perplexity Comet</th><th>YT Summarizer</th></tr>
+        <tr><td>Platforms</td><td>macOS only</td><td>Windows, Mac, iOS, Android</td><td>Any browser, any OS</td></tr>
+        <tr><td>Must change default browser</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+        <tr><td>Price to summarize</td><td>Freemium; agent mode needs Plus or Pro</td><td>Free; optional $5/mo add-on</td><td>5 free, then $9 / $19 / $49 one-time</td></tr>
+        <tr><td>Billing model</td><td>Subscription</td><td>Subscription for upper tiers</td><td>Pay once, credits never expire</td></tr>
+        <tr><td>Account required</td><td>Yes</td><td>Yes</td><td>None to try</td></tr>
+        <tr><td>Summaries saved and searchable</td><td>In chat history</td><td>In chat history</td><td>Yes, a dedicated library</td></tr>
+        <tr><td>Works on a locked-down work laptop</td><td>No</td><td>No</td><td>Yes</td></tr>
+        <tr><td>Also summarizes non-YouTube pages</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+      </table>
+      <p>Pricing and platform availability verified in August 2026 from OpenAI and Perplexity announcements and contemporaneous reporting. This category changes fast — check before you buy.</p>
+
+      <h2>Where the AI browsers genuinely win</h2>
+      <p>Give them real credit, because on their home turf they are excellent.</p>
+      <p><strong>Zero context switching.</strong> You are already on the video. You click the sidebar. There is no copying a URL, no second tab, no paste. For a quick gist, that is the shortest path that exists, and no standalone tool can beat it on raw steps.</p>
+      <p><strong>Comet is free and cross-platform.</strong> Free, on all four major platforms, with summarization that works across YouTube, articles, and PDFs. If your bottleneck is <em>everything</em> you read rather than specifically videos, Comet does more for $0 than any single-purpose tool does at any price.</p>
+      <p><strong>Follow-up questions are native.</strong> Both browsers let you interrogate the video conversationally — ask what the speaker said about a specific claim, push back, ask for a different framing. That is a genuine capability advantage over a tool that returns one structured output.</p>
+
+      <h2>Where a dedicated summarizer still wins</h2>
+      <p><strong>You do not have to switch browsers.</strong> This is the thing AI browser reviews consistently underrate. Your default browser holds your passwords, your extensions, your session cookies, your muscle memory. Asking someone to migrate all of that so they can summarize videos is a very large ask for a very small job. A web-based tool runs inside whatever browser you already use — see <a href="/blog/summarize-youtube-video-without-extension">summarizing without an extension</a> for why install-free matters more than it sounds.</p>
+      <p><strong>Work machines.</strong> Most corporate laptops will not let you install a new browser. Atlas and Comet are simply unavailable to a large share of professionals during the hours they actually need summaries. A web app has no such problem.</p>
+      <p><strong>Summaries you can find again.</strong> An AI browser summary lives in a chat thread. Three weeks later, finding the one about the pricing webinar means scrolling conversation history. A dedicated tool keeps a searchable library, which is the difference between summarizing and building something. We cover that distinction in <a href="/blog/build-youtube-knowledge-base-video-notes-system">building a YouTube knowledge base</a>.</p>
+      <p><strong>Privacy surface.</strong> AI browsers see everything you browse, not just the video you asked about. Atlas's browser memories feature drew scrutiny in late 2025 over both data retention and prompt-injection risk, where a malicious page could try to plant instructions the assistant later acts on. A tool that only ever receives a YouTube URL has a dramatically smaller surface. If this matters to you, read <a href="/blog/youtube-summarizer-privacy-and-security">summarizer privacy and security</a>.</p>
+      <p><strong>Cost shape.</strong> Comet is free, so on price it wins outright for casual use. Against the subscription tiers, though, the comparison is different: <a href="${P}">YT Summarizer</a> is 5 free summaries, then one-time packs — 50 for $9, 200 for $19, or 1,000 for $49. Credits never expire, there is no subscription, and one credit covers a video of any length, so a 10-minute explainer and a 3-hour podcast cost the same. Our <a href="/blog/youtube-summarizer-pricing-free-vs-onetime-vs-subscription">pricing model breakdown</a> compares the maths properly.</p>
+
+      <h2>The verdict: who should pick what</h2>
+      <p><strong>Pick Comet</strong> if you are willing to change your default browser, you want AI summarization across all your reading rather than just videos, and free matters most. It is the strongest free option in this comparison.</p>
+      <p><strong>Pick Atlas</strong> if you are on a Mac, already pay for ChatGPT Plus or Pro, and want OpenAI's models in your browsing flow — accepting that the product is being merged into a desktop app and will change.</p>
+      <p><strong>Pick a dedicated summarizer</strong> if you summarize videos regularly rather than occasionally, need it to work on a work laptop or a phone, want summaries saved somewhere you can search later, or want to pay once instead of subscribing. See the <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared">full eight-tool comparison</a> for the wider field.</p>
+      <p>Most people should test the free paths before paying anything: install Comet, and <a href="${P}">try YT Summarizer free</a> for five summaries with no subscription. A week of real use will settle it faster than any comparison table.</p>
+
+      <h2>Frequently asked questions</h2>
+      <p><strong>Can ChatGPT Atlas summarize YouTube videos?</strong> Yes. Atlas has a ChatGPT sidebar that can summarize the page you are viewing, including a YouTube video page. The main limitation is availability: as of January 2026 Atlas was still macOS-only, with no Windows, iOS, or Android release.</p>
+      <p><strong>Is Perplexity Comet free in 2026?</strong> Yes. Comet went free worldwide on October 2, 2025 after launching in July 2025 as a $200-per-month Max perk. There is an optional Comet Plus add-on at $5 a month, and Perplexity Pro and Max remain $20 and $200 a month.</p>
+      <p><strong>Do I still need a YouTube summarizer if I use an AI browser?</strong> If you summarize videos occasionally and are happy switching browsers, probably not. You still need one if you work on a locked-down machine that will not allow a new browser install, summarize on a phone, or want summaries kept in a searchable library rather than buried in chat history.</p>
+      <p><strong>Are AI browsers safe for summarizing videos?</strong> They carry a broader privacy surface than a single-purpose tool because they observe your whole browsing session. Atlas's memory features attracted security scrutiny in late 2025, including reported prompt-injection risks where a malicious page attempts to plant instructions the assistant later follows.</p>
+      <p><strong>What is the cheapest way to summarize YouTube videos in 2026?</strong> Comet is free and is the cheapest option outright. Among paid tools, one-time credit packs beat subscriptions for most people: YT Summarizer is 5 free summaries, then $9 for 50, $19 for 200, or $49 for 1,000, with credits that never expire.</p>
+    `,
+  },
 }
 
 export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
@@ -2830,4 +2883,12 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
     { q: "Is Recall better than YT Summarizer?", a: "It depends on what you need. Recall is better if you want a permanent, connected knowledge base with spaced-repetition quizzes and AI chat across everything you save. YT Summarizer is better if you want the key points of a specific video in seconds with no extension, no account to try, and no subscription. They solve different problems." },
     { q: "How much does Recall cost in 2026?", a: "Recall has a free tier with 10 AI summaries per month plus unlimited saves and notes. Plus is $10 per month billed yearly and unlocks unlimited summaries, the knowledge graph, AI chat, and spaced repetition. Max is $38 per month billed yearly for bulk actions and model choice. There is a 30-day refund window and a 20 percent student discount." },
     { q: "Is there a YouTube summarizer without a monthly subscription?", a: "Yes. YT Summarizer uses one-time credit packs instead of a subscription: 5 summaries free, then 50 for $9, 200 for $19, or 1,000 for $49. Credits never expire and one credit covers a video of any length, so a 3-hour podcast costs the same as a 10-minute clip." },
-  ],}
+  ],
+  'ai-browsers-vs-youtube-summarizers-atlas-comet': [
+    { q: "Can ChatGPT Atlas summarize YouTube videos?", a: "Yes. Atlas has a ChatGPT sidebar that can summarize the page you are viewing, including a YouTube video page. The main limitation is availability: as of January 2026 Atlas was still macOS-only, with no Windows, iOS, or Android release." },
+    { q: "Is Perplexity Comet free in 2026?", a: "Yes. Comet went free worldwide on October 2, 2025 after launching in July 2025 as a $200-per-month Max perk. There is an optional Comet Plus add-on at $5 a month, and Perplexity Pro and Max remain $20 and $200 a month." },
+    { q: "Do I still need a YouTube summarizer if I use an AI browser?", a: "If you summarize videos occasionally and are happy switching browsers, probably not. You still need one if you work on a locked-down machine that will not allow a new browser install, summarize on a phone, or want summaries kept in a searchable library rather than buried in chat history." },
+    { q: "Are AI browsers safe for summarizing videos?", a: "They carry a broader privacy surface than a single-purpose tool because they observe your whole browsing session. Atlas's memory features attracted security scrutiny in late 2025, including reported prompt-injection risks where a malicious page attempts to plant instructions the assistant later follows." },
+    { q: "What is the cheapest way to summarize YouTube videos in 2026?", a: "Comet is free and is the cheapest option outright. Among paid tools, one-time credit packs beat subscriptions for most people: YT Summarizer is 5 free summaries, then $9 for 50, $19 for 200, or $49 for 1,000, with credits that never expire." },
+  ],
+}
