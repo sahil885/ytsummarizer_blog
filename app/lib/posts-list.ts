@@ -6,6 +6,7 @@ export type PostListEntry = {
 }
 
 export const allPosts: PostListEntry[] = [
+  { slug: 'can-grok-summarize-youtube-videos', title: "Can Grok Summarize YouTube Videos? What Actually Works in 2026", description: "Grok returns a summary from a YouTube URL, but xAI's own model card lists text and image inputs only - no video. What that means in practice, the workflow that does work, and the honest alternatives.", date: '2026-08-11' },
   { slug: 'ai-browsers-vs-youtube-summarizers-atlas-comet', title: "Do AI Browsers Replace YouTube Summarizers? Atlas vs Comet vs Dedicated Tools (2026)", description: "ChatGPT Atlas and Perplexity Comet both summarize YouTube in-page. Here is what they cost, where they fall short, and when a dedicated summarizer still wins in 2026.", date: '2026-08-10' },
   { slug: 'youtube-summarizer-vs-recall', title: "YT Summarizer vs Recall: Fast Video Summaries or a Lifelong Knowledge Base? (2026)", description: "Recall turns YouTube videos into a connected, quiz-able knowledge base for $10 a month. YT Summarizer gets you the key points in one paste for a one-time $9. An honest 2026 comparison.", date: '2026-08-10' },
   { slug: 'how-to-remove-timestamps-from-youtube-transcript', title: 'How to Remove Timestamps From a YouTube Transcript (4 Fast Methods)', description: "Four ways to remove timestamps from a YouTube transcript — including the toggle hidden inside YouTube's own menu. Copy clean text in seconds instead of deleting lines by hand.", date: '2026-07-28' },

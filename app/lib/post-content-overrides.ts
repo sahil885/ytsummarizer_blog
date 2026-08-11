@@ -2555,6 +2555,104 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p><strong>What is the cheapest way to summarize YouTube videos in 2026?</strong> Comet is free and is the cheapest option outright. Among paid tools, one-time credit packs beat subscriptions for most people: YT Summarizer is 5 free summaries, then $9 for 50, $19 for 200, or $49 for 1,000, with credits that never expire.</p>
     `,
   },
+  'can-grok-summarize-youtube-videos': {
+    title: "Can Grok Summarize YouTube Videos? What Actually Works in 2026",
+    metaDescription: "Grok returns a summary from a YouTube URL, but xAI's own model card lists text and image inputs only - no video. What that means in practice, the workflow that does work, and the honest alternatives.",
+    date: '2026-08-11',
+    content: `
+      <p><strong>Short answer: yes, Grok will produce a summary from a YouTube link — but it is not watching the video.</strong> xAI's own model card for Grok 4.5 lists its input modalities as <strong>text and image only</strong>. There is no video input. Anything Grok tells you about a YouTube video is assembled from text it can reach through its real-time web and X search — the caption track, the description, comments, and articles written about the video — not from the footage or the audio. That works fine on a well-captioned conference talk and fails quietly on a video with no captions, where Grok can hand you a confident, fluent summary of something it has effectively never seen.</p>
+
+      <p>Grok is free to start; SuperGrok is $30 a month and SuperGrok Plus is $100 a month (verified on x.ai/pricing in August 2026). Below is what each path actually gets you, the one Grok workflow that is genuinely excellent, and when a dedicated tool like <a href="${P}">YT Summarizer</a> is the better call.</p>
+
+      <h2>What xAI documents, versus what the blogs claim</h2>
+      <p>Search for this question and you will find a wave of posts announcing that Grok can now watch and summarize any video, usually dated to March 2026. That claim does not survive contact with xAI's own documentation.</p>
+      <p>The xAI release notes, last updated August 4, 2026, list every video-related shipment as <em>generation</em>: video generation and next-gen image generation in January 2026, Batch API support for video generation on March 15, and the grok-imagine-video-1.5 text-to-video, image-to-video and reference-to-video modalities on July 31. Not one entry adds video as an <em>input</em>. And the Grok 4.5 model page — the flagship released July 8, 2026 — states its modalities plainly: text and image in, text out.</p>
+      <p>Grok's own X account has been blunter than the blogs. Asked directly, it replied that it cannot watch YouTube videos and suggested the user paste a transcript instead. So: treat the summary you get as a summary of the video's <em>text shadow</em>, not the video. This is the same structural limitation that applies to most chatbots — see our breakdown of <a href="/blog/can-chatgpt-summarize-youtube-videos">whether ChatGPT can summarize YouTube videos</a> for the parallel case.</p>
+
+      <h2>Two ways to summarize a YouTube video with Grok</h2>
+      <p><strong>Method 1 — paste the URL.</strong> Open grok.com or the Grok tab on X, paste the link, and ask for a summary. Takes about 15 seconds. Reliability is the problem: on a video with clean English captions and some press coverage you will usually get something reasonable. On a niche channel with auto-generated captions, an accented speaker, or no caption track at all, output quality drops sharply and Grok rarely tells you it is guessing. Always spot-check a claim or two against the video before you act on it.</p>
+      <p><strong>Method 2 — paste the transcript.</strong> Pull the transcript yourself, drop the whole thing into Grok, and ask your question. This is slower — you are doing the retrieval work by hand — but it removes the guesswork entirely, because Grok is now reading the actual words that were said. If you want the fastest route to the raw text, our guide to <a href="/blog/how-to-download-youtube-transcript-5-free-methods">downloading a YouTube transcript in five free ways</a> covers it. The obvious cost is that this is a manual pipeline you repeat every single time, which is exactly <a href="/blog/copying-youtube-transcript-to-chatgpt-wastes-time">why copy-pasting transcripts into a chatbot burns more time than people expect</a>.</p>
+
+      <h2>Where Grok genuinely wins: the 500,000-token context window</h2>
+      <p>Give Grok credit where it is due. Grok 4.5 has a 500,000-token context window, priced at $2 per million input tokens on the API. A three-hour podcast transcript runs somewhere around 30,000 words — comfortably inside that window with room to spare. So if you use Method 2, you can paste an entire long-form transcript in one shot and then interrogate it: ask for the counterarguments, ask what the guest dodged, ask for every number mentioned. No chunking, no rolling summaries, no losing the thread halfway through.</p>
+      <p>Grok is a good <em>reasoning</em> layer on top of video content even though it is a poor <em>retrieval</em> layer for it. The gap is not intelligence — it is that nothing in Grok fetches the transcript for you.</p>
+
+      <h2>Where Grok falls down for video</h2>
+      <p>Three things, in order of how often they bite:</p>
+      <ul>
+        <li><strong>Silent failure on uncaptioned videos.</strong> No caption track means no text shadow, and a plausible summary anyway. This is the dangerous one.</li>
+        <li><strong>Nothing is saved.</strong> Summaries live in chat history. There is no video library, no structured output format, no way to search across everything you have summarized this month.</li>
+        <li><strong>Free-tier rate limits.</strong> The free plan is described as generous limits rather than a published number, and heavy use pushes you toward the $30 SuperGrok tier. If you only summarize videos, that is $360 a year for a capability that is a side effect of a general chatbot.</li>
+      </ul>
+
+      <h2>Grok vs the alternatives for YouTube summaries</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Option</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Price (Aug 2026)</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Works from URL alone</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Account to try</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Long videos</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Summaries saved</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Grok free tier</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$0</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Sometimes — depends on captions</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Good if you paste the transcript</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Chat history only</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">SuperGrok</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$30/mo</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Sometimes — same limitation</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">500K context, very strong</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Chat history only</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">SuperGrok Plus</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$100/mo</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Sometimes — same limitation</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Same, plus higher usage</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Chat history only</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">YT Summarizer</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">5 free, then $9 / $19 / $49 one-time</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes — that is the whole product</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">No account to try it</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">1 credit per video, any length</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Saved to a searchable library</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Pricing for Grok comes from x.ai/pricing, checked in August 2026; the page also lists SuperGrok Lite and SuperGrok Heavy tiers without displaying their prices, so we have left those out rather than guess. YT Summarizer packs are pay-once: 5 summaries free, 50 for $9, 200 for $19, or 1,000 for $49, credits never expire, no subscription, 30-day money-back guarantee. For how that stacks up against the wider market, see <a href="/blog/how-much-do-youtube-summarizers-cost-2026">what YouTube summarizers actually cost in 2026</a>.</p>
+
+      <h2>The verdict: who should pick what</h2>
+      <p><strong>If you already pay for SuperGrok and summarize a video occasionally, use Grok — but paste the transcript.</strong> You are paying for the 500K context window; use it properly rather than trusting a URL paste. The two extra minutes buy you a summary of what was actually said.</p>
+      <p><strong>If you are on the Grok free tier and summarizing one video a week, use Grok with a URL and verify what matters.</strong> Free is free. Just do not treat an uncaptioned video's summary as fact.</p>
+      <p><strong>If you summarize videos several times a week, stop using a chatbot for retrieval.</strong> A purpose-built tool pastes a URL and returns a structured summary in about a minute, every time, with the result saved where you can find it again. <a href="${P}">Try YT Summarizer free</a> — five summaries, no account required to start, and packs from $9 if you keep going.</p>
+      <p><strong>If you want the conversation more than the summary, Grok is fine — and so are its rivals.</strong> The same trade-offs apply to <a href="/blog/youtube-summarizer-vs-claude-ai">Claude's manual transcript workflow</a> and <a href="/blog/youtube-summarizer-vs-perplexity">Perplexity's URL handling</a>.</p>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>Can Grok summarize YouTube videos?</h3>
+      <p>Yes, Grok will return a summary when you paste a YouTube URL, but it is not watching the video — xAI's Grok 4.5 model card lists input modalities as text and image only. The summary is built from the caption track, description and surrounding web text, so it degrades on videos with no captions.</p>
+      <h3>Does Grok actually watch the video or just read the transcript?</h3>
+      <p>It reads text. xAI's release notes through August 4, 2026 list video generation features but no video input capability, and Grok 4.5 accepts only text and image inputs. Claims that Grok gained video-watching in March 2026 are not supported by xAI's own documentation.</p>
+      <h3>How much does Grok cost in 2026?</h3>
+      <p>Grok has a free tier at $0, SuperGrok at $30 a month, and SuperGrok Plus at $100 a month, verified on x.ai/pricing in August 2026. The pricing page also lists SuperGrok Lite, SuperGrok Heavy, Business and Enterprise tiers without published consumer prices.</p>
+      <h3>What is the most reliable way to summarize a long YouTube video with Grok?</h3>
+      <p>Download the transcript yourself and paste the full text into Grok rather than pasting the URL. Grok 4.5 has a 500,000-token context window, which holds a three-hour podcast transcript of roughly 30,000 words in a single message with room to ask follow-up questions.</p>
+      <h3>Is there a YouTube summarizer without a monthly subscription?</h3>
+      <p>Yes. YT Summarizer uses one-time credit packs instead of a subscription: 5 summaries free, then 50 for $9, 200 for $19, or 1,000 for $49. Credits never expire and one credit covers a video of any length, so a three-hour lecture costs the same as a five-minute clip.</p>
+`,
+  },
 }
 
 export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
@@ -2890,5 +2988,12 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
     { q: "Do I still need a YouTube summarizer if I use an AI browser?", a: "If you summarize videos occasionally and are happy switching browsers, probably not. You still need one if you work on a locked-down machine that will not allow a new browser install, summarize on a phone, or want summaries kept in a searchable library rather than buried in chat history." },
     { q: "Are AI browsers safe for summarizing videos?", a: "They carry a broader privacy surface than a single-purpose tool because they observe your whole browsing session. Atlas's memory features attracted security scrutiny in late 2025, including reported prompt-injection risks where a malicious page attempts to plant instructions the assistant later follows." },
     { q: "What is the cheapest way to summarize YouTube videos in 2026?", a: "Comet is free and is the cheapest option outright. Among paid tools, one-time credit packs beat subscriptions for most people: YT Summarizer is 5 free summaries, then $9 for 50, $19 for 200, or $49 for 1,000, with credits that never expire." },
+  ],
+  'can-grok-summarize-youtube-videos': [
+    { q: "Can Grok summarize YouTube videos?", a: "Yes, Grok will return a summary when you paste a YouTube URL, but it is not watching the video - xAI's Grok 4.5 model card lists input modalities as text and image only. The summary is built from the caption track, description and surrounding web text, so it degrades on videos with no captions." },
+    { q: "Does Grok actually watch the video or just read the transcript?", a: "It reads text. xAI's release notes through August 4, 2026 list video generation features but no video input capability, and Grok 4.5 accepts only text and image inputs. Claims that Grok gained video-watching in March 2026 are not supported by xAI's own documentation." },
+    { q: "How much does Grok cost in 2026?", a: "Grok has a free tier at $0, SuperGrok at $30 a month, and SuperGrok Plus at $100 a month, verified on x.ai/pricing in August 2026. The pricing page also lists SuperGrok Lite, SuperGrok Heavy, Business and Enterprise tiers without published consumer prices." },
+    { q: "What is the most reliable way to summarize a long YouTube video with Grok?", a: "Download the transcript yourself and paste the full text into Grok rather than pasting the URL. Grok 4.5 has a 500,000-token context window, which holds a three-hour podcast transcript of roughly 30,000 words in a single message with room to ask follow-up questions." },
+    { q: "Is there a YouTube summarizer without a monthly subscription?", a: "Yes. YT Summarizer uses one-time credit packs instead of a subscription: 5 summaries free, then 50 for $9, 200 for $19, or 1,000 for $49. Credits never expire and one credit covers a video of any length, so a three-hour lecture costs the same as a five-minute clip." },
   ],
 }
