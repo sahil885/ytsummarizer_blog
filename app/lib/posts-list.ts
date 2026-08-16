@@ -6,6 +6,22 @@ export type PostListEntry = {
 }
 
 export const allPosts: PostListEntry[] = [
+  // Batch 2 (Aug 2026): competitor-brand cluster. Keyword Planner (US):
+  // notegpt 10k-100k/mo, eightify 1k-10k, glasp 1k-10k. Bare brand terms are
+  // unwinnable; these target the modifier long-tail (review/pricing/free/vs/cancel).
+  { slug: 'notegpt-review', title: "NoteGPT Review 2026: Honest Pros, Cons, and the Quota Problem", description: "An honest NoteGPT review for 2026 — what it does well across YouTube, PDFs and slides, and the quota complaints that dominate user feedback. Plus who should pick something else.", date: '2026-08-16' },
+  { slug: 'notegpt-pricing', title: 'NoteGPT Pricing 2026: Plans, Quotas, and What "Unlimited" Actually Means', description: "NoteGPT pricing explained for 2026 — the free tier, paid plan structure, and the usage quotas that apply even on unlimited plans. Plus how the yearly cost compares to one-time tools.", date: '2026-08-16' },
+  { slug: 'notegpt-free-limits', title: "Is NoteGPT Free? What the Free Plan Actually Includes (2026)", description: "NoteGPT's free plan explained — what you get, the monthly quota, and where it stops. Plus genuinely free alternatives for YouTube summaries if the limit is too tight.", date: '2026-08-16' },
+  { slug: 'notegpt-vs-eightify', title: "NoteGPT vs Eightify (2026): Which YouTube Summarizer Is Actually Better?", description: "NoteGPT vs Eightify compared for 2026 — breadth versus focus, quotas versus weekly caps, pricing, and output quality. Which to pick, and when neither is the right answer.", date: '2026-08-16' },
+  { slug: 'cancel-notegpt-subscription', title: "How to Cancel NoteGPT (and What to Use Instead)", description: "Cancelling NoteGPT? How to stop the subscription, what happens to your saved notes, refund considerations, and the alternatives worth moving to — including options with no subscription.", date: '2026-08-16' },
+  { slug: 'eightify-review', title: "Eightify Review 2026: Is the Subscription Worth It?", description: "An honest Eightify review for 2026 — output quality, the weekly free limit, extension-only drawbacks, and whether the subscription earns its price for how much you actually watch.", date: '2026-08-16' },
+  { slug: 'eightify-pricing', title: "Eightify Pricing 2026: Plans, Free Limits, and Cheaper Alternatives", description: "Eightify pricing explained for 2026 — what the free tier includes, what paid plans cost per year, and how the total compares with free and one-time-payment alternatives.", date: '2026-08-16' },
+  { slug: 'eightify-free-limits', title: "Is Eightify Free? Free Tier Limits and Free Alternatives (2026)", description: "Eightify's free tier explained — how many summaries you get, how often it resets, and what happens when you hit the cap. Plus genuinely free alternatives for YouTube summaries.", date: '2026-08-16' },
+  { slug: 'glasp-review', title: "Glasp Review 2026: Excellent Highlighter, Limited Summarizer", description: "An honest Glasp review for 2026 — what it is genuinely great at (social highlighting, building a knowledge base) and why people expecting a one-click YouTube summarizer are disappointed.", date: '2026-08-16' },
+  { slug: 'glasp-vs-notegpt', title: "Glasp vs NoteGPT (2026): Highlighting or Summarizing?", description: "Glasp vs NoteGPT compared — one is a social highlighter for building a knowledge base, the other a multi-format AI summarizer with quotas. Which fits your workflow, and when neither does.", date: '2026-08-16' },
+  { slug: 'summarize-tech-review', title: "Summarize.tech Review 2026: Genuinely Free, With Real Limits", description: "An honest Summarize.tech review — it is properly free with no account required, which is rare. Here is what the output is actually like, where it struggles, and when to use something else.", date: '2026-08-16' },
+  { slug: 'summarize-tech-alternative', title: "Summarize.tech Alternatives 2026: Better Output Without a Subscription", description: "Outgrown Summarize.tech? Alternatives that give structured key points, a saved library and reliable long-video handling — including free options and one-time-payment tools.", date: '2026-08-16' },
+
   // Batch 1 (Aug 2026): troubleshooting & competitor-problem cluster — narrow,
   // low-competition queries with high intent. Modelled on the "not working" post,
   // which is the site's best performer.

@@ -3128,9 +3128,578 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>For everything public and captioned, <a href="${P}">YT Summarizer</a> handles it in about a minute — including long lectures and podcasts. Five summaries free, then one-time credits from $9 that never expire, no subscription.</p>
     `,
   },
+
+  // ===== Batch 2: competitor-brand cluster (Aug 2026) =====
+  // Brand-modifier queries. Keyword Planner (US): notegpt 10k-100k/mo,
+  // eightify 1k-10k, glasp 1k-10k. Bare brand names are unwinnable; the
+  // modifier long-tail (review / pricing / free / vs / cancel) is not.
+  // Tone: fair and accurate. Competitor complaints are attributed, not asserted.
+
+  'notegpt-review': {
+    title: 'NoteGPT Review 2026: Honest Pros, Cons, and the Quota Problem',
+    metaDescription: 'An honest NoteGPT review for 2026 — what it does well across YouTube, PDFs and slides, and the quota complaints that dominate user feedback. Plus who should pick something else.',
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick verdict:</strong> NoteGPT is a capable multi-format AI summarizer — YouTube videos, PDFs, slides and documents in one tool, with mind maps and flashcards on top. Its weakness is the pricing model: usage quotas apply even on plans marketed as unlimited, and hitting one mid-session is the most common complaint in user reviews. If you summarize many YouTube videos and value uninterrupted use, that quota structure is the thing to weigh.</p>
+
+      <h2>What NoteGPT does well</h2>
+      <ul>
+        <li><strong>Breadth.</strong> One tool covers YouTube, PDFs, slide decks, and documents. If your work spans all of those, consolidating is genuinely convenient.</li>
+        <li><strong>Study features.</strong> Mind maps and flashcard generation are useful for exam prep, and few YouTube-only tools offer them.</li>
+        <li><strong>Output structure.</strong> Summaries are organised rather than a wall of prose, which is what you want for notes.</li>
+        <li><strong>Free tier to test.</strong> You can evaluate quality before paying.</li>
+      </ul>
+
+      <h2>Where users get frustrated</h2>
+      <p>The recurring theme across review sites is quota behaviour. Plans presented as unlimited carry internal usage limits, so a paying subscriber can be stopped mid-task with an "insufficient quota" message. Whether that matters depends entirely on your volume — light users may never see it; heavy users hit it and feel misled. If you are troubleshooting that specific error, see <a href="/blog/notegpt-not-working-quota">NoteGPT quota errors and fixes</a>.</p>
+      <p>The second recurring point is that breadth costs focus: if you only summarize YouTube, you are paying monthly for document and slide features you never open.</p>
+
+      <h2>Who NoteGPT suits</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">You are...</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Verdict</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">A student summarizing lectures, PDFs and slides</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Good fit — breadth is the point</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Someone who wants mind maps and flashcards</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Good fit</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">A heavy YouTube-only user</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Poor fit — quotas and unused features</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Someone who dislikes subscriptions</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Poor fit — it is recurring</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The honest alternative comparison</h2>
+      <p>If YouTube is your actual use case, a focused tool avoids both problems. <a href="${P}">YT Summarizer</a> does YouTube only — no PDFs, no slides — and uses one-time credits instead of a subscription: 5 free summaries, then 50 for $9, 200 for $19, or 1,000 for $49, with credits that never expire and no monthly reset. One credit covers a video of any length.</p>
+      <p>That trade is worth stating plainly: you lose multi-format support and study extras, and you gain no quotas and no recurring charge. Full breakdown in <a href="/blog/best-notegpt-alternative-2026">best NoteGPT alternatives</a> and <a href="/blog/notegpt-vs-ytsummarizer-honest-comparison-2026">NoteGPT vs YT Summarizer</a>.</p>
+      <p><em>Pricing and plan structures change — check NoteGPT's current pricing page before deciding.</em></p>
+    `,
+  },
+
+  'notegpt-pricing': {
+    title: 'NoteGPT Pricing 2026: Plans, Quotas, and What "Unlimited" Actually Means',
+    metaDescription: "NoteGPT pricing explained for 2026 — the free tier, paid plan structure, and the usage quotas that apply even on unlimited plans. Plus how the yearly cost compares to one-time tools.",
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick answer:</strong> NoteGPT is a subscription with a limited free tier and several paid tiers. The critical detail is that usage quotas apply to specific operations even on higher plans marketed as unlimited — so "unlimited" describes plan naming rather than genuinely uncapped usage. Budget for the annual figure, not the monthly one: a roughly $9–15/month plan is $108–180 a year whether you use it every month or not.</p>
+
+      <h2>How the pricing is structured</h2>
+      <ul>
+        <li><strong>Free tier:</strong> a limited monthly allowance, enough to evaluate output quality but not for regular use.</li>
+        <li><strong>Paid tiers:</strong> monthly or annual billing, with annual discounted. Higher tiers raise limits and unlock features rather than removing limits entirely.</li>
+        <li><strong>Quotas within plans:</strong> different operations (video summaries, document processing, AI chat) draw on separate counters, which is why you can exhaust one while others remain.</li>
+      </ul>
+
+      <h2>The question most people are actually asking</h2>
+      <p>Searches for NoteGPT pricing usually come from one of two places: deciding whether to start, or working out why a paid plan stopped working. If it is the second, the answer is almost always a quota rather than a billing fault — covered in <a href="/blog/notegpt-not-working-quota">NoteGPT "insufficient quota" fixes</a>.</p>
+
+      <h2>Yearly cost in context</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Tool</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Model</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Cost over a year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">NoteGPT</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription + quotas</td><td style="padding: 0.75rem; border: 1px solid #ddd;">~$100+</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Eightify</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription</td><td style="padding: 0.75rem; border: 1px solid #ddd;">~$60–120</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Summarize.tech</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Free</td><td style="padding: 0.75rem; border: 1px solid #ddd;">$0</td></tr>
+          <tr style="background: #fff8f9;"><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>YT Summarizer</strong></td><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>One-time credits</strong></td><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>$9–$49 once</strong></td></tr>
+        </tbody>
+      </table>
+
+      <h2>When NoteGPT's price is justified</h2>
+      <p>If you genuinely use the multi-format features — summarizing PDFs and slide decks alongside video, generating flashcards and mind maps — the subscription buys a workspace, and comparing it to a YouTube-only tool is unfair. If you only ever paste YouTube links, you are renting a suite to use one feature.</p>
+      <p>For that narrower case, <a href="${P}">YT Summarizer</a> costs $19 once for 200 summaries — under 10 cents each, credits that never expire, no renewal. Full landscape: <a href="/blog/how-much-do-youtube-summarizers-cost-2026">how much YouTube summarizers cost in 2026</a>.</p>
+      <p><em>Always verify current prices on NoteGPT's own pricing page; plan structures in this category change frequently.</em></p>
+    `,
+  },
+
+  'notegpt-free-limits': {
+    title: 'Is NoteGPT Free? What the Free Plan Actually Includes (2026)',
+    metaDescription: "NoteGPT's free plan explained — what you get, the monthly quota, and where it stops. Plus genuinely free alternatives for YouTube summaries if the limit is too tight.",
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick answer:</strong> NoteGPT has a free plan, but it is a limited allowance rather than an unrestricted free tool. You get a monthly quota sufficient to test the output and handle occasional use; regular use exhausts it and prompts an upgrade. It is best understood as an extended trial rather than a permanently free tier.</p>
+
+      <h2>What you can do on the free plan</h2>
+      <ul>
+        <li>Summarize YouTube videos up to your monthly allowance</li>
+        <li>Try the core output formats to judge quality</li>
+        <li>Access the main interface without paying</li>
+      </ul>
+
+      <h2>Where the free plan stops</h2>
+      <p>The allowance is monthly, so heavy weeks exhaust it early. Longer videos and document processing consume more of the quota than short clips. And some features are reserved for paid tiers. When you hit the ceiling you get a quota message rather than a graceful degradation — see <a href="/blog/notegpt-not-working-quota">what NoteGPT quota errors mean</a>.</p>
+
+      <h2>Genuinely free alternatives for YouTube</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Tool</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Free?</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Catch</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Summarize.tech</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Yes, no account</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Basic paragraph output</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">NotebookLM</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Slower setup per video</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Glasp</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Free tier</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Daily cap; extension only</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">YT Summarizer</td><td style="padding: 0.75rem; border: 1px solid #ddd;">5 free summaries</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Then one-time packs from $9</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Free tier vs genuinely free</h2>
+      <p>Worth separating two things. A <strong>genuinely free tool</strong> has no meaningful cap — Summarize.tech and NotebookLM qualify. A <strong>free tier</strong> is an allowance before payment — NoteGPT, Glasp and YT Summarizer all work this way. Neither is dishonest; they just suit different usage. For a handful of videos a month, free tools win outright. For steady use, the question becomes which paid model you prefer.</p>
+      <p>On that last point: <a href="${P}">YT Summarizer</a> is the option that avoids a subscription entirely — one-time credits from $9 that never expire. More options in <a href="/blog/free-youtube-video-summarizer-ai-tools-2026">free YouTube summarizer tools compared</a>.</p>
+    `,
+  },
+
+  'notegpt-vs-eightify': {
+    title: 'NoteGPT vs Eightify (2026): Which YouTube Summarizer Is Actually Better?',
+    metaDescription: 'NoteGPT vs Eightify compared for 2026 — breadth versus focus, quotas versus weekly caps, pricing, and output quality. Which to pick, and when neither is the right answer.',
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick answer:</strong> Eightify is the better pure YouTube tool — faster, cleaner, summaries appear right on the video page via its extension. NoteGPT is the better all-rounder, handling PDFs, slides and documents alongside video, with mind maps and flashcards. Both are subscriptions, and both meter you: Eightify caps free summaries per week, NoteGPT applies quotas that persist on paid plans.</p>
+
+      <h2>Head to head</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;"></th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">NoteGPT</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Eightify</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Focus</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Multi-format (video, PDF, slides)</td><td style="padding: 0.75rem; border: 1px solid #ddd;">YouTube only</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Interface</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Web app</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Browser extension, in-page</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Limits</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Quotas, incl. on paid plans</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Weekly cap on free tier</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Extras</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Mind maps, flashcards</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Clean key-point output</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Works on mobile</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Yes (web)</td><td style="padding: 0.75rem; border: 1px solid #ddd;">No (extension)</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Pricing</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription ~$100+/yr</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription ~$60–120/yr</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Pick NoteGPT if...</h2>
+      <p>You are a student or researcher whose material spans formats — lecture videos plus course PDFs plus slide decks — and you want flashcards or mind maps. The breadth genuinely earns the price if you use it.</p>
+
+      <h2>Pick Eightify if...</h2>
+      <p>You only summarize YouTube, work on a desktop, and want the summary to appear on the video page without switching tabs. It does one job with less friction than NoteGPT.</p>
+
+      <h2>Pick neither if...</h2>
+      <p>You summarize YouTube regularly, dislike subscriptions, need it to work on your phone, or keep hitting caps. Both tools meter you and both bill monthly. <a href="${P}">YT Summarizer</a> is the third option: YouTube-only like Eightify, web-based like NoteGPT (so it works on mobile and locked-down work laptops), and priced as one-time credits — 5 free, then from $9, never expiring, no subscription.</p>
+      <p>Deeper dives: <a href="/blog/notegpt-review">NoteGPT review</a>, <a href="/blog/eightify-review">Eightify review</a>, and <a href="/blog/how-much-do-youtube-summarizers-cost-2026">what YouTube summarizers cost in 2026</a>.</p>
+    `,
+  },
+
+  'cancel-notegpt-subscription': {
+    title: 'How to Cancel NoteGPT (and What to Use Instead)',
+    metaDescription: 'Cancelling NoteGPT? How to stop the subscription, what happens to your saved notes, refund considerations, and the alternatives worth moving to — including options with no subscription.',
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick answer:</strong> Cancel from your NoteGPT account settings under the billing or subscription section. Cancelling stops future renewals but normally leaves access running until the end of the period you have already paid for. Export anything you want to keep before that date, because access to saved notes typically reverts to free-tier limits afterwards.</p>
+
+      <h2>Steps</h2>
+      <ol>
+        <li>Sign in and open your account or profile menu.</li>
+        <li>Find <strong>Billing</strong>, <strong>Subscription</strong>, or <strong>Plan</strong>.</li>
+        <li>Choose to cancel or downgrade, and confirm.</li>
+        <li>Check for a confirmation email — keep it as proof.</li>
+        <li>If you subscribed through an app store rather than the website, cancel in that store instead; the website cannot cancel a store subscription.</li>
+      </ol>
+
+      <h2>Before you cancel: export your notes</h2>
+      <p>Summaries and notes generated on a paid plan may become read-only or limited once you drop to free. Export or copy anything you rely on first. This is the step people most often regret skipping.</p>
+
+      <h2>Refunds</h2>
+      <p>Refund eligibility depends on their current terms and how recently you were charged. If you cancelled immediately after an unexpected renewal, contact support and ask directly — many services will refund a recent accidental renewal even where the policy does not require it. Be specific about the charge date.</p>
+
+      <h2>What to move to</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">If you left because...</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Consider</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Quota limits on a paid plan</td><td style="padding: 0.75rem; border: 1px solid #ddd;">A one-time-credit tool with no reset</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">You only used it for YouTube</td><td style="padding: 0.75rem; border: 1px solid #ddd;">A YouTube-only tool at lower cost</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Too expensive for your usage</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Summarize.tech or NotebookLM, free</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">You want to stop subscriptions entirely</td><td style="padding: 0.75rem; border: 1px solid #ddd;">One-time credit packs</td></tr>
+        </tbody>
+      </table>
+
+      <p>If the subscription itself was the problem rather than the product, <a href="${P}">YT Summarizer</a> is worth a look: YouTube summaries with one-time pricing — 5 free, then credits from $9 that never expire, nothing to cancel later. Full options in <a href="/blog/best-notegpt-alternative-2026">best NoteGPT alternatives</a>.</p>
+      <p><em>Cancellation flows change; if the steps above do not match what you see, check NoteGPT's current help documentation.</em></p>
+    `,
+  },
+
+  'eightify-review': {
+    title: 'Eightify Review 2026: Is the Subscription Worth It?',
+    metaDescription: 'An honest Eightify review for 2026 — output quality, the weekly free limit, extension-only drawbacks, and whether the subscription earns its price for how much you actually watch.',
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick verdict:</strong> Eightify is one of the slickest YouTube summarizers available — summaries appear directly on the video page, output is clean and well-structured, and it is genuinely fast. Its two real limitations are structural rather than quality-related: it is a browser extension, so it does not work on phones or locked-down work machines, and it is a subscription with a weekly cap on the free tier.</p>
+
+      <h2>What it does well</h2>
+      <ul>
+        <li><strong>In-page experience.</strong> No tab switching — the summary appears alongside the video, which is the smoothest workflow of any tool in the category.</li>
+        <li><strong>Clean output.</strong> Key points are well-organised and readable, with timestamps to jump into the video.</li>
+        <li><strong>Speed.</strong> Summaries arrive quickly on standard-length videos.</li>
+        <li><strong>Polish.</strong> It feels like a finished product rather than a side project.</li>
+      </ul>
+
+      <h2>The limitations</h2>
+      <p><strong>Extension-only.</strong> Browser extensions do not run on iOS, so there is no iPhone or iPad use, and many workplaces and schools block extension installs. If you watch YouTube on your phone, this rules it out — see <a href="/blog/youtube-summarizer-not-working-iphone">summarizing on iPhone</a>.</p>
+      <p><strong>Weekly cap on free.</strong> The free tier allows a handful of summaries per week, and it often fails quietly at the limit rather than explaining why, which reads like a malfunction. That confusion is the most common reason people search for fixes — covered in <a href="/blog/eightify-not-working">Eightify not working</a>.</p>
+      <p><strong>Fragility.</strong> In-page extensions depend on YouTube's layout. When YouTube ships a redesign or Chrome changes extension policy, tools like this can break until patched.</p>
+      <p><strong>Recurring cost.</strong> Roughly $60–120 a year depending on plan, charged whether you summarize three videos that month or three hundred.</p>
+
+      <h2>Is it worth it?</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Your situation</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Verdict</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Desktop Chrome, daily YouTube learner</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Worth it — best-in-class experience</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Mostly watch on your phone</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Not usable</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Work laptop blocks extensions</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Not usable</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Bursty usage — heavy some months, none others</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Poor value; consider pay-once</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The alternative if the model does not suit you</h2>
+      <p>Nothing here is a knock on Eightify's output — it is good. The question is whether a monthly subscription tied to a desktop extension fits how you actually watch. <a href="${P}">YT Summarizer</a> takes the opposite approach: a web app that works on any device including phones, with one-time credits — 5 free, then from $9, never expiring. You lose the in-page convenience and gain device freedom and no recurring bill.</p>
+      <p>See also: <a href="/blog/eightify-alternative-best-youtube-summarizers-without-subscription">Eightify alternatives without a subscription</a> and <a href="/blog/eightify-vs-ytsummarizer-which-youtube-summarizer-is-worth-it">Eightify vs YT Summarizer</a>.</p>
+      <p><em>Verify current pricing and free-tier limits on Eightify's site — these change.</em></p>
+    `,
+  },
+
+  'eightify-pricing': {
+    title: 'Eightify Pricing 2026: Plans, Free Limits, and Cheaper Alternatives',
+    metaDescription: "Eightify pricing explained for 2026 — what the free tier includes, what paid plans cost per year, and how the total compares with free and one-time-payment alternatives.",
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick answer:</strong> Eightify is a subscription, typically in the $5–10 per month range depending on plan and billing period, which works out to roughly $60–120 a year. The free tier gives you a small number of summaries per week — enough to evaluate it, not enough for regular use. There is no one-time purchase option.</p>
+
+      <h2>What the free tier includes</h2>
+      <p>A handful of summaries per week, resetting weekly. It is designed as an evaluation allowance. Notably, when you exhaust it the tool often just stops working rather than displaying a clear limit message, which is why many users assume it is broken — see <a href="/blog/eightify-not-working">Eightify not working</a>.</p>
+
+      <h2>What paid unlocks</h2>
+      <ul>
+        <li>Removal of the weekly summary cap</li>
+        <li>Longer-video handling on higher tiers</li>
+        <li>Additional output options and languages</li>
+      </ul>
+
+      <h2>The yearly maths</h2>
+      <p>Subscriptions are easiest to judge annually. At roughly $8/month you are committing about $96 a year, charged regardless of usage. That is good value if you summarize several videos weekly, every month. It is poor value if your usage is seasonal — heavy during exam term or a research project, dormant otherwise — because you pay identically in the quiet months.</p>
+
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Option</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Structure</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Year one</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Eightify</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription</td><td style="padding: 0.75rem; border: 1px solid #ddd;">~$60–120</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">NoteGPT</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription + quotas</td><td style="padding: 0.75rem; border: 1px solid #ddd;">~$100+</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Summarize.tech</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Free</td><td style="padding: 0.75rem; border: 1px solid #ddd;">$0</td></tr>
+          <tr style="background: #fff8f9;"><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>YT Summarizer</strong></td><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>One-time credits</strong></td><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>$9–$49 once</strong></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Cost per summary</h2>
+      <p>The metric that actually matters. A $8/month plan used for 20 videos costs 40 cents per summary; used for 3 videos in a slow month, $2.67 each. One-time credits are fixed: <a href="${P}">YT Summarizer</a>'s $19 pack is 200 summaries at under 10 cents each, whenever you use them, with no expiry.</p>
+      <p>Related: <a href="/blog/how-much-do-youtube-summarizers-cost-2026">what every YouTube summarizer costs in 2026</a>.</p>
+      <p><em>Prices shift with promotions — check Eightify's pricing page for current figures.</em></p>
+    `,
+  },
+
+  'eightify-free-limits': {
+    title: 'Is Eightify Free? Free Tier Limits and Free Alternatives (2026)',
+    metaDescription: "Eightify's free tier explained — how many summaries you get, how often it resets, and what happens when you hit the cap. Plus genuinely free alternatives for YouTube summaries.",
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick answer:</strong> Eightify is free to try but not free to use regularly. The free tier provides a small number of YouTube summaries per week, then stops until the weekly reset. It is a trial allowance rather than a permanently free tool, and there is no one-time purchase — continued use means a subscription.</p>
+
+      <h2>What happens when you hit the limit</h2>
+      <p>This trips people up: rather than a clear "you have used your free summaries this week" message, the tool frequently just fails to produce output. Users reasonably conclude it is broken and start reinstalling the extension. If Eightify worked yesterday and not today, the weekly cap is the first thing to check — details in <a href="/blog/eightify-not-working">Eightify not working: 7 causes and fixes</a>.</p>
+
+      <h2>Genuinely free alternatives</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Tool</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">How free</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Tradeoff</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Summarize.tech</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Fully free, no account</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Basic paragraph output</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">NotebookLM</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Free</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Setup per video; research-oriented</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">YouTube transcript + ChatGPT</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Free</td><td style="padding: 0.75rem; border: 1px solid #ddd;">4–6 minutes of manual work per video</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Glasp</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Free tier</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Daily cap; desktop extension only</td></tr>
+        </tbody>
+      </table>
+
+      <h2>If free is not enough but a subscription is too much</h2>
+      <p>This is the gap most people in this search are actually in: the free caps are too tight, but $8 every month for occasional use feels wrong. One-time credits sit between the two — <a href="${P}">YT Summarizer</a> gives 5 free summaries, then packs from $9 with credits that never expire and no renewal. Use them across a year if that is your pace; nothing resets and nothing lapses.</p>
+      <p>More: <a href="/blog/eightify-alternative-best-youtube-summarizers-without-subscription">Eightify alternatives without a subscription</a> and <a href="/blog/free-youtube-video-summarizer-ai-tools-2026">what is genuinely free vs free trial</a>.</p>
+    `,
+  },
+
+  'glasp-review': {
+    title: 'Glasp Review 2026: Excellent Highlighter, Limited Summarizer',
+    metaDescription: "An honest Glasp review for 2026 — what it is genuinely great at (social highlighting, building a knowledge base) and why people expecting a one-click YouTube summarizer are disappointed.",
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick verdict:</strong> Glasp is a very good social highlighting and knowledge-capture tool that also does YouTube transcripts and some AI summarization. If you arrived expecting a one-click summarizer, you will likely be underwhelmed — that is a secondary feature, not the core product. Judged as what it actually is, a highlighter and personal knowledge base, it is strong.</p>
+
+      <h2>What Glasp is genuinely good at</h2>
+      <ul>
+        <li><strong>Highlighting across the web.</strong> Mark passages on articles and YouTube transcripts, and they sync to your library.</li>
+        <li><strong>Building a knowledge base.</strong> Highlights accumulate into something searchable and exportable, which pairs well with Obsidian or Notion.</li>
+        <li><strong>The social layer.</strong> Seeing what others highlighted on the same content is genuinely useful and unusual.</li>
+        <li><strong>Free tier.</strong> Generous for highlighting.</li>
+      </ul>
+
+      <h2>Where it disappoints summarizer-seekers</h2>
+      <p>The core workflow assumes you are reading and curating. If your goal is "tell me what this video said so I do not have to watch it," the manual highlighting step is the opposite of what you want. AI summaries exist but are capped on the free tier and are not the product's centre of gravity.</p>
+      <p>It is also extension-based, so no iPhone use, and the sidebar can fail after YouTube layout changes — see <a href="/blog/glasp-summary-not-working">Glasp summary not working</a>.</p>
+
+      <h2>Glasp vs a dedicated summarizer</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Job to be done</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Better tool</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Curate exact quotes into a knowledge base</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Glasp</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">See what others found notable</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Glasp</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Decide in 60 seconds whether to watch</td><td style="padding: 0.75rem; border: 1px solid #ddd;">A dedicated summarizer</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Summarize on a phone</td><td style="padding: 0.75rem; border: 1px solid #ddd;">A web-based summarizer</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Using both</h2>
+      <p>They are complementary rather than competing. A common workflow: summarize first to triage what deserves attention, then use Glasp to highlight and file the few pieces worth keeping. <a href="${P}">YT Summarizer</a> handles the triage half — paste a URL, get structured key points in about a minute, 5 free then one-time credits from $9 that never expire.</p>
+      <p>See also: <a href="/blog/glasp-alternative-youtube-summarizer">Glasp alternatives for YouTube summarization</a>.</p>
+    `,
+  },
+
+  'glasp-vs-notegpt': {
+    title: 'Glasp vs NoteGPT (2026): Highlighting or Summarizing?',
+    metaDescription: 'Glasp vs NoteGPT compared — one is a social highlighter for building a knowledge base, the other a multi-format AI summarizer with quotas. Which fits your workflow, and when neither does.',
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick answer:</strong> These tools solve different problems despite overlapping. Glasp is a highlighting and knowledge-capture tool — you read and mark passages, and it builds a searchable library. NoteGPT is an AI summarizer across video, PDFs and slides — it reads for you and returns structured notes. Pick Glasp if you want to curate; pick NoteGPT if you want to skip reading.</p>
+
+      <h2>The core difference</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;"></th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Glasp</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">NoteGPT</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Core job</td><td style="padding: 0.75rem; border: 1px solid #ddd;">You highlight, it organises</td><td style="padding: 0.75rem; border: 1px solid #ddd;">AI summarizes for you</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Content types</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Web pages, YouTube transcripts</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Video, PDF, slides, documents</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Delivery</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Browser extension</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Web app</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Limits</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Daily cap on free summaries</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Quotas, incl. on paid plans</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Mobile</td><td style="padding: 0.75rem; border: 1px solid #ddd;">No</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Yes (web)</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Social features</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Yes — see others' highlights</td><td style="padding: 0.75rem; border: 1px solid #ddd;">No</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Pick Glasp if</h2>
+      <p>You are building a personal knowledge base and value exact quotes in your own words over machine summaries. Researchers, writers and note-takers who already use Obsidian or Notion tend to prefer this.</p>
+
+      <h2>Pick NoteGPT if</h2>
+      <p>Your material spans formats and you want AI to do the reading — lecture videos, course PDFs and slide decks all summarized in one place, with flashcards and mind maps. Just budget for the quota behaviour described in <a href="/blog/notegpt-review">our NoteGPT review</a>.</p>
+
+      <h2>Pick neither if</h2>
+      <p>You mainly summarize YouTube, want it on your phone, and would rather not subscribe. Glasp cannot run on mobile at all; NoteGPT bills monthly with quotas. <a href="${P}">YT Summarizer</a> is YouTube-focused, web-based so it works on any device, and priced as one-time credits — 5 free, then from $9, never expiring.</p>
+      <p>Related: <a href="/blog/glasp-review">Glasp review</a> and <a href="/blog/best-notegpt-alternative-2026">NoteGPT alternatives</a>.</p>
+    `,
+  },
+
+  'summarize-tech-review': {
+    title: 'Summarize.tech Review 2026: Genuinely Free, With Real Limits',
+    metaDescription: "An honest Summarize.tech review — it is properly free with no account required, which is rare. Here is what the output is actually like, where it struggles, and when to use something else.",
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick verdict:</strong> Summarize.tech is the most frictionless free YouTube summarizer available — no account, no extension, no payment, just paste a URL. That genuinely matters and few tools match it. The tradeoff is output depth: you get section-by-section paragraph summaries rather than structured key points, and long videos are handled less reliably than by paid tools.</p>
+
+      <h2>What it gets right</h2>
+      <ul>
+        <li><strong>No account.</strong> Nothing to sign up for, no email, no card. Rare in this category.</li>
+        <li><strong>Genuinely free.</strong> Not a trial dressed as a free tier.</li>
+        <li><strong>Fast.</strong> Results arrive quickly on standard videos.</li>
+        <li><strong>Works anywhere.</strong> Web-based, so phones and work laptops are fine.</li>
+      </ul>
+
+      <h2>Where it falls short</h2>
+      <p><strong>Output format.</strong> Summaries are paragraphs organised by time segment. Readable, but not the scannable overview-plus-key-points structure that makes good study notes.</p>
+      <p><strong>Depth.</strong> It tells you roughly what was discussed, less what specifically was concluded. For deciding whether to watch, fine. For replacing watching, thinner.</p>
+      <p><strong>Long videos.</strong> Very long content is handled less consistently — worth verifying coverage of the final third. See <a href="/blog/youtube-summary-cut-off-long-videos">why summaries get truncated</a>.</p>
+      <p><strong>No library.</strong> Nothing is saved, so you manage your own notes.</p>
+
+      <h2>When to use it</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Use case</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Good fit?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Quick gist before committing to a video</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Yes — ideal</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">One-off, do not want to sign up</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Study notes you will revise from</td><td style="padding: 0.75rem; border: 1px solid #ddd;">No — too unstructured</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Saved library across many videos</td><td style="padding: 0.75rem; border: 1px solid #ddd;">No — nothing is stored</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Three-hour podcasts</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Verify coverage first</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The honest recommendation</h2>
+      <p>If free is the requirement, use it — nothing else matches the zero-friction experience, and paying for a tool you use twice a month makes no sense. If you have outgrown it and want structured output and a saved library, <a href="${P}">YT Summarizer</a> is the step up without a subscription: 5 free summaries, then one-time credits from $9 that never expire.</p>
+      <p>See also: <a href="/blog/youtube-summarizer-vs-summarize-tech">YT Summarizer vs Summarize.tech</a>.</p>
+    `,
+  },
+
+  'summarize-tech-alternative': {
+    title: 'Summarize.tech Alternatives 2026: Better Output Without a Subscription',
+    metaDescription: "Outgrown Summarize.tech? Alternatives that give structured key points, a saved library and reliable long-video handling — including free options and one-time-payment tools.",
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick answer:</strong> People look for a Summarize.tech alternative for three reasons: they want structured key points instead of paragraph blocks, they want summaries saved rather than lost on refresh, or long videos are not being covered properly. NotebookLM is the best free step up; YT Summarizer is the best option if you want structure and a library without a monthly subscription.</p>
+
+      <h2>1. NotebookLM — best free upgrade</h2>
+      <p>Google's NotebookLM is free and considerably more capable: add a YouTube URL as a source, then ask specific questions, generate study guides, and cross-reference against other material. The cost is setup time — creating a notebook per topic is heavier than pasting a URL. Best when a video is one source among several. See <a href="/blog/youtube-summarizer-vs-notebooklm">the NotebookLM comparison</a>.</p>
+
+      <h2>2. YT Summarizer — structure and a library, no subscription</h2>
+      <p><a href="${P}">YT Summarizer</a> keeps the paste-a-URL simplicity but returns an overview, key points and takeaways rather than time-segment paragraphs, and saves everything to a personal library. It processes the full transcript so long podcasts are not truncated. Pricing is one-time: 5 free summaries, then 50 for $9, 200 for $19, or 1,000 for $49 — credits never expire, no subscription.</p>
+
+      <h2>3. Glarity — free browser extension</h2>
+      <p>Puts summaries on the YouTube page itself. Free, convenient on desktop Chrome, but does not work on mobile and can break when YouTube updates its layout.</p>
+
+      <h2>4. Eightify — polished, subscription</h2>
+      <p>The most refined in-page experience if you are willing to pay monthly and work on desktop. Free tier is capped weekly. Details in our <a href="/blog/eightify-review">Eightify review</a>.</p>
+
+      <h2>Comparison</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Tool</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Structured output</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Saved library</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Summarize.tech</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Paragraphs only</td><td style="padding: 0.75rem; border: 1px solid #ddd;">No</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Free</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">NotebookLM</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Yes (notebooks)</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Free</td></tr>
+          <tr style="background: #fff8f9;"><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>YT Summarizer</strong></td><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Yes</strong></td><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Yes</strong></td><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>5 free, then from $9 once</strong></td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Glarity</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Basic</td><td style="padding: 0.75rem; border: 1px solid #ddd;">No</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Free extension</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Eightify</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Limited</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription</td></tr>
+        </tbody>
+      </table>
+
+      <p>If Summarize.tech's price is what you value most, staying is reasonable — free is hard to beat. If output quality is the sticking point, the upgrade does not have to mean a monthly bill.</p>
+    `,
+  },
 }
 
 export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
+  // ===== Batch 2: competitor-brand cluster =====
+  'notegpt-review': [
+    { q: `Is NoteGPT worth it in 2026?`, a: `It is worth it if you summarize across formats — YouTube, PDFs, slides — and want extras like mind maps and flashcards. It is poor value if you only summarize YouTube, because you pay monthly for features you never use and still face usage quotas.` },
+    { q: `What is the main complaint about NoteGPT?`, a: `Quota limits. Plans marketed as unlimited carry internal usage quotas, so paying users can be stopped mid-session with an "insufficient quota" message. This is the most frequently raised issue in user reviews.` },
+    { q: `Is NoteGPT good for YouTube summaries specifically?`, a: `The output quality is solid, but for YouTube-only use a focused tool is cheaper and avoids the quota structure. NoteGPT's advantage is breadth across content types, which is irrelevant if you only paste video links.` },
+    { q: `What is the best alternative to NoteGPT?`, a: `For YouTube specifically, YT Summarizer uses one-time credits (5 free, then from $9, never expiring, no subscription). NotebookLM is the strongest free alternative for research across multiple sources.` },
+  ],
+  'notegpt-pricing': [
+    { q: `How much does NoteGPT cost?`, a: `NoteGPT is a subscription with a limited free tier and paid tiers billed monthly or annually, typically working out to roughly $100 or more per year. Check their pricing page for current figures, as plans in this category change often.` },
+    { q: `Does NoteGPT's unlimited plan really have no limits?`, a: `No. Usage quotas apply to specific operations even on plans marketed as unlimited, which is why paying users sometimes hit "insufficient quota" errors. "Unlimited" describes the plan name rather than genuinely uncapped usage.` },
+    { q: `Is there a one-time payment option for NoteGPT?`, a: `No, NoteGPT is subscription-only. If you want to avoid recurring billing for YouTube summaries, tools using one-time credit packs — such as YT Summarizer at $9 to $49 — are the alternative.` },
+    { q: `Is NoteGPT cheaper than Eightify?`, a: `Generally no. Eightify typically runs about $60–120 a year versus roughly $100+ for NoteGPT, though NoteGPT covers more content types. Compare against what you actually use rather than headline price.` },
+  ],
+  'notegpt-free-limits': [
+    { q: `Is NoteGPT free?`, a: `NoteGPT has a free plan, but it is a limited monthly allowance rather than an unrestricted free tool. It is enough to evaluate output quality and handle occasional use; regular use exhausts it and prompts an upgrade.` },
+    { q: `How many free summaries does NoteGPT give?`, a: `A limited monthly quota that varies by operation type — video summaries, document processing and AI chat draw on separate counters. Longer videos consume more of the allowance than short clips.` },
+    { q: `What is a genuinely free alternative to NoteGPT?`, a: `Summarize.tech is fully free with no account required, and NotebookLM is free with more depth for research. Both avoid quota walls entirely, with the tradeoff being less structured output or slower per-video setup.` },
+    { q: `What is the difference between a free tier and a genuinely free tool?`, a: `A genuinely free tool has no meaningful cap on usage. A free tier is an allowance before payment. NoteGPT, Glasp and YT Summarizer offer free tiers; Summarize.tech and NotebookLM are genuinely free.` },
+  ],
+  'notegpt-vs-eightify': [
+    { q: `Which is better, NoteGPT or Eightify?`, a: `Eightify is better for pure YouTube use — faster, cleaner, and summaries appear directly on the video page. NoteGPT is better if you also summarize PDFs and slides, or want mind maps and flashcards. Both are subscriptions that meter usage.` },
+    { q: `Is Eightify cheaper than NoteGPT?`, a: `Usually yes — Eightify typically runs about $60–120 a year against roughly $100+ for NoteGPT. But NoteGPT covers more content types, so compare on what you will actually use rather than headline price.` },
+    { q: `Do NoteGPT or Eightify work on iPhone?`, a: `NoteGPT does, because it is a web app. Eightify does not, because it is a browser extension and extensions do not run on iOS. If mobile matters, that alone decides it.` },
+    { q: `Is there an alternative to both without a subscription?`, a: `Yes. YT Summarizer is YouTube-focused like Eightify and web-based like NoteGPT, but uses one-time credit packs — 5 free summaries, then from $9 with credits that never expire and no recurring charge.` },
+  ],
+  'cancel-notegpt-subscription': [
+    { q: `How do I cancel my NoteGPT subscription?`, a: `Sign in, open your account or profile menu, find Billing or Subscription, and choose cancel or downgrade. If you subscribed through an app store rather than the website, you must cancel in that store instead.` },
+    { q: `Will I lose my notes if I cancel NoteGPT?`, a: `Access to saved notes typically reverts to free-tier limits after cancellation, so export or copy anything you rely on before the paid period ends. This is the step people most often regret skipping.` },
+    { q: `Can I get a refund from NoteGPT?`, a: `Refund eligibility depends on their current terms and how recently you were charged. If you were caught by an unexpected renewal, contact support directly and cite the charge date — many services refund recent accidental renewals even when not strictly required.` },
+    { q: `What should I use instead of NoteGPT?`, a: `If quotas drove you away, a one-time-credit tool avoids the problem: YT Summarizer gives 5 free summaries then packs from $9 with no expiry and nothing to cancel. If cost was the issue, Summarize.tech and NotebookLM are free.` },
+  ],
+  'eightify-review': [
+    { q: `Is Eightify worth the subscription?`, a: `Worth it if you use desktop Chrome daily and summarize YouTube often — the in-page experience is the smoothest in the category. Poor value if you watch mostly on your phone (extensions do not run on iOS), your work laptop blocks extensions, or your usage is seasonal.` },
+    { q: `Does Eightify work on iPhone?`, a: `No. Eightify is a browser extension, and iOS does not support Chrome extensions. For phone use you need a web-based summarizer that runs as an ordinary website.` },
+    { q: `How good is Eightify's summary quality?`, a: `Genuinely good — clean, well-structured key points with timestamps, delivered quickly. Output quality is not the weak point; the limitations are the subscription model, the weekly free cap, and being desktop-only.` },
+    { q: `What is the best Eightify alternative?`, a: `For a similar YouTube focus without a subscription, YT Summarizer uses one-time credits (5 free, then from $9, never expiring) and works on any device including phones. For free, Summarize.tech and NotebookLM are the main options.` },
+  ],
+  'eightify-pricing': [
+    { q: `How much does Eightify cost?`, a: `Eightify is a subscription, typically in the $5–10 per month range depending on plan and billing period, which works out to roughly $60–120 a year. There is no one-time purchase option.` },
+    { q: `Does Eightify have a free version?`, a: `There is a free tier allowing a small number of summaries per week, resetting weekly. It is designed for evaluation rather than regular use, and it often fails silently at the cap rather than showing a clear message.` },
+    { q: `Is Eightify worth the money?`, a: `It depends on consistency of use. At roughly $8 a month, 20 videos costs 40 cents per summary; three videos in a slow month costs $2.67 each. Subscriptions reward steady monthly use and punish seasonal use.` },
+    { q: `Is there a cheaper alternative to Eightify?`, a: `Yes. Summarize.tech and NotebookLM are free. YT Summarizer uses one-time credits — $19 for 200 summaries works out under 10 cents each with no renewal, versus roughly $96 a year for a typical Eightify plan.` },
+  ],
+  'eightify-free-limits': [
+    { q: `Is Eightify free?`, a: `Eightify is free to try but not free to use regularly. The free tier allows a small number of YouTube summaries per week, then stops until the weekly reset. Continued use requires a subscription; there is no one-time purchase.` },
+    { q: `What happens when I hit Eightify's free limit?`, a: `It often simply stops producing output rather than showing a clear limit message, which leads people to assume the extension is broken and start reinstalling it. If it worked yesterday and not today, check the weekly cap first.` },
+    { q: `How many free summaries does Eightify give per week?`, a: `A small weekly allowance intended for evaluation. Exact numbers change with their plans, so check Eightify's current pricing page — but it is not enough for daily use.` },
+    { q: `What is a free alternative to Eightify?`, a: `Summarize.tech is fully free with no account, and NotebookLM is free with more depth. Copying a YouTube transcript into ChatGPT also works free, at a cost of 4–6 minutes of manual work per video.` },
+  ],
+  'glasp-review': [
+    { q: `Is Glasp a good YouTube summarizer?`, a: `Glasp is a very good social highlighter and knowledge-capture tool that also offers YouTube transcripts and some AI summarization. If you want one-click summaries as the main output, it will disappoint — that is a secondary feature, not the core product.` },
+    { q: `What is Glasp actually best at?`, a: `Highlighting passages across web pages and YouTube transcripts, syncing them into a searchable personal library, and seeing what other people highlighted on the same content. It pairs well with Obsidian or Notion.` },
+    { q: `Does Glasp work on mobile?`, a: `No. Glasp is a browser extension, and extensions do not run on iOS or standard mobile Chrome. It is desktop-only.` },
+    { q: `Should I use Glasp or a dedicated summarizer?`, a: `They complement each other. Use a summarizer to triage what deserves your attention, then Glasp to highlight and file the few pieces worth keeping. If you only want the triage step, a dedicated summarizer alone is simpler.` },
+  ],
+  'glasp-vs-notegpt': [
+    { q: `What is the difference between Glasp and NoteGPT?`, a: `Glasp is a highlighting tool — you read and mark passages, and it builds a searchable library. NoteGPT is an AI summarizer that reads for you across video, PDFs and slides. Glasp is for curating; NoteGPT is for skipping the reading.` },
+    { q: `Which is better for YouTube, Glasp or NoteGPT?`, a: `NoteGPT, if your goal is a summary without watching. Glasp requires you to work through the transcript yourself, and its AI summaries are capped on the free tier and secondary to the highlighting workflow.` },
+    { q: `Are Glasp and NoteGPT free?`, a: `Both have free tiers with limits — Glasp caps daily summaries, NoteGPT applies monthly quotas. Neither is genuinely unlimited on free, and NoteGPT's quotas persist on paid plans.` },
+    { q: `Is there a better option for YouTube only?`, a: `If YouTube is your sole use case and you want it on mobile without a subscription, YT Summarizer is web-based with one-time credits — 5 free, then from $9, never expiring. Glasp cannot run on phones; NoteGPT bills monthly.` },
+  ],
+  'summarize-tech-review': [
+    { q: `Is Summarize.tech actually free?`, a: `Yes, genuinely free with no account, no extension and no payment — you paste a URL and get a summary. That is rare in this category, where most "free" offerings are trials of 3–10 summaries.` },
+    { q: `How good is Summarize.tech's output?`, a: `Adequate for a quick gist. You get section-by-section paragraph summaries rather than structured overview-and-key-points, so it tells you roughly what was discussed more than what was concluded. Fine for triage, thin for study notes.` },
+    { q: `Does Summarize.tech handle long videos?`, a: `Less consistently than paid tools. On very long content, check whether the summary covers the final third before relying on it — silent truncation is a common failure mode across free tools.` },
+    { q: `When should I use something other than Summarize.tech?`, a: `When you need structured key points you will revise from, a saved library across many videos, or reliable coverage of multi-hour content. YT Summarizer covers those without a subscription — 5 free, then one-time credits from $9.` },
+  ],
+  'summarize-tech-alternative': [
+    { q: `What is the best Summarize.tech alternative?`, a: `NotebookLM is the best free upgrade, offering structured output and the ability to ask questions of the video. YT Summarizer is the best option if you want structured key points and a saved library without a monthly subscription — 5 free, then credits from $9 that never expire.` },
+    { q: `Why do people look for a Summarize.tech alternative?`, a: `Three reasons: they want structured key points rather than paragraph blocks, they want summaries saved instead of lost on refresh, or long videos are not being covered properly.` },
+    { q: `Is there a free alternative to Summarize.tech?`, a: `Yes — NotebookLM is free and more capable, though it takes more setup per video. Glarity is a free browser extension that puts summaries on the YouTube page, but it is desktop-only.` },
+    { q: `Is Summarize.tech good enough to keep using?`, a: `If free is your priority and you mainly need a quick gist before deciding whether to watch, yes — nothing matches its zero-friction experience. Upgrade only if output structure or a saved library is what you are missing.` },
+  ],
+
   // ===== Batch 1: troubleshooting cluster =====
   'eightify-not-working': [
     { q: `Why is Eightify not working?`, a: `The three most common causes are: the video has no captions (Eightify reads the transcript, not the audio), you have reached the free tier's weekly summary limit, or the browser extension broke after a Chrome or YouTube update. Test a short popular English video — if that works, the problem is the original video rather than the tool.` },
