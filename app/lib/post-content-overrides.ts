@@ -2653,9 +2653,545 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>Yes. YT Summarizer uses one-time credit packs instead of a subscription: 5 summaries free, then 50 for $9, 200 for $19, or 1,000 for $49. Credits never expire and one credit covers a video of any length, so a three-hour lecture costs the same as a five-minute clip.</p>
 `,
   },
+
+  // ===== Batch 1: troubleshooting & competitor-problem cluster (Aug 2026) =====
+  // Narrow, low-competition queries. Each opens with a direct answer block so the
+  // answer is extractable by LLMs and featured snippets.
+
+  'eightify-not-working': {
+    title: 'Eightify Not Working? 7 Causes and Fixes (2026)',
+    metaDescription: 'Eightify not summarizing, stuck loading, or showing an error? The 7 real causes — missing captions, weekly limit, extension conflicts, YouTube updates — each with the fix.',
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick answer:</strong> Eightify usually stops working for one of three reasons — the video has no captions, you have hit the free tier's weekly summary limit, or the browser extension broke after a Chrome or YouTube update. Test with a short, popular English video: if that summarizes fine, the problem is the original video; if it also fails, the problem is the extension or your account limit.</p>
+
+      <h2>1. The video has no captions</h2>
+      <p>Eightify reads the transcript, not the audio or picture. If the creator disabled captions and YouTube has not auto-generated them, there is nothing to summarize. Check by opening the video description, clicking <strong>"...more"</strong>, and looking for <strong>Show transcript</strong>. No transcript button means no summary — from any transcript-based tool.</p>
+      <p><strong>Fix:</strong> pick a different video, or wait a few hours if the upload is very recent — auto-captions typically appear within 1–4 hours.</p>
+
+      <h2>2. You have hit the free weekly limit</h2>
+      <p>Eightify's free tier caps how many summaries you can generate per week. When you hit the cap it often fails quietly rather than showing a clear message, which reads like a bug. Check your account status in the extension popup.</p>
+      <p><strong>Fix:</strong> wait for the weekly reset, upgrade, or move to a tool without a recurring cap. This limit is the single most common reason people look for an <a href="/blog/eightify-alternative-best-youtube-summarizers-without-subscription">Eightify alternative</a>.</p>
+
+      <h2>3. A Chrome or YouTube update broke the extension</h2>
+      <p>Extensions that inject into the YouTube page depend on YouTube's layout staying stable. When YouTube changes its DOM, or Chrome tightens extension permissions, extension-based summarizers break until the developer ships an update.</p>
+      <p><strong>Fix:</strong> update the extension, restart Chrome, then remove and reinstall it if the button still does not appear. If it keeps breaking, a web-based tool avoids this class of failure entirely because there is nothing injected into the page.</p>
+
+      <h2>4. The video is too long and the summary truncates</h2>
+      <p>Very long videos produce transcripts that exceed the model's context window. Some tools handle this by chunking; others silently summarize only the first portion. If your summary of a two-hour podcast only covers the first half hour, this is why — and it is the most dangerous failure because the output looks complete. See <a href="/blog/youtube-summary-cut-off-long-videos">why YouTube summaries get cut off</a>.</p>
+
+      <h2>5. The video is private, unlisted, or age-restricted</h2>
+      <p>Tools can only read publicly accessible videos. Private, members-only, and age-restricted videos are blocked at the source. More detail in <a href="/blog/private-age-restricted-video-summarize">summarizing private and age-restricted videos</a>.</p>
+
+      <h2>6. Regional or account issues</h2>
+      <p>Some videos are geo-restricted, and some extensions behave differently when you are signed out of YouTube or using a VPN. Try the same video in a normal window, signed in, without a VPN.</p>
+
+      <h2>7. Another extension is conflicting</h2>
+      <p>Ad blockers, privacy extensions, and other YouTube add-ons can block the scripts a summarizer needs. Disable other extensions one at a time to identify the conflict.</p>
+
+      <h2>Quick diagnosis table</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Symptom</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Most likely cause</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Fix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Button missing on YouTube page</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Extension broke after update</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Update or reinstall extension</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Spins forever, no output</td><td style="padding: 0.75rem; border: 1px solid #ddd;">No captions on the video</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Check "Show transcript" exists</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Worked yesterday, not today</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Weekly free limit reached</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Wait for reset or switch tools</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Summary stops halfway</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Long-video truncation</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Use a tool that chunks transcripts</td></tr>
+        </tbody>
+      </table>
+
+      <h2>If it keeps breaking</h2>
+      <p>Extension-based tools have a structural fragility: they live inside a page that Google keeps changing. A web app has fewer moving parts — nothing is injected, so a YouTube redesign cannot break it, and it works on mobile and on managed work laptops where extensions are blocked.</p>
+      <p><a href="${P}">YT Summarizer</a> is a YouTube summarizer with one-time pricing — credits from $9 that never expire, no subscription. You paste a URL instead of installing anything, five summaries are free, and there is no weekly cap to hit. If Eightify's limit is what is actually blocking you rather than a bug, that difference matters more than any fix above.</p>
+    `,
+  },
+
+  'notegpt-not-working-quota': {
+    title: 'NoteGPT Not Working or "Insufficient Quota"? Causes and Fixes (2026)',
+    metaDescription: 'NoteGPT showing "insufficient quota" even on a paid plan, or failing to summarize? What the quota errors actually mean, how to fix each one, and the alternatives without quotas.',
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick answer:</strong> Most NoteGPT failures are quota-related rather than technical. NoteGPT's plans — including ones marketed as unlimited — carry internal usage quotas, and when you exhaust one you get an "insufficient quota" or "insufficient basic quota" message mid-session. The other common causes are videos without captions and videos too long for the plan's limits.</p>
+
+      <h2>"Insufficient quota" on a paid plan</h2>
+      <p>This is the most reported NoteGPT problem, and it surprises people because they are paying. Plans marketed as unlimited still meter specific operations, so you can hold a paid subscription and still be told you are out of quota. Check your usage dashboard to see which specific quota is exhausted — it is often a different counter from the one you expected.</p>
+      <p><strong>Fix:</strong> wait for the monthly reset, upgrade a tier, or move to a tool that does not meter this way. If this is a recurring frustration rather than a one-off, see the <a href="/blog/best-notegpt-alternative-2026">best NoteGPT alternatives</a>.</p>
+
+      <h2>The video has no captions</h2>
+      <p>Like every transcript-based tool, NoteGPT needs captions. Open the video, click <strong>"...more"</strong> in the description, and look for <strong>Show transcript</strong>. If it is not there, no transcript-based tool will work on that video. Full explanation in <a href="/blog/youtube-no-transcript-available-fix">"no transcript available" — causes and fixes</a>.</p>
+
+      <h2>Long videos fail or truncate</h2>
+      <p>Longer videos consume more quota and can exceed plan limits, so a two-hour podcast may fail where a ten-minute clip succeeds. Sometimes it fails outright; sometimes it returns a summary covering only part of the video. See <a href="/blog/youtube-summary-cut-off-long-videos">why summaries get cut off</a>.</p>
+
+      <h2>Uploads and PDFs fail but YouTube works (or vice versa)</h2>
+      <p>NoteGPT handles multiple content types, and they draw on different quotas and pipelines. A failure in one does not mean the service is down — test a short YouTube video to isolate whether the problem is service-wide or type-specific.</p>
+
+      <h2>Login, browser, and extension issues</h2>
+      <p>If the site loads but nothing processes, sign out and back in, clear cookies for the domain, or try a different browser. If you use the extension, disable other YouTube extensions to rule out a conflict.</p>
+
+      <h2>Is it you or is it down?</h2>
+      <p>Test the same short, captioned, public English video from a different browser or device. If it works there, the problem is local — cookies, extension conflict, or session. If it fails everywhere and you have quota left, it is likely a service-side issue and waiting is the only fix.</p>
+
+      <h2>The underlying issue: metered pricing</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Model</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">What happens when you use it a lot</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription with quotas (NoteGPT)</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Blocked mid-session until reset, even while paying</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription with weekly caps (Eightify)</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Blocked until the weekly reset</td></tr>
+          <tr style="background: #fff8f9;"><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>One-time credits (YT Summarizer)</strong></td><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>You use the credits you bought; nothing resets or expires</strong></td></tr>
+        </tbody>
+      </table>
+
+      <p>If "insufficient quota" is the error you keep hitting, no troubleshooting step fixes it — the pricing model is the cause. <a href="${P}">YT Summarizer</a> is a YouTube summarizer with one-time pricing: 5 free summaries, then credit packs from $9 that never expire, with no monthly reset and no quota to exhaust. One credit summarizes one video of any length.</p>
+    `,
+  },
+
+  'glasp-summary-not-working': {
+    title: 'Glasp YouTube Summary Not Working? Causes and Fixes (2026)',
+    metaDescription: 'Glasp not showing the YouTube summary or transcript panel? The common causes — daily limit, missing captions, extension conflicts, sidebar not loading — and how to fix each.',
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick answer:</strong> Glasp's YouTube summary usually fails because you have hit the free daily summary limit, the video has no captions, or the extension's sidebar did not load after a YouTube update. Reload the video page first — that resolves the sidebar case, which is the most common one.</p>
+
+      <h2>1. The sidebar or button does not appear</h2>
+      <p>Glasp works through a browser extension that injects a panel into the YouTube page. When YouTube ships a layout change, the injection can fail silently and it looks like the feature vanished.</p>
+      <p><strong>Fix:</strong> reload the page, then update the extension, then restart the browser. A reinstall resolves most stubborn cases.</p>
+
+      <h2>2. You have hit the free daily limit</h2>
+      <p>Glasp's free tier allows a small number of YouTube summaries per day. Once exhausted, further attempts fail — often without an obvious explanation.</p>
+      <p><strong>Fix:</strong> wait for the daily reset or use a tool with a different limit structure. If you regularly hit this ceiling, see <a href="/blog/glasp-alternative-youtube-summarizer">Glasp alternatives for YouTube summarization</a>.</p>
+
+      <h2>3. The video has no captions</h2>
+      <p>Glasp reads the transcript. No captions means no transcript and no summary — check for <strong>Show transcript</strong> under <strong>"...more"</strong> in the description. See <a href="/blog/youtube-no-transcript-available-fix">"no transcript available" fixes</a>.</p>
+
+      <h2>4. It highlights but will not summarize</h2>
+      <p>Worth knowing: Glasp is primarily a social highlighting and annotation tool. Its core workflow is you reading a transcript and marking passages yourself, with AI summarization as a secondary feature. If you expected one-click summaries as the main event, the tool is working as designed — it just is not built around that job.</p>
+
+      <h2>5. Extension conflicts and privacy blockers</h2>
+      <p>Ad blockers and privacy extensions frequently block the scripts required by in-page tools. Disable other extensions one by one to find the culprit.</p>
+
+      <h2>6. It does not work on mobile</h2>
+      <p>Browser extensions do not run on iOS Safari or the standard Chrome mobile app, so any extension-based summarizer is desktop-only. If you need summaries on your phone, you need a web-based tool — see <a href="/blog/youtube-summarizer-not-working-iphone">summarizing on iPhone</a>.</p>
+
+      <h2>When to switch instead of troubleshoot</h2>
+      <p>Two of the causes above — the daily cap and the mobile limitation — are design decisions, not bugs. No amount of reinstalling changes them.</p>
+      <p><a href="${P}">YT Summarizer</a> is a web-based YouTube summarizer with one-time pricing — credits from $9 that never expire, no subscription. There is no extension to break, it runs on phones and locked-down work laptops, and structured summaries are the primary output rather than a side feature. Five summaries are free.</p>
+    `,
+  },
+
+  'youtube-no-transcript-available-fix': {
+    title: '"No Transcript Available" on YouTube? Why It Happens and How to Fix It',
+    metaDescription: 'YouTube says no transcript is available, or the Show transcript button is missing? The four real reasons, what you can actually do about each, and how to summarize the video anyway.',
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick answer:</strong> "No transcript available" means YouTube has no caption track for that video. There are four causes: the creator disabled captions, the video is too new for auto-captions to have generated (usually 1–4 hours), the spoken language is not supported by YouTube's speech recognition, or the video has no speech at all. If the creator disabled captions, no transcript tool or summarizer can recover the text — the data does not exist on YouTube's side.</p>
+
+      <h2>How to confirm captions really are missing</h2>
+      <ol>
+        <li>Open the video and click <strong>"...more"</strong> in the description.</li>
+        <li>Scroll to the bottom of the expanded description.</li>
+        <li>Look for a <strong>Show transcript</strong> button.</li>
+      </ol>
+      <p>If that button is absent, the video genuinely has no caption track — and every transcript tool and transcript-based summarizer will fail on it, not just the one you tried.</p>
+
+      <h2>Cause 1: the creator turned captions off</h2>
+      <p>Creators can disable both community and automatic captions. This is the only cause with no workaround: the text does not exist.</p>
+      <p><strong>What you can do:</strong> find an alternative video on the same topic, or use a tool that transcribes the audio directly with speech recognition rather than reading YouTube's caption track.</p>
+
+      <h2>Cause 2: the video is too new</h2>
+      <p>Auto-captions are generated after upload, not instantly. On a video published minutes ago, the transcript simply is not ready.</p>
+      <p><strong>What you can do:</strong> wait 1–4 hours and try again. This resolves a surprising share of "broken tool" reports.</p>
+
+      <h2>Cause 3: the language is not well supported</h2>
+      <p>YouTube's automatic speech recognition covers major languages well and smaller ones patchily. Heavy accents, poor audio, background music, and code-switching between two languages all reduce the chance that auto-captions generate at all.</p>
+      <p><strong>What you can do:</strong> check whether captions exist in the original language even if not in yours — the transcript panel has a language selector.</p>
+
+      <h2>Cause 4: there is no speech</h2>
+      <p>Music videos, ambient footage, and silent clips have nothing to transcribe. A summarizer cannot help here because there is no verbal content to compress.</p>
+
+      <h2>What still works when captions do exist</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">You want</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Use</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">To read along or check captions exist</td><td style="padding: 0.75rem; border: 1px solid #ddd;">YouTube's own "Show transcript"</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Free</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">The full clean text to copy</td><td style="padding: 0.75rem; border: 1px solid #ddd;"><a href="https://yttranscript.app">YT Transcript</a></td><td style="padding: 0.75rem; border: 1px solid #ddd;">Free</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">The key points without reading</td><td style="padding: 0.75rem; border: 1px solid #ddd;"><a href="${P}">YT Summarizer</a></td><td style="padding: 0.75rem; border: 1px solid #ddd;">5 free, then from $9 once</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The one-line takeaway</h2>
+      <p>If <strong>Show transcript</strong> is missing from YouTube's own menu, the problem is the video, not your tool — switching summarizers will not help. If it is present but your tool still fails, the problem is the tool, and a web-based option that reads the caption track directly will usually work. <a href="${P}">YT Summarizer</a> handles any public captioned video, including long ones, with 5 free summaries and one-time credits from $9 that never expire.</p>
+    `,
+  },
+
+  'youtube-summary-cut-off-long-videos': {
+    title: 'YouTube Summary Cut Off or Incomplete? Why AI Truncates Long Videos',
+    metaDescription: 'Your AI summary only covers the first part of a long video? That is context-window truncation. Why it happens silently, how to spot it, and which tools handle 2h+ videos properly.',
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick answer:</strong> Your summary is incomplete because the video's transcript is longer than the AI model's context window, so the tool processed only the beginning. A two-hour podcast produces roughly 20,000–25,000 words of transcript. Most chatbots and lightweight tools silently drop everything past their limit and return a confident-looking summary of the first 30–60 minutes — with no warning that the rest is missing.</p>
+
+      <h2>Why this is the most dangerous summarization failure</h2>
+      <p>Other failures are obvious: an error message, a spinner, an empty box. Truncation is different because the output looks complete. You read a well-written summary, assume you now know what the video said, and never learn that the conclusion — usually the most valuable part — was never processed.</p>
+
+      <h2>How to spot it in ten seconds</h2>
+      <ul>
+        <li><strong>Check the last point.</strong> Does the summary reference anything from the final third of the video? Scrub to the last ten minutes and see if that material appears.</li>
+        <li><strong>Watch for a hard stop.</strong> Summaries that end mid-argument, with no conclusion or wrap-up, are usually truncated.</li>
+        <li><strong>Count the coverage.</strong> If the timestamps or topics all cluster in the first half, the second half was dropped.</li>
+      </ul>
+
+      <h2>Which methods truncate and which do not</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Method</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Behaviour on a 2h+ video</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Free-tier chatbot + pasted transcript</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Frequently truncates without warning</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Lightweight browser extensions</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Often truncate or fail outright</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Metered tools near a quota</td><td style="padding: 0.75rem; border: 1px solid #ddd;">May shorten output to conserve usage</td></tr>
+          <tr style="background: #fff8f9;"><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Tools that chunk the transcript</strong></td><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Process the full video, then summarize the whole</strong></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Workarounds if you want to keep your current tool</h2>
+      <ol>
+        <li><strong>Split the transcript.</strong> Grab the full text with a <a href="https://yttranscript.app">transcript tool</a>, paste it in halves or thirds, summarize each, then summarize the summaries.</li>
+        <li><strong>Summarize by chapter.</strong> If the video has chapters, do them one at a time — slower, but nothing is lost.</li>
+        <li><strong>Ask explicitly about the end.</strong> Prompt with "what conclusions are drawn in the final twenty minutes?" — if the model cannot answer, it never saw that section.</li>
+      </ol>
+
+      <h2>Or use a tool built for length</h2>
+      <p>Chunking is a solved engineering problem; the tools that do it handle a three-hour lecture as reliably as a five-minute clip. <a href="${P}">YT Summarizer</a> processes the full transcript rather than the first slice, and because it uses one-time credits — from $9, never expiring, no subscription — a long video costs exactly one credit, the same as a short one. There is no incentive to shorten your output and no quota being conserved.</p>
+      <p>Related: <a href="/blog/can-chatgpt-summarize-youtube-videos">can ChatGPT summarize YouTube videos</a> and <a href="/blog/youtube-summarizer-not-working-common-problems-fixes">9 fixes when a summarizer stops working</a>.</p>
+    `,
+  },
+
+  'chatgpt-wont-open-youtube-link': {
+    title: "ChatGPT Won't Open Your YouTube Link? Why, and What Actually Works",
+    metaDescription: "Pasted a YouTube URL into ChatGPT and got nothing useful? ChatGPT cannot watch video. Why it fails, why a confident wrong summary is worse, and the three workflows that work.",
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick answer:</strong> ChatGPT cannot open YouTube links because it cannot process video or audio — it only reads text. When you paste a URL, one of three things happens: it tells you it cannot access the link, it summarizes the page title and description instead of the actual content, or it invents a plausible summary from the title alone. The third case is the dangerous one, because the output looks correct.</p>
+
+      <h2>Why it happens</h2>
+      <p>A YouTube video is audio and images. ChatGPT is a text model. Even with browsing enabled, the YouTube player does not expose the spoken content as readable text — the transcript lives behind a separate interface. So unless you supply the transcript, there is nothing for the model to summarize.</p>
+
+      <h2>How to tell if you got a hallucinated summary</h2>
+      <ul>
+        <li>It is vague and could describe any video with that title.</li>
+        <li>It contains no specific numbers, names, or examples from the video.</li>
+        <li>Asked "what was said at the 40-minute mark?", it cannot answer or invents something.</li>
+      </ul>
+      <p>If any of those apply, discard it — the model never saw the content.</p>
+
+      <h2>What works: three options</h2>
+      <h3>1. Paste the transcript yourself (free, 4–6 minutes)</h3>
+      <ol>
+        <li>Open the video, click <strong>"...more"</strong>, then <strong>Show transcript</strong>.</li>
+        <li>Copy the text — or use a <a href="https://yttranscript.app">free transcript tool</a> to get it without timestamp clutter.</li>
+        <li>Paste into ChatGPT with a prompt such as: <em>"Summarize this YouTube transcript: one-paragraph overview, 5–8 key points, any specific numbers or tools mentioned, and the main takeaway."</em></li>
+      </ol>
+      <p>Caveat: long transcripts overflow the context window and get silently cut. See <a href="/blog/youtube-summary-cut-off-long-videos">why summaries get truncated</a>.</p>
+
+      <h3>2. Try Gemini (inconsistent)</h3>
+      <p>Google's Gemini has partial native YouTube access in some regions and products. When it works it is convenient; coverage varies by account and video, so it is not dependable for regular use.</p>
+
+      <h3>3. Use a purpose-built summarizer (about a minute)</h3>
+      <p>A dedicated tool does the transcript extraction for you. <a href="${P}">YT Summarizer</a> is a YouTube summarizer with one-time pricing — credits from $9 that never expire, no subscription. Paste the URL, get a structured summary with key points, no prompt to write and no copying.</p>
+
+      <h2>Which to pick</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Situation</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Best option</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">One video, need a custom output format</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Paste transcript into ChatGPT</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Several videos a week</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Dedicated summarizer</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Video over an hour</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Dedicated summarizer (chunks the full transcript)</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Just need the raw text</td><td style="padding: 0.75rem; border: 1px solid #ddd;"><a href="https://yttranscript.app">YT Transcript</a>, free</td></tr>
+        </tbody>
+      </table>
+
+      <p>Full walkthrough: <a href="/blog/can-chatgpt-summarize-youtube-videos">can ChatGPT summarize YouTube videos</a>.</p>
+    `,
+  },
+
+  'youtube-summarizer-not-working-iphone': {
+    title: 'YouTube Summarizer Not Working on iPhone? Here Is Why (and What Does Work)',
+    metaDescription: "Summarizer works on your laptop but not your iPhone? Browser extensions do not run on iOS. The three methods that actually work on iPhone and iPad, including one that needs no app.",
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick answer:</strong> If your YouTube summarizer works on desktop but not on iPhone, it is almost certainly an extension-based tool — and browser extensions do not run on iOS Safari or the iPhone Chrome app. This is a platform limitation, not a bug, and no amount of reinstalling will fix it. Web-based summarizers work fine on iPhone because they run as a normal website.</p>
+
+      <h2>Why extensions fail on iPhone</h2>
+      <p>Eightify, Glasp, Glarity and similar tools are Chrome extensions that inject a panel into the YouTube page. iOS does not support Chrome extensions at all, and Safari's extension system is far more limited. So the summarize button you see on your laptop simply does not exist on your phone.</p>
+
+      <h2>Method 1: a web-based summarizer (easiest)</h2>
+      <ol>
+        <li>In the YouTube app, tap <strong>Share</strong>, then <strong>Copy link</strong>.</li>
+        <li>Open your browser and go to a web-based summarizer.</li>
+        <li>Paste the URL and run it.</li>
+      </ol>
+      <p>Nothing to install, works identically on iPhone, iPad, and Android. You can also add the site to your home screen so it opens like an app: tap <strong>Share → Add to Home Screen</strong>.</p>
+
+      <h2>Method 2: transcript plus a chatbot</h2>
+      <p>Copy the video link, get the text from a <a href="https://yttranscript.app">web transcript tool</a>, then paste it into the ChatGPT or Claude app with a summarize prompt. More steps, but free — and the same context-window caveat applies on long videos.</p>
+
+      <h2>Method 3: YouTube's own transcript</h2>
+      <p>In the YouTube app, open the description and tap <strong>Show transcript</strong> where available. You get the text to read, but no summary and no easy way to copy it all.</p>
+
+      <h2>Comparison</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Method</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Works on iPhone</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Steps</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Chrome extension summarizer</td><td style="padding: 0.75rem; border: 1px solid #ddd;">No</td><td style="padding: 0.75rem; border: 1px solid #ddd;">—</td></tr>
+          <tr style="background: #fff8f9;"><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Web-based summarizer</strong></td><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Yes</strong></td><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Copy link, paste, done</strong></td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Transcript + chatbot</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td><td style="padding: 0.75rem; border: 1px solid #ddd;">4–6</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">YouTube transcript panel</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Yes (read only)</td><td style="padding: 0.75rem; border: 1px solid #ddd;">2</td></tr>
+        </tbody>
+      </table>
+
+      <p><a href="${P}">YT Summarizer</a> is a web app, so it works on iPhone with nothing to install — paste a URL and read the key points. Five summaries are free; after that, one-time credit packs from $9 that never expire, with no subscription. Same account works across phone and desktop.</p>
+      <p>More detail: <a href="/blog/how-to-summarize-youtube-videos-on-iphone">how to summarize YouTube videos on iPhone</a>.</p>
+    `,
+  },
+
+  'youtube-summary-wrong-language': {
+    title: 'YouTube Summary Coming Out in the Wrong Language? How to Fix It',
+    metaDescription: 'Your summary is in the video language instead of yours, or vice versa? Why AI summarizers pick the wrong language, how caption tracks cause it, and how to get the output you want.',
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick answer:</strong> Summarizers usually output in whatever language the caption track is in, not the language of your browser. If a Hindi video gives you a Hindi summary when you wanted English, the tool used the Hindi caption track and kept the language. The fix is either to select a different caption track, or to take the transcript and ask an AI tool explicitly for a summary in your target language.</p>
+
+      <h2>Why it happens</h2>
+      <p>Most tools fetch YouTube's default caption track and pass it to a language model. The model tends to answer in the language it was given. There is often no explicit output-language setting, so the transcript language wins by default.</p>
+
+      <h2>Fix 1: pick a different caption track</h2>
+      <p>Many videos have multiple caption tracks — the original language plus translations. In YouTube's transcript panel there is a language selector. If an English track exists, tools reading the default track may pick it up.</p>
+
+      <h2>Fix 2: transcript plus an explicit instruction</h2>
+      <p>The most reliable route when you need a specific output language:</p>
+      <ol>
+        <li>Get the full text with a <a href="https://yttranscript.app">transcript tool</a>.</li>
+        <li>Paste it into an AI chat with: <em>"Summarize this transcript in English, regardless of the language of the text below."</em></li>
+      </ol>
+      <p>Stating the output language explicitly overrides the model's default behaviour.</p>
+
+      <h2>Fix 3: check auto-translation quality first</h2>
+      <p>YouTube can auto-translate captions, but a machine translation of a machine transcription compounds errors. On technical or heavily accented content, summarize from the original-language track and translate the short summary afterwards — far fewer errors than translating the whole transcript.</p>
+
+      <h2>The mixed-language problem</h2>
+      <p>Videos that switch between two languages mid-sentence — Hinglish, Spanglish, Arabic-English — confuse both speech recognition and summarizers. Auto-captions garble the switch points, and the summary inherits the mess. Where a creator has added manual subtitles, use those instead; they are far cleaner.</p>
+
+      <h2>Quick reference</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">You want</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Do this</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">English summary of a foreign video</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Transcript, then ask explicitly for English</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Summary in the original language</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Use the default caption track</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Highest accuracy on technical content</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Summarize in original, translate the summary</td></tr>
+        </tbody>
+      </table>
+
+      <p><a href="${P}">YT Summarizer</a> produces structured summaries from any public captioned video, with 5 free summaries and one-time credits from $9 that never expire. For multi-language workflows, pairing it with a <a href="https://yttranscript.app">free transcript tool</a> gives you the most control over output language.</p>
+    `,
+  },
+
+  'youtube-summarizer-broken-after-update': {
+    title: 'YouTube Summarizer Stopped Working After an Update? What Changed and How to Fix It',
+    metaDescription: 'Your summarizer worked last week and now it does not. What YouTube and Chrome changed, why extension-based tools break most often, and how to tell if your tool is abandoned.',
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick answer:</strong> If a summarizer worked recently and suddenly stopped, the cause is almost always external: YouTube changed how captions are served, YouTube changed its page layout, or Chrome tightened extension permissions. Extension-based tools break most often because they depend on YouTube's page structure staying stable. Web-based tools that read the caption track directly are far less affected.</p>
+
+      <h2>What has actually been changing</h2>
+      <ul>
+        <li><strong>Caption endpoint changes.</strong> Tools that scraped the old caption URL structure broke when it changed, and only actively maintained ones adapted.</li>
+        <li><strong>Rate limiting.</strong> Aggressive limits on transcript fetching cause intermittent failures — works once, fails the next three times.</li>
+        <li><strong>Manifest V3.</strong> Chrome's extension platform change restricted how extensions access page data, breaking older tools permanently.</li>
+        <li><strong>YouTube layout updates.</strong> Any DOM change can hide an injected button until the developer ships a patch.</li>
+      </ul>
+
+      <h2>Diagnose it in three steps</h2>
+      <ol>
+        <li><strong>Test a known-good video.</strong> Short, popular, English, definitely captioned. If that works, the issue is video-specific, not the tool.</li>
+        <li><strong>Test in another browser.</strong> Works elsewhere? Local problem — extension conflict, cache, or a corrupted profile.</li>
+        <li><strong>Check whether the tool is alive.</strong> Look at its changelog, GitHub, or social account. If the last update was 2024, it is likely abandoned and will not be fixed.</li>
+      </ol>
+
+      <h2>Fixes, in order</h2>
+      <ol>
+        <li>Reload the YouTube page (fixes injection failures).</li>
+        <li>Update the extension and restart the browser.</li>
+        <li>Disable other extensions to rule out conflicts — ad blockers are the usual suspect.</li>
+        <li>Clear cookies and cache for the tool's domain.</li>
+        <li>Reinstall the extension.</li>
+        <li>If none of that works and the developer has gone quiet, switch tools.</li>
+      </ol>
+
+      <h2>Why some tools keep working</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Type</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Breaks when...</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Resilience</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Browser extension</td><td style="padding: 0.75rem; border: 1px solid #ddd;">YouTube layout or Chrome policy changes</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Low</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Abandoned scraper tool</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Any caption change</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Lowest</td></tr>
+          <tr style="background: #fff8f9;"><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Maintained web app</strong></td><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Rarely — nothing injected into the page</strong></td><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Highest</strong></td></tr>
+        </tbody>
+      </table>
+
+      <p><a href="${P}">YT Summarizer</a> is a maintained web app rather than an extension, so YouTube redesigns and Chrome policy changes do not break it. Paste a URL in any browser — 5 free summaries, then one-time credits from $9 that never expire, no subscription.</p>
+      <p>See also: <a href="/blog/youtube-transcript-tools-that-still-work-in-2026">transcript tools that still work in 2026</a> and <a href="/blog/youtube-summarizer-not-working-common-problems-fixes">9 fixes when a summarizer stops working</a>.</p>
+    `,
+  },
+
+  'private-age-restricted-video-summarize': {
+    title: "Can't Summarize a Private or Age-Restricted YouTube Video? Here's Why",
+    metaDescription: "Summarizer failing on a private, unlisted, members-only or age-restricted video? Which types are actually blocked, which work, and what your options are for each.",
+    date: '2026-08-16',
+    content: `
+      <p><strong>Quick answer:</strong> Summarizers can only read videos that are publicly accessible without signing in. Private, members-only, purchased, and most age-restricted videos are blocked at YouTube's end, so no third-party tool can reach the transcript — even though you can watch them while logged in. Unlisted videos usually do work, because anyone with the link can access them.</p>
+
+      <h2>What works and what does not</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Video type</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Summarizable?</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Why</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Public</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Captions publicly accessible</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Unlisted</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Usually yes</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Accessible to anyone with the link</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Private</td><td style="padding: 0.75rem; border: 1px solid #ddd;">No</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Requires your specific account</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Members-only</td><td style="padding: 0.75rem; border: 1px solid #ddd;">No</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Requires an active membership</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Age-restricted</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Usually no</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Requires a signed-in, age-verified session</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Purchased / rented</td><td style="padding: 0.75rem; border: 1px solid #ddd;">No</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Tied to your purchase</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why "but I can watch it" does not help</h2>
+      <p>You can watch a members-only video because your browser is signed in with an account that has access. A summarizer requests the video from its own servers, with no session and no membership, so YouTube refuses. This is access control working as intended rather than a bug in the tool.</p>
+
+      <h2>Your options</h2>
+      <ul>
+        <li><strong>If it is your own video:</strong> switch it from Private to Unlisted temporarily, summarize, then switch it back. Unlisted does not appear in search or on your channel.</li>
+        <li><strong>If it is age-restricted:</strong> check whether the same content is reuploaded unrestricted elsewhere — many creators post a clean version.</li>
+        <li><strong>If it is members-only or purchased:</strong> there is no legitimate workaround. Watch it, or take notes manually.</li>
+        <li><strong>If you have caption files:</strong> creators can download their own .srt or .vtt from YouTube Studio and paste that text into any AI tool.</li>
+      </ul>
+
+      <h2>Check it is really the restriction</h2>
+      <p>Open the video URL in a private or incognito window while signed out. If it plays, it is public and something else is wrong — most likely missing captions. See <a href="/blog/youtube-no-transcript-available-fix">"no transcript available" fixes</a>. If it does not play, the restriction is confirmed.</p>
+
+      <p>For everything public and captioned, <a href="${P}">YT Summarizer</a> handles it in about a minute — including long lectures and podcasts. Five summaries free, then one-time credits from $9 that never expire, no subscription.</p>
+    `,
+  },
 }
 
 export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
+  // ===== Batch 1: troubleshooting cluster =====
+  'eightify-not-working': [
+    { q: `Why is Eightify not working?`, a: `The three most common causes are: the video has no captions (Eightify reads the transcript, not the audio), you have reached the free tier's weekly summary limit, or the browser extension broke after a Chrome or YouTube update. Test a short popular English video — if that works, the problem is the original video rather than the tool.` },
+    { q: `Why does Eightify say it cannot summarize this video?`, a: `Almost always missing captions. Open the video description, click "...more" and look for "Show transcript". If that button is absent, the video has no caption track and no transcript-based summarizer can process it.` },
+    { q: `Does Eightify have a limit on free summaries?`, a: `Yes. The free tier caps summaries per week, and it often fails quietly rather than showing a clear message when you hit the cap — which reads like a bug. Paid plans raise the limit.` },
+    { q: `What is a good alternative if Eightify keeps breaking?`, a: `A web-based tool avoids the extension failure mode entirely, since nothing is injected into the YouTube page. YT Summarizer works in any browser including mobile, has no weekly cap, and uses one-time credits from $9 that never expire instead of a subscription.` },
+  ],
+  'notegpt-not-working-quota': [
+    { q: `Why does NoteGPT say "insufficient quota" when I am on a paid plan?`, a: `NoteGPT's plans carry internal usage quotas even when marketed as unlimited, so a paid subscriber can still be blocked mid-session. Check the usage dashboard to see which specific counter is exhausted — it is often a different one from the feature you were using.` },
+    { q: `How do I fix NoteGPT not summarizing a YouTube video?`, a: `Check the video has captions ("Show transcript" under "...more" in the description), confirm you have quota remaining, and test the same short video in another browser to rule out a session or cookie problem. Long videos consume more quota and may fail where short ones succeed.` },
+    { q: `Does NoteGPT have unlimited summaries?`, a: `Plans are marketed as unlimited but include quota limits in practice, which is the most frequently reported complaint about the service. If uninterrupted usage matters to you, a tool with one-time credits avoids the issue because nothing resets or runs out unexpectedly.` },
+    { q: `What is the best NoteGPT alternative without quotas?`, a: `For YouTube specifically, YT Summarizer uses one-time credit packs — 5 free summaries, then 50 for $9, 200 for $19, or 1,000 for $49 — with credits that never expire and no monthly reset. NotebookLM is the best genuinely free alternative for research use.` },
+  ],
+  'glasp-summary-not-working': [
+    { q: `Why is my Glasp YouTube summary not working?`, a: `Usually one of three things: you have hit the free daily summary limit, the video has no captions, or the extension's sidebar failed to load after a YouTube layout update. Reload the video page first — that fixes the sidebar case, which is the most common.` },
+    { q: `Does Glasp limit free YouTube summaries?`, a: `Yes, the free tier allows a small number of YouTube summaries per day, after which further attempts fail — often without a clear message explaining why.` },
+    { q: `Does Glasp work on mobile?`, a: `No. Glasp works through a browser extension, and extensions do not run on iOS Safari or the standard Chrome mobile app. For phone use you need a web-based summarizer that runs as an ordinary website.` },
+    { q: `Is Glasp actually a summarizer?`, a: `Primarily it is a social highlighting and annotation tool built around you reading a transcript and marking passages yourself, with AI summarization as a secondary feature. If you want one-click structured summaries as the main output, a dedicated summarizer fits better.` },
+  ],
+  'youtube-no-transcript-available-fix': [
+    { q: `What does "no transcript available" mean on YouTube?`, a: `It means the video has no caption track at all. The four causes are: the creator disabled captions, the video is too new for auto-captions to have generated (usually 1–4 hours), the spoken language is not well supported by YouTube's speech recognition, or the video contains no speech.` },
+    { q: `How do I fix a YouTube video with no transcript?`, a: `If the video is recent, wait 1–4 hours for auto-captions to generate. If the creator disabled captions, there is no fix — the text does not exist on YouTube's side, so no transcript tool or summarizer can retrieve it. Your options are a different video, or a tool that transcribes audio directly rather than reading YouTube's captions.` },
+    { q: `How do I check whether a YouTube video has a transcript?`, a: `Open the video, click "...more" in the description, and scroll to the bottom. If a "Show transcript" button appears, captions exist. If it is missing, the video has no caption track.` },
+    { q: `Can I still summarize a video with no captions?`, a: `Not with transcript-based tools, which is nearly all of them. You would need a service that runs speech recognition on the audio itself. For any public captioned video, YT Summarizer produces a structured summary in about a minute — 5 free, then one-time credits from $9.` },
+  ],
+  'youtube-summary-cut-off-long-videos': [
+    { q: `Why is my YouTube summary cut off or incomplete?`, a: `The transcript exceeded the AI model's context window, so only the beginning was processed. A two-hour podcast produces roughly 20,000–25,000 words, and many tools silently drop everything past their limit while still returning a confident, complete-looking summary.` },
+    { q: `How do I know if my summary was truncated?`, a: `Check whether it references anything from the final third of the video, and whether it ends with a genuine conclusion or just stops mid-argument. If every point clusters in the first half, the rest was never processed.` },
+    { q: `Which tools handle videos over 2 hours properly?`, a: `Tools that chunk the transcript before summarizing rather than truncating it. Free-tier chatbots and lightweight extensions are the most likely to cut long videos silently. YT Summarizer processes the full transcript, and because pricing is one-time credits, a three-hour video costs the same single credit as a five-minute clip.` },
+    { q: `Can I work around truncation manually?`, a: `Yes — get the full transcript, paste it in halves or thirds, summarize each part, then summarize those summaries. Slower, but nothing is lost. Asking the model "what conclusions are drawn in the final twenty minutes?" is a quick way to test whether it saw the whole thing.` },
+  ],
+  'chatgpt-wont-open-youtube-link': [
+    { q: `Why won't ChatGPT open my YouTube link?`, a: `ChatGPT cannot process video or audio — it only reads text, and YouTube's player does not expose spoken content as readable text. So pasting a URL gives you either a refusal, a summary of just the title and description, or an invented summary based on the title alone.` },
+    { q: `How can I tell if ChatGPT made up a YouTube summary?`, a: `A hallucinated summary is vague, could describe any video with that title, and contains no specific numbers, names, or examples. Ask what was said at a particular timestamp — if it cannot answer or invents something, it never saw the content.` },
+    { q: `How do I get ChatGPT to summarize a YouTube video properly?`, a: `Supply the transcript. Open the video, click "...more" then "Show transcript", copy the text (or use a free transcript tool to get it without timestamps), and paste it into ChatGPT with a prompt asking for an overview, key points, and takeaways. It takes about 4–6 minutes per video.` },
+    { q: `Is there a faster way than pasting transcripts into ChatGPT?`, a: `Yes — a dedicated summarizer does the transcript extraction for you. YT Summarizer takes the URL and returns a structured summary in about a minute, with no prompt to write. 5 free summaries, then one-time credits from $9 that never expire.` },
+  ],
+  'youtube-summarizer-not-working-iphone': [
+    { q: `Why does my YouTube summarizer not work on iPhone?`, a: `It is almost certainly extension-based, and browser extensions do not run on iOS Safari or the iPhone Chrome app. This is a platform limitation rather than a bug, so reinstalling will not help. Web-based summarizers work normally on iPhone.` },
+    { q: `How do I summarize a YouTube video on iPhone?`, a: `In the YouTube app tap Share, then Copy link. Open your browser, go to a web-based summarizer, and paste the URL. Nothing to install, and it works identically on iPad and Android.` },
+    { q: `Can I get a YouTube summarizer as an iPhone app?`, a: `You can add a web-based summarizer to your home screen — tap Share, then Add to Home Screen — which gives you a one-tap icon that behaves like an app without an install to manage or update.` },
+    { q: `Do Chrome extensions like Eightify or Glasp work on iPhone?`, a: `No. iOS does not support Chrome extensions, and Safari's extension system is far more limited. Any summarizer built as a Chrome extension is desktop-only.` },
+  ],
+  'youtube-summary-wrong-language': [
+    { q: `Why is my YouTube summary in the wrong language?`, a: `Most summarizers output in whatever language the caption track uses, not your browser language. If a Hindi video returns a Hindi summary, the tool read the Hindi caption track and the model answered in kind. There is often no explicit output-language setting.` },
+    { q: `How do I get an English summary of a foreign-language video?`, a: `Get the transcript, then paste it into an AI tool with an explicit instruction such as "Summarize this transcript in English, regardless of the language of the text below." Stating the output language overrides the model's default behaviour.` },
+    { q: `Should I translate the transcript or the summary?`, a: `Translate the summary. A machine translation of a machine transcription compounds errors, so on technical or heavily accented content it is more accurate to summarize in the original language and translate the short result afterwards.` },
+    { q: `Why are mixed-language videos summarized badly?`, a: `Videos that switch between languages mid-sentence — Hinglish, Spanglish, Arabic-English — break speech recognition at the switch points, and the summary inherits those errors. Where the creator has added manual subtitles, those are far cleaner than auto-captions.` },
+  ],
+  'youtube-summarizer-broken-after-update': [
+    { q: `Why did my YouTube summarizer stop working after an update?`, a: `The cause is usually external: YouTube changed how captions are served, YouTube changed its page layout, or Chrome tightened extension permissions through Manifest V3. Extension-based tools break most often because they depend on YouTube's page structure staying stable.` },
+    { q: `How do I fix a summarizer that suddenly stopped working?`, a: `In order: reload the YouTube page, update the extension and restart the browser, disable other extensions to rule out conflicts (ad blockers are the usual culprit), clear cookies for the tool's domain, then reinstall. If the developer has gone quiet, switch tools.` },
+    { q: `How can I tell if a summarizer tool has been abandoned?`, a: `Check its changelog, GitHub, or social account. If the last update was 2024 or earlier, it is unlikely to be fixed — YouTube's caption changes require ongoing maintenance to keep working.` },
+    { q: `Which YouTube summarizers are least likely to break?`, a: `Maintained web apps, because nothing is injected into the YouTube page — a redesign or Chrome policy change cannot break them. Extension-based tools and abandoned scraper tools are the most fragile.` },
+  ],
+  'private-age-restricted-video-summarize': [
+    { q: `Can you summarize a private YouTube video?`, a: `No. Private videos require your specific signed-in account, and a summarizer requests the video from its own servers with no session, so YouTube refuses. The same applies to members-only and purchased videos.` },
+    { q: `Why can't summarizers handle age-restricted videos?`, a: `Age-restricted videos require a signed-in, age-verified session. Third-party tools have no such session, so the caption track is unavailable to them even though you can watch the video yourself while logged in.` },
+    { q: `Do summarizers work on unlisted YouTube videos?`, a: `Usually yes. Unlisted videos are accessible to anyone with the link, so tools can generally reach the transcript. Private videos are different — those are restricted to specific accounts.` },
+    { q: `How can I summarize my own private video?`, a: `Switch it from Private to Unlisted temporarily, summarize it, then switch it back — unlisted videos do not appear in search or on your channel. Alternatively, download the caption file (.srt or .vtt) from YouTube Studio and paste that text into any AI tool.` },
+  ],
   'how-to-remove-timestamps-from-youtube-transcript': [
     { q: "How do I remove timestamps from a YouTube transcript?", a: "Open the transcript panel, click the three-dot menu at its top right, and select 'Toggle timestamps'. The times disappear and you can copy clean text. If you are on mobile or handling several videos, paste the URL into a transcript tool that strips timestamps automatically instead." },
     { q: "How do I copy and paste a YouTube transcript without the timestamps?", a: "Turn timestamps off first using YouTube's 'Toggle timestamps' option in the transcript panel's three-dot menu, then select and copy. If you have already copied the messy version, run a regex find-and-replace on ^\\s*\\d{1,2}:\\d{2}(:\\d{2})?\\s* and replace it with nothing." },
