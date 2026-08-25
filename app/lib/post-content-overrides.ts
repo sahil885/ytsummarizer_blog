@@ -3623,9 +3623,585 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>If Summarize.tech's price is what you value most, staying is reasonable — free is hard to beat. If output quality is the sticking point, the upgrade does not have to mean a monthly bill.</p>
     `,
   },
+
+  // ===== Batch 3: extending the troubleshooting seam (Aug 2026) =====
+  // Rationale: youtube-summarizer-broken-after-update hit 15.7% CTR and the
+  // "not working" anchor is at ~21 clicks/week. Narrow failure-mode queries are
+  // the proven seam for this domain, so this batch goes deeper into it.
+
+  'youtube-transcript-button-missing': {
+    title: 'YouTube Transcript Button Missing? Here Is Where It Went',
+    metaDescription: "Can't find 'Show transcript' on YouTube? The button moved, and it does not appear on every video. Where to look now, why it is missing, and what to do when it genuinely is not there.",
+    date: '2026-08-23',
+    content: `
+      <p><strong>Quick answer:</strong> The "Show transcript" button lives inside the video description, not under the video. Click <strong>"...more"</strong> to expand the description and scroll to the bottom — the button sits there. If it is genuinely absent after expanding, the video has no caption track, and no transcript tool can retrieve one.</p>
+
+      <h2>Where the button actually is</h2>
+      <ol>
+        <li>Open the video on desktop or mobile web.</li>
+        <li>Click or tap <strong>"...more"</strong> in the description area beneath the title.</li>
+        <li>Scroll to the very bottom of the expanded description.</li>
+        <li><strong>Show transcript</strong> appears there, usually near the licence and category info.</li>
+      </ol>
+      <p>People miss it because they look under the video player or in the three-dot menu, where it used to be. On the YouTube mobile app the placement is the same but easy to scroll past.</p>
+
+      <h2>Why it is missing entirely</h2>
+      <ul>
+        <li><strong>No captions exist.</strong> The creator disabled them and auto-captions never generated. Nothing to show.</li>
+        <li><strong>Video is too new.</strong> Auto-captions take roughly 1–4 hours after upload.</li>
+        <li><strong>Unsupported language or poor audio.</strong> Speech recognition did not produce a track.</li>
+        <li><strong>Music or no speech.</strong> Nothing to transcribe.</li>
+        <li><strong>Live stream still running.</strong> Transcripts appear after the stream ends and processes.</li>
+      </ul>
+
+      <h2>How to check quickly</h2>
+      <p>Click the CC (subtitles) button on the player. If captions display on screen, a transcript exists and the button is there somewhere — keep scrolling the description. If CC does nothing, there is no caption track, which is the real problem. Full detail in <a href="/blog/youtube-no-transcript-available-fix">"no transcript available" — causes and fixes</a>.</p>
+
+      <h2>Faster ways to get the text</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">You want</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Do this</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">To read along while watching</td><td style="padding: 0.75rem; border: 1px solid #ddd;">YouTube's own transcript panel</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Clean copyable text, no timestamps</td><td style="padding: 0.75rem; border: 1px solid #ddd;"><a href="https://yttranscript.app">YT Transcript</a> — paste the URL, free</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Just the key points</td><td style="padding: 0.75rem; border: 1px solid #ddd;"><a href="${P}">YT Summarizer</a> — 5 free, then from $9 once</td></tr>
+        </tbody>
+      </table>
+
+      <p>YouTube's panel is fiddly: timestamps interleave every line and there is no copy-all button. If you want the text rather than just to read it, a transcript tool takes one paste. Related: <a href="/blog/how-to-remove-timestamps-from-youtube-transcript">how to remove timestamps from a YouTube transcript</a>.</p>
+    `,
+  },
+
+  'youtube-summarizer-slow-timing-out': {
+    title: 'YouTube Summarizer Slow or Timing Out? Why, and How to Speed It Up',
+    metaDescription: "Summarizer stuck loading, spinning forever, or timing out? The real causes — video length, server load, free-tier throttling, browser issues — and what actually fixes each.",
+    date: '2026-08-23',
+    content: `
+      <p><strong>Quick answer:</strong> Slow summaries usually come down to video length or free-tier throttling. A two-hour video takes meaningfully longer to process than a ten-minute one because the whole transcript has to be fetched and chunked. If short videos are also slow, the cause is more likely server load, a throttled free tier, or a browser problem on your end.</p>
+
+      <h2>Diagnose in 30 seconds</h2>
+      <p>Run a short, popular, definitely-captioned video. If it completes quickly, the tool is fine and your original video is simply long or awkward. If the short one is also slow, the problem is the service or your connection.</p>
+
+      <h2>Cause 1: the video is long</h2>
+      <p>Transcript length scales with duration. A three-hour podcast produces 25,000+ words that must be fetched, chunked, and summarized. Sixty to ninety seconds is normal for that; several minutes is not unusual under load. If it never finishes at all, the tool may be truncating or failing rather than working — see <a href="/blog/youtube-summary-cut-off-long-videos">why summaries get cut off</a>.</p>
+
+      <h2>Cause 2: free-tier throttling</h2>
+      <p>Many tools prioritise paid requests when busy, so free users queue behind them. This is rarely documented and looks identical to the service being broken. If it is consistently slow at peak hours and fine overnight, this is the likely explanation.</p>
+
+      <h2>Cause 3: transcript fetching is rate-limited</h2>
+      <p>YouTube rate-limits caption requests. When a tool hits those limits it retries, which shows up to you as a long spinner. This is why the same video can be slow once and instant on retry.</p>
+
+      <h2>Cause 4: something local</h2>
+      <ul>
+        <li>Browser extensions — especially ad blockers — interfering with requests</li>
+        <li>A stale tab that has been open for hours; reload it</li>
+        <li>VPN adding latency or triggering region checks</li>
+        <li>Very slow connection on a large transcript</li>
+      </ul>
+      <p>Test in a private window with extensions disabled to rule these out.</p>
+
+      <h2>What actually speeds things up</h2>
+      <ol>
+        <li><strong>Retry once.</strong> Rate-limit blips clear on their own more often than people expect.</li>
+        <li><strong>Reload the page first</strong> rather than clicking summarize repeatedly — queued duplicate requests make it slower, not faster.</li>
+        <li><strong>Disable extensions</strong> or use a private window.</li>
+        <li><strong>Split very long videos</strong> by chapter if your tool struggles past two hours.</li>
+        <li><strong>Try off-peak</strong> if you are on a free tier.</li>
+      </ol>
+
+      <p>One structural note: tools that meter usage have an incentive to throttle heavy free use, and extension-based tools add a layer that can stall independently. <a href="${P}">YT Summarizer</a> is a web app with one-time credits rather than a subscription — a three-hour lecture costs the same single credit as a five-minute clip, so there is no reason to queue or shorten your request. Five summaries are free.</p>
+      <p>See also: <a href="/blog/youtube-summarizer-not-working-common-problems-fixes">9 fixes when a summarizer stops working</a>.</p>
+    `,
+  },
+
+  'youtube-summary-inaccurate-wrong': {
+    title: 'YouTube Summary Wrong or Inaccurate? Why AI Gets Videos Wrong',
+    metaDescription: "AI summary contains facts the video never said? Here is where summarizers actually fail — numbers, speaker attribution, visual content, sarcasm — and how to check one before you rely on it.",
+    date: '2026-08-23',
+    content: `
+      <p><strong>Quick answer:</strong> AI summaries are reliable for structure and overall argument, and unreliable for specifics. The four failure modes are: numbers and statistics getting garbled, quotes attributed to the wrong speaker, anything shown visually rather than said being missing entirely, and sarcasm or hypotheticals being reported as fact. If a summary contains a figure you plan to act on, verify it against the video.</p>
+
+      <h2>Why it happens: the summarizer never saw the video</h2>
+      <p>Transcript-based tools read text, not pictures or tone. Everything the summary knows comes from a caption track that was itself machine-generated. Two lossy steps stack up — speech recognition errors, then compression — and specifics are what get lost first.</p>
+
+      <h2>The four failure modes</h2>
+      <h3>1. Numbers</h3>
+      <p>Auto-captions frequently mistranscribe figures: "fifteen" becomes "fifty", "$1.4 million" becomes "1.4 million dollars" or drops entirely. The summarizer faithfully repeats the error. This is the most consequential failure because numbers are what people quote.</p>
+
+      <h3>2. Speaker attribution</h3>
+      <p>Caption tracks usually do not label speakers. In interviews and panels the model guesses who said what, and often guesses wrong — sometimes attributing a guest's argument to the host, which inverts the meaning.</p>
+
+      <h3>3. Visual-only content</h3>
+      <p>Charts, code on screen, demonstrations, and captions burned into video are invisible to a transcript. A tutorial whose value is watching someone click through an interface summarizes into something nearly useless, because the spoken track is just "and then we do this."</p>
+
+      <h3>4. Sarcasm, hypotheticals and quotes</h3>
+      <p>"Some people say X, but that's nonsense" can compress to "X". Models flatten rhetorical structure, so a position the speaker was rejecting can appear as a position they hold.</p>
+
+      <h2>How to sanity-check a summary in 60 seconds</h2>
+      <ul>
+        <li><strong>Check the ending.</strong> Does it reference the final third of the video? If not, it was truncated — see <a href="/blog/youtube-summary-cut-off-long-videos">summaries cut off on long videos</a>.</li>
+        <li><strong>Spot-check one number.</strong> Scrub to where it appears and listen.</li>
+        <li><strong>Ask who said it.</strong> On multi-speaker content, verify attribution before quoting.</li>
+        <li><strong>Watch for suspicious specificity.</strong> Precise claims with no context in a vague summary are often invented.</li>
+      </ul>
+
+      <h2>What reduces errors</h2>
+      <p>Videos with manual (creator-added) captions summarize far more accurately than auto-captioned ones, because the first lossy step is removed. Single-speaker, talk-heavy content — lectures, conference talks, solo explainers — is the most reliable category. Multi-speaker, heavily visual, or accented content is the least.</p>
+      <p>Treat any summary as a map rather than the territory: excellent for deciding what deserves your attention, not a citable source. <a href="${P}">YT Summarizer</a> processes the full transcript with timestamps so you can jump straight to any claim and verify it — 5 free summaries, then one-time credits from $9 that never expire.</p>
+      <p>Deeper testing: <a href="/blog/youtube-summarizer-accuracy-test-2026">how accurate are AI video summaries in 2026</a>.</p>
+    `,
+  },
+
+  'summarize-youtube-live-stream': {
+    title: 'Can You Summarize a YouTube Live Stream or Premiere? (2026)',
+    metaDescription: "Trying to summarize a live stream and getting errors? Live content has no transcript until it ends. When the captions appear, what works for past streams, and workarounds while it is live.",
+    date: '2026-08-23',
+    content: `
+      <p><strong>Quick answer:</strong> You cannot summarize a stream while it is live, because the caption track is not finalised until the broadcast ends and YouTube processes the recording. Once a stream is over, it becomes an ordinary video and summarizes normally — but that processing typically takes anywhere from a few minutes to several hours on long streams.</p>
+
+      <h2>Why live content fails</h2>
+      <p>During a live broadcast YouTube generates rolling live captions, which are not the same as a stored caption track. Third-party tools read the stored track, and it does not exist yet. Premieres behave the same way: until the premiere finishes, there is no transcript to fetch.</p>
+
+      <h2>When it becomes summarizable</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">State</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Can you summarize it?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Currently live</td><td style="padding: 0.75rem; border: 1px solid #ddd;">No — no stored transcript</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Premiere in progress</td><td style="padding: 0.75rem; border: 1px solid #ddd;">No</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Just ended, still processing</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Usually not yet</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Ended, captions generated</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Yes — treat as a normal video</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Archived stream, captions disabled</td><td style="padding: 0.75rem; border: 1px solid #ddd;">No</td></tr>
+        </tbody>
+      </table>
+
+      <h2>How to check whether it is ready</h2>
+      <p>Open the finished stream, click <strong>"...more"</strong> in the description, and look for <strong>Show transcript</strong>. If it is there, any tool can summarize it. If not, captions have not generated yet — wait a few hours, particularly on multi-hour streams, which take proportionally longer.</p>
+
+      <h2>Workarounds while something is live</h2>
+      <ul>
+        <li><strong>Enable live captions</strong> with the CC button and read along — rough, but real-time.</li>
+        <li><strong>Wait for the archive.</strong> For a three-hour stream, waiting a few hours then summarizing is far faster than watching live.</li>
+        <li><strong>Check for a chapters list.</strong> Many streamers add chapters post-publish, which helps you jump to sections without any summary.</li>
+      </ul>
+
+      <h2>Why archived streams are worth summarizing</h2>
+      <p>Live streams are the least information-dense format on YouTube — long intros, waiting for viewers, chat tangents, repetition for late arrivals. A three-hour stream often contains twenty minutes of substance, which makes it the single best use case for summarization once the recording is available.</p>
+      <p><a href="${P}">YT Summarizer</a> processes the full transcript rather than truncating, so a long archived stream summarizes properly rather than covering only the first hour. One credit covers a video of any length — 5 free, then packs from $9 that never expire.</p>
+      <p>Related: <a href="/blog/youtube-no-transcript-available-fix">"no transcript available" fixes</a>.</p>
+    `,
+  },
+
+  'cant-summarize-youtube-playlist': {
+    title: "Can't Summarize a YouTube Playlist? How to Do It Properly",
+    metaDescription: "Pasted a playlist URL and got an error? Summarizers work on single videos, not playlists. Why that is, and the workflow for summarizing a whole course or series efficiently.",
+    date: '2026-08-23',
+    content: `
+      <p><strong>Quick answer:</strong> Almost no summarizer accepts a playlist URL, because each video has its own separate transcript and there is no single track to read. Pasting a playlist link usually either errors or silently summarizes just the first video. The working approach is to summarize videos individually, then combine those summaries.</p>
+
+      <h2>Why playlists do not work</h2>
+      <p>A playlist is a container, not content. There is no combined transcript. A tool given a playlist URL has to either pick one video or fetch every video separately — which multiplies processing cost, so most tools simply do not support it.</p>
+      <p>Watch out for the silent version of this failure: some tools grab the first video in the playlist and return its summary with no indication that the other 30 videos were ignored.</p>
+
+      <h2>The workflow that works</h2>
+      <ol>
+        <li><strong>Get individual video URLs.</strong> Open the playlist, and copy each video's own link (not the playlist link — strip the <code>&list=</code> parameter).</li>
+        <li><strong>Summarize each one.</strong> Work through them; each takes about a minute.</li>
+        <li><strong>Combine.</strong> Paste all the summaries into one document, then summarize <em>that</em> for a course-level overview.</li>
+      </ol>
+      <p>That last step is the valuable one — a summary of summaries gives you the arc of an entire course in a page.</p>
+
+      <h2>Triage first, then go deep</h2>
+      <p>For a 40-video course, do not summarize all 40. Summarize the first few and the ones whose titles suggest they cover what you need, decide which handful actually matter, then watch only those. Most courses have significant redundancy, and this turns 20 hours into about two.</p>
+
+      <h2>Practical tips</h2>
+      <ul>
+        <li><strong>Strip the playlist parameter.</strong> A URL like <code>youtube.com/watch?v=ABC&list=PLxyz</code> works fine if you delete everything from <code>&list=</code> onward.</li>
+        <li><strong>Watch your credit or quota use.</strong> Summarizing 40 videos consumes 40 credits — worth checking your balance before starting.</li>
+        <li><strong>Keep them in one place.</strong> A single document or the tool's own library beats scattered copies.</li>
+      </ul>
+
+      <p>On cost: metered tools make bulk work expensive and quota-limited. With one-time credits, 200 summaries for $19 covers several full courses at under 10 cents each, and unused credits never expire. <a href="${P}">YT Summarizer</a> saves every summary to a personal library, which makes the combine step much easier than hunting through browser tabs.</p>
+      <p>Related: <a href="/blog/how-to-summarize-youtube-playlist-or-course">how to summarize an entire playlist or online course</a>.</p>
+    `,
+  },
+
+  'youtube-summary-too-short': {
+    title: 'YouTube Summary Too Short or Missing Key Points? How to Fix It',
+    metaDescription: "Getting three bullet points for a 90-minute video? Why summaries come out too shallow, how to tell shallow from truncated, and how to get the depth you actually need.",
+    date: '2026-08-23',
+    content: `
+      <p><strong>Quick answer:</strong> There are two different problems that look identical. A <strong>shallow</strong> summary processed the whole video but compressed it too aggressively. A <strong>truncated</strong> summary only ever saw the first portion. Check whether the final third of the video is referenced: if yes, it is shallow and you need a different depth setting or tool; if no, it is truncated and the rest was never read.</p>
+
+      <h2>Telling them apart</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Symptom</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Diagnosis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Covers start to finish, but thinly</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Shallow — over-compression</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Detailed early, stops mid-video</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Truncated — context limit</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Generic, could describe any video</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Possibly no transcript was read at all</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why summaries come out shallow</h2>
+      <ul>
+        <li><strong>Fixed output length.</strong> Many tools produce roughly the same number of bullets regardless of input, so a 90-minute video gets compressed 10x harder than a 9-minute one.</li>
+        <li><strong>Low-information source.</strong> If the video genuinely repeats itself, a short summary is accurate. Vlogs and podcasts with long tangents legitimately compress to very little.</li>
+        <li><strong>Visual content.</strong> A tutorial where the substance is on screen has a thin spoken track — the summary reflects what was said, which was "now click here."</li>
+        <li><strong>Free-tier limits.</strong> Some tools shorten output on free plans to conserve cost.</li>
+      </ul>
+
+      <h2>How to get more depth</h2>
+      <ol>
+        <li><strong>Summarize by chapter.</strong> If the video has chapters, do each separately — this multiplies depth without any tool change.</li>
+        <li><strong>Use the transcript directly.</strong> Pull the full text with a <a href="https://yttranscript.app">transcript tool</a>, then ask an AI for a detailed section-by-section breakdown rather than a summary.</li>
+        <li><strong>Ask targeted questions.</strong> "What specific steps does he recommend?" produces more than "summarize this."</li>
+        <li><strong>Check it is not truncation.</strong> If the end is missing, no depth setting helps — see <a href="/blog/youtube-summary-cut-off-long-videos">summaries cut off on long videos</a>.</li>
+      </ol>
+
+      <h2>When short is correct</h2>
+      <p>Worth saying plainly: sometimes a three-point summary is right. A 45-minute video padded to hit an ad-revenue threshold may contain three ideas. If you cross-check against the video and the summary really did capture it, the tool did its job — the video was the problem.</p>
+      <p><a href="${P}">YT Summarizer</a> returns a structured overview, key points and takeaways with timestamps, and processes the full transcript rather than a slice, so shallow output reflects the source rather than a cut corner. Five summaries free, then one-time credits from $9.</p>
+    `,
+  },
+
+  'cancel-eightify-subscription': {
+    title: 'How to Cancel Eightify (and What to Use Instead)',
+    metaDescription: "Cancelling your Eightify subscription? Where the setting is, what happens to access afterwards, refund considerations, and alternatives — including options with no recurring charge.",
+    date: '2026-08-23',
+    content: `
+      <p><strong>Quick answer:</strong> Cancel from your Eightify account settings under billing or subscription. Cancelling stops future renewals but usually leaves access active until the end of the period you have already paid for, after which you drop back to the free weekly cap. If you subscribed through an app store rather than the website, you must cancel in that store instead.</p>
+
+      <h2>Steps</h2>
+      <ol>
+        <li>Sign in to your Eightify account (via the extension popup or their website).</li>
+        <li>Open <strong>Account</strong>, <strong>Billing</strong> or <strong>Subscription</strong>.</li>
+        <li>Select cancel or downgrade, and confirm.</li>
+        <li>Keep the confirmation email as proof.</li>
+        <li>Uninstall the extension afterwards if you no longer want it in your browser — note that uninstalling alone does <em>not</em> cancel billing.</li>
+      </ol>
+      <p>That last point catches people out regularly: removing the extension stops the tool appearing but the subscription keeps charging.</p>
+
+      <h2>What happens to your access</h2>
+      <p>You normally keep paid features until the paid period ends, then revert to the free tier's weekly summary allowance. Summaries you have already generated are not typically stored long-term by extension tools, so copy anything you want to keep before you lose access.</p>
+
+      <h2>Refunds</h2>
+      <p>Eligibility depends on their current terms and how recently you were charged. If an unexpected renewal caught you, contact support with the exact charge date and ask directly — recent accidental renewals are often refunded even where policy does not require it.</p>
+
+      <h2>Where people go next</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Reason for leaving</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">What to look at</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Do not want a monthly charge</td><td style="padding: 0.75rem; border: 1px solid #ddd;">One-time credit tools</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Need it on iPhone</td><td style="padding: 0.75rem; border: 1px solid #ddd;">A web app (extensions cannot run on iOS)</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Only summarize occasionally</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Summarize.tech or NotebookLM, free</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Extension kept breaking</td><td style="padding: 0.75rem; border: 1px solid #ddd;">A web app — nothing injected into YouTube</td></tr>
+        </tbody>
+      </table>
+
+      <p>If the recurring charge rather than the product was the problem, <a href="${P}">YT Summarizer</a> uses one-time credits — 5 free summaries, then packs from $9 that never expire, with nothing to cancel later. It is web-based, so it also works on phones and locked-down work laptops.</p>
+      <p>See also: <a href="/blog/eightify-alternative-best-youtube-summarizers-without-subscription">Eightify alternatives without a subscription</a> and <a href="/blog/eightify-review">our Eightify review</a>.</p>
+      <p><em>Cancellation flows change — if the steps do not match what you see, check Eightify's current help pages.</em></p>
+    `,
+  },
+
+  'glarity-not-working': {
+    title: 'Glarity Not Working on YouTube? Causes and Fixes (2026)',
+    metaDescription: "Glarity summary not appearing on YouTube, stuck loading, or asking for an API key? The common causes — extension conflicts, YouTube updates, key configuration — and how to fix each.",
+    date: '2026-08-23',
+    content: `
+      <p><strong>Quick answer:</strong> Glarity failures usually trace to one of three things: the extension's panel did not inject after a YouTube layout change, an API key is missing or exhausted, or another extension is blocking it. Reload the video page first — that resolves the injection case, which is the most common.</p>
+
+      <h2>1. The summary panel does not appear</h2>
+      <p>Glarity injects a panel into the YouTube page. When YouTube ships a layout change, injection can fail silently and the panel simply is not there.</p>
+      <p><strong>Fix:</strong> reload the page, then update the extension, then restart the browser. Reinstall if it persists. This class of failure affects every extension-based summarizer — see <a href="/blog/youtube-summarizer-broken-after-update">summarizers breaking after updates</a>.</p>
+
+      <h2>2. API key issues</h2>
+      <p>Glarity can run against your own API key. If it was never set, has expired, or the associated account is out of credit, summaries fail — often with an unhelpful error. Check the extension's settings and confirm the key is present and the underlying account still has balance.</p>
+
+      <h2>3. Another extension is blocking it</h2>
+      <p>Ad blockers and privacy extensions frequently block the network requests Glarity needs. Disable others one at a time to identify the conflict, or test in a clean browser profile.</p>
+
+      <h2>4. The video has no captions</h2>
+      <p>Like all transcript-based tools, Glarity needs a caption track. Check for <strong>Show transcript</strong> under <strong>"...more"</strong> in the description. If it is absent, no tool will work on that video — see <a href="/blog/youtube-no-transcript-available-fix">"no transcript available" fixes</a>.</p>
+
+      <h2>5. It does not work on mobile</h2>
+      <p>Extensions do not run on iOS or standard mobile Chrome, so Glarity is desktop-only by design. Nothing to fix — you need a web-based tool for phone use. See <a href="/blog/youtube-summarizer-not-working-iphone">summarizing on iPhone</a>.</p>
+
+      <h2>Quick diagnosis</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Symptom</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Likely cause</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Panel missing entirely</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Injection failed — reload, then update</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Panel there, error on summarize</td><td style="padding: 0.75rem; border: 1px solid #ddd;">API key missing or out of credit</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Spins forever</td><td style="padding: 0.75rem; border: 1px solid #ddd;">No captions, or blocked requests</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Nothing on phone</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Extensions do not run on mobile</td></tr>
+        </tbody>
+      </table>
+
+      <p>Glarity is a good free option when it works; the fragility is inherent to living inside YouTube's page. If you would rather not troubleshoot an extension again, <a href="${P}">YT Summarizer</a> is a web app — nothing injected, no API key to manage, works on any device. Five summaries free, then one-time credits from $9 that never expire.</p>
+      <p>Comparison: <a href="/blog/youtube-summarizer-vs-glarity">YT Summarizer vs Glarity</a>.</p>
+    `,
+  },
+
+  'notebooklm-youtube-not-working': {
+    title: "NotebookLM Not Working With YouTube? Why Your Link Won't Import",
+    metaDescription: "NotebookLM rejecting a YouTube URL or importing nothing? What NotebookLM actually needs from a video, which links fail, and the workaround when the import will not go through.",
+    date: '2026-08-23',
+    content: `
+      <p><strong>Quick answer:</strong> NotebookLM imports a YouTube video by reading its caption track, so any video without captions fails to import — usually with a vague error rather than a clear explanation. Private, unlisted-restricted, members-only and age-restricted videos also fail, as do links that are still live streams. Check for <strong>Show transcript</strong> on the video first; if it is missing, the import cannot work.</p>
+
+      <h2>Why the import fails</h2>
+      <ul>
+        <li><strong>No captions.</strong> The single most common cause. NotebookLM cannot watch video; it needs the text.</li>
+        <li><strong>Video too new.</strong> Auto-captions take roughly 1–4 hours to generate after upload.</li>
+        <li><strong>Access-restricted.</strong> Private, members-only, purchased or age-restricted videos are not reachable — see <a href="/blog/private-age-restricted-video-summarize">why restricted videos cannot be summarized</a>.</li>
+        <li><strong>Still live.</strong> Live streams have no stored transcript until they finish and process.</li>
+        <li><strong>Malformed URL.</strong> Playlist links and links with extra parameters sometimes confuse the importer — use the plain <code>watch?v=</code> form.</li>
+      </ul>
+
+      <h2>Other common NotebookLM friction</h2>
+      <p><strong>Source limits.</strong> Notebooks cap how many sources you can add. If you are batch-importing videos, you may hit the ceiling rather than a per-video failure.</p>
+      <p><strong>Regional availability.</strong> Some NotebookLM features roll out unevenly by region and account type, so behaviour can differ between accounts on the same video.</p>
+      <p><strong>It imported but the answers are thin.</strong> That is usually the transcript being sparse — a heavily visual tutorial has little spoken content to work with.</p>
+
+      <h2>The workaround that almost always works</h2>
+      <ol>
+        <li>Get the transcript separately with a <a href="https://yttranscript.app">free transcript tool</a>.</li>
+        <li>Paste the text into NotebookLM as a plain text source instead of a link.</li>
+      </ol>
+      <p>This bypasses the importer entirely and works whenever a caption track exists, even if the URL import is being awkward.</p>
+
+      <h2>When NotebookLM is the wrong tool</h2>
+      <p>NotebookLM is excellent for research across several sources — asking questions, cross-referencing, generating study guides. It is heavier than necessary if you just want to know whether a single video is worth watching, because creating a notebook and importing a source per video is more setup than the task deserves.</p>
+      <p>For quick triage, <a href="${P}">YT Summarizer</a> takes the URL and returns structured key points in about a minute, with no notebook to create — 5 free summaries, then one-time credits from $9 that never expire. For deeper research work, NotebookLM remains the better free option.</p>
+      <p>See also: <a href="/blog/youtube-summarizer-vs-notebooklm">YT Summarizer vs NotebookLM</a> and <a href="/blog/how-to-use-notebooklm-for-youtube-videos">how to use NotebookLM for YouTube videos</a>.</p>
+    `,
+  },
+
+  'sider-not-working': {
+    title: 'Sider Not Working on YouTube? Causes and Fixes (2026)',
+    metaDescription: "Sider sidebar not summarizing YouTube, missing on the page, or out of credits? The usual causes — daily credit allowance, extension conflicts, YouTube layout changes — with fixes.",
+    date: '2026-08-23',
+    content: `
+      <p><strong>Quick answer:</strong> Sider problems on YouTube usually come down to the daily credit allowance being exhausted, the sidebar failing to inject after a YouTube update, or the video lacking captions. Because Sider is a general AI assistant rather than a YouTube-specific tool, its credits are shared across every feature — so heavy chat or translation use can leave nothing for video summaries.</p>
+
+      <h2>1. Out of credits</h2>
+      <p>Sider's free tier provides a daily credit allowance shared across all its features. Summarizing a long video costs more than a short chat exchange, and once the daily pool is gone, summaries fail — sometimes without a clear message. Check your credit balance in the sidebar before assuming a bug.</p>
+      <p><strong>Fix:</strong> wait for the daily reset, upgrade, or use a tool with a separate allowance for video.</p>
+
+      <h2>2. The sidebar does not appear</h2>
+      <p>Sider injects a sidebar into the page. YouTube layout changes and Chrome extension policy updates can break injection.</p>
+      <p><strong>Fix:</strong> reload the page, update the extension, restart the browser, then reinstall if needed. Same class of problem as any in-page tool — see <a href="/blog/youtube-summarizer-broken-after-update">summarizers breaking after updates</a>.</p>
+
+      <h2>3. The video has no transcript</h2>
+      <p>Sider reads the caption track. No captions, no summary. Verify with <strong>Show transcript</strong> under <strong>"...more"</strong> in the description — details in <a href="/blog/youtube-no-transcript-available-fix">"no transcript available" fixes</a>.</p>
+
+      <h2>4. Long videos fail or truncate</h2>
+      <p>Long transcripts can exceed the model's context on lower tiers, producing partial summaries that look complete. Check whether the final third of the video is represented — see <a href="/blog/youtube-summary-cut-off-long-videos">summaries cut off on long videos</a>.</p>
+
+      <h2>5. Model selection</h2>
+      <p>Sider lets you choose models, and cheaper or free-tier models handle long transcripts less reliably. If summaries are poor rather than absent, try a stronger model before concluding the tool is broken.</p>
+
+      <h2>The structural tradeoff</h2>
+      <p>Sider is an all-purpose AI sidebar; YouTube summarization is one feature among many. That breadth is the appeal, and also why video summaries compete for the same credit pool as everything else. It is also extension-based, so no iPhone use.</p>
+      <p>If YouTube summarizing is what you actually do, a dedicated tool avoids both issues. <a href="${P}">YT Summarizer</a> is web-based with one-time credits — 1 credit per video of any length, 5 free, then packs from $9 that never expire, with nothing shared with other features and no daily reset.</p>
+      <p>Comparison: <a href="/blog/youtube-summarizer-vs-sider">YT Summarizer vs Sider</a>.</p>
+    `,
+  },
+
+  'youtube-ai-summary-not-working': {
+    title: "YouTube's Own AI Summary Not Working or Not Showing? (2026)",
+    metaDescription: "YouTube's built-in AI summaries and Ask YouTube missing from your app? Availability is limited by region, account and video. Why you may not see it, and what works everywhere instead.",
+    date: '2026-08-23',
+    content: `
+      <p><strong>Quick answer:</strong> YouTube's own AI summary features roll out gradually and are not available to everyone. Availability depends on your region, your account, whether you are on the app or web, and which video you are watching — so the feature genuinely may not exist for you, and there is no setting that turns it on. This is a rollout limitation, not a fault you can fix.</p>
+
+      <h2>Why you cannot see it</h2>
+      <ul>
+        <li><strong>Regional rollout.</strong> Google ships these features to selected markets first, typically English-speaking ones.</li>
+        <li><strong>Account-level rollout.</strong> Even within a supported region, features appear for some accounts before others.</li>
+        <li><strong>Video-level availability.</strong> AI summaries appear on some videos and not others, depending on captions, length and category.</li>
+        <li><strong>App version.</strong> Older app builds do not have it — update, then restart the app.</li>
+        <li><strong>Premium gating.</strong> Some AI features have been Premium-only or trialled with Premium subscribers first.</li>
+      </ul>
+
+      <h2>What you can try</h2>
+      <ol>
+        <li>Update the YouTube app and restart it.</li>
+        <li>Test on a popular, long, English-language video — availability skews toward those.</li>
+        <li>Check on both mobile app and desktop web; rollout differs between them.</li>
+        <li>Confirm you are signed in.</li>
+      </ol>
+      <p>If none of that surfaces it, the feature has not reached your account and waiting is the only option.</p>
+
+      <h2>How it compares when it does work</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;"></th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">YouTube's AI summary</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Dedicated summarizer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Availability</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Partial — region, account, video</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Any public captioned video</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Depth</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Brief overview</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Structured key points and takeaways</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Saved library</td><td style="padding: 0.75rem; border: 1px solid #ddd;">No</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Usually yes</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Cost</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Free where available</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Free tier, then paid</td></tr>
+        </tbody>
+      </table>
+
+      <p>Where YouTube's version is available and you only want a rough sense of a video, it is convenient and free — use it. The gap it leaves is consistency: you cannot rely on a feature that appears on some videos and not others, and it does not keep your summaries anywhere.</p>
+      <p><a href="${P}">YT Summarizer</a> works on any public captioned video regardless of region or account, returns structured output, and saves everything to a library — 5 free summaries, then one-time credits from $9 that never expire.</p>
+      <p>Full comparison: <a href="/blog/youtube-summarizer-vs-youtube-built-in-ai">YT Summarizer vs YouTube's built-in AI</a>.</p>
+    `,
+  },
+
+  'out-of-free-summaries-what-next': {
+    title: 'Out of Free Summaries? What Your Options Actually Are (2026)',
+    metaDescription: "Hit the free limit on your YouTube summarizer? A clear comparison of what each tool charges next, which tools are genuinely free, and how to work out what your usage is really worth.",
+    date: '2026-08-23',
+    content: `
+      <p><strong>Quick answer:</strong> You have three routes: switch to a genuinely free tool (Summarize.tech, NotebookLM), wait for your current tool's limit to reset, or pay. If you pay, the choice that matters most is subscription versus one-time credits — subscriptions suit steady monthly use, one-time credits suit irregular use, and the difference over a year is substantial.</p>
+
+      <h2>What each tool does when you hit the wall</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: #f9f9f9;">
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Tool</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Free limit</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">What comes next</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Eightify</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Weekly cap</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription, ~$60–120/yr</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">NoteGPT</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Monthly quota</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription, quotas still apply</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Glasp</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Daily cap</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Paid tier</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">Summarize.tech</td><td style="padding: 0.75rem; border: 1px solid #ddd;">None meaningful</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Stays free</td></tr>
+          <tr><td style="padding: 0.75rem; border: 1px solid #ddd;">NotebookLM</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Generous</td><td style="padding: 0.75rem; border: 1px solid #ddd;">Stays free</td></tr>
+          <tr style="background: #fff8f9;"><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>YT Summarizer</strong></td><td style="padding: 0.75rem; border: 1px solid #ddd;">5 summaries</td><td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>One-time packs from $9, never expire</strong></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Work out what your usage is actually worth</h2>
+      <p>Estimate videos per month honestly, then compare cost per summary rather than headline price:</p>
+      <ul>
+        <li><strong>1–3 videos a month:</strong> use a free tool. Paying anything is poor value.</li>
+        <li><strong>4–15 a month, steadily:</strong> either model works; compare annual totals.</li>
+        <li><strong>Bursty — heavy some months, none others:</strong> one-time credits win clearly, because subscriptions charge identically in your quiet months.</li>
+        <li><strong>Heavy and constant:</strong> compare a subscription's annual cost against a large credit pack.</li>
+      </ul>
+      <p>Concretely: an $8/month subscription is $96 a year regardless of use. A $19 credit pack of 200 summaries is under 10 cents each and does not renew. Full breakdown in <a href="/blog/how-much-do-youtube-summarizers-cost-2026">what YouTube summarizers cost in 2026</a>.</p>
+
+      <h2>The free route, honestly assessed</h2>
+      <p>Summarize.tech genuinely stays free with no account, at the cost of paragraph-style output rather than structured key points. NotebookLM is free and more capable but needs a notebook set up per topic. Copying a transcript into ChatGPT is free too, at 4–6 minutes of manual work per video. All three are legitimate — the question is whether your time is worth more than the fee.</p>
+
+      <h2>Before you pay for anything</h2>
+      <p>Test output quality on a video you already know well. Tools differ more in structure and long-video handling than in raw writing quality, and the differences only show up on content you can evaluate.</p>
+      <p><a href="${P}">YT Summarizer</a> gives 5 free summaries to do exactly that, then credit packs from $9 with no subscription and no expiry — 1 credit per video of any length, so long lectures cost the same as short clips.</p>
+    `,
+  },
 }
 
 export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
+  // ===== Batch 3: extended troubleshooting cluster =====
+  'youtube-transcript-button-missing': [
+    { q: `Where is the Show transcript button on YouTube?`, a: `Inside the video description, not under the player. Click "...more" to expand the description and scroll to the very bottom — it sits near the licence and category information. Most people miss it because they look under the video or in the three-dot menu, where it used to be.` },
+    { q: `Why is the transcript button missing on some videos?`, a: `Because those videos have no caption track. Either the creator disabled captions, the video is too new for auto-captions (they take about 1–4 hours), the language is not well supported by speech recognition, or there is no speech to transcribe.` },
+    { q: `How do I check whether a video has captions at all?`, a: `Click the CC button on the player. If captions appear on screen, a transcript exists and the button is somewhere in the description. If CC does nothing, there is no caption track and no transcript tool will work on that video.` },
+    { q: `Is there a faster way to get a YouTube transcript?`, a: `Yes. YouTube's panel interleaves timestamps and has no copy-all button. A web tool like YT Transcript takes the video URL and returns clean copyable text in seconds, free and with no signup.` },
+  ],
+  'youtube-summarizer-slow-timing-out': [
+    { q: `Why is my YouTube summarizer so slow?`, a: `Usually video length or free-tier throttling. Long videos produce huge transcripts that must be fetched and chunked, and many tools queue free requests behind paid ones at busy times. Test a short video: if that is fast, the tool is fine and your original video is simply long.` },
+    { q: `How long should a YouTube summary take?`, a: `Roughly 30–60 seconds for a standard video and 60–90 seconds for long content on a tool that chunks properly. Several minutes suggests load or throttling; never finishing suggests a failure rather than slowness.` },
+    { q: `Why does the same video work sometimes and fail others?`, a: `YouTube rate-limits caption requests. When a tool hits the limit it retries, which appears to you as a long spinner or a timeout. Retrying a minute later often succeeds.` },
+    { q: `Does clicking summarize again make it faster?`, a: `No — it usually makes it slower, because duplicate requests queue up. Reload the page instead, and disable ad blockers or test in a private window to rule out extension interference.` },
+  ],
+  'youtube-summary-inaccurate-wrong': [
+    { q: `Why is my AI YouTube summary wrong?`, a: `Summarizers read a machine-generated caption track, not the video itself, so two lossy steps stack up. The four failure modes are garbled numbers, quotes attributed to the wrong speaker, visual-only content missing entirely, and sarcasm or hypotheticals reported as fact.` },
+    { q: `How accurate are AI YouTube summaries?`, a: `Reliable for structure, topics and overall argument; unreliable for specifics like figures, names and attribution. Treat any summary as a map to the video rather than a citable source, and verify anything you plan to act on.` },
+    { q: `How do I check whether a summary is accurate?`, a: `Confirm it references the final third of the video (otherwise it was truncated), spot-check one number against the audio, verify speaker attribution on multi-speaker content, and be suspicious of oddly specific claims in an otherwise vague summary.` },
+    { q: `Which videos summarize most accurately?`, a: `Single-speaker, talk-heavy content with creator-added manual captions — lectures, conference talks, solo explainers. The least accurate are multi-speaker panels, heavily visual tutorials, and videos with strong accents or background music.` },
+  ],
+  'summarize-youtube-live-stream': [
+    { q: `Can you summarize a YouTube live stream?`, a: `Not while it is live. Live broadcasts generate rolling captions rather than a stored caption track, and summarizers read the stored track. Once the stream ends and YouTube processes the recording, it summarizes like any normal video.` },
+    { q: `How long after a live stream can I summarize it?`, a: `Anywhere from a few minutes to several hours, depending on length — multi-hour streams take proportionally longer. Check for the "Show transcript" button in the description; when it appears, the stream is ready.` },
+    { q: `Can I summarize a YouTube premiere?`, a: `Not during the premiere, for the same reason as live streams — there is no stored transcript until it finishes. Afterwards it behaves as a normal video.` },
+    { q: `Are live streams worth summarizing afterwards?`, a: `They are the best use case for summarization. Streams are the least information-dense format on YouTube — long intros, waiting for viewers, chat tangents, repetition for late arrivals — so a three-hour stream often compresses to twenty minutes of substance.` },
+  ],
+  'cant-summarize-youtube-playlist': [
+    { q: `Can you summarize a whole YouTube playlist?`, a: `Not with a playlist URL. A playlist is a container with no combined transcript, so tools either error or silently summarize only the first video. Summarize videos individually, then summarize those summaries for a course-level overview.` },
+    { q: `Why does pasting a playlist link only summarize one video?`, a: `Because the tool extracted the single video ID from the URL and ignored the rest. Watch for this — it fails silently, so you can believe you summarized 30 videos when you summarized one.` },
+    { q: `How do I get a single video URL out of a playlist?`, a: `Delete everything from "&list=" onward. A link like youtube.com/watch?v=ABC&list=PLxyz works fine once trimmed to youtube.com/watch?v=ABC.` },
+    { q: `What is the fastest way to get through a long course?`, a: `Do not summarize every video. Summarize the first few and the ones whose titles match what you need, decide which handful actually matter, then watch only those. Most courses are redundant enough that this turns 20 hours into about two.` },
+  ],
+  'youtube-summary-too-short': [
+    { q: `Why is my YouTube summary so short?`, a: `Two different problems look the same. A shallow summary processed the whole video but over-compressed it. A truncated summary only saw the first portion. Check whether the final third of the video is referenced — if yes it is shallow, if no it was truncated.` },
+    { q: `How do I get a more detailed YouTube summary?`, a: `Summarize chapter by chapter if the video has chapters, or pull the full transcript and ask for a section-by-section breakdown rather than a summary. Targeted questions ("what specific steps does he recommend?") also produce more than a generic summarize request.` },
+    { q: `Why do some tools give the same length summary regardless of video?`, a: `Many use a fixed output target, so a 90-minute video gets compressed roughly ten times harder than a 9-minute one. Free tiers also sometimes shorten output to conserve processing cost.` },
+    { q: `Is a short summary ever correct?`, a: `Yes. A 45-minute video padded to hit an ad-revenue threshold may genuinely contain three ideas. If you cross-check and the summary captured them, the tool worked — the video was the problem.` },
+  ],
+  'cancel-eightify-subscription': [
+    { q: `How do I cancel my Eightify subscription?`, a: `Sign in, open Account, Billing or Subscription, and select cancel or downgrade. If you subscribed through an app store rather than the website, you must cancel in that store instead. Keep the confirmation email.` },
+    { q: `Does uninstalling the Eightify extension cancel my subscription?`, a: `No. Removing the extension stops the tool appearing but billing continues. You must cancel through your account settings separately — this catches people out regularly.` },
+    { q: `What happens after I cancel Eightify?`, a: `You normally keep paid features until the end of the period you have already paid for, then revert to the free weekly summary cap. Copy anything you want to keep, since extension tools do not usually store summaries long-term.` },
+    { q: `What should I use instead of Eightify?`, a: `Depends why you left. For no recurring charge, a one-time-credit tool like YT Summarizer (5 free, then from $9, never expiring). For free, Summarize.tech or NotebookLM. For iPhone use, any web-based tool, since extensions cannot run on iOS.` },
+  ],
+  'glarity-not-working': [
+    { q: `Why is Glarity not working on YouTube?`, a: `Usually the summary panel failed to inject after a YouTube layout change, an API key is missing or out of credit, or another extension is blocking the requests. Reload the video page first — that fixes the injection case, which is most common.` },
+    { q: `Does Glarity need an API key?`, a: `Glarity can run against your own API key. If it was never configured, has expired, or the associated account has no balance, summaries fail — often with an unhelpful error. Check the extension settings.` },
+    { q: `Does Glarity work on mobile?`, a: `No. It is a browser extension, and extensions do not run on iOS or standard mobile Chrome. Phone use requires a web-based summarizer.` },
+    { q: `Why do extension-based summarizers keep breaking?`, a: `They inject into YouTube's page, so any layout change or Chrome extension policy update can break them until the developer patches it. Web apps avoid this class of failure entirely because nothing is injected.` },
+  ],
+  'notebooklm-youtube-not-working': [
+    { q: `Why won't NotebookLM import my YouTube link?`, a: `NotebookLM reads the video's caption track, so any video without captions fails to import — usually with a vague error. Access-restricted videos (private, members-only, age-restricted) and live streams still in progress also fail.` },
+    { q: `How do I add a YouTube video to NotebookLM when the link fails?`, a: `Get the transcript separately with a free transcript tool, then paste the text into NotebookLM as a plain text source. This bypasses the importer and works whenever a caption track exists.` },
+    { q: `Why are NotebookLM's answers about my video thin?`, a: `Usually a sparse transcript. Heavily visual tutorials have little spoken content — the substance is on screen, which no transcript-based tool can see.` },
+    { q: `Is NotebookLM good for YouTube summaries?`, a: `Excellent for research across several sources — asking questions, cross-referencing, study guides. Heavier than needed for quick triage of a single video, since you must create a notebook and import a source each time.` },
+  ],
+  'sider-not-working': [
+    { q: `Why is Sider not summarizing YouTube videos?`, a: `Most often the daily credit allowance is exhausted. Sider's credits are shared across all its features, so heavy chat or translation use leaves nothing for video summaries. Other causes are sidebar injection failing after a YouTube update, or the video having no captions.` },
+    { q: `Do Sider credits apply to YouTube summaries?`, a: `Yes, and they are shared with every other Sider feature. Summarizing a long video costs more than a short chat exchange, so a long video can exhaust what remains of a daily allowance in one go.` },
+    { q: `Why are Sider's YouTube summaries poor quality?`, a: `Often model selection. Cheaper or free-tier models handle long transcripts less reliably. Try a stronger model before concluding the tool is broken — and check whether the final third of the video is covered, which indicates truncation.` },
+    { q: `Is Sider worth it just for YouTube?`, a: `Rarely. It is an all-purpose AI sidebar where video summarization is one feature among many, so you pay for breadth and your summaries compete for shared credits. A dedicated tool is cheaper and does not share an allowance.` },
+  ],
+  'youtube-ai-summary-not-working': [
+    { q: `Why can't I see YouTube's AI summary feature?`, a: `Availability depends on your region, your account, whether you are on app or web, and the specific video. Google rolls these features out gradually, so the feature genuinely may not exist for you yet — there is no setting that enables it.` },
+    { q: `How do I turn on YouTube's AI summaries?`, a: `You cannot. It is a server-side rollout rather than a toggle. Update the app, restart it, sign in, and test on a popular long English-language video — availability skews toward those — but if it is not there, waiting is the only option.` },
+    { q: `Is YouTube's AI summary available on every video?`, a: `No. Even for accounts that have the feature, it appears on some videos and not others depending on captions, length and category. That inconsistency is its main practical weakness.` },
+    { q: `What can I use instead of YouTube's built-in AI summary?`, a: `Any dedicated summarizer works on every public captioned video regardless of region or account. YT Summarizer returns structured key points and saves them to a library — 5 free summaries, then one-time credits from $9 that never expire.` },
+  ],
+  'out-of-free-summaries-what-next': [
+    { q: `What happens when I run out of free YouTube summaries?`, a: `Depends on the tool. Eightify resets weekly, Glasp daily, NoteGPT monthly. Summarize.tech and NotebookLM stay free with no meaningful cap. Paid options split into subscriptions and one-time credit packs.` },
+    { q: `Is it worth paying for a YouTube summarizer?`, a: `Under about 3 videos a month, no — use a free tool. Between 4 and 15 a month, either model works. If your usage is bursty (heavy some months, none others), one-time credits win clearly because subscriptions charge identically in quiet months.` },
+    { q: `What is the cheapest way to keep summarizing after the free limit?`, a: `Summarize.tech and NotebookLM are genuinely free. If you want structured output without a subscription, one-time credits work out cheapest over any period longer than about two months — a $19 pack of 200 summaries is under 10 cents each and never expires.` },
+    { q: `How do I compare summarizer pricing properly?`, a: `Compare cost per summary at your actual usage, not headline price. An $8/month plan is $96 a year regardless of use; used for 3 videos in a slow month that is $2.67 per summary. Fixed credits do not have that problem.` },
+  ],
+
   // ===== Batch 2: competitor-brand cluster =====
   'notegpt-review': [
     { q: `Is NoteGPT worth it in 2026?`, a: `It is worth it if you summarize across formats — YouTube, PDFs, slides — and want extras like mind maps and flashcards. It is poor value if you only summarize YouTube, because you pay monthly for features you never use and still face usage quotas.` },

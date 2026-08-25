@@ -6,6 +6,23 @@ export type PostListEntry = {
 }
 
 export const allPosts: PostListEntry[] = [
+  // Batch 3 (Aug 2026): extends the proven troubleshooting seam.
+  // youtube-summarizer-broken-after-update hit 15.7% CTR and the "not working"
+  // anchor ~21 clicks/week, so this batch goes deeper into specific failure modes,
+  // adds cancel-intent pages, and covers competitor tools not yet troubleshot.
+  { slug: 'youtube-transcript-button-missing', title: "YouTube Transcript Button Missing? Here Is Where It Went", description: "Can't find 'Show transcript' on YouTube? The button moved, and it does not appear on every video. Where to look now, why it is missing, and what to do when it genuinely is not there.", date: '2026-08-23' },
+  { slug: 'youtube-summarizer-slow-timing-out', title: "YouTube Summarizer Slow or Timing Out? Why, and How to Speed It Up", description: "Summarizer stuck loading, spinning forever, or timing out? The real causes — video length, server load, free-tier throttling, browser issues — and what actually fixes each.", date: '2026-08-23' },
+  { slug: 'youtube-summary-inaccurate-wrong', title: "YouTube Summary Wrong or Inaccurate? Why AI Gets Videos Wrong", description: "AI summary contains facts the video never said? Here is where summarizers actually fail — numbers, speaker attribution, visual content, sarcasm — and how to check one before you rely on it.", date: '2026-08-23' },
+  { slug: 'summarize-youtube-live-stream', title: "Can You Summarize a YouTube Live Stream or Premiere? (2026)", description: "Trying to summarize a live stream and getting errors? Live content has no transcript until it ends. When the captions appear, what works for past streams, and workarounds while it is live.", date: '2026-08-23' },
+  { slug: 'cant-summarize-youtube-playlist', title: "Can't Summarize a YouTube Playlist? How to Do It Properly", description: "Pasted a playlist URL and got an error? Summarizers work on single videos, not playlists. Why that is, and the workflow for summarizing a whole course or series efficiently.", date: '2026-08-23' },
+  { slug: 'youtube-summary-too-short', title: "YouTube Summary Too Short or Missing Key Points? How to Fix It", description: "Getting three bullet points for a 90-minute video? Why summaries come out too shallow, how to tell shallow from truncated, and how to get the depth you actually need.", date: '2026-08-23' },
+  { slug: 'cancel-eightify-subscription', title: "How to Cancel Eightify (and What to Use Instead)", description: "Cancelling your Eightify subscription? Where the setting is, what happens to access afterwards, refund considerations, and alternatives — including options with no recurring charge.", date: '2026-08-23' },
+  { slug: 'glarity-not-working', title: "Glarity Not Working on YouTube? Causes and Fixes (2026)", description: "Glarity summary not appearing on YouTube, stuck loading, or asking for an API key? The common causes — extension conflicts, YouTube updates, key configuration — and how to fix each.", date: '2026-08-23' },
+  { slug: 'notebooklm-youtube-not-working', title: "NotebookLM Not Working With YouTube? Why Your Link Won't Import", description: "NotebookLM rejecting a YouTube URL or importing nothing? What NotebookLM actually needs from a video, which links fail, and the workaround when the import will not go through.", date: '2026-08-23' },
+  { slug: 'sider-not-working', title: "Sider Not Working on YouTube? Causes and Fixes (2026)", description: "Sider sidebar not summarizing YouTube, missing on the page, or out of credits? The usual causes — daily credit allowance, extension conflicts, YouTube layout changes — with fixes.", date: '2026-08-23' },
+  { slug: 'youtube-ai-summary-not-working', title: "YouTube's Own AI Summary Not Working or Not Showing? (2026)", description: "YouTube's built-in AI summaries and Ask YouTube missing from your app? Availability is limited by region, account and video. Why you may not see it, and what works everywhere instead.", date: '2026-08-23' },
+  { slug: 'out-of-free-summaries-what-next', title: "Out of Free Summaries? What Your Options Actually Are (2026)", description: "Hit the free limit on your YouTube summarizer? A clear comparison of what each tool charges next, which tools are genuinely free, and how to work out what your usage is really worth.", date: '2026-08-23' },
+
   // Batch 2 (Aug 2026): competitor-brand cluster. Keyword Planner (US):
   // notegpt 10k-100k/mo, eightify 1k-10k, glasp 1k-10k. Bare brand terms are
   // unwinnable; these target the modifier long-tail (review/pricing/free/vs/cancel).
