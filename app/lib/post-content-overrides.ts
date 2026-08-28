@@ -1641,9 +1641,8 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <h2>The tiers</h2>
       <ul>
         <li><strong>Free — $0:</strong> 5 summaries, forever. Enough to test the output on your own videos.</li>
-        <li><strong>Starter — $19 one-time:</strong> 50 summaries.</li>
-        <li><strong>Pro — $19 one-time:</strong> 200 summaries (the recommended pack).</li>
-        <li><strong>Power — $49 one-time:</strong> 1,000 summaries.</li>
+        <li><strong>Pro — $19 one-time:</strong> 200 summaries (the recommended pack) — 9.5 cents per summary.</li>
+        <li><strong>Power — $49 one-time:</strong> 1,000 summaries — 4.9 cents per summary.</li>
       </ul>
       <p>Every pack includes all AI features, the personal library, and credits that <strong>never expire</strong>. There's no subscription and a 30-day money-back guarantee. One credit equals one AI summary of one video, any length. (These are founding-member prices; they're set to rise later.)</p>
       <h2>The value math vs subscriptions</h2>
@@ -1651,7 +1650,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <h2>Who should buy which</h2>
       <ul>
         <li><strong>Just testing?</strong> Start on Free (5 summaries).</li>
-        <li><strong>Occasional use</strong> (a few a month): Starter ($19 / 50) lasts a long time.</li>
+        <li><strong>Occasional use</strong> (a few a month): Pro ($19 / 200) will last you years — 200 credits at three videos a month is over five years.</li>
         <li><strong>Regular use</strong> (several a week): Pro ($19 / 200) is the sweet spot — hence "recommended."</li>
         <li><strong>Heavy use</strong> or a team: Power ($49 / 1,000) is the lowest cost per summary.</li>
       </ul>
@@ -2288,7 +2287,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
           <tr>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">Notta</td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">Limited minutes</td>
-            <td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription, ~$19–14/mo (transcription suite)</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription, ~$9–14/mo (transcription suite)</td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">~$108–$168</td>
           </tr>
           <tr>

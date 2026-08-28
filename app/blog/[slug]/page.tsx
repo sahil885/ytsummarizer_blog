@@ -462,13 +462,13 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h3>Pricing comparison over time</h3>
       <ul>
-        <li><strong>1 month:</strong> VidPill ~$19 vs. YT Summarizer $19 (one-time Pro pack)</li>
+        <li><strong>1 month:</strong> VidPill ~$9 vs. YT Summarizer $19 (one-time Pro pack, 200 summaries)</li>
         <li><strong>3 months:</strong> VidPill ~$27 vs. YT Summarizer $19 ← crossover point</li>
-        <li><strong>4 months:</strong> VidPill ~$36 vs. YT Summarizer $19</li>
+        <li><strong>6 months:</strong> VidPill ~$54 vs. YT Summarizer $19</li>
         <li><strong>12 months:</strong> VidPill ~$108 vs. YT Summarizer $19</li>
         <li><strong>24 months:</strong> VidPill ~$216 vs. YT Summarizer $19</li>
       </ul>
-      <p>If you plan to use a YouTube summarizer for more than 3 months — which is likely if you're researching alternatives — the one-time model wins after month 4.</p>
+      <p>The crossover lands between month 2 and month 3. If you plan to use a YouTube summarizer for longer than that — which is likely if you're researching alternatives rather than testing one — the one-time model is cheaper from month 3 onward, and the gap widens every month after.</p>
 
       <h2>Feature Comparison</h2>
       <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
