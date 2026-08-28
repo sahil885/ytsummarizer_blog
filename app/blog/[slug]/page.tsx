@@ -22,7 +22,7 @@ const postFaqs: Record<string, Array<{ q: string; a: string }>> = {
   ],
   'summarize-youtube-video-without-extension': [
     { q: 'Can you summarize YouTube videos without a Chrome extension?', a: 'Yes. Web-based tools like YT Summarizer and Summarize.tech work entirely in the browser — paste a URL, get a summary. No extension installation, no browser permission requests, no admin rights required. This also means they work on any browser (Firefox, Safari, Edge, Arc) and on mobile, unlike Chrome-only extensions.' },
-    { q: 'What\'s the best YouTube summarizer that doesn\'t require an extension?', a: 'YT Summarizer is the best web-based option: structured bullet-point output, handles long videos, pay-once (from $9), no subscription. Summarize.tech is the best completely free option with no extension. Both work by pasting a URL into a web page — no browser modification needed.' },
+    { q: 'What\'s the best YouTube summarizer that doesn\'t require an extension?', a: 'YT Summarizer is the best web-based option: structured bullet-point output, handles long videos, pay-once (from $19), no subscription. Summarize.tech is the best completely free option with no extension. Both work by pasting a URL into a web page — no browser modification needed.' },
     { q: 'Why would I want a YouTube summarizer without an extension?', a: 'Several practical reasons: you\'re on a managed device (work, school) where extensions require admin approval; you use Firefox or Safari where Chrome extensions don\'t work; you prefer not to grant browser permission to a third party; or you want something that works on mobile without a special browser. Web tools have no friction — the URL is the interface.' },
     { q: 'Do YouTube summarizer extensions have access to my browsing data?', a: 'Chrome extensions that inject into YouTube pages typically request "read all data on youtube.com" or similar broad permissions. Web-based tools only process the specific URL you submit — they have no access to your browsing history, other tabs, or YouTube account. If privacy is a concern, web tools are the lower-risk option.' },
   ],
@@ -33,7 +33,7 @@ const postFaqs: Record<string, Array<{ q: string; a: string }>> = {
     { q: 'Does YT Summarizer do everything VidPill does?', a: 'YT Summarizer focuses on YouTube video summarization — it does that one job reliably, with structured bullet-point output, handling long videos without truncation. If VidPill features you rely on include multi-platform video (non-YouTube sources) or specific study tools (mind maps, flashcards), compare both before switching. For pure YouTube summarization, the output quality is comparable.' },
   ],
   'best-ai-video-summarization-tools-2026': [
-    { q: 'What is the best AI video summarization tool in 2026?', a: 'For YouTube specifically, YT Summarizer leads on value — pay-once payment (from $9), no weekly limits, handles long videos reliably. For multi-platform video (including uploaded files, Zoom recordings, Loom links), Notta and Mindgrasp cover more source types. For completely free use, Summarize.tech works without an account.' },
+    { q: 'What is the best AI video summarization tool in 2026?', a: 'For YouTube specifically, YT Summarizer leads on value — pay-once payment (from $19), no weekly limits, handles long videos reliably. For multi-platform video (including uploaded files, Zoom recordings, Loom links), Notta and Mindgrasp cover more source types. For completely free use, Summarize.tech works without an account.' },
     { q: 'How accurate are AI video summarization tools?', a: 'Accuracy varies significantly. Tools using GPT-4-class models on clean transcripts achieve 85-95% accuracy on factual claims. The main failure modes: misattributing speaker quotes, missing numerical data, and hallucinating claims in technical content. Always verify specific statistics or claims against the source video.' },
     { q: 'Do AI video summarization tools work on non-YouTube video?', a: 'Some do. Notta, Mindgrasp, and Fireflies handle uploaded video files, Zoom recordings, and meeting URLs. Most YouTube-specific tools only work on public YouTube videos with available captions. If you need to summarize meetings or proprietary recordings, you\'ll need a broader transcription-first tool.' },
     { q: 'What\'s the difference between a transcription tool and a summarization tool?', a: 'Transcription tools convert speech to text. Summarization tools take that text and produce a compressed, structured version with key points. Some tools (Notta, Otter.ai) do both. Summarization-first tools like YT Summarizer skip showing you the transcript and go straight to the structured summary. Both have different use cases.' },
@@ -54,7 +54,7 @@ const postFaqs: Record<string, Array<{ q: string; a: string }>> = {
     { q: 'What is the best free YouTube summarizer for students?', a: 'Summarize.tech is the best completely free option — no account, no limits. For occasional use, the free tiers of YT Summarizer and NoteGPT also work. For heavy use during exam season, the pay-once YT Summarizer plan is the most economical — it works out to less than one textbook chapter per year of use.' },
     { q: 'Is a YouTube summarizer cheating in school?', a: 'No. AI summarizers are study aids, like textbook summaries or lecture notes. Using one to understand the structure of a lecture before studying it in depth is standard academic practice. The learning still happens — the summarizer just removes the friction of finding which parts are worth your full attention.' },
     { q: 'Can YouTube summarizers handle lecture videos and academic content?', a: 'Yes, and academic content often summarizes better than general content because it\'s more structured. University lectures, research presentations, and conference talks have clear section structure that AI models capture reliably. Technical terms may occasionally be transcribed incorrectly by auto-captions, so verify key terms.' },
-    { q: 'What YouTube summarizer is best for students on a tight budget?', a: 'YT Summarizer\'s pay-once payment (from $9) is the best value for regular use — no subscription, no caps. Over a 4-year degree it\'s $7.25/year. For zero-cost options, Summarize.tech (free, no account) and ChatGPT\'s free tier (with manual transcript copy) both work for occasional use.' },
+    { q: 'What YouTube summarizer is best for students on a tight budget?', a: 'YT Summarizer\'s pay-once payment (from $19) is the best value for regular use — no subscription, no caps. Over a 4-year degree it\'s $7.25/year. For zero-cost options, Summarize.tech (free, no account) and ChatGPT\'s free tier (with manual transcript copy) both work for occasional use.' },
   ],
   'copying-youtube-transcript-to-chatgpt-wastes-time': [
     { q: 'Is copying YouTube transcripts to ChatGPT a good method?', a: 'It works, but it\'s slow. The manual workflow takes 4-6 minutes per video — finding the transcript, copying it, opening ChatGPT, pasting, writing a prompt, waiting, copying the output. Dedicated tools complete the same task in 30-60 seconds. For one video per month, the manual method is fine. For regular use, it doesn\'t scale.' },
@@ -180,7 +180,7 @@ const postFaqs: Record<string, Array<{ q: string; a: string }>> = {
     { q: 'What is the best Eightify alternative without a subscription?', a: 'YT Summarizer is the best pay-once alternative with pay-once pricing. For free alternatives, Summarize.tech works well for one-off summaries but has lower quality and no history. NoteGPT and Glasp offer free tiers but lean subscription for power users.' },
     { q: 'Why do people look for Eightify alternatives?', a: 'The most common reasons: Eightify\'s 3 summaries/week free limit is too restrictive, its monthly subscription fee adds up, and some users prefer a web app to a Chrome extension. Heavy users especially hit the free-tier cap within days.' },
     { q: 'Is there a free YouTube summarizer better than Eightify?', a: 'No free tool matches Eightify\'s polish, but YT Summarizer\'s pay-once pricing is cheaper than ~3 months of Eightify\'s subscription and doesn\'t limit your summaries. For occasional use, Summarize.tech works without an account.' },
-    { q: 'How much does YT Summarizer cost vs Eightify?', a: 'YT Summarizer is one-time packs from $9 (no subscription). Eightify is a monthly subscription at roughly $8–10/month after the 3-free-per-week limit. The break-even is around 2–3 months; after that, YT Summarizer is cheaper forever.' },
+    { q: 'How much does YT Summarizer cost vs Eightify?', a: 'YT Summarizer is one-time packs from $19 (no subscription). Eightify is a monthly subscription at roughly $8–10/month after the 3-free-per-week limit. The break-even is around 2–3 months; after that, YT Summarizer is cheaper forever.' },
   ],
   'can-chatgpt-summarize-youtube-videos': [
     { q: 'Can ChatGPT summarize YouTube videos directly?', a: 'ChatGPT cannot summarize YouTube videos directly in most configurations. You need to copy the video transcript manually and paste it in, or use a ChatGPT plugin/custom GPT that fetches transcripts. Dedicated YouTube summarizers do both steps for you.' },
@@ -210,7 +210,7 @@ const postFaqs: Record<string, Array<{ q: string; a: string }>> = {
     { q: 'How long does it take to take notes from a 1-hour YouTube video?', a: 'With an AI summarizer: 2-3 minutes to get the summary, 5-10 minutes to review and organize it into notes, then 15-20 minutes of targeted re-watching on the sections you flagged. Total: 25-35 minutes. Without AI: 60 minutes of full playback plus 20-30 minutes of note-taking = 80-90 minutes. AI summarization cuts total time by roughly 60%.' },
   ],
   'youtube-summarizer-no-subscription-no-weekly-limits': [
-    { q: 'Which YouTube summarizers have no subscription and no weekly limits?', a: 'YT Summarizer (pay-once (from $9)) is the main option that combines no subscription, no weekly limits, and high-quality output. Summarize.tech is completely free with no limits, but quality is significantly lower. Most other tools (Eightify, NoteGPT, Glarity) impose weekly caps on free tiers and require subscriptions for unlimited use.' },
+    { q: 'Which YouTube summarizers have no subscription and no weekly limits?', a: 'YT Summarizer (pay-once (from $19)) is the main option that combines no subscription, no weekly limits, and high-quality output. Summarize.tech is completely free with no limits, but quality is significantly lower. Most other tools (Eightify, NoteGPT, Glarity) impose weekly caps on free tiers and require subscriptions for unlimited use.' },
     { q: 'Why does Eightify limit free users to 3 summaries per week?', a: 'Eightify\'s free tier is a trial, not a product. The 3/week limit creates enough friction that regular users upgrade to the subscription ($8-12/month). This is a deliberate business model decision, not a technical limitation. If you consistently need more than 3 summaries per week, the cap means the free tier isn\'t actually usable for your workflow — you\'re either paying or going without.' },
     { q: 'Is there a YouTube summarizer with a one-time payment and no usage limits?', a: 'Yes — YT Summarizer uses pay-once pricing with no monthly fees on summaries. Most competitors use subscription pricing ($8-15/month) or freemium caps. The one-time model is uncommon in this market specifically because subscription models generate recurring revenue; one-time tools need to deliver consistent quality without the recurring income cushion.' },
     { q: 'What happens to Eightify free users who hit the 3/week limit?', a: 'Once you hit the limit, Eightify shows a paywall — you can\'t summarize another video until the week resets or you subscribe. This is particularly painful during research sprints, exam prep, or heavy content weeks when you might need 10-20 summaries in a few days. Tools with no weekly limits (YT Summarizer, Summarize.tech) don\'t gate you at exactly the moment you need them most.' },
@@ -246,7 +246,7 @@ const postFaqs: Record<string, Array<{ q: string; a: string }>> = {
   ],
   'glasp-alternative-youtube-summarizer': [
     { q: 'Does Glasp summarize YouTube videos automatically?', a: 'No. Glasp surfaces the YouTube transcript alongside the video and lets you highlight and annotate passages manually. It does not auto-generate a summary — you still need to read through the transcript yourself and decide what to mark. A dedicated summarizer reads the entire transcript and produces a condensed output without any manual work.' },
-    { q: 'What is the best Glasp alternative for YouTube summarization?', a: 'YT Summarizer is the best alternative if your goal is automatic AI-generated summaries rather than manual highlighting. Paste a YouTube URL, get a structured bullet-point summary in under 60 seconds. No manual reading required. For one-time payment access with no subscription, packs start at $9.' },
+    { q: 'What is the best Glasp alternative for YouTube summarization?', a: 'YT Summarizer is the best alternative if your goal is automatic AI-generated summaries rather than manual highlighting. Paste a YouTube URL, get a structured bullet-point summary in under 60 seconds. No manual reading required. For one-time payment access with no subscription, packs start at $19.' },
     { q: 'Is Glasp free?', a: 'Glasp has a free plan with usage limits. The highlighting and annotation features are free; some AI-powered features require a paid plan. For YouTube specifically, the value Glasp offers is transcript access and annotation — not automated summarization.' },
     { q: 'Can I use both Glasp and a YouTube summarizer together?', a: 'Yes, and it can work well. Use a summarizer to get the high-level takeaways quickly, then use Glasp to annotate the specific transcript passages that matter most to you. Summarizers give you the map; Glasp helps you annotate the territory.' },
   ],
@@ -353,7 +353,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
           <tr>
             <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Price</strong></td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">Free (limited) / $20/month (Advanced)</td>
-            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free tier / pay-once (from $9)</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free tier / pay-once (from $19)</td>
           </tr>
           <tr style="background: #fafafa;">
             <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Works without Google account</strong></td>
@@ -417,7 +417,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>YT Summarizer is a web app: go to the site, paste a YouTube URL, get a structured bullet-point summary in 60 seconds. Nothing to install, no browser permissions, works on any browser including Safari and Firefox, works on mobile. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try it free — no signup required to test.</a></p>
       <p><strong>Output:</strong> Structured bullet points organized by topic section. Clean enough to paste directly into Notion, Obsidian, or any notes app.</p>
       <p><strong>Long video support:</strong> Handles 2+ hour videos without truncating — important for lectures, conference talks, and documentary-length content.</p>
-      <p><strong>Pricing:</strong> Free tier available. Pay-once packs from $9 — no subscription — no subscription, no weekly caps.</p>
+      <p><strong>Pricing:</strong> Free tier available. Pay-once packs from $19 — no subscription — no subscription, no weekly caps.</p>
 
       <h3>Summarize.tech — Best Free No-Account Option</h3>
       <p>Completely free, no account required, no extension. Go to the site, paste the URL, get a paragraph summary. The simplest possible workflow. Trade-off: output is a single paragraph rather than structured bullet points, and quality on long or technical content is lower than paid tools.</p>
@@ -462,7 +462,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h3>Pricing comparison over time</h3>
       <ul>
-        <li><strong>1 month:</strong> VidPill ~$9 vs. YT Summarizer $19 (one-time Pro pack)</li>
+        <li><strong>1 month:</strong> VidPill ~$19 vs. YT Summarizer $19 (one-time Pro pack)</li>
         <li><strong>3 months:</strong> VidPill ~$27 vs. YT Summarizer $19 ← crossover point</li>
         <li><strong>4 months:</strong> VidPill ~$36 vs. YT Summarizer $19</li>
         <li><strong>12 months:</strong> VidPill ~$108 vs. YT Summarizer $19</li>
@@ -679,7 +679,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Start Curating Smarter Today</h2>
       <p>The best homeschool content on YouTube is buried under hours of content you don't need. AI summarization lets you find and keep only what serves your curriculum.</p>
 
-      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> — paste any homeschool or educational video URL and get a structured summary in under 60 seconds. Pay-once packs from $9 — no subscription, no subscription required.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> — paste any homeschool or educational video URL and get a structured summary in under 60 seconds. Pay-once packs from $19 — no subscription, no subscription required.</p>
     `
   },
   'youtube-summarizer-for-cybersecurity-professionals': {
@@ -825,7 +825,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Process the Firehose, Not Just the Best Talks</h2>
       <p>The most valuable security knowledge often isn't in the most-viewed talks — it's in the niche 200-viewer presentation on a specific attack surface that directly applies to your environment. AI summarization makes it possible to screen the full archive, not just the curated highlights.</p>
 
-      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> — paste any security conference talk or training video URL and get the attack technique, mitigation steps, and key findings in under 60 seconds. Pay-once packs from $9 — no subscription.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> — paste any security conference talk or training video URL and get the attack technique, mitigation steps, and key findings in under 60 seconds. Pay-once packs from $19 — no subscription.</p>
     `
   },
   'youtube-summarizer-for-medical-students': {
@@ -976,7 +976,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Work Smarter Through the Firehose</h2>
       <p>Medical school video content is among the highest-signal YouTube content that exists — but only if you can process it efficiently. AI summarization doesn't replace studying. It removes the time you spend deciding what to study.</p>
 
-      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> — paste any USMLE prep or clinical video URL and get the high-yield concepts in under 60 seconds. Pay-once packs from $9 — no subscription — less than one Anki deck subscription per year.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer free</a> — paste any USMLE prep or clinical video URL and get the high-yield concepts in under 60 seconds. Pay-once packs from $19 — no subscription — less than one Anki deck subscription per year.</p>
     `
   },
   'youtube-summarizer-for-financial-advisors': {
@@ -1599,7 +1599,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Clean, structured output.</strong> Bullet points with bold tags paste directly into Notion, Obsidian, or Google Docs without reformatting.</li>
         <li><strong>Long video support.</strong> Handles 2-3 hour lecture recordings, full course playlists, and extended seminars.</li>
       </ul>
-      <p>The cost comparison: pay-once (from $9) vs. $8-15/month subscription. Over a 3-year degree: a $49 one-time Power pack (1,000 summaries) vs. $288–540 in subscriptions. Over a 2-year Masters: a $19 Pro pack (200) vs. $192–360. See the full breakdown: <a href="/blog/youtube-summarizer-pricing-free-vs-onetime-vs-subscription" style="color: var(--accent); font-weight: 600;">YouTube summarizer pricing compared</a>.</p>
+      <p>The cost comparison: pay-once (from $19) vs. $8-15/month subscription. Over a 3-year degree: a $49 one-time Power pack (1,000 summaries) vs. $288–540 in subscriptions. Over a 2-year Masters: a $19 Pro pack (200) vs. $192–360. See the full breakdown: <a href="/blog/youtube-summarizer-pricing-free-vs-onetime-vs-subscription" style="color: var(--accent); font-weight: 600;">YouTube summarizer pricing compared</a>.</p>
 
       <h2>Subscription Options Worth Considering</h2>
       <h3>NoteGPT ($7-19/month)</h3>
@@ -1660,7 +1660,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p><strong>Tools:</strong> <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a>, similar dedicated platforms</p>
       <p><strong>Steps:</strong> 1. Go to the tool. 2. Paste URL. 3. Wait 30-60 seconds. Read summary.</p>
       <p><strong>Output quality:</strong> High. Structured bullet points with bold topic headers, comprehensive coverage of key arguments, clean copy-paste output. For most use cases, this is the best combination of speed and quality.</p>
-      <p><strong>What this gets right:</strong> One step, works on any device, no extensions to install, handles videos of any length without additional setup. The quality-to-time ratio is the best of any method tested. Pricing: free tier available, pay-once packs from $9.</p>
+      <p><strong>What this gets right:</strong> One step, works on any device, no extensions to install, handles videos of any length without additional setup. The quality-to-time ratio is the best of any method tested. Pricing: free tier available, pay-once packs from $19.</p>
       <p><strong>When to use:</strong> Default choice for anyone summarizing more than a few videos per week. See our <a href="/blog/best-youtube-summary-generator-tested-6-free-tools" style="color: var(--accent); font-weight: 600;">head-to-head test of 6 free tools</a> for the full quality comparison.</p>
 
       <h2>Method 3: AI Browser Extensions (30-45 Seconds)</h2>
@@ -2134,7 +2134,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Fastest:</strong> Summarize.tech (15 seconds)</li>
         <li><strong>Best UX:</strong> Eightify (in-browser, timestamped)</li>
         <li><strong>Best for visual learners:</strong> NoteGPT (mind maps)</li>
-        <li><strong>Best value:</strong> YT Summarizer (pay-once packs from $9 at highest free-tier quality)</li>
+        <li><strong>Best value:</strong> YT Summarizer (pay-once packs from $19 at highest free-tier quality)</li>
         <li><strong>Most convenient:</strong> ChatGPT (you already have it) but also slowest workflow</li>
       </ul>
 
@@ -2285,7 +2285,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Annual billing discounts:</strong> Some subscriptions offer 30-40% off for annual billing. This is better than monthly but still more expensive than one-time over 2+ years. And it locks you into a year-long commitment for a tool you might stop using after 3 months.</li>
       </ul>
 
-      <p>The bottom line: if you're summarizing fewer than 3 videos per month, use a free tool. If you're summarizing 3-10 per week, a pay-once payment (from $9) is the clear best value. If you need study features beyond basic summarization (mind maps, flashcards), a subscription like NoteGPT makes sense — but only for the months you're actively studying. For the full tool-by-tool breakdown, see <a href="/blog/best-ai-video-summarization-tools-2026" style="color: var(--accent); font-weight: 600;">10 AI video summarization tools ranked</a>, <a href="/blog/free-youtube-video-summarizer-ai-tools-2026" style="color: var(--accent); font-weight: 600;">what\'s genuinely free in 2026</a>, and <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">8 YouTube summarizers compared</a>.</p>
+      <p>The bottom line: if you're summarizing fewer than 3 videos per month, use a free tool. If you're summarizing 3-10 per week, a pay-once payment (from $19) is the clear best value. If you need study features beyond basic summarization (mind maps, flashcards), a subscription like NoteGPT makes sense — but only for the months you're actively studying. For the full tool-by-tool breakdown, see <a href="/blog/best-ai-video-summarization-tools-2026" style="color: var(--accent); font-weight: 600;">10 AI video summarization tools ranked</a>, <a href="/blog/free-youtube-video-summarizer-ai-tools-2026" style="color: var(--accent); font-weight: 600;">what\'s genuinely free in 2026</a>, and <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">8 YouTube summarizers compared</a>.</p>
 
       <p>Pay once, summarize forever: <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer — pay-once, no subscription</a>.</p>
     `
@@ -2479,7 +2479,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Method 3: AI Summarizer Tools (Best for Most People)</h2>
       <p>AI summarizers like <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a>, Eightify, and NoteGPT extract transcripts as part of their summarization pipeline. This means you get the transcript <em>plus</em> a structured summary in a single step.</p>
       <ul>
-        <li><strong>YT Summarizer:</strong> Paste a YouTube URL, get a structured summary and access to the underlying transcript. Pay-once packs from $9 — no subscription — works on any device with a browser. The fastest path from "I need that video's text" to "I have a clean, formatted summary I can use." For more on this workflow, see our <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: var(--accent); font-weight: 600;">best free YouTube summarizers guide</a>.</li>
+        <li><strong>YT Summarizer:</strong> Paste a YouTube URL, get a structured summary and access to the underlying transcript. Pay-once packs from $19 — no subscription — works on any device with a browser. The fastest path from "I need that video's text" to "I have a clean, formatted summary I can use." For more on this workflow, see our <a href="/blog/best-free-youtube-summarizers-no-subscription-2026" style="color: var(--accent); font-weight: 600;">best free YouTube summarizers guide</a>.</li>
         <li><strong>Summarize.tech:</strong> Free, no account needed. Paste a URL and get a summary. Doesn't expose raw transcript directly but gives you the processed content.</li>
         <li><strong>NoteGPT:</strong> Provides transcript access alongside mind maps and study features. Free tier with usage limits.</li>
       </ul>
@@ -2625,7 +2625,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
           <tr>
             <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>YT Summarizer</strong></td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">Batch processing, clean copyable output, meeting recaps</td>
-            <td style="padding: 0.75rem; border: 1px solid #ddd;">pay-once (from $9)</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">pay-once (from $19)</td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">No native project management integrations</td>
           </tr>
           <tr style="background: #fafafa;">
@@ -2933,7 +2933,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
             <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>YT Summarizer</strong></td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">Good — preserves drug names, dosages, procedures</td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">Regular CE and training</td>
-            <td style="padding: 0.75rem; border: 1px solid #ddd;">pay-once (from $9)</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">pay-once (from $19)</td>
           </tr>
           <tr style="background: #fafafa;">
             <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>NoteGPT</strong></td>
@@ -3025,7 +3025,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
             <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>YT Summarizer</strong></td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">Clean bullet format, easy to paste</td>
-            <td style="padding: 0.75rem; border: 1px solid #ddd;">pay-once (from $9)</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">pay-once (from $19)</td>
           </tr>
           <tr style="background: #fafafa;">
             <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>NoteGPT</strong></td>
@@ -3208,7 +3208,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
           <tr>
             <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>YT Summarizer</strong></td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">Regular use, long-term value</td>
-            <td style="padding: 0.75rem; border: 1px solid #ddd;">pay-once (from $9)</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">pay-once (from $19)</td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">No</td>
           </tr>
           <tr style="background: #fafafa;">
@@ -3409,7 +3409,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <h2>Using Summaries for Team Knowledge Sharing</h2>
       <p>If you find a useful talk that's relevant to your team, sharing a 300-word AI summary alongside the link dramatically increases the chance someone actually engages with it. "Watch this 50-minute talk" gets ignored. "Here's the summary — the architecture section at 32:00 is directly relevant to our current problem" gets read.</p>
 
-      <p>Ready to try the workflow? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> handles any YouTube URL — paste, summarize, decide. Pay-once (from $9), no subscription.</p>
+      <p>Ready to try the workflow? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> handles any YouTube URL — paste, summarize, decide. Pay-once (from $19), no subscription.</p>
     `,
   },
   'can-chatgpt-summarize-youtube-videos': {
@@ -4702,7 +4702,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>If you decide to upgrade, the cost comparison is simple:</p>
       <ul>
         <li><strong>Monthly subscription tools:</strong> $8–12/month, $96–144/year, forever.</li>
-        <li><strong>One-time pack:</strong> from $9 (no subscription). Pays off within a couple of months, then nothing.</li>
+        <li><strong>One-time pack:</strong> from $19 (no subscription). Pays off within a couple of months, then nothing.</li>
       </ul>
       <p>For regular users, the one-time payment model wins on total cost. For light users, free tiers plus the occasional summary service is usually enough.</p>
 
@@ -4813,7 +4813,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
       <p>If you summarize 2+ videos a week, you'll hit free-tier limits quickly. The math for upgrading:</p>
       <ul>
         <li><strong>Subscription tools</strong> (Eightify, NoteGPT): ~$8–12/month, $96–144/year.</li>
-        <li><strong>Pay-once</strong> (YT Summarizer): from $9, no subscription. Breaks even with a subscription after 2–3 months, then costs nothing.</li>
+        <li><strong>Pay-once</strong> (YT Summarizer): from $19, no subscription. Breaks even with a subscription after 2–3 months, then costs nothing.</li>
       </ul>
       <p>For heavy users, the one-time payment model makes clear sense. See our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared" style="color: var(--accent); font-weight: 600;">full comparison of 8 paid and free tools</a> for the complete breakdown.</p>
 
@@ -8428,7 +8428,7 @@ tags: [tag1, tag2]
       <h2>1. YT Summarizer — Best Overall (Pay-Once)</h2>
       <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> stands out because of its pricing model: one-time packs (no subscription, credits never expire). No subscription, no recurring charges, no "your trial has expired" pop-ups. Quick signup, then paste any URL and get your summary.</p>
       <ul>
-        <li><strong>Pricing:</strong> Free tier available, one-time packs from $9 (no subscription)</li>
+        <li><strong>Pricing:</strong> Free tier available, one-time packs from $19 (no subscription)</li>
         <li><strong>Quick signup:</strong> Simple account creation, then start summarizing immediately</li>
         <li><strong>Output quality:</strong> Structured summaries with key points</li>
         <li><strong>Best for:</strong> Anyone who wants a reliable tool without subscription anxiety</li>
@@ -8655,7 +8655,7 @@ tags: [tag1, tag2]
       <h2>YT Summarizer for Gaming Content</h2>
       <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> works well for gaming videos because it handles long-form content and outputs structured bullet points — which is exactly what you need when scanning a guide for a specific mechanic or checking if a review covers the points you care about.</p>
 
-      <p>It offers a free tier (5 summaries), then one-time packs from $9 (no subscription). No subscription. If you're binging content during a game launch week, you won't hit a wall on day three.</p>
+      <p>It offers a free tier (5 summaries), then one-time packs from $19 (no subscription). No subscription. If you're binging content during a game launch week, you won't hit a wall on day three.</p>
 
       <h2>Practical Gaming Use Cases</h2>
       <ul>
@@ -8741,7 +8741,7 @@ tags: [tag1, tag2]
         <tbody>
           <tr>
             <td style="padding: 0.75rem; border: 1px solid #ddd;"><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a></td>
-            <td style="padding: 0.75rem; border: 1px solid #ddd;">pay-once (from $9)</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">pay-once (from $19)</td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">Free signup, then pay-once</td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">Heavy users who hate subscriptions</td>
           </tr>
@@ -9423,7 +9423,7 @@ tags: [tag1, tag2]
           </tr>
           <tr style="background: #fafafa;">
             <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Cost</strong></td>
-            <td style="padding: 0.75rem; border: 1px solid #ddd;">pay-once (from $9)</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">pay-once (from $19)</td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">Free tier / $20/month Pro</td>
           </tr>
           <tr>
@@ -9548,7 +9548,7 @@ tags: [tag1, tag2]
       <p>Use summaries for conceptual content and screening. Watch in full for technique and practice.</p>
 
       <h2>Best Summarizer for Online Courses</h2>
-      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> handles long lecture videos (including 90-minute lectures) without truncating the output, produces structured bullet-point summaries that read like study notes, and is available for free. The paid tier (pay-once (from $9)) removes usage limits — useful for heavy study periods where you're processing an entire course in a week.</p>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> handles long lecture videos (including 90-minute lectures) without truncating the output, produces structured bullet-point summaries that read like study notes, and is available for free. The paid tier (pay-once (from $19)) removes usage limits — useful for heavy study periods where you're processing an entire course in a week.</p>
 
       <h2>Related Reading</h2>
       <ul>
@@ -9968,7 +9968,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         <div className="cta-strip">
           <div>
             <strong>Summarize any YouTube video in about a minute</strong>
-            <span>5 free summaries &middot; One-time pricing from $9 &middot; No subscription</span>
+            <span>5 free summaries &middot; One-time pricing from $19 &middot; No subscription</span>
           </div>
           <a className="btn-pill" href={productUrl('post_top_cta')}>
             Try Free &rarr;

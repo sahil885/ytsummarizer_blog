@@ -34,7 +34,7 @@ export default function Home() {
           <a className="btn-pill" href={productUrl('home_hero')}>
             Try YT Summarizer Free &rarr;
           </a>
-          <p className="hero-note">5 free summaries &middot; One-time pricing from $9 &middot; No subscription</p>
+          <p className="hero-note">5 free summaries &middot; One-time pricing from $19 &middot; No subscription</p>
         </section>
 
         {featured.length > 0 && (
