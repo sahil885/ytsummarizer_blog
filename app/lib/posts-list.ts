@@ -6,6 +6,24 @@ export type PostListEntry = {
 }
 
 export const allPosts: PostListEntry[] = [
+  // Batch 4 (Aug 2026): general AI assistants failing on YouTube.
+  // Same seam as Batch 3 (narrow problem queries, low competition) but aimed at
+  // rising "why can't <assistant> summarize YouTube" demand. Shared root cause —
+  // no mainstream assistant watches video, they all read the caption track —
+  // which also lands directly on the no-extension differentiator.
+  { slug: 'gemini-cant-summarize-youtube-video', title: "Gemini Can't Summarize a YouTube Video? 6 Causes and Fixes (2026)", description: "Gemini refusing to summarize a YouTube link, or summarizing the wrong thing entirely? The real causes — captions, connected apps, video length, restricted videos — and how to tell which one you have hit.", date: '2026-08-29' },
+  { slug: 'perplexity-youtube-summary-not-working', title: "Perplexity Not Summarizing YouTube Videos? Causes and Fixes (2026)", description: "Perplexity returning search results instead of a video summary, or failing on a YouTube link entirely? Why it happens, how to tell a real summary from a web-assembled one, and what to do instead.", date: '2026-08-29' },
+  { slug: 'claude-cant-summarize-youtube-video', title: "Claude Can't Summarize a YouTube Video? Here's Why and What Works", description: "Paste a YouTube link into Claude and you will not get a summary of the video. Why that is by design, what happens if you try, and the two workflows that actually produce a reliable summary.", date: '2026-08-29' },
+  { slug: 'copilot-youtube-summary-not-working', title: "Microsoft Copilot Not Summarizing YouTube? Causes and Fixes (2026)", description: "Copilot in Edge failing to summarize the YouTube video you are watching, or returning a summary of the page instead of the content? The causes, the fixes, and how to spot a fake summary.", date: '2026-08-29' },
+  { slug: 'monica-ai-youtube-summary-not-working', title: "Monica AI Not Summarizing YouTube? Causes and Fixes (2026)", description: "Monica's YouTube summary button missing, stuck loading, or saying you are out of credits? The usual causes — daily credit limits, extension conflicts, YouTube layout changes — and how to fix each.", date: '2026-08-29' },
+  { slug: 'harpa-ai-not-working-youtube', title: "HARPA AI Not Working on YouTube? Causes and Fixes (2026)", description: "HARPA AI failing to summarize YouTube, sidebar not opening, or stuck on 'reading page'? The common causes — page injection, model configuration, quotas, missing captions — with fixes for each.", date: '2026-08-29' },
+  { slug: 'tactiq-not-working', title: "Tactiq Not Working on YouTube? Causes and Fixes (2026)", description: "Tactiq not capturing a YouTube transcript, extension missing, or summary failing? What Tactiq is actually built for, why YouTube behaves differently from meetings, and what to use instead.", date: '2026-08-29' },
+  { slug: 'merlin-ai-youtube-not-working', title: "Merlin AI Not Summarizing YouTube? Causes and Fixes (2026)", description: "Merlin's YouTube summary failing, button missing, or queries exhausted? The common causes — daily query limits, page injection, missing captions, long videos — and how to fix each one.", date: '2026-08-29' },
+  { slug: 'youtube-transcript-not-loading', title: "YouTube Transcript Not Loading? 7 Causes and Fixes (2026)", description: "Transcript panel stuck spinning, blank, or showing 'transcript unavailable' on a video that clearly has captions? The seven real causes, in the order worth checking them.", date: '2026-08-29' },
+  { slug: 'youtube-summarizer-not-working-android', title: "YouTube Summarizer Not Working on Android? Causes and Fixes (2026)", description: "Summarizer extension missing on Android, or the YouTube app giving you no way to share a link to it? Why mobile behaves differently, which browsers support extensions, and what works reliably.", date: '2026-08-29' },
+  { slug: 'youtube-summarizer-blocked-at-school-or-work', title: "YouTube Summarizer Blocked at Work or School? What Actually Works", description: "Extension store locked down, sidebar disabled by policy, or the tool blocked by the network? Which restriction you have hit, how to tell, and the workflows that still work on a managed device.", date: '2026-08-29' },
+  { slug: 'youtube-summarizer-extension-removed-chrome', title: "Your YouTube Summarizer Extension Disappeared From Chrome? Why", description: "Extension gone, greyed out, or marked 'no longer available'? The three reasons summarizer extensions vanish — platform deprecation, store removal, abandonment — and how to get your workflow back.", date: '2026-08-29' },
+
   // Batch 3 (Aug 2026): extends the proven troubleshooting seam.
   // youtube-summarizer-broken-after-update hit 15.7% CTR and the "not working"
   // anchor ~21 clicks/week, so this batch goes deeper into specific failure modes,
