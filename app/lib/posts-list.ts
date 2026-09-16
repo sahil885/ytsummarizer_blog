@@ -6,6 +6,26 @@ export type PostListEntry = {
 }
 
 export const allPosts: PostListEntry[] = [
+  // Batch 5 (Sep 2026): aimed at GSC data, not guesses. 28-day read showed
+  // troubleshooting = 73% of all clicks (3 pages, 69 clicks) while the Batch 2
+  // competitor-brand cluster earned ~1,000 impressions and ~5 clicks — searchers
+  // on "notegpt review" don't want a rival's take. So this batch stays entirely
+  // in the YouTube-native-failure and transcript seams, targeting queries we
+  // already collect impressions for but have no dedicated page to serve:
+  // "why do some youtube videos not have ai summary" (43 impr, 0 clicks),
+  // "what happened to youtube ai summary", "how long does youtube take to
+  // transcribe", "youtube error loading captions", NotebookLM's exact import error.
+  { slug: 'why-some-youtube-videos-have-no-ai-summary', title: "Why Do Some YouTube Videos Not Have an AI Summary? (2026)", description: "AI summary showing on one video and missing on the next? It is not random. The five things that decide whether a video gets one, and how to check yours in ten seconds.", date: '2026-09-15' },
+  { slug: 'did-youtube-remove-ai-summary', title: "Did YouTube Remove the AI Summary? What Actually Happened", description: "The AI summary was on your videos and now it is gone. Whether YouTube removed it, why it disappears for some accounts and not others, and how to get summaries regardless.", date: '2026-09-15' },
+  { slug: 'how-long-youtube-takes-to-transcribe-video', title: "How Long Does YouTube Take to Transcribe a Video? (2026)", description: "Waiting on automatic captions that have not appeared? Typical processing times, what makes them slower, and how to tell 'still processing' from 'never coming'.", date: '2026-09-15' },
+  { slug: 'did-youtube-remove-transcripts', title: "Did YouTube Remove Transcripts? No — Here's Where It Went", description: "Can't find 'Show transcript' any more? YouTube did not remove transcripts, but it has moved the button more than once and it does not appear on every video.", date: '2026-09-15' },
+  { slug: 'youtube-error-loading-captions', title: "YouTube 'Error Loading Captions'? Causes and Fixes (2026)", description: "Getting an error when captions or the transcript try to load? The six causes in the order worth checking, and how to tell a temporary fault from a video with no captions.", date: '2026-09-15' },
+  { slug: 'notebooklm-video-cannot-be-imported', title: "NotebookLM: 'This Video Cannot Be Imported' — Why and What to Do", description: "NotebookLM refusing a YouTube link with 'transcript not available'? What that error means, why it happens on videos you can watch, and three ways around it.", date: '2026-09-15' },
+  { slug: 'youtube-captions-not-working', title: "YouTube Captions Not Working? 7 Causes and Fixes (2026)", description: "Subtitles missing, stuck, out of sync or in the wrong language? The seven real causes — and the one check that tells you instantly whether it is your setup or the video.", date: '2026-09-15' },
+  { slug: 'can-copilot-summarize-youtube-video', title: "Can Copilot Summarize a YouTube Video? Yes, With Conditions", description: "Microsoft Copilot can summarize YouTube — but only on one surface, and only for some videos. What works where, and how to spot a summary that never read the video.", date: '2026-09-15' },
+  { slug: 'youtube-transcript-search-not-working', title: "YouTube Transcript Search Not Working? Here's What to Do", description: "Trying to search inside a YouTube transcript and finding nothing? Why the panel has no search box, the browser shortcut that does work, and how to find a moment fast.", date: '2026-09-15' },
+  { slug: 'summarize-youtube-video-without-transcript', title: "How to Summarize a YouTube Video With No Transcript (2026)", description: "Video has no captions, so every summarizer fails? Why that happens, the audio-transcription route that does work, and how to decide whether it is worth the effort.", date: '2026-09-15' },
+
   // Batch 4 (Aug 2026): general AI assistants failing on YouTube.
   // Same seam as Batch 3 (narrow problem queries, low competition) but aimed at
   // rising "why can't <assistant> summarize YouTube" demand. Shared root cause —
@@ -55,7 +75,7 @@ export const allPosts: PostListEntry[] = [
   { slug: 'glasp-review', title: "Glasp Review 2026: Excellent Highlighter, Limited Summarizer", description: "An honest Glasp review for 2026 — what it is genuinely great at (social highlighting, building a knowledge base) and why people expecting a one-click YouTube summarizer are disappointed.", date: '2026-08-16' },
   { slug: 'glasp-vs-notegpt', title: "Glasp vs NoteGPT (2026): Highlighting or Summarizing?", description: "Glasp vs NoteGPT compared — one is a social highlighter for building a knowledge base, the other a multi-format AI summarizer with quotas. Which fits your workflow, and when neither does.", date: '2026-08-16' },
   { slug: 'summarize-tech-review', title: "Summarize.tech Review 2026: Genuinely Free, With Real Limits", description: "An honest Summarize.tech review — it is properly free with no account required, which is rare. Here is what the output is actually like, where it struggles, and when to use something else.", date: '2026-08-16' },
-  { slug: 'summarize-tech-alternative', title: "Summarize.tech Alternatives 2026: Better Output Without a Subscription", description: "Outgrown Summarize.tech? Alternatives that give structured key points, a saved library and reliable long-video handling — including free options and one-time-payment tools.", date: '2026-08-16' },
+  { slug: 'summarize-tech-alternative', title: "Summarize.tech Alternatives: 6 Tools With Better Output", description: "Outgrown Summarize.tech? Alternatives that give structured key points, a saved library and reliable long-video handling — including free options and one-time-payment tools.", date: '2026-08-16' },
 
   // Batch 1 (Aug 2026): troubleshooting & competitor-problem cluster — narrow,
   // low-competition queries with high intent. Modelled on the "not working" post,
@@ -63,9 +83,9 @@ export const allPosts: PostListEntry[] = [
   { slug: 'eightify-not-working', title: "Eightify Not Working? 7 Causes and Fixes (2026)", description: "Eightify not summarizing, stuck loading, or showing an error? The 7 real causes — missing captions, weekly limit, extension conflicts, YouTube updates — each with the fix.", date: '2026-08-16' },
   { slug: 'notegpt-not-working-quota', title: 'NoteGPT Not Working or "Insufficient Quota"? Causes and Fixes (2026)', description: "NoteGPT showing \"insufficient quota\" even on a paid plan, or failing to summarize? What the quota errors actually mean, how to fix each one, and the alternatives without quotas.", date: '2026-08-16' },
   { slug: 'glasp-summary-not-working', title: "Glasp YouTube Summary Not Working? Causes and Fixes (2026)", description: "Glasp not showing the YouTube summary or transcript panel? The common causes — daily limit, missing captions, extension conflicts, sidebar not loading — and how to fix each.", date: '2026-08-16' },
-  { slug: 'youtube-no-transcript-available-fix', title: '"No Transcript Available" on YouTube? Why It Happens and How to Fix It', description: "YouTube says no transcript is available, or the Show transcript button is missing? The four real reasons, what you can actually do about each, and how to summarize the video anyway.", date: '2026-08-16' },
+  { slug: 'youtube-no-transcript-available-fix', title: "\"No Transcript Available\" on YouTube? Here’s Why (2026)", description: "YouTube says no transcript is available, or the Show transcript button is missing? The four real reasons, what you can actually do about each, and how to summarize the video anyway.", date: '2026-08-16' },
   { slug: 'youtube-summary-cut-off-long-videos', title: "YouTube Summary Cut Off or Incomplete? Why AI Truncates Long Videos", description: "Your AI summary only covers the first part of a long video? That is context-window truncation. Why it happens silently, how to spot it, and which tools handle 2h+ videos properly.", date: '2026-08-16' },
-  { slug: 'chatgpt-wont-open-youtube-link', title: "ChatGPT Won't Open Your YouTube Link? Why, and What Actually Works", description: "Pasted a YouTube URL into ChatGPT and got nothing useful? ChatGPT cannot watch video. Why it fails, why a confident wrong summary is worse, and the three workflows that work.", date: '2026-08-16' },
+  { slug: 'chatgpt-wont-open-youtube-link', title: "Why ChatGPT Can’t Open YouTube Links (And What Works)", description: "Pasted a YouTube URL into ChatGPT and got nothing useful? ChatGPT cannot watch video. Why it fails, why a confident wrong summary is worse, and the three workflows that work.", date: '2026-08-16' },
   { slug: 'youtube-summarizer-not-working-iphone', title: "YouTube Summarizer Not Working on iPhone? Here Is Why (and What Does Work)", description: "Summarizer works on your laptop but not your iPhone? Browser extensions do not run on iOS. The three methods that actually work on iPhone and iPad, including one that needs no app.", date: '2026-08-16' },
   { slug: 'youtube-summary-wrong-language', title: "YouTube Summary Coming Out in the Wrong Language? How to Fix It", description: "Your summary is in the video language instead of yours, or vice versa? Why AI summarizers pick the wrong language, how caption tracks cause it, and how to get the output you want.", date: '2026-08-16' },
   { slug: 'youtube-summarizer-broken-after-update', title: "YouTube Summarizer Stopped Working After an Update? What Changed and How to Fix It", description: "Your summarizer worked last week and now it does not. What YouTube and Chrome changed, why extension-based tools break most often, and how to tell if your tool is abandoned.", date: '2026-08-16' },
@@ -74,7 +94,7 @@ export const allPosts: PostListEntry[] = [
   { slug: 'can-grok-summarize-youtube-videos', title: "Can Grok Summarize YouTube Videos? What Actually Works in 2026", description: "Grok returns a summary from a YouTube URL, but xAI's own model card lists text and image inputs only - no video. What that means in practice, the workflow that does work, and the honest alternatives.", date: '2026-08-11' },
   { slug: 'ai-browsers-vs-youtube-summarizers-atlas-comet', title: "Do AI Browsers Replace YouTube Summarizers? Atlas vs Comet vs Dedicated Tools (2026)", description: "ChatGPT Atlas and Perplexity Comet both summarize YouTube in-page. Here is what they cost, where they fall short, and when a dedicated summarizer still wins in 2026.", date: '2026-08-10' },
   { slug: 'youtube-summarizer-vs-recall', title: "YT Summarizer vs Recall: Fast Video Summaries or a Lifelong Knowledge Base? (2026)", description: "Recall turns YouTube videos into a connected, quiz-able knowledge base for $10 a month. YT Summarizer gets you the key points in one paste for a one-time $19. An honest 2026 comparison.", date: '2026-08-10' },
-  { slug: 'how-to-remove-timestamps-from-youtube-transcript', title: 'How to Remove Timestamps From a YouTube Transcript (4 Fast Methods)', description: "Four ways to remove timestamps from a YouTube transcript — including the toggle hidden inside YouTube's own menu. Copy clean text in seconds instead of deleting lines by hand.", date: '2026-07-28' },
+  { slug: 'how-to-remove-timestamps-from-youtube-transcript', title: "Remove Timestamps From a YouTube Transcript in 2 Clicks", description: "Four ways to remove timestamps from a YouTube transcript — including the toggle hidden inside YouTube's own menu. Copy clean text in seconds instead of deleting lines by hand.", date: '2026-07-28' },
   { slug: 'how-to-summarize-youtube-videos', title: 'How to Summarize a YouTube Video: Every Method Tested (2026 Guide)', description: 'How to summarize a YouTube video in 2026: the one-minute URL method, the free ChatGPT workflow, Gemini, NotebookLM, and extensions — tested, timed, and honestly compared.', date: '2026-07-12' },
   { slug: 'best-free-youtube-summarizer-tool', title: 'Best Free YouTube Summarizer in 2026: 7 Real Free Options Tested', description: 'The best free YouTube summarizers in 2026, tested: what each free tier really includes, hidden quotas and caps, and which free option fits your use — before you pay anything.', date: '2026-07-12' },
   { slug: 'youtube-summarizer-vs-youtube-built-in-ai', title: "YT Summarizer vs YouTube's Built-In AI: Does YouTube Summarize Videos Now? (2026)", description: "YouTube shipped its own AI summaries in 2026, and Ask YouTube expanded beyond Premium on July 6. Does that make a dedicated summarizer redundant? The honest 2026 comparison on coverage, output, and price.", date: '2026-07-21' },
@@ -286,7 +306,7 @@ export const allPosts: PostListEntry[] = [
   },
   {
     slug: 'how-does-ai-youtube-summarization-work-technology-explained',
-    title: 'How Does AI YouTube Summarization Work? (The Technology Explained Simply)',
+    title: "How AI Actually Summarizes a YouTube Video (2026)",
     description: 'Ever wondered how AI summarizes a 2-hour YouTube video in 60 seconds? The three-step technology pipeline explained in plain language.',
     date: '2026-05-01',
   },
@@ -388,7 +408,7 @@ export const allPosts: PostListEntry[] = [
   },
   {
     slug: 'can-chatgpt-summarize-youtube-videos',
-    title: "Can ChatGPT Summarize YouTube Videos? How to Get a YouTube Summary with ChatGPT (2026)",
+    title: "Can ChatGPT Summarize a YouTube Video? Yes — Here’s How",
     description: "Yes, ChatGPT can summarize YouTube videos — but it can't open YouTube links directly. The step-by-step workflow, a copy-paste prompt, why it fails on long videos, and the faster alternatives.",
     date: '2026-07-03',
   },
@@ -519,7 +539,7 @@ export const allPosts: PostListEntry[] = [
   { slug: 'business-video-summaries-for-executives', title: 'Business Video Summaries for Executives', description: 'Executives use AI YouTube summarization to stay informed on industry trends, competitor moves, and strategic insights without spending hours watching video content.', date: '2026-03-18' },
   { slug: 'ai-video-summary-stay-updated-on-automation', title: 'AI and Automation Video Summaries: Stay Current Without the Scroll', description: 'Use AI to summarize YouTube videos about artificial intelligence and automation. Keep up with rapidly evolving AI developments without watching every video.', date: '2026-03-18' },
   { slug: 'youtube-summarizer-for-students', title: 'YouTube Summarizer for Students: Study Smarter, Not Harder', description: 'Discover how students can use AI YouTube summarizers to study more efficiently, extract key points from lectures, and save hours of study time.', date: '2026-03-16' },
-  { slug: 'free-ai-tool-to-summarize-youtube-videos', title: 'Free AI Tool to Summarize YouTube Videos', description: 'Looking for a free AI tool to summarize YouTube videos? Discover the best options available and how to get instant video summaries without paying.', date: '2026-03-16' },
+  { slug: 'free-ai-tool-to-summarize-youtube-videos', title: "Free AI YouTube Summarizers: What Each One Limits (2026)", description: 'Looking for a free AI tool to summarize YouTube videos? Discover the best options available and how to get instant video summaries without paying.', date: '2026-03-16' },
   { slug: 'youtube-summarizer-for-content-creators', title: 'YouTube Summarizer for Content Creators', description: 'How content creators can use AI YouTube summarization to research faster, repurpose videos, analyze competitors, and create more content in less time.', date: '2026-03-16' },
   { slug: 'youtube-summarizer-for-lectures', title: 'YouTube Summarizer for Lectures: 2-Hour Class to 5-Minute Notes', description: 'Use AI to summarize YouTube lecture videos. Perfect for students and professionals who want to extract key knowledge from educational content quickly.', date: '2026-03-16' },
   { slug: 'youtube-summarizer-with-timestamps', title: 'YouTube Summarizer with Timestamps: Jump to What Matters', description: 'Get AI summaries of YouTube videos with timestamps so you can jump directly to the most important parts. Save time and navigate long videos efficiently.', date: '2026-03-16' },
@@ -541,7 +561,7 @@ export const allPosts: PostListEntry[] = [
   { slug: 'youtube-summarizer-with-multi-language-support', title: 'YouTube Summarizer with Multi-Language Support', description: 'Summarize YouTube videos in multiple languages with AI. Get summaries of foreign-language content in English or your preferred language.', date: '2026-03-16' },
   { slug: 'translate-and-summarize-youtube-videos', title: 'Translate and Summarize YouTube Videos with AI', description: 'Translate and summarize YouTube videos in any language using AI. Understand foreign-language content and extract key insights without being fluent.', date: '2026-03-16' },
   { slug: 'youtube-summarizer-with-qa', title: 'YouTube Summarizer with Q&A: Ask Questions About Any Video', description: 'Use AI to summarize YouTube videos and ask questions about the content. Get instant answers from any YouTube video with AI-powered Q&A.', date: '2026-03-16' },
-  { slug: 'top-5-free-ai-tools', title: 'Top 5 Free AI Tools for YouTube Video Summarization', description: 'Compare the top 5 free AI tools for summarizing YouTube videos. Find the best option for your needs and start saving time on video content today.', date: '2026-03-16' },
+  { slug: 'top-5-free-ai-tools', title: "5 Free YouTube Video Summarizers, Tested (2026)", description: 'Compare the top 5 free AI tools for summarizing YouTube videos. Find the best option for your needs and start saving time on video content today.', date: '2026-03-16' },
   { slug: 'ai-tool-to-summarize-academic-youtube-videos', title: 'AI Tool to Summarize Academic YouTube Videos', description: 'Use AI to summarize academic YouTube videos from universities and research institutions. Extract key findings, methodologies, and insights from scholarly video content.', date: '2026-03-16' },
   { slug: 'youtube-summarizer-for-script-writing', title: 'YouTube Summarizer for Script Writing', description: 'Use AI YouTube summarization to research and write better video scripts. Extract key points, structures, and hooks from successful YouTube videos.', date: '2026-03-16' },
   { slug: 'youtube-summarizer-with-chapter-breakdown', title: 'YouTube Summarizer with Chapter Breakdown', description: 'Get AI summaries of YouTube videos with chapter-by-chapter breakdowns. Navigate long videos efficiently with structured chapter summaries.', date: '2026-03-16' },
@@ -716,6 +736,12 @@ export const CATEGORY_LABELS: Record<CategoryKey, string> = {
 export const CATEGORY_ORDER: CategoryKey[] = ['comparisons', 'roundups', 'roles', 'howto', 'features']
 
 export function categoryOf(slug: string): CategoryKey {
+  // Troubleshooting is checked first: these slugs often contain a brand name
+  // (gemini-cant-…, eightify-not-working) which would otherwise match the
+  // comparisons rule and badge a fix-it page as "Comparison". It also matters
+  // for getRelatedPosts, which gives a same-category bonus — troubleshooting
+  // pages should surface other troubleshooting pages, not comparisons.
+  if (/(not-working|cant-|not-loading|broken-after|blocked-at|extension-removed)/.test(slug)) return 'features'
   if (/(\bvs\b|-vs-|alternative|eightify|notegpt|glasp|vidpill|gemini|claude|chatgpt|compared|which-)/.test(slug)) return 'comparisons'
   if (/(^best-|^top-|^free-|-tools-|tools-|generator|reddit|tested|ranked|comparison)/.test(slug)) return 'roundups'
   if (/-for-/.test(slug)) return 'roles'

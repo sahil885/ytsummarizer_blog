@@ -7,8 +7,8 @@ const P = 'https://ytsummarizer.app?utm_source=blog&utm_medium=referral&utm_camp
 // page-1 post (CTR tuning) without duplicating its body.
 export const postOverrides: Record<string, { content?: string; metaDescription?: string; title?: string; date?: string }> = {
   'how-to-remove-timestamps-from-youtube-transcript': {
-    title: 'How to Remove Timestamps From a YouTube Transcript (4 Fast Methods)',
-    metaDescription: "Four ways to remove timestamps from a YouTube transcript — including the toggle hidden inside YouTube's own menu. Copy clean text in seconds instead of deleting lines by hand.",
+    title: 'Remove Timestamps From a YouTube Transcript in 2 Clicks',
+    metaDescription: "YouTube has a hidden toggle that strips timestamps before you copy. Most people never find it and delete hundreds of lines by hand. Here is where it is, plus 3 backups.",
     date: '2026-07-28',
     content: `
       <p><strong>Quick answer:</strong> YouTube has a built-in toggle that strips timestamps before you copy. Open the transcript panel, click the three-dot menu at its top right, and choose <strong>"Toggle timestamps"</strong>. The times disappear and you can select clean paragraph text. Most people never find this menu and end up deleting hundreds of lines by hand.</p>
@@ -1879,8 +1879,8 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
     `,
   },
   'can-chatgpt-summarize-youtube-videos': {
-    title: 'Can ChatGPT Summarize YouTube Videos? How to Get a YouTube Summary with ChatGPT (2026)',
-    metaDescription: "Yes, ChatGPT can summarize YouTube videos — but it can't open YouTube links directly. The step-by-step workflow, a copy-paste prompt, why it fails on long videos, and the faster alternatives.",
+    title: "Can ChatGPT Summarize a YouTube Video? Yes — Here's How",
+    metaDescription: "ChatGPT cannot open YouTube links, but it summarizes transcripts well. The exact workflow, a copy-paste prompt, and why it quietly fails on videos over an hour long.",
     date: '2026-07-03',
     content: `
       <p><strong>Quick answer:</strong> Yes, ChatGPT can summarize a YouTube video — but only if you give it the transcript. ChatGPT cannot watch video or listen to audio, and in most configurations it cannot open a YouTube link you paste. The workflow that works: get the video's transcript, paste it into ChatGPT with a summarization prompt, and clean up the output. It takes 4–6 minutes per video. Dedicated tools do the same job in under a minute.</p>
@@ -2790,8 +2790,8 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
   },
 
   'youtube-no-transcript-available-fix': {
-    title: '"No Transcript Available" on YouTube? Why It Happens and How to Fix It',
-    metaDescription: 'YouTube says no transcript is available, or the Show transcript button is missing? The four real reasons, what you can actually do about each, and how to summarize the video anyway.',
+    title: '"No Transcript Available" on YouTube? Here\'s Why (2026)',
+    metaDescription: 'YouTube says no transcript is available on a video you can watch perfectly. The four reasons it happens, which ones you can actually fix, and how to get a summary anyway.',
     date: '2026-08-16',
     content: `
       <p><strong>Quick answer:</strong> "No transcript available" means YouTube has no caption track for that video. There are four causes: the creator disabled captions, the video is too new for auto-captions to have generated (usually 1–4 hours), the spoken language is not supported by YouTube's speech recognition, or the video has no speech at all. If the creator disabled captions, no transcript tool or summarizer can recover the text — the data does not exist on YouTube's side.</p>
@@ -2887,8 +2887,8 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
   },
 
   'chatgpt-wont-open-youtube-link': {
-    title: "ChatGPT Won't Open Your YouTube Link? Why, and What Actually Works",
-    metaDescription: "Pasted a YouTube URL into ChatGPT and got nothing useful? ChatGPT cannot watch video. Why it fails, why a confident wrong summary is worse, and the three workflows that work.",
+    title: "Why ChatGPT Can't Open YouTube Links (And What Works)",
+    metaDescription: "Paste a YouTube URL into ChatGPT and you can get a confident summary of a video it never watched. Why that happens, how to spot it, and the workflow that actually works.",
     date: '2026-08-16',
     content: `
       <p><strong>Quick answer:</strong> ChatGPT cannot open YouTube links because it cannot process video or audio — it only reads text. When you paste a URL, one of three things happens: it tells you it cannot access the link, it summarizes the page title and description instead of the actual content, or it invents a plausible summary from the title alone. The third case is the dangerous one, because the output looks correct.</p>
@@ -3582,8 +3582,8 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
   },
 
   'summarize-tech-alternative': {
-    title: 'Summarize.tech Alternatives 2026: Better Output Without a Subscription',
-    metaDescription: "Outgrown Summarize.tech? Alternatives that give structured key points, a saved library and reliable long-video handling — including free options and one-time-payment tools.",
+    title: 'Summarize.tech Alternatives: 6 Tools With Better Output',
+    metaDescription: "Summarize.tech is free and hands you a wall of paragraphs. Six alternatives with structured key points, saved summaries and reliable long-video handling — free and paid.",
     date: '2026-08-16',
     content: `
       <p><strong>Quick answer:</strong> People look for a Summarize.tech alternative for three reasons: they want structured key points instead of paragraph blocks, they want summaries saved rather than lost on refresh, or long videos are not being covered properly. NotebookLM is the best free step up; YT Summarizer is the best option if you want structure and a library without a monthly subscription.</p>
@@ -4610,9 +4610,507 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>Related: <a href="/blog/summarize-youtube-video-without-extension">summarizing YouTube without an extension</a>.</p>
     `,
   },
+
+  // ===== Batch 5 (Sep 2026): aimed at observed GSC queries, not guesses =====
+  // Batch 2 (competitor-brand) earned impressions and ~0 clicks. Batches 1/3
+  // (troubleshooting) produce 73% of all clicks. So this batch stays entirely in
+  // the YouTube-native-failure and transcript seams, targeting queries we already
+  // pick up impressions for but have no dedicated page to serve.
+
+  'why-some-youtube-videos-have-no-ai-summary': {
+    title: "Why Do Some YouTube Videos Not Have an AI Summary? (2026)",
+    metaDescription: "AI summary showing on one video and missing on the next? It is not random. The five things that decide whether a video gets one, and how to check yours in ten seconds.",
+    date: '2026-09-15',
+    content: `
+      <p><strong>Quick answer:</strong> It is not random and it is not a bug. Whether a video gets an AI summary depends on the video, not on you — mainly whether it has a usable caption track, how long it is, what language it is in, and whether the feature has reached your account and country at all. The single most common reason is the simplest: no captions, nothing to summarize.</p>
+
+      <h2>1. The video has no caption track</h2>
+      <p>Every summary in this category is built from text, not from watching. If YouTube's automatic speech recognition never produced a transcript, there is nothing to summarize and the feature will not appear.</p>
+      <p>Check it in ten seconds: open the video, click the three-dot menu underneath, and look for <strong>Show transcript</strong>. Missing means no captions. This alone explains most cases, and it explains why the same tool works perfectly on the next video you try. Detail in <a href="/blog/youtube-no-transcript-available-fix">"no transcript available" on YouTube</a>.</p>
+
+      <h2>2. The video is too short — or far too long</h2>
+      <p>Very short clips do not contain enough material for a summary to be worth generating. At the other end, multi-hour videos produce transcripts of 25,000 to 35,000 words, which get truncated or skipped rather than fully processed. A three-minute clip and a four-hour stream fail for opposite reasons.</p>
+
+      <h2>3. The language is not supported</h2>
+      <p>Automatic captioning quality varies enormously by language, and summary features are typically rolled out to a narrower set of languages than captioning itself. A video in a well-supported language gets both; one in a less-supported language may get neither, or get captions so rough that no summary is generated from them.</p>
+      <p>Heavy background music, overlapping speakers, poor microphones and strong accents all degrade recognition in the same way, which is why music-heavy and live-recorded content so often lacks both.</p>
+
+      <h2>4. The video is restricted</h2>
+      <p>Private, unlisted, members-only, purchased and most age-restricted videos do not expose their captions to anything outside your own logged-in session. You can watch them; a summarizer cannot read them. See <a href="/blog/private-age-restricted-video-summarize">why restricted videos cannot be summarized</a>.</p>
+      <p>Live streams are a related case — the stored transcript does not exist until the broadcast ends and finishes processing, so summaries are unavailable during and shortly after. More in <a href="/blog/summarize-youtube-live-stream">summarizing live streams</a>.</p>
+
+      <h2>5. The feature has not reached your account</h2>
+      <p>YouTube's own AI summary is a gradual rollout, not a universal feature. Availability is limited by country, account type, age, subscription status, and whether you are on desktop or mobile. Two people can open the same video and only one sees it.</p>
+      <p>There is no setting that turns it on. If you are trying to work out whether the feature is missing or the video is ineligible, this is the difference: a feature that has not reached you is missing on <em>every</em> video, while an ineligible video fails while others work. That distinction is the fastest diagnosis available. We cover it fully in <a href="/blog/youtube-ai-summary-not-working">YouTube's AI summary not showing</a>.</p>
+
+      <h2>How to tell which one you have hit</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Pattern</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Cause</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Missing on every video you try</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Rollout has not reached your account or region</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Missing on one video, present on others</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">No captions, restricted, or wrong language</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Missing only on very long videos</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Transcript length limits</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Was there yesterday, gone today</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Rollout changed, not something you did</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>What works on every video that has captions</h2>
+      <p>The advantage of a dedicated tool is coverage rather than cleverness. It does not depend on a rollout reaching your account, your country, or your device — if the video has a public transcript, it works.</p>
+      <p><a href="${P}">YT Summarizer</a> takes any public YouTube URL and returns an overview, key points and takeaways in about a minute, in any browser and on any device. It reads the full transcript rather than the opening portion, so long lectures and podcasts do not thin out halfway. Five summaries are free, then one-time credit packs from $19 with credits that never expire.</p>
+      <p>The one thing it cannot do is invent captions that do not exist — no tool can. That limit belongs to the video.</p>
+    `,
+  },
+
+  'did-youtube-remove-ai-summary': {
+    title: "Did YouTube Remove the AI Summary? What Actually Happened",
+    metaDescription: "The AI summary was on your videos and now it is gone. Whether YouTube removed it, why it disappears for some accounts and not others, and how to get summaries regardless.",
+    date: '2026-09-15',
+    content: `
+      <p><strong>Quick answer:</strong> YouTube has not announced removing AI summaries. What people are experiencing is a rollout changing shape — the feature appears for a set of accounts, videos and regions, and that set moves. A feature you had last month genuinely can be absent this month without anything being removed, and without you having changed a setting. That is uncomfortable but it is the nature of a gradual rollout.</p>
+
+      <h2>Why it looks like removal</h2>
+      <p>Most software features arrive for everyone at once. Rollouts do not. They expand and contract while a company measures cost, quality and load, and individual accounts move in and out of the eligible group without notice. From inside one account, an expansion looks like a launch and a contraction looks like removal — but neither was announced, because neither was a decision about you.</p>
+      <p>This produces the pattern that drives people to search: it worked, then it didn't, nothing changed on your end, and no announcement explains it.</p>
+
+      <h2>Things that are not the cause</h2>
+      <p>Before you spend time on fixes that will not work:</p>
+      <ul>
+        <li><strong>A setting you turned off.</strong> There is no toggle for this feature. If you cannot find the setting, that is because it does not exist.</li>
+        <li><strong>Clearing your cache or reinstalling the app.</strong> Eligibility is account-side, not device-side.</li>
+        <li><strong>An extension conflict.</strong> YouTube's own summary is part of YouTube, not an extension — though extensions can break, which is a separate problem covered in <a href="/blog/youtube-summarizer-broken-after-update">summarizers breaking after an update</a>.</li>
+        <li><strong>Your subscription lapsing.</strong> Worth checking, since some AI features have been tied to Premium at various points, but a lapsed subscription usually removes more than one feature.</li>
+      </ul>
+
+      <h2>First: is it the feature or the video?</h2>
+      <p>This is the diagnosis worth doing before anything else, and it takes two minutes. Open three or four unrelated videos — different channels, different lengths, all with captions available.</p>
+      <ul>
+        <li><strong>No summary on any of them</strong> → the rollout no longer includes your account. Nothing to fix.</li>
+        <li><strong>Summary on some but not others</strong> → the feature is fine; those specific videos are ineligible. Usually missing captions, length, language or restrictions. Full breakdown in <a href="/blog/why-some-youtube-videos-have-no-ai-summary">why some videos have no AI summary</a>.</li>
+      </ul>
+
+      <h2>Is it coming back?</h2>
+      <p>Possibly, and nobody outside YouTube can tell you when. Rollouts do expand again, and features tied to subscription tiers move between them. What you cannot do is influence it, request it, or accelerate it — there is no waitlist and no setting.</p>
+      <p>Which is the practical problem with depending on it. A feature that can appear and disappear without announcement is fine as a convenience and poor as part of a workflow you rely on weekly.</p>
+
+      <h2>The alternative that does not move</h2>
+      <p>A dedicated summarizer is not subject to any of this. It works on any public video with a transcript, in any country, on any device, for any account — because it is reading the caption track directly rather than waiting for a feature to be enabled for you.</p>
+      <p><a href="${P}">YT Summarizer</a> takes a URL and returns an overview, key points and takeaways in about a minute, saved to a library you can search later — which is the other thing YouTube's version does not do, since its output is not stored anywhere. Five free summaries, then one-time credit packs from $19, credits never expire, one credit per video of any length.</p>
+      <p>See also: <a href="/blog/youtube-ai-summary-not-working">YouTube's AI summary not working or not showing</a>, and <a href="/blog/youtube-summarizer-vs-youtube-built-in-ai">how the built-in feature compares to a dedicated tool</a>.</p>
+    `,
+  },
+
+  'how-long-youtube-takes-to-transcribe-video': {
+    title: "How Long Does YouTube Take to Transcribe a Video? (2026)",
+    metaDescription: "Waiting on automatic captions that have not appeared? Typical processing times, what makes them slower, and how to tell the difference between 'still processing' and 'never coming'.",
+    date: '2026-09-15',
+    content: `
+      <p><strong>Quick answer:</strong> Automatic captions usually appear within minutes to a few hours of upload for a typical video, but there is no published guarantee and the range is wide. The more useful question is not how long it takes but whether it is coming at all — because for a meaningful share of videos, it never does, and no amount of waiting changes that.</p>
+
+      <h2>What actually affects the wait</h2>
+      <ul>
+        <li><strong>Length.</strong> A ten-minute video processes quickly; a four-hour stream takes considerably longer, and very long uploads are the most likely to stall.</li>
+        <li><strong>Upload queue.</strong> Processing competes for capacity. The same video can take twenty minutes on a quiet Tuesday and several hours during a peak period.</li>
+        <li><strong>Resolution processing.</strong> Captions typically follow the main video processing, so a 4K upload that is still finishing its renditions will not have captions yet either.</li>
+        <li><strong>Language.</strong> Well-supported languages process faster and more reliably. Less-supported ones are slower and more likely to produce nothing.</li>
+        <li><strong>Audio quality.</strong> Clear single-speaker speech transcribes quickly. Heavy music, crosstalk, poor microphones and strong background noise slow it down and degrade the result.</li>
+      </ul>
+
+      <h2>When it is never coming</h2>
+      <p>This is the part that saves you time. Automatic captions are not generated for every video. If several hours have passed on a normal-length upload and there is still nothing, the likely answer is that this video will not get them — because the audio is unsuitable, the language is unsupported, or the uploader disabled captions entirely.</p>
+      <p>Music videos are the clearest example: many never receive automatic captions at all, regardless of how long you wait.</p>
+      <p>How to check: open the video, click the three-dot menu underneath, and look for <strong>Show transcript</strong>. If that option is absent hours after upload, treat it as permanent rather than pending. More in <a href="/blog/youtube-no-transcript-available-fix">"no transcript available" and what to do</a>.</p>
+
+      <h2>If it is your own video</h2>
+      <p>You have options a viewer does not. In YouTube Studio you can upload your own caption file, which appears immediately and is more accurate than automatic recognition — worth doing for anything you expect people to search or reference. You can also check the Subtitles section in Studio to see whether automatic captions are processing, failed, or were never attempted, which is information viewers cannot see.</p>
+      <p>If captions matter to you, clean audio at upload does more than anything else: a decent microphone, no background music under speech, and one person talking at a time.</p>
+
+      <h2>If you are waiting because you want a summary</h2>
+      <p>Everything downstream depends on that transcript. Summarizers, AI assistants and note tools all read the same caption track, so while it is processing, none of them will work on that video — and if it never generates, none of them ever will.</p>
+      <p>The practical move is to check for the transcript first rather than repeatedly retrying a tool. Once it exists, <a href="${P}">YT Summarizer</a> will turn the video into an overview, key points and takeaways in about a minute from the URL alone. Five free summaries, then one-time credit packs from $19 with credits that never expire.</p>
+      <p>Related: <a href="/blog/youtube-transcript-not-loading">transcript panel not loading</a>, and <a href="/blog/summarize-youtube-live-stream">why live streams have no transcript until they end</a>.</p>
+    `,
+  },
+
+  'did-youtube-remove-transcripts': {
+    title: "Did YouTube Remove Transcripts? No — Here's Where It Went",
+    metaDescription: "Can't find 'Show transcript' any more? YouTube did not remove transcripts, but it has moved the button more than once and it does not appear on every video. Where to look now.",
+    date: '2026-09-15',
+    content: `
+      <p><strong>Quick answer:</strong> No. Transcripts still exist and are still free to open. What has changed is where the button lives — YouTube has relocated it more than once, and it now sits somewhere most people do not think to look. The other half of the confusion is that the option genuinely does not appear on every video, which makes a moved button look like a removed feature.</p>
+
+      <h2>Where the transcript is now</h2>
+      <p>On desktop, open the video, look <em>below</em> the player rather than in the player controls, and click the <strong>three-dot menu</strong> next to the like and share buttons. Choose <strong>Show transcript</strong>. The panel opens to the right of the video.</p>
+      <p>On mobile, expand the description first — tap the description area to open it fully — then look for the transcript option inside. It is not in the player overflow menu, which is where most people check and give up.</p>
+      <p>If you remember it being somewhere else, you are probably right. It has moved.</p>
+
+      <h2>Why it is missing on some videos</h2>
+      <p>The button only appears when a caption track exists. No captions, no button — and that is a property of the video, not a change to YouTube:</p>
+      <ul>
+        <li>Music-heavy uploads frequently never get automatic captions</li>
+        <li>Very recent uploads may still be processing — see <a href="/blog/how-long-youtube-takes-to-transcribe-video">how long transcription takes</a></li>
+        <li>Heavy background noise, crosstalk and poor audio degrade recognition to the point where nothing is produced</li>
+        <li>Less-supported languages often get nothing</li>
+        <li>Uploaders can disable captions outright</li>
+        <li>Private, members-only and most age-restricted videos do not expose captions to anything outside your session</li>
+      </ul>
+      <p>So if the option is there on one video and gone on the next, nothing broke. Full detail in <a href="/blog/youtube-no-transcript-available-fix">"no transcript available" explained</a>.</p>
+
+      <h2>The button is there but the panel stays empty</h2>
+      <p>Different problem entirely — that is a loading or interference issue rather than a missing feature. Hard-reload the page, try an incognito window with extensions disabled, and check whether a strict ad blocker or privacy extension is intercepting the caption request. Full sequence in <a href="/blog/youtube-transcript-not-loading">transcript not loading</a>.</p>
+
+      <h2>One thing worth knowing once you have it open</h2>
+      <p>The transcript panel has its own three-dot menu with a <strong>toggle timestamps</strong> option. Turning it off before you select and copy saves deleting hundreds of timestamp lines by hand, which is how most people waste ten minutes on this. Method in <a href="/blog/how-to-remove-timestamps-from-youtube-transcript">removing timestamps properly</a>.</p>
+
+      <h2>If what you want is the meaning, not the text</h2>
+      <p>A transcript is raw material — a one-hour video produces roughly 9,000 words of unpunctuated speech, which is not something anyone reads to save time.</p>
+      <p><a href="${P}">YT Summarizer</a> skips that step: paste the video URL and get an overview, key points and takeaways in about a minute, without opening the transcript panel at all. Five summaries free, then one-time packs from $19 with credits that never expire.</p>
+      <p>Related: <a href="/blog/youtube-transcript-button-missing">the transcript button missing on desktop and mobile</a>.</p>
+    `,
+  },
+
+  'youtube-error-loading-captions': {
+    title: "YouTube 'Error Loading Captions'? Causes and Fixes (2026)",
+    metaDescription: "Getting an error when captions or the transcript try to load? The six causes in the order worth checking them, and how to tell a temporary fault from a video that has no captions at all.",
+    date: '2026-09-15',
+    content: `
+      <p><strong>Quick answer:</strong> An explicit caption error is usually a delivery problem rather than a missing-captions problem — the track exists but the request for it failed. Start with a hard reload, then rule out extensions and network filtering. If the error persists across browsers and networks on one specific video while others work, the video itself is the issue.</p>
+
+      <h2>1. Hard reload first</h2>
+      <p>Caption tracks load separately from the video player, and a request that fails once often succeeds on retry. Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> on Windows or <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> on Mac, wait for the player to be ready, and try again. This resolves a surprising share of cases and costs five seconds.</p>
+
+      <h2>2. YouTube's in-page navigation left stale state</h2>
+      <p>YouTube does not actually reload when you click from one video to another. The caption request can carry state from the previous video or simply never fire. Loading the video URL fresh in a new tab — rather than navigating to it — is a distinct test from reloading, and sometimes only the former works.</p>
+
+      <h2>3. An extension is blocking the request</h2>
+      <p>Ad blockers, script blockers, privacy extensions and rival AI sidebars all intercept requests on YouTube, and caption requests get caught more often than people expect. Test in an incognito window with extensions disabled. If captions load there, re-enable your extensions one at a time until the error returns, then whitelist youtube.com in whichever one caused it.</p>
+
+      <h2>4. Cache or cookies</h2>
+      <p>A stale cache produces exactly this symptom — the interface renders and the data never arrives. Clear cache and cookies for youtube.com. Test in a second browser first to confirm the diagnosis before clearing anything you would rather keep.</p>
+
+      <h2>5. Network filtering</h2>
+      <p>School, office and some public networks allow YouTube's main content while filtering auxiliary requests. The video plays perfectly and captions error out, which is a genuinely confusing combination if you do not know to suspect the network. The fastest test is a phone hotspot — if captions load there, your network is the cause and it is not something you can fix from the browser. See <a href="/blog/youtube-summarizer-blocked-at-school-or-work">tools blocked at work or school</a>.</p>
+
+      <h2>6. The video has no caption track</h2>
+      <p>Sometimes the error is honest. Confirm by checking whether <strong>Show transcript</strong> appears in the three-dot menu below the video. If the option is absent entirely, there is no track and the error is describing reality — common on music-heavy uploads, very recent publishes still processing, noisy recordings and less-supported languages. Background in <a href="/blog/youtube-no-transcript-available-fix">"no transcript available"</a>.</p>
+
+      <h2>A quick diagnostic order</h2>
+      <ol>
+        <li>Hard reload the page.</li>
+        <li>Open the video URL fresh in a new tab.</li>
+        <li>Try incognito with extensions off.</li>
+        <li>Try a different browser.</li>
+        <li>Try a phone hotspot.</li>
+        <li>Try a different video — if that one works, the problem is the original video, not your setup.</li>
+      </ol>
+      <p>That last step is the one people skip, and it separates "my browser is broken" from "this video has no captions" faster than anything else.</p>
+
+      <h2>If you only wanted the summary</h2>
+      <p>You do not have to get the caption panel working yourself. <a href="${P}">YT Summarizer</a> retrieves the transcript server-side from the video URL, which sidesteps browser extensions, cache and most local interference entirely, then returns an overview, key points and takeaways in about a minute. Five free summaries, then one-time credit packs from $19 with credits that never expire.</p>
+      <p>The one case it cannot help with is a video that genuinely has no captions — that limit belongs to the video and applies to every tool equally.</p>
+    `,
+  },
+
+  'notebooklm-video-cannot-be-imported': {
+    title: "NotebookLM: 'This Video Cannot Be Imported' — Why and What to Do",
+    metaDescription: "NotebookLM refusing a YouTube link with 'transcript not available'? What that error actually means, why it happens on videos you can watch, and three ways around it.",
+    date: '2026-09-15',
+    content: `
+      <p><strong>Quick answer:</strong> That error is accurate and it is about the video, not your notebook. NotebookLM imports YouTube videos by reading the stored caption track — it does not watch or listen. If no public transcript exists, there is nothing to import, and this will fail identically in every other transcript-based tool you try. The workaround is to supply the text yourself.</p>
+
+      <h2>What the error actually means</h2>
+      <p>"Transcript not available" is not a polite way of saying something went wrong. It means NotebookLM asked YouTube for the caption track and did not get one. That happens for specific, checkable reasons rather than randomly.</p>
+      <p>Verify it yourself in ten seconds: open the video, click the three-dot menu underneath, look for <strong>Show transcript</strong>. If that option is missing, the error is telling the truth and no amount of retrying will change it.</p>
+
+      <h2>Why a video you can watch still fails</h2>
+      <p>This is the part that confuses people most. You are signed in and watching it, so why can't the tool read it? Because your session does not extend to the tool. It makes an anonymous, public request.</p>
+      <ul>
+        <li><strong>No automatic captions were generated.</strong> Common on music-heavy uploads, noisy recordings, strong accents and less-supported languages.</li>
+        <li><strong>The upload is very recent.</strong> Captions may still be processing — see <a href="/blog/how-long-youtube-takes-to-transcribe-video">how long YouTube takes to transcribe</a>.</li>
+        <li><strong>The uploader disabled captions.</strong> Entirely their choice, and nothing overrides it.</li>
+        <li><strong>The video is private, unlisted, members-only, purchased or age-restricted.</strong> Captions are not publicly accessible even though you can watch it. See <a href="/blog/private-age-restricted-video-summarize">restricted videos explained</a>.</li>
+        <li><strong>It is a live stream still running.</strong> No stored transcript exists until it ends and processes. See <a href="/blog/summarize-youtube-live-stream">summarizing live streams</a>.</li>
+      </ul>
+
+      <h2>Three ways around it</h2>
+      <p><strong>1. Paste the transcript as a text source.</strong> If the transcript does exist but the import still fails, open it via the three-dot menu, use the panel's own menu to toggle timestamps off, copy everything, and add it to your notebook as pasted text instead of a link. NotebookLM treats it identically once it is in — it only ever wanted the text. Method in <a href="/blog/how-to-remove-timestamps-from-youtube-transcript">removing timestamps before copying</a>.</p>
+      <p><strong>2. Check for a re-upload with captions.</strong> Popular talks and lectures are often mirrored on other channels, and a different upload of the same content may have a usable track.</p>
+      <p><strong>3. Accept that some videos cannot be processed.</strong> If there is genuinely no transcript anywhere, every transcript-based tool fails — NotebookLM, summarizers, AI assistants alike. The limit is the video.</p>
+
+      <h2>When it imports but the notebook is not what you wanted</h2>
+      <p>NotebookLM is built for research across a corpus — several sources, cross-referenced, questioned over time. That is genuinely powerful and it is a lot of setup for one video you want the gist of. If the job is "tell me what is in this video so I can decide whether to watch it," a notebook is the wrong shape of tool.</p>
+      <p><a href="${P}">YT Summarizer</a> does the narrow version: paste a URL, get an overview, key points and takeaways in about a minute, saved to a searchable library. No notebook to create, no sources to manage. Five free summaries, then one-time credit packs from $19 with credits that never expire.</p>
+      <p>Related: <a href="/blog/notebooklm-youtube-not-working">NotebookLM not working with YouTube</a>, and <a href="/blog/how-to-use-notebooklm-for-youtube-videos">using NotebookLM for YouTube properly</a>.</p>
+    `,
+  },
+
+  'youtube-captions-not-working': {
+    title: "YouTube Captions Not Working? 7 Causes and Fixes (2026)",
+    metaDescription: "Subtitles missing, stuck, out of sync or showing the wrong language? The seven real causes — and the one check that tells you instantly whether it is your setup or the video.",
+    date: '2026-09-15',
+    content: `
+      <p><strong>Quick answer:</strong> Run one test first — try captions on a different video. If they work there, your setup is fine and the original video is the problem. If they fail everywhere, it is your browser, extensions or network. That single check saves most of the troubleshooting below.</p>
+
+      <h2>1. The CC button is missing entirely</h2>
+      <p>The captions button only appears when a track exists. If it is absent, this video has none — check the three-dot menu below the video for <strong>Show transcript</strong> to confirm. Common on music-heavy uploads, very recent publishes still processing, noisy recordings and less-supported languages. Detail in <a href="/blog/youtube-no-transcript-available-fix">"no transcript available"</a>.</p>
+
+      <h2>2. Captions are off by default</h2>
+      <p>Worth ruling out before anything technical. YouTube remembers a per-account caption preference, and it can be switched off in settings without you remembering doing it. Check Settings → Playback and performance, and confirm "Always show captions" is set the way you expect.</p>
+
+      <h2>3. An extension is interfering</h2>
+      <p>Ad blockers, privacy tools, script blockers and AI sidebars all modify YouTube's page and intercept its requests. Test in an incognito window with extensions disabled. If captions work there, re-enable one at a time to find the culprit, then whitelist youtube.com in it.</p>
+
+      <h2>4. Cache, or a stale page</h2>
+      <p>Hard-reload with <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> or <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>. If that does not work, clear cache and cookies for youtube.com. Because YouTube navigates without truly reloading, opening the video URL fresh in a new tab is a separate test worth doing.</p>
+
+      <h2>5. Wrong language, or unwanted auto-translation</h2>
+      <p>If captions appear but in the wrong language, open the captions settings in the player and check whether auto-translate has been left on from a previous session. It persists, and it silently translates every video until you turn it off. Related: <a href="/blog/youtube-summary-wrong-language">summaries coming back in the wrong language</a>.</p>
+
+      <h2>6. Captions are out of sync</h2>
+      <p>Automatic captions drift on long videos, and more so when audio quality is poor. Reloading resyncs them in most cases. Persistent drift on one specific video is usually baked into the generated track rather than a playback fault — switching to a manually uploaded track, if the creator provided one, fixes it.</p>
+
+      <h2>7. Network filtering</h2>
+      <p>On managed networks, the video can play while caption requests are blocked. Test on a phone hotspot: if captions load there, the network is the constraint and no browser setting will change it. See <a href="/blog/youtube-summarizer-blocked-at-school-or-work">blocked at work or school</a>.</p>
+
+      <h2>Captions on, but you wanted the text</h2>
+      <p>Captions and transcripts are the same underlying track presented differently. If what you actually want is the text — to quote, search or paste somewhere — open the three-dot menu below the video and choose <strong>Show transcript</strong>, then use the panel's menu to toggle timestamps off before copying. See <a href="/blog/how-to-remove-timestamps-from-youtube-transcript">removing timestamps</a>, and <a href="/blog/youtube-transcript-not-loading">what to do when the panel will not load</a>.</p>
+
+      <h2>If the goal was to avoid watching the whole thing</h2>
+      <p>Reading captions in real time still costs you the full runtime. <a href="${P}">YT Summarizer</a> turns the same caption track into an overview, key points and takeaways in about a minute from the URL — useful for deciding whether a two-hour video deserves two hours. Five free summaries, then one-time credit packs from $19 with credits that never expire.</p>
+    `,
+  },
+
+  'can-copilot-summarize-youtube-video': {
+    title: "Can Copilot Summarize a YouTube Video? Yes, With Conditions",
+    metaDescription: "Microsoft Copilot can summarize YouTube — but only on one surface, and only for some videos. What works where, how to spot a summary that never read the video, and what to use otherwise.",
+    date: '2026-09-15',
+    content: `
+      <p><strong>Quick answer:</strong> Yes, but the surface matters more than the question. In the Edge sidebar, Copilot can read the page you are viewing — including a YouTube video's caption track — and summarize it. In the standalone Copilot app or on the web, it has no special access to YouTube, so a pasted link produces an answer assembled from the title, description and whatever the web says about the video. Both feel like summaries. Only one is.</p>
+
+      <h2>Where it genuinely works</h2>
+      <p>The Edge sidebar, on a desktop, on a personal (unmanaged) profile, with page-context permission enabled, on a video that has captions. Under those conditions it reads the transcript and the output reflects the actual content.</p>
+      <p>Remove any one of those conditions and you get either a refusal or, more often, a confident answer built from something other than the video.</p>
+
+      <h2>Where it does not</h2>
+      <ul>
+        <li><strong>The Copilot app or copilot.com.</strong> No page context. A YouTube URL is just a URL.</li>
+        <li><strong>Managed work or school profiles.</strong> Sidebar page access is frequently disabled by administrator policy, usually silently.</li>
+        <li><strong>InPrivate windows.</strong> Page-context features are commonly restricted there by design.</li>
+        <li><strong>Videos without captions.</strong> Nothing to read — this is not fixable by any setting.</li>
+        <li><strong>Private, members-only and age-restricted videos.</strong> Captions are not publicly accessible, even while you watch them.</li>
+        <li><strong>Mobile.</strong> There is no Edge sidebar reading your YouTube app.</li>
+      </ul>
+
+      <h2>How to tell whether it actually read the video</h2>
+      <p>This matters more than it sounds, because the failure is silent. Ask a question only the content can answer — what the speaker said about a specific sub-topic, or what conclusion they reached near the end. A transcript-based answer gets concrete and cites actual claims. A description-based one restates the video's general subject in confident, unfalsifiable terms.</p>
+      <p>The other tell is uniformity: a real summary has texture, with some parts more detailed than others. A reconstructed one is evenly vague throughout.</p>
+
+      <h2>Long videos: the failure that looks like success</h2>
+      <p>On a two- or three-hour video, expect detail on the opening and thinning afterwards, with no error to warn you. The transcript exceeds what gets processed, so the back half is simply absent from the summary. If you cannot verify by having watched it, you cannot tell. Mechanism in <a href="/blog/youtube-summary-cut-off-long-videos">summaries cut off on long videos</a>.</p>
+
+      <h2>Getting better results from Copilot</h2>
+      <p>Two things help. Open the transcript yourself and paste the text rather than relying on page reading — that removes retrieval from the equation entirely. And ask for structure explicitly ("the central claim, the supporting evidence, and where the speaker concedes uncertainty") rather than "summarize this", which tends to produce a paragraph of gist.</p>
+      <p>Neither helps on a video with no captions. Nothing does.</p>
+
+      <h2>When a dedicated tool is simply less trouble</h2>
+      <p>Every condition above exists because summarizing is bolted onto a browser. A web app has no sidebar to disable, no page-context permission to grant, no profile policy to run into, and works the same on a phone as on a desktop.</p>
+      <p><a href="${P}">YT Summarizer</a> takes a URL in any browser, reads the full transcript rather than the opening portion, and saves each summary to a searchable library. Five free summaries, then one-time credit packs from $19 with credits that never expire. It also has no fallback path that invents a summary from the description — if it cannot read the video, it tells you.</p>
+      <p>Related: <a href="/blog/copilot-youtube-summary-not-working">Copilot not summarizing YouTube</a>, and <a href="/blog/youtube-summarizer-vs-copilot">a direct comparison of the two</a>.</p>
+    `,
+  },
+
+  'youtube-transcript-search-not-working': {
+    title: "YouTube Transcript Search Not Working? Here's What to Do",
+    metaDescription: "Trying to search inside a YouTube transcript and finding nothing? Why the panel has no search box, the browser shortcut that does work, and how to find a moment in a long video fast.",
+    date: '2026-09-15',
+    content: `
+      <p><strong>Quick answer:</strong> The transcript panel has no search box of its own, which is why people conclude it is broken. Use your browser's find instead — <kbd>Ctrl</kbd>+<kbd>F</kbd> on Windows, <kbd>Cmd</kbd>+<kbd>F</kbd> on Mac — with the transcript panel open. It searches the visible transcript text, and clicking a matched line still jumps the video to that timestamp.</p>
+
+      <h2>Why it seems broken</h2>
+      <p>Two separate things get confused here. YouTube's <em>search bar</em> searches videos across the site. The transcript panel displays one video's caption track. There has never been a search field inside the panel, so looking for one and failing feels like a feature that stopped working.</p>
+      <p>The second source of confusion is loading: if the panel is open but empty, find-in-page has nothing to search and returns no results, which looks identical to search failing. That is a loading problem, covered in <a href="/blog/youtube-transcript-not-loading">transcript not loading</a>.</p>
+
+      <h2>The method that works</h2>
+      <ol>
+        <li>Open the video and click the three-dot menu underneath it.</li>
+        <li>Choose <strong>Show transcript</strong> and wait for lines to appear.</li>
+        <li>Press <kbd>Ctrl</kbd>+<kbd>F</kbd> or <kbd>Cmd</kbd>+<kbd>F</kbd>.</li>
+        <li>Type your term. Matches highlight in the panel.</li>
+        <li>Click a matching line to jump the video to that moment.</li>
+      </ol>
+
+      <h2>Why find-in-page sometimes misses matches</h2>
+      <ul>
+        <li><strong>The panel virtualises long transcripts.</strong> On a multi-hour video, only the rendered portion is searchable. Scroll the panel through its length first, or search in sections.</li>
+        <li><strong>Automatic captions get words wrong.</strong> Names, jargon and acronyms are the most frequently mistranscribed, so searching for an exact term can fail even though it was said. Try a distinctive nearby word instead.</li>
+        <li><strong>Timestamps break up the text.</strong> If timestamps are on, phrases can be split across lines. Toggle them off via the panel's three-dot menu — this also makes the text far easier to copy. See <a href="/blog/how-to-remove-timestamps-from-youtube-transcript">removing timestamps</a>.</li>
+        <li><strong>Auto-translation is on.</strong> If captions are being translated, you are searching the translated text, not the original words.</li>
+      </ul>
+
+      <h2>On mobile</h2>
+      <p>There is no practical find-in-page for the transcript in the YouTube app. If you need to locate a moment in a long video from a phone, open the video in a desktop browser, or use chapter markers in the description where the creator provided them.</p>
+
+      <h2>When searching is the wrong approach</h2>
+      <p>Find-in-page works when you know roughly what was said. It does not help with the more common question — "where in this two-hour video is the part that matters to me?" — because you cannot search for a term you have not thought of yet.</p>
+      <p>That is what a structured summary is for. <a href="${P}">YT Summarizer</a> returns an overview, key points and takeaways for the whole video in about a minute, so you can see what is covered before deciding where to look. Five free summaries, then one-time credit packs from $19, credits never expire, one credit per video of any length.</p>
+      <p>Related: <a href="/blog/youtube-summarizer-with-timestamps">summaries with timestamps</a>, and <a href="/blog/youtube-video-too-long-how-to-get-key-points">getting key points from a long video</a>.</p>
+    `,
+  },
+
+  'summarize-youtube-video-without-transcript': {
+    title: "How to Summarize a YouTube Video With No Transcript (2026)",
+    metaDescription: "Video has no captions, so every summarizer fails? Why that happens, the audio-transcription route that does work, and how to decide whether it is worth the effort.",
+    date: '2026-09-15',
+    content: `
+      <p><strong>Quick answer:</strong> Almost every YouTube summarizer reads the caption track, so a video without one defeats all of them at once. The workaround is to create a transcript from the audio yourself using a speech-to-text tool, then summarize that text. It works, it is slower, and for most videos it is not worth doing — so the first question is whether this particular video justifies the effort.</p>
+
+      <h2>Why every tool fails on the same videos</h2>
+      <p>Summarizers, AI assistants and note tools all fetch the same thing: YouTube's stored caption track. None of them watch the video or listen to the audio. So when a video has no captions, they fail identically — which is why trying a fifth tool never helps, and why the failure feels inconsistent (works on this video, not that one).</p>
+      <p>Confirm before troubleshooting anything: three-dot menu below the video, look for <strong>Show transcript</strong>. Missing means no track. Background in <a href="/blog/youtube-no-transcript-available-fix">"no transcript available"</a>.</p>
+
+      <h2>Which videos tend to have no captions</h2>
+      <ul>
+        <li>Music-heavy content — automatic recognition often produces nothing usable</li>
+        <li>Recordings with significant background noise or crosstalk</li>
+        <li>Very recent uploads still processing — see <a href="/blog/how-long-youtube-takes-to-transcribe-video">how long transcription takes</a></li>
+        <li>Less-supported languages</li>
+        <li>Videos where the uploader disabled captions</li>
+        <li>Private, members-only and age-restricted videos, whose captions exist but are not publicly accessible</li>
+      </ul>
+      <p>That last group is worth separating: the captions may well exist, they are just not reachable by anything outside your session. No audio workaround changes the access problem if you cannot download the audio either.</p>
+
+      <h2>The route that actually works</h2>
+      <p>Generate your own transcript from the audio, then summarize the text. Broadly:</p>
+      <ol>
+        <li>Obtain the audio, within the terms of service and any rights that apply.</li>
+        <li>Run it through a speech-to-text tool. Modern transcription models handle accents and background noise considerably better than YouTube's automatic captions, so this often succeeds where YouTube produced nothing.</li>
+        <li>Clean up the output — speaker labels and paragraph breaks help a lot.</li>
+        <li>Paste the text into any AI tool with a clear instruction about the structure you want.</li>
+      </ol>
+      <p>Realistically this costs ten to twenty minutes per video, plus whatever the transcription tool costs. For a lecture you must understand, that is a good trade. For a video you were only triaging, it is not.</p>
+
+      <h2>Cheaper alternatives before you commit</h2>
+      <p><strong>Look for another upload.</strong> Conference talks, lectures and interviews are frequently mirrored on other channels, and a different upload may have captions. Search the title rather than browsing.</p>
+      <p><strong>Check the description.</strong> Creators often include chapter markers, show notes or a summary. For triage that is frequently enough.</p>
+      <p><strong>Wait, if it is recent.</strong> Captions on a video uploaded in the last few hours may still be processing.</p>
+      <p><strong>Ask the creator.</strong> On smaller channels, a polite request for captions sometimes works — and it helps everyone else too.</p>
+
+      <h2>For every other video</h2>
+      <p>Most videos do have captions, and for those the whole problem disappears. <a href="${P}">YT Summarizer</a> takes the URL, reads the full transcript rather than the opening portion, and returns an overview, key points and takeaways in about a minute. Five free summaries, then one-time credit packs from $19 with credits that never expire — one credit per video, so a three-hour lecture costs the same as a five-minute clip.</p>
+      <p>It cannot conjure captions that do not exist. Nothing can. But it removes the step of finding out the hard way, one tool at a time.</p>
+    `,
+  },
+
+  // ===== CTR rewrites (Sep 2026) =====
+  // These pages earn heavy impressions and almost no clicks: top-5-free-ai-tools
+  // 0 clicks / 439 impressions, free-ai-tool 1/303, how-does-ai-work 0/128.
+  // Ranking is not the problem; the titles are generic where the winning pages
+  // are problem-framed. Title/meta only — bodies unchanged.
+
+  'top-5-free-ai-tools': {
+    title: '5 Free YouTube Video Summarizers, Tested (2026)',
+    metaDescription: "We ran the same videos through five free YouTube summarizers. Which produced usable key points, which cut off on long videos, and where each one's paywall really starts.",
+  },
+
+  'free-ai-tool-to-summarize-youtube-videos': {
+    title: 'Free AI YouTube Summarizers: What Each One Limits (2026)',
+    metaDescription: 'Every free YouTube summarizer has a catch — a daily cap, a weekly quota, or a paywall that appears on long videos. Exactly where each one stops, and which to pick.',
+  },
+
+  'how-does-ai-youtube-summarization-work-technology-explained': {
+    title: 'How AI Actually Summarizes a YouTube Video (2026)',
+    metaDescription: "AI summarizers don't watch video — they read the caption track. What that means for accuracy, why long videos get cut off, and how to spot a summary that guessed.",
+  },
 }
 
 export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
+  // ===== Batch 5: YouTube-native failures + transcript problems =====
+  'why-some-youtube-videos-have-no-ai-summary': [
+    { q: `Why do some YouTube videos not have an AI summary?`, a: `Five things decide it: whether the video has a usable caption track, how long it is, what language it is in, whether it is restricted, and whether the feature has rolled out to your account at all. Missing captions is by far the most common reason.` },
+    { q: `Is the AI summary missing because of something I did?`, a: `No. There is no setting that enables or disables it, and clearing your cache will not bring it back. Eligibility is decided by the video and by YouTube's rollout, neither of which you control.` },
+    { q: `How do I tell if it is the video or my account?`, a: `Open three or four unrelated videos that have captions. If the summary is missing on all of them, the rollout has not reached your account. If it appears on some but not others, the feature works and those specific videos are ineligible.` },
+    { q: `Do long videos get AI summaries?`, a: `Often not. A multi-hour video produces a transcript of 25,000 to 35,000 words, which exceeds what gets processed, so summaries are skipped or truncated. Very short clips fail for the opposite reason — not enough material.` },
+    { q: `What works on every video that has captions?`, a: `A dedicated summarizer, because it reads the caption track directly rather than waiting for a feature to be enabled for your account or region. YT Summarizer handles any public video with a transcript — 5 free summaries, then one-time packs from $19 with credits that never expire.` },
+  ],
+  'did-youtube-remove-ai-summary': [
+    { q: `Did YouTube remove the AI summary feature?`, a: `There has been no announcement of removal. What people experience is a gradual rollout changing shape — accounts move in and out of the eligible group without notice, so a feature you had last month can genuinely be absent this month without anything being removed.` },
+    { q: `Why did my YouTube AI summary disappear?`, a: `Most likely your account is no longer in the rollout, or the specific videos you are testing are ineligible. Check by opening three or four unrelated videos with captions: gone on all of them points to the rollout, gone on some points to the videos.` },
+    { q: `Can I turn the AI summary back on?`, a: `No. There is no setting for it, no waitlist, and no way to request access. Clearing cache, reinstalling the app and signing out all have no effect, because eligibility is account-side rather than device-side.` },
+    { q: `Will YouTube's AI summary come back?`, a: `Possibly — rollouts expand again, and features move between subscription tiers. Nobody outside YouTube can say when, and you cannot influence it, which is the practical problem with relying on it for anything regular.` },
+    { q: `What can I use instead that will not disappear?`, a: `A dedicated summarizer works on any public video with a transcript, in any country, on any device, regardless of account. YT Summarizer also saves each summary to a searchable library, which YouTube's version does not do. 5 free, then one-time packs from $19.` },
+  ],
+  'how-long-youtube-takes-to-transcribe-video': [
+    { q: `How long does YouTube take to transcribe a video?`, a: `Usually minutes to a few hours for a typical upload, but there is no published guarantee and the range is wide. Length, queue load, language and audio quality all affect it, and very long uploads are the most likely to stall.` },
+    { q: `Why has my video still not got captions after several hours?`, a: `It may never get them. Automatic captions are not generated for every video — music-heavy audio, heavy background noise, crosstalk, poor microphones and less-supported languages all commonly produce nothing at all.` },
+    { q: `How do I know whether captions are coming or never coming?`, a: `Check the three-dot menu below the video for "Show transcript". If it is still absent several hours after a normal-length upload, treat it as permanent rather than pending.` },
+    { q: `Can I speed up YouTube transcription?`, a: `Not as a viewer. If it is your own video you can upload your own caption file in YouTube Studio, which appears immediately and is more accurate. Clean audio at upload — good microphone, no music under speech, one speaker at a time — helps more than anything else.` },
+    { q: `Can I get a summary while captions are still processing?`, a: `No. Summarizers, AI assistants and note tools all read the same caption track, so nothing works on that video until it exists. Once it does, YT Summarizer turns the URL into an overview, key points and takeaways in about a minute.` },
+  ],
+  'did-youtube-remove-transcripts': [
+    { q: `Did YouTube remove transcripts?`, a: `No. Transcripts still exist and are still free. The button has moved more than once, which is the main source of confusion, and it only appears on videos that actually have a caption track.` },
+    { q: `Where is the Show transcript button now?`, a: `On desktop, look below the player rather than in the player controls: click the three-dot menu next to the like and share buttons, then Show transcript. On mobile, expand the description fully first and look for the transcript option inside it.` },
+    { q: `Why does Show transcript appear on some videos but not others?`, a: `The option only exists when a caption track does. Music-heavy uploads, very recent publishes still processing, noisy recordings, less-supported languages, and videos where the uploader disabled captions all lack one.` },
+    { q: `The button is there but the panel is empty. What now?`, a: `That is a loading problem rather than a missing feature. Hard-reload the page, open the video URL fresh in a new tab, and test in an incognito window with extensions disabled — ad blockers and privacy tools sometimes intercept caption requests.` },
+    { q: `How do I copy a transcript without the timestamps?`, a: `Open the transcript panel, click its own three-dot menu, and toggle timestamps off before selecting and copying. This is the step most people miss, and it saves deleting hundreds of lines by hand.` },
+  ],
+  'youtube-error-loading-captions': [
+    { q: `Why does YouTube say error loading captions?`, a: `Usually the caption track exists but the request for it failed. Hard-reload first, then rule out browser extensions and network filtering. A persistent error on one specific video while others work points at the video instead.` },
+    { q: `How do I fix the caption error quickly?`, a: `In order: hard-reload the page, open the video URL fresh in a new tab, try incognito with extensions disabled, try a different browser, try a phone hotspot, then try a different video. That last step separates a broken setup from a video with no captions.` },
+    { q: `Can an ad blocker cause caption errors?`, a: `Yes. Ad blockers, script blockers, privacy extensions and AI sidebars all intercept requests on YouTube, and caption requests get caught more often than people expect. Test in incognito with extensions off to confirm.` },
+    { q: `Why do captions fail on my work network but work at home?`, a: `Managed networks often allow YouTube's main content while filtering auxiliary requests, so the video plays and captions error out. A phone hotspot confirms it in seconds, and no browser setting will work around it.` },
+    { q: `Can I get a summary without fixing the caption panel?`, a: `Yes. YT Summarizer retrieves the transcript server-side from the video URL, which sidesteps browser extensions, cache and most local interference, then returns an overview and key points in about a minute. 5 free summaries, then packs from $19.` },
+  ],
+  'notebooklm-video-cannot-be-imported': [
+    { q: `What does "this video cannot be imported, transcript not available" mean in NotebookLM?`, a: `It means NotebookLM asked YouTube for the video's caption track and did not get one. NotebookLM reads transcripts — it does not watch or listen — so with no transcript there is nothing to import. The error is accurate rather than a fault.` },
+    { q: `Why does it fail on a video I can watch?`, a: `Your signed-in session does not extend to the tool, which makes an anonymous public request. Private, unlisted, members-only, purchased and age-restricted videos all fail for this reason, as do videos with no automatic captions at all.` },
+    { q: `How do I get a YouTube video into NotebookLM anyway?`, a: `If the transcript exists, open it via the three-dot menu below the video, toggle timestamps off in the panel's menu, copy everything, and add it to your notebook as pasted text rather than a link. NotebookLM treats it identically — it only ever wanted the text.` },
+    { q: `Will another summarizer work where NotebookLM failed?`, a: `Not if the cause is a missing transcript — every transcript-based tool fails on the same videos. Check the three-dot menu for "Show transcript" first; if it is absent, no tool will work on that video.` },
+    { q: `Is NotebookLM the right tool for summarizing one video?`, a: `It is built for research across several sources, cross-referenced over time, which is a lot of setup for one video. For "tell me what is in this video", YT Summarizer takes a URL and returns an overview, key points and takeaways in about a minute — 5 free, then one-time packs from $19.` },
+  ],
+  'youtube-captions-not-working': [
+    { q: `Why are YouTube captions not working?`, a: `Run one test first: try captions on a different video. If they work there, your setup is fine and the original video has no caption track. If they fail everywhere, the cause is your browser, an extension, or your network.` },
+    { q: `Why is the CC button missing?`, a: `The button only appears when a caption track exists. Confirm by checking the three-dot menu below the video for "Show transcript" — if that is absent too, this video has no captions, which is common on music-heavy uploads and noisy recordings.` },
+    { q: `Why are my captions in the wrong language?`, a: `Auto-translate is probably still on from a previous session. It persists across videos and silently translates everything until you turn it off in the player's caption settings.` },
+    { q: `Why are captions out of sync?`, a: `Automatic captions drift on long videos, especially with poor audio. Reloading resyncs them in most cases. Persistent drift on one video is usually baked into the generated track rather than a playback fault.` },
+    { q: `Is there a faster way than reading captions?`, a: `Reading captions in real time still costs the full runtime. YT Summarizer turns the same caption track into an overview, key points and takeaways in about a minute from the URL — useful for deciding whether a long video deserves the time.` },
+  ],
+  'can-copilot-summarize-youtube-video': [
+    { q: `Can Microsoft Copilot summarize a YouTube video?`, a: `Yes, but only in the Edge sidebar, where it can read the page you are viewing including the caption track. In the standalone Copilot app or on the web it has no special YouTube access, so a pasted link produces an answer built from the title, description and web commentary.` },
+    { q: `How do I know whether Copilot actually read the video?`, a: `Ask a question only the content can answer, such as what the speaker concluded near the end. A transcript-based answer gets concrete and cites actual claims. A reconstructed one is evenly vague throughout and restates the general subject.` },
+    { q: `Why does Copilot fail on my work laptop?`, a: `Managed profiles frequently disable sidebar page access by administrator policy, usually without an explanatory message. If it works on your personal device with the same account, it is policy and cannot be changed locally.` },
+    { q: `Does Copilot work on long YouTube videos?`, a: `Partially. Expect detail on the opening and thinning afterwards, with no error to warn you — the transcript exceeds what gets processed, so the back half is simply absent from the summary.` },
+    { q: `What works when the Edge sidebar is unavailable?`, a: `A web app, since there is no sidebar to disable and no page-context permission to grant. YT Summarizer takes a URL in any browser, including on phones and locked-down machines. 5 free summaries, then one-time packs from $19 with credits that never expire.` },
+  ],
+  'youtube-transcript-search-not-working': [
+    { q: `Why can't I search inside a YouTube transcript?`, a: `The transcript panel has no search box of its own — it never has. Use your browser's find instead: open the panel, then press Ctrl+F on Windows or Cmd+F on Mac. It searches the transcript text, and clicking a match still jumps the video to that timestamp.` },
+    { q: `Why does find-in-page miss words I know were said?`, a: `Three common reasons: the panel only renders part of a long transcript at a time, so scroll through it first; automatic captions frequently mistranscribe names, jargon and acronyms; and timestamps can split phrases across lines, so toggle them off in the panel's menu.` },
+    { q: `Can I search a YouTube transcript on mobile?`, a: `Not practically — there is no usable find-in-page for the transcript in the YouTube app. Open the video in a desktop browser instead, or use the creator's chapter markers in the description where they exist.` },
+    { q: `How do I find the important part of a long video?`, a: `Searching only works when you already know what was said. For "where is the part that matters to me", a structured summary is the better tool — YT Summarizer returns an overview and key points for the whole video in about a minute so you can see what is covered.` },
+  ],
+  'summarize-youtube-video-without-transcript': [
+    { q: `Can you summarize a YouTube video with no transcript?`, a: `Not with a standard summarizer — almost all of them read the caption track, so a video without one defeats them all at once. The workaround is to generate your own transcript from the audio with a speech-to-text tool, then summarize that text.` },
+    { q: `Why does every summarizer fail on the same video?`, a: `Because they all fetch the same thing: YouTube's stored caption track. None of them watch the video or listen to the audio. Trying a fifth tool never helps, which is why the failure feels inconsistent — it works on some videos and not others.` },
+    { q: `Which videos tend to have no captions?`, a: `Music-heavy content, recordings with significant background noise or crosstalk, very recent uploads still processing, less-supported languages, videos where the uploader disabled captions, and private or age-restricted videos whose captions are not publicly accessible.` },
+    { q: `Is transcribing the audio yourself worth it?`, a: `It costs roughly ten to twenty minutes per video plus the transcription tool. Worth it for a lecture you must understand; not worth it for a video you were only triaging. Check first whether another upload of the same content has captions.` },
+    { q: `What about videos that do have captions?`, a: `Most do, and the problem disappears entirely. YT Summarizer takes the URL, reads the full transcript rather than the opening portion, and returns an overview, key points and takeaways in about a minute. 5 free summaries, then one-time packs from $19.` },
+  ],
+
   // ===== Batch 4: general AI assistants failing on YouTube =====
   'gemini-cant-summarize-youtube-video': [
     { q: `Why can't Gemini summarize my YouTube video?`, a: `Almost always one of three things: the YouTube app connection is switched off, the video has no caption track, or the video is private, members-only or age-restricted so its captions are not available to third parties. Gemini does not watch video — it reads captions — so anything that blocks caption access blocks the summary.` },
