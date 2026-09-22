@@ -267,7 +267,7 @@ export const allPosts: PostListEntry[] = [
   {
     slug: 'best-youtube-summarizers-for-students-2026-free-paid',
     title: 'Best YouTube Summarizers for Students in 2026 (Free and Paid)',
-    description: 'Compare the best YouTube summarizers for students in 2026 — free tiers, $29 lifetime deals, and subscription tools. Includes options for tight budgets and heavy exam-season use.',
+    description: 'Compare the best YouTube summarizers for students in 2026 — genuine free tiers, one-time credit packs, and subscription tools. Includes options for tight budgets and heavy exam-season use.',
     date: '2026-05-04',
   },
   {
@@ -333,7 +333,7 @@ export const allPosts: PostListEntry[] = [
   {
     slug: 'youtube-summarizer-pricing-free-vs-onetime-vs-subscription',
     title: 'YouTube Summarizer Pricing Compared: Free, One-Time, and Subscription Tools in 2026',
-    description: 'Compare YouTube summarizer pricing: completely free tools, one-time $29 lifetime deals, and $8-15/month subscriptions. Full cost breakdown and what you get at each price.',
+    description: 'Compare YouTube summarizer pricing: completely free tools, one-time credit packs from $19, and $8-15/month subscriptions. Full cost breakdown and what you get at each price.',
     date: '2026-05-01',
   },
   {
