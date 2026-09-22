@@ -5037,9 +5037,560 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
     title: 'How AI Actually Summarizes a YouTube Video (2026)',
     metaDescription: "AI summarizers don't watch video — they read the caption track. What that means for accuracy, why long videos get cut off, and how to spot a summary that guessed.",
   },
+
+  // ===== Batch 6 (Sep 2026): adjacent failure modes =====
+  // Query-verified gaps are largely exhausted (remaining ones are 1-4 impressions).
+  // GSC only surfaces queries we already impress for, so it cannot reveal demand
+  // for topics with no page at all. This batch extends the proven shape —
+  // [specific tool or surface] + [specific failure] + fix — into untouched ground,
+  // with four topics still anchored in observed queries.
+
+  'youtube-transcript-only-showing-partial': {
+    title: "YouTube Transcript Only Showing Part of the Video? Why",
+    metaDescription: "Transcript stops halfway, starts late, or skips whole sections? The four reasons a caption track comes up short, and how to tell a display problem from a genuine gap.",
+    date: '2026-09-22',
+    content: `
+      <p><strong>Quick answer:</strong> Usually the transcript is complete and you are only seeing part of it — the panel loads long transcripts in sections rather than all at once, so scrolling is the first fix. If it genuinely stops early, the cause is almost always in the caption track itself: recognition failed on a stretch of audio, or the video was edited after captions were generated.</p>
+
+      <h2>1. The panel is loading in sections</h2>
+      <p>On a long video the transcript panel does not render every line at once — it fills in as you scroll. If you open it, glance at the end of what is visible and conclude it stops there, you are looking at a partially rendered list rather than a partial transcript.</p>
+      <p>Scroll the panel itself to the bottom, slowly enough for it to keep loading. On a three-hour video this takes a few seconds and usually resolves the whole question.</p>
+
+      <h2>2. Recognition failed on part of the audio</h2>
+      <p>Automatic captioning is generated in passes over the audio, and stretches it cannot parse are skipped rather than marked. The usual culprits are a music section, a long stretch of crosstalk, a segment where the audio drops in quality, or a passage in a different language from the rest.</p>
+      <p>The tell is that the gap corresponds to something audible — go to the timestamp where the transcript jumps and listen. If there is music or noise there, the gap is genuine and permanent.</p>
+
+      <h2>3. The video was edited after captions were generated</h2>
+      <p>If a creator trims or re-uploads a video, captions can end up misaligned with the current cut — the track describes the old version. Symptoms are a transcript that ends before the video does, or timestamps that drift further out of sync as you go. Nothing on your side fixes this; only the creator can regenerate the captions.</p>
+
+      <h2>4. You are looking at a manual track that was never finished</h2>
+      <p>Where a creator uploaded their own captions, the track covers exactly what they wrote — sometimes only the first section, or only the parts they cared about. Where both manual and automatic tracks exist, the caption settings in the player may let you switch, and the automatic one is often more complete even if rougher.</p>
+
+      <h2>How to check whether the transcript is actually complete</h2>
+      <ol>
+        <li>Open the panel and scroll it all the way down, pausing for it to load.</li>
+        <li>Check the final timestamp against the video's runtime. Close means complete.</li>
+        <li>If it ends well short, jump to the last covered timestamp in the video and listen to what follows.</li>
+        <li>Music, noise or another language at that point means the gap is in the source, not your browser.</li>
+      </ol>
+
+      <h2>Why this matters more than it looks</h2>
+      <p>A truncated transcript produces a truncated summary in every tool that reads it — and none of them warn you. You get a confident summary of the first hour of a two-hour video with nothing marking the cut. If you rely on summaries of long content, checking that the transcript reaches the end is worth the ten seconds. Related: <a href="/blog/youtube-summary-cut-off-long-videos">summaries cut off on long videos</a>.</p>
+      <p><a href="${P}">YT Summarizer</a> processes the full transcript rather than the opening portion, so where the captions are complete, the summary covers the whole video. Where the captions themselves have a gap, no tool can fill it — but at least the limit is the video's, not the tool's. Five free summaries, then one-time credit packs from $19 with credits that never expire.</p>
+      <p>See also: <a href="/blog/youtube-transcript-not-loading">transcript not loading at all</a>.</p>
+    `,
+  },
+
+  'copy-youtube-transcript-not-working': {
+    title: "Can't Copy a YouTube Transcript? Here's What Works",
+    metaDescription: "Selection jumping, copy pasting nothing, or timestamps ruining the text? Why copying from the transcript panel misbehaves, and the sequence that gets clean text every time.",
+    date: '2026-09-22',
+    content: `
+      <p><strong>Quick answer:</strong> Two things break transcript copying, and both have simple fixes. Selection jumps around because the panel auto-scrolls to follow the video — pause the video first. And the text arrives full of timestamps because the panel includes them by default — turn them off in the panel's own three-dot menu before you select anything.</p>
+
+      <h2>Do this first: pause the video</h2>
+      <p>While the video plays, the transcript panel scrolls to keep the current line in view. If you are dragging a selection at the same time, the panel moves under your cursor and the selection jumps or collapses. Pausing stops the auto-scroll and makes selection behave normally.</p>
+      <p>This single step fixes most "I can't select the transcript" complaints.</p>
+
+      <h2>Then: turn timestamps off before selecting</h2>
+      <p>The transcript panel has its own three-dot menu, separate from the video's. Open it and choose <strong>Toggle timestamps</strong>. The times disappear and the text reflows into readable paragraphs, so what you copy is clean prose rather than hundreds of lines each prefixed with a time.</p>
+      <p>Most people never find this menu and end up deleting timestamps by hand afterwards, which on an hour-long video is hundreds of lines. Full method in <a href="/blog/how-to-remove-timestamps-from-youtube-transcript">removing timestamps properly</a>.</p>
+
+      <h2>The reliable sequence</h2>
+      <ol>
+        <li>Pause the video.</li>
+        <li>Open the three-dot menu below the video → <strong>Show transcript</strong>.</li>
+        <li>In the transcript panel's own three-dot menu, toggle timestamps off.</li>
+        <li>Click once inside the panel, then select all within it — dragging from the first line to the last works, and on most browsers <kbd>Ctrl</kbd>+<kbd>A</kbd> / <kbd>Cmd</kbd>+<kbd>A</kbd> after clicking inside the panel selects the panel's contents.</li>
+        <li>Copy.</li>
+      </ol>
+
+      <h2>If the paste comes out empty or mangled</h2>
+      <ul>
+        <li><strong>Only part of it pasted.</strong> The panel renders long transcripts in sections. Scroll to the bottom first so the whole thing exists, then select. See <a href="/blog/youtube-transcript-only-showing-partial">transcripts showing only part of the video</a>.</li>
+        <li><strong>Formatting came along with it.</strong> Paste as plain text — <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd> or <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd> — or paste into a plain text editor first.</li>
+        <li><strong>Nothing pasted at all.</strong> An extension may be interfering with clipboard access. Test in an incognito window with extensions disabled.</li>
+        <li><strong>The selection keeps collapsing.</strong> The video is still playing, or you started the drag outside the panel.</li>
+      </ul>
+
+      <h2>On mobile</h2>
+      <p>Copying the full transcript from the YouTube app is awkward and there is no timestamp toggle. Open the video in a desktop browser if you need the text in bulk. For a single quote, long-press within the transcript view and drag the handles.</p>
+
+      <h2>If you are copying it to paste into an AI tool</h2>
+      <p>That whole workflow — find transcript, strip timestamps, select, copy, paste, prompt — takes four to six minutes per video once you include the fiddling. Fine occasionally, tedious as a habit, and the friction is why most people stop doing it. We put numbers on it in <a href="/blog/copying-youtube-transcript-to-chatgpt-wastes-time">why copying transcripts by hand wastes more time than you think</a>.</p>
+      <p><a href="${P}">YT Summarizer</a> collapses it to pasting a URL: it retrieves the transcript, reads all of it, and returns an overview, key points and takeaways in about a minute. Five free summaries, then one-time credit packs from $19 with credits that never expire.</p>
+    `,
+  },
+
+  'youtube-auto-translate-captions-wrong': {
+    title: "YouTube Auto-Translate Captions Wrong or Nonsense? Fix",
+    metaDescription: "Auto-translated captions reading like gibberish, or translating a video that was already in your language? Why it happens, how to turn it off, and when to distrust the text.",
+    date: '2026-09-22',
+    content: `
+      <p><strong>Quick answer:</strong> Auto-translate is a sticky setting — once you turn it on for one video it stays on for every video afterwards, silently translating things that did not need translating. That is the cause of most "why are my captions nonsense" cases. Turn it off in the player's caption settings. The deeper problem, when translation genuinely is needed, is that it translates the <em>automatic</em> captions, so any recognition error gets translated too.</p>
+
+      <h2>First: turn the sticky setting off</h2>
+      <p>Open the gear icon in the player, go to <strong>Subtitles/CC</strong>, and look for the auto-translate option. If a target language is set, clear it or select the original track. The setting persists across videos and sessions, which is why people find captions behaving oddly days after they last thought about it.</p>
+      <p>Symptom that confirms this diagnosis: the captions are in your language, but phrased strangely, on a video that was already in your language. It was translated out and back.</p>
+
+      <h2>Why auto-translated captions read badly</h2>
+      <p>The translation is applied to the automatic caption track, not to a human transcript. So you get two layers of error stacked:</p>
+      <ul>
+        <li><strong>Recognition errors come first.</strong> Names, technical terms, acronyms and anything said over background noise are frequently wrong before translation begins.</li>
+        <li><strong>Then those errors get translated literally.</strong> A misheard word becomes a confidently translated wrong word, which is harder to spot than the original mistake would have been.</li>
+        <li><strong>No punctuation to work from.</strong> Automatic captions have weak sentence boundaries, and translation quality depends heavily on sentence structure.</li>
+        <li><strong>Idioms and jargon go literal.</strong> Domain terms in particular come out as their dictionary meanings.</li>
+      </ul>
+      <p>The practical consequence: treat auto-translated captions as a rough guide to the topic, not as a source for quotes, numbers or anything you would act on.</p>
+
+      <h2>When the original track is better than the translation</h2>
+      <p>If you have any reading ability in the source language, the original automatic captions are usually more reliable than the translation, because you are only dealing with one layer of error instead of two. Switch tracks in the caption settings rather than accepting the translated default.</p>
+
+      <h2>If a creator provided a real subtitle track</h2>
+      <p>Some videos have manually written captions or professionally translated subtitles alongside the automatic ones. Where they exist they are far better, and the caption menu lets you choose. A track labelled with a language name rather than "auto-generated" is the one you want.</p>
+
+      <h2>Getting a summary in your language instead</h2>
+      <p>There is a better path than reading translated captions: summarize from the original-language transcript and produce the summary in your language. That way the model works from the cleaner source text and does the language change once, as part of understanding the content, rather than translating errors line by line.</p>
+      <p><a href="${P}">YT Summarizer</a> reads the full transcript and returns an overview, key points and takeaways — five free summaries, then one-time credit packs from $19 with credits that never expire. See also <a href="/blog/translate-and-summarize-youtube-videos">translating and summarizing YouTube videos</a> and <a href="/blog/youtube-summary-wrong-language">summaries coming back in the wrong language</a>.</p>
+      <p>The limit worth knowing: if the automatic captions are poor in the source language, everything downstream inherits that. No tool recovers words that were never recognised.</p>
+    `,
+  },
+
+  'youtube-summary-repetitive-duplicate': {
+    title: "AI Summary Repeating the Same Points? Why It Happens",
+    metaDescription: "Summary that says the same thing three times, or lists near-identical bullets? The causes — chunked processing, repetitive source material, weak prompts — and how to fix each.",
+    date: '2026-09-22',
+    content: `
+      <p><strong>Quick answer:</strong> Repetition usually comes from how the transcript was processed rather than from the model being careless. Long videos get split into chunks, each chunk is summarized separately, and the results get stitched together — so a point made in two chunks appears twice. The second most common cause is that the video genuinely repeats itself, and the summary is accurately reflecting that.</p>
+
+      <h2>1. Chunked processing on a long video</h2>
+      <p>A three-hour video produces a transcript far larger than most models handle in one pass. The standard solution is to split it, summarize each part, then combine. That works well for coverage and badly for redundancy: a speaker who states their thesis in the introduction and again in the conclusion lands in two different chunks, and both summaries dutifully include it.</p>
+      <p>The tell is that duplicated points appear near the start and near the end, phrased slightly differently. If your repetition has that shape, this is why — and it is a property of the tool, not the video.</p>
+
+      <h2>2. The video actually repeats itself</h2>
+      <p>Worth considering before blaming the summarizer. Lectures restate key points deliberately. Tutorials recap at each stage. Podcast hosts circle back to the same theme for two hours. Sponsored segments repeat the same claims. A faithful summary of repetitive content is repetitive.</p>
+      <p>Quick test: does the repeated point correspond to something the speaker genuinely laboured? If so the summary is right and the video is the problem.</p>
+
+      <h2>3. The prompt asked for length rather than substance</h2>
+      <p>If you are summarizing manually by pasting a transcript, asking for "a detailed summary" or specifying a word count pushes toward padding. A model asked to produce 800 words from 400 words of actual content will restate things. Asking for structure instead — "the central claim, the three strongest supporting points, and any conclusion" — gives it a shape to fill rather than a quota.</p>
+
+      <h2>4. Overlapping chunk boundaries</h2>
+      <p>Chunked processing often overlaps segments slightly so nothing is lost at the seams. That overlap is deliberate and it means the same few sentences get summarized twice. Usually invisible; occasionally it produces two near-identical bullets in a row.</p>
+
+      <h2>What to do about it</h2>
+      <ul>
+        <li><strong>If you are pasting transcripts manually:</strong> paste the whole transcript in one message where the model's context allows it, rather than in parts. One pass over the full text cannot produce cross-chunk duplication because there are no chunks.</li>
+        <li><strong>Ask for deduplication explicitly:</strong> "merge any points that overlap; each bullet should make a distinct claim."</li>
+        <li><strong>Ask for a fixed structure:</strong> a set number of key points forces prioritisation instead of accumulation.</li>
+        <li><strong>Check whether it is the video:</strong> if the repetition mirrors the content, no prompt fixes it.</li>
+      </ul>
+
+      <h2>The related failure worth checking at the same time</h2>
+      <p>Repetition and truncation often travel together, because both come from chunking. A summary that repeats the opening while saying nothing about the final hour has been both duplicated and cut off — see <a href="/blog/youtube-summary-cut-off-long-videos">summaries cut off on long videos</a> and <a href="/blog/youtube-summary-too-short">summaries that are too short or missing key points</a>.</p>
+      <p><a href="${P}">YT Summarizer</a> is built around long-video handling specifically: it processes the full transcript and returns a single structured summary — overview, key points, takeaways — rather than concatenated section summaries. Five free summaries, then one-time credit packs from $19, one credit per video of any length.</p>
+    `,
+  },
+
+  'youtube-summarizer-not-working-safari': {
+    title: "YouTube Summarizer Not Working in Safari? Causes and Fixes",
+    metaDescription: "Summarizer extension missing in Safari, or blocked by tracking prevention? Why Safari behaves differently from Chrome, what you can change, and what you cannot.",
+    date: '2026-09-22',
+    content: `
+      <p><strong>Quick answer:</strong> Safari uses its own extension format, so most YouTube summarizer extensions — which are built for Chrome — simply do not exist there. That is not a fault you can fix. On top of that, Safari's Intelligent Tracking Prevention blocks cross-site requests more aggressively than Chrome, which breaks some tools that do have Safari versions. Web-based summarizers are unaffected by both.</p>
+
+      <h2>1. The extension does not exist for Safari</h2>
+      <p>Safari App Extensions are a separate ecosystem with a separate build and a separate review process. Developers have to do the work twice, and most small tools do not — so Eightify, Glasp, Monica, HARPA, Merlin, Glarity and Sider are largely Chrome-and-Edge propositions.</p>
+      <p>If you are searching Safari's extension gallery and finding nothing, the extension was never published there. No setting changes that.</p>
+
+      <h2>2. Tracking prevention is blocking the requests</h2>
+      <p>For tools that do have a Safari version, this is the usual failure. Safari's Intelligent Tracking Prevention restricts cross-site requests and third-party storage by default, and summarizer extensions typically call their own backend from within YouTube's page — exactly the pattern ITP is designed to limit.</p>
+      <p>Test it: Safari → Settings → Privacy, and temporarily uncheck <strong>Prevent cross-site tracking</strong>. If the tool starts working, you have found the cause. Whether you leave it off is a genuine trade — that setting is doing real privacy work, and turning it off site-wide to make one extension function is a poor bargain.</p>
+
+      <h2>3. Extension permissions are per-site and easy to miss</h2>
+      <p>Safari asks for site access separately and defaults to asking each time rather than allowing permanently. In Safari → Settings → Extensions, select the extension and set youtube.com to <strong>Allow</strong>. An extension stuck asking for permission on every page load often appears simply not to work.</p>
+
+      <h2>4. Content blockers</h2>
+      <p>Safari content blockers operate differently from Chrome ad blockers and can intercept the caption requests a summarizer depends on. Disable them for youtube.com and retest before assuming the extension is broken.</p>
+
+      <h2>5. iPhone and iPad</h2>
+      <p>Safari on iOS supports a limited extension model, and desktop summarizer extensions are generally not available there. If your workflow is phone-based, this is the constraint rather than anything configurable. See <a href="/blog/youtube-summarizer-not-working-iphone">summarizers not working on iPhone</a> and <a href="/blog/youtube-summarizer-not-working-ipad">the iPad case</a>.</p>
+
+      <h2>What is unaffected</h2>
+      <p>Everything above is a consequence of the extension model. A web app has no extension to publish, no page to inject into, and no cross-site request from inside YouTube's page — so tracking prevention has nothing to prevent.</p>
+      <p><a href="${P}">YT Summarizer</a> runs in Safari exactly as it runs anywhere else: paste a URL, get an overview, key points and takeaways in about a minute. Nothing to install, no permissions to grant, and no reason to weaken your privacy settings to make it work. Five free summaries, then one-time credit packs from $19 with credits that never expire.</p>
+      <p>Related: <a href="/blog/summarize-youtube-video-without-extension">summarizing YouTube without an extension</a>.</p>
+    `,
+  },
+
+  'youtube-summarizer-not-working-ipad': {
+    title: "YouTube Summarizer Not Working on iPad? What Actually Works",
+    metaDescription: "Expecting your desktop summarizer to work on iPad and finding nothing? Why iPadOS behaves like a phone here despite the desktop-class browser, and the setup that does work.",
+    date: '2026-09-22',
+    content: `
+      <p><strong>Quick answer:</strong> iPad runs Safari's mobile extension model, not the desktop one, so Chrome-built summarizer extensions are unavailable — even though Safari on iPad otherwise behaves like a desktop browser. Requesting the desktop site does not change this, because the limit is the extension platform rather than the page. Web-based summarizers work normally.</p>
+
+      <h2>Why "desktop-class browsing" misleads here</h2>
+      <p>Safari on iPad requests desktop sites by default and renders them like a laptop would, which sets an expectation that everything else will match. Extensions are the exception. iPadOS supports Safari web extensions in a restricted form, distributed through the App Store rather than the Chrome Web Store, and the summarizer extensions people use on a laptop are almost never published that way.</p>
+      <p>So the page looks like desktop and the toolbar does not have your tool in it. That mismatch is the whole confusion.</p>
+
+      <h2>Things that will not help</h2>
+      <ul>
+        <li><strong>Requesting the desktop site.</strong> Changes how the page renders, not what extensions exist.</li>
+        <li><strong>Installing Chrome for iPad.</strong> Third-party browsers on iPadOS do not bring the Chrome extension ecosystem with them.</li>
+        <li><strong>Signing into your Chrome profile.</strong> Syncs bookmarks and passwords, not extensions.</li>
+        <li><strong>Reinstalling the YouTube app.</strong> Unrelated — the app has never hosted extensions.</li>
+      </ul>
+
+      <h2>What does work on iPad</h2>
+      <p><strong>A web-based summarizer.</strong> No extension involved, so none of the above applies. Copy the video URL — Share in the YouTube app, or the address bar in Safari — paste it into the tool, and you get the same result you would on a laptop.</p>
+      <p><strong>The transcript panel plus any AI app.</strong> Safari on iPad can open the transcript: three-dot menu below the video → <strong>Show transcript</strong>, then the panel's own menu to toggle timestamps off before copying. Paste into whichever assistant you use. Slower, but it works with nothing installed. See <a href="/blog/copy-youtube-transcript-not-working">copying a transcript cleanly</a>.</p>
+      <p><strong>Split View.</strong> The one genuine iPad advantage: YouTube on one side, the summarizer on the other, so you can read the summary while the video is still open. That is a better experience than either phone or single-window laptop use.</p>
+
+      <h2>Causes that have nothing to do with iPad</h2>
+      <p>Before blaming the device, rule out the universal ones: the video has no caption track (check for <strong>Show transcript</strong>), it is private or age-restricted, it is very long and the summary is being truncated, or you have hit a free-tier limit. Those fail identically on every device. See <a href="/blog/youtube-no-transcript-available-fix">"no transcript available"</a>.</p>
+
+      <h2>The setup worth having</h2>
+      <p><a href="${P}">YT Summarizer</a> runs in Safari on iPad with nothing installed, and uses the same account as your laptop — so a summary made on the iPad during a commute is in your library when you sit down at a desk. Five free summaries, then one-time credit packs from $19 with credits that never expire.</p>
+      <p>Related: <a href="/blog/youtube-summarizer-not-working-iphone">the iPhone version of this problem</a>, and <a href="/blog/youtube-summarizer-not-working-safari">Safari-specific causes</a>.</p>
+    `,
+  },
+
+  'grok-youtube-summary-not-working': {
+    title: "Grok Not Summarizing YouTube Videos? Causes and Fixes",
+    metaDescription: "Grok returning a vague summary, refusing a YouTube link, or describing a video it never processed? What Grok can actually read, how to spot a guessed summary, and what works.",
+    date: '2026-09-22',
+    content: `
+      <p><strong>Quick answer:</strong> Grok does not watch video. When you paste a YouTube URL it works from text it can reach — the caption track where available, otherwise the title, description and whatever the wider web says about that video. It rarely refuses outright, which is the problem: you usually get a confident, readable summary, and there is no marker telling you which of those two things it was built from.</p>
+
+      <h2>The failure mode that matters</h2>
+      <p>An outright refusal is easy to handle. The case worth watching is a summary that reads perfectly well and never touched the video's content. Because the model can see the title, the channel, the description and articles discussing the video, it can assemble something plausible about a video it never processed.</p>
+      <p>Two tells. First, the summary describes what the video is <em>about</em> without quoting a single specific claim, number or example from it. Second, it maps closely to the description text. To confirm, ask something only the content answers — what the speaker said about a particular sub-topic, or what they concluded near the end. Content-based answers get concrete; reconstructed ones restate your premise.</p>
+
+      <h2>Why it fails on specific videos</h2>
+      <ul>
+        <li><strong>No caption track.</strong> The usual cause. Check the three-dot menu below the video for <strong>Show transcript</strong> — absent means no transcript-based tool will work. See <a href="/blog/youtube-no-transcript-available-fix">"no transcript available"</a>.</li>
+        <li><strong>Restricted video.</strong> Private, members-only and most age-restricted uploads do not expose captions publicly, even while you watch them signed in.</li>
+        <li><strong>Very long video.</strong> Expect detail on the opening and vagueness afterwards rather than an error.</li>
+        <li><strong>Live stream still running.</strong> No stored transcript exists until it ends and processes.</li>
+        <li><strong>Playlist URL.</strong> Each video has a separate transcript; a playlist link either errors or silently covers the first video only. See <a href="/blog/cant-summarize-youtube-playlist">why playlists cannot be summarized directly</a>.</li>
+      </ul>
+
+      <h2>Getting a reliable result out of Grok</h2>
+      <p>Paste the transcript text rather than the link. That removes retrieval from the equation entirely — you are no longer asking it to fetch anything, you are handing it the content, which is what it needed. Grok's context window comfortably holds a long transcript, so a multi-hour podcast fits in one message with room for follow-up questions.</p>
+      <p>Then ask for structure rather than "summarize this": the central claim, the supporting evidence, and any point where the speaker hedges. Vague prompts on a model that may be guessing produce output you cannot evaluate.</p>
+      <p>Getting the transcript takes about fifteen seconds — the method is in <a href="/blog/how-to-download-youtube-transcript-5-free-methods">five free ways to download a YouTube transcript</a>.</p>
+
+      <h2>When it is not worth the steps</h2>
+      <p>The manual route costs four to six minutes per video. Reasonable for one video that matters; two hours across a backlog of twenty, which is why most people abandon it.</p>
+      <p><a href="${P}">YT Summarizer</a> only ever summarizes the transcript, so there is no fallback path that invents a summary from the description — if it cannot read the video, it says so. It processes the full transcript rather than the opening portion and saves each summary to a searchable library. Five free summaries, then one-time credit packs from $19 with credits that never expire.</p>
+      <p>Related: <a href="/blog/can-grok-summarize-youtube-videos">what Grok can and cannot do with YouTube</a>.</p>
+    `,
+  },
+
+  'chatgpt-atlas-youtube-summary-not-working': {
+    title: "ChatGPT Atlas Not Summarizing YouTube? Causes and Fixes",
+    metaDescription: "Atlas sidebar failing on a YouTube video, or summarizing the page instead of the content? What Atlas can read, the availability limits, and how to check the summary is real.",
+    date: '2026-09-22',
+    content: `
+      <p><strong>Quick answer:</strong> Atlas summarizes the page you are on, which on YouTube means the caption track. It fails in three ways: the video has no captions, the sidebar cannot read the page, or — most often missed — you are not on a platform where Atlas runs at all. Availability has been the biggest practical limit, and no setting works around it.</p>
+
+      <h2>1. Availability is the first thing to check</h2>
+      <p>Atlas is a browser, and browsers ship per platform. It arrived on macOS first, and if you are on Windows, Linux, iPhone or Android you may simply not have a version — which people discover after a long detour through settings that were never the problem.</p>
+      <p>Worth establishing before troubleshooting anything else: is Atlas actually running on this machine, or are you using ChatGPT in a different browser and expecting page-reading behaviour it does not have there?</p>
+
+      <h2>2. The sidebar is not reading the page</h2>
+      <p>Where Atlas is running, the summarizing behaviour depends on it having access to the current page. Symptoms of it failing are an empty response, a request to paste the content, or a summary that is clearly about the page's metadata rather than the video.</p>
+      <p>Reload the video page properly rather than navigating to it from another video — YouTube does not truly reload on internal navigation, and page-reading features can end up working from stale state. If you are in a private window, try a normal one.</p>
+
+      <h2>3. The video has no caption track</h2>
+      <p>The universal cause, and free to check: three-dot menu below the video → <strong>Show transcript</strong>. Missing means no captions, and no transcript-based tool will work on that video regardless of browser. See <a href="/blog/youtube-no-transcript-available-fix">"no transcript available"</a>. Private, members-only and age-restricted videos fail similarly — <a href="/blog/private-age-restricted-video-summarize">details here</a>.</p>
+
+      <h2>4. The summary is real but incomplete</h2>
+      <p>On a long video, expect the opening covered well and the rest thinly, with no error. This is transcript truncation and it is the failure worth caring about most, because the output looks complete. See <a href="/blog/youtube-summary-cut-off-long-videos">summaries cut off on long videos</a>.</p>
+
+      <h2>How to check the summary actually read the video</h2>
+      <p>Ask a question only the content answers — what the speaker said around a specific point, or what they concluded. A transcript-based answer cites actual claims and gets specific. An answer assembled from the title, description and web commentary stays general and confident. That distinction matters more than any setting on this page.</p>
+
+      <h2>The trade-off worth naming</h2>
+      <p>An AI browser observes your whole browsing session, which is a far broader privacy surface than a single-purpose tool that receives one URL at a time. That is a reasonable trade for some people and not for others, but it should be a decision rather than a side effect. We cover it in <a href="/blog/ai-browsers-vs-youtube-summarizers-atlas-comet">AI browsers versus YouTube summarizers</a>.</p>
+      <p>If you want video summaries specifically, <a href="${P}">YT Summarizer</a> works in whatever browser you already use, on any platform, with nothing to install and no session to observe. It reads the full transcript and saves each summary to a searchable library rather than leaving it in chat history. Five free summaries, then one-time credit packs from $19 with credits that never expire.</p>
+    `,
+  },
+
+  'best-youtube-summary-prompt': {
+    title: "The Best Prompts for Summarizing a YouTube Video (2026)",
+    metaDescription: "Copy-paste prompts that produce useful video summaries instead of vague paragraphs — for lectures, interviews, tutorials and podcasts, plus how to get the transcript first.",
+    date: '2026-09-22',
+    content: `
+      <p><strong>Quick answer:</strong> "Summarize this video" is the worst prompt you can use, because it asks for length rather than structure and you get a paragraph of gist. The prompts below specify what shape the output should take, which is what actually makes a summary useful. All of them assume you have pasted the transcript — no assistant can watch a video, so a URL alone will not work.</p>
+
+      <h2>Step one: get the transcript</h2>
+      <p>Open the video, click the three-dot menu underneath, choose <strong>Show transcript</strong>, then use the transcript panel's own three-dot menu to <strong>toggle timestamps off</strong> before selecting and copying. Pause the video first or the panel will auto-scroll while you select. Full method in <a href="/blog/copy-youtube-transcript-not-working">copying a transcript cleanly</a>.</p>
+
+      <h2>General purpose</h2>
+      <blockquote><p>Below is the transcript of a YouTube video. Give me: (1) a two-sentence overview, (2) the five most important points as distinct bullets — no two bullets should make the same claim, (3) anything the speaker states as fact that I should verify independently. Do not pad. If a section is filler or sponsorship, say so rather than summarizing it.</p></blockquote>
+
+      <h2>For a lecture or educational video</h2>
+      <blockquote><p>Summarize this lecture transcript for revision. Give me the core concepts in the order introduced, the definitions of any technical terms used, and any worked example with its steps intact. Flag anything the lecturer emphasised as likely to be examined or commonly misunderstood.</p></blockquote>
+
+      <h2>For an interview or podcast</h2>
+      <blockquote><p>Summarize this transcript by speaker. For each person: what they actually asserted, what evidence they gave, and where they hedged. Then list the points where they disagreed, and note any question that was asked but not answered.</p></blockquote>
+      <p>The last clause is the useful one — evasions are often the most informative part of an interview and generic summaries never surface them.</p>
+
+      <h2>For a tutorial or how-to</h2>
+      <blockquote><p>Extract the procedure from this transcript as a numbered list. Include exact settings, commands, version numbers and file names as stated. Mark any step the speaker describes as optional. If they mention a common mistake or a warning, put it next to the relevant step rather than at the end.</p></blockquote>
+
+      <h2>For triage — is this worth watching?</h2>
+      <blockquote><p>In three sentences: what is this video's central argument, who is it for, and what would I miss by not watching it? Then tell me whether the useful content is concentrated in a particular section.</p></blockquote>
+
+      <h2>For an argument you want to evaluate</h2>
+      <blockquote><p>Summarize the speaker's argument, then separately: what evidence supports it, what they assert without support, and what a well-informed critic would say in response. Keep your own view out of it.</p></blockquote>
+
+      <h2>Four rules that matter more than the wording</h2>
+      <ul>
+        <li><strong>Ask for structure, not length.</strong> Word counts produce padding; a specified shape produces prioritisation.</li>
+        <li><strong>Forbid duplication explicitly.</strong> "No two bullets should make the same claim" prevents the repetition that chunked processing causes — see <a href="/blog/youtube-summary-repetitive-duplicate">why summaries repeat themselves</a>.</li>
+        <li><strong>Ask what was left out.</strong> "What did the speaker not address?" surfaces gaps a summary otherwise hides.</li>
+        <li><strong>Distrust numbers.</strong> Automatic captions mishear figures and names routinely. Verify anything you plan to act on against the video.</li>
+      </ul>
+
+      <h2>When prompting stops being worth it</h2>
+      <p>This workflow costs four to six minutes per video once you include finding the transcript, stripping timestamps, pasting and prompting. Worth it for a video that matters. Not worth it twenty times, which is why most people stop.</p>
+      <p><a href="${P}">YT Summarizer</a> does the whole sequence from a URL — overview, key points and takeaways in about a minute, full transcript processed, saved to a searchable library. Five free summaries, then one-time credit packs from $19 with credits that never expire.</p>
+    `,
+  },
+
+  'you-tldr-alternative': {
+    title: "You-TLDR Alternatives: 5 YouTube Summarizers Compared",
+    metaDescription: "Looking for a You-TLDR alternative for transcripts and summaries? Five options compared on output quality, long-video handling, signup requirements and what each costs.",
+    date: '2026-09-22',
+    content: `
+      <p><strong>Quick answer:</strong> You-TLDR sits between a transcript downloader and a summarizer, which is why people outgrow it in two different directions — some want cleaner transcript export, others want structured summaries rather than compressed text. Which alternative suits you depends entirely on which of those you are after, so work that out first.</p>
+
+      <h2>Decide what you actually need</h2>
+      <p>These are different jobs and most tools do one well:</p>
+      <ul>
+        <li><strong>Raw transcript to paste elsewhere</strong> — you want export quality, timestamp control and no length limits.</li>
+        <li><strong>Structured summary</strong> — you want key points and takeaways, and you do not care about the underlying text.</li>
+        <li><strong>Both, saved somewhere</strong> — you want a library you can search months later.</li>
+      </ul>
+
+      <h2>The options</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Tool</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Best for</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Cost model</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">YouTube's own transcript panel</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Raw text, one video at a time</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free, no account</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Summarize.tech</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Quick gist, no signup</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">NotebookLM</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Research across several videos</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Extension tools (Eightify, Glasp)</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Summaries inside the YouTube page</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>YT Summarizer</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Structured summaries, saved library</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>One-time credits from $19</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>The free route, honestly</h2>
+      <p>If you only need the text, you do not need any tool. YouTube's transcript panel gives it to you free with no account: three-dot menu below the video → <strong>Show transcript</strong>, then the panel's own menu to toggle timestamps off before copying. That covers a genuine share of what people use You-TLDR for. See <a href="/blog/how-to-download-youtube-transcript-5-free-methods">five free ways to get a YouTube transcript</a>.</p>
+      <p>Summarize.tech stays genuinely free for summaries, at the cost of paragraph-style output rather than structured points. NotebookLM is free and considerably more capable, but wants a notebook set up per topic, which is overhead for a single video.</p>
+
+      <h2>What to check before committing to anything</h2>
+      <ul>
+        <li><strong>Long videos.</strong> Most tools quietly summarize only the opening of a multi-hour video with no warning. Test on something whose ending you know — see <a href="/blog/youtube-summary-cut-off-long-videos">summaries cut off on long videos</a>.</li>
+        <li><strong>Extension or web app.</strong> Extensions do not run on iOS and cannot be installed on managed work machines. <a href="/blog/summarize-youtube-video-without-extension">Detail here</a>.</li>
+        <li><strong>Subscription or one-time.</strong> If your usage is bursty, a monthly fee charges identically in the quiet months.</li>
+        <li><strong>Where summaries go.</strong> Output that lives in a chat log is gone in a fortnight.</li>
+      </ul>
+
+      <h2>If you want summaries rather than transcripts</h2>
+      <p><a href="${P}">YT Summarizer</a> takes a URL and returns an overview, key points and takeaways in about a minute, processing the full transcript rather than the first slice, with everything saved to a searchable library. It is a web app, so it works on phones and locked-down laptops where extensions do not. Five free summaries, then $19 for 200 or $49 for 1,000 — paid once, credits never expire.</p>
+      <p>And if you want the raw transcript instead, <a href="https://yttranscript.app">YT Transcript</a> extracts it free from a URL with no signup.</p>
+    `,
+  },
+
+  'notegpt-delete-account': {
+    title: "How to Delete Your NoteGPT Account (and Cancel First)",
+    metaDescription: "Deleting a NoteGPT account? Cancel the subscription first or billing can continue, export anything you want to keep, and know what deletion does and does not remove.",
+    date: '2026-09-22',
+    content: `
+      <p><strong>Quick answer:</strong> Do these in order — cancel the subscription, export anything you want to keep, then request deletion. Doing it the other way round is how people end up still being billed for a service they can no longer log into, because cancelling a subscription and deleting an account are separate actions handled by different systems.</p>
+
+      <h2>Step 1: cancel the subscription first</h2>
+      <p>This is the step that costs people money. Deleting an account does not necessarily terminate an active subscription, particularly where billing runs through an app store or a third-party payment processor rather than the service directly.</p>
+      <p>Check where you actually pay:</p>
+      <ul>
+        <li><strong>Paid on the website by card</strong> → cancel in the account or billing settings on the site.</li>
+        <li><strong>Paid through Apple</strong> → iPhone Settings → your name → Subscriptions. The website cannot cancel it.</li>
+        <li><strong>Paid through Google Play</strong> → Play Store → Payments and subscriptions.</li>
+        <li><strong>Paid via PayPal</strong> → check PayPal's own recurring payments list, since an agreement there can survive a cancellation elsewhere.</li>
+      </ul>
+      <p>Confirm you have an email verifying the cancellation before going further. Full walkthrough in <a href="/blog/cancel-notegpt-subscription">cancelling a NoteGPT subscription</a>.</p>
+
+      <h2>Step 2: export what you want to keep</h2>
+      <p>Deletion is intended to be permanent. Anything you have accumulated — saved summaries, notes, highlights, flashcards — goes with it, and support generally cannot restore a deleted account.</p>
+      <p>Go through and export or copy out anything you would miss. This is worth ten minutes even if you think you would not, because people routinely underestimate what they have saved over a year.</p>
+
+      <h2>Step 3: request deletion</h2>
+      <p>Look in account or privacy settings for a delete option. Where there is no self-service control, email support from the address on the account and ask for deletion explicitly. If you are in a jurisdiction with data protection rights — the UK, EU, California and others — you can cite them, and companies generally respond to that framing on a defined timeline.</p>
+      <p>Keep the request and any reply. If billing continues afterwards, that correspondence is what resolves it.</p>
+
+      <h2>What deletion does not do</h2>
+      <ul>
+        <li><strong>It does not refund anything.</strong> Refunds are a separate request, made before deletion.</li>
+        <li><strong>It does not always end billing.</strong> Hence step 1.</li>
+        <li><strong>It does not remove you from mailing lists immediately.</strong> Unsubscribe separately.</li>
+        <li><strong>It may not be instant.</strong> Many services use a grace period before permanent erasure.</li>
+      </ul>
+
+      <h2>If you are leaving because of the quotas</h2>
+      <p>That is the most common reason people go looking for this page, and it is worth knowing the pattern before picking a replacement: plans marketed as unlimited frequently carry usage caps in the terms, which is what tends to produce the sense of having been misled. We documented it in <a href="/blog/notegpt-free-limits">NoteGPT's free plan limits</a> and <a href="/blog/notegpt-pricing">what NoteGPT's pricing actually includes</a>.</p>
+      <p>If you want to avoid the whole category of problem, the structural fix is not paying monthly at all. <a href="${P}">YT Summarizer</a> uses one-time credit packs — five free summaries, then 200 for $19 or 1,000 for $49. There is no subscription, nothing renews, credits never expire, and one credit covers a video of any length. Nothing to cancel later, which is the point.</p>
+      <p>See also: <a href="/blog/best-notegpt-alternative-2026">the best NoteGPT alternatives</a>.</p>
+    `,
+  },
+
+  'youtube-transcript-doesnt-match-audio': {
+    title: "YouTube Transcript Doesn't Match the Audio? Why It Happens",
+    metaDescription: "Captions saying something different from what you hear? Where automatic recognition fails most, which errors matter, and how to check a summary built on a faulty transcript.",
+    date: '2026-09-22',
+    content: `
+      <p><strong>Quick answer:</strong> Automatic captions are a best guess at speech, not a record of it, and they fail in predictable places — proper nouns, technical terms, numbers, accented speech, and anything said over noise. The errors matter more than they look, because every summarizer and AI assistant reads that same flawed text and produces confident output from it without flagging anything.</p>
+
+      <h2>Where recognition reliably fails</h2>
+      <ul>
+        <li><strong>Names.</strong> People, companies and products are the most frequent error of all, because recognition leans on a general language model and unusual names are not in it.</li>
+        <li><strong>Technical vocabulary.</strong> Domain jargon gets replaced with common words that sound similar, which produces text that reads fluently and means something else.</li>
+        <li><strong>Numbers.</strong> "Fifteen" and "fifty", decimals, currencies and dates are routinely wrong. This is the error category worth being most careful about.</li>
+        <li><strong>Accents and speech patterns.</strong> Recognition quality varies significantly by accent, and fast or overlapping speech degrades it further.</li>
+        <li><strong>Anything over music or noise.</strong> Background audio does not just add errors, it causes whole passages to be skipped.</li>
+        <li><strong>Homophone pairs.</strong> There/their, to/too, affect/effect — usually harmless, occasionally reversing a meaning.</li>
+      </ul>
+
+      <h2>Sync drift is a different problem</h2>
+      <p>If the words are right but arrive at the wrong time, that is timing rather than recognition. Drift accumulates on long videos, and reloading usually resyncs it. Where a video was edited after captions were generated, the track describes the old cut and the drift is permanent until the creator regenerates it. See <a href="/blog/youtube-captions-not-working">captions not working</a>.</p>
+
+      <h2>When a manual track exists, use it</h2>
+      <p>Some creators upload their own captions, and they are far more accurate than automatic ones. Check the caption settings in the player: a track labelled with a language name rather than "auto-generated" is human-written. Where both exist, switching costs one click and removes most of the problems above.</p>
+
+      <h2>Why this matters for summaries</h2>
+      <p>This is the part people miss. A summarizer reading a transcript that says "fifty percent" when the speaker said "fifteen percent" produces a summary stating fifty percent, with no uncertainty attached. The error is invisible downstream — it looks like every other sentence.</p>
+      <p>So the practical rule is: AI summaries are reliable for structure, argument and what a video covers, and unreliable for specific figures, names and attributions. If you are going to act on a number or quote a person, check that moment in the video. Related: <a href="/blog/youtube-summary-inaccurate-wrong">why AI summaries get videos wrong</a> and <a href="/blog/how-accurate-are-youtube-video-summaries">how accurate video summaries actually are</a>.</p>
+
+      <h2>Getting a cleaner source</h2>
+      <p>If the automatic captions on a video are badly wrong and accuracy matters, running the audio through a modern speech-to-text tool often produces a much better transcript — recognition has improved considerably on accents and noise. That takes time, so reserve it for videos that justify it. Method in <a href="/blog/summarize-youtube-video-without-transcript">summarizing a video with no usable transcript</a>.</p>
+      <p>For everything else, <a href="${P}">YT Summarizer</a> reads the full transcript and returns an overview, key points and takeaways in about a minute — with the same honest limit as every tool in the category: it can only work with the words the captions contain. Five free summaries, then one-time credit packs from $19 with credits that never expire.</p>
+    `,
+  },
 }
 
 export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
+  // ===== Batch 6: adjacent failure modes =====
+  'youtube-transcript-only-showing-partial': [
+    { q: `Why does the YouTube transcript only show part of the video?`, a: `Usually the transcript is complete and the panel is only rendering a section of it — long transcripts load as you scroll. Scroll the panel to the bottom first. If it genuinely ends early, recognition failed on a stretch of audio or the video was edited after captions were generated.` },
+    { q: `How do I check whether a transcript is complete?`, a: `Scroll the panel all the way down, then compare the final timestamp with the video's runtime. If it ends well short, jump to that point in the video and listen — music, noise or another language there means the gap is in the caption track and is permanent.` },
+    { q: `Why does the transcript skip a section in the middle?`, a: `Automatic captioning skips audio it cannot parse rather than marking it. Music sections, long stretches of crosstalk, drops in audio quality and passages in a different language all produce silent gaps.` },
+    { q: `Does a partial transcript affect AI summaries?`, a: `Yes, and no tool warns you. A truncated transcript produces a truncated summary that looks complete — you get a confident summary of the first hour of a two-hour video with nothing marking the cut. Checking the transcript reaches the end takes ten seconds.` },
+  ],
+  'copy-youtube-transcript-not-working': [
+    { q: `Why can't I select or copy the YouTube transcript?`, a: `The panel auto-scrolls to follow the video while it plays, so your selection jumps or collapses as the text moves. Pause the video first — that alone fixes most cases.` },
+    { q: `How do I copy a YouTube transcript without timestamps?`, a: `Open the transcript panel's own three-dot menu (separate from the video's) and choose Toggle timestamps. The times disappear and the text reflows into paragraphs, so what you copy is clean prose rather than hundreds of timestamped lines.` },
+    { q: `Why did only part of the transcript paste?`, a: `The panel renders long transcripts in sections, so only the rendered portion gets selected. Scroll to the bottom of the panel first so the whole transcript exists, then select and copy.` },
+    { q: `Why did nothing paste at all?`, a: `An extension may be interfering with clipboard access — test in an incognito window with extensions disabled. If formatting came along instead, paste as plain text with Ctrl+Shift+V or Cmd+Shift+V.` },
+    { q: `Is there a faster way than copying transcripts by hand?`, a: `The full manual workflow costs four to six minutes per video. YT Summarizer collapses it to pasting a URL — it retrieves the transcript, reads all of it, and returns an overview, key points and takeaways in about a minute. 5 free summaries, then packs from $19.` },
+  ],
+  'youtube-auto-translate-captions-wrong': [
+    { q: `Why are my YouTube captions being translated when I didn't ask?`, a: `Auto-translate is a sticky setting. Once enabled for one video it stays on for every video afterwards, including ones already in your language. Clear the target language in the player's Subtitles/CC settings.` },
+    { q: `Why do auto-translated captions read like nonsense?`, a: `Translation is applied to the automatic caption track, so you get two layers of error stacked: recognition mistakes first, then those mistakes translated literally. Weak sentence boundaries in automatic captions make translation quality worse still.` },
+    { q: `Should I read the original captions instead of the translation?`, a: `If you have any reading ability in the source language, yes. The original automatic captions carry one layer of error instead of two. Switch tracks in the caption settings rather than accepting the translated default.` },
+    { q: `Can I trust auto-translated captions for quotes or numbers?`, a: `No. Treat them as a rough guide to the topic only. Names, figures and technical terms are the most frequently mistranscribed before translation, and translation then makes those errors harder to spot.` },
+    { q: `What is better than reading translated captions?`, a: `Summarize from the original-language transcript and get the summary in your language, so the language change happens once as part of understanding the content rather than line by line over flawed text. YT Summarizer does this from a URL — 5 free summaries, then packs from $19.` },
+  ],
+  'youtube-summary-repetitive-duplicate': [
+    { q: `Why does my AI summary repeat the same points?`, a: `Usually chunked processing. Long transcripts get split, each chunk summarized separately, then stitched together — so a point made in both the introduction and conclusion lands in two chunks and appears twice. The tell is duplicated points near the start and end.` },
+    { q: `Is the repetition the tool's fault or the video's?`, a: `Check whether the repeated point is something the speaker genuinely laboured. Lectures restate key points deliberately, tutorials recap at each stage, and podcast hosts circle back for hours. A faithful summary of repetitive content is repetitive.` },
+    { q: `How do I stop a summary from repeating itself?`, a: `Ask for deduplication explicitly — "merge any overlapping points; each bullet should make a distinct claim" — and ask for a fixed number of key points, which forces prioritisation rather than accumulation. Avoid specifying a word count, which encourages padding.` },
+    { q: `Why do repetition and truncation happen together?`, a: `Both come from chunking. A summary that repeats the opening while saying nothing about the final hour has been both duplicated at the seams and cut off at the end — two symptoms of the same processing approach.` },
+  ],
+  'youtube-summarizer-not-working-safari': [
+    { q: `Why doesn't my YouTube summarizer extension work in Safari?`, a: `Safari uses its own extension format, requiring a separate build and review. Most summarizer extensions are built for Chrome only and were never published for Safari, so there is nothing to install rather than something to fix.` },
+    { q: `Is Safari's tracking prevention blocking my summarizer?`, a: `Possibly. Intelligent Tracking Prevention restricts cross-site requests, and extensions typically call their own backend from inside YouTube's page. Test by temporarily unchecking "Prevent cross-site tracking" in Safari's Privacy settings — though leaving it off site-wide is a poor trade for one extension.` },
+    { q: `Why does Safari keep asking the extension for permission?`, a: `Safari handles site access per-site and defaults to asking each time. In Settings → Extensions, select the extension and set youtube.com to Allow. An extension stuck re-requesting permission often looks like one that simply does not work.` },
+    { q: `Do summarizer extensions work in Safari on iPhone or iPad?`, a: `Generally no. Safari on iOS and iPadOS supports a restricted extension model distributed through the App Store, and desktop summarizer extensions are almost never published there.` },
+    { q: `What works in Safari without an extension?`, a: `A web app, since there is no extension to publish, no page injection, and no cross-site request for tracking prevention to block. YT Summarizer runs in Safari exactly as anywhere else — paste a URL, get key points in about a minute. 5 free, then packs from $19.` },
+  ],
+  'youtube-summarizer-not-working-ipad': [
+    { q: `Why doesn't my YouTube summarizer work on iPad?`, a: `iPad runs Safari's mobile extension model rather than the desktop one, so Chrome-built summarizer extensions are unavailable — even though Safari on iPad otherwise renders pages like a laptop. The limit is the extension platform, not the page.` },
+    { q: `Does requesting the desktop site help?`, a: `No. That changes how the page renders, not which extensions exist. Installing Chrome for iPad does not help either — third-party browsers on iPadOS do not bring the Chrome extension ecosystem with them.` },
+    { q: `How do I summarize a YouTube video on iPad?`, a: `Use a web-based summarizer: copy the video URL from the Share menu or the address bar and paste it in. Alternatively open the transcript panel in Safari, toggle timestamps off, copy, and paste into any AI app.` },
+    { q: `Is there anything iPad does better for this?`, a: `Split View. YouTube on one side and the summarizer on the other means you can read the summary while the video stays open, which is better than either a phone or a single-window laptop setup.` },
+    { q: `What if it fails on one specific video?`, a: `That is not an iPad problem. Check whether the video has captions at all via the three-dot menu, and whether it is private or age-restricted. Those fail identically on every device.` },
+  ],
+  'grok-youtube-summary-not-working': [
+    { q: `Why won't Grok summarize my YouTube video properly?`, a: `Grok does not watch video. It works from the caption track where available, and otherwise from the title, description and web commentary. It rarely refuses outright, so you often get a confident summary built from the description rather than the content.` },
+    { q: `How do I know whether Grok actually read the video?`, a: `Ask something only the content answers — what the speaker said about a specific sub-topic, or what they concluded near the end. Content-based answers cite actual claims and get concrete. Reconstructed ones restate the general subject and never quote anything specific.` },
+    { q: `What is the most reliable way to summarize a video with Grok?`, a: `Paste the transcript text rather than the link. That removes retrieval entirely — you are handing it the content instead of asking it to fetch anything. Grok's context window holds a long transcript in a single message with room for follow-up questions.` },
+    { q: `Why does Grok fail on some videos but not others?`, a: `The difference is the video. No caption track, a private or age-restricted upload, a live stream still running, or a playlist URL instead of a video URL will all fail — and they fail identically in every transcript-based tool.` },
+    { q: `Is there a tool that won't invent a summary?`, a: `YT Summarizer only ever summarizes the transcript, so there is no fallback path that assembles a plausible answer from the description. If it cannot read the video it says so. 5 free summaries, then one-time packs from $19 with credits that never expire.` },
+  ],
+  'chatgpt-atlas-youtube-summary-not-working': [
+    { q: `Why isn't ChatGPT Atlas summarizing my YouTube video?`, a: `Three usual causes: Atlas is not available on your platform at all, the sidebar cannot read the current page, or the video has no caption track. Availability is the one people miss — check Atlas is actually running on this machine before troubleshooting settings.` },
+    { q: `Why does Atlas summarize the page instead of the video?`, a: `When caption access fails, it can still see the title, description and channel, and will assemble a plausible summary from those. Ask a question only the content answers to tell the difference — reconstructed answers stay general and never cite specifics.` },
+    { q: `Atlas worked before and now doesn't. What changed?`, a: `Reload the video page properly rather than navigating to it from another video. YouTube does not truly reload on internal navigation, so page-reading features can work from stale state. If you are in a private window, try a normal one.` },
+    { q: `Is an AI browser a privacy trade-off?`, a: `It observes your whole browsing session, which is a much broader surface than a single-purpose tool receiving one URL at a time. That is reasonable for some people and not others, but it should be a decision rather than a side effect.` },
+    { q: `What works on every platform?`, a: `A web app, since there is no browser to install and no session to observe. YT Summarizer works in whatever browser you already use, reads the full transcript, and saves summaries to a searchable library rather than chat history. 5 free, then packs from $19.` },
+  ],
+  'best-youtube-summary-prompt': [
+    { q: `What is the best prompt for summarizing a YouTube video?`, a: `Ask for structure rather than length. "Give me a two-sentence overview, the five most important points as distinct bullets, and anything stated as fact that I should verify" beats "summarize this video", which produces a paragraph of gist.` },
+    { q: `Why does "summarize this video" give poor results?`, a: `It specifies length rather than shape, so the model pads. Asking for a defined structure forces prioritisation instead of accumulation, and adding "no two bullets should make the same claim" prevents the repetition that chunked processing causes.` },
+    { q: `Do I need the transcript, or can I paste the link?`, a: `You need the transcript. No mainstream assistant watches video — pasting a URL alone produces a summary assembled from the title and description. Open the three-dot menu below the video, choose Show transcript, toggle timestamps off, then copy.` },
+    { q: `What should I ask for when evaluating an argument?`, a: `Separate the claim from its support: "Summarize the argument, then list what evidence supports it, what is asserted without support, and what a well-informed critic would say in response." Also ask what the speaker did not address — gaps are what summaries hide.` },
+    { q: `Can I trust the numbers in an AI summary?`, a: `No. Automatic captions mishear figures and names routinely, and the summary inherits those errors with full confidence. Verify anything you plan to act on against the video itself.` },
+  ],
+  'you-tldr-alternative': [
+    { q: `What is a good alternative to You-TLDR?`, a: `Depends which job you want. For raw transcript text, YouTube's own transcript panel is free with no account. For quick free summaries, Summarize.tech. For research across several videos, NotebookLM. For structured summaries saved to a searchable library, YT Summarizer.` },
+    { q: `Do I need a tool just to get a YouTube transcript?`, a: `No. Open the three-dot menu below the video, choose Show transcript, then use the panel's own menu to toggle timestamps off before copying. That covers a genuine share of what people use transcript tools for, free and with no account.` },
+    { q: `What should I check before committing to a summarizer?`, a: `Long-video handling above all — most tools quietly summarize only the opening of a multi-hour video with no warning, so test on something whose ending you know. Then whether it is an extension (no iOS, blocked on managed laptops), and whether it is subscription or one-time.` },
+    { q: `Which options are genuinely free?`, a: `Summarize.tech stays free with no account, at the cost of paragraph output rather than structured points. NotebookLM is free and more capable but needs a notebook per topic. YouTube's transcript panel is free for raw text.` },
+    { q: `What does YT Summarizer cost?`, a: `5 summaries free, then one-time credit packs: $19 for 200 summaries or $49 for 1,000. No subscription, nothing renews, credits never expire, and one credit covers a video of any length.` },
+  ],
+  'notegpt-delete-account': [
+    { q: `How do I delete my NoteGPT account?`, a: `Cancel the subscription first, export anything you want to keep, then request deletion in account or privacy settings — or by emailing support from the account's address if there is no self-service option. Order matters.` },
+    { q: `Will deleting my account stop the billing?`, a: `Not necessarily, and this is the step that costs people money. Cancelling a subscription and deleting an account are separate actions, especially where billing runs through Apple, Google Play or PayPal rather than the site directly. Cancel first and keep the confirmation email.` },
+    { q: `Where do I cancel if I paid through an app store?`, a: `On iPhone: Settings → your name → Subscriptions. On Android: Play Store → Payments and subscriptions. The website cannot cancel a subscription billed through an app store. If you paid via PayPal, check its recurring payments list separately.` },
+    { q: `Can I recover a deleted NoteGPT account?`, a: `Assume not. Deletion is intended to be permanent and support generally cannot restore one. Export saved summaries, notes, highlights and flashcards before you request it — people routinely underestimate what they have accumulated.` },
+    { q: `How do I avoid needing to cancel a summarizer again?`, a: `Don't pay monthly. YT Summarizer uses one-time credit packs — 5 free summaries, then 200 for $19 or 1,000 for $49. Nothing renews, credits never expire, and there is nothing to cancel later.` },
+  ],
+  'youtube-transcript-doesnt-match-audio': [
+    { q: `Why doesn't the YouTube transcript match what I hear?`, a: `Automatic captions are a best guess at speech, not a record of it. They fail predictably on proper nouns, technical terms, numbers, accented or fast speech, and anything said over music or background noise.` },
+    { q: `Which caption errors matter most?`, a: `Numbers, by a distance — "fifteen" and "fifty", decimals, currencies and dates are routinely wrong, and a summary built on them states the wrong figure with full confidence. Names are the most frequent error overall.` },
+    { q: `The words are right but the timing is off. Why?`, a: `That is sync drift rather than recognition. It accumulates on long videos and reloading usually resyncs it. If the video was edited after captions were generated, the track describes the old cut and only the creator can fix it.` },
+    { q: `How do I get more accurate captions?`, a: `Check the caption settings for a track labelled with a language name rather than "auto-generated" — that is human-written and far more accurate. Where only automatic captions exist and accuracy matters, running the audio through a modern speech-to-text tool often does better.` },
+    { q: `Can I trust an AI summary built on automatic captions?`, a: `For structure, argument and what a video covers, yes. For specific figures, names and attributions, no. If you are going to act on a number or quote someone, check that moment in the video.` },
+  ],
+
   // ===== Batch 5: YouTube-native failures + transcript problems =====
   'why-some-youtube-videos-have-no-ai-summary': [
     { q: `Why do some YouTube videos not have an AI summary?`, a: `Five things decide it: whether the video has a usable caption track, how long it is, what language it is in, whether it is restricted, and whether the feature has rolled out to your account at all. Missing captions is by far the most common reason.` },

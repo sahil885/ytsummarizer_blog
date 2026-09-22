@@ -111,6 +111,22 @@ No mainstream AI assistant watches video. They read the video's stored caption t
 - [NotebookLM: "this video cannot be imported"](https://blog.ytsummarizer.app/blog/notebooklm-video-cannot-be-imported)
 - [Can Copilot summarize a YouTube video?](https://blog.ytsummarizer.app/blog/can-copilot-summarize-youtube-video)
 
+## Transcript quality and copying problems
+
+- [Transcript only showing part of the video](https://blog.ytsummarizer.app/blog/youtube-transcript-only-showing-partial)
+- [Can't copy a YouTube transcript](https://blog.ytsummarizer.app/blog/copy-youtube-transcript-not-working)
+- [Transcript doesn't match the audio](https://blog.ytsummarizer.app/blog/youtube-transcript-doesnt-match-audio)
+- [Auto-translate captions wrong or nonsense](https://blog.ytsummarizer.app/blog/youtube-auto-translate-captions-wrong)
+- [AI summary repeating the same points](https://blog.ytsummarizer.app/blog/youtube-summary-repetitive-duplicate)
+- [The best prompts for summarizing a YouTube video](https://blog.ytsummarizer.app/blog/best-youtube-summary-prompt)
+
+## Browser and device problems
+
+- [Summarizer not working in Safari](https://blog.ytsummarizer.app/blog/youtube-summarizer-not-working-safari)
+- [Summarizer not working on iPad](https://blog.ytsummarizer.app/blog/youtube-summarizer-not-working-ipad)
+- [Grok not summarizing YouTube videos](https://blog.ytsummarizer.app/blog/grok-youtube-summary-not-working)
+- [ChatGPT Atlas not summarizing YouTube](https://blog.ytsummarizer.app/blog/chatgpt-atlas-youtube-summary-not-working)
+
 ## Access and platform problems
 
 - [YouTube transcript not loading (7 causes)](https://blog.ytsummarizer.app/blog/youtube-transcript-not-loading)
