@@ -333,7 +333,7 @@ export const allPosts: PostListEntry[] = [
   {
     slug: 'youtube-summarizer-pricing-free-vs-onetime-vs-subscription',
     title: 'YouTube Summarizer Pricing Compared: Free, One-Time, and Subscription Tools in 2026',
-    description: 'Compare YouTube summarizer pricing: completely free tools, one-time credit packs from $19, and $8-15/month subscriptions. Full cost breakdown and what you get at each price.',
+    description: 'Compare YouTube summarizer pricing: completely free tools, one-time credit packs from $9, and $8-15/month subscriptions. Full cost breakdown and what you get at each price.',
     date: '2026-05-01',
   },
   {
