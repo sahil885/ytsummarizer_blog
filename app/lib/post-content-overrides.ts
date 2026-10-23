@@ -5517,9 +5517,141 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>For everything else, <a href="${P}">YT Summarizer</a> reads the full transcript and returns an overview, key points and takeaways in about a minute — with the same honest limit as every tool in the category: it can only work with the words the captions contain. A free summary every day — two with a free account — then one-time credit packs from $9 with credits that never expire.</p>
     `,
   },
+
+  // ===== Oct 2026: two posts the new free tier makes possible/relevant =====
+  // The no-signup cluster was deliberately skipped for six batches because we
+  // could not honestly serve it. The daily no-account allowance changes that.
+  // Observed queries: "youtube video summarizer ai free no sign up", "youtube
+  // summarizer no login", "summarize without ai", "summarize tool not ai".
+
+  'youtube-summarizer-no-sign-up': {
+    title: "YouTube Summarizer With No Sign Up: What Actually Works",
+    metaDescription: "Want a YouTube summary without creating an account? Which tools genuinely need no signup, which ask for one the moment you paste a link, and what each gives you free.",
+    date: '2026-10-02',
+    content: `
+      <p><strong>Quick answer:</strong> Genuinely no-signup options are rarer than search results suggest — most tools advertise a free tier and then ask for an account at the moment you paste a URL. Three that actually work without one: Summarize.tech (free, no account, paragraph output), YouTube's own transcript panel (free, no account, raw text), and YT Summarizer (one summary a day with no account, structured output). Everything else wants an email first.</p>
+
+      <h2>Why "free" and "no signup" are different things</h2>
+      <p>This is the distinction that wastes people's time. A free tier means you do not pay. No signup means you do not hand over an email address. Most tools in this category offer the first and not the second, so you find a promising result, paste your link, and hit a registration wall — having already spent the attention.</p>
+      <p>It is worth knowing which you actually care about. If the objection is cost, plenty of options exist. If the objection is giving a stranger your email to find out whether a tool is any good, the list is short.</p>
+
+      <h2>What works without an account</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Tool</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">No account?</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">What you get</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">YouTube transcript panel</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Raw text, no summary</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Summarize.tech</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Paragraph summary</td>
+          </tr>
+          <tr style="background: #fff8f9;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>YT Summarizer</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Yes — 1 a day</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Overview, key points, takeaways</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">NotebookLM</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">No — Google account</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Research notebook</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Eightify, NoteGPT, Glasp</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">No</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Account, usually an extension too</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>The zero-tool route</h2>
+      <p>You do not need any service to get the text. Open the video, click the three-dot menu underneath, choose <strong>Show transcript</strong>, then use the transcript panel's own three-dot menu to toggle timestamps off before copying. That is a complete no-signup workflow, and from there you can paste the text into whatever you already use.</p>
+      <p>The catch is that a transcript is not a summary — an hour of video is roughly 9,000 words of unpunctuated speech, which is not something anyone reads to save time. Details in <a href="/blog/how-to-download-youtube-transcript-5-free-methods">five free ways to get a YouTube transcript</a> and <a href="/blog/copy-youtube-transcript-not-working">copying it cleanly</a>.</p>
+
+      <h2>What you give up by staying signed out</h2>
+      <p>Being honest about the trade, because it is real:</p>
+      <ul>
+        <li><strong>Nothing is saved.</strong> Close the tab and the summary is gone. For a one-off that is fine; for anything you will want to find again it is not.</li>
+        <li><strong>Lower allowances.</strong> No-account tiers are smaller than free-account tiers almost everywhere, because an account is what the free tier is buying.</li>
+        <li><strong>No history to search.</strong> The value of a summary tool compounds when you can search six months of them, and that requires an account by definition.</li>
+      </ul>
+      <p>So the sensible pattern is: use the no-signup path to judge whether the output is any good, and create an account only once you have decided it is worth keeping.</p>
+
+      <h2>Which to pick</h2>
+      <p>For a one-off, Summarize.tech is the lowest-friction thing that exists — no account, no card, paragraph output. If you want structure rather than prose, <a href="${P}">YT Summarizer</a> gives one summary a day with no account at all: paste a URL, get an overview, key points and takeaways in about a minute. A free account raises it to two a day and saves everything to a searchable library, and if you need more than that, one-time credit packs start at $9 with credits that never expire and no subscription.</p>
+      <p>Related: <a href="/blog/summarize-youtube-video-without-extension">summarizing without installing an extension</a>, and <a href="/blog/youtube-summarizer-no-subscription-no-weekly-limits">options with no subscription</a>.</p>
+    `,
+  },
+
+  'summarize-youtube-video-without-ai': {
+    title: "How to Summarize a YouTube Video Without AI (5 Methods)",
+    metaDescription: "Don't want an AI summary? Five ways to get the substance of a video using YouTube's own features and your own reading — plus honestly, where AI still beats them.",
+    date: '2026-10-02',
+    content: `
+      <p><strong>Quick answer:</strong> You have five non-AI options, and they are better than people expect: chapter markers, the creator's own description and pinned comment, the transcript read by eye, playback speed, and comment-section consensus. Each costs some attention and none of them invent anything, which is the whole point — AI summaries are a reasonable guide to structure and a poor source for numbers and quotes.</p>
+
+      <h2>1. Chapter markers — the fastest honest route</h2>
+      <p>If the creator added chapters, you already have a human-written outline. They appear as segments on the progress bar and as a list in the description. Skim the titles, decide which two sections matter, and watch only those.</p>
+      <p>This is the single highest-value habit in this list, because the summary was written by the person who made the video. No tool improves on that.</p>
+
+      <h2>2. The description and the pinned comment</h2>
+      <p>Routinely overlooked. Creators put key links, corrections, timestamps and sometimes a full written version in the description — and when something in the video was wrong, the correction is usually in a pinned comment rather than the video itself. An AI summary built from the transcript will not know about either, which is a genuine blind spot.</p>
+
+      <h2>3. Read the transcript instead of watching</h2>
+      <p>Reading is roughly three times faster than listening for most people, and the transcript is free. Open the three-dot menu below the video, choose <strong>Show transcript</strong>, then use the panel's own menu to toggle timestamps off so the text reflows into paragraphs.</p>
+      <p>Then skim rather than read: look for the passage where the speaker states their conclusion, which is usually near the start and again near the end. Use <kbd>Ctrl</kbd>+<kbd>F</kbd> to find a term you care about — the panel has no search of its own, which is covered in <a href="/blog/youtube-transcript-search-not-working">transcript search not working</a>.</p>
+      <p>A one-hour video is about 9,000 words. Skimmed, that is five to eight minutes of work against an hour of watching.</p>
+
+      <h2>4. Playback speed</h2>
+      <p>Not a summary, but it solves the same problem. Most people adapt to 1.5x within a few minutes and 2x within a week, and for a clearly-spoken lecture that turns an hour into thirty minutes with no loss of nuance. It is the only method on this list that keeps tone, emphasis and visual content intact — which matters more than people admit for demonstrations and anything where how something is said carries meaning. See <a href="/blog/youtube-summarizer-vs-2x-speed">summarizers versus 2x speed</a>.</p>
+
+      <h2>5. The comment section</h2>
+      <p>On popular videos, someone has usually posted a timestamped breakdown, and the top comments reliably surface the one genuinely contentious claim. Sort by top and read the first ten. This is crowd-sourced rather than reliable, but it tells you something no summary does: which part of the video people actually argued about.</p>
+
+      <h2>Where non-AI methods genuinely win</h2>
+      <ul>
+        <li><strong>Accuracy on specifics.</strong> You are reading the speaker's own words rather than a paraphrase. Automatic captions still mishear names and numbers, but at least nothing has been invented on top — see <a href="/blog/youtube-transcript-doesnt-match-audio">when transcripts don't match the audio</a>.</li>
+        <li><strong>Visual content.</strong> Charts, demonstrations and anything shown rather than said are invisible to transcript-based tools entirely.</li>
+        <li><strong>Tone.</strong> Sarcasm, hedging and hypotheticals survive reading and frequently do not survive summarizing.</li>
+        <li><strong>Videos with no captions.</strong> Chapters, description and comments work where every AI tool fails outright.</li>
+      </ul>
+
+      <h2>Where they lose</h2>
+      <p>Volume, and nothing else. These methods work beautifully for one video and collapse at ten — skimming a transcript is five minutes, and fifteen videos is over an hour of skimming. There is also no searchable record afterwards unless you make notes yourself.</p>
+
+      <h2>The honest recommendation</h2>
+      <p>For a video that genuinely matters, use chapters and read the transcript. You will understand it better than any summary would let you, and you will catch the things summaries miss.</p>
+      <p>For triage across a backlog — deciding which of fifteen videos deserve your hour — that approach does not scale, and that is the case <a href="${P}">YT Summarizer</a> is for: paste a URL, get an overview, key points and takeaways in about a minute. One free summary a day with no account at all, two with a free account, then one-time credit packs from $9 that never expire. Use it to decide what to watch properly, and then watch it properly.</p>
+    `,
+  },
 }
 
 export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
+  // ===== Oct 2026 =====
+  'youtube-summarizer-no-sign-up': [
+    { q: `Is there a YouTube summarizer that needs no sign up?`, a: `Yes, though fewer than search results suggest. Summarize.tech works with no account (paragraph output), YouTube's own transcript panel gives raw text with no account, and YT Summarizer gives one structured summary a day with no account at all. Most other tools ask for an email the moment you paste a link.` },
+    { q: `What's the difference between "free" and "no signup"?`, a: `Free means you don't pay. No signup means you don't hand over an email. Most tools offer the first and not the second — which is why people hit a registration wall after already choosing a tool and pasting their link.` },
+    { q: `Can I summarize a YouTube video without any tool at all?`, a: `You can get the text: open the three-dot menu below the video, choose Show transcript, then toggle timestamps off in the panel's own menu before copying. That needs no account. It gives you a transcript rather than a summary — about 9,000 words for an hour of video.` },
+    { q: `What do I give up by not creating an account?`, a: `Nothing is saved, so the summary disappears when you close the tab; allowances are smaller, since an account is what the free tier is buying; and there is no searchable history, which is where a summary tool's value compounds over months.` },
+    { q: `How many free summaries can I get without an account?`, a: `With YT Summarizer, one per day with no account at all, refreshing daily and forever. A free account raises it to two a day plus a saved library. Beyond that, one-time credit packs start at $9 and never expire.` },
+  ],
+  'summarize-youtube-video-without-ai': [
+    { q: `How do I summarize a YouTube video without AI?`, a: `Five methods: use the creator's chapter markers, read the description and pinned comment, skim the transcript instead of watching, raise playback speed, and check the top comments for a timestamped breakdown. Chapters are the best of these because the outline was written by the person who made the video.` },
+    { q: `Is reading the transcript faster than watching?`, a: `Usually about three times faster. A one-hour video is roughly 9,000 words, which skims in five to eight minutes. Open the three-dot menu below the video, choose Show transcript, and toggle timestamps off so the text reflows into paragraphs.` },
+    { q: `Why would I avoid an AI summary?`, a: `Accuracy on specifics. You read the speaker's own words rather than a paraphrase, you catch visual content that transcript-based tools cannot see at all, and tone — sarcasm, hedging, hypotheticals — survives reading where it frequently does not survive summarizing.` },
+    { q: `What do non-AI methods miss?`, a: `Volume. They work well for one video and collapse at ten — skimming fifteen transcripts is over an hour. They also leave no searchable record unless you take notes yourself.` },
+    { q: `What about videos with no captions?`, a: `Chapters, the description and the comments still work, which is more than any AI summarizer manages — they all read the caption track, so a video without one defeats every single one of them.` },
+  ],
+
   // ===== Batch 6: adjacent failure modes =====
   'youtube-transcript-only-showing-partial': [
     { q: `Why does the YouTube transcript only show part of the video?`, a: `Usually the transcript is complete and the panel is only rendering a section of it — long transcripts load as you scroll. Scroll the panel to the bottom first. If it genuinely ends early, recognition failed on a stretch of audio or the video was edited after captions were generated.` },

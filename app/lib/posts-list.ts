@@ -6,6 +6,13 @@ export type PostListEntry = {
 }
 
 export const allPosts: PostListEntry[] = [
+  // Oct 2026: the no-signup cluster was skipped for six batches because we could
+  // not honestly serve it — the daily no-account free tier changes that. Observed
+  // queries: "youtube video summarizer ai free no sign up", "youtube summarizer
+  // no login", plus "summarize without ai" / "summarize tool not ai".
+  { slug: 'youtube-summarizer-no-sign-up', title: "YouTube Summarizer With No Sign Up: What Actually Works", description: "Want a YouTube summary without creating an account? Which tools genuinely need no signup, which ask for one the moment you paste a link, and what each gives you free.", date: '2026-10-02' },
+  { slug: 'summarize-youtube-video-without-ai', title: "How to Summarize a YouTube Video Without AI (5 Methods)", description: "Don't want an AI summary? Five ways to get the substance of a video using YouTube's own features and your own reading — plus honestly, where AI still beats them.", date: '2026-10-02' },
+
   // Batch 6 (Sep 2026): adjacent failure modes. Query-verified gaps were largely
   // exhausted by Batch 5 (remainder are 1-4 impressions each), and GSC only
   // surfaces queries we already impress for — it cannot reveal demand for topics
@@ -754,6 +761,107 @@ export const CATEGORY_LABELS: Record<CategoryKey, string> = {
 }
 
 export const CATEGORY_ORDER: CategoryKey[] = ['comparisons', 'roundups', 'roles', 'howto', 'features']
+
+// ---------------------------------------------------------------------------
+// Contextual CTAs.
+//
+// GSC/GA (Oct 2026): the blog earns 198 clicks/28d but sends only 23 sessions to
+// the app — an 11.6% handoff. The content that ranks is troubleshooting ("captions
+// not working"), i.e. problem intent, while the CTA was a single static line about
+// summarizing videos, i.e. purchase intent. The bridge has to start from the
+// reader's actual problem, so CTA copy is chosen per cluster.
+export type CtaCopy = {
+  topHeadline: string
+  topSub: string
+  topButton: string
+  bottomHeadline: string
+  bottomBody: string
+  bottomButton: string
+}
+
+const CTA_DEFAULT: CtaCopy = {
+  topHeadline: 'Summarize any YouTube video in about a minute',
+  topSub: 'A free summary every day · One-time packs from $9 · No subscription',
+  topButton: 'Try Free →',
+  bottomHeadline: 'Ready to try YT Summarizer?',
+  bottomBody: 'Paste a YouTube URL and get structured key points in about a minute.',
+  bottomButton: 'Start Summarizing →',
+}
+
+const CTA_VARIANTS: Array<{ test: RegExp; copy: CtaCopy }> = [
+  {
+    // Caption / transcript mechanics. Reader wants the text to work; the bridge is
+    // that having the text still leaves them 9,000 words to read.
+    test: /(caption|transcript|timestamps|no-transcript|error-loading|not-loading|doesnt-match|only-showing-partial|copy-youtube)/,
+    copy: {
+      topHeadline: 'Got the transcript? That is still 9,000 words to read',
+      topSub: 'Turn any video into key points in about a minute · Free every day · No subscription',
+      topButton: 'Summarize it instead →',
+      bottomHeadline: 'Once the transcript works, skip the reading',
+      bottomBody:
+        'An hour of video is roughly 9,000 words of unpunctuated speech — not something anyone reads to save time. Paste the URL instead and get an overview, key points and takeaways in about a minute.',
+      bottomButton: 'Try it free →',
+    },
+  },
+  {
+    // YouTube's own AI summary missing/removed. Strongest bridge on the site:
+    // direct substitution for a feature that just vanished on them.
+    test: /(ai-summary|youtube-remove|have-no-ai-summary|built-in-ai)/,
+    copy: {
+      topHeadline: "YouTube's AI summary comes and goes. This one doesn't.",
+      topSub: 'Works on any public video with captions · Free every day · No subscription',
+      topButton: 'Try Free →',
+      bottomHeadline: 'A summary that does not depend on a rollout',
+      bottomBody:
+        'No waiting for a feature to reach your account, your country or your device. Paste any public YouTube URL and get an overview, key points and takeaways in about a minute — saved to a library you can search later.',
+      bottomButton: 'Try it free →',
+    },
+  },
+  {
+    // A competitor tool / assistant broke on them. Bridge: nothing to install.
+    test: /(not-working|cant-|broken-after|extension-removed|quota|cancel-|delete-account)/,
+    copy: {
+      topHeadline: 'Tired of it breaking every time YouTube updates?',
+      topSub: 'Nothing to install, nothing to inject · Free every day · No subscription',
+      topButton: 'Try Free →',
+      bottomHeadline: 'Nothing to install, nothing to break',
+      bottomBody:
+        'No extension to be disabled, no page to inject into when YouTube changes its layout, and no daily quota to run out mid-session. Paste a URL in whatever browser you already use.',
+      bottomButton: 'Try it free →',
+    },
+  },
+  {
+    // Device or network blocked them. Bridge: works where extensions cannot.
+    test: /(iphone|ipad|android|safari|mobile|blocked-at|school-or-work|without-extension)/,
+    copy: {
+      topHeadline: "Works where extensions don't — phone, iPad, work laptop",
+      topSub: 'Runs in any browser with nothing installed · Free every day · No subscription',
+      topButton: 'Try Free →',
+      bottomHeadline: 'Works on the device you actually have',
+      bottomBody:
+        'Runs in any browser with nothing to install — including iPhone, iPad, Android and managed work machines where the extension store is locked down.',
+      bottomButton: 'Try it free →',
+    },
+  },
+  {
+    // Commercial / pricing intent. Lead with the terms, since that is what they came for.
+    test: /(pricing|cost|price|worth-it|subscription|free-vs|alternative|vs-|review|out-of-free|no-sign-up)/,
+    copy: {
+      topHeadline: 'Free every day, then one-time packs from $9',
+      topSub: 'Credits never expire · No subscription · 30-day money-back guarantee',
+      topButton: 'Try Free →',
+      bottomHeadline: 'Pay once, or do not pay at all',
+      bottomBody:
+        'A free summary every day — two with a free account, and one with no account at all. Credit packs from $9 when you need more, and they never expire. No subscription to cancel later.',
+      bottomButton: 'Try it free →',
+    },
+  },
+]
+
+export function ctaFor(slug: string): CtaCopy {
+  for (const v of CTA_VARIANTS) if (v.test.test(slug)) return v.copy
+  return CTA_DEFAULT
+}
 
 export function categoryOf(slug: string): CategoryKey {
   // Troubleshooting is checked first: these slugs often contain a brand name

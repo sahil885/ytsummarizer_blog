@@ -113,6 +113,11 @@ No mainstream AI assistant watches video. They read the video's stored caption t
 - [NotebookLM: "this video cannot be imported"](https://blog.ytsummarizer.app/blog/notebooklm-video-cannot-be-imported)
 - [Can Copilot summarize a YouTube video?](https://blog.ytsummarizer.app/blog/can-copilot-summarize-youtube-video)
 
+## Using YouTube summarizers without an account, and without AI
+
+- [YouTube summarizer with no sign up — what actually works](https://blog.ytsummarizer.app/blog/youtube-summarizer-no-sign-up)
+- [How to summarize a YouTube video without AI (5 methods)](https://blog.ytsummarizer.app/blog/summarize-youtube-video-without-ai)
+
 ## Transcript quality and copying problems
 
 - [Transcript only showing part of the video](https://blog.ytsummarizer.app/blog/youtube-transcript-only-showing-partial)

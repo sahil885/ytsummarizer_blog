@@ -9,6 +9,7 @@ import {
   categoryBadge,
   formatDate,
   readingTime,
+  ctaFor,
 } from '../../lib/posts-list'
 import { postOverrides, faqOverrides } from '../../lib/post-content-overrides'
 
@@ -9858,6 +9859,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     notFound()
   }
 
+  const cta = ctaFor(slug)
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -9967,11 +9970,11 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
         <div className="cta-strip">
           <div>
-            <strong>Summarize any YouTube video in about a minute</strong>
-            <span>A free summary every day &middot; One-time packs from $9 &middot; No subscription</span>
+            <strong>{cta.topHeadline}</strong>
+            <span>{cta.topSub}</span>
           </div>
           <a className="btn-pill" href={productUrl('post_top_cta')}>
-            Try Free &rarr;
+            {cta.topButton}
           </a>
         </div>
 
@@ -10011,10 +10014,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         )}
 
         <section className="cta-block">
-          <h2>Ready to try YT Summarizer?</h2>
-          <p>Paste a YouTube URL and get structured key points in about a minute.</p>
+          <h2>{cta.bottomHeadline}</h2>
+          <p>{cta.bottomBody}</p>
           <a className="btn-pill" href={productUrl('post_cta')}>
-            Start Summarizing &rarr;
+            {cta.bottomButton}
           </a>
         </section>
       </article>
