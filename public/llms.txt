@@ -113,6 +113,17 @@ No mainstream AI assistant watches video. They read the video's stored caption t
 - [NotebookLM: "this video cannot be imported"](https://blog.ytsummarizer.app/blog/notebooklm-video-cannot-be-imported)
 - [Can Copilot summarize a YouTube video?](https://blog.ytsummarizer.app/blog/can-copilot-summarize-youtube-video)
 
+## Choosing and paying for a YouTube summarizer
+
+- [The cheapest YouTube summarizer in 2026 (real costs)](https://blog.ytsummarizer.app/blog/cheapest-youtube-summarizer-2026)
+- [Do you actually need to pay for one?](https://blog.ytsummarizer.app/blog/do-you-need-to-pay-for-youtube-summarizer)
+- [How many summaries do you actually need a month?](https://blog.ytsummarizer.app/blog/how-many-youtube-summaries-do-you-need)
+- [The hidden costs to check before buying](https://blog.ytsummarizer.app/blog/youtube-summarizer-hidden-costs)
+- [Free trial ended — your options](https://blog.ytsummarizer.app/blog/youtube-summarizer-free-trial-ended)
+- [Switching summarizers: 7 things to check first](https://blog.ytsummarizer.app/blog/switching-youtube-summarizer-what-to-check)
+- [Best summarizer for heavy use (50+ videos a month)](https://blog.ytsummarizer.app/blog/youtube-summarizer-for-heavy-users)
+- [Is NoteGPT safe and legit?](https://blog.ytsummarizer.app/blog/is-notegpt-safe)
+
 ## Using YouTube summarizers without an account, and without AI
 
 - [YouTube summarizer with no sign up — what actually works](https://blog.ytsummarizer.app/blog/youtube-summarizer-no-sign-up)

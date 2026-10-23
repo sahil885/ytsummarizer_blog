@@ -6,6 +6,20 @@ export type PostListEntry = {
 }
 
 export const allPosts: PostListEntry[] = [
+  // Batch 7 (Oct 2026): decision-stage intent. Troubleshooting wins clicks but
+  // carries problem intent (198 blog clicks -> 23 app sessions), and Batch 2's
+  // competitor *reviews* failed because brand searchers don't want a rival's
+  // opinion. These target the narrow moment someone is deciding whether and what
+  // to pay for — all uncovered by the existing 183 posts.
+  { slug: 'cheapest-youtube-summarizer-2026', title: "The Cheapest YouTube Summarizer in 2026 (Real Costs)", description: "Cheapest isn't the lowest sticker price — it's cost per summary at your actual usage. The real annual cost of every major option, and which is cheapest for how much you watch.", date: '2026-10-23' },
+  { slug: 'youtube-summarizer-free-trial-ended', title: "Free Trial Ended on Your YouTube Summarizer? Your Options", description: "Trial just expired and you're being asked to subscribe? Work out whether you actually need to pay, what the genuinely free options give you, and how to avoid this again.", date: '2026-10-23' },
+  { slug: 'how-many-youtube-summaries-do-you-need', title: "How Many YouTube Summaries Do You Actually Need a Month?", description: "Most people badly overestimate how many video summaries they'll use, then overpay. How to work out your real number in two minutes, and what it means for which plan to buy.", date: '2026-10-23' },
+  { slug: 'switching-youtube-summarizer-what-to-check', title: "Switching YouTube Summarizers? 7 Things to Check First", description: "Before you move to another summarizer: what to export, which limits are hidden in the terms, and the seven checks that stop you switching into the same problem again.", date: '2026-10-23' },
+  { slug: 'youtube-summarizer-hidden-costs', title: "The Hidden Costs of YouTube Summarizers (What to Check)", description: "The sticker price is rarely the real price. Quotas on 'unlimited' plans, annual auto-renewals, long-video limits and billing surprises — what to read before you buy.", date: '2026-10-23' },
+  { slug: 'is-notegpt-safe', title: "Is NoteGPT Safe and Legit? What to Check Before Signing Up", description: "Wondering whether NoteGPT is safe to use? What any YouTube summarizer can actually access, the permissions worth checking, and how to evaluate one for yourself.", date: '2026-10-23' },
+  { slug: 'youtube-summarizer-for-heavy-users', title: "Best YouTube Summarizer for Heavy Use (50+ Videos a Month)", description: "Summarizing dozens of videos a month? The constraints that only show up at volume — caps, long-video truncation, cost per summary, and searchable libraries — compared.", date: '2026-10-23' },
+  { slug: 'do-you-need-to-pay-for-youtube-summarizer', title: "Do You Actually Need to Pay for a YouTube Summarizer?", description: "An honest answer: most people don't. Who genuinely benefits from paying, who is being upsold, and how to tell which one you are before spending anything.", date: '2026-10-23' },
+
   // Oct 2026: the no-signup cluster was skipped for six batches because we could
   // not honestly serve it — the daily no-account free tier changes that. Observed
   // queries: "youtube video summarizer ai free no sign up", "youtube summarizer
@@ -845,7 +859,7 @@ const CTA_VARIANTS: Array<{ test: RegExp; copy: CtaCopy }> = [
   },
   {
     // Commercial / pricing intent. Lead with the terms, since that is what they came for.
-    test: /(pricing|cost|price|worth-it|subscription|free-vs|alternative|vs-|review|out-of-free|no-sign-up)/,
+    test: /(pricing|cost|price|worth-it|subscription|free-vs|alternative|vs-|review|out-of-free|no-sign-up|cheapest|trial-ended|how-many|switching|heavy-users|need-to-pay|is-notegpt-safe)/,
     copy: {
       topHeadline: 'Free every day, then one-time packs from $9',
       topSub: 'Credits never expire · No subscription · 30-day money-back guarantee',

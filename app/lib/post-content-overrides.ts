@@ -5633,9 +5633,445 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>For triage across a backlog — deciding which of fifteen videos deserve your hour — that approach does not scale, and that is the case <a href="${P}">YT Summarizer</a> is for: paste a URL, get an overview, key points and takeaways in about a minute. One free summary a day with no account at all, two with a free account, then one-time credit packs from $9 that never expire. Use it to decide what to watch properly, and then watch it properly.</p>
     `,
   },
+
+  // ===== Batch 7 (Oct 2026): decision-stage intent =====
+  // Troubleshooting content wins clicks but carries problem intent, not purchase
+  // intent (198 blog clicks -> 23 app sessions). Batch 2's competitor *reviews*
+  // failed because searchers on a brand name don't want a rival's opinion. These
+  // target the narrow moment someone is actively deciding whether and what to pay
+  // for — "cheapest", "trial ended", "how many do I need", "switching", "hidden
+  // costs", "is it safe", "heavy use". All uncovered by the existing 183 posts.
+
+  'cheapest-youtube-summarizer-2026': {
+    title: "The Cheapest YouTube Summarizer in 2026 (Real Costs)",
+    metaDescription: "Cheapest isn't the lowest sticker price — it's cost per summary at your actual usage. The real annual cost of every major option, and which is cheapest for how much you watch.",
+    date: '2026-10-23',
+    content: `
+      <p><strong>Quick answer:</strong> The cheapest option depends entirely on how many videos you summarize, and the headline price tells you almost nothing. A $5/month tool is cheaper than a $19 one-time pack for about two months, then it never is again. Work out your monthly volume first — the answer changes completely between 3 videos a month and 30.</p>
+
+      <h2>Free is genuinely cheapest, for some people</h2>
+      <p>Start here honestly. If you summarize a handful of videos a month, you should pay nothing. Summarize.tech is free with no account and gives paragraph-style output. NotebookLM is free and more capable, at the cost of setting up a notebook per topic. YT Summarizer gives one free summary a day with no account, two with a free account.</p>
+      <p>At one or two videos a day, a daily free allowance covers you indefinitely. Anyone telling you to pay at that volume is selling something.</p>
+
+      <h2>The comparison that actually matters: cost per summary</h2>
+      <p>Sticker price hides the real number. Work it out at your own volume:</p>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Model</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Year 1</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Year 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription at ~$8/mo</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$96</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$288</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Subscription at ~$15/mo</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$180</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$540</td>
+          </tr>
+          <tr style="background: #fff8f9;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>One-time credits</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>$9&ndash;$49 once</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>$9&ndash;$49 once</strong></td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Free tools</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$0</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">$0</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>The crossover against a typical subscription lands around month two or three. Past that, one-time credits are cheaper every single month, and the gap compounds.</p>
+
+      <h2>Where "cheap" becomes expensive</h2>
+      <ul>
+        <li><strong>Paying monthly for bursty use.</strong> A subscription charges identically in the months you summarize nothing. If your usage is seasonal — exam term, a research sprint — you are paying full price for empty months.</li>
+        <li><strong>Annual plans you forget.</strong> The discount is real and so is the auto-renewal twelve months later, long after you stopped using it.</li>
+        <li><strong>Quotas on "unlimited" plans.</strong> Several tools market unlimited and apply usage caps in the terms. Paying for unlimited and hitting a cap is the worst version of expensive.</li>
+      </ul>
+
+      <h2>Cheapest by usage pattern</h2>
+      <ul>
+        <li><strong>1&ndash;2 videos a day:</strong> free. A daily allowance covers this forever.</li>
+        <li><strong>Bursty — nothing, then a dozen in an afternoon:</strong> one-time credits. A daily allowance does not bank, and a subscription charges through your quiet months.</li>
+        <li><strong>Steady and heavy, every week, indefinitely:</strong> compare a large credit pack's cost per summary against the subscription's annual total. At 1,000 summaries for $49 that is 4.9 cents each, which most subscriptions do not beat.</li>
+        <li><strong>One-off, right now:</strong> free. Do not buy anything for a single video.</li>
+      </ul>
+
+      <h2>The honest answer</h2>
+      <p>For most people reading this, the cheapest adequate option is free — and you should use it until you genuinely hit its limit rather than buying ahead of need.</p>
+      <p>When you do outgrow it, <a href="${P}">YT Summarizer</a> is free every day, then $9 for 30 summaries, $19 for 200 (9.5 cents each) or $49 for 1,000 (4.9 cents each). Paid once, credits never expire, nothing renews. Full workings in <a href="/blog/how-much-do-youtube-summarizers-cost-2026">what YouTube summarizers actually cost</a>.</p>
+    `,
+  },
+
+  'youtube-summarizer-free-trial-ended': {
+    title: "Free Trial Ended on Your YouTube Summarizer? Your Options",
+    metaDescription: "Trial just expired and you're being asked to subscribe? Work out whether you actually need to pay, what the genuinely free options give you, and how to avoid the same thing in 3 months.",
+    date: '2026-10-23',
+    content: `
+      <p><strong>Quick answer:</strong> Do not subscribe on the day the trial ends. That is the moment you have the least information and the most pressure. Work out how many videos you actually summarized during the trial — most people overestimate by a wide margin — and let that number decide, because at low volume several free options cover you permanently.</p>
+
+      <h2>First, count what you actually used</h2>
+      <p>Check the tool's history before you decide anything. The number of summaries you genuinely made during the trial is the single most useful input, and it is almost always lower than it feels.</p>
+      <ul>
+        <li><strong>Under 10 in a month:</strong> you do not need a subscription. A free daily allowance covers you with room to spare.</li>
+        <li><strong>10&ndash;30:</strong> borderline. One-time credits almost certainly beat a monthly fee.</li>
+        <li><strong>30+ consistently:</strong> you are a genuine heavy user, and it is worth comparing annual totals properly.</li>
+      </ul>
+      <p>A trial inflates usage. You were testing it, which means you summarized things you would not normally bother with. Discount what you see by a third before projecting forward.</p>
+
+      <h2>What happens to what you already made</h2>
+      <p>Worth checking before the account lapses: do your saved summaries stay accessible on the free tier, or do they disappear? Export anything you want to keep now rather than discovering the answer later. Some tools keep the library read-only; others gate it entirely.</p>
+
+      <h2>The genuinely free routes</h2>
+      <ul>
+        <li><strong>Summarize.tech</strong> — free, no account, paragraph output rather than structured points.</li>
+        <li><strong>NotebookLM</strong> — free and more capable, but wants a notebook set up per topic.</li>
+        <li><strong>YouTube's own transcript</strong> — three-dot menu under the video, Show transcript, toggle timestamps off. Free, no tool at all, and you read it yourself.</li>
+        <li><strong>A daily free allowance</strong> — some tools give you a summary or two every day indefinitely, which fits ordinary use without any payment.</li>
+      </ul>
+
+      <h2>If you do pay, the model matters more than the price</h2>
+      <p>The question is not which tool is cheapest this month. It is whether you want a recurring charge at all.</p>
+      <p>A subscription makes sense if your usage is steady and heavy, every month, indefinitely. It is poor value if your usage is bursty, because you pay the same in the months you summarize nothing — and poor value if you are the kind of person who forgets to cancel, which is most people.</p>
+      <p>One-time credits invert that: you pay once, the credits sit there until used, and nothing renews. The trade is that you pay up front rather than monthly.</p>
+
+      <h2>Avoiding this again in three months</h2>
+      <p>Two habits. Put a calendar reminder two days before any trial ends, so you decide rather than default. And check the free tier <em>before</em> starting a trial — if the free tier would have covered you, the trial only ever existed to move you onto a plan.</p>
+
+      <h2>What to do today</h2>
+      <p>Nothing, if you can help it. Let the trial lapse, use a free option for a fortnight, and see whether you actually miss it. Genuine need will be obvious within two weeks, and you will be deciding with evidence instead of a countdown timer.</p>
+      <p>If you want structured output without a recurring charge, <a href="${P}">YT Summarizer</a> is free every day — one summary a day with no account, two with a free account — then one-time packs from $9 that never expire. There is nothing to cancel, which is rather the point. See also <a href="/blog/out-of-free-summaries-what-next">what to do when you run out of free summaries</a>.</p>
+    `,
+  },
+
+  'how-many-youtube-summaries-do-you-need': {
+    title: "How Many YouTube Summaries Do You Actually Need a Month?",
+    metaDescription: "Most people badly overestimate how many video summaries they'll use, then overpay. How to work out your real number in two minutes, and what it means for which plan to buy.",
+    date: '2026-10-23',
+    content: `
+      <p><strong>Quick answer:</strong> Most people use far fewer than they expect — typically under ten a month once the novelty wears off. The reliable way to find your number is to count the videos you actually watched over the last fortnight and halve it, because intention and behaviour diverge sharply here.</p>
+
+      <h2>The two-minute method</h2>
+      <ol>
+        <li>Open your YouTube watch history and count videos over 15 minutes long from the last 14 days. Short clips do not need summarizing.</li>
+        <li>Of those, count how many you would genuinely have preferred to read in a minute rather than watch.</li>
+        <li>Double it for a monthly figure.</li>
+        <li>Then subtract a third, because you will not sustain the habit at the rate you imagine today.</li>
+      </ol>
+      <p>For most people this lands somewhere between 4 and 15 a month. If yours comes out above 40, check step 2 again — that usually means you counted everything rather than the ones worth summarizing.</p>
+
+      <h2>Why the estimate runs high</h2>
+      <p>Three reasons, all predictable. New tools get used more in week one than week five. People count videos they <em>mean</em> to watch rather than ones they do. And the backlog you are picturing — the 40 saved videos — is mostly never going to be touched, with or without a summarizer.</p>
+      <p>This matters because tool pricing is built around your optimistic estimate rather than your actual behaviour. A plan sized for the person you intend to be is a plan you overpay for.</p>
+
+      <h2>What each volume actually needs</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">Per month</th>
+            <th style="padding: 0.75rem; border: 1px solid #ddd; text-align: left;">What you need</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Under 10</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">A free daily allowance. Pay nothing.</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">10&ndash;30, spread evenly</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Still mostly free, if the allowance is daily</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">10&ndash;30, in bursts</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">A small credit pack &mdash; daily allowances don't bank</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">30&ndash;100</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">A mid-size pack, or compare annual subscription totals</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">100+</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Largest pack, lowest cost per summary</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>The pattern matters as much as the number</h2>
+      <p>Twelve a month spread evenly and twelve a month all on one Sunday are completely different buying situations. A daily free allowance handles the first perfectly and fails the second entirely, because it does not accumulate. If your watching is bursty, that single fact decides your plan more than volume does.</p>
+
+      <h2>Buy behind your usage, not ahead of it</h2>
+      <p>The sensible order is: use the free tier until it genuinely gets in your way, note how often that happens over a month, then buy the smallest thing that fixes it. Upgrading later costs nothing. Buying a year of capacity you never use costs the whole year.</p>
+      <p>If it helps to have the arithmetic: <a href="${P}">YT Summarizer</a> is free every day, then $9 for 30 summaries (30 cents each), $19 for 200 (9.5 cents) or $49 for 1,000 (4.9 cents). Credits never expire, so buying slightly more than you need is not wasted — but buying a subscription you under-use is.</p>
+      <p>See also: <a href="/blog/ytsummarizer-pricing-is-it-worth-it">is it worth paying at all</a>.</p>
+    `,
+  },
+
+  'switching-youtube-summarizer-what-to-check': {
+    title: "Switching YouTube Summarizers? 7 Things to Check First",
+    metaDescription: "Before you move to another summarizer: what to export, which limits are hidden in the terms, and the seven checks that stop you switching into the same problem again.",
+    date: '2026-10-23',
+    content: `
+      <p><strong>Quick answer:</strong> Most people switch because of a limit they hit, then pick a replacement without checking whether it has the same limit in a different shape. Before you move, write down the specific thing that made you leave — then test the new tool against exactly that, on your own videos, before paying anything.</p>
+
+      <h2>1. Export what you already have</h2>
+      <p>Do this first, while you still have access. Saved summaries, notes and highlights usually go when the account does, and support generally cannot restore them. If the tool has no export, copy out the ones that matter manually. Ten minutes now beats discovering the gap in six months.</p>
+
+      <h2>2. Cancel properly, and separately</h2>
+      <p>Cancelling and deleting are different actions, often in different systems. If you paid through an app store, the website cannot cancel it — that lives in your phone's subscription settings. Keep the confirmation email. The classic failure is deleting the account while the subscription quietly keeps billing.</p>
+
+      <h2>3. Name the actual reason you're leaving</h2>
+      <p>Be specific, because this is the test the new tool has to pass:</p>
+      <ul>
+        <li>Hit a weekly or monthly cap</li>
+        <li>Output cut off on long videos</li>
+        <li>Extension broke after a YouTube update</li>
+        <li>Doesn't work on your phone</li>
+        <li>Blocked on a work machine</li>
+        <li>Cost, or the recurring charge itself</li>
+      </ul>
+      <p>"It was annoying" is not specific enough to shop with, and it is how people end up switching twice.</p>
+
+      <h2>4. Check the limit shape, not the headline</h2>
+      <p>Free and paid tiers both hide their real constraint in the terms. Daily caps, weekly caps, monthly quotas and usage limits on plans marketed as unlimited are all common. If you left because of a cap, read the new tool's actual limits before anything else — the marketing page will not tell you.</p>
+
+      <h2>5. Test long-video handling specifically</h2>
+      <p>This is the most common silent failure in the category. Many tools summarize only the opening portion of a two-hour video and give no warning at all. Test on a long video whose ending you already know, and check whether the summary reflects the last twenty minutes. See <a href="/blog/youtube-summary-cut-off-long-videos">summaries cut off on long videos</a>.</p>
+
+      <h2>6. Check it runs where you actually are</h2>
+      <p>Extensions do not run on iOS, do not exist for Chrome on Android, and cannot be installed on managed work or school machines. If any of those describe you, an extension-based tool will keep failing regardless of its quality. Covered in <a href="/blog/summarize-youtube-video-without-extension">summarizing without an extension</a>.</p>
+
+      <h2>7. Prefer the model that can't trap you again</h2>
+      <p>If you are leaving because of a recurring charge, the structural fix is not a cheaper subscription — it is not having one. One-time credits cannot auto-renew, cannot be forgotten, and cannot increase in price next year on something you already bought.</p>
+
+      <h2>Test before you pay</h2>
+      <p>Run your three most typical videos through the new tool on its free tier — ideally including one long one — and compare against the specific failure you wrote down in step 3. If it does not clearly fix that, you are about to switch into the same problem.</p>
+      <p><a href="${P}">YT Summarizer</a> is free every day for exactly this kind of testing — one summary a day with no account at all, two with a free account — then one-time packs from $9 with credits that never expire and nothing to cancel later.</p>
+    `,
+  },
+
+  'youtube-summarizer-hidden-costs': {
+    title: "The Hidden Costs of YouTube Summarizers (What to Check)",
+    metaDescription: "The sticker price is rarely the real price. Quotas on 'unlimited' plans, annual auto-renewals, long-video limits and per-seat pricing — what to read before you buy.",
+    date: '2026-10-23',
+    content: `
+      <p><strong>Quick answer:</strong> The costs that catch people out are not in the price, they are in the terms. The four worth checking before any purchase: whether "unlimited" has a usage cap written into the fine print, whether the plan auto-renews annually, whether long videos count as one summary or several, and whether the price shown is monthly-billed-annually rather than month to month.</p>
+
+      <h2>1. "Unlimited" that isn't</h2>
+      <p>The most common one in this category. A plan is marketed as unlimited and the terms contain a fair-use clause, a daily ceiling, or a soft cap that throttles you after a certain volume. Nothing about this is illegal and it is widespread — but it means the thing you bought is not the thing on the label, and you usually discover it mid-task.</p>
+      <p>What to do: search the terms page for "fair use", "reasonable", "cap" and "limit" before buying. If a plan is genuinely unlimited the terms will say so plainly, because it is a selling point.</p>
+
+      <h2>2. The annual auto-renewal</h2>
+      <p>Annual plans advertise a real discount — typically 30&ndash;50% — and the trade is that you commit to a year and it renews silently twelve months later, usually long after you stopped using the tool. The second year is where the money is, which is why the discount is offered at all.</p>
+      <p>If you take an annual plan, put a calendar reminder eleven months out. That one habit is worth more than any discount.</p>
+
+      <h2>3. Long videos costing more than one summary</h2>
+      <p>Check how a three-hour podcast is counted. Some tools charge by video, others effectively charge by length — either explicitly, or by failing on long content so you end up splitting it and spending several credits. If you mainly summarize podcasts and lectures, this detail affects your real cost far more than the headline price.</p>
+
+      <h2>4. Monthly price, annual billing</h2>
+      <p>A plan shown as "$8/month" that charges $96 today is a different proposition from one charging $8 this month. Both are legitimate; only one is what most people think they are clicking. Check what leaves your account this week.</p>
+
+      <h2>5. The cost that isn't money</h2>
+      <p>Worth naming because it is genuinely the largest one for some people. An extension that reads every page you visit, a browser that observes your whole session, or a tool that stores your entire viewing history are all real trades. They may be fine trades — but they should be decisions rather than things you notice later. See <a href="/blog/youtube-summarizer-privacy-and-security">privacy and security in YouTube summarizers</a>.</p>
+
+      <h2>6. Switching costs</h2>
+      <p>If your summaries live inside a tool with no export, the cost of leaving grows every month you stay. Check for an export function before you accumulate a year of notes you cannot take with you.</p>
+
+      <h2>The questions worth asking before you pay</h2>
+      <ul>
+        <li>What is the actual cap, in writing, on the plan I am buying?</li>
+        <li>Does it auto-renew, and on what date?</li>
+        <li>How is a three-hour video counted?</li>
+        <li>What is charged today, and what is charged in month two?</li>
+        <li>Can I export what I create?</li>
+        <li>What happens to my saved work if I stop paying?</li>
+      </ul>
+      <p>Any tool that makes those hard to answer has told you something useful.</p>
+
+      <h2>What the honest version looks like</h2>
+      <p><a href="${P}">YT Summarizer</a> answers all six on one page: free every day, then $9 for 30 summaries, $19 for 200 or $49 for 1,000. One credit per video of any length — a three-hour lecture costs the same as a five-minute clip. Nothing renews, credits never expire, and there is a 30-day money-back guarantee. The $9 pack is the worst value per summary of the three, and we say so on the <a href="/blog/ytsummarizer-pricing-is-it-worth-it">pricing page</a> rather than letting you work it out afterwards.</p>
+    `,
+  },
+
+  'is-notegpt-safe': {
+    title: "Is NoteGPT Safe and Legit? What to Check Before Signing Up",
+    metaDescription: "Wondering whether NoteGPT is safe to use? What any YouTube summarizer can actually access, the permissions worth checking, and how to evaluate one for yourself.",
+    date: '2026-10-23',
+    content: `
+      <p><strong>Quick answer:</strong> NoteGPT is a real, established product rather than a scam — it has a large user base, a public company presence and a normal payment flow. "Safe" is a more useful question than "legit", though, and it depends less on the brand than on what you grant it: a browser extension that can read every page you visit is a meaningfully different trade from a web app that receives one URL at a time.</p>
+
+      <h2>What people usually mean by this question</h2>
+      <p>Three different worries get bundled together, and they have different answers:</p>
+      <ul>
+        <li><strong>"Will I get scammed?"</strong> Unlikely with any established tool in this category. Payment goes through mainstream processors and the products do what they say.</li>
+        <li><strong>"What can it see?"</strong> This is the question worth asking, and the answer depends on whether you install an extension.</li>
+        <li><strong>"Will I get charged unexpectedly?"</strong> The most common real complaint across the whole category, and it is about billing models rather than safety.</li>
+      </ul>
+
+      <h2>What a browser extension can actually access</h2>
+      <p>Any extension that works on YouTube needs permission to read and modify pages. Depending on how its permissions are scoped, that can mean every site you visit, not just YouTube. This is normal and necessary for extensions to function — it is not evidence of wrongdoing — but it is a broad grant.</p>
+      <p>Check it yourself: in Chrome, open the extension's details and look at "Site access". If it says "On all sites", that is what you have granted. You can often change it to "On specific sites" and add only youtube.com, which keeps it working while narrowing what it can see.</p>
+      <p>Do this for every extension you have installed, not just this one. Most people have several with broader access than they realise.</p>
+
+      <h2>What a web app can access</h2>
+      <p>Considerably less, structurally. It receives the URL you paste and the transcript it fetches. It cannot see your other tabs, your browsing history or pages you did not hand it, because it never runs inside them. That is a smaller surface by design rather than by policy.</p>
+
+      <h2>How to evaluate any tool in this category</h2>
+      <ol>
+        <li><strong>Read the site access grant</strong> rather than the marketing page.</li>
+        <li><strong>Check who owns it.</strong> Popular extensions do get acquired, and new owners have sometimes pushed updates adding tracking. Recent reviews are a better signal than the listing text.</li>
+        <li><strong>Look at the last update date.</strong> An abandoned extension with broad permissions is a worse risk than a maintained one.</li>
+        <li><strong>Check the billing model</strong>, since that is where most actual complaints originate — auto-renewal and quotas on plans sold as unlimited.</li>
+        <li><strong>Sign in with a provider you control</strong> rather than reusing a password.</li>
+      </ol>
+
+      <h2>The complaint that actually recurs</h2>
+      <p>Across this category the recurring frustration is not security, it is quotas appearing on plans people believed were unlimited, and subscriptions proving harder to cancel than to start. Neither makes a tool unsafe — but both are worth knowing before you hand over a card. We documented the specifics in <a href="/blog/notegpt-free-limits">NoteGPT's free plan limits</a>, <a href="/blog/notegpt-pricing">what its pricing includes</a>, and <a href="/blog/cancel-notegpt-subscription">how to cancel</a>.</p>
+
+      <h2>If the permissions are what concerns you</h2>
+      <p>Use something that never asks for them. <a href="${P}">YT Summarizer</a> is a web app — nothing installed, no page access, no extension permissions to grant, and you can try it without an account at all: one free summary a day with no sign-up, two with a free account. Then one-time packs from $9 with no subscription to cancel later.</p>
+      <p>That is a narrower trade, not a claim that extensions are unsafe. It just means there is less to evaluate.</p>
+    `,
+  },
+
+  'youtube-summarizer-for-heavy-users': {
+    title: "Best YouTube Summarizer for Heavy Use (50+ Videos a Month)",
+    metaDescription: "Summarizing dozens of videos a month? The constraints that only show up at volume — caps, long-video truncation, cost per summary, and searchable libraries — compared properly.",
+    date: '2026-10-23',
+    content: `
+      <p><strong>Quick answer:</strong> At high volume the things that matter invert completely. Output quality converges across tools; what separates them is cost per summary, whether long videos are handled in full, whether you hit a cap mid-session, and whether you can find a summary again six months later. Most reviews optimise for the first-time user and are close to useless at 50+ a month.</p>
+
+      <h2>1. Cost per summary, not price</h2>
+      <p>At ten a month the price barely matters. At a hundred it is the whole question. Work out what each option costs per summary at <em>your</em> volume:</p>
+      <ul>
+        <li>A $15/month subscription at 100 summaries is 15 cents each — and $180 a year, forever.</li>
+        <li>A 1,000-credit pack at $49 is 4.9 cents each, paid once.</li>
+        <li>A 200-credit pack at $19 is 9.5 cents each.</li>
+      </ul>
+      <p>The direction of the comparison reverses with volume: subscriptions get cheaper per summary the more you use them, one-time credits are fixed. Which wins depends on whether your heavy use is permanent or a phase.</p>
+
+      <h2>2. Caps are the real constraint</h2>
+      <p>This is where heavy users actually get stopped. Daily allowances do not bank, so a tool offering two a day gives you 60 a month in theory and zero on the Sunday you want to process fifteen. Weekly caps are worse for burst work. Monthly quotas are fine until the 25th.</p>
+      <p>If your work is bursty — research sprints, exam periods, content weeks — the cap's <em>shape</em> matters more than its size. Covered in <a href="/blog/out-of-free-summaries-what-next">how each tool handles running out</a>.</p>
+
+      <h2>3. Long-video truncation compounds</h2>
+      <p>A tool that quietly summarizes only the first portion of long videos is a minor annoyance once and a systematic data-quality problem across a hundred videos — you end up with a library of summaries that are confidently wrong about the back half of everything. Test this deliberately before committing at volume. See <a href="/blog/youtube-summary-cut-off-long-videos">why summaries get cut off</a>.</p>
+
+      <h2>4. A searchable library stops being optional</h2>
+      <p>At ten summaries, chat history is fine. At a few hundred, the value is almost entirely in retrieval — being able to find the video where someone said the thing you half-remember. Tools that leave output in a conversation log are functionally lossy at this scale.</p>
+
+      <h2>5. Reliability beats features</h2>
+      <p>At volume, an extension that breaks for three days after a YouTube layout change costs you real work. A tool with nothing to inject into has fewer ways to fail. Same for anything blocked on the machine you actually work on. See <a href="/blog/youtube-summarizer-broken-after-update">summarizers breaking after updates</a>.</p>
+
+      <h2>What to test before committing</h2>
+      <ol>
+        <li>Run your longest typical video and verify the summary covers the ending.</li>
+        <li>Run ten in one sitting and see whether you hit anything.</li>
+        <li>Search for something from the first summary a week later.</li>
+        <li>Work out cost per summary at your real monthly volume, over two years.</li>
+      </ol>
+
+      <h2>The arithmetic</h2>
+      <p>At genuinely heavy, permanent use, the honest comparison is a large credit pack against a subscription's multi-year total. <a href="${P}">YT Summarizer</a> is $49 for 1,000 summaries — 4.9 cents each, one credit per video regardless of length, credits that never expire, everything saved to a searchable library, and no cap to hit mid-session. Against a $15/month subscription that is roughly four months to break even and free thereafter.</p>
+      <p>If your heavy use is a phase rather than permanent, that gap widens further, because a subscription keeps charging after the phase ends.</p>
+    `,
+  },
+
+  'do-you-need-to-pay-for-youtube-summarizer': {
+    title: "Do You Actually Need to Pay for a YouTube Summarizer?",
+    metaDescription: "An honest answer: most people don't. Who genuinely benefits from paying, who is being upsold, and how to tell which one you are before spending anything.",
+    date: '2026-10-23',
+    content: `
+      <p><strong>Quick answer:</strong> Most people do not need to pay. If you summarize a handful of videos a month, free options cover you permanently and anything else is waste. Paying makes sense for three specific situations — bursty high volume, reliance on long videos, and needing a searchable archive — and if none of those describe you, the free tier is the correct answer rather than a trial of the real one.</p>
+
+      <h2>You do not need to pay if…</h2>
+      <ul>
+        <li><strong>You summarize fewer than about ten videos a month.</strong> A daily free allowance covers this with room to spare, forever.</li>
+        <li><strong>Your usage is spread evenly.</strong> One or two a day is exactly what free daily tiers are sized for.</li>
+        <li><strong>You mostly want the gist.</strong> Summarize.tech is free, needs no account, and gives you a readable paragraph.</li>
+        <li><strong>You only need the text.</strong> YouTube's own transcript is free: three-dot menu under the video, Show transcript, toggle timestamps off. No tool required.</li>
+        <li><strong>You are doing this once.</strong> Do not buy anything for a single video.</li>
+      </ul>
+      <p>That covers the majority of people who search for this.</p>
+
+      <h2>Paying is justified if…</h2>
+      <p><strong>Your usage is bursty.</strong> This is the strongest case. A daily allowance does not accumulate, so nothing-for-a-week-then-twelve-in-an-afternoon is precisely what it fails at. Research sprints, exam periods and content weeks all look like this.</p>
+      <p><strong>You rely on long videos.</strong> Free tiers are where truncation on multi-hour content shows up most, and a summary that silently covers only the first hour of a three-hour podcast is worse than no summary, because you do not know what you are missing.</p>
+      <p><strong>You need to find things again.</strong> If summaries are a working archive rather than a one-off convenience, retrieval is the whole value, and that generally means a paid library.</p>
+
+      <h2>The test that settles it</h2>
+      <p>Use a free tier for one month and note every time it genuinely stops you — not times you thought about it, times it blocked work. If that number is zero or one, you have your answer. If it is four or more, paying will pay for itself.</p>
+      <p>This is a better method than reading comparisons, because the only variable that matters is your own behaviour, and you cannot look that up.</p>
+
+      <h2>If you do pay, buy behind your usage</h2>
+      <p>Buy the smallest thing that fixes the problem you actually hit. Upgrading later costs nothing; a year of unused capacity costs the year. And prefer a model that cannot charge you after you stop caring — the most common regret in this category is not overpaying once, it is a subscription that quietly ran for eight months past the point of usefulness.</p>
+
+      <h2>The honest recommendation</h2>
+      <p>Start free and stay there until it genuinely gets in your way. <a href="${P}">YT Summarizer</a> gives one summary a day with no account at all and two with a free account — no card, no trial that expires, nothing that converts into a charge. If you outgrow it, packs start at $9 and the credits never expire.</p>
+      <p>We would rather you used the free tier for a year than bought something you did not need. The arithmetic is in <a href="/blog/how-many-youtube-summaries-do-you-need">how many summaries you actually need</a> and <a href="/blog/cheapest-youtube-summarizer-2026">what the cheapest option really is</a>.</p>
+    `,
+  },
 }
 
 export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
+  // ===== Batch 7: decision-stage intent =====
+  'cheapest-youtube-summarizer-2026': [
+    { q: `What is the cheapest YouTube summarizer?`, a: `For most people, free. Summarize.tech needs no account, NotebookLM is free, and some tools give a free summary every day indefinitely. If you summarize fewer than about ten videos a month, paying anything is poor value.` },
+    { q: `Is a subscription or a one-time pack cheaper?`, a: `Depends how long you use it. A subscription is cheaper for the first two or three months and never again after that. One-time credits are fixed — a $19 pack of 200 summaries is 9.5 cents each whenever you use them, against $96 to $180 a year for a typical subscription.` },
+    { q: `How do I work out which is cheapest for me?`, a: `Compare cost per summary at your real monthly volume, not the headline price. An $8/month plan used for three videos in a slow month is $2.67 per summary. Fixed credits don't have that problem.` },
+    { q: `Where does "cheap" become expensive?`, a: `Three places: paying monthly for bursty usage, annual plans that auto-renew after you've stopped using them, and quotas written into plans marketed as unlimited. All three cost more than the sticker price suggests.` },
+    { q: `What does YT Summarizer cost?`, a: `Free every day — 1 summary a day with no account, 2 with a free account. Then $9 for 30 summaries, $19 for 200 (9.5 cents each) or $49 for 1,000 (4.9 cents each). Paid once, credits never expire.` },
+  ],
+  'youtube-summarizer-free-trial-ended': [
+    { q: `My summarizer trial ended — do I have to pay?`, a: `Probably not. Check how many summaries you actually made during the trial; most people use far fewer than they expect. Under about ten a month and a free daily allowance covers you permanently.` },
+    { q: `Should I subscribe on the day the trial ends?`, a: `No. That's the moment you have the least information and the most pressure. Let it lapse, use a free option for two weeks, and see whether you genuinely miss it — real need becomes obvious quickly.` },
+    { q: `Will I lose the summaries I already made?`, a: `Check before the account lapses. Some tools keep the library read-only on the free tier, others gate it entirely. Export anything you want to keep now rather than finding out later.` },
+    { q: `What are the genuinely free alternatives?`, a: `Summarize.tech (no account, paragraph output), NotebookLM (free, needs a notebook per topic), YouTube's own transcript panel (free, you read it yourself), or a tool with a free daily allowance that refreshes indefinitely.` },
+    { q: `How do I avoid this happening again?`, a: `Set a reminder two days before any trial ends so you decide rather than default. And check the free tier before starting a trial — if the free tier would have covered you, the trial only existed to move you onto a plan.` },
+  ],
+  'how-many-youtube-summaries-do-you-need': [
+    { q: `How many video summaries does the average person use?`, a: `Fewer than they expect — typically under ten a month once the novelty wears off. Estimates run high because new tools get used more in week one than week five, and because people count videos they mean to watch rather than ones they do.` },
+    { q: `How do I work out my real number?`, a: `Count videos over 15 minutes in your watch history from the last 14 days, count how many you'd genuinely rather have read in a minute, double it for a month, then subtract a third because you won't sustain the habit at the rate you imagine today.` },
+    { q: `Does the pattern matter or just the total?`, a: `The pattern matters more. Twelve a month spread evenly and twelve all on one Sunday are completely different buying situations — a daily free allowance handles the first perfectly and fails the second entirely, because it doesn't accumulate.` },
+    { q: `Should I buy a bigger plan to be safe?`, a: `No. Buy behind your usage, not ahead of it. Use the free tier until it genuinely gets in your way, then buy the smallest thing that fixes it. Upgrading later costs nothing; a year of unused capacity costs the year.` },
+  ],
+  'switching-youtube-summarizer-what-to-check': [
+    { q: `What should I do before switching summarizers?`, a: `Export your saved summaries while you still have access, cancel the subscription separately from deleting the account, and write down the specific thing that made you leave — then test the replacement against exactly that before paying.` },
+    { q: `Why do people end up switching twice?`, a: `Because they pick a replacement without checking whether it has the same limit in a different shape. "It was annoying" isn't specific enough to shop with. Name the actual failure — a weekly cap, long-video truncation, a broken extension — and test for it.` },
+    { q: `What's the most common hidden problem in a new tool?`, a: `Long-video truncation. Many tools summarize only the opening of a two-hour video with no warning at all. Test on a long video whose ending you already know and check the summary reflects the last twenty minutes.` },
+    { q: `Does cancelling delete my account?`, a: `No, they're separate actions and often in different systems. If you paid through an app store, the website can't cancel it. Keep the confirmation email — the classic failure is deleting the account while the subscription keeps billing.` },
+  ],
+  'youtube-summarizer-hidden-costs': [
+    { q: `What are the hidden costs of a YouTube summarizer?`, a: `Four main ones: usage caps written into plans marketed as unlimited, annual plans that auto-renew long after you stop using them, long videos counting as more than one summary, and prices shown monthly but billed annually.` },
+    { q: `How do I check whether "unlimited" is really unlimited?`, a: `Search the terms page for "fair use", "reasonable", "cap" and "limit" before buying. If a plan is genuinely unlimited the terms will say so plainly, because it's a selling point.` },
+    { q: `Do long videos cost more?`, a: `Depends on the tool. Some charge per video, others effectively charge by length — either explicitly or by failing on long content so you split it and spend several credits. If you mainly summarize podcasts, this affects your real cost more than the headline price.` },
+    { q: `What should I ask before paying?`, a: `What's the actual written cap, does it auto-renew and when, how is a three-hour video counted, what's charged today versus month two, can I export my summaries, and what happens to saved work if I stop paying. A tool that makes those hard to answer has told you something.` },
+  ],
+  'is-notegpt-safe': [
+    { q: `Is NoteGPT safe to use?`, a: `It's an established product rather than a scam — real company presence, normal payment flow. The more useful question is what you grant it: a browser extension that can read every page you visit is a meaningfully broader trade than a web app that receives one URL at a time.` },
+    { q: `What can a summarizer browser extension actually access?`, a: `Any extension working on YouTube needs permission to read and modify pages, and depending on how permissions are scoped that can mean every site you visit. Check Chrome's extension details under "Site access" — if it says "On all sites", that's what you granted. You can often narrow it to youtube.com only.` },
+    { q: `Is a web app safer than an extension?`, a: `Structurally it has a smaller surface. A web app receives the URL you paste and the transcript it fetches — it can't see your other tabs, browsing history or pages you didn't hand it, because it never runs inside them. That's by design rather than policy.` },
+    { q: `What do people actually complain about?`, a: `Not security. The recurring frustration across this category is quotas appearing on plans sold as unlimited, and subscriptions being harder to cancel than to start. Neither makes a tool unsafe, but both are worth knowing before handing over a card.` },
+    { q: `How do I evaluate any summarizer for safety?`, a: `Read the site access grant rather than the marketing page, check who owns it and read recent reviews (popular extensions get acquired and new owners sometimes add tracking), check the last update date, and sign in with a provider rather than reusing a password.` },
+  ],
+  'youtube-summarizer-for-heavy-users': [
+    { q: `What's the best YouTube summarizer for heavy use?`, a: `At 50+ videos a month, output quality converges across tools and four other things decide it: cost per summary at your volume, whether long videos are handled in full, whether you hit a cap mid-session, and whether you can find a summary again months later.` },
+    { q: `Is a subscription or credits better at high volume?`, a: `Depends whether your heavy use is permanent or a phase. Subscriptions get cheaper per summary the more you use them; one-time credits are fixed. A $49 pack of 1,000 is 4.9 cents each against roughly $180 a year for a $15/month plan — about four months to break even, free thereafter.` },
+    { q: `Why do caps matter more than cap size?`, a: `Because the shape decides whether you get stopped. A daily allowance of two gives 60 a month in theory and zero on the Sunday you want fifteen, since it doesn't bank. For bursty work — research sprints, exam periods — shape matters more than size.` },
+    { q: `What should I test before committing at volume?`, a: `Run your longest typical video and check the summary covers the ending; run ten in one sitting and see whether you hit anything; search for something from the first summary a week later; and work out cost per summary at your real volume over two years.` },
+  ],
+  'do-you-need-to-pay-for-youtube-summarizer': [
+    { q: `Do I need to pay for a YouTube summarizer?`, a: `Most people don't. Under about ten videos a month, free options cover you permanently. Paying makes sense for three specific cases: bursty high volume, reliance on long videos, and needing a searchable archive.` },
+    { q: `When is paying actually justified?`, a: `Strongest case is bursty usage — a daily free allowance doesn't accumulate, so nothing-for-a-week-then-twelve-in-an-afternoon is exactly what it fails at. Also if you rely on long videos, where free tiers truncate most, or if summaries are a working archive you need to search.` },
+    { q: `How do I tell whether I should pay?`, a: `Use a free tier for one month and note every time it genuinely stops you — not times you thought about it, times it blocked work. Zero or one, stay free. Four or more and paying pays for itself. Your own behaviour is the only variable that matters and you can't look it up.` },
+    { q: `What's the most common regret?`, a: `Not overpaying once — it's a subscription that quietly ran for eight months past the point of usefulness. If you do pay, prefer a model that can't charge you after you stop caring.` },
+  ],
+
   // ===== Oct 2026 =====
   'youtube-summarizer-no-sign-up': [
     { q: `Is there a YouTube summarizer that needs no sign up?`, a: `Yes, though fewer than search results suggest. Summarize.tech works with no account (paragraph output), YouTube's own transcript panel gives raw text with no account, and YT Summarizer gives one structured summary a day with no account at all. Most other tools ask for an email the moment you paste a link.` },
