@@ -124,7 +124,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
         <li><strong>Paste it into the summarizer</strong> and hit summarize. The tool pulls the transcript, chunks it so long videos are not truncated, and runs the summarization.</li>
         <li><strong>Read the structured output</strong> — overview, key points, and takeaways — and jump back into the video only if a point needs the visuals.</li>
       </ol>
-      <p><a href="${P}">Try it on YT Summarizer</a> — two summaries a day are free with a free account, and paid packs are one-time from $9 with no subscription. Because the pipeline is automated, it is also the method that survives long videos: a 2-hour podcast summarizes as reliably as a 10-minute tutorial (here is <a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes">the 2-hour video workflow</a>). It works the same on a phone — no extension needed (see <a href="/blog/how-to-summarize-youtube-videos-on-iphone">the iPhone guide</a> and <a href="/blog/summarize-youtube-video-without-extension">why no-install beats extensions</a>).</p>
+      <p><a href="${P}">Try it on YT Summarizer</a> — one summary a day is free with no account needed, and paid packs are one-time from $9 with no subscription. Because the pipeline is automated, it is also the method that survives long videos: a 2-hour podcast summarizes as reliably as a 10-minute tutorial (here is <a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes">the 2-hour video workflow</a>). It works the same on a phone — no extension needed (see <a href="/blog/how-to-summarize-youtube-videos-on-iphone">the iPhone guide</a> and <a href="/blog/summarize-youtube-video-without-extension">why no-install beats extensions</a>).</p>
 
       <h2>Method 2: Copy the transcript into ChatGPT (most flexible)</h2>
       <p>ChatGPT cannot open YouTube links, but it summarizes well once you hand it the text. Click "…more" under the video, then "Show transcript", copy everything, and paste it into ChatGPT with a prompt asking for an overview, key points, and takeaways. Budget 4–6 minutes per video, and expect trouble on videos over roughly an hour — long transcripts overflow the context window and get silently truncated.</p>
@@ -152,7 +152,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>Whichever you choose, know the limits: AI summaries are reliable on structure and argument, weaker on exact numbers and quotes. We measured this in the <a href="/blog/youtube-summarizer-accuracy-test-2026">accuracy test</a> — verify anything you plan to act on.</p>
 
       <h2>Start with the one-minute method</h2>
-      <p>Paste the URL of the last video you saved "for later" into <a href="${P}">YT Summarizer</a> — two free summaries a day with a free account, one-time credits from $9 after that, no subscription. If you prefer the manual route, the <a href="/blog/can-chatgpt-summarize-youtube-videos">ChatGPT workflow</a> is free and works today. Either way, stop watching 40 minutes to find 4 minutes of signal.</p>
+      <p>Paste the URL of the last video you saved "for later" into <a href="${P}">YT Summarizer</a> — one free summary a day with no account needed, one-time credits from $9 after that, no subscription. If you prefer the manual route, the <a href="/blog/can-chatgpt-summarize-youtube-videos">ChatGPT workflow</a> is free and works today. Either way, stop watching 40 minutes to find 4 minutes of signal.</p>
     `,
   },
   'best-free-youtube-summarizer-tool': {
@@ -230,7 +230,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>The best genuinely free option. Paste a URL, get a section-by-section summary, no account ever. The output is a plain overview rather than structured key points, and long or technical videos lose detail — but for a quick "is this video worth my time" check, it is unbeatable at $0. Full breakdown: <a href="/blog/youtube-summarizer-vs-summarize-tech">Summarize.tech review</a>.</p>
 
       <h2>Free tiers worth using: YT Summarizer and NoteGPT</h2>
-      <p><a href="${P}">YT Summarizer</a> gives two free structured summaries a day with a free account — overview, key points, and takeaways, with full-length handling of long videos. After the free 5, it is one-time credit packs from $9 that never expire, not a subscription. NoteGPT's free quota is usable too, but note the pattern users report: quota ceilings persist even on paid "unlimited" plans (details: <a href="/blog/best-notegpt-alternative-2026">NoteGPT alternatives</a>).</p>
+      <p><a href="${P}">YT Summarizer</a> gives one free structured summary a day, no account needed — overview, key points, and takeaways, with full-length handling of long videos. After the free 5, it is one-time credit packs from $9 that never expire, not a subscription. NoteGPT's free quota is usable too, but note the pattern users report: quota ceilings persist even on paid "unlimited" plans (details: <a href="/blog/best-notegpt-alternative-2026">NoteGPT alternatives</a>).</p>
 
       <h2>Free extensions: Glarity and Eightify trials</h2>
       <p>Glarity is the strongest free extension — summaries appear right on the YouTube page. The costs are indirect: broad page permissions, desktop-only, and breakage whenever YouTube changes its interface (<a href="/blog/youtube-summarizer-vs-glarity">extension vs web app tradeoffs</a>). Eightify is polished but effectively a paid product after a few trial summaries — if you were considering it, see the <a href="/blog/eightify-alternative-best-youtube-summarizers-without-subscription">Eightify alternatives without a subscription</a>.</p>
@@ -1640,7 +1640,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>Most AI summarizers charge a monthly subscription. YT Summarizer doesn't — it gives you summaries free every day, and sells one-time packs of credits that never expire. Here's exactly what you get at each tier, the value math, and who should buy which.</p>
       <h2>The tiers</h2>
       <ul>
-        <li><strong>Free — $0:</strong> 1 summary a day with no account at all, or 2 a day with a free account. It refreshes every day, forever, with no card required.</li>
+        <li><strong>Free — $0:</strong> 1 summary a day, no account needed. It refreshes every day, forever, with no card required.</li>
         <li><strong>Starter — $9 one-time:</strong> 30 summaries — 30 cents per summary.</li>
         <li><strong>Pro — $19 one-time:</strong> 200 summaries (the recommended pack) — 9.5 cents per summary.</li>
         <li><strong>Power — $49 one-time:</strong> 1,000 summaries — 4.9 cents per summary.</li>
@@ -1652,7 +1652,8 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <h2>Who should buy which</h2>
       <ul>
         <li><strong>Just testing?</strong> Stay on Free. A summary a day is genuinely enough to evaluate the output on your own videos, and it never runs out.</li>
-        <li><strong>One or two videos a day?</strong> Also stay on Free — that is what the daily allowance covers. Don't pay for something you are already getting.</li>
+        <li><strong>One video a day?</strong> Also stay on Free — that is exactly what the daily allowance covers. Don't pay for something you are already getting.</li>
+        <li><strong>Two or three a day?</strong> The free allowance won't stretch that far, because it's one a day and doesn't bank. Starter ($9 / 30) covers a couple of weeks at that pace; Pro ($19 / 200) covers months.</li>
         <li><strong>Bursty use</strong> (nothing for a week, then twelve in an afternoon): this is the case the free tier does <em>not</em> cover, because the allowance is daily rather than banked. Starter ($9 / 30) or Pro ($19 / 200) fixes it.</li>
         <li><strong>Regular use</strong> (several a week, consistently): Pro ($19 / 200) is the sweet spot — hence "recommended."</li>
         <li><strong>Heavy use</strong> or a team: Power ($49 / 1,000) at 4.9 cents each is the lowest cost per summary by a wide margin.</li>
@@ -1827,7 +1828,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <ul>
         <li><strong>No prompt, same format every time.</strong> You never think about how to ask; the structured output is identical whether it's video one or video fifty.</li>
         <li><strong>Reliability on the YouTube-specific task.</strong> Perplexity depends on fetching a transcript, and users have reported stretches where its YouTube summarizing simply failed or returned a "can't access this video" message. A dedicated transcript pipeline is built around that one job.</li>
-        <li><strong>No subscription and no daily caps.</strong> Perplexity's free tier limits your stronger-model queries per day; YT Summarizer's free tier is 1 summary a day (2 with a free account), then one-time packs with no recurring bill and no daily throttle.</li>
+        <li><strong>No subscription and no daily caps.</strong> Perplexity's free tier limits your stronger-model queries per day; YT Summarizer's free tier is 1 summary a day (no account needed), then one-time packs with no recurring bill and no daily throttle.</li>
       </ul>
       <p>One thing both share: AI summaries can misstate names, numbers, and technical terms when the transcript is messy. Whichever you use, verify the specifics — we measured exactly where that slips in our <a href="/blog/youtube-summarizer-accuracy-test-2026">summarizer accuracy test</a>.</p>
 
@@ -1872,7 +1873,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>On price: subscription vs pay-once</h2>
       <p>This is the cleanest dividing line between the two. Sider is a subscription: a free tier with a daily credit allowance, then recurring monthly or annual plans for heavier use and the advanced models. That's fair value if you lean on the whole assistant every day. But if you mostly want YouTube summaries, you're renting an entire AI suite to get them, and the meter resets every month whether you used it or not.</p>
-      <p>YT Summarizer is <strong>pay-once</strong>. The free tier gives you a summary a day — two with a free account — and after that you buy a credit pack — 200 for $19 (the popular pick), or 1,000 for $49 — and the credits never expire. One credit summarizes one video of any length, there's no subscription, and there's a 30-day money-back guarantee. Summarize a few videos a week and a single $19 pack can last most of a year; on a subscription you'd have paid every month in between. If avoiding recurring fees is the whole point for you, here's <a href="/blog/youtube-summarizer-no-subscription-no-weekly-limits">why no-subscription, no-weekly-limit summarizing matters</a>.</p>
+      <p>YT Summarizer is <strong>pay-once</strong>. The free tier gives you a summary a day, no account needed — and after that you buy a credit pack — 200 for $19 (the popular pick), or 1,000 for $49 — and the credits never expire. One credit summarizes one video of any length, there's no subscription, and there's a 30-day money-back guarantee. Summarize a few videos a week and a single $19 pack can last most of a year; on a subscription you'd have paid every month in between. If avoiding recurring fees is the whole point for you, here's <a href="/blog/youtube-summarizer-no-subscription-no-weekly-limits">why no-subscription, no-weekly-limit summarizing matters</a>.</p>
 
       <h2>Which should you choose?</h2>
       <p>Choose by how central video summarizing is to your day. Pick <strong>Sider</strong> if you want one AI assistant living in your browser for everything — research, writing, translation — with YouTube summaries as a bonus, and you're comfortable on a subscription. Pick <strong>YT Summarizer</strong> if you summarize YouTube often, want consistent structured output and a saved library, can't or won't install an extension, and prefer to pay once rather than monthly. Plenty of people use both: a general sidebar for everyday browsing, and a dedicated tool for the video summarizing they do in volume. For the wider field, our <a href="/blog/best-ai-youtube-summarizers-2026-8-tools-compared">comparison of the best YouTube summarizers in 2026</a> puts both in context.</p>
@@ -1988,7 +1989,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p><strong>Use it when:</strong> you want the raw text — to read, search, quote, translate, or paste into ChatGPT or Claude with your own prompt. (That workflow is covered step-by-step in <a href="/blog/can-chatgpt-summarize-youtube-videos">can ChatGPT summarize YouTube videos</a>.)</p>
 
       <h2>Method 3: A summarizer that handles the transcript for you</h2>
-      <p>If the transcript is just a means to an end — you actually want the key points — skip the copy-paste entirely. <a href="${P}">YT Summarizer</a> takes the video URL and returns a structured summary: overview, key points, and takeaways. Like YT Transcript, it's web-based and kept working through the 2025–2026 changes. A free summary every day is free; after that, credit packs start at $19 one-time with no subscription, and credits never expire.</p>
+      <p>If the transcript is just a means to an end — you actually want the key points — skip the copy-paste entirely. <a href="${P}">YT Summarizer</a> takes the video URL and returns a structured summary: overview, key points, and takeaways. Like YT Transcript, it's web-based and kept working through the 2025–2026 changes. One summary a day is free, no account needed; after that, credit packs start at $9 one-time with no subscription, and credits never expire.</p>
       <p><strong>Use it when:</strong> you're triaging long videos, studying, or working through a backlog and want the insights rather than the raw text.</p>
 
       <h2>What changed with YouTube transcripts in 2025–2026</h2>
@@ -2371,7 +2372,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>This is the limitation most "Copilot summarizes YouTube" articles gloss over. Because Copilot works off the caption track, its accuracy is tied to caption quality. Independent testing in 2026 put Copilot above 90% on subtitled videos but at just 60–75% on the details for videos without a clean transcript. That is the difference between a summary you can trust and one that quietly invents a statistic. No summarizer is immune to this — we cover it in depth in our <a href="/blog/youtube-summarizer-accuracy-test-2026">YouTube summarizer accuracy test</a> — but a tool built solely around the transcript pipeline has more room to handle auto-generated or missing captions gracefully than a general assistant bolted onto a browser.</p>
 
       <h2>Pricing, honestly</h2>
-      <p>On raw price, Copilot wins: it is free. But "free" assumes you live in Edge and only summarize occasionally. YT Summarizer is not a subscription either — it uses pay-once credit packs that never expire. The free tier gives you a summary a day — two with a free account — to test output quality. After that, the recommended Pro pack is $19 for 200, and the Power pack is $49 for 1,000. One credit summarizes one video of any length, credits never expire, and there is a 30-day money-back guarantee — so a burst of exam-season or research use doesn't reset every month the way a subscription meter does. For the full landscape, our <a href="/blog/how-much-do-youtube-summarizers-cost-2026">cost comparison of eight tools</a> lays out subscription versus one-time math.</p>
+      <p>On raw price, Copilot wins: it is free. But "free" assumes you live in Edge and only summarize occasionally. YT Summarizer is not a subscription either — it uses pay-once credit packs that never expire. The free tier gives you a summary a day, no account needed, to test output quality. After that, the recommended Pro pack is $19 for 200, and the Power pack is $49 for 1,000. One credit summarizes one video of any length, credits never expire, and there is a 30-day money-back guarantee — so a burst of exam-season or research use doesn't reset every month the way a subscription meter does. For the full landscape, our <a href="/blog/how-much-do-youtube-summarizers-cost-2026">cost comparison of eight tools</a> lays out subscription versus one-time math.</p>
 
       <h2>Which should you use?</h2>
       <p>Use Microsoft Copilot if you already work in Edge, summarize videos only now and then, and mostly watch English content with captions — free and built in is the right call there. Choose YT Summarizer if you use any other browser, want timestamped, structured summaries you can save and search, or simply don't want your summarizing habit tied to one browser and one company's account. <a href="${P}">Try YT Summarizer free</a> on your next video — a free summary a day, no login, no subscription — and compare the output against Copilot's before you decide.</p>
@@ -2477,7 +2478,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
         <tr><td>Knowledge graph and auto-tagging</td><td>Yes (paid plan)</td><td>No</td></tr>
         <tr><td>Spaced repetition quizzes</td><td>Yes (paid plan)</td><td>No</td></tr>
         <tr><td>Chat across your library</td><td>Yes (paid plan)</td><td>No</td></tr>
-        <tr><td>Free tier</td><td>10 AI summaries per month, unlimited saves and notes</td><td>1 summary a day, 2 with a free account</td></tr>
+        <tr><td>Free tier</td><td>10 AI summaries per month, unlimited saves and notes</td><td>1 summary a day, no account needed</td></tr>
         <tr><td>Paid pricing</td><td>Plus $10/month billed yearly; Max $38/month billed yearly</td><td>One-time packs: $19 / $49, credits never expire</td></tr>
         <tr><td>What happens if you stop paying</td><td>Content stays, back to 10 summaries a month</td><td>Nothing — you already own your credits</td></tr>
       </table>
@@ -4201,7 +4202,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>Fetch the transcript yourself and paste the text in. That sidesteps connection settings, gating, and URL handling entirely, because you are no longer asking the assistant to retrieve anything — you are handing it text, which is what it wanted all along. Our <a href="/blog/how-to-download-youtube-transcript-5-free-methods">five free ways to download a YouTube transcript</a> covers the options. The cost is a few minutes of manual work per video, which is fine occasionally and tedious as a habit.</p>
 
       <h2>Or use a tool built for the job</h2>
-      <p><a href="${P}">YT Summarizer</a> does the retrieval, chunking and structuring in one step: paste a URL, get an overview, key points and takeaways in about a minute. It processes the full transcript rather than the first slice, so long lectures and podcasts do not thin out halfway. There is nothing to install and nothing to connect, which also means there is no connection to be switched off by an administrator. A free summary every day — two with a free account — then one-time credit packs from $9 with credits that never expire — one credit per video regardless of length.</p>
+      <p><a href="${P}">YT Summarizer</a> does the retrieval, chunking and structuring in one step: paste a URL, get an overview, key points and takeaways in about a minute. It processes the full transcript rather than the first slice, so long lectures and podcasts do not thin out halfway. There is nothing to install and nothing to connect, which also means there is no connection to be switched off by an administrator. A free summary every day, no account needed — then one-time credit packs from $9 with credits that never expire — one credit per video regardless of length.</p>
     `,
   },
 
@@ -4381,7 +4382,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>When the configuration is the problem</h2>
       <p>HARPA rewards setup effort — if you want automations, custom commands and your own model, that flexibility is the point. But if what you actually want is a summary of a video, the configuration surface is overhead, and every element of it is something that can break at an inconvenient moment.</p>
-      <p><a href="${P}">YT Summarizer</a> has no configuration: paste a URL, get an overview, key points and takeaways in about a minute. Nothing to install, no API key, no page injection to fail when YouTube changes its markup, and no daily allowance to run out mid-session. A free summary every day — two with a free account — then one-time credit packs from $9 with credits that never expire.</p>
+      <p><a href="${P}">YT Summarizer</a> has no configuration: paste a URL, get an overview, key points and takeaways in about a minute. Nothing to install, no API key, no page injection to fail when YouTube changes its markup, and no daily allowance to run out mid-session. A free summary every day, no account needed — then one-time credit packs from $9 with credits that never expire.</p>
     `,
   },
 
@@ -4619,7 +4620,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>The lesson worth taking from this</h2>
       <p>An extension is a dependency on someone else's continued maintenance, on the browser vendor's platform decisions, and on YouTube not changing its markup. Three parties, any of whom can end your workflow without notice. If a tool is part of how you actually work, that is a lot of exposure for something you cannot influence.</p>
-      <p>Web apps have none of those dependencies. There is no manifest version, no store listing to be pulled, and no page injection to break when YouTube redesigns something. <a href="${P}">YT Summarizer</a> works from a URL in any browser — including on phones, where extensions do not run at all, and on managed devices where they cannot be installed. A free summary every day — two with a free account — then one-time credit packs from $9 with credits that never expire, so there is no subscription still billing you for a tool that stopped working.</p>
+      <p>Web apps have none of those dependencies. There is no manifest version, no store listing to be pulled, and no page injection to break when YouTube redesigns something. <a href="${P}">YT Summarizer</a> works from a URL in any browser — including on phones, where extensions do not run at all, and on managed devices where they cannot be installed. A free summary every day, no account needed — then one-time credit packs from $9 with credits that never expire, so there is no subscription still billing you for a tool that stopped working.</p>
       <p>Related: <a href="/blog/summarize-youtube-video-without-extension">summarizing YouTube without an extension</a>.</p>
     `,
   },
@@ -4686,7 +4687,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>What works on every video that has captions</h2>
       <p>The advantage of a dedicated tool is coverage rather than cleverness. It does not depend on a rollout reaching your account, your country, or your device — if the video has a public transcript, it works.</p>
-      <p><a href="${P}">YT Summarizer</a> takes any public YouTube URL and returns an overview, key points and takeaways in about a minute, in any browser and on any device. It reads the full transcript rather than the opening portion, so long lectures and podcasts do not thin out halfway. A free summary every day — two with a free account — then one-time credit packs from $9 with credits that never expire.</p>
+      <p><a href="${P}">YT Summarizer</a> takes any public YouTube URL and returns an overview, key points and takeaways in about a minute, in any browser and on any device. It reads the full transcript rather than the opening portion, so long lectures and podcasts do not thin out halfway. A free summary every day, no account needed — then one-time credit packs from $9 with credits that never expire.</p>
       <p>The one thing it cannot do is invent captions that do not exist — no tool can. That limit belongs to the video.</p>
     `,
   },
@@ -4756,7 +4757,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>If you are waiting because you want a summary</h2>
       <p>Everything downstream depends on that transcript. Summarizers, AI assistants and note tools all read the same caption track, so while it is processing, none of them will work on that video — and if it never generates, none of them ever will.</p>
-      <p>The practical move is to check for the transcript first rather than repeatedly retrying a tool. Once it exists, <a href="${P}">YT Summarizer</a> will turn the video into an overview, key points and takeaways in about a minute from the URL alone. A free summary every day — two with a free account — then one-time credit packs from $9 with credits that never expire.</p>
+      <p>The practical move is to check for the transcript first rather than repeatedly retrying a tool. Once it exists, <a href="${P}">YT Summarizer</a> will turn the video into an overview, key points and takeaways in about a minute from the URL alone. A free summary every day, no account needed — then one-time credit packs from $9 with credits that never expire.</p>
       <p>Related: <a href="/blog/youtube-transcript-not-loading">transcript panel not loading</a>, and <a href="/blog/summarize-youtube-live-stream">why live streams have no transcript until they end</a>.</p>
     `,
   },
@@ -4835,7 +4836,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>That last step is the one people skip, and it separates "my browser is broken" from "this video has no captions" faster than anything else.</p>
 
       <h2>If you only wanted the summary</h2>
-      <p>You do not have to get the caption panel working yourself. <a href="${P}">YT Summarizer</a> retrieves the transcript server-side from the video URL, which sidesteps browser extensions, cache and most local interference entirely, then returns an overview, key points and takeaways in about a minute. A free summary every day — two with a free account — then one-time credit packs from $9 with credits that never expire.</p>
+      <p>You do not have to get the caption panel working yourself. <a href="${P}">YT Summarizer</a> retrieves the transcript server-side from the video URL, which sidesteps browser extensions, cache and most local interference entirely, then returns an overview, key points and takeaways in about a minute. A free summary every day, no account needed — then one-time credit packs from $9 with credits that never expire.</p>
       <p>The one case it cannot help with is a video that genuinely has no captions — that limit belongs to the video and applies to every tool equally.</p>
     `,
   },
@@ -4868,7 +4869,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>When it imports but the notebook is not what you wanted</h2>
       <p>NotebookLM is built for research across a corpus — several sources, cross-referenced, questioned over time. That is genuinely powerful and it is a lot of setup for one video you want the gist of. If the job is "tell me what is in this video so I can decide whether to watch it," a notebook is the wrong shape of tool.</p>
-      <p><a href="${P}">YT Summarizer</a> does the narrow version: paste a URL, get an overview, key points and takeaways in about a minute, saved to a searchable library. No notebook to create, no sources to manage. A free summary every day — two with a free account — then one-time credit packs from $9 with credits that never expire.</p>
+      <p><a href="${P}">YT Summarizer</a> does the narrow version: paste a URL, get an overview, key points and takeaways in about a minute, saved to a searchable library. No notebook to create, no sources to manage. A free summary every day, no account needed — then one-time credit packs from $9 with credits that never expire.</p>
       <p>Related: <a href="/blog/notebooklm-youtube-not-working">NotebookLM not working with YouTube</a>, and <a href="/blog/how-to-use-notebooklm-for-youtube-videos">using NotebookLM for YouTube properly</a>.</p>
     `,
   },
@@ -4905,7 +4906,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>Captions and transcripts are the same underlying track presented differently. If what you actually want is the text — to quote, search or paste somewhere — open the three-dot menu below the video and choose <strong>Show transcript</strong>, then use the panel's menu to toggle timestamps off before copying. See <a href="/blog/how-to-remove-timestamps-from-youtube-transcript">removing timestamps</a>, and <a href="/blog/youtube-transcript-not-loading">what to do when the panel will not load</a>.</p>
 
       <h2>If the goal was to avoid watching the whole thing</h2>
-      <p>Reading captions in real time still costs you the full runtime. <a href="${P}">YT Summarizer</a> turns the same caption track into an overview, key points and takeaways in about a minute from the URL — useful for deciding whether a two-hour video deserves two hours. A free summary every day — two with a free account — then one-time credit packs from $9 with credits that never expire.</p>
+      <p>Reading captions in real time still costs you the full runtime. <a href="${P}">YT Summarizer</a> turns the same caption track into an overview, key points and takeaways in about a minute from the URL — useful for deciding whether a two-hour video deserves two hours. A free summary every day, no account needed — then one-time credit packs from $9 with credits that never expire.</p>
     `,
   },
 
@@ -4943,7 +4944,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>When a dedicated tool is simply less trouble</h2>
       <p>Every condition above exists because summarizing is bolted onto a browser. A web app has no sidebar to disable, no page-context permission to grant, no profile policy to run into, and works the same on a phone as on a desktop.</p>
-      <p><a href="${P}">YT Summarizer</a> takes a URL in any browser, reads the full transcript rather than the opening portion, and saves each summary to a searchable library. A free summary every day — two with a free account — then one-time credit packs from $9 with credits that never expire. It also has no fallback path that invents a summary from the description — if it cannot read the video, it tells you.</p>
+      <p><a href="${P}">YT Summarizer</a> takes a URL in any browser, reads the full transcript rather than the opening portion, and saves each summary to a searchable library. A free summary every day, no account needed — then one-time credit packs from $9 with credits that never expire. It also has no fallback path that invents a summary from the description — if it cannot read the video, it tells you.</p>
       <p>Related: <a href="/blog/copilot-youtube-summary-not-working">Copilot not summarizing YouTube</a>, and <a href="/blog/youtube-summarizer-vs-copilot">a direct comparison of the two</a>.</p>
     `,
   },
@@ -5025,7 +5026,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p><strong>Ask the creator.</strong> On smaller channels, a polite request for captions sometimes works — and it helps everyone else too.</p>
 
       <h2>For every other video</h2>
-      <p>Most videos do have captions, and for those the whole problem disappears. <a href="${P}">YT Summarizer</a> takes the URL, reads the full transcript rather than the opening portion, and returns an overview, key points and takeaways in about a minute. A free summary every day — two with a free account — then one-time credit packs from $9 with credits that never expire — one credit per video, so a three-hour lecture costs the same as a five-minute clip.</p>
+      <p>Most videos do have captions, and for those the whole problem disappears. <a href="${P}">YT Summarizer</a> takes the URL, reads the full transcript rather than the opening portion, and returns an overview, key points and takeaways in about a minute. A free summary every day, no account needed — then one-time credit packs from $9 with credits that never expire — one credit per video, so a three-hour lecture costs the same as a five-minute clip.</p>
       <p>It cannot conjure captions that do not exist. Nothing can. But it removes the step of finding out the hard way, one tool at a time.</p>
     `,
   },
@@ -5089,7 +5090,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>Why this matters more than it looks</h2>
       <p>A truncated transcript produces a truncated summary in every tool that reads it — and none of them warn you. You get a confident summary of the first hour of a two-hour video with nothing marking the cut. If you rely on summaries of long content, checking that the transcript reaches the end is worth the ten seconds. Related: <a href="/blog/youtube-summary-cut-off-long-videos">summaries cut off on long videos</a>.</p>
-      <p><a href="${P}">YT Summarizer</a> processes the full transcript rather than the opening portion, so where the captions are complete, the summary covers the whole video. Where the captions themselves have a gap, no tool can fill it — but at least the limit is the video's, not the tool's. A free summary every day — two with a free account — then one-time credit packs from $9 with credits that never expire.</p>
+      <p><a href="${P}">YT Summarizer</a> processes the full transcript rather than the opening portion, so where the captions are complete, the summary covers the whole video. Where the captions themselves have a gap, no tool can fill it — but at least the limit is the video's, not the tool's. A free summary every day, no account needed — then one-time credit packs from $9 with credits that never expire.</p>
       <p>See also: <a href="/blog/youtube-transcript-not-loading">transcript not loading at all</a>.</p>
     `,
   },
@@ -5131,7 +5132,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>If you are copying it to paste into an AI tool</h2>
       <p>That whole workflow — find transcript, strip timestamps, select, copy, paste, prompt — takes four to six minutes per video once you include the fiddling. Fine occasionally, tedious as a habit, and the friction is why most people stop doing it. We put numbers on it in <a href="/blog/copying-youtube-transcript-to-chatgpt-wastes-time">why copying transcripts by hand wastes more time than you think</a>.</p>
-      <p><a href="${P}">YT Summarizer</a> collapses it to pasting a URL: it retrieves the transcript, reads all of it, and returns an overview, key points and takeaways in about a minute. A free summary every day — two with a free account — then one-time credit packs from $9 with credits that never expire.</p>
+      <p><a href="${P}">YT Summarizer</a> collapses it to pasting a URL: it retrieves the transcript, reads all of it, and returns an overview, key points and takeaways in about a minute. A free summary every day, no account needed — then one-time credit packs from $9 with credits that never expire.</p>
     `,
   },
 
@@ -5230,7 +5231,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>What is unaffected</h2>
       <p>Everything above is a consequence of the extension model. A web app has no extension to publish, no page to inject into, and no cross-site request from inside YouTube's page — so tracking prevention has nothing to prevent.</p>
-      <p><a href="${P}">YT Summarizer</a> runs in Safari exactly as it runs anywhere else: paste a URL, get an overview, key points and takeaways in about a minute. Nothing to install, no permissions to grant, and no reason to weaken your privacy settings to make it work. A free summary every day — two with a free account — then one-time credit packs from $9 with credits that never expire.</p>
+      <p><a href="${P}">YT Summarizer</a> runs in Safari exactly as it runs anywhere else: paste a URL, get an overview, key points and takeaways in about a minute. Nothing to install, no permissions to grant, and no reason to weaken your privacy settings to make it work. A free summary every day, no account needed — then one-time credit packs from $9 with credits that never expire.</p>
       <p>Related: <a href="/blog/summarize-youtube-video-without-extension">summarizing YouTube without an extension</a>.</p>
     `,
   },
@@ -5263,7 +5264,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>Before blaming the device, rule out the universal ones: the video has no caption track (check for <strong>Show transcript</strong>), it is private or age-restricted, it is very long and the summary is being truncated, or you have hit a free-tier limit. Those fail identically on every device. See <a href="/blog/youtube-no-transcript-available-fix">"no transcript available"</a>.</p>
 
       <h2>The setup worth having</h2>
-      <p><a href="${P}">YT Summarizer</a> runs in Safari on iPad with nothing installed, and uses the same account as your laptop — so a summary made on the iPad during a commute is in your library when you sit down at a desk. A free summary every day — two with a free account — then one-time credit packs from $9 with credits that never expire.</p>
+      <p><a href="${P}">YT Summarizer</a> runs in Safari on iPad with nothing installed, and uses the same account as your laptop — so a summary made on the iPad during a commute is in your library when you sit down at a desk. A free summary every day, no account needed — then one-time credit packs from $9 with credits that never expire.</p>
       <p>Related: <a href="/blog/youtube-summarizer-not-working-iphone">the iPhone version of this problem</a>, and <a href="/blog/youtube-summarizer-not-working-safari">Safari-specific causes</a>.</p>
     `,
   },
@@ -5295,7 +5296,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>When it is not worth the steps</h2>
       <p>The manual route costs four to six minutes per video. Reasonable for one video that matters; two hours across a backlog of twenty, which is why most people abandon it.</p>
-      <p><a href="${P}">YT Summarizer</a> only ever summarizes the transcript, so there is no fallback path that invents a summary from the description — if it cannot read the video, it says so. It processes the full transcript rather than the opening portion and saves each summary to a searchable library. A free summary every day — two with a free account — then one-time credit packs from $9 with credits that never expire.</p>
+      <p><a href="${P}">YT Summarizer</a> only ever summarizes the transcript, so there is no fallback path that invents a summary from the description — if it cannot read the video, it says so. It processes the full transcript rather than the opening portion and saves each summary to a searchable library. A free summary every day, no account needed — then one-time credit packs from $9 with credits that never expire.</p>
       <p>Related: <a href="/blog/can-grok-summarize-youtube-videos">what Grok can and cannot do with YouTube</a>.</p>
     `,
   },
@@ -5326,7 +5327,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>The trade-off worth naming</h2>
       <p>An AI browser observes your whole browsing session, which is a far broader privacy surface than a single-purpose tool that receives one URL at a time. That is a reasonable trade for some people and not for others, but it should be a decision rather than a side effect. We cover it in <a href="/blog/ai-browsers-vs-youtube-summarizers-atlas-comet">AI browsers versus YouTube summarizers</a>.</p>
-      <p>If you want video summaries specifically, <a href="${P}">YT Summarizer</a> works in whatever browser you already use, on any platform, with nothing to install and no session to observe. It reads the full transcript and saves each summary to a searchable library rather than leaving it in chat history. A free summary every day — two with a free account — then one-time credit packs from $9 with credits that never expire.</p>
+      <p>If you want video summaries specifically, <a href="${P}">YT Summarizer</a> works in whatever browser you already use, on any platform, with nothing to install and no session to observe. It reads the full transcript and saves each summary to a searchable library rather than leaving it in chat history. A free summary every day, no account needed — then one-time credit packs from $9 with credits that never expire.</p>
     `,
   },
 
@@ -5369,7 +5370,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>When prompting stops being worth it</h2>
       <p>This workflow costs four to six minutes per video once you include finding the transcript, stripping timestamps, pasting and prompting. Worth it for a video that matters. Not worth it twenty times, which is why most people stop.</p>
-      <p><a href="${P}">YT Summarizer</a> does the whole sequence from a URL — overview, key points and takeaways in about a minute, full transcript processed, saved to a searchable library. A free summary every day — two with a free account — then one-time credit packs from $9 with credits that never expire.</p>
+      <p><a href="${P}">YT Summarizer</a> does the whole sequence from a URL — overview, key points and takeaways in about a minute, full transcript processed, saved to a searchable library. A free summary every day, no account needed — then one-time credit packs from $9 with credits that never expire.</p>
     `,
   },
 
@@ -5514,7 +5515,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>Getting a cleaner source</h2>
       <p>If the automatic captions on a video are badly wrong and accuracy matters, running the audio through a modern speech-to-text tool often produces a much better transcript — recognition has improved considerably on accents and noise. That takes time, so reserve it for videos that justify it. Method in <a href="/blog/summarize-youtube-video-without-transcript">summarizing a video with no usable transcript</a>.</p>
-      <p>For everything else, <a href="${P}">YT Summarizer</a> reads the full transcript and returns an overview, key points and takeaways in about a minute — with the same honest limit as every tool in the category: it can only work with the words the captions contain. A free summary every day — two with a free account — then one-time credit packs from $9 with credits that never expire.</p>
+      <p>For everything else, <a href="${P}">YT Summarizer</a> reads the full transcript and returns an overview, key points and takeaways in about a minute — with the same honest limit as every tool in the category: it can only work with the words the captions contain. A free summary every day, no account needed — then one-time credit packs from $9 with credits that never expire.</p>
     `,
   },
 
@@ -5587,7 +5588,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>So the sensible pattern is: use the no-signup path to judge whether the output is any good, and create an account only once you have decided it is worth keeping.</p>
 
       <h2>Which to pick</h2>
-      <p>For a one-off, Summarize.tech is the lowest-friction thing that exists — no account, no card, paragraph output. If you want structure rather than prose, <a href="${P}">YT Summarizer</a> gives one summary a day with no account at all: paste a URL, get an overview, key points and takeaways in about a minute. A free account raises it to two a day and saves everything to a searchable library, and if you need more than that, one-time credit packs start at $9 with credits that never expire and no subscription.</p>
+      <p>For a one-off, Summarize.tech is the lowest-friction thing that exists — no account, no card, paragraph output. If you want structure rather than prose, <a href="${P}">YT Summarizer</a> gives one summary a day with no account at all: paste a URL, get an overview, key points and takeaways in about a minute. If you want more, one-time credit packs start at $9 — they add a saved, searchable library, the credits never expire, and there is no subscription.</p>
       <p>Related: <a href="/blog/summarize-youtube-video-without-extension">summarizing without installing an extension</a>, and <a href="/blog/youtube-summarizer-no-subscription-no-weekly-limits">options with no subscription</a>.</p>
     `,
   },
@@ -5630,7 +5631,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>The honest recommendation</h2>
       <p>For a video that genuinely matters, use chapters and read the transcript. You will understand it better than any summary would let you, and you will catch the things summaries miss.</p>
-      <p>For triage across a backlog — deciding which of fifteen videos deserve your hour — that approach does not scale, and that is the case <a href="${P}">YT Summarizer</a> is for: paste a URL, get an overview, key points and takeaways in about a minute. One free summary a day with no account at all, two with a free account, then one-time credit packs from $9 that never expire. Use it to decide what to watch properly, and then watch it properly.</p>
+      <p>For triage across a backlog — deciding which of fifteen videos deserve your hour — that approach does not scale, and that is the case <a href="${P}">YT Summarizer</a> is for: paste a URL, get an overview, key points and takeaways in about a minute. One free summary a day with no account at all, then one-time credit packs from $9 that never expire. Use it to decide what to watch properly, and then watch it properly.</p>
     `,
   },
 
@@ -5650,7 +5651,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p><strong>Quick answer:</strong> The cheapest option depends entirely on how many videos you summarize, and the headline price tells you almost nothing. A $5/month tool is cheaper than a $19 one-time pack for about two months, then it never is again. Work out your monthly volume first — the answer changes completely between 3 videos a month and 30.</p>
 
       <h2>Free is genuinely cheapest, for some people</h2>
-      <p>Start here honestly. If you summarize a handful of videos a month, you should pay nothing. Summarize.tech is free with no account and gives paragraph-style output. NotebookLM is free and more capable, at the cost of setting up a notebook per topic. YT Summarizer gives one free summary a day with no account, two with a free account.</p>
+      <p>Start here honestly. If you summarize a handful of videos a month, you should pay nothing. Summarize.tech is free with no account and gives paragraph-style output. NotebookLM is free and more capable, at the cost of setting up a notebook per topic. YT Summarizer gives one free summary a day, no account needed.</p>
       <p>At one or two videos a day, a daily free allowance covers you indefinitely. Anyone telling you to pay at that volume is selling something.</p>
 
       <h2>The comparison that actually matters: cost per summary</h2>
@@ -5746,7 +5747,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>What to do today</h2>
       <p>Nothing, if you can help it. Let the trial lapse, use a free option for a fortnight, and see whether you actually miss it. Genuine need will be obvious within two weeks, and you will be deciding with evidence instead of a countdown timer.</p>
-      <p>If you want structured output without a recurring charge, <a href="${P}">YT Summarizer</a> is free every day — one summary a day with no account, two with a free account — then one-time packs from $9 that never expire. There is nothing to cancel, which is rather the point. See also <a href="/blog/out-of-free-summaries-what-next">what to do when you run out of free summaries</a>.</p>
+      <p>If you want structured output without a recurring charge, <a href="${P}">YT Summarizer</a> is free every day — one summary a day, no account needed — then one-time packs from $9 that never expire. There is nothing to cancel, which is rather the point. See also <a href="/blog/out-of-free-summaries-what-next">what to do when you run out of free summaries</a>.</p>
     `,
   },
 
@@ -5851,7 +5852,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>Test before you pay</h2>
       <p>Run your three most typical videos through the new tool on its free tier — ideally including one long one — and compare against the specific failure you wrote down in step 3. If it does not clearly fix that, you are about to switch into the same problem.</p>
-      <p><a href="${P}">YT Summarizer</a> is free every day for exactly this kind of testing — one summary a day with no account at all, two with a free account — then one-time packs from $9 with credits that never expire and nothing to cancel later.</p>
+      <p><a href="${P}">YT Summarizer</a> is free every day for exactly this kind of testing — one summary a day with no account at all — then one-time packs from $9 with credits that never expire and nothing to cancel later.</p>
     `,
   },
 
@@ -5934,7 +5935,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>Across this category the recurring frustration is not security, it is quotas appearing on plans people believed were unlimited, and subscriptions proving harder to cancel than to start. Neither makes a tool unsafe — but both are worth knowing before you hand over a card. We documented the specifics in <a href="/blog/notegpt-free-limits">NoteGPT's free plan limits</a>, <a href="/blog/notegpt-pricing">what its pricing includes</a>, and <a href="/blog/cancel-notegpt-subscription">how to cancel</a>.</p>
 
       <h2>If the permissions are what concerns you</h2>
-      <p>Use something that never asks for them. <a href="${P}">YT Summarizer</a> is a web app — nothing installed, no page access, no extension permissions to grant, and you can try it without an account at all: one free summary a day with no sign-up, two with a free account. Then one-time packs from $9 with no subscription to cancel later.</p>
+      <p>Use something that never asks for them. <a href="${P}">YT Summarizer</a> is a web app — nothing installed, no page access, no extension permissions to grant, and you can try it without an account at all: one free summary a day with no sign-up at all. Then one-time packs from $9 with no subscription to cancel later.</p>
       <p>That is a narrower trade, not a claim that extensions are unsafe. It just means there is less to evaluate.</p>
     `,
   },
@@ -6012,7 +6013,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>Buy the smallest thing that fixes the problem you actually hit. Upgrading later costs nothing; a year of unused capacity costs the year. And prefer a model that cannot charge you after you stop caring — the most common regret in this category is not overpaying once, it is a subscription that quietly ran for eight months past the point of usefulness.</p>
 
       <h2>The honest recommendation</h2>
-      <p>Start free and stay there until it genuinely gets in your way. <a href="${P}">YT Summarizer</a> gives one summary a day with no account at all and two with a free account — no card, no trial that expires, nothing that converts into a charge. If you outgrow it, packs start at $9 and the credits never expire.</p>
+      <p>Start free and stay there until it genuinely gets in your way. <a href="${P}">YT Summarizer</a> gives one summary a day with no account at all — no card, no trial that expires, nothing that converts into a charge. If you outgrow it, packs start at $9 and the credits never expire.</p>
       <p>We would rather you used the free tier for a year than bought something you did not need. The arithmetic is in <a href="/blog/how-many-youtube-summaries-do-you-need">how many summaries you actually need</a> and <a href="/blog/cheapest-youtube-summarizer-2026">what the cheapest option really is</a>.</p>
     `,
   },
@@ -6025,7 +6026,7 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
     { q: `Is a subscription or a one-time pack cheaper?`, a: `Depends how long you use it. A subscription is cheaper for the first two or three months and never again after that. One-time credits are fixed — a $19 pack of 200 summaries is 9.5 cents each whenever you use them, against $96 to $180 a year for a typical subscription.` },
     { q: `How do I work out which is cheapest for me?`, a: `Compare cost per summary at your real monthly volume, not the headline price. An $8/month plan used for three videos in a slow month is $2.67 per summary. Fixed credits don't have that problem.` },
     { q: `Where does "cheap" become expensive?`, a: `Three places: paying monthly for bursty usage, annual plans that auto-renew after you've stopped using them, and quotas written into plans marketed as unlimited. All three cost more than the sticker price suggests.` },
-    { q: `What does YT Summarizer cost?`, a: `Free every day — 1 summary a day with no account, 2 with a free account. Then $9 for 30 summaries, $19 for 200 (9.5 cents each) or $49 for 1,000 (4.9 cents each). Paid once, credits never expire.` },
+    { q: `What does YT Summarizer cost?`, a: `Free every day — 1 summary a day, no account needed. Then $9 for 30 summaries, $19 for 200 (9.5 cents each) or $49 for 1,000 (4.9 cents each). Paid once, credits never expire.` },
   ],
   'youtube-summarizer-free-trial-ended': [
     { q: `My summarizer trial ended — do I have to pay?`, a: `Probably not. Check how many summaries you actually made during the trial; most people use far fewer than they expect. Under about ten a month and a free daily allowance covers you permanently.` },
@@ -6078,7 +6079,7 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
     { q: `What's the difference between "free" and "no signup"?`, a: `Free means you don't pay. No signup means you don't hand over an email. Most tools offer the first and not the second — which is why people hit a registration wall after already choosing a tool and pasting their link.` },
     { q: `Can I summarize a YouTube video without any tool at all?`, a: `You can get the text: open the three-dot menu below the video, choose Show transcript, then toggle timestamps off in the panel's own menu before copying. That needs no account. It gives you a transcript rather than a summary — about 9,000 words for an hour of video.` },
     { q: `What do I give up by not creating an account?`, a: `Nothing is saved, so the summary disappears when you close the tab; allowances are smaller, since an account is what the free tier is buying; and there is no searchable history, which is where a summary tool's value compounds over months.` },
-    { q: `How many free summaries can I get without an account?`, a: `With YT Summarizer, one per day with no account at all, refreshing daily and forever. A free account raises it to two a day plus a saved library. Beyond that, one-time credit packs start at $9 and never expire.` },
+    { q: `How many free summaries can I get without an account?`, a: `With YT Summarizer, one per day with no account at all, refreshing daily and forever. Beyond that, one-time credit packs start at $9, never expire, and add a saved, searchable library.` },
   ],
   'summarize-youtube-video-without-ai': [
     { q: `How do I summarize a YouTube video without AI?`, a: `Five methods: use the creator's chapter markers, read the description and pinned comment, skim the transcript instead of watching, raise playback speed, and check the top comments for a timestamped breakdown. Chapters are the best of these because the outline was written by the person who made the video.` },
@@ -6305,7 +6306,7 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
     { q: `How do I tell "not loading" from "no captions exist"?`, a: `Open the three-dot menu under the video. If "Show transcript" is missing entirely, the video has no caption track and nothing will fix it. If the panel opens but spins or stays empty, it is a loading, session, extension or network problem and is worth troubleshooting.` },
     { q: `The video plays but the transcript never loads on my work network. Why?`, a: `Some networks allow YouTube's main content while filtering auxiliary requests, which produces exactly this combination. Test on a phone hotspot — if the transcript loads there, the network is the constraint rather than your browser.` },
     { q: `Why does the transcript work on some videos and not others?`, a: `Videos without automatic captions never get a track: music-heavy uploads, recordings with heavy background noise, very recent publishes still processing, some accents, and languages with weaker speech recognition support. Creators can also disable captions outright.` },
-    { q: `Can I get a summary without opening the transcript panel at all?`, a: `Yes. YT Summarizer handles retrieval and structuring from the video URL, returning an overview, key points and takeaways in about a minute. A free summary every day — two with a free account — then one-time credit packs from $9 with credits that never expire.` },
+    { q: `Can I get a summary without opening the transcript panel at all?`, a: `Yes. YT Summarizer handles retrieval and structuring from the video URL, returning an overview, key points and takeaways in about a minute. A free summary every day, no account needed — then one-time credit packs from $9 with credits that never expire.` },
   ],
   'youtube-summarizer-not-working-android': [
     { q: `Why doesn't my YouTube summarizer extension work on Android?`, a: `Chrome for Android does not support extensions at all, so extension-based summarizers are simply absent there. It never worked on your phone — the extension only exists in desktop Chrome. Web-based summarizers work normally on Android.` },
@@ -6555,7 +6556,7 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
   'best-free-youtube-summarizer-tool': [
     { q: "What is the best completely free YouTube summarizer?", a: "Summarize.tech — no account, no install, unlimited basic summaries. The output is a plain section-by-section overview rather than structured key points, which is the tradeoff for being fully free." },
     { q: "Is there a free YouTube summarizer without signup?", a: "Yes, Summarize.tech works with no account at all. Most other tools, including YT Summarizer (free daily summaries), NoteGPT, and Eightify, require a free account or extension install before summarizing." },
-    { q: "How many free summaries does YT Summarizer include?", a: "two free summaries a day with a free account. After that, pricing is one-time credit packs from $9 that never expire — there is no subscription." },
+    { q: "How many free summaries does YT Summarizer include?", a: "One free summary a day, no account needed. After that, pricing is one-time credit packs from $9 that never expire — there is no subscription." },
     { q: "Do free YouTube summarizers work on long videos?", a: "Mostly no. Free tools and chatbot workflows tend to truncate videos over about an hour. If you regularly summarize podcasts or lectures, use a tool that processes the full transcript in chunks." },
   ],
   'best-ai-youtube-summarizers-2026-8-tools-compared': [
@@ -6573,7 +6574,7 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
     { q: `Can ChatGPT summarize a YouTube video from just the link?`, a: `No. In most configurations ChatGPT cannot open YouTube URLs, and when it appears to, it often summarizes only the title and description — or invents a summary. You need to paste the video's transcript into the chat for a real summary.` },
     { q: `How do I get a YouTube summary with ChatGPT?`, a: `Copy the video's transcript (via YouTube's "Show transcript" button or a free tool like YT Transcript), paste it into ChatGPT with a prompt asking for an overview, key points, and takeaways, then verify anything important against the video. It takes about 4–6 minutes per video.` },
     { q: `Why does ChatGPT cut off summaries of long YouTube videos?`, a: `Long transcripts exceed ChatGPT's context window, especially on the free tier. A 2-hour podcast can run 25,000+ words, and ChatGPT may silently summarize only the first portion. Dedicated summarizers chunk the full transcript so nothing is dropped.` },
-    { q: `What's the fastest way to summarize a YouTube video?`, a: `A dedicated web tool. Paste the URL into YT Summarizer and you get a structured summary in about a minute — no transcript copying, no prompt writing. a summary a day is free (two with a free account), then one-time credit packs start at $19 with no subscription.` },
+    { q: `What's the fastest way to summarize a YouTube video?`, a: `A dedicated web tool. Paste the URL into YT Summarizer and you get a structured summary in about a minute — no transcript copying, no prompt writing. a summary a day is free with no account needed, then one-time credit packs start at $9 with no subscription.` },
     { q: `Can Gemini or Claude summarize YouTube videos?`, a: `Gemini has partial native YouTube access — it works on some videos, accounts, and regions but not others. Claude works like ChatGPT: it needs the transcript pasted in. Neither matches the reliability of a purpose-built summarizer for regular use.` },
   ],
   'youtube-transcript-tools-that-still-work-in-2026': [
@@ -6801,7 +6802,7 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
   ],
   'youtube-summarizer-vs-notebooklm': [
     { q: `Is NotebookLM better than YT Summarizer?`, a: `For multi-source research and study guides, NotebookLM is better and free. For fast single-video summaries with one paste and no Google account, YT Summarizer is more direct. They suit different jobs.` },
-    { q: `Is NotebookLM free and is YT Summarizer free?`, a: `NotebookLM is free. YT Summarizer has a free tier of 1 summary a day (2 with a free account), then one-time packs (no subscription, credits never expire).` },
+    { q: `Is NotebookLM free and is YT Summarizer free?`, a: `NotebookLM is free. YT Summarizer has a free tier of 1 summary a day (no account needed), then one-time packs (no subscription, credits never expire).` },
     { q: `Can I use both?`, a: `Yes, and many people do — NotebookLM for deep research across videos and documents, YT Summarizer for quick, structured summaries of individual videos throughout the day.` },
   ],
   'yt-summarizer-review': [
@@ -6811,10 +6812,10 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
   ],
   'ytsummarizer-pricing-is-it-worth-it': [
     { q: `Is YT Summarizer a subscription?`, a: `No. Every pack is a one-time payment — no monthly fees or recurring charges. You buy a number of summaries (credits) and they never expire.` },
-    { q: `What do the packs cost?`, a: `Free is 1 summary a day without an account, 2 a day with a free account. Paid packs are one-time: Starter 30 for $9, Pro 200 for $19 (recommended), and Power 1,000 for $49. These are founding-member prices.` },
-    { q: `Is the free tier really free forever?`, a: `Yes. The daily allowance refreshes every day and does not expire — 1 summary a day with no account at all, 2 a day if you create a free account. No card is required and there is no trial period that ends.` },
+    { q: `What do the packs cost?`, a: `Free is 1 summary a day, no account needed. Paid packs are one-time: Starter 30 for $9, Pro 200 for $19 (recommended), and Power 1,000 for $49. These are founding-member prices.` },
+    { q: `Is the free tier really free forever?`, a: `Yes. The daily allowance refreshes every day and does not expire — 1 summary a day, no account needed. No card is required and there is no trial period that ends.` },
     { q: `Which pack is the best value?`, a: `Pro, clearly. At $19 for 200 summaries it works out to 9.5 cents each, against 30 cents each on the $9 Starter pack. Starter is a low-commitment way in rather than good value — above roughly 45 summaries, Pro is cheaper in absolute terms too. Power is 4.9 cents each.` },
-    { q: `Do I need to pay if I only watch a couple of videos a day?`, a: `No. One or two summaries a day is exactly what the free allowance covers. The case paid credits solve is bursty usage — nothing for a week, then twelve in an afternoon — because the daily allowance does not bank.` },
+    { q: `Do I need to pay if I only watch a couple of videos a day?`, a: `No. One summary a day is exactly what the free allowance covers. The case paid credits solve is bursty usage — nothing for a week, then twelve in an afternoon — because the daily allowance does not bank.` },
     { q: `Do credits expire, and is there a refund?`, a: `Credits never expire — use them today or next year. There's a 30-day money-back guarantee as long as you've used fewer than 10 summaries.` },
   ],
   'youtube-summarizer-vs-summarize-tech': [
@@ -6860,7 +6861,7 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
   'youtube-summarizer-vs-youtube-built-in-ai': [
     { q: `Does YouTube have a built-in AI summary feature?`, a: `Yes, as of 2026 — but in limited form. An Ask button appears under some English-language academic videos for Premium members, and Ask YouTube conversational search expanded on July 6, 2026 to all signed-in U.S. desktop users aged 13 and up. There is still no universal summarize button on every video.` },
     { q: `Do I need YouTube Premium to use YouTube's AI summaries?`, a: `Not for all of them anymore. Ask YouTube dropped its Premium-only restriction on July 6, 2026 for signed-in U.S. desktop users. The on-video Ask tool and AI Overviews in search have been Premium early-access features. Premium itself is $15.99 a month for an individual U.S. plan.` },
-    { q: `Is a dedicated YouTube summarizer still worth it in 2026?`, a: `For most people, yes — because of coverage rather than quality. YouTube's AI is limited to certain videos, users, regions, and devices, and its answers are not saved anywhere. A dedicated tool works on any public video with a transcript, in any browser or country, and saves a structured summary you can search later. YT Summarizer has a free tier of 1 summary a day (2 with a free account), then pay-once packs from $9 with credits that never expire.` },
+    { q: `Is a dedicated YouTube summarizer still worth it in 2026?`, a: `For most people, yes — because of coverage rather than quality. YouTube's AI is limited to certain videos, users, regions, and devices, and its answers are not saved anywhere. A dedicated tool works on any public video with a transcript, in any browser or country, and saves a structured summary you can search later. YT Summarizer has a free tier of 1 summary a day (no account needed), then pay-once packs from $9 with credits that never expire.` },
   ],
   'youtube-summarizer-vs-recall': [
     { q: "Is Recall better than YT Summarizer?", a: "It depends on what you need. Recall is better if you want a permanent, connected knowledge base with spaced-repetition quizzes and AI chat across everything you save. YT Summarizer is better if you want the key points of a specific video in seconds with no extension, no account to try, and no subscription. They solve different problems." },

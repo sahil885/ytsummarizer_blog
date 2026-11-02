@@ -866,7 +866,7 @@ const CTA_VARIANTS: Array<{ test: RegExp; copy: CtaCopy }> = [
       topButton: 'Try Free →',
       bottomHeadline: 'Pay once, or do not pay at all',
       bottomBody:
-        'A free summary every day — two with a free account, and one with no account at all. Credit packs from $9 when you need more, and they never expire. No subscription to cancel later.',
+        'A free summary every day, no account needed. Credit packs from $9 when you need more, and they never expire. No subscription to cancel later.',
       bottomButton: 'Try it free →',
     },
   },
