@@ -1463,7 +1463,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li>You hit a cap during exam season or a research sprint, exactly when you need it most</li>
         <li>You need structured bullet points, not a paragraph, and Summarize.tech's format doesn't cut it</li>
         <li>You're summarizing long videos (60+ minutes) regularly and quality starts dropping</li>
-        <li>You need features — timestamps, Q&A, export to Notion — that free tiers don't include</li>
+        <li>You want every summary saved in a searchable library, which free tiers don't include</li>
       </ul>
 
       <h2>The Pay-Once Math</h2>
@@ -1472,7 +1472,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Subscription tools:</strong> $8-15/month = $96-180/year, indefinitely</li>
         <li><strong>YT Summarizer:</strong> $19 once (200 summaries), no recurring cost</li>
       </ul>
-      <p>At any usage level above "occasional," pay-once pricing wins after a couple of months. The only reason to choose a subscription over a pay-once tool is if you specifically need features (meeting transcription, multi-format) that the subscription tool provides and YT Summarizer doesn't. For YouTube-only summarization, the one-time model is the better deal by a wide margin. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">See YT Summarizer pricing and free tier options.</a></p>
+      <p>At any usage level above "occasional," pay-once pricing wins after a couple of months. The only reason to choose a subscription over a pay-once tool is if you specifically need features (timestamps, Q&A chat, meeting transcription, other formats) that the subscription tool provides and YT Summarizer doesn't. For YouTube-only summarization, the one-time model is the better deal by a wide margin. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">See YT Summarizer pricing and free tier options.</a></p>
 
       <h2>Which Free Tool to Start With</h2>
       <p>Our recommendation by use case:</p>
@@ -3024,7 +3024,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <tbody>
           <tr>
             <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>YT Summarizer</strong></td>
-            <td style="padding: 0.75rem; border: 1px solid #ddd;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">No</td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">Clean bullet format, easy to paste</td>
             <td style="padding: 0.75rem; border: 1px solid #ddd;">pay-once (from $9)</td>
           </tr>
@@ -3066,7 +3066,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><strong>Writing show notes from memory.</strong> After recording, you'll forget specifics within hours. Run the summarizer immediately after the episode goes live, while the content is still fresh enough to verify.</li>
       </ul>
 
-      <p>Ready to automate your show notes? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> — paste any YouTube video URL and get a structured summary with timestamps in seconds. For podcasters publishing weekly, the pay-once cost pays for itself after two episodes of saved writing time.</p>
+      <p>Ready to automate your show notes? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> — paste any YouTube video URL and get a structured summary in seconds, then add timestamps from YouTube's chapters or transcript. For podcasters publishing weekly, the pay-once cost pays for itself after two episodes of saved writing time.</p>
     `,
   },
   'best-youtube-summarizer-reddit-recommendations-2026': {
@@ -5027,11 +5027,11 @@ const posts: Record<string, { title: string; content: string; date: string; meta
 
       <h2>Tools That Produce Timestamped Summaries</h2>
       <ul>
-        <li><strong><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a></strong> — Structured summaries with time-aware sections. Paste URL, get navigable output.</li>
         <li><strong>Video Highlight</strong> — Makes timestamps the core feature. Every bullet is clickable and jumps to the exact moment.</li>
         <li><strong>Eightify</strong> — Chrome extension that overlays on YouTube, so timestamps link inside YouTube itself.</li>
         <li><strong>NoteGPT</strong> — Includes timestamps in summary output along with other study-oriented features.</li>
       </ul>
+      <p><a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a> doesn't add timestamps. It gives you an overview, key points and takeaways, which is often enough to decide whether a long video is worth your time. When you need the exact moment, use YouTube's transcript as described below.</p>
 
       <h2>Manual Backup: YouTube's Native Transcript</h2>
       <p>If a summarizer isn't producing timestamps, YouTube's built-in transcript viewer has them by default:</p>
@@ -5060,7 +5060,7 @@ const posts: Record<string, { title: string; content: string; date: string; meta
         <li><a href="/blog/youtube-summarizer-with-bullet-points" style="color: var(--accent); font-weight: 600;">YouTube summarizer with bullet points</a></li>
       </ul>
 
-      <p>Stop scrubbing through timelines. <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> and jump straight to what matters.</p>
+      <p>Not sure a long video is worth your time? <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">Try YT Summarizer</a> for the key points first, then jump to the parts you need with YouTube's transcript.</p>
     `
   },
   'youtube-summarizer-for-business-webinars': {
@@ -8283,7 +8283,7 @@ tags: [tag1, tag2]
 
       <h2>The Complete Workflow (5 Minutes per Video)</h2>
       <ol>
-        <li><strong>Summarize the video.</strong> Paste the YouTube URL into your summarizer (like <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a>). Get a structured summary with key points, timestamps, and takeaways.</li>
+        <li><strong>Summarize the video.</strong> Paste the YouTube URL into your summarizer (like <a href="https://ytsummarizer.app" style="color: var(--accent); font-weight: 600;">YT Summarizer</a>). Get a structured summary with key points and takeaways.</li>
         <li><strong>Copy the summary.</strong> Select all and copy.</li>
         <li><strong>Create a Notion page.</strong> In your Notion database, create a new entry. Title it with the video title.</li>
         <li><strong>Paste into Notion.</strong> The summary pastes cleanly into Notion's editor — headings, bullets, and bold text all carry over.</li>

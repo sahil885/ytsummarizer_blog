@@ -1568,7 +1568,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
         <li><strong>It's built for research, not speed.</strong> For one quick "what's in this video?" it's more tool than the job needs.</li>
       </ul>
       <h2>When a dedicated summarizer is faster</h2>
-      <p>If you mostly want to paste a single video URL and get a clean, structured summary in seconds — without creating a notebook or signing into Google — a purpose-built tool fits better. A dedicated summarizer like <a href="${P}">YT Summarizer</a> returns bullet-point key points with timestamps from one paste, no account needed to try. The honest rule: use <strong>NotebookLM for multi-source research and study guides</strong>, and a <strong>dedicated tool for fast single-video summaries</strong>. We break the trade-off down fully in <a href="/blog/youtube-summarizer-vs-notebooklm">YT Summarizer vs NotebookLM</a>.</p>
+      <p>If you mostly want to paste a single video URL and get a clean, structured summary in seconds — without creating a notebook or signing into Google — a purpose-built tool fits better. A dedicated summarizer like <a href="${P}">YT Summarizer</a> returns bullet-point key points and takeaways from one paste, no account needed to try. The honest rule: use <strong>NotebookLM for multi-source research and study guides</strong>, and a <strong>dedicated tool for fast single-video summaries</strong>. We break the trade-off down fully in <a href="/blog/youtube-summarizer-vs-notebooklm">YT Summarizer vs NotebookLM</a>.</p>
       <h2>Getting started</h2>
       <p>NotebookLM is free to try — start a notebook and add a video. And for the quick single-video case, <a href="${P}">try YT Summarizer free</a> (a summary a day, no subscription) and compare which flow you prefer. For the technology behind both, see <a href="/blog/how-does-ai-youtube-summarization-work-technology-explained">how AI YouTube summarization works</a>.</p>
     `,
@@ -1580,14 +1580,14 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
     content: `
       <p>NotebookLM and YT Summarizer both turn YouTube videos into text you can read instead of watch — but they're built for different jobs. NotebookLM is Google's free research workspace; YT Summarizer is a focused, one-paste video summarizer. Here's the honest comparison so you pick the right one.</p>
       <h2>What each one is</h2>
-      <p><strong>NotebookLM</strong> is a free AI tool where you add sources — videos, PDFs, articles — to a notebook and then question, summarize, and study across all of them. It generates summaries, study guides, FAQs, timelines, and audio overviews. <strong>YT Summarizer</strong> is a web app built for one thing: paste a YouTube URL, get a structured summary with key points and timestamps in seconds, saved to a personal library.</p>
+      <p><strong>NotebookLM</strong> is a free AI tool where you add sources — videos, PDFs, articles — to a notebook and then question, summarize, and study across all of them. It generates summaries, study guides, FAQs, timelines, and audio overviews. <strong>YT Summarizer</strong> is a web app built for one thing: paste a YouTube URL, get a structured summary with key points and takeaways in seconds, saved to a personal library.</p>
       <h2>Side by side</h2>
       <table>
         <tr><th>Factor</th><th>NotebookLM</th><th>YT Summarizer</th></tr>
         <tr><td>Best for</td><td>Multi-source research &amp; study guides</td><td>Fast single-video summaries</td></tr>
         <tr><td>Speed to a summary</td><td>A few steps (create notebook, add source)</td><td>One paste</td></tr>
         <tr><td>Account needed</td><td>Google account</td><td>None to try</td></tr>
-        <tr><td>Output</td><td>Summary, study guide, audio overview, Q&amp;A</td><td>Structured key points + timestamps</td></tr>
+        <tr><td>Output</td><td>Summary, study guide, audio overview, Q&amp;A</td><td>Structured key points + takeaways</td></tr>
         <tr><td>Multiple sources at once</td><td>Yes (its superpower)</td><td>One video at a time</td></tr>
         <tr><td>Price</td><td>Free</td><td>1 free a day, then one-time packs</td></tr>
       </table>
@@ -1608,11 +1608,11 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
     content: `
       <p>YT Summarizer is a web app that turns any YouTube video into a structured summary in seconds. This review covers what it does well, where it falls short, the pricing, and who should (and shouldn't) use it — written to be useful, not just promotional.</p>
       <h2>What it is and how it works</h2>
-      <p>You paste a YouTube URL, and it reads the video's transcript and returns a summary with key points and timestamps. There's no browser extension to install and no login required to try it. Summaries are saved to a personal library so you can search them later. It works on any public video that has captions — podcasts, lectures, tutorials, long talks.</p>
+      <p>You paste a YouTube URL, and it reads the video's transcript and returns a summary with an overview, key points and takeaways. There's no browser extension to install and no login required to try it. Summaries are saved to a personal library so you can search them later. It works on any public video that has captions — podcasts, lectures, tutorials, long talks.</p>
       <h2>The pros</h2>
       <ul>
         <li><strong>Fast and frictionless:</strong> one paste, no extension, no account to start.</li>
-        <li><strong>Structured output:</strong> bullet-point key points with timestamps, which is far more usable than a wall of text.</li>
+        <li><strong>Structured output:</strong> an overview, bullet-point key points and takeaways, which is far more usable than a wall of text.</li>
         <li><strong>Handles long videos</strong> well — 2-hour podcasts and lectures included.</li>
         <li><strong>Pay-once, no subscription:</strong> you buy a pack of summaries and they never expire (more on price below).</li>
         <li><strong>Personal library</strong> so past summaries are searchable.</li>
@@ -1671,19 +1671,19 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
     content: `
       <p>Summarize.tech and YT Summarizer both summarize YouTube videos from a pasted URL, but they sit at opposite ends of the spectrum: one is free and minimal, the other is pay-once and structured. Here's the honest comparison.</p>
       <h2>What each one is</h2>
-      <p><strong>Summarize.tech</strong> is a long-running free tool: paste a URL and it returns a time-stamped, section-by-section summary. It's dead simple and costs nothing. <strong>YT Summarizer</strong> is a web app that returns a cleaner, structured summary (key points plus timestamps), saves it to a personal library, and runs on a pay-once credit model rather than ads or limits.</p>
+      <p><strong>Summarize.tech</strong> is a long-running free tool: paste a URL and it returns a time-stamped, section-by-section summary. It's dead simple and costs nothing. <strong>YT Summarizer</strong> is a web app that returns a cleaner, structured summary (key points plus takeaways), saves it to a personal library, and runs on a pay-once credit model rather than ads or limits.</p>
       <h2>Side by side</h2>
       <table>
         <tr><th>Factor</th><th>Summarize.tech</th><th>YT Summarizer</th></tr>
         <tr><td>Price</td><td>Free</td><td>1 free a day, then one-time packs</td></tr>
-        <tr><td>Output</td><td>Simple section summary</td><td>Structured key points + timestamps</td></tr>
+        <tr><td>Output</td><td>Simple section summary</td><td>Structured key points + takeaways</td></tr>
         <tr><td>Saved library</td><td>No</td><td>Yes</td></tr>
         <tr><td>Best for</td><td>A quick free gist</td><td>Cleaner, reusable summaries</td></tr>
       </table>
       <h2>When Summarize.tech is enough</h2>
       <p>If you want a fast, free gist of a video once in a while and don't care about formatting or saving it, Summarize.tech does the job at zero cost. For occasional, throwaway use, free is genuinely hard to argue with — and we list it among other <a href="/blog/best-free-youtube-summarizers-no-subscription-2026">free no-subscription options</a>.</p>
       <h2>When YT Summarizer wins</h2>
-      <p>If you summarize videos regularly and want output you'll actually reuse — structured key points, timestamps you can click, and a searchable library of everything you've processed — the dedicated tool is the better experience. The pay-once model (no subscription, credits never expire) means you're not renting access month after month either.</p>
+      <p>If you summarize videos regularly and want output you'll actually reuse — structured key points, clear takeaways, and a searchable library of everything you've processed — the dedicated tool is the better experience. The pay-once model (no subscription, credits never expire) means you're not renting access month after month either.</p>
       <h2>On price</h2>
       <p>Summarize.tech is free; YT Summarizer has a free tier (1 summary a day, no account needed) then one-time packs from $9 (30) to $49 (1,000). So it's "free and basic" versus "pay-once and polished." If you only need the occasional gist, save your money. If you rely on summaries and want them clean and saved, the small one-time cost pays for itself in usability.</p>
       <h2>Getting started</h2>
@@ -1697,12 +1697,12 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
     content: `
       <p>Notta and YT Summarizer get compared a lot, but they're built for different jobs. Notta is primarily a meeting-transcription tool; YT Summarizer is a YouTube summarizer. If your goal is specifically summarizing YouTube videos, here's the honest comparison.</p>
       <h2>What each one is</h2>
-      <p><strong>Notta</strong> records and transcribes audio — meetings, calls, voice notes — with AI summaries on top, across multiple languages. It's a capable transcription platform on a subscription. <strong>YT Summarizer</strong> is focused on YouTube: paste a URL, get a structured summary with timestamps, pay once for a pack of summaries.</p>
+      <p><strong>Notta</strong> records and transcribes audio — meetings, calls, voice notes — with AI summaries on top, across multiple languages. It's a capable transcription platform on a subscription. <strong>YT Summarizer</strong> is focused on YouTube: paste a URL, get a structured summary of key points and takeaways, pay once for a pack of summaries.</p>
       <h2>Side by side</h2>
       <table>
         <tr><th>Factor</th><th>Notta</th><th>YT Summarizer</th></tr>
         <tr><td>Primary job</td><td>Transcribe your meetings/audio</td><td>Summarize YouTube videos</td></tr>
-        <tr><td>Output</td><td>Full transcript + summary</td><td>Structured summary + timestamps</td></tr>
+        <tr><td>Output</td><td>Full transcript + summary</td><td>Structured summary + takeaways</td></tr>
         <tr><td>Pricing model</td><td>Subscription</td><td>Pay-once packs</td></tr>
         <tr><td>Free tier</td><td>120 min + 10 summaries/mo</td><td>a summary a day, then packs</td></tr>
         <tr><td>Paid</td><td>Pro ~$13.99/mo</td><td>$19 / $49 one-time</td></tr>
@@ -1724,7 +1724,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
     content: `
       <p>Mindgrasp and YT Summarizer both summarize videos, but Mindgrasp is a broad study assistant on a subscription, while YT Summarizer is a focused YouTube tool you pay for once. Here's how they compare, honestly.</p>
       <h2>What each one is</h2>
-      <p><strong>Mindgrasp</strong> is an all-in-one study tool: feed it videos, PDFs, documents, or live lectures and it generates notes, summaries, flashcards, and quizzes. It's aimed at students and runs on a monthly subscription. <strong>YT Summarizer</strong> does one thing — summarize YouTube videos into structured key points with timestamps — and sells one-time credit packs instead of a subscription.</p>
+      <p><strong>Mindgrasp</strong> is an all-in-one study tool: feed it videos, PDFs, documents, or live lectures and it generates notes, summaries, flashcards, and quizzes. It's aimed at students and runs on a monthly subscription. <strong>YT Summarizer</strong> does one thing — summarize YouTube videos into structured key points and takeaways — and sells one-time credit packs instead of a subscription.</p>
       <h2>Side by side</h2>
       <table>
         <tr><th>Factor</th><th>Mindgrasp</th><th>YT Summarizer</th></tr>
@@ -1750,7 +1750,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
     content: `
       <p>Glarity and YT Summarizer both summarize YouTube videos, but they take opposite approaches: Glarity is a free browser extension that lives on the YouTube page, while YT Summarizer is a standalone web app. Here's the honest comparison.</p>
       <h2>What each one is</h2>
-      <p><strong>Glarity</strong> is a free browser extension (Chrome, Edge, Safari, Firefox, Opera) that adds an AI summary beside YouTube videos and Google results, powered by ChatGPT-style models. It's free and unlimited for basic use. <strong>YT Summarizer</strong> is a web app: paste a URL anywhere, get a structured summary with timestamps saved to a library, on a pay-once model.</p>
+      <p><strong>Glarity</strong> is a free browser extension (Chrome, Edge, Safari, Firefox, Opera) that adds an AI summary beside YouTube videos and Google results, powered by ChatGPT-style models. It's free and unlimited for basic use. <strong>YT Summarizer</strong> is a web app: paste a URL anywhere, get a structured summary saved to a library, on a pay-once model.</p>
       <h2>Side by side</h2>
       <table>
         <tr><th>Factor</th><th>Glarity</th><th>YT Summarizer</th></tr>
@@ -1790,7 +1790,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <h2>Which wins?</h2>
       <p>For a free occasional gist, Summarize.tech wins on price. For polished, frequent, in-browser summaries, Eightify is nicer — if you accept the subscription. The frustration is that neither is ideal if you want <em>both</em> polished output <em>and</em> no recurring bill.</p>
       <h2>The honest third option</h2>
-      <p>That gap is exactly where a pay-once tool fits. <a href="${P}">YT Summarizer</a> gives you Eightify-style structured summaries with timestamps and a saved library, but on a one-time model — a free tier (1 summary a day, no account needed), then packs from $9 (30) to $49 (1,000) that never expire, with no subscription and no extension to install. It's more capable than Summarize.tech's bare output and cheaper over time than Eightify's monthly fee. Compare directly in <a href="/blog/youtube-summarizer-vs-summarize-tech">YT Summarizer vs Summarize.tech</a>.</p>
+      <p>That gap is exactly where a pay-once tool fits. <a href="${P}">YT Summarizer</a> gives you Eightify-style structured summaries and a saved library, but on a one-time model — a free tier (1 summary a day, no account needed), then packs from $9 (30) to $49 (1,000) that never expire, with no subscription and no extension to install. It's more capable than Summarize.tech's bare output and cheaper over time than Eightify's monthly fee. Compare directly in <a href="/blog/youtube-summarizer-vs-summarize-tech">YT Summarizer vs Summarize.tech</a>.</p>
       <h2>Getting started</h2>
       <p>Try Summarize.tech for free, weigh Eightify's trial, and <a href="${P}">try YT Summarizer free</a> (a free summary a day, no subscription) to see if pay-once beats both for how you actually use summaries.</p>
     `,
@@ -1803,14 +1803,14 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>Perplexity has become one of the most popular AI tools of 2026, and it can absolutely summarize a YouTube video — paste the link, ask for a summary, and it pulls the transcript and writes one up. So is a dedicated tool like YT Summarizer still worth it? The honest answer depends on whether summarizing YouTube is an occasional task inside your broader research, or something you do often enough to want a tool built only for it. Here's the head-to-head.</p>
 
       <h2>What each one is</h2>
-      <p><strong>Perplexity</strong> is an AI answer engine — a search-and-research tool that cites its sources. Summarizing a YouTube video is one of a thousand things it can do: you give it a URL, it fetches the transcript, and it returns a summary you can then interrogate with follow-up questions. <strong>YT Summarizer</strong> does exactly one thing: paste a YouTube URL and it returns a structured summary with clickable timestamps, saved to a personal library, on a pay-once credit model.</p>
+      <p><strong>Perplexity</strong> is an AI answer engine — a search-and-research tool that cites its sources. Summarizing a YouTube video is one of a thousand things it can do: you give it a URL, it fetches the transcript, and it returns a summary you can then interrogate with follow-up questions. <strong>YT Summarizer</strong> does exactly one thing: paste a YouTube URL and it returns a structured summary of key points and takeaways, saved to a personal library, on a pay-once credit model.</p>
 
       <h2>Side by side</h2>
       <table>
         <tr><th>Factor</th><th>Perplexity</th><th>YT Summarizer</th></tr>
         <tr><td>What it is</td><td>AI research / answer engine</td><td>Dedicated YouTube summarizer</td></tr>
         <tr><td>How you summarize</td><td>Paste URL + write a prompt</td><td>Paste URL, nothing else</td></tr>
-        <tr><td>Output</td><td>Prose answer you refine</td><td>Structured key points + timestamps</td></tr>
+        <tr><td>Output</td><td>Prose answer you refine</td><td>Structured key points + takeaways</td></tr>
         <tr><td>Follow-up Q&amp;A</td><td>Yes, excellent</td><td>Summary-focused</td></tr>
         <tr><td>Saved library</td><td>Thread history</td><td>Yes, searchable</td></tr>
         <tr><td>Pricing</td><td>Free (limited), Pro $20/mo</td><td>1 free a day, then pay-once packs</td></tr>
@@ -1818,7 +1818,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>How they actually summarize a video</h2>
       <p>The difference shows up the moment you try it. In Perplexity you paste the URL and write a prompt — and the quality of your summary depends on that prompt. A bare "summarize this" gives a short paragraph; to get structured key points or timestamps you have to ask for them specifically, and on the free tier you may need to select a stronger model for a thorough job. It works, but it's a few steps and a little prompt craft every time.</p>
-      <p>YT Summarizer removes the prompt entirely. You paste a URL and get the same structured format every time — key points, sections, and timestamps you can click to jump into the video. There's nothing to phrase and no model to choose. If you've ever found the manual approach fiddly, our breakdown of <a href="/blog/can-chatgpt-summarize-youtube-videos">whether ChatGPT can summarize YouTube videos</a> covers the same paste-and-prompt tradeoff.</p>
+      <p>YT Summarizer removes the prompt entirely. You paste a URL and get the same structured format every time: an overview, key points and takeaways. There's nothing to phrase and no model to choose. If you've ever found the manual approach fiddly, our breakdown of <a href="/blog/can-chatgpt-summarize-youtube-videos">whether ChatGPT can summarize YouTube videos</a> covers the same paste-and-prompt tradeoff.</p>
 
       <h2>Where Perplexity wins</h2>
       <p>Perplexity is the better tool when summarizing is only step one. Because it's a research engine, it can fact-check a video's claims against other sources, pull in outside context, and answer follow-up questions in the same thread — "is that statistic current?", "what do critics say?", "how does this compare to the official documentation?". That web-grounded, multi-source synthesis is something a single-purpose summarizer doesn't attempt. If you already pay for Perplexity Pro and only summarize the occasional video, it may be all you need — much as <a href="/blog/youtube-summarizer-vs-claude-ai">Claude</a> and <a href="/blog/youtube-summarizer-vs-gemini-which-saves-more-time">Gemini</a> can double as light summarizers if you already live in them.</p>
@@ -1836,7 +1836,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>This is the starkest contrast. Perplexity Pro is $20 a month — roughly $240 a year — and that buys the whole research engine, not just YouTube summaries. YT Summarizer is pay-once: a free tier (1 summary a day, no account needed), then packs at $9 (30 summaries), $19 (200, the popular pick) or $49 (1,000). Credits never expire, there's no subscription, and there's a 30-day money-back guarantee. If you want a do-everything AI assistant, $20/mo for Perplexity is reasonable value. If you specifically want YouTube summaries without a recurring bill, a one-time $19 pack is hard to beat — see our full <a href="/blog/ytsummarizer-pricing-is-it-worth-it">pricing breakdown</a>.</p>
 
       <h2>The bottom line</h2>
-      <p>Choose by how central summarizing is to what you're doing. <strong>Perplexity</strong> if you want one subscription that researches, fact-checks, and answers across the whole web, with video summaries as a bonus. <strong>YT Summarizer</strong> if you summarize YouTube often and want consistent structured output, clickable timestamps, and a saved library without paying monthly. Plenty of people use both — Perplexity for deep research when a claim really matters, and a dedicated tool for the daily summarizing.</p>
+      <p>Choose by how central summarizing is to what you're doing. <strong>Perplexity</strong> if you want one subscription that researches, fact-checks, and answers across the whole web, with video summaries as a bonus. <strong>YT Summarizer</strong> if you summarize YouTube often and want consistent structured output and a saved library without paying monthly. Plenty of people use both — Perplexity for deep research when a claim really matters, and a dedicated tool for the daily summarizing.</p>
 
       <h2>Getting started</h2>
       <p><a href="${P}">Try YT Summarizer free</a> — a free summary a day, no subscription and no card — and run it on the same video you'd hand to Perplexity. In about a minute you'll feel the difference between a research engine that can summarize and a tool built only to summarize.</p>
@@ -1860,7 +1860,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
         <tr><td>How you use it</td><td>Browser extension on the YouTube page</td><td>Web app — paste a URL in any browser</td></tr>
         <tr><td>Account to try</td><td>Install / sign-up</td><td>None to try</td></tr>
         <tr><td>Models</td><td>Multiple (GPT, Claude, Gemini, Grok)</td><td>Built-in, tuned for video summaries</td></tr>
-        <tr><td>Output</td><td>Key points + timestamps + follow-up chat</td><td>Structured key points + timestamps + saved library</td></tr>
+        <tr><td>Output</td><td>Key points + timestamps + follow-up chat</td><td>Structured key points + takeaways + saved library</td></tr>
         <tr><td>Pricing model</td><td>Subscription; free tier with daily credit limits</td><td>Pay-once packs; 1 free summary a day, credits never expire</td></tr>
         <tr><td>Best for</td><td>One AI assistant for everything</td><td>Summarizing YouTube often</td></tr>
       </table>
@@ -1869,7 +1869,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>Give Sider real credit. If you want a single AI assistant that follows you across every website — not just YouTube — it's hard to beat. The same sidebar that summarizes a video will also summarize the article you read next, draft a reply, translate a page, or answer a quick question, all without leaving the tab. The multi-model access is a real advantage: you can compare how GPT and Claude summarize the same talk, or switch models when one struggles with a messy transcript. And because it lives on the YouTube page itself, the summarize-then-chat loop is fast and contextual — you never copy a URL anywhere. For heavy AI users who already pay for the sidebar, the YouTube summary is effectively free.</p>
 
       <h2>Where YT Summarizer wins</h2>
-      <p>YT Summarizer does one thing, and that focus is the advantage. There's nothing to install — paste a YouTube URL into the web app in any browser, including a phone or a locked-down work laptop where extensions are blocked, and you get a structured summary in about a minute, with no account required to try it. If installing an extension is a non-starter for you, see <a href="/blog/summarize-youtube-video-without-extension">summarizing YouTube without an extension</a> and our <a href="/blog/youtube-summarizer-vs-glarity">web app vs browser extension comparison</a>. Every summary lands in the same clean format with clickable <a href="/blog/youtube-summarizer-with-timestamps">timestamps</a>, and everything you run is saved to a searchable library — so the two-hour podcast you summarized last month (a Lex Fridman or Huberman Lab episode, say) is still there when you need it. There are also no daily credit caps to bump into halfway through a research session.</p>
+      <p>YT Summarizer does one thing, and that focus is the advantage. There's nothing to install — paste a YouTube URL into the web app in any browser, including a phone or a locked-down work laptop where extensions are blocked, and you get a structured summary in about a minute, with no account required to try it. If installing an extension is a non-starter for you, see <a href="/blog/summarize-youtube-video-without-extension">summarizing YouTube without an extension</a> and our <a href="/blog/youtube-summarizer-vs-glarity">web app vs browser extension comparison</a>. Every summary lands in the same clean format (an overview, key points and takeaways), and everything you run is saved to a searchable library — so the two-hour podcast you summarized last month (a Lex Fridman or Huberman Lab episode, say) is still there when you need it. There are also no daily credit caps to bump into halfway through a research session.</p>
 
       <h2>On price: subscription vs pay-once</h2>
       <p>This is the cleanest dividing line between the two. Sider is a subscription: a free tier with a daily credit allowance, then recurring monthly or annual plans for heavier use and the advanced models. That's fair value if you lean on the whole assistant every day. But if you mostly want YouTube summaries, you're renting an entire AI suite to get them, and the meter resets every month whether you used it or not.</p>
@@ -2342,7 +2342,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>How each one works</h2>
       <p>Copilot's YouTube summaries live inside Microsoft Edge. Open a video, click the Copilot icon in the sidebar, and type "summarize" — Copilot reads the video's caption track and returns an overview you can ask follow-up questions about. It is genuinely convenient if Edge is already your browser, and it is free with a Microsoft account. The catch, confirmed by Microsoft's own documentation, is that Copilot summarizes the transcript, not the video, so the feature only works when captions exist and only while you are inside Edge — on desktop or the Edge mobile app.</p>
-      <p>YT Summarizer is a standalone web app. You paste a YouTube URL into the site in any browser — Chrome, Safari, Firefox, or Edge — and get a structured summary with key points mapped to timestamps in about a minute. There is no extension to install and no login required to try it, which matters on locked-down work machines. Every summary you run is saved to a library you can search later. If browser lock-in is your main concern, our guide on <a href="/blog/summarize-youtube-video-without-extension">summarizing a YouTube video without any extension</a> covers the wider picture.</p>
+      <p>YT Summarizer is a standalone web app. You paste a YouTube URL into the site in any browser — Chrome, Safari, Firefox, or Edge — and get a structured summary of key points and takeaways in about a minute. There is no extension to install and no login required to try it, which matters on locked-down work machines. Every summary you run is saved to a library you can search later. If browser lock-in is your main concern, our guide on <a href="/blog/summarize-youtube-video-without-extension">summarizing a YouTube video without any extension</a> covers the wider picture.</p>
 
       <h2>Side-by-side comparison</h2>
       <table>
@@ -2351,7 +2351,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
         <tr><td>Cost to summarize</td><td>Free with a Microsoft account</td><td>1 free a day, then one-time packs from $9</td></tr>
         <tr><td>Pricing model</td><td>Free, with a Copilot Pro upsell</td><td>Pay-once credits, no subscription</td></tr>
         <tr><td>Needs captions</td><td>Yes — fails or degrades without them</td><td>Built around the transcript pipeline</td></tr>
-        <tr><td>Output</td><td>Conversational summary in the sidebar</td><td>Structured key points + timestamps</td></tr>
+        <tr><td>Output</td><td>Conversational summary in the sidebar</td><td>Structured key points + takeaways</td></tr>
         <tr><td>Saved history</td><td>No dedicated library</td><td>Searchable library of every summary</td></tr>
         <tr><td>Follow-up Q&amp;A</td><td>Yes, in the chat panel</td><td>Focused on the structured summary</td></tr>
         <tr><td>Login to try</td><td>Microsoft account</td><td>None</td></tr>
@@ -2363,7 +2363,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <h2>Where YT Summarizer wins</h2>
       <p>Copilot's convenience is also its cage. The moment you step outside Edge — a Chrome-only work laptop, an iPhone on Safari, a shared machine where you can't sign into a Microsoft account — the feature is gone. YT Summarizer runs anywhere there is a browser, with nothing to install and no account needed to try it. Three other differences matter for regular use:</p>
       <ul>
-        <li><strong>Structured output with timestamps.</strong> Copilot returns a conversational blob in the sidebar; YT Summarizer returns key points each linked to a moment in the video, so you can jump straight to the 90 seconds that matter.</li>
+        <li><strong>Structured output.</strong> Copilot returns a conversational blob in the sidebar; YT Summarizer returns the same structure every time (an overview, key points and takeaways), so you can scan a long video in a minute.</li>
         <li><strong>A library that persists.</strong> Copilot's summary lives in a chat panel and is gone when you close the tab. YT Summarizer saves every summary so you can search your video notes weeks later — the foundation of an actual knowledge base.</li>
         <li><strong>Reliability on long and caption-light videos.</strong> Copilot leans entirely on the existing caption track and has documented failures on specific videos; a purpose-built pipeline is designed to handle long transcripts and messy captions.</li>
       </ul>
@@ -2375,7 +2375,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p>On raw price, Copilot wins: it is free. But "free" assumes you live in Edge and only summarize occasionally. YT Summarizer is not a subscription either — it uses pay-once credit packs that never expire. The free tier gives you a summary a day, no account needed, to test output quality. After that, the recommended Pro pack is $19 for 200, and the Power pack is $49 for 1,000. One credit summarizes one video of any length, credits never expire, and there is a 30-day money-back guarantee — so a burst of exam-season or research use doesn't reset every month the way a subscription meter does. For the full landscape, our <a href="/blog/how-much-do-youtube-summarizers-cost-2026">cost comparison of eight tools</a> lays out subscription versus one-time math.</p>
 
       <h2>Which should you use?</h2>
-      <p>Use Microsoft Copilot if you already work in Edge, summarize videos only now and then, and mostly watch English content with captions — free and built in is the right call there. Choose YT Summarizer if you use any other browser, want timestamped, structured summaries you can save and search, or simply don't want your summarizing habit tied to one browser and one company's account. <a href="${P}">Try YT Summarizer free</a> on your next video — a free summary a day, no login, no subscription — and compare the output against Copilot's before you decide.</p>
+      <p>Use Microsoft Copilot if you already work in Edge, summarize videos only now and then, and mostly watch English content with captions — free and built in is the right call there. Choose YT Summarizer if you use any other browser, want structured summaries you can save and search, or simply don't want your summarizing habit tied to one browser and one company's account. <a href="${P}">Try YT Summarizer free</a> on your next video — a free summary a day, no login, no subscription — and compare the output against Copilot's before you decide.</p>
     `,
   },
   'youtube-summarizer-vs-youtube-built-in-ai': {
@@ -2407,7 +2407,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
         <tr><td>Where it works</td><td>U.S., English, desktop (rolling out wider)</td><td>Any country, any browser, desktop or phone</td></tr>
         <tr><td>Account needed</td><td>Signed-in Google account; some features Premium-only</td><td>None to try</td></tr>
         <tr><td>Shorts</td><td>Not supported</td><td>Supported</td></tr>
-        <tr><td>Output</td><td>Conversational answers in the page</td><td>Structured key points + timestamps</td></tr>
+        <tr><td>Output</td><td>Conversational answers in the page</td><td>Structured key points + takeaways</td></tr>
         <tr><td>Saved library</td><td>No</td><td>Yes, searchable</td></tr>
         <tr><td>Cost</td><td>Free where eligible; Premium is $15.99/mo in the U.S.</td><td>1 free a day, then one-time packs from $9</td></tr>
       </table>
@@ -2439,7 +2439,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>Where a dedicated summarizer still wins</h2>
 
-      <p>YT Summarizer is deliberately narrower: paste any YouTube URL in any browser and get a structured summary with timestamps. No extension, no sign-in required to try it — the same reasoning behind <a href="/blog/summarize-youtube-video-without-extension">summarizing without an extension</a>, which matters on managed work laptops where extensions are blocked outright.</p>
+      <p>YT Summarizer is deliberately narrower: paste any YouTube URL in any browser and get a structured summary of key points and takeaways. No extension, no sign-in required to try it — the same reasoning behind <a href="/blog/summarize-youtube-video-without-extension">summarizing without an extension</a>, which matters on managed work laptops where extensions are blocked outright.</p>
 
       <p>The practical difference is that a summary becomes an artifact. It is saved, searchable, and exportable, which is what makes it useful for research, study, or client work rather than a one-off curiosity. If you want a multi-source research workspace instead, <a href="/blog/youtube-summarizer-vs-notebooklm">NotebookLM</a> is a better fit than either option here — it is a different job.</p>
 
@@ -2467,7 +2467,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>What each tool actually is</h2>
       <p><strong>Recall</strong> (recall.it, formerly getrecall.ai) is a personal AI knowledge base. You save YouTube videos, podcasts, articles, and PDFs into it; Recall summarizes each one, tags it automatically, and links it into a knowledge graph alongside everything else you have saved. It then layers on AI chat across your whole library, text-to-speech playback, and spaced-repetition quizzes generated from your own saved content. It ships as a web app, Chrome and Firefox extensions, and iOS and Android apps, and the company says it has passed 500,000 users.</p>
-      <p><strong>YT Summarizer</strong> does one job. You paste a YouTube URL into a web page and get a structured summary — key points, sections, timestamps — in seconds. No extension, no account required to try it, no library to design first. Everything you summarize is saved and searchable, but the product does not try to be your second brain.</p>
+      <p><strong>YT Summarizer</strong> does one job. You paste a YouTube URL into a web page and get a structured summary (an overview, key points and takeaways) in seconds. No extension, no account required to try it, no library to design first. Everything you summarize is saved and searchable, but the product does not try to be your second brain.</p>
 
       <h2>Side by side</h2>
       <table>
@@ -3754,7 +3754,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>What reduces errors</h2>
       <p>Videos with manual (creator-added) captions summarize far more accurately than auto-captioned ones, because the first lossy step is removed. Single-speaker, talk-heavy content — lectures, conference talks, solo explainers — is the most reliable category. Multi-speaker, heavily visual, or accented content is the least.</p>
-      <p>Treat any summary as a map rather than the territory: excellent for deciding what deserves your attention, not a citable source. <a href="${P}">YT Summarizer</a> processes the full transcript with timestamps so you can jump straight to any claim and verify it — free daily summaries, then one-time credits from $9 that never expire.</p>
+      <p>Treat any summary as a map rather than the territory: excellent for deciding what deserves your attention, not a citable source. <a href="${P}">YT Summarizer</a> summarizes the full transcript rather than a slice, so every point comes from the video and is easy to check against it — free daily summaries, then one-time credits from $9 that never expire.</p>
       <p>Deeper testing: <a href="/blog/youtube-summarizer-accuracy-test-2026">how accurate are AI video summaries in 2026</a>.</p>
     `,
   },
@@ -3877,7 +3877,7 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
 
       <h2>When short is correct</h2>
       <p>Worth saying plainly: sometimes a three-point summary is right. A 45-minute video padded to hit an ad-revenue threshold may contain three ideas. If you cross-check against the video and the summary really did capture it, the tool did its job — the video was the problem.</p>
-      <p><a href="${P}">YT Summarizer</a> returns a structured overview, key points and takeaways with timestamps, and processes the full transcript rather than a slice, so shallow output reflects the source rather than a cut corner. A free summary every day, then one-time credits from $9.</p>
+      <p><a href="${P}">YT Summarizer</a> returns a structured overview, key points and takeaways, and processes the full transcript rather than a slice, so shallow output reflects the source rather than a cut corner. A free summary every day, then one-time credits from $9.</p>
     `,
   },
 
@@ -7025,7 +7025,7 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
   ],
   'youtube-summarizer-vs-summarize-tech': [
     { q: `Is Summarize.tech free?`, a: `Yes, Summarize.tech is free — paste a URL and get a simple section-by-section summary. There's no library and the output is basic, but it costs nothing for an occasional gist.` },
-    { q: `Why pay for YT Summarizer if Summarize.tech is free?`, a: `For structured key points with clickable timestamps, a searchable library, and cleaner output you'll actually reuse. If you only need an occasional free gist, Summarize.tech is enough.` },
+    { q: `Why pay for YT Summarizer if Summarize.tech is free?`, a: `For structured key points and takeaways, a searchable library, and cleaner output you'll actually reuse. If you only need an occasional free gist, Summarize.tech is enough.` },
     { q: `Does YT Summarizer have a free option?`, a: `Yes — free daily summaries, then one-time packs from $9 (no subscription, credits never expire).` },
   ],
   'youtube-summarizer-vs-notta': [
@@ -7046,12 +7046,12 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
   'eightify-vs-summarize-tech': [
     { q: `Is Eightify free?`, a: `Eightify offers a limited free allowance, then requires a subscription. The output is polished and lives on the YouTube page via a browser extension.` },
     { q: `Is Summarize.tech better than Eightify?`, a: `Summarize.tech is free but basic; Eightify is polished but paid. For an occasional free gist, Summarize.tech wins; for frequent, polished, in-browser use, Eightify is nicer if you accept the subscription.` },
-    { q: `Is there an option that's polished but not a subscription?`, a: `Yes — a pay-once tool like YT Summarizer gives structured summaries with timestamps and a saved library on a one-time model (free tier, then packs from $9 that never expire), with no extension to install.` },
+    { q: `Is there an option that's polished but not a subscription?`, a: `Yes — a pay-once tool like YT Summarizer gives structured summaries and a saved library on a one-time model (free tier, then packs from $9 that never expire), with no extension to install.` },
   ],
   'youtube-summarizer-vs-perplexity': [
     { q: `Can Perplexity summarize YouTube videos?`, a: `Yes. Paste the video URL into Perplexity and ask for a summary, and it pulls the transcript and writes one. You may need to ask specifically for key points or timestamps, and pick a stronger model on the free tier. It only works when the video has a transcript available.` },
     { q: `Is YT Summarizer or Perplexity cheaper for YouTube summaries?`, a: `For YouTube summaries specifically, YT Summarizer is cheaper: a free tier (1 summary a day, no account needed), then one-time packs from $9, with credits that never expire and no subscription. Perplexity Pro is $20 a month, which is good value only if you use its full research engine, not just video summaries.` },
-    { q: `Why use a dedicated summarizer if Perplexity already does it?`, a: `Consistency and reliability. A dedicated tool returns the same structured format with timestamps every time, with no prompt to write and no daily query caps, and it is built around the YouTube transcript pipeline that general engines sometimes fail to fetch.` },
+    { q: `Why use a dedicated summarizer if Perplexity already does it?`, a: `Consistency and reliability. A dedicated tool returns the same structured format every time, with no prompt to write and no daily query caps, and it is built around the YouTube transcript pipeline that general engines sometimes fail to fetch.` },
   ],
   'youtube-summarizer-vs-sider': [
     { q: `Can Sider summarize YouTube videos?`, a: `Yes. With the Sider browser extension installed, open a video and use the summarize button in the sidebar — it reads the transcript and returns key points with timestamps, then lets you ask follow-up questions about the video. It works wherever the extension runs and the video has a transcript available.` },
@@ -7060,7 +7060,7 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
   ],
   'youtube-summarizer-vs-copilot': [
     { q: `Can Microsoft Copilot summarize YouTube videos?`, a: `Yes — inside the Microsoft Edge browser. Open a video, click the Copilot icon in the sidebar, and ask it to summarize; it reads the video's captions and returns an overview you can ask follow-up questions about. It is free with a Microsoft account, but it only works in Edge and needs the video to have a caption track.` },
-    { q: `Is YT Summarizer or Copilot better for YouTube summaries?`, a: `Copilot is better if you already use Edge and summarize occasionally, since it is free and built in. YT Summarizer is better if you use any other browser, want structured summaries with timestamps saved to a searchable library, or need reliability on long and caption-light videos. YT Summarizer is a pay-once web app — a free tier, then packs from $9 that never expire, with no subscription.` },
+    { q: `Is YT Summarizer or Copilot better for YouTube summaries?`, a: `Copilot is better if you already use Edge and summarize occasionally, since it is free and built in. YT Summarizer is better if you use any other browser, want structured summaries saved to a searchable library, or need reliability on long and caption-light videos. YT Summarizer is a pay-once web app — a free tier, then packs from $9 that never expire, with no subscription.` },
     { q: `Does Copilot's YouTube summary work without captions?`, a: `Not reliably. Copilot summarizes the transcript, not the video itself, so it depends on the caption track. Testing in 2026 found accuracy above 90% for subtitled videos but only 60–75% on details for videos without a clean transcript, so always verify important facts against the source.` },
   ],
   'youtube-summarizer-vs-youtube-built-in-ai': [
