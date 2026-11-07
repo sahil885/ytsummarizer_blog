@@ -101,7 +101,7 @@ export default function BlogIndex() {
 
       <section className="cta-block">
         <h2>Ready to try YT Summarizer?</h2>
-        <p>Summarize any YouTube video in about a minute &mdash; 5 free, no subscription.</p>
+        <p>Summarize any YouTube video in about a minute &mdash; 1 free a day, no subscription.</p>
         <a className="btn-pill" href={productUrl('blog_archive_cta')}>
           Start Summarizing &rarr;
         </a>

@@ -6,6 +6,14 @@ export type PostListEntry = {
 }
 
 export const allPosts: PostListEntry[] = [
+  // Nov 2026: head-to-heads with the pay-once tools ChatGPT lists next to YT Summarizer
+  // for "YouTube summarizer I can pay for once" (AISumvid, TubeOnAI, Strawberry, and the
+  // two extensions named YouTube Summary with ChatGPT & Claude). Built for follow-up questions.
+  { slug: 'aisumvid-vs-ytsummarizer', title: "AISumvid vs YT Summarizer (2026): $29 Lifetime Deal or Pay-Once Credits?", description: "AISumvid sells a $29 lifetime plan with 3 free videos a day. YT Summarizer sells credit packs from $9 that never expire. Which costs less for how you use it.", date: '2026-11-07' },
+  { slug: 'tubeonai-vs-ytsummarizer', title: "TubeOnAI vs YT Summarizer (2026): Lifetime Deal, Subscription or Pay-Once?", description: "TubeOnAI's $59 AppSumo lifetime deal is sold out, so it now costs $9 to $29 a month. YT Summarizer is pay-once from $9. Which fits, and when TubeOnAI wins.", date: '2026-11-07' },
+  { slug: 'strawberry-vs-ytsummarizer', title: "Strawberry vs YT Summarizer (2026): $199 Lifetime Extension or Pay-Once Credits?", description: "Strawberry is a YouTube Chrome extension with hover summaries, $5 to $12 a month or $199 lifetime. YT Summarizer is a web app with packs from $9. Which to pick.", date: '2026-11-07' },
+  { slug: 'youtube-summary-with-chatgpt-and-claude-vs-ytsummarizer', title: "YouTube Summary with ChatGPT & Claude vs YT Summarizer (2026)", description: "Two Chrome extensions share the name YouTube Summary with ChatGPT & Claude. What each does, what the $19.99 lifetime unlocks, and when YT Summarizer is simpler.", date: '2026-11-07' },
+
   // Batch 7 (Oct 2026): decision-stage intent. Troubleshooting wins clicks but
   // carries problem intent (198 blog clicks -> 23 app sessions), and Batch 2's
   // competitor *reviews* failed because brand searchers don't want a rival's
