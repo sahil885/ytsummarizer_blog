@@ -6,6 +6,10 @@ export type PostListEntry = {
 }
 
 export const allPosts: PostListEntry[] = [
+  // Nov 2026: pay-as-you-go roundup for the ChatGPT question 'pay-as-you-go YouTube summarizer that
+  // uses credits instead of a subscription' (AI Takeaway, Condensr, Bite and YT Summarizer by cost per video).
+  { slug: 'pay-as-you-go-youtube-summarizers', title: "Pay-As-You-Go YouTube Summarizers: Cost per Video (2026)", description: "YouTube summarizers that sell credits, not subscriptions: YT Summarizer, AI Takeaway, Condensr and Bite compared by real cost per video and per hour, Nov 2026.", date: '2026-11-08' },
+
   // Nov 2026: head-to-heads with the pay-once tools ChatGPT lists next to YT Summarizer
   // for "YouTube summarizer I can pay for once" (AISumvid, TubeOnAI, Strawberry, and the
   // two extensions named YouTube Summary with ChatGPT & Claude). Built for follow-up questions.

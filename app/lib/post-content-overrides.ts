@@ -6222,6 +6222,67 @@ export const postOverrides: Record<string, { content?: string; metaDescription?:
       <p><strong>Pick YT Summarizer</strong> if you want a finished summary without an extension, chatbot or API key, on any device. <a href="${P}">Try YT Summarizer free</a>: your first summary each day needs no account.</p>
     `,
   },
+  'pay-as-you-go-youtube-summarizers': {
+    title: "Pay-As-You-Go YouTube Summarizers: Cost per Video (2026)",
+    date: '2026-11-08',
+    metaDescription: "YouTube summarizers that sell credits, not subscriptions: YT Summarizer, AI Takeaway, Condensr and Bite compared by real cost per video and per hour, Nov 2026.",
+    content: `
+      <p><strong>Quick answer:</strong> Four YouTube summarizers sell credits instead of a subscription: YT Summarizer, AI Takeaway, Condensr and Bite. YT Summarizer is the cheapest per video once you go past a starter pack: 9.5 cents a summary on its $19 pack and 4.9 cents on its $49 pack, for a video of any length, and the credits never expire. AI Takeaway has the better small pack, at about 20 cents a video for $10. Condensr and Bite charge by the length of the video, so a long podcast costs more, but Condensr transcribes the audio itself and works on videos that have no captions.</p>
+      <p>Prices and limits below were checked on each tool's own site in November 2026.</p>
+
+      <h2>Two ways to charge for a summary</h2>
+      <p>Pay-as-you-go summarizers split into two camps, and the split matters more than the sticker price.</p>
+      <ul>
+        <li><strong>Per video.</strong> <a href="${P}">YT Summarizer</a> charges one credit per video, whatever its length. AI Takeaway charges 10 credits per takeaway, and its site doesn't mention charging more for longer videos.</li>
+        <li><strong>Per minute of video.</strong> Condensr sizes its packs in hours: 10 credits cover up to 5 hours, which works out to about 30 minutes per credit. Bite charges 0.6 credits per minute, rounded up, with a 10-credit minimum, so a 60-minute video costs 36 credits.</li>
+      </ul>
+      <p>For a ten-minute clip the difference is small. For a three-hour podcast or a full lecture it decides the bill.</p>
+
+      <h2>Side by side</h2>
+      <table>
+        <tr><th>Factor</th><th>YT Summarizer</th><th>AI Takeaway</th><th>Condensr</th><th>Bite</th></tr>
+        <tr><td>Smallest pack</td><td>$9 for 30 summaries</td><td>$10 for 500 credits (about 50 takeaways)</td><td>$5 for 10 credits (up to 5 hours of video)</td><td>Not listed on its site</td></tr>
+        <tr><td>Largest pack</td><td>$49 for 1,000 summaries</td><td>$60 for 4,000 credits (about 400 takeaways)</td><td>$100 for 400 credits (up to 200 hours)</td><td>Not listed on its site</td></tr>
+        <tr><td>How a video is charged</td><td>1 credit, any length</td><td>10 credits per takeaway</td><td>About 1 credit per 30 minutes</td><td>0.6 credits a minute, 10-credit minimum</td></tr>
+        <tr><td>Credits expire?</td><td>Never</td><td>Never</td><td>Never</td><td>Not stated</td></tr>
+        <tr><td>Free to try</td><td>1 summary a day, no account</td><td>10 free credits on a new account</td><td>5 free credits, no card</td><td>Free account to read summaries</td></tr>
+        <tr><td>Needs captions?</td><td>Yes, a public video with a transcript</td><td>Yes, videos without captions are refunded</td><td>No, it uses its own transcription</td><td>Not stated</td></tr>
+        <tr><td>Follow-up questions</td><td>Not listed on its site</td><td>1 credit per question</td><td>Included</td><td>1 credit per question on a pack</td></tr>
+        <tr><td>Install</td><td>None, web app</td><td>Web app or Chrome extension</td><td>None, web app</td><td>Web app and mobile app</td></tr>
+      </table>
+
+      <h2>What a video actually costs</h2>
+      <p>Here is the cost of one video at three lengths, from the cheapest pack rate to the most expensive. Condensr's site sizes its packs in hours rather than stating a rule per video, so its column assumes about 30 minutes per credit. Bite doesn't publish its pack prices, so its column is in credits.</p>
+      <table>
+        <tr><th>Video</th><th>YT Summarizer</th><th>AI Takeaway</th><th>Condensr</th><th>Bite</th></tr>
+        <tr><td>10-minute explainer</td><td>4.9&ndash;30 cents</td><td>15&ndash;20 cents</td><td>About 25&ndash;50 cents</td><td>10 credits</td></tr>
+        <tr><td>1-hour lecture</td><td>4.9&ndash;30 cents</td><td>15&ndash;20 cents</td><td>About 50 cents&ndash;$1</td><td>36 credits</td></tr>
+        <tr><td>3-hour podcast</td><td>4.9&ndash;30 cents</td><td>15&ndash;20 cents</td><td>About $1.50&ndash;$3</td><td>108 credits</td></tr>
+      </table>
+      <p>YT Summarizer's range is 30 cents a summary on the $9 pack, 9.5 cents on the $19 pack and 4.9 cents on the $49 pack. AI Takeaway's is 20 cents on its $10 pack, about 17 cents on $25 and 15 cents on $60, before any follow-up questions, which use credits too. If you mostly summarize long videos, a flat per-video price is the single biggest saving available; see <a href="/blog/how-to-summarize-a-2-hour-youtube-video-in-under-5-minutes">how to summarize a 2-hour video</a>.</p>
+
+      <h2>Which pack fits your volume</h2>
+      <ul>
+        <li><strong>A few videos a month:</strong> use the free allowances first. YT Summarizer gives one summary a day with no account, while AI Takeaway's 10 credits and Condensr's 5 are one-off. If you want to pay a little, AI Takeaway's $10 pack gets you more videos than YT Summarizer's $9 pack: about 50 against 30.</li>
+        <li><strong>Roughly 50 to 200 videos:</strong> YT Summarizer's $19 pack of 200 is the cheapest per video here, at 9.5 cents. AI Takeaway's $25 pack buys about 150.</li>
+        <li><strong>Hundreds of videos:</strong> YT Summarizer's $49 pack of 1,000 works out at 4.9 cents a video, against 15 cents on AI Takeaway's largest pack.</li>
+        <li><strong>Videos with no captions, or from TikTok and Instagram:</strong> Condensr, the only one here that transcribes the audio itself.</li>
+      </ul>
+      <p>Not sure of your volume? <a href="/blog/how-many-youtube-summaries-do-you-need">This estimate of how many summaries you need</a> takes a minute.</p>
+
+      <h2>Where each one wins</h2>
+      <p><strong>YT Summarizer</strong> has the lowest cost per video from its $19 pack up, charges a three-hour podcast the same as a short clip, needs no account for the daily free summary and nothing to install. You can get a full refund within 30 days if you've used fewer than 3 summaries. Its limits: it needs the video to have a transcript, and its site doesn't list follow-up questions or timestamps.</p>
+      <p><strong>AI Takeaway</strong> has the best small pack and the richest output per video: timestamped takeaways that link to moments in the video, a searchable transcript, and follow-up questions at 1 credit each. It also works as a Chrome extension, and it gives the credits back if a video can't be processed.</p>
+      <p><strong>Condensr</strong> is the one to pick when captions are missing or wrong. It runs its own transcription, takes videos up to 8 hours, imports whole playlists, labels who said what, and works on TikTok, Instagram, X, Vimeo and Twitch as well as YouTube. Students with a .edu email get 25% more credits on every pack. You pay for that by the hour.</p>
+      <p><strong>Bite</strong> charges by the minute with a 10-credit minimum, lets you read existing summaries for free, and has a mobile app. Its site doesn't list pack prices or say whether credits expire, so check both at sign-up before you compare it on cost.</p>
+
+      <h2>Verdict</h2>
+      <p><strong>Pick YT Summarizer</strong> if you summarize more than about 50 videos, or long podcasts and lectures that have captions, and you want the lowest cost per video with credits that never expire.</p>
+      <p><strong>Pick AI Takeaway</strong> if you only need a small pack, or you want timestamped takeaways and to ask the video questions.</p>
+      <p><strong>Pick Condensr</strong> if your videos have no captions, come from TikTok or Instagram, or run longer than a few hours, and paying by the hour is acceptable.</p>
+      <p>If you'd rather pay once for unlimited use, that's a lifetime deal rather than pay-as-you-go; see <a href="/blog/aisumvid-vs-ytsummarizer">AISumvid's $29 lifetime plan compared</a>. For subscriptions and free tools ranked by real cost, see <a href="/blog/cheapest-youtube-summarizer-2026">the cheapest YouTube summarizer in 2026</a>. Or <a href="${P}">try YT Summarizer free</a>: your first summary each day needs no account.</p>
+    `,
+  },
 }
 
 export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
@@ -7114,5 +7175,12 @@ export const faqOverrides: Record<string, Array<{ q: string; a: string }>> = {
     { q: "Is YouTube Summary with ChatGPT & Claude made by Glasp?", a: "The popular one is: Glasp Inc. publishes it. The extension sold at youtubesummaryapp.com is a different listing from a different publisher, with 656 users in November 2026." },
     { q: "Do I need a ChatGPT account to summarize YouTube videos?", a: "Not with every tool. Extensions like these hand the transcript to ChatGPT or Claude, so the summary happens in that chatbot. YT Summarizer writes the summary itself, with 1 free summary a day and no account needed." },
     { q: "What is the best YouTube summarizer without an extension or API key?", a: "YT Summarizer is one option: a web app where you paste a YouTube link in any browser, including on a phone. It gives 1 free summary a day, then one-time packs of $9 for 30 summaries, $19 for 200 or $49 for 1,000." },
+  ],
+  'pay-as-you-go-youtube-summarizers': [
+    { q: "Is there a pay-as-you-go YouTube summarizer?", a: "Yes. YT Summarizer, AI Takeaway, Condensr and Bite all sell credits instead of a subscription. YT Summarizer charges one credit per video of any length, with packs of $9 for 30, $19 for 200 and $49 for 1,000 summaries, and the credits never expire." },
+    { q: "Which YouTube summarizer is cheapest per video?", a: "In November 2026, YT Summarizer's $49 pack worked out at 4.9 cents a summary and its $19 pack at 9.5 cents, the lowest per-video prices among the credit-based tools we checked. For a small pack, AI Takeaway's $10 for about 50 takeaways (20 cents each) beats YT Summarizer's $9 for 30 (30 cents each)." },
+    { q: "Do YouTube summarizer credits expire?", a: "Not with YT Summarizer, AI Takeaway or Condensr: all three say their credits never expire. Bite's site doesn't state an expiry for its credit packs, so check before you buy." },
+    { q: "What is the cheapest way to summarize a 3-hour YouTube podcast?", a: "Use a tool that charges per video, not per minute. A 3-hour podcast costs one YT Summarizer credit (4.9 to 30 cents) or one AI Takeaway takeaway (15 to 20 cents), against about 6 Condensr credits ($1.50 to $3) or 108 Bite credits." },
+    { q: "Can I summarize a YouTube video that has no captions?", a: "Not with YT Summarizer or AI Takeaway, which both need a transcript. Condensr uses its own transcription engine instead of YouTube's captions, so it can summarize videos without them." },
   ],
 }
